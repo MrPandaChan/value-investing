@@ -57,3 +57,7 @@
   - [云财经](https://www.yuncaijing.com/)
 - [复利计算器](http://www.guabu.com/tools/fuli.htm)
 - [陆港通南北资金流向](http://data.eastmoney.com/hsgt/index.html)
+
+## 东方财富经济数据
+
+- [东方财富经济数据](https://data.eastmoney.com/cjsj/cpi.html)

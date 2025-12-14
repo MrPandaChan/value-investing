@@ -2,6 +2,10 @@
 
 ## 财务报表分析
 
+### 文章推荐
+
+- [对青岛港的估值思考（20251213）](https://mp.weixin.qq.com/s/8cUU0lXN1wpQkNcRpUbJHA)
+
 ### 一、基本营收数据
 
 <BasicRevenueTable code="601298" />

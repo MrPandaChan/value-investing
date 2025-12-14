@@ -9,6 +9,7 @@
     "update-dynamic": "tsx fetch-data/update-dynamic-data.ts & pnpm run handle-data"
   },
   "devDependencies": {
+    "@types/node": "^25.0.2",
     "sass-embedded": "^1.92.1",
     "tsx": "^4.20.5",
     "typescript": "^5.9.2",

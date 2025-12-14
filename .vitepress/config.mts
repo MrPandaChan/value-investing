@@ -54,6 +54,18 @@ export default defineConfig({
               text: "心得",
               link: "/value-investing/value-investing/investment-insights.md",
             },
+            {
+              text: "逆向投资",
+              link: "/value-investing/value-investing/contrarian-investing.md",
+            },
+            {
+              text: "卖出策略",
+              link: "/value-investing/value-investing/exit-strategy.md",
+            },
+            {
+              text: "风险管理",
+              link: "/value-investing/value-investing/risk-management.md",
+            },
           ],
         },
         {
