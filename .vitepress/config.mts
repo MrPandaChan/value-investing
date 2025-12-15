@@ -55,6 +55,10 @@ export default defineConfig({
               link: "/value-investing/value-investing/investment-insights.md",
             },
             {
+              text: "能力圈",
+              link: "/value-investing/value-investing/circle-of-competence.md",
+            },
+            {
               text: "逆向投资",
               link: "/value-investing/value-investing/contrarian-investing.md",
             },
