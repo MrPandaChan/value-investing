@@ -92,6 +92,7 @@ export default defineConfig({
         {
           text: "周期",
           items: [
+            { text: "周期", link: "/value-investing/cycles/cycles.md" },
             { text: "人口周期", link: "/value-investing/cycles/population.md" },
             {
               text: "技术生命周期",
