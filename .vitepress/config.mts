@@ -158,6 +158,15 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "股票市场",
+          items: [
+            {
+              text: "港股",
+              link: "contrarian-investing.md",
+            },
+          ],
+        },
       ],
       "/company/": [
         {
