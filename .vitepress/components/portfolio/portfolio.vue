@@ -50,6 +50,7 @@ interface portfolio {
   sumDividendRate: number; // 股息率
   sumHoldingNetProfit: number; // 持有净利润总额
   sumRetainedNetProfit: number; // 公司留存部分总额
+  sumRetainedNetProfitRate: number; // 公司留存率
   sumPaybackPeriod: number; // 组合利润回本年数
   sumDividendTaxRate: number; // 股息税率
   sumHoldingNetProfitMargin: number; // 持有净利润率
@@ -149,6 +150,14 @@ const basicStocks = ref<BasicItem[]>([
     industry: "航运",
     costBasis: 14.775,
     sharesHeld: 200,
+    dividendTaxRatio: 0,
+  },
+  {
+    code: "600941",
+    name: "中国移动",
+    industry: "电信运营商",
+    costBasis: 103.502,
+    sharesHeld: 100,
     dividendTaxRatio: 0,
   },
 ]);
@@ -277,6 +286,7 @@ const portfolio = computed<portfolio>(() => {
 
   const sumDividendTaxRate = sumDividendTax / sumShareHoldingValue;
   const sumHoldingNetProfitMargin = sumHoldingNetProfit / sumShareHoldingValue;
+  const sumRetainedNetProfitRate = sumRetainedNetProfit / sumShareHoldingValue;
 
   // 透视盈余 = 持股总收益 - 分红时所得税
   const perspectiveSurplus = sumHoldingNetProfit - sumDividendTax;
@@ -295,6 +305,7 @@ const portfolio = computed<portfolio>(() => {
     sumHoldingNetProfitMargin,
     perspectiveSurplus,
     perspectiveSurplusRate,
+    sumRetainedNetProfitRate,
   };
 });
 </script>
@@ -407,7 +418,7 @@ const portfolio = computed<portfolio>(() => {
               {{ formatPercent(portfolio.sumHoldingNetProfitMargin * 100) }}
             </td>
             <td>
-              {{ formatNum(portfolio.sumRetainedNetProfit, 2).toFixed(2) }}
+              {{ formatPercent(portfolio.sumRetainedNetProfitRate * 100) }}
             </td>
             <td></td>
           </tr>

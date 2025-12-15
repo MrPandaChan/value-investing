@@ -297,6 +297,10 @@ const operatorStockData: StockItem[] = [
       },
       backYearsNum: 10,
     },
+    hkMarketConfig: {
+      code: "00941",
+      dividendTaxRate: 0.72,
+    },
   },
   {
     name: "中国电信",
