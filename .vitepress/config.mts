@@ -116,6 +116,10 @@ export default defineConfig({
               link: "/value-investing/business-model/business-model.md",
             },
             {
+              text: "成行空间",
+              link: "/value-investing/business-model/growth.md",
+            },
+            {
               text: "竞争优势",
               link: "/value-investing/business-model/competitive-advantage.md",
             },
