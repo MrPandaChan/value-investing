@@ -22,3 +22,7 @@
 - [行业未来分析框架 2025-08-05 渐悟](https://mp.weixin.qq.com/s/8YKudlER0p_zSd7SNYsk_w)
 - [AI 时代，价值投资者会被替代吗？ 2025-12-08 静逸投资](https://mp.weixin.qq.com/s/P63SokuOPglPoAR9uLWwnQ)
   - AI 不会让价值投资失效，而是将投资者从繁重研究中解放，逼迫其聚焦于最高维度的判断与决策。未来的超额收益将属于那些善用 AI 拓展认知边界，同时坚守人类独有的担责勇气、反共识洞察与肉身直觉的“进化版”价值投资者。
+
+## 书籍推荐
+
+- [关于读书的一些思考和推荐（2020-08-22 静逸投资）](https://mp.weixin.qq.com/s/6fX4orxh-_5A0WOSPcp60A)

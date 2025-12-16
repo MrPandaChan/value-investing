@@ -120,6 +120,10 @@ export default defineConfig({
               link: "/value-investing/business-model/growth.md",
             },
             {
+              text: "护城河",
+              link: "/value-investing/business-model/moat.md",
+            },
+            {
               text: "竞争优势",
               link: "/value-investing/business-model/competitive-advantage.md",
             },
