@@ -250,6 +250,21 @@ export const carStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+  {
+    name: "福耀玻璃",
+    code: "600660",
+    profitValuationConfig: {
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.1],
+      },
+      backYearsNum: 10,
+    },
+    hkMarketConfig: {
+      code: "03606",
+      dividendTaxRate: 0.8,
+    },
+  },
 ];
 
 const electricityStockData: StockItem[] = [
