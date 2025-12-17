@@ -61,3 +61,7 @@
 ## 东方财富经济数据
 
 - [东方财富经济数据](https://data.eastmoney.com/cjsj/cpi.html)
+
+## 投资数据网
+
+- [投资数据网（收费）](https://www.touzid.com/)

@@ -70,6 +70,10 @@ export default defineConfig({
               text: "风险管理",
               link: "/value-investing/value-investing/risk-management.md",
             },
+            {
+              text: "投资组合",
+              link: "/value-investing/value-investing/portfolio.md",
+            },
           ],
         },
         {
@@ -156,6 +160,10 @@ export default defineConfig({
             {
               text: "企业文化",
               link: "/value-investing/governance/corporate-culture.md",
+            },
+            {
+              text: "经营失败",
+              link: "/value-investing/governance/business-failure.md",
             },
             {
               text: "管理层",
