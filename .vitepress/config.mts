@@ -74,6 +74,10 @@ export default defineConfig({
               text: "投资组合",
               link: "/value-investing/value-investing/portfolio.md",
             },
+            {
+              text: "检查清单",
+              link: "/value-investing/value-investing/checklist.md",
+            },
           ],
         },
         {
