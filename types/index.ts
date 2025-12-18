@@ -251,6 +251,29 @@ export const carStockData: StockItem[] = [
     },
   },
   {
+    name: "宇通客车",
+    code: "600066",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.35, 0.05],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.35, 0.1],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.35, 0.12],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.35, 0.15],
+      },
+      backYearsNum: 10,
+    },
+  },
+  {
     name: "福耀玻璃",
     code: "600660",
     profitValuationConfig: {

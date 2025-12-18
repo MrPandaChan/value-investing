@@ -254,6 +254,7 @@ export default defineConfig({
               link: "/company/car/car.md",
               items: [
                 { text: "比亚迪", link: "/company/car/byd.md" },
+                { text: "宇通客车", link: "/company/car/yutong.md " },
                 { text: "福耀玻璃", link: "/company/car/fuyao.md" },
               ],
             },
