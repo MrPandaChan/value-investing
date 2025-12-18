@@ -78,6 +78,10 @@ export default defineConfig({
               text: "检查清单",
               link: "/value-investing/value-investing/checklist.md",
             },
+            {
+              text: "投资错误",
+              link: "/value-investing/value-investing/mistake.md",
+            },
           ],
         },
         {
@@ -188,7 +192,16 @@ export default defineConfig({
           items: [
             {
               text: "港股",
-              link: "contrarian-investing.md",
+              link: "/value-investing/market/hk-market.md",
+            },
+          ],
+        },
+        {
+          text: "超越投资",
+          items: [
+            {
+              text: "超越投资的思考",
+              link: "",
             },
           ],
         },
