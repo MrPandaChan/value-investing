@@ -85,7 +85,13 @@ onMounted(() => {
 });
 
 // 监听数据变化更新图表
-watch(() => props.data, updateChart, { deep: true });
+watch(
+  () => props.data,
+  () => {
+    updateChart();
+  },
+  { deep: true }
+);
 
 function groupBy<T extends Record<string, any>, K extends keyof T>(
   array: T[],
@@ -106,15 +112,17 @@ function groupBy<T extends Record<string, any>, K extends keyof T>(
   return Array.from(resultMap.values());
 }
 
-const group = props.groupKey
-  ? groupBy(props.data, props.groupKey)
-  : [props.data];
+const group = computed(() => {
+  return props.groupKey ? groupBy(props.data, props.groupKey) : [props.data];
+});
 
-const years = Array.from(
-  new Set(
-    props.data.map((item) => item.year).filter((year) => /\d{4}/.test(year))
-  )
-);
+const years = computed(() => {
+  return Array.from(
+    new Set(
+      props.data.map((item) => item.year).filter((year) => /\d{4}/.test(year))
+    )
+  );
+});
 
 // 更新图表数据
 function updateChart() {
@@ -134,8 +142,8 @@ function updateChart() {
     const column = props.columns.find((c) => c.key === colKey);
     if (!column) return;
 
-    group.forEach((arr, i) => {
-      const values = years.map((year) => {
+    group.value.forEach((arr, i) => {
+      const values = years.value.map((year) => {
         const target = arr.find((v) => v.year === year);
         if (target) {
           const val = target[colKey];
@@ -231,7 +239,7 @@ function updateChart() {
           props.columns.find((c) => c.key === colKey)?.title || colKey;
         if (props.groupKey) {
           return pre.concat(
-            group.map((v) => `${title}-${v[0][props.groupKey!]}`)
+            group.value.map((v) => `${title}-${v[0][props.groupKey!]}`)
           );
         }
         pre.push(title);
@@ -245,7 +253,7 @@ function updateChart() {
     },
     xAxis: {
       type: "category",
-      data: years,
+      data: years.value,
       axisPointer: {
         type: "shadow",
       },
@@ -261,7 +269,7 @@ function updateChart() {
       },
       axisLabel: {
         interval: 0,
-        rotate: years.length > 11 ? 30 : 0,
+        rotate: years.value.length > 11 ? 30 : 0,
       },
     },
     yAxis: [
