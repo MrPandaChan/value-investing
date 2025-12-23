@@ -109,24 +109,25 @@ const chineseSpiritsStockData: StockItem[] = [
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, -0.1, 0],
+        data: [-0.3, -0.1, 0],
       },
       conservative: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, -0.1, 0.05],
+        data: [-0.3, -0.1, 0.05],
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, -0.1, 0.05],
+        data: [-0.3, -0.1, 0.05],
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, -0.1, 0.07],
+        data: [-0.3, -0.1, 0.07],
       },
-      backYearsNum: 8,
+      backYearsNum: 10,
     },
     bMarketConfig: {
       code: "200596",
+      discount: 0.7,
     },
   },
   {
@@ -135,7 +136,7 @@ const chineseSpiritsStockData: StockItem[] = [
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0, 0],
+        data: [0],
       },
       conservative: {
         type: ProfitValuationGrowthType.RATE,
@@ -149,7 +150,7 @@ const chineseSpiritsStockData: StockItem[] = [
         type: ProfitValuationGrowthType.RATE,
         data: [0, 0.12],
       },
-      backYearsNum: 8,
+      backYearsNum: 10,
     },
   },
 ];
@@ -390,6 +391,52 @@ const oilStockData: StockItem[] = [
   },
 ];
 
+const portStockData: StockItem[] = [
+  {
+    name: "青岛港",
+    code: "601298",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+        discount: 0.9,
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.03],
+        discount: 0.9,
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.05],
+        discount: 0.9,
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.08],
+        discount: 0.9,
+      },
+      backYearsNum: 10,
+    },
+    hkMarketConfig: {
+      code: "06198",
+      dividendTaxRate: 0.8,
+    },
+  },
+  {
+    name: "唐山港",
+    code: "601000",
+    profitValuationConfig: {
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, 0.02],
+        discount: 0.9,
+      },
+      backYearsNum: 10,
+    },
+  },
+];
+
 export const stockData: StockItem[] = [
   ...chineseSpiritsStockData,
   ...homeApplianceStockData,
@@ -398,6 +445,7 @@ export const stockData: StockItem[] = [
   ...coalStockData,
   ...operatorStockData,
   ...oilStockData,
+  ...portStockData,
   {
     name: "科沃斯",
     code: "603486",
@@ -443,37 +491,6 @@ export const stockData: StockItem[] = [
   {
     name: "九号公司",
     code: "689009",
-  },
-  {
-    name: "青岛港",
-    code: "601298",
-    profitValuationConfig: {
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0],
-        discount: 0.9,
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.03],
-        discount: 0.9,
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.05],
-        discount: 0.9,
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.08],
-        discount: 0.9,
-      },
-      backYearsNum: 10,
-    },
-    hkMarketConfig: {
-      code: "06198",
-      dividendTaxRate: 0.8,
-    },
   },
   {
     name: "顺丰控股",

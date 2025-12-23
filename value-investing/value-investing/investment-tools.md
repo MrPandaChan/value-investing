@@ -65,3 +65,7 @@
 ## 投资数据网
 
 - [投资数据网（收费）](https://www.touzid.com/)
+
+## IMA 知识库
+
+- [我创建的 IMA 知识库，收藏投资大师们的 50+本好书，分享给你](https://mp.weixin.qq.com/s/Sy_3t3IVzKzLhYJsmHd7pg)
