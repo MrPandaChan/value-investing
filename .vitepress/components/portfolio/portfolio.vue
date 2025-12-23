@@ -156,8 +156,8 @@ const basicStocks = ref<BasicItem[]>([
     code: "600941",
     name: "中国移动",
     industry: "电信运营商",
-    costBasis: 103.502,
-    sharesHeld: 100,
+    costBasis: 102.501,
+    sharesHeld: 200,
     dividendTaxRatio: 0,
   },
 ]);
