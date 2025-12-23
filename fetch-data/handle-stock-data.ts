@@ -202,6 +202,7 @@ function generateBalanceData(data: StockData) {
       const interestExpense = val("INTERESTEXPENSE") ?? 0;
 
       const debtRatio = val("ASSLIABRT");
+      const goodwill = val("GOODWILL");
 
       arr.push({
         year: formatYear(date),
@@ -209,6 +210,7 @@ function generateBalanceData(data: StockData) {
         cash, // 现金
         inventory, // 存货
         nonCurrentAssets, // 非流动资产
+        goodwill, // 商誉
         totalAssets, // 总资产
         equity, // 归母净资产
         interestFreeLiabilities, // 无息负债（应付+预收+合同）
@@ -229,7 +231,7 @@ function generateWorkingCapitalData(data: StockData) {
   let prevWc = 0;
 
   const { report_date } = data.gjzb;
-  for (let i = report_date.length - 1; i > 0; i -= 1) {
+  for (let i = report_date.length - 1; i >= 0; i -= 1) {
     const date = report_date[i];
     if (!date) continue;
 
@@ -381,7 +383,7 @@ function generateTurnoverRateData(data: StockData) {
   let prevFixedAssets = 0;
 
   const { report_date } = data.gjzb;
-  for (let i = report_date.length - 1; i > 0; i -= 1) {
+  for (let i = report_date.length - 1; i >= 0; i -= 1) {
     const date = report_date[i];
     if (!date) continue;
 

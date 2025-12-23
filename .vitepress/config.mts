@@ -302,6 +302,8 @@ export default defineConfig({
           text: "中药",
           link: "/company/chinese-medicine/chinese-medicine.md",
           items: [
+            { text: "云南白药", link: "/company/chinese-medicine/yunnan.md" },
+            { text: "羚锐制药", link: "/company/chinese-medicine/lingrui.md" },
             { text: "东阿阿胶", link: "/company/chinese-medicine/donge.md" },
           ],
         },

@@ -1,16 +1,12 @@
-# 东阿阿胶
+# 云南白药
 
 ## 综合信息
-
-### 文章推荐
-
-- [这家企业是否值得备选（终身黑白）](https://mp.weixin.qq.com/s/-q1B070viw86XhqblPP75Q?scene=1)
 
 ## 财务报表分析
 
 ### 一、基本营收数据
 
-<BasicRevenueTable code="000423" />
+<BasicRevenueTable code="000538" />
 
 1. 看收入、净利润和利润率
 2. 看收入利润发展过程
@@ -27,7 +23,7 @@
 
 ### 二、成本费用构成
 
-<CostsExpensesTable code="000423" />
+<CostsExpensesTable code="000538" />
 
 1. 研发资本化往往被诟病为操纵利润，需特别注意，研发费用资本化放在开发费用中
 2. 看研发费用总额变化
@@ -47,11 +43,11 @@
 
 更详细的数据需要查阅财报。
 
-<PrimaryBusinessTable code="000423"/>
+<PrimaryBusinessTable code="000538"/>
 
 ### 五、资产负债
 
-<BalanceTable code="000423" />
+<BalanceTable code="000538" />
 
 1. 总资产（轻资产还是重资产，业绩优秀、资产不“重”的企业来说，信息量不多，看一眼就够了。）
 2. 债务（行业欣欣向荣、利润现金流好的龙头公司无须过度关注。有息债务是多少？现金流是否充沛？）
@@ -62,7 +58,7 @@
 
 #### WC
 
-<WorkingCapitalTable code="000423" />
+<WorkingCapitalTable code="000538" />
 
 把企业看成一个投入产出系统，目的是服务客户，客户满意，企业获得收入，实现商业循环。
 
@@ -91,7 +87,7 @@ WC 是实际经营性流动资产减去经营性流动负债，衡量净流动�
 
 #### 固定资产
 
-<FixedAssetInvestmentAnalysisTable  code="000423"/>
+<FixedAssetInvestmentAnalysisTable  code="000538"/>
 
 这里的数据还是用期末数，如果特别重要，也就是资产特别“重”​，数字变动剧烈的，考虑采用期间数 ​（期初+期末）/2
 
@@ -137,13 +133,13 @@ ROE、ROA 我们常用，ROIC 用得少一点，主要是 ROIC 数据需要处�
 
 ROIC 只要与 ROE 同步就问题不大，由于 ROIC 的拆解比较复杂，非专业投资人看看指标就好，如果偏离很大，就需要去找找原因。科沃斯这里差不多，我们就不浪费时间了。
 
-<ReturnTable code="000423" />
+<ReturnTable code="000538" />
 
 如果有精力，可对资产周转率进一步拆解，资产周转率代表资产效率，拆解后可以对资产效率变化的原因有进一步了解。
 
 想拆解资产周转率指标，首先准备平均资产数据。平均资产数=（期初数+期末数）/2，周转天数=365× 资产/收入或者主营业务成本，存货对应主营业务成本，其他对应销售收入。
 
-<TurnoverRateTable code="000423" />
+<TurnoverRateTable code="000538" />
 
 ## 非财务信息“八问”
 
@@ -181,6 +177,6 @@ ROIC 只要与 ROE 同步就问题不大，由于 ROIC 的拆解比较复杂，�
 
 ## 估值和结论
 
-<ProfitValuationGroup code="000423" />
+<ProfitValuationGroup code="000538" />
 
 ## 零散思考

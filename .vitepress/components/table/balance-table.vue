@@ -36,6 +36,11 @@ const columns: TableColumn[] = [
     formatter: (value: number) => (value / 100000000).toFixed(2),
   },
   {
+    key: "goodwill",
+    title: "商誉",
+    formatter: (value: number) => (value / 100000000).toFixed(2),
+  },
+  {
     key: "totalAssets",
     title: "总资产",
     formatter: (value: number) => (value / 100000000).toFixed(2),
@@ -84,6 +89,7 @@ const tableCaption = computed(() => "资产负债数据");
 
 // 定义需要计算增速的列（排除年份和百分比列）
 const numericColumns = [
+  "goodwill",
   "totalAssets",
   "currentAssets",
   "cash",

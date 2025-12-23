@@ -437,6 +437,90 @@ const portStockData: StockItem[] = [
   },
 ];
 
+export const chineseMedicineStockData: StockItem[] = [
+  {
+    name: "云南白药",
+    code: "000538",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0],
+        discount: 0.9,
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.05],
+        discount: 0.9,
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.07],
+        discount: 0.9,
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1],
+        discount: 0.9,
+      },
+      backYearsNum: 10,
+    },
+  },
+  {
+    name: "东阿阿胶",
+    code: "000423",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0],
+        discount: 0.9,
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.05],
+        discount: 0.9,
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.07],
+        discount: 0.9,
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1],
+        discount: 0.9,
+      },
+      backYearsNum: 10,
+    },
+  },
+  {
+    name: "羚锐制药",
+    code: "600285",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.02],
+        discount: 0.9,
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.06],
+        discount: 0.9,
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.09],
+        discount: 0.9,
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.12],
+        discount: 0.9,
+      },
+      backYearsNum: 10,
+    },
+  },
+];
+
 export const stockData: StockItem[] = [
   ...chineseSpiritsStockData,
   ...homeApplianceStockData,
@@ -446,6 +530,7 @@ export const stockData: StockItem[] = [
   ...operatorStockData,
   ...oilStockData,
   ...portStockData,
+  ...chineseMedicineStockData,
   {
     name: "科沃斯",
     code: "603486",
@@ -604,6 +689,7 @@ export interface BalanceData {
   cash: number; // 现金
   inventory: number; // 存货
   nonCurrentAssets: number; // 非流动资产
+  goodwill: number; // 商誉
   totalAssets: number; // 总资产
   equity: number; // 归母净资产
   interestFreeLiabilities: number; // 无息负债（应付+预收+合同）
