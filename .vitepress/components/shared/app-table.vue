@@ -684,6 +684,7 @@ th.selected-column {
   background: white;
   border-radius: 8px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  min-width: 600px;
   max-width: 1080px;
   max-height: calc(85vh);
   overflow: hidden;
