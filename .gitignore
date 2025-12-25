@@ -32,3 +32,4 @@ coverage
 # Custom
 .vitepress/cache/
 /data
+/docs
