@@ -10,6 +10,16 @@ const props = defineProps<{
 const fixedAssetInvestmentAnalysisData =
   data[props.code].fixedAssetInvestmentAnalysisData;
 
+const description = `这里的数据还是用期末数，如果特别重要，也就是资产特别“重”​，数字变动剧烈的，考虑采用期间数 ​（期初+期末）/2
+
+固定资产=资产负债表上的固定资产+在建工程+工程物资-固定资产清理（理由是，固定资产的其他项目，特别是在建工程，在会计处理上容易被操纵。有时看到表上有一堆在建工程尚未转固定资产，何时转、转多少都有操纵空间，所以放到一起看，一来避免被误导，二来这些前期投入已经进入为企业经营准备的固定资产中，应该一起来看。）
+
+长期资产=固定资产+资产负债表其他长期经营资产（无形资产+开发费+使用权资产+商誉+长期待摊）
+
+折旧分析：研发开支全部费用化了、资本开支并不大，一年差不多 30-40 亿元左右，如果考虑到每年的 15 亿元的折旧，资本开支每年仅仅会侵蚀 15-25 亿元的净利润现金流，也就是说格力电器绝大部分净利润都是自由现金流，可以自由支配。
+
+如果企业的固定资产和无形资产与企业的营业收入长期处于关联度较低的情况，相应的资产减值损失很快就会发生。经营资产如果不能推动营业收入持续增加，就会逐渐沦为不良资产，哪怕它的物理质量非常好。`;
+
 // 定义表格列
 const columns: TableColumn[] = [
   {
@@ -115,10 +125,15 @@ const calculateColumnGrowth = (data: any[], column: string) => {
 };
 
 const tableData = computed(() => {
-  const hasQuarter = fixedAssetInvestmentAnalysisData.some((v) => v.year.includes("Q"));
+  const hasQuarter = fixedAssetInvestmentAnalysisData.some((v) =>
+    v.year.includes("Q")
+  );
 
   // 获取原始数据并确保有足够的数据点
-  const originalData = fixedAssetInvestmentAnalysisData.slice(0, hasQuarter ? 11 : 10);
+  const originalData = fixedAssetInvestmentAnalysisData.slice(
+    0,
+    hasQuarter ? 11 : 10
+  );
   if (originalData.length < 2) return originalData.reverse();
 
   // 按年份升序排序
@@ -178,5 +193,10 @@ const tableData = computed(() => {
 </script>
 
 <template>
-  <AppTable :data="tableData" :columns="columns" :caption="tableCaption" />
+  <AppTable
+    :data="tableData"
+    :columns="columns"
+    :caption="tableCaption"
+    :description="description"
+  />
 </template>

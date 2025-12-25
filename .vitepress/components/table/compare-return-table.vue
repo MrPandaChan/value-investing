@@ -17,6 +17,8 @@ const props = defineProps<{
   codes: (keyof typeof data)[];
 }>();
 
+const description = `1. 对比 ROE，ROIC 分析`;
+
 const compareData = props.codes.reduce((pre: MergeData[], code) => {
   const name = stockData.find((v) => v.code === code)?.name ?? "";
 
@@ -100,5 +102,6 @@ const tableData = computed(() => {
     :caption="tableCaption"
     default-selected-key="roe"
     group-key="name"
+    :description="description"
   />
 </template>

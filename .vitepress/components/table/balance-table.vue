@@ -9,6 +9,11 @@ const props = defineProps<{
 
 const balanceData = data[props.code].balanceData;
 
+const description = `1. 总资产（轻资产还是重资产，业绩优秀、资产不“重”的企业来说，信息量不多，看一眼就够了。）
+2. 债务（行业欣欣向荣、利润现金流好的龙头公司无须过度关注。有息债务是多少？现金流是否充沛？）
+3. 资产负债率
+4. 经营资产及金融资产（有精力还可以做一个资产负债表的拆分）`;
+
 // 定义表格列
 const columns: TableColumn[] = [
   {
@@ -217,5 +222,10 @@ const tableData = computed(() => {
 </script>
 
 <template>
-  <AppTable :data="tableData" :columns="columns" :caption="tableCaption" />
+  <AppTable
+    :data="tableData"
+    :columns="columns"
+    :caption="tableCaption"
+    :description="description"
+  />
 </template>

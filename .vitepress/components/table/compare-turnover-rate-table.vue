@@ -23,6 +23,9 @@ const props = defineProps<{
   codes: (keyof typeof data)[];
 }>();
 
+const description = `1. 对比周转率分析
+2. 对比 1 元收入需要的固定资产分析`;
+
 const compareData = props.codes.reduce((pre: MergeData[], code) => {
   const name = stockData.find((v) => v.code === code)?.name ?? "";
 
@@ -147,5 +150,6 @@ const tableData = computed(() => {
     :caption="tableCaption"
     default-selected-key="totalAssets"
     group-key="name"
+    :description="description"
   />
 </template>

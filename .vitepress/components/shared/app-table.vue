@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, watch } from "vue";
+import MarkdownIt from "markdown-it";
 import * as echarts from "echarts";
 
 // 定义表格列的接口
@@ -51,6 +52,7 @@ const props = withDefaults(
     emptyText?: string;
     groupKey?: string;
     defaultSelectedKey?: string;
+    description?: string;
   }>(),
   {
     caption: "",
@@ -59,6 +61,13 @@ const props = withDefaults(
     emptyText: "暂无数据",
   }
 );
+
+const md = MarkdownIt({
+  html: true,
+});
+
+const mdText =
+  typeof props.description === "string" ? md.render(props.description) : "";
 
 const showChart = computed(() => {
   if (props.data.length === 0) {
@@ -75,6 +84,9 @@ const selectedColumns = ref<string[]>(
     ? [props.defaultSelectedKey]
     : [props.columns[1].key]
 );
+
+// 控制说明弹窗的显示状态
+const showDescription = ref(false);
 
 // 初始化图表
 onMounted(() => {
@@ -475,10 +487,18 @@ const formatColumnTitle = (title: string) => {
 <template>
   <div class="chart-container" ref="chartRef" v-if="showChart"></div>
   <table>
-    <caption v-if="caption">
-      {{
-        caption
-      }}
+    <caption v-if="caption || description">
+      <div class="caption-wrapper">
+        <span>{{ caption }}</span>
+        <span
+          v-if="description"
+          class="help-icon"
+          @click="showDescription = true"
+          title="查看说明"
+        >
+          ?
+        </span>
+      </div>
     </caption>
     <thead>
       <tr>
@@ -522,6 +542,21 @@ const formatColumnTitle = (title: string) => {
       </tr>
     </tbody>
   </table>
+
+  <!-- 说明弹窗 -->
+  <div
+    v-if="showDescription"
+    class="description-overlay"
+    @click="showDescription = false"
+  >
+    <div class="description-modal" @click.stop>
+      <div class="description-header">
+        <h3>分析方法</h3>
+        <button class="close-btn" @click="showDescription = false">×</button>
+      </div>
+      <div class="description-content vp-doc" v-html="mdText"></div>
+    </div>
+  </div>
 </template>
 
 <style scoped lang="scss">
@@ -544,6 +579,33 @@ caption {
   margin-bottom: 8px;
   text-align: center;
   caption-side: top;
+}
+
+.caption-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.help-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 18px;
+  height: 18px;
+  background-color: #e6f7ff;
+  color: #1890ff;
+  border-radius: 50%;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #bae7ff;
+    transform: scale(1.1);
+  }
 }
 
 th {
@@ -600,6 +662,89 @@ th.selected-column {
     right: 0;
     height: 2px;
     background-color: #1890ff;
+  }
+}
+
+// 说明弹窗样式
+.description-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  z-index: 1000;
+  padding-top: 10vh;
+}
+
+.description-modal {
+  background: white;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  max-width: 1080px;
+  max-height: calc(85vh);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin-top: 0;
+  animation: slideDown 0.2s ease-out;
+}
+
+.description-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 20px;
+  border-bottom: 1px solid #e8e8e8;
+
+  h3 {
+    margin: 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: #262626;
+  }
+}
+
+.close-btn {
+  background: none;
+  border: none;
+  font-size: 20px;
+  color: #8c8c8c;
+  cursor: pointer;
+  padding: 0;
+  width: 24px;
+  height: 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background-color: #f5f5f5;
+    color: #262626;
+  }
+}
+
+.description-content {
+  padding: 0 20px;
+  overflow-y: auto;
+  // 确保内容区域有足够的内边距
+  padding: 20px;
+}
+
+// 弹窗滑入动画
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 </style>

@@ -9,6 +9,12 @@ const props = defineProps<{
 
 const costsExpensesData = data[props.code].costsExpensesData;
 
+const description = `1. 研发资本化往往被诟病为操纵利润，需特别注意，研发费用资本化放在开发费用中
+2. 看研发费用总额变化
+3. 看销售费用变化
+4. 销售收入增长是否快于管理费用增长才符合企业运作常识
+5. 管理费用是期间费用，在收入规模扩大的过程中，管理费用比例应当呈下降趋势，这才有规模效应`;
+
 // 定义表格列
 const columns: TableColumn[] = [
   {
@@ -223,5 +229,10 @@ const tableData = computed(() => {
 </script>
 
 <template>
-  <AppTable :data="tableData" :columns="columns" :caption="tableCaption" />
+  <AppTable
+    :data="tableData"
+    :columns="columns"
+    :caption="tableCaption"
+    :description="description"
+  />
 </template>

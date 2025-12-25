@@ -25,6 +25,12 @@ const props = defineProps<{
   codes: (keyof typeof data)[];
 }>();
 
+const description = `1. 对比营业收入及增速
+2. 对比净利润及增速
+3. 对比净利率、毛利率、期间费用率
+4. 对比销售费用、研发费用
+5. 对比 1 元收入所需 WC`;
+
 const compareData = props.codes.reduce((pre: MergeData[], code) => {
   const name = stockData.find((v) => v.code === code)?.name ?? "";
 
@@ -155,5 +161,6 @@ const tableData = computed(() => {
     :caption="tableCaption"
     default-selected-key="revenue"
     group-key="name"
+    :description="description"
   />
 </template>

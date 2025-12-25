@@ -9,6 +9,14 @@ const props = defineProps<{
 
 const returnData = data[props.code].returnData;
 
+const description = `收益率指标一般看这么几个：ROE、资产回报率(Return on Assets, ROA)和资本投入回报率(Return on Investment Capital, ROIC)，以及前面我们已经算过的净经营资产收益率。收益率当然是越高越好，持续高更好，我的大体感觉，ROE 在 20%以上的都是比较优秀的公司。ROA 主要和 ROE 结合起来看，看在去掉杠杆效应的情况下总资产的获利能力。
+
+通常用杜邦分析法分析 ROE 波动背后的原因
+
+ROE、ROA 我们常用，ROIC 用得少一点，主要是 ROIC 数据需要处理，分解不那么容易，所以要去理解 ROIC 背后的驱动原因有些困难[ROIC=税后净运营利润 NOPAT(NetOperating Profit After Tax)/投资资本，NOPAT=（营业利润+利息支出）×（1-所得税率）​，投资资本=总资产-无息流动负债-商誉]​。ROIC 在评估盈利能力时同时考虑了股权资本和债权资本的影响，可以更加客观地评估公司在无杠杆下的盈利能力。
+
+ROIC 只要与 ROE 同步就问题不大，由于 ROIC 的拆解比较复杂，非专业投资人看看指标就好，如果偏离很大，就需要去找找原因。`;
+
 // 定义表格列
 const columns: TableColumn[] = [
   {
@@ -66,5 +74,10 @@ const tableData = computed(() => {
 </script>
 
 <template>
-  <AppTable :data="tableData" :columns="columns" :caption="tableCaption" />
+  <AppTable
+    :data="tableData"
+    :columns="columns"
+    :caption="tableCaption"
+    :description="description"
+  />
 </template>

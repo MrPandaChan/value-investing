@@ -10,6 +10,9 @@ const props = defineProps<{
 
 const primaryBusinessData = data[props.code].primaryBusinessData;
 
+const description = `- 每个具体产品的收入、成本和毛利、以及构成收入的明细产品销售数量和价格，以及各项数据的变化趋势。
+- 更详细的数据需要查阅财报。`;
+
 // 定义表格列
 const columns: TableColumn[] = [
   {
@@ -146,13 +149,15 @@ const currentCaption = computed(() => {
     :caption="currentCaption"
     default-selected-key="mainBusinessIncome"
     group-key="itemName"
+    :description="description"
   />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .tabs {
   display: flex;
   gap: 8px;
+  margin-top: 16px;
   margin-bottom: 16px;
 }
 

@@ -29,6 +29,8 @@ const props = defineProps<{
   }[];
 }>();
 
+const description = `1. 对比主营业务分析`;
+
 const compareData = props.codes.reduce((pre: MergeData[], item) => {
   const name = stockData.find((v) => v.code === item.code)?.name ?? "";
 
@@ -233,13 +235,15 @@ const currentCaption = computed(() => {
     :caption="currentCaption"
     default-selected-key="mainBusinessIncome"
     group-key="itemName"
+    :description="description"
   />
 </template>
 
-<style scoped>
+<style scoped lang="scss">
 .tabs {
   display: flex;
   gap: 8px;
+  margin-top: 16px;
   margin-bottom: 16px;
 }
 

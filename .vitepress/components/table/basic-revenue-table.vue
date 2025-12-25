@@ -9,6 +9,15 @@ const props = defineProps<{
 
 const basicRevenueData = data[props.code].basicRevenueData;
 
+const description = `1. 看收入、净利润和利润率
+2. 看收入利润发展过程
+3. 观察盈利质量
+    1. 归母净利润和扣非净利润（是否依靠主营业务，非经常性损益占比）
+    2. 经营利润与金融利润（占比分析，表中经营利润为归母净利润扣除金融利润，虽然简单粗暴，但颗粒度已经足够）
+    3. 经营净现金流与归母净利润（差异、经营现金流和净利润增长对比）
+    4. 自由现金流（生意能否现金自洽）
+4. 看机构预测`;
+
 // 定义表格列
 const columns: TableColumn[] = [
   {
@@ -227,5 +236,10 @@ const tableData = computed(() => {
 </script>
 
 <template>
-  <AppTable :data="tableData" :columns="columns" :caption="tableCaption" />
+  <AppTable
+    :data="tableData"
+    :columns="columns"
+    :caption="tableCaption"
+    :description="description"
+  />
 </template>

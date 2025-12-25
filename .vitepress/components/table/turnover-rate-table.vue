@@ -9,6 +9,10 @@ const props = defineProps<{
 
 const turnoverRateData = data[props.code].turnoverRateData;
 
+const description = `如果有精力，可对资产周转率进一步拆解，资产周转率代表资产效率，拆解后可以对资产效率变化的原因有进一步了解。
+
+想拆解资产周转率指标，首先准备平均资产数据。平均资产数=（期初数+期末数）/2，周转天数=365× 资产/收入或者主营业务成本，存货对应主营业务成本，其他对应销售收入。`;
+
 // 定义表格列
 const columns: TableColumn[] = [
   {
@@ -213,5 +217,10 @@ const tableData = computed(() => {
 </script>
 
 <template>
-  <AppTable :data="tableData" :columns="columns" :caption="tableCaption" />
+  <AppTable
+    :data="tableData"
+    :columns="columns"
+    :caption="tableCaption"
+    :description="description"
+  />
 </template>
