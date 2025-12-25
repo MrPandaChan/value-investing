@@ -98,7 +98,7 @@ const basicStocks = ref<BasicItem[]>([
     name: "中国海洋石油H",
     industry: "能源",
     // costBasis: 18.436, // 16.8898
-    costBasis: 18.1417,
+    costBasis: 18.2462,
     sharesHeld: 1000,
     dividendTaxRatio: 0.28,
   },
@@ -116,7 +116,7 @@ const basicStocks = ref<BasicItem[]>([
     name: "中远海控H",
     industry: "航运",
     // costBasis: 12.091, // 11.0769
-    costBasis: 12.2459,
+    costBasis: 12.3165,
     sharesHeld: 1000,
     dividendTaxRatio: 0.2,
   },
@@ -159,6 +159,15 @@ const basicStocks = ref<BasicItem[]>([
     costBasis: 102.501,
     sharesHeld: 200,
     dividendTaxRatio: 0,
+  },
+  {
+    code: "601298",
+    hkCode: "06198",
+    name: "青岛港H",
+    industry: "港口",
+    costBasis: 7.0137,
+    sharesHeld: 1000,
+    dividendTaxRatio: 0.2,
   },
 ]);
 
