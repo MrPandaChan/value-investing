@@ -82,26 +82,45 @@ const chineseSpiritsStockData: StockItem[] = [
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.15, -0.1, 0],
+        data: [-0.25, -0.1, 0],
       },
       conservative: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.15, -0.1, 0.02],
+        data: [-0.25, -0.1, 0.02],
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.15, -0.1, 0.05],
+        data: [-0.25, -0.1, 0.05],
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [-0.15, -0.05, 0.07],
+        data: [-0.25, -0.05, 0.07],
       },
-      backYearsNum: 8,
+      backYearsNum: 10,
     },
   },
   {
     name: "泸州老窖",
     code: "000568",
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.25, -0.1, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.25, -0.1, 0.02],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.25, -0.1, 0.05],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.25, -0.05, 0.07],
+      },
+      backYearsNum: 10,
+    },
   },
   {
     name: "古井贡酒",
