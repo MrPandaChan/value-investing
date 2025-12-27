@@ -540,6 +540,13 @@ export const chineseMedicineStockData: StockItem[] = [
   },
 ];
 
+export const pesticideStockData: StockItem[] = [
+  {
+    name: "广信股份",
+    code: "603599",
+  },
+];
+
 export const stockData: StockItem[] = [
   ...chineseSpiritsStockData,
   ...homeApplianceStockData,
@@ -550,6 +557,7 @@ export const stockData: StockItem[] = [
   ...oilStockData,
   ...portStockData,
   ...chineseMedicineStockData,
+  ...pesticideStockData,
   {
     name: "科沃斯",
     code: "603486",

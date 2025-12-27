@@ -361,6 +361,10 @@ export default defineConfig({
           ],
         },
         {
+          text: "农药",
+          items: [{ text: "广信股份", link: "/company/pesticide/guangxin.md" }],
+        },
+        {
           text: "银行",
           link: "/company/bank/bank.md",
         },
