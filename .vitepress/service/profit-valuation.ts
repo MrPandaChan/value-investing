@@ -615,10 +615,14 @@ export class HKMarketValuation {
     const config =
       profitValuation.stockItem.hkMarketConfig ||
       profitValuation.stockItem.bMarketConfig;
-    const [{ price }, { price: exchangeRate }] = await getDynamicData([
-      config!.code,
-      "133.CNHHKD",
-    ]);
-    return new HKMarketValuation(profitValuation, exchangeRate / 100, price);
+    try {
+      const [{ price }, { price: exchangeRate }] = await getDynamicData([
+        config!.code,
+        "133.CNHHKD",
+      ]);
+      return new HKMarketValuation(profitValuation, exchangeRate / 100, price);
+    } catch (error) {
+      console.error(error);
+    }
   }
 }
