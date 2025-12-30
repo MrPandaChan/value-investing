@@ -615,6 +615,8 @@ export class HKMarketValuation {
     const config =
       profitValuation.stockItem.hkMarketConfig ||
       profitValuation.stockItem.bMarketConfig;
+
+    // 这里推送到 github pages deploy 时 pnpm run docs:build 会报错，因此加上 try catch
     try {
       const [{ price }, { price: exchangeRate }] = await getDynamicData([
         config!.code,
@@ -622,7 +624,7 @@ export class HKMarketValuation {
       ]);
       return new HKMarketValuation(profitValuation, exchangeRate / 100, price);
     } catch (error) {
-      console.error(error);
+      console.log("HKMarketValuation create() error");
     }
   }
 }
