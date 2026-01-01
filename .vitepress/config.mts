@@ -209,6 +209,10 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "总结",
+          items: [{ text: "2025", link: "/value-investing/summary/2025.md" }],
+        },
       ],
       "/company/": [
         {

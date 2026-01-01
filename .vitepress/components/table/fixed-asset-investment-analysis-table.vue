@@ -57,6 +57,8 @@ const columns: TableColumn[] = [
     formatter: (value: number) =>
       isNaN(value) ? "-" : (value * 100).toFixed(2) + "%",
   },
+  // 一般来说，当用资本性支出除以折旧和摊销之和（资本性支出÷折旧和摊销之和）得出的比率达到历史低位的时候，大致意味着行业正从产能出清过渡到格局改善的阶段。如果这个比率跌到1.5以下甚至跌破1，那么表明这一行业可能正处于供给相对收缩、后续的供需格局有望改善的底部位置（数据来源：长江证券）​。
+  // TODO:
 ];
 
 // 表格标题
@@ -193,10 +195,5 @@ const tableData = computed(() => {
 </script>
 
 <template>
-  <AppTable
-    :data="tableData"
-    :columns="columns"
-    :caption="tableCaption"
-    :description="description"
-  />
+  <AppTable :data="tableData" :columns="columns" :caption="tableCaption" :description="description" />
 </template>
