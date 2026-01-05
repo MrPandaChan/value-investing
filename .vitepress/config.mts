@@ -89,63 +89,23 @@ export default defineConfig({
           ],
         },
         {
-          text: "投资风格",
-          items: [
-            {
-              text: "主题股投资",
-              link: "/value-investing/investment-style/thematic.md",
-            },
-            {
-              text: "成长股投资",
-              link: "/value-investing/investment-style/growth.md",
-            },
-            {
-              text: "价值股投资",
-              link: "/value-investing/investment-style/value.md",
-            },
-            {
-              text: "周期股投资",
-              link: "/value-investing/investment-style/cyclical.md",
-            },
-          ],
-        },
-        {
           text: "周期",
-          items: [
-            { text: "周期", link: "/value-investing/cycles/cycles.md" },
-            { text: "人口周期", link: "/value-investing/cycles/population.md" },
-            {
-              text: "技术生命周期",
-              link: "/value-investing/cycles/technology.md",
-            },
-            { text: "经济周期", link: "/value-investing/cycles/economic.md" },
-            { text: "资本周期", link: "/value-investing/cycles/capital.md" },
-            { text: "库存周期", link: "/value-investing/cycles/inventory.md" },
-            { text: "政治周期", link: "/value-investing/cycles/political.md" },
-          ],
+          items: [{ text: "概要", link: "/value-investing/cycles/summary.md" }],
         },
         {
-          text: "生意模式",
+          text: "商业",
           items: [
             {
               text: "生意模式",
               link: "/value-investing/business-model/business-model.md",
             },
             {
-              text: "成行空间",
+              text: "成长空间",
               link: "/value-investing/business-model/growth.md",
             },
             {
               text: "护城河",
               link: "/value-investing/business-model/moat.md",
-            },
-            {
-              text: "竞争优势",
-              link: "/value-investing/business-model/competitive-advantage.md",
-            },
-            {
-              text: "财务分析",
-              link: "/value-investing/business-model/financial-analysis.md",
             },
           ],
         },
@@ -155,14 +115,6 @@ export default defineConfig({
             {
               text: "估值方法",
               link: "/value-investing/valuation/valuation.md",
-            },
-            {
-              text: "绝对估值",
-              link: "/value-investing/valuation/absolute.md",
-            },
-            {
-              text: "相对估值",
-              link: "/value-investing/valuation/relative.md",
             },
           ],
         },
@@ -176,18 +128,6 @@ export default defineConfig({
             {
               text: "经营失败",
               link: "/value-investing/governance/business-failure.md",
-            },
-            {
-              text: "管理层",
-              link: "/value-investing/governance/management.md",
-            },
-            {
-              text: "组织和规则",
-              link: "/value-investing/governance/organization.md",
-            },
-            {
-              text: "行为判断",
-              link: "/value-investing/governance/behavior.md",
             },
           ],
         },
