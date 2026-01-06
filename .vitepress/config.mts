@@ -96,16 +96,20 @@ export default defineConfig({
           text: "商业",
           items: [
             {
+              text: "行业研究",
+              link: "/value-investing/business/industry-research.md",
+            },
+            {
               text: "生意模式",
-              link: "/value-investing/business-model/business-model.md",
+              link: "/value-investing/business/business-model.md",
             },
             {
               text: "成长空间",
-              link: "/value-investing/business-model/growth.md",
+              link: "/value-investing/business/growth.md",
             },
             {
               text: "护城河",
-              link: "/value-investing/business-model/moat.md",
+              link: "/value-investing/business/moat.md",
             },
           ],
         },
