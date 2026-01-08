@@ -551,6 +551,20 @@ export const pesticideStockData: StockItem[] = [
   },
 ];
 
+export const dairyStockData: StockItem[] = [
+  {
+    name: "伊利股份",
+    code: "600887",
+    profitValuationConfig: {
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.2, 0.05],
+      },
+      backYearsNum: 10,
+    },
+  },
+];
+
 export const stockData: StockItem[] = [
   ...chineseSpiritsStockData,
   ...homeApplianceStockData,
@@ -562,6 +576,7 @@ export const stockData: StockItem[] = [
   ...portStockData,
   ...chineseMedicineStockData,
   ...pesticideStockData,
+  ...dairyStockData,
   {
     name: "科沃斯",
     code: "603486",

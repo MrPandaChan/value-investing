@@ -215,6 +215,10 @@ export default defineConfig({
               ],
             },
             {
+              text: "乳制品",
+              items: [{ text: "伊利股份", link: "/company/dairy/yili.md" }],
+            },
+            {
               text: "汽车",
               link: "/company/car/car.md",
               items: [
