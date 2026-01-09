@@ -86,11 +86,26 @@ export default defineConfig({
               text: "投资错误",
               link: "/value-investing/value-investing/mistake.md",
             },
+            {
+              text: "不亏",
+              link: "/value-investing/value-investing/no-loss.md",
+            },
           ],
         },
         {
           text: "周期",
-          items: [{ text: "概要", link: "/value-investing/cycles/summary.md" }],
+          items: [
+            { text: "万物皆周期", link: "/value-investing/cycles/cycles.md" },
+            {
+              text: "周期判断",
+              link: "/value-investing/cycles/judge-cycles.md",
+            },
+            { text: "景气度", link: "/value-investing/cycles/sentiment.md" },
+          ],
+        },
+        {
+          text: "政策",
+          items: [{ text: "政策", link: "/value-investing/policy/policy.md" }],
         },
         {
           text: "商业",
@@ -139,8 +154,25 @@ export default defineConfig({
           text: "股票市场",
           items: [
             {
+              text: "A股",
+              link: "/value-investing/market/a-market.md",
+            },
+            {
               text: "港股",
               link: "/value-investing/market/hk-market.md",
+            },
+            {
+              text: "流动性",
+              link: "/value-investing/market/liquidity.md",
+            },
+          ],
+        },
+        {
+          text: "技术分析",
+          items: [
+            {
+              text: "多空力量的对比",
+              link: "/value-investing/",
             },
           ],
         },
