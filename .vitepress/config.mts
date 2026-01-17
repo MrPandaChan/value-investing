@@ -28,6 +28,15 @@ export default defineConfig({
     sidebar: {
       "/value-investing/": [
         {
+          text: "投资模型",
+          items: [
+            {
+              text: "TODO",
+              link: "/value-investing/todo/todo.md",
+            },
+          ],
+        },
+        {
           text: "价值投资",
           items: [
             {
