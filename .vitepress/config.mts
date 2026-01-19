@@ -11,6 +11,7 @@ export default defineConfig({
   base: "/value-investing/",
   markdown: {
     breaks: true,
+    math: true,
   },
   themeConfig: {
     outline: {
@@ -143,6 +144,10 @@ export default defineConfig({
             {
               text: "估值方法",
               link: "/value-investing/valuation/valuation.md",
+            },
+            {
+              text: "ROE、PB、增长与回报",
+              link: "/value-investing/valuation/roe-pb.md",
             },
           ],
         },
