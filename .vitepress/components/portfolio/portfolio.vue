@@ -13,7 +13,7 @@ const props = withDefaults(
   }>(),
   {
     currentValue: false,
-  }
+  },
 );
 
 interface BasicItem {
@@ -63,7 +63,7 @@ const basicStocks = ref<BasicItem[]>([
     code: "000858",
     name: "五粮液",
     industry: "白酒",
-    costBasis: 117.909,
+    costBasis: 117.9088,
     sharesHeld: 500,
     dividendTaxRatio: 0,
   },
@@ -88,7 +88,7 @@ const basicStocks = ref<BasicItem[]>([
     hkCode: "200596",
     industry: "白酒",
     name: "古井贡B",
-    costBasis: 95.1271,
+    costBasis: 87,
     sharesHeld: 600,
     dividendTaxRatio: 0,
   },
@@ -98,7 +98,7 @@ const basicStocks = ref<BasicItem[]>([
     name: "中国海洋石油H",
     industry: "能源",
     // costBasis: 18.436, // 16.8898
-    costBasis: 18.2462,
+    costBasis: 16.4654,
     sharesHeld: 1000,
     dividendTaxRatio: 0.28,
   },
@@ -106,8 +106,8 @@ const basicStocks = ref<BasicItem[]>([
     code: "600900",
     name: "长江电力",
     industry: "电力",
-    costBasis: 27.855,
-    sharesHeld: 600,
+    costBasis: 27.6228,
+    sharesHeld: 800,
     dividendTaxRatio: 0,
   },
   {
@@ -116,7 +116,7 @@ const basicStocks = ref<BasicItem[]>([
     name: "中远海控H",
     industry: "航运",
     // costBasis: 12.091, // 11.0769
-    costBasis: 12.3165,
+    costBasis: 11.1144,
     sharesHeld: 1000,
     dividendTaxRatio: 0.2,
   },
@@ -124,7 +124,7 @@ const basicStocks = ref<BasicItem[]>([
     code: "600886",
     name: "国投电力",
     industry: "电力",
-    costBasis: 13.429,
+    costBasis: 13.4289,
     sharesHeld: 800,
     dividendTaxRatio: 0,
   },
@@ -132,7 +132,7 @@ const basicStocks = ref<BasicItem[]>([
     code: "600690",
     name: "海尔智家",
     industry: "白色家电",
-    costBasis: 24.754,
+    costBasis: 24.7536,
     sharesHeld: 400,
     dividendTaxRatio: 0,
   },
@@ -156,8 +156,8 @@ const basicStocks = ref<BasicItem[]>([
     code: "600941",
     name: "中国移动",
     industry: "电信运营商",
-    costBasis: 101.784,
-    sharesHeld: 300,
+    costBasis: 100.501,
+    sharesHeld: 400,
     dividendTaxRatio: 0,
   },
   {
@@ -165,9 +165,17 @@ const basicStocks = ref<BasicItem[]>([
     hkCode: "06198",
     name: "青岛港H",
     industry: "港口",
-    costBasis: 7.0137,
+    costBasis: 6.3292,
     sharesHeld: 1000,
     dividendTaxRatio: 0.2,
+  },
+  {
+    code: "600036",
+    name: "招商银行",
+    industry: "银行",
+    costBasis: 38.8254,
+    sharesHeld: 200,
+    dividendTaxRatio: 0,
   },
 ]);
 
@@ -187,23 +195,37 @@ const useCurrentValue = async () => {
   }
 };
 
-const calHkPrice = async () => {
+const aCash = 354702.54;
+const bCash = 8724.05;
+const cash = 240804.49;
+
+let total = ref(0);
+
+const calculateCash = async () => {
   const exchangeRate = await getExchangeRate();
 
-  for (let i = 0; i < basicStocks.value.length; i += 1) {
-    const item = basicStocks.value[i];
-    if (item.hkCode) {
-      item.costBasis = item.costBasis / exchangeRate;
-    }
-  }
+  total.value = aCash + bCash / exchangeRate + cash;
 };
 
+// const calHkPrice = async () => {
+//   const exchangeRate = await getExchangeRate();
+
+//   for (let i = 0; i < basicStocks.value.length; i += 1) {
+//     const item = basicStocks.value[i];
+//     if (item.hkCode) {
+//       item.costBasis = item.costBasis / exchangeRate;
+//     }
+//   }
+// };
+
 onBeforeMount(() => {
+  calculateCash();
   if (props.currentValue) {
     useCurrentValue();
-  } else {
-    calHkPrice();
   }
+  // else {
+  //   calHkPrice();
+  // }
 });
 
 const portfolio = computed<portfolio>(() => {
@@ -274,7 +296,7 @@ const portfolio = computed<portfolio>(() => {
           rowspan: i === 0 ? arr.length : 0,
           industryRatio: total / sumShareHoldingValue,
         };
-      })
+      }),
     );
   }
 
@@ -456,6 +478,27 @@ const portfolio = computed<portfolio>(() => {
         <table class="valuation-table surplus-table">
           <tbody>
             <tr>
+              <td>A股可用</td>
+              <td>￥354702.54</td>
+            </tr>
+            <tr>
+              <td>B股可用</td>
+              <td>HK$‌8724.05</td>
+            </tr>
+            <tr>
+              <td>现金</td>
+              <td>￥240804.49</td>
+            </tr>
+            <tr>
+              <td>可用合计</td>
+              <td>￥{{ total.toFixed(2) }}</td>
+            </tr>
+          </tbody>
+        </table>
+
+        <table class="valuation-table surplus-table">
+          <tbody>
+            <tr>
               <td>透视盈余</td>
               <td>{{ formatNum(portfolio.perspectiveSurplus, 2) }}</td>
             </tr>
@@ -509,6 +552,15 @@ const portfolio = computed<portfolio>(() => {
       font-weight: bold;
       background-color: #f88920;
     }
+
+    + .surplus-table {
+      margin-left: 24px;
+    }
   }
+}
+
+.portfolio-footer {
+  display: flex;
+  justify-content: flex-start;
 }
 </style>

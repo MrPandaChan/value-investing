@@ -8,7 +8,7 @@ type Prettify<T> = {
 // 核心 Assign 类型实现
 export type Assign<T extends any[], Result = {}> = T extends [
   infer First,
-  ...infer Rest
+  ...infer Rest,
 ]
   ? First extends object
     ? Assign<Rest, Prettify<Omit<Result, keyof First> & First>>
@@ -565,6 +565,13 @@ export const dairyStockData: StockItem[] = [
   },
 ];
 
+export const bankStockData: StockItem[] = [
+  {
+    name: "招商银行",
+    code: "600036",
+  },
+];
+
 export const stockData: StockItem[] = [
   ...chineseSpiritsStockData,
   ...homeApplianceStockData,
@@ -577,6 +584,7 @@ export const stockData: StockItem[] = [
   ...chineseMedicineStockData,
   ...pesticideStockData,
   ...dairyStockData,
+  ...bankStockData,
   {
     name: "科沃斯",
     code: "603486",

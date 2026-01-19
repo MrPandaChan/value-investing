@@ -140,7 +140,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
         secids,
         v: v(),
       },
-    }
+    },
   );
 
   return res.data.data.diff.map((v: DynamicDataResponse) => {
@@ -160,7 +160,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
  * 主营业务
  */
 async function getPrimaryBusinessData(
-  code: string
+  code: string,
 ): Promise<PrimaryBusinessResponseData[] | null> {
   const SECUCODE = toSECUCODE(code);
   const res = await axios.get<
@@ -195,7 +195,7 @@ async function getPrimaryBusinessData(
  * 东方财富的现金流量表
  */
 async function getCashflow(
-  code: string
+  code: string,
 ): Promise<EastMoneyCashFlowResponse[] | null> {
   const SECUCODE = toSECUCODE(code);
   const res = await axios.get<EastMoneyResponseWrap<EastMoneyCashFlowResponse>>(
@@ -213,7 +213,7 @@ async function getCashflow(
         client: "PC",
         v: v(),
       },
-    }
+    },
   );
   if (res.data.success) {
     return res.data.result.data
@@ -240,7 +240,7 @@ async function getCashflow(
  * 东方财富分红
  */
 async function getDividend(
-  code: string
+  code: string,
 ): Promise<EastMoneyDividendResponse[] | null> {
   const SECUCODE = toSECUCODE(code);
   const res = await axios.get<EastMoneyResponseWrap<EastMoneyDividendResponse>>(
@@ -259,7 +259,7 @@ async function getDividend(
         client: "PC",
         v: v(),
       },
-    }
+    },
   );
   if (res.data.success) {
     return res.data.result.data;
@@ -279,7 +279,7 @@ export async function getExchangeRate() {
         secids: "133.CNHHKD",
         v: v(),
       },
-    }
+    },
   );
   return res.data.data.diff[0].f2 / 10000;
 }
@@ -300,7 +300,6 @@ async function fetchAStockData(stockItem: StockItem) {
 
   if (res.some((v) => v === null)) {
     console.log("存在 null 的数据");
-    return;
   }
 
   const [
@@ -323,7 +322,7 @@ async function fetchAStockData(stockItem: StockItem) {
 
   const eastMoneyData: EastMoneyData = {
     primaryBusiness,
-    eastMoneyCashFlow,
+    eastMoneyCashFlow: eastMoneyCashFlow ?? [],
     dynamicData: dynamicData[0],
     dividendData,
   } as EastMoneyData;
@@ -363,7 +362,7 @@ export async function main() {
       __dirname,
       "..",
       "data",
-      `${stock.code}.json`
+      `${stock.code}.json`,
     );
 
     // 如果不是强制更新且文件已存在，则跳过

@@ -28,7 +28,7 @@ function getVal(dateValue: string, data: StockData) {
     options?: {
       b?: keyof SinaFinanceData;
       key?: keyof ReportDateItem;
-    }
+    },
   ) => {
     const arr = options?.b
       ? [data[options.b]]
@@ -319,7 +319,7 @@ function generateFixedAssetInvestmentAnalysisData(data: StockData) {
       // 应该取得是：将净利润调节为经营活动现金流量 下的 固定资产折旧、油气资产折耗、生产性生物资产折旧;
       let depreciation = 0;
       const target = data.eastMoneyCashFlow.find(
-        (v) => formatDate(v.REPORT_DATE, "Ymd") === date.date_value
+        (v) => formatDate(v.REPORT_DATE, "Ymd") === date.date_value,
       );
       if (target) {
         depreciation = amortize(target);
@@ -477,7 +477,7 @@ function generatePrimaryBusinessData(data: StockData) {
   const arr: PrimaryBusinessData[] = [];
 
   const firstYear = data.primaryBusiness.find((v) =>
-    formatDate(v.REPORT_DATE, "Ymd").endsWith("1231")
+    formatDate(v.REPORT_DATE, "Ymd").endsWith("1231"),
   );
   const firstYearDate = formatDate(firstYear?.REPORT_DATE, "Ymd");
 
@@ -530,7 +530,7 @@ function generateVauationData(data: StockData): ValuationData {
       let totalDividendA = 0;
       if (Array.isArray(data.dividendData)) {
         const arr = data.dividendData.filter(
-          (v) => v.REPORT_DATE.slice(0, 4) === date.date_value.slice(0, 4)
+          (v) => v.REPORT_DATE.slice(0, 4) === date.date_value.slice(0, 4),
         );
 
         dps = arr.reduce((pre, cur) => {
@@ -542,7 +542,7 @@ function generateVauationData(data: StockData): ValuationData {
         }, 0);
 
         const target = arr.find(
-          (v) => v.REPORT_DATE === `${date.date_value.slice(0, 4)}年报`
+          (v) => v.REPORT_DATE === `${date.date_value.slice(0, 4)}年报`,
         );
         if (target) {
           totalDividend = target.TOTAL_DIVIDEND;
@@ -597,7 +597,7 @@ function generateVauationData(data: StockData): ValuationData {
   const minorityInterest = lastVal("MINYSHARRIGH");
 
   const lastYearDateValue = data.gjzb.report_date.find(
-    (v) => v.date_type === 4
+    (v) => v.date_type === 4,
   )!.date_value;
   const lastYearVal = getVal(lastYearDateValue, data);
   const roe = lastYearVal("ROEWEIGHTED");
@@ -626,8 +626,14 @@ function generateVauationData(data: StockData): ValuationData {
 /**
  * 获取最近一年数据
  */
-function generateRecentYearData(data: StockData): RecentYearData {
+function generateRecentYearData(item: {
+  code: string;
+  data: StockData;
+}): RecentYearData {
   let netProfit = 0;
+  const { code, data } = item;
+  const isBank = code === "600036";
+  const netProfitKey = isBank ? "NETPARECOMPPROF" : "PARENETP";
 
   const dates = data.gjzb.report_date.slice(0, 5);
   for (let i = 0; i < 4; i += 1) {
@@ -639,11 +645,11 @@ function generateRecentYearData(data: StockData): RecentYearData {
 
     if (item.date_type === prevItem.date_type + 1) {
       // 计算单个季度数据并累加
-      netProfit += val("PARENETP") - lastVal("PARENETP");
+      netProfit += val(netProfitKey) - lastVal(netProfitKey);
     }
     // 如果不是连续的报告期，则直接相加
     else {
-      netProfit += val("PARENETP");
+      netProfit += val(netProfitKey);
     }
   }
 
@@ -668,7 +674,7 @@ function generateRecentYearData(data: StockData): RecentYearData {
     const primaryBusinessData = generatePrimaryBusinessData(stockData.data);
     const valuationData = generateVauationData(stockData.data);
     const dynamicData = stockData.data.dynamicData;
-    const recentYearData = generateRecentYearData(stockData.data);
+    const recentYearData = generateRecentYearData(stockData);
 
     data[stockData.code] = {
       basicRevenueData: basicRevenueData.slice(0, 11),
@@ -677,7 +683,7 @@ function generateRecentYearData(data: StockData): RecentYearData {
       workingCapitalData: workingCapitalData.slice(0, 11),
       fixedAssetInvestmentAnalysisData: fixedAssetInvestmentAnalysisData.slice(
         0,
-        11
+        11,
       ),
       returnData: returnData.slice(0, 11),
       turnoverRateData: turnoverRateData.slice(0, 11),
