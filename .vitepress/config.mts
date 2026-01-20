@@ -1,5 +1,7 @@
 import { defineConfig } from "vitepress";
 
+const isDev = process.env.NODE_ENV !== "production";
+
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
   // 自定义CSS变量，调整内容区域宽度
@@ -205,15 +207,19 @@ export default defineConfig({
         },
       ],
       "/company/": [
-        {
-          text: "持仓组合",
-          items: [
-            {
-              text: "透视盈余",
-              link: "/company/portfolio/portfolio.md",
-            },
-          ],
-        },
+        ...(isDev
+          ? [
+              {
+                text: "持仓组合",
+                items: [
+                  {
+                    text: "透视盈余",
+                    link: "/company/portfolio/portfolio.md",
+                  },
+                ],
+              },
+            ]
+          : []),
         {
           text: "消费品",
           items: [
