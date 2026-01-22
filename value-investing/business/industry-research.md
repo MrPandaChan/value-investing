@@ -228,7 +228,7 @@
 
 ![常见产业链核心驱动环节和景气度指标](./assets/industry/common-industrial-chain.jpg)
 
-![上游原材料的关键景气度指标](./assets/industry/upstream-raw-materials.jpg.jpg)
+![上游原材料的关键景气度指标](./assets/industry/upstream-raw-materials.jpg)
 
 ![中游制造业的关键景气度指标](./assets/industry/midstream-manufacturing.jpg)
 
