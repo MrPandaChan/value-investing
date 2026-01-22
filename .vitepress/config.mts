@@ -188,7 +188,7 @@ export default defineConfig({
           items: [
             {
               text: "多空力量的对比",
-              link: "/value-investing/",
+              link: "/value-investing/analysis/compare.md",
             },
           ],
         },
@@ -203,7 +203,13 @@ export default defineConfig({
         },
         {
           text: "总结",
-          items: [{ text: "2025", link: "/value-investing/summary/2025.md" }],
+          items: [
+            {
+              text: "复盘方法论",
+              link: "/value-investing/summary/review-method.md",
+            },
+            { text: "2025", link: "/value-investing/summary/2025.md" },
+          ],
         },
       ],
       "/company/": [
