@@ -176,6 +176,12 @@ export default defineConfig({
             {
               text: "A股",
               link: "/value-investing/market/a-market.md",
+              items: [
+                {
+                  text: "《追寻价值之路》",
+                  link: "/value-investing/market/path-to-pursuing-value.md",
+                },
+              ],
             },
             {
               text: "港股",
