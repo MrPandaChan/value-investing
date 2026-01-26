@@ -395,6 +395,12 @@ export default defineConfig({
         {
           text: "银行",
           link: "/company/bank/bank.md",
+          items: [
+            {
+              text: "价值投资之银行大博弈",
+              link: "/company/bank/play-a-game.md",
+            },
+          ],
         },
       ],
     },
