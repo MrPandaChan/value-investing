@@ -572,6 +572,20 @@ export const bankStockData: StockItem[] = [
   },
 ];
 
+export const chemicalsStockData: StockItem[] = [
+  {
+    name: "万华化学",
+    code: "600309",
+    profitValuationConfig: {
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      backYearsNum: 10,
+    },
+  },
+];
+
 export const stockData: StockItem[] = [
   ...chineseSpiritsStockData,
   ...homeApplianceStockData,
@@ -585,6 +599,7 @@ export const stockData: StockItem[] = [
   ...pesticideStockData,
   ...dairyStockData,
   ...bankStockData,
+  ...chemicalsStockData,
   {
     name: "科沃斯",
     code: "603486",

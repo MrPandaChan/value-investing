@@ -389,6 +389,10 @@ export default defineConfig({
           items: [{ text: "广信股份", link: "/company/pesticide/guangxin.md" }],
         },
         {
+          text: "化学制品",
+          items: [{ text: "万华化学", link: "/company/chemicals/wanhua.md" }],
+        },
+        {
           text: "银行",
           link: "/company/bank/bank.md",
         },
