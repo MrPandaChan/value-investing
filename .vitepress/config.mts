@@ -106,6 +106,10 @@ export default defineConfig({
               text: "不亏",
               link: "/value-investing/value-investing/no-loss.md",
             },
+            {
+              text: "人物及案例",
+              link: "/value-investing/value-investing/figures-and-cases.md",
+            },
           ],
         },
         {
