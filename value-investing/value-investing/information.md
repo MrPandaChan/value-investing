@@ -81,6 +81,17 @@
 - 残酷理性：观点应随事实而变，警惕心理偏差，持续更新认知。
 - 健康复利：身体是长期投资的基础，需对抗演化不适，追求全面健康生活。
 
+1. [保住本金（一）：机构现金仓位已达历史最低](https://mp.weixin.qq.com/s/DWDOIxQmO8Almx7WR7XeIg)
+2. [保住本金（二）：全球投资者情绪极度亢奋](https://mp.weixin.qq.com/s/SGCbQLDyRs2-fPNdx-5AHw)
+3. [保住本金（三）：风险敞口处于历史区间高位](https://mp.weixin.qq.com/s/8S3SZoXFWwiUu1JmVRLbjQ)
+4. [保住本金（四）：投资者对经济预期极度乐观](https://mp.weixin.qq.com/s/gF423_1o-jpE0GINHC4Kkw)
+5. [保住本金（五）：做多黄金成为最拥挤交易](https://mp.weixin.qq.com/s/ECXIxxVK0gCuIt2cMqvgAg)
+6. [保住现金（六）：风险资产敞口达2021年水平](https://mp.weixin.qq.com/s/lY8jWbWlemau0IDt-G1RMA)
+7. [保住本金（七）：远离泡沫资产](https://mp.weixin.qq.com/s/SXC5R9aRD3_RQuBXW-PX-w)
+8. [保住本金（八）：经典反指——天量IPO](https://mp.weixin.qq.com/s/PT6OSezSeteV33uWevZDAw)
+9. [保住本金（九）：中证2000堪比十年前创业板](https://mp.weixin.qq.com/s/LAYgbKakn1VOFiQPG-IeiQ)
+10. [保住本金（十）：美股处于百年区间98%分位](https://mp.weixin.qq.com/s/i3g_wUyJJ9DyBSo4JZ3BcQ)
+
 ### 周期股
 
 - [周期投资方法论（买点篇）20250718 喝口白粥](https://xueqiu.com/8417165820/343022484)

@@ -204,6 +204,10 @@ export default defineConfig({
               text: "多空力量的对比",
               link: "/value-investing/analysis/compare.md",
             },
+            {
+              text: "波段",
+              link: "/value-investing/analysis/band-trading.md",
+            },
           ],
         },
         {
