@@ -344,6 +344,7 @@ export default defineConfig({
           link: "/company/port/port.md",
           items: [
             { text: "青岛港", link: "/company/port/qingdao.md" },
+            { text: "上港集团", link: "/company/port/shanggang.md" },
             { text: "唐山港", link: "/company/port/tangshan.md" },
           ],
         },
