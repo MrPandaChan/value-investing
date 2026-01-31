@@ -31,7 +31,7 @@ export default defineConfig({
     sidebar: {
       "/value-investing/": [
         {
-          text: "投资模型",
+          text: "待办清单",
           items: [
             {
               text: "TODO",
@@ -244,6 +244,19 @@ export default defineConfig({
               },
             ]
           : []),
+        {
+          text: "投资模型",
+          items: [
+            {
+              text: "价值轮动模型",
+              link: "/company/model/rotation-model.md",
+            },
+            {
+              text: "企业价值评估模型",
+              link: "/company/model/value-evaluation.md",
+            },
+          ],
+        },
         {
           text: "消费品",
           items: [
