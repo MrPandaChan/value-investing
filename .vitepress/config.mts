@@ -229,6 +229,15 @@ export default defineConfig({
             { text: "2025", link: "/value-investing/summary/2025.md" },
           ],
         },
+        {
+          text: "笔记",
+          items: [
+            {
+              text: "风和投资随笔",
+              link: "/value-investing/notes/fenghe.md",
+            },
+          ],
+        },
       ],
       "/company/": [
         ...(isDev
