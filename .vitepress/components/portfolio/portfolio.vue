@@ -88,8 +88,8 @@ const basicStocks = ref<BasicItem[]>([
     hkCode: "200596",
     industry: "白酒",
     name: "古井贡B",
-    costBasis: 87,
-    sharesHeld: 600,
+    costBasis: 83,
+    sharesHeld: 700,
     dividendTaxRatio: 0,
   },
   {
@@ -106,8 +106,8 @@ const basicStocks = ref<BasicItem[]>([
     code: "600900",
     name: "长江电力",
     industry: "电力",
-    costBasis: 27.6228,
-    sharesHeld: 800,
+    costBasis: 27.1961,
+    sharesHeld: 1200,
     dividendTaxRatio: 0,
   },
   {
@@ -156,8 +156,8 @@ const basicStocks = ref<BasicItem[]>([
     code: "600941",
     name: "中国移动",
     industry: "电信运营商",
-    costBasis: 100.501,
-    sharesHeld: 400,
+    costBasis: 99.311,
+    sharesHeld: 500,
     dividendTaxRatio: 0,
   },
   {
@@ -173,8 +173,8 @@ const basicStocks = ref<BasicItem[]>([
     code: "600036",
     name: "招商银行",
     industry: "银行",
-    costBasis: 38.8254,
-    sharesHeld: 200,
+    costBasis: 38.1121,
+    sharesHeld: 600,
     dividendTaxRatio: 0,
   },
 ]);
@@ -195,9 +195,9 @@ const useCurrentValue = async () => {
   }
 };
 
-const aCash = 354702.54;
-const bCash = 8724.05;
-const cash = 240804.49;
+const aCash = 321000;
+const bCash = 916.89;
+const cash = 240532.79;
 
 let total = ref(0);
 
@@ -479,15 +479,15 @@ const portfolio = computed<portfolio>(() => {
           <tbody>
             <tr>
               <td>A股可用</td>
-              <td>￥354702.54</td>
+              <td>￥{{ aCash }}</td>
             </tr>
             <tr>
               <td>B股可用</td>
-              <td>HK$‌8724.05</td>
+              <td>HK${{ bCash }}</td>
             </tr>
             <tr>
               <td>现金</td>
-              <td>￥240804.49</td>
+              <td>￥{{ cash }}</td>
             </tr>
             <tr>
               <td>可用合计</td>
