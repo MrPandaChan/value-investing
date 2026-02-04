@@ -18,6 +18,7 @@ import ProfitValuation from "../components/valuation/profit-valuation.vue";
 import ProfitValuationGroup from "../components/valuation/profit-valuation-group.vue";
 import Portfolio from "../components/portfolio/portfolio.vue";
 import ValuationEvaluation from "../components/value-evaluation/value-evaluation.vue";
+import RotationModel from "../components/rotation-model/rotation-model.vue";
 import "./custom.scss";
 import "./shared.scss";
 
@@ -57,5 +58,8 @@ export default define<Theme>({
 
     // 价值评估模型
     app.component("ValuationEvaluation", ValuationEvaluation);
+
+    // 价值轮动模型
+    app.component("RotationModel", RotationModel);
   },
 });

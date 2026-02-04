@@ -67,6 +67,7 @@
 ## 投资数据网
 
 - [投资数据网（收费）](https://www.touzid.com/)
+- [指标库-萝卜投研](https://robo.datayes.com/v2/landing/indicator_library)
 
 ## IMA 知识库
 
