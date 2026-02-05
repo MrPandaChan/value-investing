@@ -5,7 +5,13 @@ import { Stock } from "../../service/stock";
  * 列配置接口
  */
 export interface ColumnConfig {
-  key: keyof Stock | "collectionRatio" | "cumulativeRatio";
+  key:
+    | keyof Stock
+    | "collectionRatio"
+    | "cumulativeRatio"
+    | "allocationShares"
+    | "collectionRatioShares"
+    | "cumulativeRatioShares";
   label: string;
   thClass?: string;
   tdClass?: string;
@@ -79,6 +85,14 @@ export const tableColumns: ColumnConfig[] = [
     },
   },
   {
+    key: "allocationShares",
+    label: "目标<br />股数",
+    formatter: (value: number | undefined) => {
+      if (value === undefined || value === 0) return "--";
+      return formatNum(value, 0);
+    },
+  },
+  {
     key: "collectionRatio",
     label: "收集<br />比例",
     formatter: (value: number | undefined) => {
@@ -87,11 +101,27 @@ export const tableColumns: ColumnConfig[] = [
     },
   },
   {
+    key: "collectionRatioShares",
+    label: "收集<br />股数",
+    formatter: (value: number | undefined) => {
+      if (value === undefined || value === 0) return "--";
+      return formatNum(value, 0);
+    },
+  },
+  {
     key: "cumulativeRatio",
     label: "累计<br />收集",
     formatter: (value: number | undefined) => {
       if (value === undefined || value === 0) return "--";
       return formatPercent(value * 100, 2);
+    },
+  },
+  {
+    key: "cumulativeRatioShares",
+    label: "累计<br />股数",
+    formatter: (value: number | undefined) => {
+      if (value === undefined || value === 0) return "--";
+      return formatNum(value, 0);
     },
   },
   // {

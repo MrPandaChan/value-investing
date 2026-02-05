@@ -66,6 +66,20 @@ export class Stock {
   // 累计收集
   cumulativeRatio?: number;
 
+  // 目标仓位股数
+  allocationShares?: number;
+
+  // 收集比例股数
+  collectionRatioShares?: number;
+
+  // 累计收集股数
+  cumulativeRatioShares?: number;
+
+  // 一手股数
+  get sharesPerLot() {
+    return this.stockItem.sharesPerLot || 100;
+  }
+
   constructor(stockItem: StockItem) {
     this.stockItem = stockItem;
     this.data = data[stockItem.code];
@@ -95,5 +109,42 @@ export class Stock {
 
   setCumulativeRatio(val?: number) {
     this.cumulativeRatio = val;
+  }
+
+  // 计算目标仓位的股数
+  calculateAllocationShares(totalAmount: number) {
+    const amount = this.allocation * totalAmount;
+    const shares = Math.floor(amount / this.price.value);
+    const lots = Math.floor(shares / this.sharesPerLot);
+    return lots * this.sharesPerLot;
+  }
+
+  // 计算收集比例的股数
+  calculateCollectionRatioShares(totalAmount: number) {
+    if (this.collectionRatio === undefined || this.collectionRatio === 0) {
+      return undefined;
+    }
+    const amount = this.collectionRatio * totalAmount;
+    const shares = Math.floor(amount / this.price.value);
+    const lots = Math.floor(shares / this.sharesPerLot);
+    return lots * this.sharesPerLot;
+  }
+
+  // 计算累计收集的股数
+  calculateCumulativeRatioShares(totalAmount: number) {
+    if (this.cumulativeRatio === undefined || this.cumulativeRatio === 0) {
+      return undefined;
+    }
+    const amount = this.cumulativeRatio * totalAmount;
+    const shares = Math.floor(amount / this.price.value);
+    const lots = Math.floor(shares / this.sharesPerLot);
+    return lots * this.sharesPerLot;
+  }
+
+  // 设置所有股数
+  setAllShares(totalAmount: number) {
+    this.allocationShares = this.calculateAllocationShares(totalAmount);
+    this.collectionRatioShares = this.calculateCollectionRatioShares(totalAmount);
+    this.cumulativeRatioShares = this.calculateCumulativeRatioShares(totalAmount);
   }
 }

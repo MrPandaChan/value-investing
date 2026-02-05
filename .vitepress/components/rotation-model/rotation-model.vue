@@ -1,11 +1,14 @@
 <script lang="ts" setup>
-import { computed, h } from "vue";
+import { computed, h, ref } from "vue";
 import { Stock } from "../../service/stock";
 import { tableColumns } from "./table-columns";
 import { type AreaRowType, AreaType, RowType, type TableRow } from "./types";
 import StockRow from "./stock-row.vue";
 import AreaRow from "./area-row.vue";
 import { stockData } from "../../../types";
+
+// 投入金额
+const investmentAmount = ref(1000000); // 默认100万
 
 // 多等年数、当前期望收益、分红率、公司名称、买入立刻亏损、10%预期、当前股价、近3年低价、分红需等月数
 
@@ -215,11 +218,13 @@ const tableData = computed(() => {
       const areaCumulativeRatio = areaCumulativeRatios.get(areaConfig) || 0;
 
       for (const stock of sortedStocks) {
-        if (areaCumulativeRatio > 0) {
+        if (areaCumulativeRatio > 0 && areaConfig.ratio > 0) {
           stock.setCumulativeRatio(stock.allocation * areaCumulativeRatio);
         } else {
           stock.setCumulativeRatio(undefined);
         }
+        // 计算股数
+        stock.setAllShares(investmentAmount.value);
       }
 
       // 添加该区域的所有股票行
@@ -232,6 +237,11 @@ const tableData = computed(() => {
 </script>
 
 <template>
+  <div class="input-wrapper">
+    <label>投入金额：</label>
+    <input v-model="investmentAmount" type="number" class="amount-input" />
+    <span>元</span>
+  </div>
   <table class="rotation-table">
     <thead>
       <tr>
@@ -255,6 +265,26 @@ const tableData = computed(() => {
 </template>
 
 <style lang="scss">
+.input-wrapper {
+  margin-bottom: 10px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+
+  label {
+    font-weight: bold;
+  }
+
+  .amount-input {
+    width: 150px;
+    padding: 4px 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+}
+
 .rotation-table {
   border-collapse: collapse;
   border-spacing: 0;

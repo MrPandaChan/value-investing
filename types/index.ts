@@ -48,6 +48,7 @@ export interface StockItem {
   code: string; // A 股代码
   name: string; // 股票名称
   allocation: number; // 目标仓位
+  sharesPerLot?: number; // 一手股数，默认100
   profitValuationConfig?: ProfitValuationConfig;
   hkMarketConfig?: HKMarketConfig;
   bMarketConfig?: BMarketConfig;
