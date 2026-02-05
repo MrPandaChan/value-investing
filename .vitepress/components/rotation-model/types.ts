@@ -13,7 +13,8 @@ export enum AreaType {
 export interface AreaRowType {
   rowType: RowType.AREA;
   areaType: AreaType;
-  trClass: string;
+  trClass?: string;
+  tdClass?: string;
   text: string;
 }
 

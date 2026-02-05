@@ -48,8 +48,8 @@ function getCellClass(col: ColumnConfig, row: Stock): string {
       v-for="col in tableColumns"
       :key="col.key"
       :class="getCellClass(col, data)"
+      v-html="getCellValue(col, data)"
     >
-      {{ getCellValue(col, data) }}
     </td>
   </tr>
 </template>

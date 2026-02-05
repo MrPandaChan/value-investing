@@ -12,6 +12,6 @@ const columnCount = tableColumns.length;
 
 <template>
   <tr :class="props.data.trClass">
-    <td :colspan="columnCount">{{ props.data.text }}</td>
+    <td :class="props.data.tdClass" :colspan="columnCount">{{ props.data.text }}</td>
   </tr>
 </template>

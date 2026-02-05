@@ -31,6 +31,7 @@ export class Stock {
     return this.stockItem.name;
   }
 
+  // 当前期望收益
   longTermAverageReturnYield = computed(() => {
     return this.anchor.value / this.price.value / BACK_YEARS_NUM;
   });
