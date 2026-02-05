@@ -2,7 +2,6 @@ import { getStockItem, type ServiceData, type StockItem } from "../../types";
 import { computed, ref, type Ref } from "vue";
 import { RowType } from "../components/rotation-model/types";
 import { data } from "./data";
-import { numToAHundredMillion } from "../../fetch-data/helper";
 import { ProfitValuation } from "./profit-valuation";
 
 // 以 10 年回本进行计算
@@ -56,6 +55,17 @@ export class Stock {
     return totalDividend / profit;
   }
 
+  // 目标仓位
+  get allocation() {
+    return this.stockItem.allocation;
+  }
+
+  // 收集比例
+  collectionRatio?: number;
+
+  // 累计收集
+  cumulativeRatio?: number;
+
   constructor(stockItem: StockItem) {
     this.stockItem = stockItem;
     this.data = data[stockItem.code];
@@ -77,5 +87,13 @@ export class Stock {
     );
 
     this.anchor.value = profitValuation.anchor.value;
+  }
+
+  setCollectionRatio(val?: number) {
+    this.collectionRatio = val;
+  }
+
+  setCumulativeRatio(val?: number) {
+    this.cumulativeRatio = val;
   }
 }

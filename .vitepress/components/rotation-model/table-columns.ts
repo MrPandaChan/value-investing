@@ -5,7 +5,7 @@ import { Stock } from "../../service/stock";
  * 列配置接口
  */
 export interface ColumnConfig {
-  key: keyof Stock;
+  key: keyof Stock | "collectionRatio" | "cumulativeRatio";
   label: string;
   thClass?: string;
   tdClass?: string;
@@ -70,6 +70,29 @@ export const tableColumns: ColumnConfig[] = [
     thClass: "bold blue",
     tdClass: "bold blue",
     formatter: (value: number) => formatNum(value, 2).toFixed(2),
+  },
+  {
+    key: "allocation",
+    label: "目标<br />仓位",
+    formatter: (value: number) => {
+      return value > 0 ? formatPercent(value * 100, 0) : "--";
+    },
+  },
+  {
+    key: "collectionRatio",
+    label: "收集<br />比例",
+    formatter: (value: number | undefined) => {
+      if (value === undefined || value === 0) return "--";
+      return formatPercent(value * 100, 2);
+    },
+  },
+  {
+    key: "cumulativeRatio",
+    label: "累计<br />收集",
+    formatter: (value: number | undefined) => {
+      if (value === undefined || value === 0) return "--";
+      return formatPercent(value * 100, 2);
+    },
   },
   // {
   //   key: "",

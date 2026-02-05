@@ -29,23 +29,6 @@ function renderRow(row: TableRow) {
   }
 }
 
-/**
- * 围攻区(12% 以上预期收益率)黑天鹅纷飞、鬼故事遍地的时候才可能出现
- * (0)主战区(10.5%-12%的预期收益率)
- * (0)主战区3(10%的预期收益率)(0%到5%)15%
- * (0)主战区2 (9.5%预期收益率)(-5%以内)10%
- * (0)主战区1(9%预期收益率)(-5%到-10%)10%
- * (1)观察区2(8.5%预期收益率)(-10%到-15%)5%
- * (2)观察区1(8%预期收益率)(-15%到-20%)5%
- * (3)平庸区下沿(6.5%-8%预期收益率) *备用弹药库2*耐心持有(-20%到-35%)
- * (4)平庸区上沿(5.5%-5.5%预期收益率) *备用弹药库1*分批轮动(-35%到-45%)
- * (4)平庸区上沿(5.5%-5.5%预期收益率) *备用弹药库1*分批轮动(-35%到-45%)
- * (5)险地区下沿1(低于5.5%的预期) 优先轮动或换现金等机会(-45%到-50%)
- * (6)险地区下沿2(低于5%的预期) 优先轮动或换现金等机会(-50到-55%)
- * (7)险地区下沿3(低于4.5%的预期) 优先轮动或换现金等机会(-55%到-60%)
- * (8)险地区下沿4(低于4%的预期) 优先轮动或换现金等机会(-60以上)
- */
-
 // 区域配置定义
 interface AreaConfig {
   name: string;
@@ -53,22 +36,101 @@ interface AreaConfig {
   maxYield: number | null;
   trClass?: string;
   tdClass?: string;
+  ratio: number; // 收集比例（0.15 表示 15%）
 }
 
 const areaConfigs: AreaConfig[] = [
-  { name: "围攻区 (12% 以上预期收益率) 黑天鹅纷飞、鬼故事遍地的时候才可能出现", minYield: 12, maxYield: null, tdClass: "bold bg-orange" },
-  { name: "(0) 主战区 (10.5% - 12%的预期收益率)", minYield: 10.5, maxYield: 12, tdClass: "bold bg-pink" },
-  { name: "(0) 主战区3 (10% 的预期收益率) (0% 到 5%) 15%", minYield: 10, maxYield: 10.5, tdClass: "bold bg-pink" },
-  { name: "(0) 主战区2 (9.5% 预期收益率) (-5% 以内) 10%", minYield: 9.5, maxYield: 10, tdClass: "bold bg-pink" },
-  { name: "(0) 主战区1 (9%预期收益率) (-5% 到-10%) 10%", minYield: 9, maxYield: 9.5, tdClass: "bold bg-pink" },
-  { name: "(1) 观察区2 (8.5%预期收益率) (-10% 到-15%) 5%", minYield: 8.5, maxYield: 9, tdClass: "bold red" },
-  { name: "(2) 观察区1 (8%预期收益率) (-15% 到-20%) 5%", minYield: 8, maxYield: 8.5, tdClass: "bold red" },
-  { name: "(3) 平庸区下沿 (6.5%-8%预期收益率) *备用弹药库2*耐心持有(-20% 到 -35%)", minYield: 6.5, maxYield: 8, tdClass: "bold red" },
-  { name: "(4) 平庸区上沿 (5.5%-5.5%预期收益率) *备用弹药库1*分批轮动(-35% 到 -45%)", minYield: 5.5, maxYield: 6.5, tdClass: "bold red" },
-  { name: "(5) 险地区下沿1 (低于5.5%的预期) 优先轮动或换现金等机会(-45% 到 -50%)", minYield: 5, maxYield: 5.5, tdClass: "bold red" },
-  { name: "(6) 险地区下沿2 (低于5%的预期) 优先轮动或换现金等机会(-50 到 -55%)", minYield: 4.5, maxYield: 5, tdClass: "bold red" },
-  { name: "(7) 险地区下沿3 (低于4.5%的预期) 优先轮动或换现金等机会(-55% 到 -60%)", minYield: 4, maxYield: 4.5, tdClass: "bold red" },
-  { name: "(8) 险地区下沿4 (低于4%的预期) 优先轮动或换现金等机会(-60% 以上)", minYield: 0, maxYield: 4, tdClass: "bold red" },
+  {
+    name: "围攻区 (12% 以上预期收益率) 黑天鹅纷飞、鬼故事遍地的时候才可能出现",
+    minYield: 12,
+    maxYield: null,
+    tdClass: "bold bg-orange",
+    ratio: 0,
+  },
+  {
+    name: "(0) 主战区 (10.5% - 12%的预期收益率) 60%",
+    minYield: 10.5,
+    maxYield: 12,
+    tdClass: "bold bg-pink",
+    ratio: 0.6,
+  },
+  {
+    name: "(0) 主战区3 (10% 的预期收益率) (0% 到 5%) 15%",
+    minYield: 10,
+    maxYield: 10.5,
+    tdClass: "bold bg-pink",
+    ratio: 0.15,
+  },
+  {
+    name: "(0) 主战区2 (9.5% 预期收益率) (-5% 以内) 10%",
+    minYield: 9.5,
+    maxYield: 10,
+    tdClass: "bold bg-pink",
+    ratio: 0.1,
+  },
+  {
+    name: "(0) 主战区1 (9%预期收益率) (-5% 到-10%) 10%",
+    minYield: 9,
+    maxYield: 9.5,
+    tdClass: "bold bg-pink",
+    ratio: 0.1,
+  },
+  {
+    name: "(1) 观察区2 (8.5%预期收益率) (-10% 到-15%) 5%",
+    minYield: 8.5,
+    maxYield: 9,
+    tdClass: "bold red",
+    ratio: 0.05,
+  },
+  {
+    name: "(2) 观察区1 (8%预期收益率) (-15% 到-20%) 5%",
+    minYield: 8,
+    maxYield: 8.5,
+    tdClass: "bold red",
+    ratio: 0.05,
+  },
+  {
+    name: "(3) 平庸区下沿 (6.5%-8%预期收益率) *备用弹药库2*耐心持有(-20% 到 -35%)",
+    minYield: 6.5,
+    maxYield: 8,
+    tdClass: "bold red",
+    ratio: 0,
+  },
+  {
+    name: "(4) 平庸区上沿 (5.5%-5.5%预期收益率) *备用弹药库1*分批轮动(-35% 到 -45%)",
+    minYield: 5.5,
+    maxYield: 6.5,
+    tdClass: "bold red",
+    ratio: 0,
+  },
+  {
+    name: "(5) 险地区下沿1 (低于5.5%的预期) 优先轮动或换现金等机会(-45% 到 -50%)",
+    minYield: 5,
+    maxYield: 5.5,
+    tdClass: "bold red",
+    ratio: 0,
+  },
+  {
+    name: "(6) 险地区下沿2 (低于5%的预期) 优先轮动或换现金等机会(-50 到 -55%)",
+    minYield: 4.5,
+    maxYield: 5,
+    tdClass: "bold red",
+    ratio: 0,
+  },
+  {
+    name: "(7) 险地区下沿3 (低于4.5%的预期) 优先轮动或换现金等机会(-55% 到 -60%)",
+    minYield: 4,
+    maxYield: 4.5,
+    tdClass: "bold red",
+    ratio: 0,
+  },
+  {
+    name: "(8) 险地区下沿4 (低于4%的预期) 优先轮动或换现金等机会(-60% 以上)",
+    minYield: 0,
+    maxYield: 4,
+    tdClass: "bold red",
+    ratio: 0,
+  },
 ];
 
 // 判断股票属于哪个区域
@@ -81,7 +143,7 @@ function getAreaConfig(stock: Stock): AreaConfig | null {
     areaConfigs.find(
       (area) =>
         yieldValuePercent >= area.minYield &&
-        (area.maxYield === null || yieldValuePercent < area.maxYield)
+        (area.maxYield === null || yieldValuePercent < area.maxYield),
     ) || null
   );
 }
@@ -110,6 +172,8 @@ const tableData = computed(() => {
   for (const stock of stocks) {
     const areaConfig = getAreaConfig(stock);
     if (areaConfig) {
+      // 计算收集比例 = 目标仓位 × 区域比例
+      stock.setCollectionRatio(stock.allocation * areaConfig.ratio);
       if (!groupedData.has(areaConfig)) {
         groupedData.set(areaConfig, []);
       }
@@ -117,22 +181,46 @@ const tableData = computed(() => {
     }
   }
 
+  // 先计算每个区域的累计 ratio（从下往上累加 ratio）
+  const areaCumulativeRatios = new Map<AreaConfig, number>();
+  let currentCumulative = 0;
+
+  // 从下往上遍历区域（从低收益到高收益）
+  for (let i = areaConfigs.length - 1; i >= 0; i--) {
+    const areaConfig = areaConfigs[i];
+    if (areaConfig.ratio > 0) {
+      currentCumulative += areaConfig.ratio;
+    }
+    areaCumulativeRatios.set(areaConfig, currentCumulative);
+  }
+
   // 构建最终的表格数据：区域标题行 + 对应的股票行
   const result: TableRow[] = [];
 
-  // 按配置顺序遍历区域
+  // 按配置顺序遍历区域（从高收益到低收益）
   for (const areaConfig of areaConfigs) {
+    // 始终添加区域标题行
+    result.push(createAreaRow(areaConfig));
+
     const stocksInArea = groupedData.get(areaConfig);
     if (stocksInArea && stocksInArea.length > 0) {
-      // 添加区域标题行
-      result.push(createAreaRow(areaConfig));
-
       // 按收益率从大到小排序
       const sortedStocks = [...stocksInArea].sort(
         (a, b) =>
           b.longTermAverageReturnYield.value -
-          a.longTermAverageReturnYield.value
+          a.longTermAverageReturnYield.value,
       );
+
+      // 计算累计收集 = 目标仓位 × 该区域的累计 ratio
+      const areaCumulativeRatio = areaCumulativeRatios.get(areaConfig) || 0;
+
+      for (const stock of sortedStocks) {
+        if (areaCumulativeRatio > 0) {
+          stock.setCumulativeRatio(stock.allocation * areaCumulativeRatio);
+        } else {
+          stock.setCumulativeRatio(undefined);
+        }
+      }
 
       // 添加该区域的所有股票行
       result.push(...sortedStocks);
@@ -197,7 +285,7 @@ const tableData = computed(() => {
   }
 
   .bg-orange {
-    background-color: #F88825;
+    background-color: #f88825;
   }
 
   .light-blue {

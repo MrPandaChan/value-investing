@@ -45,8 +45,9 @@ export interface HKMarketConfig {
 export type BMarketConfig = Omit<HKMarketConfig, "dividendTaxRate">;
 
 export interface StockItem {
-  code: string;
-  name: string;
+  code: string; // A 股代码
+  name: string; // 股票名称
+  allocation: number; // 目标仓位
   profitValuationConfig?: ProfitValuationConfig;
   hkMarketConfig?: HKMarketConfig;
   bMarketConfig?: BMarketConfig;
@@ -56,6 +57,7 @@ const chineseSpiritsStockData: StockItem[] = [
   {
     name: "贵州茅台",
     code: "600519",
+    allocation: 0.2,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -79,6 +81,7 @@ const chineseSpiritsStockData: StockItem[] = [
   {
     name: "五粮液",
     code: "000858",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -102,6 +105,7 @@ const chineseSpiritsStockData: StockItem[] = [
   {
     name: "泸州老窖",
     code: "000568",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -125,6 +129,7 @@ const chineseSpiritsStockData: StockItem[] = [
   {
     name: "古井贡酒",
     code: "000596",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -152,6 +157,7 @@ const chineseSpiritsStockData: StockItem[] = [
   {
     name: "山西汾酒",
     code: "600809",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -178,6 +184,7 @@ const homeApplianceStockData: StockItem[] = [
   {
     name: "格力电器",
     code: "000651",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -201,6 +208,7 @@ const homeApplianceStockData: StockItem[] = [
   {
     name: "海尔智家",
     code: "600690",
+    allocation: 0.1,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -224,6 +232,7 @@ const homeApplianceStockData: StockItem[] = [
   {
     name: "美的集团",
     code: "000333",
+    allocation: 0.1,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -250,6 +259,7 @@ export const carStockData: StockItem[] = [
   {
     name: "比亚迪",
     code: "002594",
+    allocation: 0.1,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -273,6 +283,7 @@ export const carStockData: StockItem[] = [
   {
     name: "宇通客车",
     code: "600066",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -300,6 +311,7 @@ export const carStockData: StockItem[] = [
   {
     name: "福耀玻璃",
     code: "600660",
+    allocation: 0.1,
     profitValuationConfig: {
       neutral: {
         type: ProfitValuationGrowthType.RATE,
@@ -318,10 +330,12 @@ const electricityStockData: StockItem[] = [
   {
     name: "长江电力",
     code: "600900",
+    allocation: 0.1,
   },
   {
     name: "国投电力",
     code: "600886",
+    allocation: 0.1,
   },
 ];
 
@@ -329,18 +343,22 @@ const coalStockData: StockItem[] = [
   {
     name: "中国神华",
     code: "601088",
+    allocation: 0.1,
   },
   {
     name: "陕西煤业",
     code: "601225",
+    allocation: 0.05,
   },
   {
     name: "中煤能源",
     code: "601898",
+    allocation: 0.05,
   },
   {
     name: "兖矿能源",
     code: "600188",
+    allocation: 0.02,
   },
 ];
 
@@ -348,6 +366,7 @@ const operatorStockData: StockItem[] = [
   {
     name: "中国移动",
     code: "600941",
+    allocation: 0.1,
     profitValuationConfig: {
       conservative: {
         type: ProfitValuationGrowthType.RATE,
@@ -367,10 +386,12 @@ const operatorStockData: StockItem[] = [
   {
     name: "中国电信",
     code: "601728",
+    allocation: 0,
   },
   {
     name: "中国联通",
     code: "600050",
+    allocation: 0,
   },
 ];
 
@@ -378,6 +399,7 @@ const oilStockData: StockItem[] = [
   {
     name: "中国海油",
     code: "600938",
+    allocation: 0.2,
     profitValuationConfig: {
       neutral: {
         type: ProfitValuationGrowthType.PROFIT,
@@ -393,6 +415,7 @@ const oilStockData: StockItem[] = [
   {
     name: "中国石油",
     code: "601857",
+    allocation: 0,
     profitValuationConfig: {
       neutral: {
         type: ProfitValuationGrowthType.RATE,
@@ -404,6 +427,7 @@ const oilStockData: StockItem[] = [
   {
     name: "中国石化",
     code: "600028",
+    allocation: 0,
     profitValuationConfig: {
       neutral: {
         type: ProfitValuationGrowthType.RATE,
@@ -418,6 +442,7 @@ const portStockData: StockItem[] = [
   {
     name: "青岛港",
     code: "601298",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -449,6 +474,7 @@ const portStockData: StockItem[] = [
   {
     name: "上港集团",
     code: "600018",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -476,6 +502,7 @@ const portStockData: StockItem[] = [
   {
     name: "唐山港",
     code: "601000",
+    allocation: 0,
     profitValuationConfig: {
       neutral: {
         type: ProfitValuationGrowthType.RATE,
@@ -491,6 +518,7 @@ export const chineseMedicineStockData: StockItem[] = [
   {
     name: "云南白药",
     code: "000538",
+    allocation: 0.1,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -518,6 +546,7 @@ export const chineseMedicineStockData: StockItem[] = [
   {
     name: "东阿阿胶",
     code: "000423",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -545,6 +574,7 @@ export const chineseMedicineStockData: StockItem[] = [
   {
     name: "羚锐制药",
     code: "600285",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -575,6 +605,7 @@ export const pesticideStockData: StockItem[] = [
   {
     name: "广信股份",
     code: "603599",
+    allocation: 0,
   },
 ];
 
@@ -582,6 +613,7 @@ export const dairyStockData: StockItem[] = [
   {
     name: "伊利股份",
     code: "600887",
+    allocation: 0.05,
     profitValuationConfig: {
       neutral: {
         type: ProfitValuationGrowthType.RATE,
@@ -596,6 +628,7 @@ export const bankStockData: StockItem[] = [
   {
     name: "招商银行",
     code: "600036",
+    allocation: 0.1,
   },
 ];
 
@@ -603,6 +636,7 @@ export const chemicalsStockData: StockItem[] = [
   {
     name: "万华化学",
     code: "600309",
+    allocation: 0,
     profitValuationConfig: {
       neutral: {
         type: ProfitValuationGrowthType.RATE,
@@ -630,10 +664,12 @@ export const stockData: StockItem[] = [
   {
     name: "科沃斯",
     code: "603486",
+    allocation: 0,
   },
   {
     name: "中远海控",
     code: "601919",
+    allocation: 0.05,
     profitValuationConfig: {
       conservative: {
         type: ProfitValuationGrowthType.PROFIT,
@@ -645,6 +681,7 @@ export const stockData: StockItem[] = [
   {
     name: "盐湖股份",
     code: "000792",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -668,14 +705,17 @@ export const stockData: StockItem[] = [
   {
     name: "爱玛科技",
     code: "603529",
+    allocation: 0,
   },
   {
     name: "九号公司",
     code: "689009",
+    allocation: 0,
   },
   {
     name: "顺丰控股",
     code: "002352",
+    allocation: 0,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
@@ -699,6 +739,7 @@ export const stockData: StockItem[] = [
   {
     name: "永新股份",
     code: "002014",
+    allocation: 0.05,
     profitValuationConfig: {
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
