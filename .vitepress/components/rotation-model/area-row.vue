@@ -1,13 +1,15 @@
 <script setup lang="ts">
-import { tableColumns } from "./table-columns";
+import { computed } from "vue";
+import { type ColumnConfig, tableColumns } from "./table-columns";
 import { type AreaRowType } from "./types";
 
 const props = defineProps<{
   data: AreaRowType;
+  columns?: ColumnConfig[];
 }>();
 
 // 动态获取列数
-const columnCount = tableColumns.length;
+const columnCount = computed(() => (props.columns || tableColumns).length);
 </script>
 
 <template>

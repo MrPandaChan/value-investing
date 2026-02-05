@@ -2,8 +2,9 @@
 import { Stock } from "../../service/stock";
 import { type ColumnConfig, tableColumns } from "./table-columns";
 
-const { data } = defineProps<{
+const { data, columns = tableColumns } = defineProps<{
   data: Stock;
+  columns?: ColumnConfig[];
 }>();
 
 /**
@@ -45,7 +46,7 @@ function getCellClass(col: ColumnConfig, row: Stock): string {
 <template>
   <tr>
     <td
-      v-for="col in tableColumns"
+      v-for="col in columns"
       :key="col.key"
       :class="getCellClass(col, data)"
       v-html="getCellValue(col, data)"

@@ -11,12 +11,16 @@ export interface ColumnConfig {
     | "cumulativeRatio"
     | "allocationShares"
     | "collectionRatioShares"
-    | "cumulativeRatioShares";
+    | "cumulativeRatioShares"
+    | "allocationValue"
+    | "collectionRatioValue"
+    | "cumulativeRatioValue";
   label: string;
   thClass?: string;
   tdClass?: string;
   getTdClass?: (data: Stock) => string;
   formatter?: (value: any, data: Stock) => string | number;
+  show?: boolean; // 是否显示该列，默认为 true
 }
 
 /**
@@ -28,6 +32,7 @@ export const tableColumns: ColumnConfig[] = [
     label: "多等<br />年数",
     thClass: "bold bg-green",
     tdClass: "bold bg-green",
+    show: true,
   },
   {
     key: "longTermAverageReturnYield",
@@ -35,6 +40,7 @@ export const tableColumns: ColumnConfig[] = [
     thClass: "bold orange",
     tdClass: "bold orange",
     formatter: (value: number) => formatPercent(value * 100),
+    show: true,
   },
   {
     key: "dividendYield",
@@ -42,6 +48,7 @@ export const tableColumns: ColumnConfig[] = [
     thClass: "bold bg-pink red",
     tdClass: "bold bg-pink red",
     formatter: (value: number) => formatPercent(value * 100),
+    show: true,
   },
   {
     key: "dividendPayoutRatio",
@@ -49,12 +56,14 @@ export const tableColumns: ColumnConfig[] = [
     thClass: "grey",
     tdClass: "grey",
     formatter: (value: number) => formatPercent(value * 100),
+    show: true,
   },
   {
     key: "name",
     label: "公司<br />名称",
     thClass: "bold light-blue",
     tdClass: "bold light-blue",
+    show: true,
   },
   {
     key: "loseYield",
@@ -62,6 +71,7 @@ export const tableColumns: ColumnConfig[] = [
     thClass: "bold bg-green",
     tdClass: "bold bg-green",
     formatter: (value: number) => formatPercent(value),
+    show: true,
   },
   {
     key: "anchor",
@@ -69,6 +79,7 @@ export const tableColumns: ColumnConfig[] = [
     thClass: "bold red",
     tdClass: "bold red",
     formatter: (value: number) => formatNum(value, 2),
+    show: true,
   },
   {
     key: "price",
@@ -76,6 +87,7 @@ export const tableColumns: ColumnConfig[] = [
     thClass: "bold blue",
     tdClass: "bold blue",
     formatter: (value: number) => formatNum(value, 2).toFixed(2),
+    show: true,
   },
   {
     key: "allocation",
@@ -83,6 +95,7 @@ export const tableColumns: ColumnConfig[] = [
     formatter: (value: number) => {
       return value > 0 ? formatPercent(value * 100, 0) : "--";
     },
+    show: true,
   },
   {
     key: "allocationShares",
@@ -91,6 +104,16 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
+    show: true,
+  },
+    {
+    key: "allocationValue",
+    label: "目标<br />市值",
+    formatter: (value: number | undefined) => {
+      if (value === undefined || value === 0) return "--";
+      return formatNum(value, 0);
+    },
+    show: true,
   },
   {
     key: "collectionRatio",
@@ -99,6 +122,7 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatPercent(value * 100, 2);
     },
+    show: true,
   },
   {
     key: "collectionRatioShares",
@@ -107,6 +131,16 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
+    show: true,
+  },
+    {
+    key: "collectionRatioValue",
+    label: "收集<br />市值",
+    formatter: (value: number | undefined) => {
+      if (value === undefined || value === 0) return "--";
+      return formatNum(value, 0);
+    },
+    show: true,
   },
   {
     key: "cumulativeRatio",
@@ -115,6 +149,7 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatPercent(value * 100, 2);
     },
+    show: true,
   },
   {
     key: "cumulativeRatioShares",
@@ -123,6 +158,16 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
+    show: true,
+  },
+  {
+    key: "cumulativeRatioValue",
+    label: "累计<br />市值",
+    formatter: (value: number | undefined) => {
+      if (value === undefined || value === 0) return "--";
+      return formatNum(value, 0);
+    },
+    show: true,
   },
   // {
   //   key: "",

@@ -75,6 +75,15 @@ export class Stock {
   // 累计收集股数
   cumulativeRatioShares?: number;
 
+  // 目标仓位市值
+  allocationValue?: number;
+
+  // 收集比例市值
+  collectionRatioValue?: number;
+
+  // 累计收集市值
+  cumulativeRatioValue?: number;
+
   // 一手股数
   get sharesPerLot() {
     return this.stockItem.sharesPerLot || 100;
@@ -146,5 +155,12 @@ export class Stock {
     this.allocationShares = this.calculateAllocationShares(totalAmount);
     this.collectionRatioShares = this.calculateCollectionRatioShares(totalAmount);
     this.cumulativeRatioShares = this.calculateCumulativeRatioShares(totalAmount);
+    this.allocationValue = this.allocationShares * this.price.value;
+    this.collectionRatioValue = this.collectionRatioShares
+      ? this.collectionRatioShares * this.price.value
+      : undefined;
+    this.cumulativeRatioValue = this.cumulativeRatioShares
+      ? this.cumulativeRatioShares * this.price.value
+      : undefined;
   }
 }

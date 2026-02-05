@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { computed, h, ref } from "vue";
+import { ArrowDown } from "@element-plus/icons-vue";
 import { Stock } from "../../service/stock";
 import { tableColumns } from "./table-columns";
 import { type AreaRowType, AreaType, RowType, type TableRow } from "./types";
@@ -9,6 +10,25 @@ import { stockData } from "../../../types";
 
 // 投入金额
 const investmentAmount = ref(1000000); // 默认100万
+
+// 列显示控制
+const visibleColumnKeys = ref(
+  tableColumns.map((col) => ({
+    key: col.key,
+    label: col.label.replace(/<br\s*\/?>/g, ""), // 移除 <br> 标签
+    show: col.show !== false,
+  })),
+);
+
+// 计算当前应该显示的列
+const visibleColumns = computed(() => {
+  return tableColumns.filter((col) => {
+    const visibleConfig = visibleColumnKeys.value.find(
+      (c) => c.key === col.key,
+    );
+    return visibleConfig?.show !== false;
+  });
+});
 
 // 多等年数、当前期望收益、分红率、公司名称、买入立刻亏损、10%预期、当前股价、近3年低价、分红需等月数
 
@@ -22,10 +42,12 @@ function renderRow(row: TableRow) {
   if (isStockRow(row)) {
     return h(StockRow, {
       data: row,
+      columns: visibleColumns.value,
     });
   } else if (isAreaRow(row)) {
     return h(AreaRow, {
       data: row,
+      columns: visibleColumns.value,
     });
   } else {
     return h("tr");
@@ -237,16 +259,39 @@ const tableData = computed(() => {
 </script>
 
 <template>
-  <div class="input-wrapper">
-    <label>投入金额：</label>
-    <input v-model="investmentAmount" type="number" class="amount-input" />
-    <span>元</span>
+  <div class="control-panel">
+        <el-dropdown trigger="click" popper-class="visible-column-dropdown">
+      <el-button type="primary">
+        表格显示设置
+        <el-icon class="el-icon--right"><arrow-down /></el-icon>
+      </el-button>
+      <template #dropdown>
+        <el-dropdown-menu class="column-dropdown-menu">
+          <el-dropdown-item
+            v-for="col in visibleColumnKeys"
+            :key="col.key"
+            :hide-on-click="false"
+          >
+            <el-checkbox v-model="col.show">
+              {{ col.label }}
+            </el-checkbox>
+          </el-dropdown-item>
+        </el-dropdown-menu>
+      </template>
+    </el-dropdown>
+    
+    <div class="input-wrapper">
+      <label>投入金额：</label>
+      <input v-model="investmentAmount" type="number" class="amount-input" />
+      <span>元</span>
+    </div>
+
   </div>
   <table class="rotation-table">
     <thead>
       <tr>
         <th
-          v-for="col in tableColumns"
+          v-for="col in visibleColumns"
           :key="col.key"
           :class="col.thClass"
           v-html="col.label"
@@ -265,8 +310,14 @@ const tableData = computed(() => {
 </template>
 
 <style lang="scss">
-.input-wrapper {
+.control-panel {
+  display: flex;
+  align-items: center;
+  gap: 16px;
   margin-bottom: 10px;
+}
+
+.input-wrapper {
   display: flex;
   align-items: center;
   gap: 8px;
@@ -336,6 +387,12 @@ const tableData = computed(() => {
 
   .grey {
     color: #939393;
+  }
+}
+
+.visible-column-dropdown {
+  .el-dropdown-menu__item {
+    padding: 0px 16px;
   }
 }
 </style>
