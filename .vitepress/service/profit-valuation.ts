@@ -97,7 +97,7 @@ export class ProfitValuation {
       sum += presentValue(
         rest * this.tableData.value[years].eps,
         DISCOUNT_RATE,
-        years
+        years,
       );
     }
     return formatNum(lastYearEps + sum, 2);
@@ -163,7 +163,7 @@ export class ProfitValuation {
 
   // 加其它资产锚点击球区边缘
   anchorWithAssetsEdge = computed(() =>
-    formatNum(this.anchorWithAssets.value * 1.05, 2)
+    formatNum(this.anchorWithAssets.value * 1.05, 2),
   );
 
   // 还可以跌
@@ -233,7 +233,7 @@ export class ProfitValuation {
     valuationData: ValuationData,
     stockItem: StockItem,
     dynamicData: DynamicData,
-    growth?: ProfitValuationGrowth
+    growth?: ProfitValuationGrowth,
   ) {
     if (growth) {
       this.growth.value = {
@@ -258,7 +258,7 @@ export class ProfitValuation {
 
     this.totalSharesOutstanding = numToAHundredMillion(
       dynamicData.totalSharesOutstanding,
-      8
+      8,
     );
 
     this.price = dynamicData.price;
@@ -267,7 +267,7 @@ export class ProfitValuation {
 
     this.cashPerShare = formatNum(
       valuationData.cash / dynamicData.totalSharesOutstanding,
-      2
+      2,
     );
 
     // 计算去有息负债现金
@@ -293,7 +293,10 @@ export class ProfitValuation {
 
   async init() {
     if (this.stockItem.bMarketConfig || this.stockItem.hkMarketConfig) {
-      this.hkMarketValuation.value = await HKMarketValuation.create(this);
+      const valuation = await HKMarketValuation.create(this);
+      if (valuation) {
+        this.hkMarketValuation.value = valuation;
+      }
     }
   }
 
@@ -348,7 +351,7 @@ export class ProfitValuation {
   handleFocus(
     row: ProfitValuationFutureData,
     displayKey: keyof ProfitValuationFutureData,
-    rawKey: keyof ProfitValuationFutureData
+    rawKey: keyof ProfitValuationFutureData,
   ) {
     row[displayKey] = row[rawKey];
   }
@@ -360,7 +363,7 @@ export class ProfitValuation {
   handleBlur(
     row: ProfitValuationFutureData,
     displayKey: keyof ProfitValuationFutureData,
-    rawKey: keyof ProfitValuationFutureData
+    rawKey: keyof ProfitValuationFutureData,
   ) {
     const num = formatNum(row[rawKey], 2);
     if (!isNaN(num)) {
@@ -373,7 +376,7 @@ export class ProfitValuation {
   updateCell(
     index: number,
     field: keyof ProfitValuationFutureData,
-    event: Event
+    event: Event,
   ) {
     let value = 0;
     if (event.target instanceof HTMLInputElement) {
@@ -534,7 +537,7 @@ export class HKMarketValuation {
 
   // 加其它资产锚点击球区边缘
   anchorWithAssetsEdge = computed(() =>
-    formatNum(this.anchorWithAssets.value * 1.05, 2)
+    formatNum(this.anchorWithAssets.value * 1.05, 2),
   );
 
   // 当前股价长期平均收益率（加其它资产）
@@ -596,7 +599,7 @@ export class HKMarketValuation {
   constructor(
     profitValuation: ProfitValuation,
     exchangeRate: number,
-    price: number
+    price: number,
   ) {
     this.profitValuation = profitValuation;
     this.exchangeRate = 1 / exchangeRate;

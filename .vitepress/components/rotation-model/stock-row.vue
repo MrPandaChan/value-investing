@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { Stock } from "../../service/stock";
-import { ColumnConfig, tableColumns } from "./table-columns";
+import { type ColumnConfig, tableColumns } from "./table-columns";
 
 const { data } = defineProps<{
   data: Stock;
@@ -40,15 +40,6 @@ function getCellClass(col: ColumnConfig, row: Stock): string {
 
   return classes.join(" ");
 }
-
-/**
- * 自定义单元格渲染
- */
-function renderCell(col: ColumnConfig, row: Stock) {
-  const content = getCellValue(col, row);
-
-  return content;
-}
 </script>
 
 <template>
@@ -58,7 +49,7 @@ function renderCell(col: ColumnConfig, row: Stock) {
       :key="col.key"
       :class="getCellClass(col, data)"
     >
-      <component :is="renderCell(col, data)" />
+      {{ getCellValue(col, data) }}
     </td>
   </tr>
 </template>

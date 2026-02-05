@@ -2,9 +2,10 @@
 import { computed, h } from "vue";
 import { Stock } from "../../service/stock";
 import { tableColumns } from "./table-columns";
-import { AreaRowType, RowType, TableRow } from "./types";
+import { type AreaRowType, RowType, type TableRow } from "./types";
 import StockRow from "./stock-row.vue";
 import AreaRow from "./area-row.vue";
+import { stockData } from "../../../types";
 
 // 多等年数、当前期望收益、分红率、公司名称、买入立刻亏损、10%预期、当前股价、近3年低价、分红需等月数
 
@@ -29,19 +30,20 @@ function renderRow(row: TableRow) {
 }
 
 const tableData = computed(() => {
-  const tableData: TableRow[] = [
-    //
-  ];
+  const stocks: Stock[] = [];
+  for (const stockItem of stockData) {
+    const stock = new Stock(stockItem);
+    stocks.push(stock);
+  }
+
+  const tableData: TableRow[] = [...stocks];
 
   return tableData;
 });
 </script>
 
 <template>
-  <table class="stock-table">
-    <caption>
-      价值轮动模型
-    </caption>
+  <table class="rotation-table">
     <thead>
       <tr>
         <th
@@ -62,3 +64,55 @@ const tableData = computed(() => {
     </tfoot>
   </table>
 </template>
+
+<style lang="scss">
+.rotation-table {
+  border-collapse: collapse;
+  border-spacing: 0;
+  font-size: 13px;
+  color: #000;
+
+  th,
+  td {
+    line-height: 22px;
+    white-space: nowrap;
+    padding: 4px;
+    color: #000;
+    font-weight: normal;
+    border: 1px solid #000;
+    text-align: center;
+  }
+
+  .bold {
+    font-weight: bold;
+  }
+
+  .bg-green {
+    background-color: #00b050;
+  }
+
+  .bg-pink {
+    background-color: #ffe9e8;
+  }
+
+  .light-blue {
+    color: #00a3f5;
+  }
+
+  .blue {
+    color: #2972f4;
+  }
+
+  .red {
+    color: #ff0000;
+  }
+
+  .orange {
+    color: #f88825;
+  }
+
+  .grey {
+    color: #939393;
+  }
+}
+</style>

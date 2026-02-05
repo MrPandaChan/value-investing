@@ -510,7 +510,9 @@ const validateExternalData = (externalData: ExternalScoreData) => {
   externalCategoryIds.forEach((catId) => {
     const category = defaultEvaluationData.find((c) => c.id === catId);
     if (category) {
-      const externalItemKeys = Object.keys(externalData[catId]);
+      const externalItemKeys = Object.keys(
+        externalData[catId as keyof ExternalScoreData],
+      );
       const defaultItemKeys = category.items.map((i) => i.key);
 
       externalItemKeys.forEach((itemKey) => {
@@ -545,13 +547,15 @@ const initializeData = () => {
         (c: EvaluationCategory) => c.id === categoryId,
       );
       if (category) {
-        const categoryScores = props.scoreData![categoryId];
+        const categoryScores =
+          props.scoreData![categoryId as keyof ExternalScoreData];
         Object.keys(categoryScores).forEach((itemKey) => {
           const item = category.items.find(
             (i: EvaluationItem) => i.key === itemKey,
           );
           if (item) {
-            const score = categoryScores[itemKey];
+            const score =
+              categoryScores[itemKey as keyof typeof categoryScores];
             // 确保分数在合理范围内
             item.userScore = Math.max(0, Math.min(score, item.maxScore));
           }

@@ -20,7 +20,7 @@ const props = withDefaults(
   }>(),
   {
     caption: "利润估值",
-  }
+  },
 );
 
 const valuationData = data[props.code].valuationData;
@@ -31,7 +31,7 @@ const profitValuation = new ProfitValuation(
   valuationData,
   stockItem,
   dynamicData,
-  props.growth
+  props.growth,
 );
 
 const historyData = computed(() => {
@@ -95,7 +95,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
           <tr
             v-for="(row, index) in profitValuation.tableData.value.slice(
               0,
-              Math.ceil(profitValuation.calBackYearsNum.value)
+              Math.ceil(profitValuation.calBackYearsNum.value),
             )"
             :key="index"
           >
@@ -349,7 +349,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
                 {{
                   formatNum(
                     profitValuation.hkMarketValuation.value.exchangeRate,
-                    4
+                    4,
                   )
                 }}
               </td>
@@ -376,7 +376,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
                 {{
                   formatPercent(
                     profitValuation.hkMarketValuation.value.anchorDividendRate *
-                      100
+                      100,
                   )
                 }}
               </td>
@@ -401,7 +401,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
                 {{
                   formatPercent(
                     profitValuation.hkMarketValuation.value.discount * 100,
-                    0
+                    0,
                   )
                 }}
               </td>
@@ -422,7 +422,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
               <td class="pink">
                 {{
                   formatPercent(
-                    profitValuation.hkMarketValuation.value.dividendRate * 100
+                    profitValuation.hkMarketValuation.value.dividendRate * 100,
                   )
                 }}
               </td>
@@ -437,7 +437,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
                 {{
                   formatPercent(
                     profitValuation.hkMarketValuation.value.dividendCompare *
-                      100
+                      100,
                   )
                 }}
               </td>
@@ -448,7 +448,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
                 HK${{
                   formatNum(
                     profitValuation.hkMarketValuation.value.anchorWithAssets,
-                    2
+                    2,
                   )
                 }}
               </td>
@@ -485,7 +485,7 @@ const expectDividendRate = (row: ProfitValuationFutureData) => {
                 {{
                   formatPercent(
                     profitValuation.hkMarketValuation.value
-                      .anchorWithAssetsDividendRate * 100
+                      .anchorWithAssetsDividendRate * 100,
                   )
                 }}
               </td>

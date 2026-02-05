@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { tableColumns } from "./table-columns";
-import { AreaRowType } from "./types";
+import { type AreaRowType } from "./types";
 
 const props = defineProps<{
   data: AreaRowType;
