@@ -260,7 +260,9 @@ const tableData = computed(() => {
 
 <template>
   <div class="control-panel">
-        <el-dropdown trigger="click" popper-class="visible-column-dropdown">
+    <!-- <el-button>刷新当前股价</el-button> -->
+
+    <el-dropdown trigger="click" popper-class="visible-column-dropdown">
       <el-button type="primary">
         表格显示设置
         <el-icon class="el-icon--right"><arrow-down /></el-icon>
@@ -279,13 +281,12 @@ const tableData = computed(() => {
         </el-dropdown-menu>
       </template>
     </el-dropdown>
-    
+
     <div class="input-wrapper">
       <label>投入金额：</label>
       <input v-model="investmentAmount" type="number" class="amount-input" />
       <span>元</span>
     </div>
-
   </div>
   <table class="rotation-table">
     <thead>
