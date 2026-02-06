@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, h, ref } from "vue";
+import { computed, h, ref, shallowReactive, onBeforeMount } from "vue";
 import { ArrowDown } from "@element-plus/icons-vue";
 import { Stock } from "../../service/stock";
 import { tableColumns } from "./table-columns";
@@ -7,6 +7,9 @@ import { type AreaRowType, AreaType, RowType, type TableRow } from "./types";
 import StockRow from "./stock-row.vue";
 import AreaRow from "./area-row.vue";
 import { stockData } from "../../../types/stocks";
+import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
+
+const stocks = shallowReactive<Stock[]>([]);
 
 // 投入金额
 const investmentAmount = ref(1000000); // 默认100万
@@ -185,13 +188,6 @@ function createAreaRow(config: AreaConfig): AreaRowType {
 }
 
 const tableData = computed(() => {
-  // 创建股票实例
-  const stocks: Stock[] = [];
-  for (const stockItem of stockData) {
-    const stock = new Stock(stockItem);
-    stocks.push(stock);
-  }
-
   // 按区域分组
   const groupedData = new Map<AreaConfig, Stock[]>();
   for (const stock of stocks) {
@@ -256,11 +252,37 @@ const tableData = computed(() => {
 
   return result;
 });
+
+const refreshLoading = ref(false);
+
+async function refreshDynamicData() {
+  refreshLoading.value = true;
+  const stockCodes = stocks.map((s) => s.code);
+  const dynamicData = await getDynamicData(stockCodes);
+  for (let i = 0; i < dynamicData.length; i += 1) {
+    stocks[i].updateDynamicData(dynamicData[i]);
+  }
+  refreshLoading.value = false;
+}
+
+onBeforeMount(() => {
+  for (const stockItem of stockData) {
+    const stock = new Stock(stockItem);
+    stocks.push(stock);
+  }
+
+  refreshDynamicData();
+});
 </script>
 
 <template>
   <div class="control-panel">
-    <!-- <el-button>刷新当前股价</el-button> -->
+    <el-button
+      :loading="refreshLoading"
+      type="primary"
+      @click="refreshDynamicData"
+      >刷新动态数据</el-button
+    >
 
     <el-dropdown trigger="click" popper-class="visible-column-dropdown">
       <el-button type="primary">

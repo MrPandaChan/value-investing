@@ -4,6 +4,7 @@ import { computed, ref, type Ref } from "vue";
 import { RowType } from "../components/rotation-model/types";
 import { data } from "./data";
 import { ProfitValuation } from "./profit-valuation";
+import { type DynamicData } from "../../fetch-data/types";
 
 // 以 10 年回本进行计算
 const BACK_YEARS_NUM = 10;
@@ -17,10 +18,29 @@ export class Stock {
 
   anchor = ref(0);
 
-  price: Ref<number>;
+  // 动态数据
+  private dynamicData: Ref<DynamicData>;
 
   loseYield = computed(() => {
     return ((this.anchor.value - this.price.value) / this.price.value) * 100;
+  });
+
+  price = computed(() => this.dynamicData.value.price);
+
+  pe = computed(() => this.dynamicData.value.PE);
+
+  pb = computed(() => this.dynamicData.value.PB);
+
+  // 股息率
+  dividendYield = computed(() => {
+    const { historyData } = this.data.valuationData;
+    const lastData = historyData[historyData.length - 1];
+    const { totalDividend } = lastData;
+    return (
+      totalDividend /
+      this.dynamicData.value.totalSharesOutstanding /
+      this.price.value
+    );
   });
 
   get waitYears() {
@@ -32,32 +52,15 @@ export class Stock {
     return this.stockItem.name;
   }
 
-  // PE
-  get pe() {
-    return this.data.dynamicData.PE;
-  }
-
-  // PB
-  get pb() {
-    return this.data.dynamicData.PB;
+  // 股票代码
+  get code() {
+    return this.stockItem.code;
   }
 
   // 当前期望收益
   longTermAverageReturnYield = computed(() => {
     return this.anchor.value / this.price.value / BACK_YEARS_NUM;
   });
-
-  // 股息率
-  get dividendYield() {
-    const { historyData } = this.data.valuationData;
-    const lastData = historyData[historyData.length - 1];
-    const { totalDividend } = lastData;
-    return (
-      totalDividend /
-      this.data.dynamicData.totalSharesOutstanding /
-      this.price.value
-    );
-  }
 
   // 分红率
   get dividendPayoutRatio() {
@@ -104,7 +107,7 @@ export class Stock {
   constructor(stockItem: StockItem) {
     this.stockItem = stockItem;
     this.data = data[stockItem.code];
-    this.price = ref(this.data.dynamicData.price);
+    this.dynamicData = ref(this.data.dynamicData);
 
     this.calculateAnchor();
   }
@@ -176,5 +179,10 @@ export class Stock {
     this.cumulativeRatioValue = this.cumulativeRatioShares
       ? this.cumulativeRatioShares * this.price.value
       : undefined;
+  }
+
+  // 更新动态数据
+  updateDynamicData(dynamicData: DynamicData) {
+    this.dynamicData.value = dynamicData;
   }
 }
