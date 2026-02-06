@@ -3,18 +3,15 @@ import { ref } from "vue";
 import AppTable, { type TableColumn } from "../shared/app-table.vue";
 import { data } from "../../service/data";
 import { computed } from "vue";
-import {
-  type Assign,
-  stockData,
-  type PrimaryBusinessData,
-} from "../../../types";
+import { type Assign, type PrimaryBusinessData } from "../../../types";
+import { stockData } from "../../../types/stocks";
 
 type MergeData = Assign<
   [
     PrimaryBusinessData,
     {
       name: string;
-    }
+    },
   ]
 >;
 
@@ -43,7 +40,7 @@ const compareData = props.codes.reduce((pre: MergeData[], item) => {
           if (
             item.compareItems.industry.length
               ? item.compareItems.industry.some((v) =>
-                  primaryData.itemName.includes(v)
+                  primaryData.itemName.includes(v),
                 )
               : true
           ) {
@@ -57,7 +54,7 @@ const compareData = props.codes.reduce((pre: MergeData[], item) => {
           if (
             item.compareItems.product.length
               ? item.compareItems.product.some((v) =>
-                  primaryData.itemName.includes(v)
+                  primaryData.itemName.includes(v),
                 )
               : true
           ) {
@@ -71,7 +68,7 @@ const compareData = props.codes.reduce((pre: MergeData[], item) => {
           if (
             item.compareItems.region.length
               ? item.compareItems.region.some((v) =>
-                  primaryData.itemName.includes(v)
+                  primaryData.itemName.includes(v),
                 )
               : true
           ) {
@@ -163,22 +160,22 @@ const tableData = computed(() => {
 
   // 按年份升序排序
   const sortedData = [...originalData].sort(
-    (a, b) => parseInt(a.year) - parseInt(b.year)
+    (a, b) => parseInt(a.year) - parseInt(b.year),
   );
 
   return sortedData;
 });
 
 const industryTableData = computed(() =>
-  tableData.value.filter((v) => v.mainType === "行业")
+  tableData.value.filter((v) => v.mainType === "行业"),
 );
 
 const productTableData = computed(() =>
-  tableData.value.filter((v) => v.mainType === "产品")
+  tableData.value.filter((v) => v.mainType === "产品"),
 );
 
 const regionTableData = computed(() =>
-  tableData.value.filter((v) => v.mainType === "地区")
+  tableData.value.filter((v) => v.mainType === "地区"),
 );
 
 const activeTab = ref<"industry" | "product" | "region">("industry");

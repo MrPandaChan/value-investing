@@ -11,7 +11,9 @@ import type {
   SinaResponse,
 } from "./types";
 import { isHKCode, stocksToSecIds, toSECUCODE, v } from "./helper";
-import { stockData, type StockItem } from "../types";
+import { type StockItem } from "../types";
+import { stockData } from "../types/stocks";
+
 /**
  * 获取股票数据
  */

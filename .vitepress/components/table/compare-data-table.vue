@@ -4,11 +4,11 @@ import { data } from "../../service/data";
 import { computed } from "vue";
 import {
   type Assign,
-  stockData,
   type BasicRevenueData,
   type CostsExpensesData,
   type WorkingCapitalData,
 } from "../../../types";
+import { stockData } from "../../../types/stocks";
 
 type MergeData = Assign<
   [
@@ -17,7 +17,7 @@ type MergeData = Assign<
     WorkingCapitalData,
     {
       name: string;
-    }
+    },
   ]
 >;
 
@@ -147,7 +147,7 @@ const tableData = computed(() => {
 
   // 按年份升序排序
   const sortedData = [...originalData].sort(
-    (a, b) => parseInt(a.year) - parseInt(b.year)
+    (a, b) => parseInt(a.year) - parseInt(b.year),
   );
 
   return sortedData;

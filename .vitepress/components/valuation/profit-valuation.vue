@@ -4,7 +4,8 @@ import {
   formatPercent,
   numToAHundredMillion,
 } from "../../../fetch-data/helper";
-import { getStockItem, type ProfitValuationGrowth } from "../../../types";
+import { type ProfitValuationGrowth } from "../../../types";
+import { getStockItem } from "../../../types/stocks";
 import { data } from "../../service/data";
 import {
   ProfitValuation,

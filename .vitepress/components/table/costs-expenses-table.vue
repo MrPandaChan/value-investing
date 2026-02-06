@@ -114,7 +114,7 @@ const numericColumns = [
 const calculateGrowthRate = (
   startValue: number,
   endValue: number,
-  years: number
+  years: number,
 ) => {
   if (!startValue || !endValue || years <= 0) return NaN;
 
@@ -132,28 +132,28 @@ const calculateGrowthRate = (
 const calculateColumnGrowth = (data: any[], column: string) => {
   // 确保数据按年份升序排列（从早到晚）
   const sortedData = [...data].sort(
-    (a, b) => parseInt(a.year) - parseInt(b.year)
+    (a, b) => parseInt(a.year) - parseInt(b.year),
   );
 
   // 1年年化增速（最新一年比前一年）
   const oneYear = calculateGrowthRate(
     sortedData[sortedData.length - 2][column], // 前一年
     sortedData[sortedData.length - 1][column], // 最新一年
-    1
+    1,
   );
 
   // 5年年化增速（最新一年比5年前）
   const fiveYear = calculateGrowthRate(
     sortedData[sortedData.length - 6][column], // 5年前
     sortedData[sortedData.length - 1][column], // 最新一年
-    5
+    5,
   );
 
   // 9年年化增速（最新一年比9年前）
   const nineYear = calculateGrowthRate(
     sortedData[0][column], // 最早一年
     sortedData[sortedData.length - 1][column], // 最新一年
-    sortedData.length - 1 // 总年数减1
+    sortedData.length - 1, // 总年数减1
   );
 
   return {
@@ -172,54 +172,66 @@ const tableData = computed(() => {
 
   // 按年份升序排序
   const sortedData = [...originalData].sort(
-    (a, b) => parseInt(a.year) - parseInt(b.year)
+    (a, b) => parseInt(a.year) - parseInt(b.year),
   );
 
   // 计算所有数值列的增速
-  const growthData = numericColumns.reduce((acc, column) => {
-    try {
-      acc[column] = calculateColumnGrowth(
-        sortedData.filter((v) => !v.year.includes("Q")),
-        column
-      );
-    } catch (e) {
-      console.error(`Error calculating growth for ${column}:`, e);
-      acc[column] = {
-        oneYear: NaN,
-        fiveYear: NaN,
-        nineYear: NaN,
-        fiveToNine: NaN,
-        avgGrowth: NaN,
-      };
-    }
-    return acc;
-  }, {} as Record<string, any>);
+  const growthData = numericColumns.reduce(
+    (acc, column) => {
+      try {
+        acc[column] = calculateColumnGrowth(
+          sortedData.filter((v) => !v.year.includes("Q")),
+          column,
+        );
+      } catch (e) {
+        console.error(`Error calculating growth for ${column}:`, e);
+        acc[column] = {
+          oneYear: NaN,
+          fiveYear: NaN,
+          nineYear: NaN,
+          fiveToNine: NaN,
+          avgGrowth: NaN,
+        };
+      }
+      return acc;
+    },
+    {} as Record<string, any>,
+  );
 
   // 创建统计行
   const statsRows = [
     {
       year: "1年年化增速",
       _isStatRow: true,
-      ...numericColumns.reduce((obj, col) => {
-        obj[col] = growthData[col].oneYear;
-        return obj;
-      }, {} as Record<string, any>),
+      ...numericColumns.reduce(
+        (obj, col) => {
+          obj[col] = growthData[col].oneYear;
+          return obj;
+        },
+        {} as Record<string, any>,
+      ),
     },
     {
       year: "5年年化增速",
       _isStatRow: true,
-      ...numericColumns.reduce((obj, col) => {
-        obj[col] = growthData[col].fiveYear;
-        return obj;
-      }, {} as Record<string, any>),
+      ...numericColumns.reduce(
+        (obj, col) => {
+          obj[col] = growthData[col].fiveYear;
+          return obj;
+        },
+        {} as Record<string, any>,
+      ),
     },
     {
       year: "9年年化增速",
       _isStatRow: true,
-      ...numericColumns.reduce((obj, col) => {
-        obj[col] = growthData[col].nineYear;
-        return obj;
-      }, {} as Record<string, any>),
+      ...numericColumns.reduce(
+        (obj, col) => {
+          obj[col] = growthData[col].nineYear;
+          return obj;
+        },
+        {} as Record<string, any>,
+      ),
     },
   ];
 

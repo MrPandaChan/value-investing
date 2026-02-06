@@ -6,7 +6,7 @@ import { tableColumns } from "./table-columns";
 import { type AreaRowType, AreaType, RowType, type TableRow } from "./types";
 import StockRow from "./stock-row.vue";
 import AreaRow from "./area-row.vue";
-import { stockData } from "../../../types";
+import { stockData } from "../../../types/stocks";
 
 // 投入金额
 const investmentAmount = ref(1000000); // 默认100万

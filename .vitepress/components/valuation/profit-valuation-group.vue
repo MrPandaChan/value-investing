@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { getStockItem } from "../../../types";
+import { getStockItem } from "../../../types/stocks";
 import profitValuation from "./profit-valuation.vue";
 import { data } from "../../service/data";
 

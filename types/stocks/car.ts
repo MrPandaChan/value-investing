@@ -58,9 +58,21 @@ const carStockData: StockItem[] = [
     code: "600660",
     allocation: 0.1,
     profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.08, 0.05],
+      },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.3, 0.1],
+        data: [0.3, 0.1, 0.07],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.12, 0.08],
       },
       backYearsNum: 10,
     },

@@ -6,9 +6,21 @@ const oilStockData: StockItem[] = [
     code: "600938",
     allocation: 0.2,
     profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.PROFIT,
+        data: [1000],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.PROFIT,
+        data: [1100],
+      },
       neutral: {
         type: ProfitValuationGrowthType.PROFIT,
         data: [1200],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.PROFIT,
+        data: [1400],
       },
       backYearsNum: 8,
     },
@@ -22,9 +34,21 @@ const oilStockData: StockItem[] = [
     code: "601857",
     allocation: 0,
     profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0, 0.02],
+      },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0],
+        data: [0, 0, 0.03],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0, 0.04],
       },
       backYearsNum: 8,
     },
@@ -34,9 +58,21 @@ const oilStockData: StockItem[] = [
     code: "600028",
     allocation: 0,
     profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0, 0.02],
+      },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0],
+        data: [0, 0, 0.03],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0, 0, 0.04],
       },
       backYearsNum: 8,
     },

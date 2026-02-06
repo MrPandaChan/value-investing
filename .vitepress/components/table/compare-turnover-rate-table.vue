@@ -5,9 +5,9 @@ import { computed } from "vue";
 import {
   type Assign,
   type FixedAssetInvestmentAnalysisData,
-  stockData,
   type TurnoverRateData,
 } from "../../../types";
+import { stockData } from "../../../types/stocks";
 
 type MergeData = Assign<
   [
@@ -15,7 +15,7 @@ type MergeData = Assign<
     FixedAssetInvestmentAnalysisData,
     {
       name: string;
-    }
+    },
   ]
 >;
 
@@ -136,7 +136,7 @@ const tableData = computed(() => {
 
   // 按年份升序排序
   const sortedData = [...originalData].sort(
-    (a, b) => parseInt(a.year) - parseInt(b.year)
+    (a, b) => parseInt(a.year) - parseInt(b.year),
   );
 
   return sortedData;

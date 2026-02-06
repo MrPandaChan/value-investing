@@ -13,10 +13,7 @@ import {
   presentValue,
 } from "../../fetch-data/helper";
 import { type DynamicData } from "../../fetch-data/types";
-import {
-  getDynamicData,
-  getExchangeRate,
-} from "../../fetch-data/fetch-stock-data";
+import { getDynamicData } from "../../fetch-data/fetch-stock-data";
 
 // 财务自由的一个普遍定义，是总投资资产，每年提取4%足够生活开支了，就达到了基础的财务自由。就不需要为了生活而被迫去做不想做的事情，或者至少有了更多的选择权。
 const DISCOUNT_RATE = 0.04;

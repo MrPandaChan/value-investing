@@ -1,4 +1,5 @@
-import { getStockItem, type ServiceData, type StockItem } from "../../types";
+import { type ServiceData, type StockItem } from "../../types";
+import { getStockItem } from "../../types/stocks";
 import { computed, ref, type Ref } from "vue";
 import { RowType } from "../components/rotation-model/types";
 import { data } from "./data";
@@ -26,8 +27,19 @@ export class Stock {
     return 0;
   }
 
+  // 股票名称
   get name() {
     return this.stockItem.name;
+  }
+
+  // PE
+  get pe() {
+    return this.data.dynamicData.PE;
+  }
+
+  // PB
+  get pb() {
+    return this.data.dynamicData.PB;
   }
 
   // 当前期望收益
@@ -153,8 +165,10 @@ export class Stock {
   // 设置所有股数
   setAllShares(totalAmount: number) {
     this.allocationShares = this.calculateAllocationShares(totalAmount);
-    this.collectionRatioShares = this.calculateCollectionRatioShares(totalAmount);
-    this.cumulativeRatioShares = this.calculateCumulativeRatioShares(totalAmount);
+    this.collectionRatioShares =
+      this.calculateCollectionRatioShares(totalAmount);
+    this.cumulativeRatioShares =
+      this.calculateCumulativeRatioShares(totalAmount);
     this.allocationValue = this.allocationShares * this.price.value;
     this.collectionRatioValue = this.collectionRatioShares
       ? this.collectionRatioShares * this.price.value

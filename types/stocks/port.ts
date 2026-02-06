@@ -66,10 +66,25 @@ const portStockData: StockItem[] = [
     code: "601000",
     allocation: 0,
     profitValuationConfig: {
-      neutral: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, 0],
+        discount: 0.8,
+      },
+      conservative: {
         type: ProfitValuationGrowthType.RATE,
         data: [-0.2, 0.02],
-        discount: 0.9,
+        discount: 0.8,
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, 0.03],
+        discount: 0.8,
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.2, 0.04],
+        discount: 0.8,
       },
       backYearsNum: 10,
     },

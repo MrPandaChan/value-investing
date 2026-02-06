@@ -20,7 +20,7 @@ export interface ColumnConfig {
   tdClass?: string;
   getTdClass?: (data: Stock) => string;
   formatter?: (value: any, data: Stock) => string | number;
-  show?: boolean; // 是否显示该列，默认为 true
+  show: boolean; // 是否显示该列，默认为 true
 }
 
 /**
@@ -92,6 +92,8 @@ export const tableColumns: ColumnConfig[] = [
   {
     key: "allocation",
     label: "目标<br />仓位",
+    thClass: "bold",
+    tdClass: "bold",
     formatter: (value: number) => {
       return value > 0 ? formatPercent(value * 100, 0) : "--";
     },
@@ -104,16 +106,16 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
-    show: true,
+    show: false,
   },
-    {
+  {
     key: "allocationValue",
     label: "目标<br />市值",
     formatter: (value: number | undefined) => {
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
-    show: true,
+    show: false,
   },
   {
     key: "collectionRatio",
@@ -122,7 +124,7 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatPercent(value * 100, 2);
     },
-    show: true,
+    show: false,
   },
   {
     key: "collectionRatioShares",
@@ -131,16 +133,16 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
-    show: true,
+    show: false,
   },
-    {
+  {
     key: "collectionRatioValue",
     label: "收集<br />市值",
     formatter: (value: number | undefined) => {
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
-    show: true,
+    show: false,
   },
   {
     key: "cumulativeRatio",
@@ -149,7 +151,7 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatPercent(value * 100, 2);
     },
-    show: true,
+    show: false,
   },
   {
     key: "cumulativeRatioShares",
@@ -158,7 +160,7 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
-    show: true,
+    show: false,
   },
   {
     key: "cumulativeRatioValue",
@@ -167,6 +169,20 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
+    show: false,
+  },
+  {
+    key: "pe",
+    label: "市盈率",
+    thClass: "bold red",
+    tdClass: "bold red",
+    show: true,
+  },
+  {
+    key: "pb",
+    label: "市净率",
+    thClass: "bold",
+    tdClass: "bold",
     show: true,
   },
   // {
