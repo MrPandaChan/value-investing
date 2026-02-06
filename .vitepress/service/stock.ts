@@ -49,7 +49,7 @@ export class Stock {
 
   // 股票名称
   get name() {
-    return this.stockItem.name;
+    return `A${this.stockItem.name}`;
   }
 
   // 股票代码

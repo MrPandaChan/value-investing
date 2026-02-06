@@ -376,6 +376,10 @@ onBeforeMount(() => {
     text-align: center;
   }
 
+  tr:nth-child(2n) {
+    background-color: #fff;
+  }
+
   .bold {
     font-weight: bold;
   }
