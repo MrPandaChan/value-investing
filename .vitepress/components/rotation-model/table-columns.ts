@@ -173,7 +173,7 @@ export const tableColumns: ColumnConfig[] = [
   },
   {
     key: "pe",
-    label: "市盈率",
+    label: "市盈率<br />TTM",
     thClass: "bold red",
     tdClass: "bold red",
     show: true,

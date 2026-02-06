@@ -1,4 +1,4 @@
-import { type ServiceData, type StockItem } from "../../types";
+import { type ServiceData, type StockItem, ValuationStyle } from "../../types";
 import { getStockItem } from "../../types/stocks";
 import { computed, ref, type Ref } from "vue";
 import { RowType } from "../components/rotation-model/types";
@@ -27,7 +27,9 @@ export class Stock {
 
   price = computed(() => this.dynamicData.value.price);
 
-  pe = computed(() => this.dynamicData.value.PE);
+  pe = computed(() => {
+    return this.dynamicData.value.PE_TTM;
+  });
 
   pb = computed(() => this.dynamicData.value.PB);
 
@@ -104,15 +106,18 @@ export class Stock {
     return this.stockItem.sharesPerLot || 100;
   }
 
-  constructor(stockItem: StockItem) {
+  constructor(
+    stockItem: StockItem,
+    valuationStyle: ValuationStyle = ValuationStyle.NEUTRAL,
+  ) {
     this.stockItem = stockItem;
     this.data = data[stockItem.code];
     this.dynamicData = ref(this.data.dynamicData);
 
-    this.calculateAnchor();
+    this.calculateAnchor(valuationStyle);
   }
 
-  private calculateAnchor() {
+  calculateAnchor(valuationStyle: ValuationStyle = ValuationStyle.NEUTRAL) {
     const valuationData = data[this.stockItem.code].valuationData;
     const dynamicData = data[this.stockItem.code].dynamicData;
     const stockItem = getStockItem(this.stockItem.code);
@@ -121,7 +126,7 @@ export class Stock {
       valuationData,
       stockItem,
       dynamicData,
-      this.stockItem.profitValuationConfig?.neutral,
+      this.stockItem.profitValuationConfig?.[valuationStyle],
     );
 
     this.anchor.value = profitValuation.anchor.value;

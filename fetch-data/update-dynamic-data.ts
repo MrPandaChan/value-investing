@@ -2,9 +2,9 @@ import axios from "axios";
 import { saveJsonToFileAsync } from "./save-data";
 import type { DynamicData } from "./types";
 import { stocksToSecIds, v, isHKCode } from "./helper";
-import { stockData } from "../types";
 import * as fs from "fs";
 import * as path from "path";
+import { stockData } from "../types/stocks";
 
 /**
  * 动态数据响应接口
@@ -19,6 +19,7 @@ interface DynamicDataResponse {
   f23: number;
   f38: number;
   f100: string;
+  f115: number;
 }
 
 // f12  # 代码
@@ -27,8 +28,16 @@ interface DynamicDataResponse {
 // f9   # 动态市盈率
 // f23  # 市净率
 // f20  # 总市值
+// f37  # 净资产收益率(加权)
 // f38  # 总股本
 // f100 # 行业
+// f115 # 市盈率TTM
+// secids=AAPL,TSLA
+// secids=116.00700,1.06855  // 腾讯控股（00700.HK）、亚盛医药（06855.HK）
+//（部分接口可能简化为 1.00700 或 116.00700）
+// secids=0.000001  // 平安银行（000001.SZ）
+// secids=1.600519  // 贵州茅台（600519.SH）
+// secids=1.600519,0.000001,116.00700,AAPL
 export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
   const secids = stocksToSecIds(codes);
 
@@ -36,11 +45,11 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
     "https://push2.eastmoney.com/api/qt/ulist.np/get",
     {
       params: {
-        fields: "f12,f14,f2,f9,f23,f18,f20,f38",
+        fields: "f12,f14,f2,f9,f23,f18,f20,f38,f115",
         secids,
         v: v(),
       },
-    }
+    },
   );
 
   return res.data.data.diff.map((v: DynamicDataResponse) => {
@@ -50,7 +59,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
       price: isHKCode(v.f12) ? price / 1000 : price / 100,
       marketValue: v.f20,
       PB: v.f23 / 100,
-      PE: v.f9 / 100,
+      PE_TTM: v.f115 / 100,
       totalSharesOutstanding: v.f38,
     };
   });
@@ -59,9 +68,12 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
 /**
  * 读取数据文件并更新dynamicData字段
  */
-async function updateDynamicDataForStock(code: string, dynamicDataMap: Map<string, DynamicData>) {
+async function updateDynamicDataForStock(
+  code: string,
+  dynamicDataMap: Map<string, DynamicData>,
+) {
   const dataFilePath = path.join(__dirname, "..", "data", `${code}.json`);
-  
+
   // 检查文件是否存在
   if (!fs.existsSync(dataFilePath)) {
     console.log(`数据文件 ${code}.json 不存在，跳过更新`);
@@ -71,7 +83,7 @@ async function updateDynamicDataForStock(code: string, dynamicDataMap: Map<strin
   // 读取现有数据
   let stockData;
   try {
-    const fileContent = fs.readFileSync(dataFilePath, 'utf8');
+    const fileContent = fs.readFileSync(dataFilePath, "utf8");
     stockData = JSON.parse(fileContent);
   } catch (error) {
     console.error(`读取 ${code}.json 文件出错:`, error);
@@ -93,28 +105,26 @@ async function updateDynamicDataForStock(code: string, dynamicDataMap: Map<strin
   console.log(`更新 ${code} 的动态数据成功`);
 }
 
-
-
 /**
  * 主函数：更新所有股票的动态数据
  */
 export async function main() {
   console.log("开始更新动态数据...");
-  
+
   // 获取所有股票代码
-  const codes = stockData.map(stock => stock.code);
-  
+  const codes = stockData.map((stock) => stock.code);
+
   // 一次性获取所有股票的动态数据
   console.log("正在获取所有股票的动态数据...");
   const response = await axios.get(
     "https://push2.eastmoney.com/api/qt/ulist.np/get",
     {
       params: {
-        fields: "f12,f14,f2,f9,f23,f18,f20,f38",
+        fields: "f12,f14,f2,f9,f23,f18,f20,f38,f115",
         secids: stocksToSecIds(codes),
         v: v(),
       },
-    }
+    },
   );
 
   // 创建代码到动态数据的映射
@@ -125,7 +135,7 @@ export async function main() {
       price: isHKCode(v.f12) ? price / 1000 : price / 100,
       marketValue: v.f20,
       PB: v.f23 / 100,
-      PE: v.f9 / 100,
+      PE_TTM: v.f115 / 100,
       totalSharesOutstanding: v.f38,
     };
     dynamicDataMap.set(v.f12, dynamicData);
@@ -138,7 +148,7 @@ export async function main() {
     console.log(`正在更新 ${code} 的动态数据...`);
     await updateDynamicDataForStock(code, dynamicDataMap);
   }
-  
+
   console.log("动态数据更新完成！");
 }
 

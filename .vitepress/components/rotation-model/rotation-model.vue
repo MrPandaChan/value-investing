@@ -8,11 +8,15 @@ import StockRow from "./stock-row.vue";
 import AreaRow from "./area-row.vue";
 import { stockData } from "../../../types/stocks";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
+import { ValuationStyle } from "../../../types";
 
 const stocks = shallowReactive<Stock[]>([]);
 
 // 投入金额
 const investmentAmount = ref(1000000); // 默认100万
+
+// 估值风格
+const valuationStyle = ref<ValuationStyle>(ValuationStyle.NEUTRAL);
 
 // 列显示控制
 const visibleColumnKeys = ref(
@@ -265,9 +269,15 @@ async function refreshDynamicData() {
   refreshLoading.value = false;
 }
 
+function onValuationStyleChange(style: ValuationStyle) {
+  for (const stock of stocks) {
+    stock.calculateAnchor(style);
+  }
+}
+
 onBeforeMount(() => {
   for (const stockItem of stockData) {
-    const stock = new Stock(stockItem);
+    const stock = new Stock(stockItem, valuationStyle.value);
     stocks.push(stock);
   }
 
@@ -277,6 +287,17 @@ onBeforeMount(() => {
 
 <template>
   <div class="control-panel">
+    <el-select
+      class="valuation-style-select"
+      v-model="valuationStyle"
+      @change="onValuationStyleChange"
+    >
+      <el-option label="特价" :value="ValuationStyle.SPECIAL_OFFER" />
+      <el-option label="保守" :value="ValuationStyle.CONSERVATIVE" />
+      <el-option label="中性" :value="ValuationStyle.NEUTRAL" />
+      <el-option label="激进" :value="ValuationStyle.OPTIMISTIC" />
+    </el-select>
+
     <el-button
       :loading="refreshLoading"
       type="primary"
@@ -305,7 +326,7 @@ onBeforeMount(() => {
     </el-dropdown>
 
     <div class="input-wrapper">
-      <label>投入金额：</label>
+      <label>投入：</label>
       <input v-model="investmentAmount" type="number" class="amount-input" />
       <span>元</span>
     </div>
@@ -338,6 +359,10 @@ onBeforeMount(() => {
   align-items: center;
   gap: 16px;
   margin-bottom: 10px;
+}
+
+.valuation-style-select {
+  width: 100px;
 }
 
 .input-wrapper {

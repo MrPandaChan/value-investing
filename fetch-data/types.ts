@@ -93,7 +93,7 @@ export interface DynamicData {
   price: number;
   marketValue: number;
   PB: number;
-  PE: number;
+  PE_TTM: number;
   totalSharesOutstanding: number;
 }
 

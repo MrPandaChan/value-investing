@@ -20,6 +20,16 @@ export enum ProfitValuationGrowthType {
   RATE,
 }
 
+/**
+ * 估值风格
+ */
+export enum ValuationStyle {
+  SPECIAL_OFFER = "specialOffer", // 特价
+  CONSERVATIVE = "conservative", // 保守
+  NEUTRAL = "neutral", // 中性
+  OPTIMISTIC = "optimistic", // 激进
+}
+
 export interface ProfitValuationGrowth {
   type: ProfitValuationGrowthType;
   data: number[];
@@ -27,7 +37,7 @@ export interface ProfitValuationGrowth {
 }
 
 export interface ProfitValuationConfig {
-  specialOffer: ProfitValuationGrowth;
+  [ValuationStyle.SPECIAL_OFFER]: ProfitValuationGrowth;
   conservative: ProfitValuationGrowth;
   neutral: ProfitValuationGrowth;
   optimistic: ProfitValuationGrowth;

@@ -115,6 +115,7 @@ interface DynamicDataResponse {
   f23: number;
   f38: number;
   f100: string;
+  f115: number;
 }
 
 // f12  # 代码
@@ -123,8 +124,10 @@ interface DynamicDataResponse {
 // f9   # 动态市盈率
 // f23  # 市净率
 // f20  # 总市值
+// f37  # 净资产收益率(加权)
 // f38  # 总股本
 // f100 # 行业
+// f115 # 市盈率TTM
 // secids=AAPL,TSLA
 // secids=116.00700,1.06855  // 腾讯控股（00700.HK）、亚盛医药（06855.HK）
 //（部分接口可能简化为 1.00700 或 116.00700）
@@ -138,7 +141,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
     "https://push2.eastmoney.com/api/qt/ulist.np/get",
     {
       params: {
-        fields: "f12,f14,f2,f9,f23,f18,f20,f38",
+        fields: "f12,f14,f2,f9,f23,f18,f20,f115",
         secids,
         v: v(),
       },
@@ -152,7 +155,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
       price: isHKCode(v.f12) ? price / 1000 : price / 100,
       marketValue: v.f20,
       PB: v.f23 / 100,
-      PE: v.f9 / 100,
+      PE_TTM: v.f115 / 100,
       totalSharesOutstanding: v.f38,
     };
   });
