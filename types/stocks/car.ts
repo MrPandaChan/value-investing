@@ -68,11 +68,11 @@ const carStockData: StockItem[] = [
       },
       neutral: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.3, 0.1, 0.07],
+        data: [0.3, 0.1, 0.08],
       },
       optimistic: {
         type: ProfitValuationGrowthType.RATE,
-        data: [0.3, 0.12, 0.08],
+        data: [0.3, 0.13, 0.1],
       },
       backYearsNum: 10,
     },
