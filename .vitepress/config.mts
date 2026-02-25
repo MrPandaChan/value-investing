@@ -267,6 +267,15 @@ export default defineConfig({
           ],
         },
         {
+          text: "互联网",
+          items: [
+            {
+              text: "腾讯控股",
+              link: "/company/internet/tencent.md",
+            },
+          ],
+        },
+        {
           text: "消费品",
           items: [
             {
