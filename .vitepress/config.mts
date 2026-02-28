@@ -208,6 +208,10 @@ export default defineConfig({
               text: "波段",
               link: "/value-investing/analysis/band-trading.md",
             },
+            {
+              text: "买点",
+              link: "/value-investing/analysis/entry-point.md",
+            },
           ],
         },
         {
