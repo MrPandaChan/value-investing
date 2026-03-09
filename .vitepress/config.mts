@@ -106,10 +106,6 @@ export default defineConfig({
               text: "不亏",
               link: "/value-investing/value-investing/no-loss.md",
             },
-            {
-              text: "人物及案例",
-              link: "/value-investing/value-investing/figures-and-cases.md",
-            },
           ],
         },
         {
@@ -220,6 +216,27 @@ export default defineConfig({
             {
               text: "超越投资的思考",
               link: "",
+            },
+          ],
+        },
+        {
+          text: "人物&案例",
+          items: [
+            {
+              text: "沃伦·巴菲特",
+              link: "/value-investing/figures-and-cases/buffett.md",
+            },
+            {
+              text: "彼得·林奇",
+              link: "/value-investing/figures-and-cases/lynch.md",
+            },
+            {
+              text: "约翰·邓普顿",
+              link: "/value-investing/figures-and-cases/templeton.md",
+            },
+            {
+              text: "冯柳",
+              link: "/value-investing/figures-and-cases/fengliu.md",
             },
           ],
         },
@@ -426,6 +443,7 @@ export default defineConfig({
             { text: "中国移动", link: "/company/operator/mobile.md" },
             { text: "中国电信", link: "/company/operator/telecom.md" },
             { text: "中国联通", link: "/company/operator/unicom.md" },
+            { text: "中国铁塔", link: "/company/tower/tower.md" },
           ],
         },
         {
@@ -443,6 +461,16 @@ export default defineConfig({
             {
               text: "价值投资之银行大博弈",
               link: "/company/bank/play-a-game.md",
+            },
+          ],
+        },
+        {
+          text: "服饰",
+          link: "/company/fashion/shenzhou.md",
+          items: [
+            {
+              text: "申洲国际",
+              link: "/company/fashion/shenzhou.md",
             },
           ],
         },
