@@ -106,6 +106,10 @@ export default defineConfig({
               text: "不亏",
               link: "/value-investing/value-investing/no-loss.md",
             },
+            {
+              text: "安全边际",
+              link: "/value-investing/value-investing/safe-margin.md",
+            },
           ],
         },
         {
