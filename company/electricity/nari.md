@@ -1,20 +1,20 @@
-# 陕西煤业
+# 国电南瑞
 
 ## 综合信息
 
 ### 文章推荐
 
-[关于陕西煤业的思考（榆林子洲）（2022.07.25）](https://xueqiu.com/7123126150/211923944)
+[简述国电南瑞(挚爱子洲)（2026.02.23）](https://xueqiu.com/7123126150/376643748)
 
 ## 财务报表分析
 
 ### 一、基本营收数据
 
-<BasicRevenueTable code="601225" />
+<BasicRevenueTable code="600406" />
 
 ### 二、成本费用构成
 
-<CostsExpensesTable code="601225" />
+<CostsExpensesTable code="600406" />
 
 ### 三、增长情况
 
@@ -24,21 +24,21 @@
 
 ### 四、业务构成
 
-<PrimaryBusinessTable code="601225"/>
+<PrimaryBusinessTable code="600406"/>
 
 ### 五、资产负债
 
-<BalanceTable code="601225" />
+<BalanceTable code="600406" />
 
 ### 六、投入产出
 
 #### WC
 
-<WorkingCapitalTable code="601225" />
+<WorkingCapitalTable code="600406" />
 
 #### 固定资产
 
-<FixedAssetInvestmentAnalysisTable  code="601225"/>
+<FixedAssetInvestmentAnalysisTable  code="600406"/>
 
 #### 人员投入
 
@@ -66,9 +66,9 @@
 
 ### 七、收益率
 
-<ReturnTable code="601225" />
+<ReturnTable code="600406" />
 
-<TurnoverRateTable code="601225" />
+<TurnoverRateTable code="600406" />
 
 ## 非财务信息“八问”
 
@@ -104,6 +104,48 @@
 
 未来会怎样，对未来做出预测
 
+## 同行对比
+
+<CompareDataTable :codes="['600690', '600406', '000333']" />
+
+1. 对比营业收入及增速
+2. 对比净利润及增速
+3. 对比净利率、毛利率、期间费用率
+4. 对比销售费用、研发费用
+5. 对比 1 元收入所需 WC
+
+<ComparePrimaryBusinessTable :codes="[
+  { code: '600690', compareItems: {
+      industry: [],
+      product: ['空调'],
+      region: ['内', '外'] 
+    }
+  },
+  { code: '600406', compareItems: {
+      industry: [],
+      product: ['空调', '消费电器'],
+      region: ['内', '外']
+    }
+  },
+  { code: '000333', compareItems: {
+      industry: [],
+      product: ['空调', '智能家居'],
+      region: ['内', '外']
+    }
+  }
+]" />
+
+1. 对比主营业务分析
+
+<CompareTurnoverRateTable :codes="['600690', '600406', '000333']" />
+
+1. 对比周转率分析
+2. 对比 1 元收入需要的固定资产分析
+
+<CompareReturnTable :codes="['600690', '600406', '000333']" />
+
+1. 对比 ROE，ROIC 分析
+
 ## 估值和结论
 
-<ProfitValuationGroup code="601225" />
+## 零散思考

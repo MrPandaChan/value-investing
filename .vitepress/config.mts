@@ -410,6 +410,7 @@ export default defineConfig({
           items: [
             { text: "长江电力", link: "/company/electricity/yangtze.md" },
             { text: "国投电力", link: "/company/electricity/guotou.md" },
+            { text: "国电南瑞", link: "/company/electricity/nari.md" },
           ],
         },
         {

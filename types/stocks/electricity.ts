@@ -57,6 +57,34 @@ const electricityStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+  {
+    name: "国电南瑞",
+    code: "600406",
+    allocation: 0.1,
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+        discount: 0.9,
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.05],
+        discount: 0.9,
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.08],
+        discount: 0.9,
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1],
+        discount: 0.9,
+      },
+      backYearsNum: 10,
+    },
+  },
 ];
 
 export { electricityStockData };
