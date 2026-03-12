@@ -493,6 +493,16 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "物业",
+          link: "/company/property/baoli.md",
+          items: [
+            {
+              text: "保利物业",
+              link: "/company/property/baoli.md",
+            },
+          ],
+        },
       ],
     },
 
