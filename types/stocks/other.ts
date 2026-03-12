@@ -181,6 +181,30 @@ const otherStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+  {
+    name: "安克创新",
+    code: "300866",
+    allocation: 0,
+    profitValuationConfig: {
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.1],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.1],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.2, 0.1],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.2, 0.1],
+      },
+      backYearsNum: 10,
+    },
+  },
 ];
 
 export { otherStockData };

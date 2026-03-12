@@ -479,6 +479,16 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "消费电子",
+          link: "/company/consumer-electronics/anker.md",
+          items: [
+            {
+              text: "安克创新",
+              link: "/company/consumer-electronics/anker.md",
+            },
+          ],
+        },
       ],
     },
 

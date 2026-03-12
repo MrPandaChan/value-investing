@@ -1,20 +1,20 @@
-# 国电南瑞
+# 安克创新
 
 ## 综合信息
 
 ### 文章推荐
 
-[简述国电南瑞(挚爱子洲)（2026.02.23）](https://xueqiu.com/7123126150/376643748)
+[安克创新是一流团队做三流生意，只能买在低价（2025.09.27 方伟看十年）](https://mp.weixin.qq.com/s/ulfoWgvrOMtgBu5H3wuOaw?scene=1&click_id=44)
 
 ## 财务报表分析
 
 ### 一、基本营收数据
 
-<BasicRevenueTable code="600406" />
+<BasicRevenueTable code="300866" />
 
 ### 二、成本费用构成
 
-<CostsExpensesTable code="600406" />
+<CostsExpensesTable code="300866" />
 
 ### 三、增长情况
 
@@ -24,21 +24,21 @@
 
 ### 四、业务构成
 
-<PrimaryBusinessTable code="600406"/>
+<PrimaryBusinessTable code="300866"/>
 
 ### 五、资产负债
 
-<BalanceTable code="600406" />
+<BalanceTable code="300866" />
 
 ### 六、投入产出
 
 #### WC
 
-<WorkingCapitalTable code="600406" />
+<WorkingCapitalTable code="300866" />
 
 #### 固定资产
 
-<FixedAssetInvestmentAnalysisTable  code="600406"/>
+<FixedAssetInvestmentAnalysisTable  code="300866"/>
 
 #### 人员投入
 
@@ -66,9 +66,9 @@
 
 ### 七、收益率
 
-<ReturnTable code="600406" />
+<ReturnTable code="300866" />
 
-<TurnoverRateTable code="600406" />
+<TurnoverRateTable code="300866" />
 
 ## 非财务信息“八问”
 
@@ -105,5 +105,7 @@
 未来会怎样，对未来做出预测
 
 ## 估值和结论
+
+<ProfitValuationGroup code="300866" />
 
 ## 零散思考
