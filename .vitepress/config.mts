@@ -242,6 +242,10 @@ export default defineConfig({
               text: "冯柳",
               link: "/value-investing/figures-and-cases/fengliu.md",
             },
+            {
+              text: "管我财",
+              link: "/value-investing/figures-and-cases/guanwocai.md",
+            },
           ],
         },
         {
