@@ -246,6 +246,10 @@ export default defineConfig({
               text: "管我财",
               link: "/value-investing/figures-and-cases/guanwocai.md",
             },
+            {
+              text: "学知利行",
+              link: "/value-investing/figures-and-cases/xuezhilixing.md",
+            },
           ],
         },
         {
