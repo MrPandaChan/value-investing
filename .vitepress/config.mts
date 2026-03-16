@@ -198,7 +198,7 @@ export default defineConfig({
           ],
         },
         {
-          text: "技术分析",
+          text: "操作策略",
           items: [
             {
               text: "多空力量的对比",
@@ -211,6 +211,10 @@ export default defineConfig({
             {
               text: "买点",
               link: "/value-investing/analysis/entry-point.md",
+            },
+            {
+              text: "网格",
+              link: "/value-investing/analysis/grid.md",
             },
           ],
         },
