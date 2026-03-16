@@ -28,6 +28,10 @@
     - 依然**建议以估值回归的逻辑看待**
     - **不要低估周期底部的长度与突发情况**
 
+### 跟踪指标
+
+[萝卜投研](https://robo.datayes.com/v2/landing/indicator_library)数据搜索 SCFI 和 CCFI 查看运价指数
+
 ## 财务报表分析
 
 ### 一、基本营收数据
