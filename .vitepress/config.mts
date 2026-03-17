@@ -541,6 +541,16 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "金融",
+          link: "",
+          items: [
+            {
+              text: "港交所",
+              link: "/company/financial/hkex.md",
+            },
+          ],
+        },
       ],
     },
 
