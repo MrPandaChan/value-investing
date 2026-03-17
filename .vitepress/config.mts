@@ -482,6 +482,16 @@ export default defineConfig({
           ],
         },
         {
+          text: "保险",
+          link: "/company/insurance/insurance.md",
+          items: [
+            {
+              text: "中国平安",
+              link: "/company/insurance/pingan.md",
+            },
+          ],
+        },
+        {
           text: "服饰",
           link: "/company/fashion/shenzhou.md",
           items: [
@@ -508,6 +518,26 @@ export default defineConfig({
             {
               text: "保利物业",
               link: "/company/property/baoli.md",
+            },
+          ],
+        },
+        {
+          text: "燃气",
+          link: "/company/gas/gs.md",
+          items: [
+            {
+              text: "华润燃气",
+              link: "/company/gas/huarun.md",
+            },
+          ],
+        },
+        {
+          text: "有色金属",
+          link: "/company/nonferrous-metals‌/nonferrous-metals‌.md",
+          items: [
+            {
+              text: "藏格矿业",
+              link: "/company/nonferrous-metals‌/nonferrous-metals‌.md",
             },
           ],
         },
