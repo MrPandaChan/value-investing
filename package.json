@@ -5,7 +5,8 @@
     "docs:preview": "vitepress preview",
     "fetch-data": "tsx fetch-data/start-fetch.ts",
     "handle-data": "tsx fetch-data/handle-stock-data.ts",
-    "update-data": "pnpm run fetch-data & pnpm run handle-data",
+    "update-data": "pnpm run fetch-data & pnpm run handle-data & pnpm run update-dynamic",
+    "force-update": "pnpm run fetch-data -- -f & pnpm run handle-data & pnpm run update-dynamic",
     "update-dynamic": "tsx fetch-data/update-dynamic-data.ts & pnpm run handle-data"
   },
   "devDependencies": {

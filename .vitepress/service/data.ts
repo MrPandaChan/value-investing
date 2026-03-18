@@ -2179,10 +2179,10 @@ const data: ServiceData = {
       "minorityInterest": 213208023.29
     },
     "dynamicData": {
-      "price": 95.84,
-      "marketValue": 51385466388,
-      "PB": 5.2,
-      "PE_TTM": 19.95,
+      "price": 97.52,
+      "marketValue": 52286213295,
+      "PB": 5.29,
+      "PE_TTM": 20.3,
       "totalSharesOutstanding": 536158873
     },
     "recentYearData": {
@@ -5196,10 +5196,10 @@ const data: ServiceData = {
       "minorityInterest": 14977450289.24
     },
     "dynamicData": {
-      "price": 5.21,
-      "marketValue": 121288594226,
-      "PB": 0.86,
-      "PE_TTM": 9.05,
+      "price": 5.13,
+      "marketValue": 119426197386,
+      "PB": 0.85,
+      "PE_TTM": 8.91,
       "totalSharesOutstanding": 23279960504
     },
     "recentYearData": {
@@ -8105,10 +8105,10 @@ const data: ServiceData = {
       "minorityInterest": 157394000000
     },
     "dynamicData": {
-      "price": 6.46,
-      "marketValue": 781178821874,
-      "PB": 0.94,
-      "PE_TTM": 21.67,
+      "price": 6.08,
+      "marketValue": 735227126470,
+      "PB": 0.89,
+      "PE_TTM": 20.39,
       "totalSharesOutstanding": 120925514222
     },
     "recentYearData": {
@@ -10822,10 +10822,10 @@ const data: ServiceData = {
       "minorityInterest": 7851000000
     },
     "dynamicData": {
-      "price": 39.5,
-      "marketValue": 996183901240,
-      "PB": 0.91,
-      "PE_TTM": 6.63,
+      "price": 39.95,
+      "marketValue": 1007532831760,
+      "PB": 0.92,
+      "PE_TTM": 6.71,
       "totalSharesOutstanding": 25219845601
     },
     "recentYearData": {
@@ -13155,10 +13155,10 @@ const data: ServiceData = {
       "minorityInterest": 207725601241
     },
     "dynamicData": {
-      "price": 5.03,
-      "marketValue": 157260059395,
-      "PB": 0.91,
-      "PE_TTM": 16.62,
+      "price": 4.95,
+      "marketValue": 154758905369,
+      "PB": 0.9,
+      "PE_TTM": 16.35,
       "totalSharesOutstanding": 31264425327
     },
     "recentYearData": {
@@ -15476,10 +15476,10 @@ const data: ServiceData = {
       "minorityInterest": 242881115.97
     },
     "dynamicData": {
-      "price": 31.26,
-      "marketValue": 69207740111,
-      "PB": 5.16,
-      "PE_TTM": 13.91,
+      "price": 30.49,
+      "marketValue": 67503006909,
+      "PB": 5.03,
+      "PE_TTM": 13.56,
       "totalSharesOutstanding": 2213939223
     },
     "recentYearData": {
@@ -18385,10 +18385,10 @@ const data: ServiceData = {
       "minorityInterest": 65876370000
     },
     "dynamicData": {
-      "price": 22.17,
-      "marketValue": 222530943660,
-      "PB": 4.26,
-      "PE_TTM": 22.61,
+      "price": 19.64,
+      "marketValue": 197136117884,
+      "PB": 3.78,
+      "PE_TTM": 20.03,
       "totalSharesOutstanding": 10037480544
     },
     "recentYearData": {
@@ -21030,10 +21030,10 @@ const data: ServiceData = {
       "minorityInterest": 35045586.97
     },
     "dynamicData": {
-      "price": 21.79,
-      "marketValue": 12357446440,
-      "PB": 3.8,
-      "PE_TTM": 15.45,
+      "price": 22.07,
+      "marketValue": 12516238776,
+      "PB": 3.85,
+      "PE_TTM": 15.65,
       "totalSharesOutstanding": 567115486
     },
     "recentYearData": {
@@ -23651,10 +23651,10 @@ const data: ServiceData = {
       "minorityInterest": 11178849750.94
     },
     "dynamicData": {
-      "price": 86.6,
-      "marketValue": 271098842812,
-      "PB": 2.58,
-      "PE_TTM": 24.43,
+      "price": 79.67,
+      "marketValue": 249404674443,
+      "PB": 2.3,
+      "PE_TTM": 19.91,
       "totalSharesOutstanding": 3130471626
     },
     "recentYearData": {
@@ -26248,10 +26248,10 @@ const data: ServiceData = {
       "minorityInterest": 3517344209.35
     },
     "dynamicData": {
-      "price": 30.22,
-      "marketValue": 242719671034,
-      "PB": 4.93,
-      "PE_TTM": 30.39,
+      "price": 27.9,
+      "marketValue": 224085996752,
+      "PB": 4.55,
+      "PE_TTM": 28.05,
       "totalSharesOutstanding": 8031756156
     },
     "recentYearData": {
@@ -27121,7 +27121,7 @@ const data: ServiceData = {
         "year": "2025Q3",
         "roe": 24.64,
         "roa": 29.621501,
-        "roic": 25.601791,
+        "roic": 24.461876,
         "netProfitMargin": 52.080088,
         "assetTurnover": 43.3684,
         "equityMultiplier": 1.146904
@@ -28473,10 +28473,10 @@ const data: ServiceData = {
       "minorityInterest": 8635060486.62
     },
     "dynamicData": {
-      "price": 1392,
-      "marketValue": 1743160139280,
-      "PB": 6.78,
-      "PE_TTM": 19.36,
+      "price": 1475,
+      "marketValue": 1847098567125,
+      "PB": 7.19,
+      "PE_TTM": 20.52,
       "totalSharesOutstanding": 1252270215
     },
     "recentYearData": {
@@ -28486,21 +28486,21 @@ const data: ServiceData = {
   "600660": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 33301907930,
-        "netProfit": 7063854155,
-        "netProfitMargin": 0.21211559919774242,
-        "netProfitExcludingNon": 6921634077,
-        "coreProfit": 8814147954,
-        "cashFlowFromOperating": 9884629654,
-        "fcf": 5340975356,
-        "capex": 4543654298,
-        "fcfOverNetProfit": 0.7560993246469427,
-        "netProfitExcludingNonOvernetProfit": 0.9798665041945505,
-        "cashFlowFromOperatingOverNetProfit": 1.3993252744329912,
-        "operatingProfit": 7087158728,
-        "financialProfit": -23304573,
-        "operatingProfitOverNetProfit": 1.003299129977578
+        "year": "2025",
+        "revenue": 45787435563,
+        "netProfit": 9312304150,
+        "netProfitMargin": 0.203381212236422,
+        "netProfitExcludingNon": 9164684348,
+        "coreProfit": 11987741892,
+        "cashFlowFromOperating": 12055090552,
+        "fcf": 5891008343,
+        "capex": 6164082209,
+        "fcfOverNetProfit": 0.6326048041504314,
+        "netProfitExcludingNonOvernetProfit": 0.9841478757972053,
+        "cashFlowFromOperatingOverNetProfit": 1.2945335931709232,
+        "operatingProfit": 9347240389,
+        "financialProfit": -34936239,
+        "operatingProfitOverNetProfit": 1.003751621342823
       },
       {
         "year": "2024",
@@ -28675,21 +28675,21 @@ const data: ServiceData = {
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 37.359813,
-        "netProfitMargin": 21.211559919774242,
-        "grossProfitMinusNetProfit": 16.14825308022576,
-        "devExpenses": 1393196451,
-        "manageExpenses": 2428438576,
-        "devAndManageExpenses": 3821635027,
-        "sellingExpenses": 945910831,
-        "financialExpenses": -922946275,
-        "totalOperatingExpenses": 3844599583,
-        "sellingExpensesRatio": 0.028404103242021063,
-        "devExpensesRatio": 0.04183533429761662,
-        "manageExpensesRatio": 0.07292190528856585,
-        "devAndManageExpensesRatio": 0.11475723958618247,
-        "totalOperatingExpensesRatio": 11.544682
+        "year": "2025",
+        "grossProfitMargin": 37.270011,
+        "netProfitMargin": 20.3381212236422,
+        "grossProfitMinusNetProfit": 16.931889776357796,
+        "devExpenses": 1913082175,
+        "manageExpenses": 3403051533,
+        "devAndManageExpenses": 5316133708,
+        "sellingExpenses": 1327765447,
+        "financialExpenses": -830940354,
+        "totalOperatingExpenses": 5812958801,
+        "sellingExpensesRatio": 0.028998467170608333,
+        "devExpensesRatio": 0.041781815283534404,
+        "manageExpensesRatio": 0.07432282439835841,
+        "devAndManageExpensesRatio": 0.11610463968189282,
+        "totalOperatingExpensesRatio": 12.695532
       },
       {
         "year": "2024",
@@ -28864,20 +28864,20 @@ const data: ServiceData = {
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 40880168981,
-        "cash": 21863050111,
-        "inventory": 6635065119,
-        "nonCurrentAssets": 29761770382,
+        "year": "2025",
+        "currentAssets": 39345419834,
+        "cash": 19273739706,
+        "inventory": 6799040799,
+        "nonCurrentAssets": 30716934852,
         "goodwill": 153707174,
-        "totalAssets": 70641939363,
-        "equity": 35473992872,
-        "interestFreeLiabilities": 8270697476,
-        "interestBearingDebt": 17095683026,
-        "interestExpense": 248914006,
-        "interestFreeLiabilitiesOverTotal": 0.11707913953919459,
-        "interestBearingDebtOverTotal": 0.24200472382492622,
-        "debtRatio": 49.790431
+        "totalAssets": 70062354686,
+        "equity": 37556465111,
+        "interestFreeLiabilities": 7976825587,
+        "interestBearingDebt": 16937917104,
+        "interestExpense": 321414072,
+        "interestFreeLiabilitiesOverTotal": 0.1138532329201597,
+        "interestBearingDebtOverTotal": 0.24175489362170366,
+        "debtRatio": 46.4018
       },
       {
         "year": "2024",
@@ -29042,22 +29042,22 @@ const data: ServiceData = {
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.43796702275009863,
-        "wc": 14585137468,
-        "receivables": 11275212094,
-        "prepayments": 458260675,
-        "inventory": 6635065119,
-        "accountsPayable": 3064262805,
+        "year": "2025",
+        "wcPerYuanRevenue": 0.3319794314115997,
+        "wc": 15200486824,
+        "receivables": 11834285298,
+        "prepayments": 344054393,
+        "inventory": 6799040799,
+        "accountsPayable": 3058700675,
         "customerAdvances": 0,
-        "contractLiabilities": 719137615,
-        "receivablesToRevenueRatio": 0.3385755590250351,
-        "prepaymentsToRevenueRatio": 0.013760793404487682,
-        "inventoryToRevenueRatio": 0.19923978929215663,
-        "accountsPayableToRevenueRatio": 0.09201463205774948,
+        "contractLiabilities": 718192991,
+        "receivablesToRevenueRatio": 0.25846141310353427,
+        "prepaymentsToRevenueRatio": 0.0075141660320025465,
+        "inventoryToRevenueRatio": 0.14849140851413356,
+        "accountsPayableToRevenueRatio": 0.06680218355516902,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.021594486913831305,
-        "changeInWC": 1021054555
+        "contractLiabilitiesToRevenueRatio": 0.015685372682901655,
+        "changeInWC": 1636403911
       },
       {
         "year": "2024",
@@ -29242,13 +29242,13 @@ const data: ServiceData = {
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
-        "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.0910389403325697,
-        "fixedAssets": 0,
-        "longTermOperatingAssets": 3031770409,
-        "depreciation": 0,
-        "depreciationOverRevenue": 0
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.581358493387873,
+        "longTermOperatingAssetsPerYuanRevenue": 0.6527240119590971,
+        "fixedAssets": 26618914555,
+        "longTermOperatingAssets": 29886558638,
+        "depreciation": 3077334585,
+        "depreciationOverRevenue": 0.06720914912925892
       },
       {
         "year": "2024",
@@ -29343,13 +29343,13 @@ const data: ServiceData = {
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 19.35,
-        "roa": 13.183427,
-        "roic": 14.156503,
-        "netProfitMargin": 21.223021,
-        "assetTurnover": 49.7429,
-        "equityMultiplier": 1.991652
+        "year": "2025",
+        "roe": 25.56,
+        "roa": 17.226815,
+        "roic": 18.308457,
+        "netProfitMargin": 20.347932,
+        "assetTurnover": 68.6898,
+        "equityMultiplier": 1.865734
       },
       {
         "year": "2024",
@@ -29444,19 +29444,19 @@ const data: ServiceData = {
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 70641939363,
-        "avgTotalAssets": 66948060949.5,
-        "avgCurrentAssets": 38641626384.5,
-        "avgInventory": 6302839593.5,
-        "equity": 35469012804,
-        "avgEquity": 35577290991,
-        "totalAssetsDays": 542.791016,
-        "currentAssetsDays": 313.292534,
-        "wcDays": 159.85796330378602,
-        "receivablesDays": 66.009596,
-        "inventoryDays": 81.578903,
-        "fixedAssetsDays": 0
+        "year": "2025",
+        "totalAssets": 70062354686,
+        "avgTotalAssets": 66658268611,
+        "avgCurrentAssets": 37874251811,
+        "avgInventory": 6384827433.5,
+        "equity": 37552160390,
+        "avgEquity": 36618864784,
+        "totalAssetsDays": 524.095232,
+        "currentAssetsDays": 297.783234,
+        "wcDays": 121.17249246523389,
+        "receivablesDays": 65.395313,
+        "inventoryDays": 80.025821,
+        "fixedAssetsDays": 212.19585008657367
       },
       {
         "year": "2024",
@@ -29610,6 +29610,102 @@ const data: ServiceData = {
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "汽车玻璃",
+        "mainBusinessIncome": 41889226037,
+        "mbiRatio": 0.914863,
+        "mainBusinessCost": 28767636910,
+        "mbcRatio": 1.001573,
+        "mainBusinessProfit": 13121589127,
+        "mbpRatio": 0.768919,
+        "grossProfitRatio": 0.313245
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "浮法玻璃",
+        "mainBusinessIncome": 6479743917,
+        "mbiRatio": 0.141518,
+        "mainBusinessCost": 3911243826,
+        "mbcRatio": 0.136174,
+        "mainBusinessProfit": 2568500091,
+        "mbpRatio": 0.150513,
+        "grossProfitRatio": 0.396389
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 4735633472,
+        "mbiRatio": 0.103426,
+        "mainBusinessCost": 3718471276,
+        "mbcRatio": 0.129462,
+        "mainBusinessProfit": 1017162196,
+        "mbpRatio": 0.059605,
+        "grossProfitRatio": 0.214789
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 690018469,
+        "mbiRatio": 0.01507,
+        "mainBusinessCost": 223957686,
+        "mbcRatio": 0.007797,
+        "mainBusinessProfit": 466060783,
+        "mbpRatio": 0.027311,
+        "grossProfitRatio": 0.675432
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "减:集团内部抵销",
+        "mainBusinessIncome": -8007186332,
+        "mbiRatio": -0.174877,
+        "mainBusinessCost": -7898856780,
+        "mbcRatio": -0.275006,
+        "mainBusinessProfit": -108329552,
+        "mbpRatio": -0.006348,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "国内",
+        "mainBusinessIncome": 24240607684,
+        "mbiRatio": 0.529416,
+        "mainBusinessCost": 14449843719,
+        "mbcRatio": 0.503085,
+        "mainBusinessProfit": 9790763965,
+        "mbpRatio": 0.573734,
+        "grossProfitRatio": 0.403899
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "国外",
+        "mainBusinessIncome": 20856809410,
+        "mbiRatio": 0.455514,
+        "mainBusinessCost": 14048651513,
+        "mbcRatio": 0.489117,
+        "mainBusinessProfit": 6808157897,
+        "mbpRatio": 0.398955,
+        "grossProfitRatio": 0.326424
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 690018469,
+        "mbiRatio": 0.01507,
+        "mainBusinessCost": 223957686,
+        "mbcRatio": 0.007797,
+        "mainBusinessProfit": 466060783,
+        "mbpRatio": 0.027311,
+        "grossProfitRatio": 0.675432
+      },
       {
         "year": "2024",
         "mainType": "产品",
@@ -30473,117 +30569,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 197029162,
         "mbpRatio": 0.027526,
         "grossProfitRatio": 0.595669
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "汽车玻璃",
-        "mainBusinessIncome": 13137756530,
-        "mbiRatio": 0.967898,
-        "mainBusinessCost": 8237716627,
-        "mbcRatio": 1.054179,
-        "mainBusinessProfit": 4900039903,
-        "mbpRatio": 0.850827,
-        "grossProfitRatio": 0.372974
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "浮法玻璃",
-        "mainBusinessIncome": 2485240231,
-        "mbiRatio": 0.183095,
-        "mainBusinessCost": 1877414538,
-        "mbcRatio": 0.240252,
-        "mainBusinessProfit": 607825693,
-        "mbpRatio": 0.105541,
-        "grossProfitRatio": 0.244574
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 300792103,
-        "mbiRatio": 0.02216,
-        "mainBusinessCost": 117937075,
-        "mbcRatio": 0.015092,
-        "mainBusinessProfit": 182855028,
-        "mbpRatio": 0.03175,
-        "grossProfitRatio": 0.607912
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他",
-        "mainBusinessIncome": 160815336,
-        "mbiRatio": 0.011848,
-        "mainBusinessCost": 92384142,
-        "mbcRatio": 0.011822,
-        "mainBusinessProfit": 68431194,
-        "mbpRatio": 0.011882,
-        "grossProfitRatio": 0.425527
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "减:内部抵消",
-        "mainBusinessIncome": -2511109145,
-        "mbiRatio": -0.185001,
-        "mainBusinessCost": -2511109145,
-        "mbcRatio": -0.321346,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "中国境内",
-        "mainBusinessIncome": 8795959672,
-        "mbiRatio": 0.648025,
-        "mainBusinessCost": 4956181093,
-        "mbcRatio": 0.634242,
-        "mainBusinessProfit": 3839778579,
-        "mbpRatio": 0.666726,
-        "grossProfitRatio": 0.436539
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "其他国家",
-        "mainBusinessIncome": 4476743280,
-        "mbiRatio": 0.329815,
-        "mainBusinessCost": 2740225069,
-        "mbcRatio": 0.350666,
-        "mainBusinessProfit": 1736518211,
-        "mbpRatio": 0.301523,
-        "grossProfitRatio": 0.387898
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 300792103,
-        "mbiRatio": 0.02216,
-        "mainBusinessCost": 117937075,
-        "mbcRatio": 0.015092,
-        "mainBusinessProfit": 182855028,
-        "mbpRatio": 0.03175,
-        "grossProfitRatio": 0.607912
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 2605379627,
-          "profit_tb": 0.17373,
-          "basicEps": 1.1,
-          "totalSharesOutstanding": 2508617532,
-          "dps": 0.75,
-          "dividendRatio": 0.7221454906233516,
-          "totalDividend": 1881463149,
-          "totalDividendA": 1502239749
-        },
         {
           "year": "2016",
           "profit": 3144227339,
@@ -30682,30 +30671,41 @@ const data: ServiceData = {
           "dividendRatio": 0.6265075108988848,
           "totalDividend": 4697538357.6,
           "totalDividendA": 3605375397.6
+        },
+        {
+          "year": "2025",
+          "profit": 9312304150,
+          "profit_tb": 0.24198,
+          "basicEps": 3.57,
+          "totalSharesOutstanding": 2609743532,
+          "dps": 2.1,
+          "dividendRatio": 0.2522221290205604,
+          "totalDividend": 2348769178.8,
+          "totalDividendA": 1802687698.8
         }
       ],
-      "cash": 21863050111,
-      "interestBearingDebt": 17095683026,
-      "debtRatio": 49.790431,
-      "interestBearingDebtOverTotal": 0.24200472382492622,
-      "roe": 22.72,
-      "roic": 16.093608,
-      "roa": 15.480432,
-      "grossProfitMargin": 36.229756,
-      "netProfitMargin": 19.117761,
-      "tradingFinancialAssets": 12121790,
-      "longTermEquityInvestment": 417054699,
-      "minorityInterest": -4980068
+      "cash": 19273739706,
+      "interestBearingDebt": 16937917104,
+      "debtRatio": 46.4018,
+      "interestBearingDebtOverTotal": 0.24175489362170366,
+      "roe": 25.56,
+      "roic": 18.308457,
+      "roa": 17.226815,
+      "grossProfitMargin": 37.270011,
+      "netProfitMargin": 20.347932,
+      "tradingFinancialAssets": 10916122,
+      "longTermEquityInvestment": 412927339,
+      "minorityInterest": -4304721
     },
     "dynamicData": {
-      "price": 59.9,
-      "marketValue": 156323637567,
-      "PB": 4.41,
-      "PE_TTM": 17.21,
+      "price": 57,
+      "marketValue": 148755381324,
+      "PB": 3.96,
+      "PE_TTM": 15.97,
       "totalSharesOutstanding": 2609743532
     },
     "recentYearData": {
-      "netProfit": 9083046041
+      "netProfit": 9312304150
     }
   },
   "600690": {
@@ -32197,54 +32197,6 @@ const data: ServiceData = {
       },
       {
         "year": "2021",
-        "mainType": "行业",
-        "itemName": "中国智慧家庭业务",
-        "mainBusinessIncome": 120790892446.78,
-        "mbiRatio": 0.530818,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2021",
-        "mainType": "行业",
-        "itemName": "海外家电与智慧家庭业务",
-        "mainBusinessIncome": 113725197263.88,
-        "mbiRatio": 0.499768,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2021",
-        "mainType": "行业",
-        "itemName": "其他业务",
-        "mainBusinessIncome": 92166599326.81,
-        "mbiRatio": 0.405028,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2021",
-        "mainType": "行业",
-        "itemName": "分部间抵销",
-        "mainBusinessIncome": -99126545419.3,
-        "mbiRatio": -0.435614,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2021",
         "mainType": "产品",
         "itemName": "电冰箱",
         "mainBusinessIncome": 71569789213.81,
@@ -32869,102 +32821,6 @@ const data: ServiceData = {
       },
       {
         "year": "2016",
-        "mainType": "行业",
-        "itemName": "渠道综合服务及其他分部",
-        "mainBusinessIncome": 78259359141.97,
-        "mbiRatio": 0.657278,
-        "mainBusinessCost": 78627066126.41,
-        "mbcRatio": 0.957385,
-        "mainBusinessProfit": -367706984.44,
-        "mbpRatio": -0.009954,
-        "grossProfitRatio": -0.004699
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "冰箱分部",
-        "mainBusinessIncome": 33306169720.12,
-        "mbiRatio": 0.279729,
-        "mainBusinessCost": 30744680296.73,
-        "mbcRatio": 0.374356,
-        "mainBusinessProfit": 2561489423.39,
-        "mbpRatio": 0.069344,
-        "grossProfitRatio": 0.076907
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "装备部品分部",
-        "mainBusinessIncome": 32741307787.14,
-        "mbiRatio": 0.274985,
-        "mainBusinessCost": 32448962675.95,
-        "mbcRatio": 0.395108,
-        "mainBusinessProfit": 292345111.19,
-        "mbpRatio": 0.007914,
-        "grossProfitRatio": 0.008929
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "洗衣机分部",
-        "mainBusinessIncome": 21566715143.98,
-        "mbiRatio": 0.181133,
-        "mainBusinessCost": 19825524531.56,
-        "mbcRatio": 0.241401,
-        "mainBusinessProfit": 1741190612.42,
-        "mbpRatio": 0.047137,
-        "grossProfitRatio": 0.080735
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "厨卫分部",
-        "mainBusinessIncome": 18246482539.54,
-        "mbiRatio": 0.153247,
-        "mainBusinessCost": 16610785512.02,
-        "mbcRatio": 0.202258,
-        "mainBusinessProfit": 1635697027.52,
-        "mbpRatio": 0.044281,
-        "grossProfitRatio": 0.089645
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "空调分部",
-        "mainBusinessIncome": 17208677349.84,
-        "mbiRatio": 0.144531,
-        "mainBusinessCost": 16640596218.18,
-        "mbcRatio": 0.202621,
-        "mainBusinessProfit": 568081131.66,
-        "mbpRatio": 0.015379,
-        "grossProfitRatio": 0.033011
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "平衡项目",
-        "mainBusinessIncome": -180875434.24,
-        "mbiRatio": -0.001519,
-        "mainBusinessCost": -30814858953.88,
-        "mbcRatio": -0.37521,
-        "mainBusinessProfit": 30633983519.64,
-        "mbpRatio": 0.829314,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "分部抵销",
-        "mainBusinessIncome": -82082011046.84,
-        "mbiRatio": -0.689383,
-        "mainBusinessCost": -81955874195.02,
-        "mbcRatio": -0.997918,
-        "mainBusinessProfit": -126136851.82,
-        "mbpRatio": -0.003415,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2016",
         "mainType": "产品",
         "itemName": "电冰箱",
         "mainBusinessIncome": 36254741110.25,
@@ -33172,7 +33028,7 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "国内地区",
         "mainBusinessIncome": 70518440000,
-        "mbiRatio": 0.790841,
+        "mbiRatio": 0,
         "mainBusinessCost": 49108520000,
         "mbcRatio": 0.760974,
         "mainBusinessProfit": 21409920000,
@@ -33184,7 +33040,7 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "国外地区",
         "mainBusinessIncome": 18650460000,
-        "mbiRatio": 0.209159,
+        "mbiRatio": 0,
         "mainBusinessCost": 15425260000,
         "mbcRatio": 0.239026,
         "mainBusinessProfit": 3225200000,
@@ -33319,10 +33175,10 @@ const data: ServiceData = {
       "minorityInterest": 7280152844.7
     },
     "dynamicData": {
-      "price": 25.24,
-      "marketValue": 236691372366,
-      "PB": 1.98,
-      "PE_TTM": 11.29,
+      "price": 24.88,
+      "marketValue": 233315425692,
+      "PB": 1.95,
+      "PE_TTM": 11.13,
       "totalSharesOutstanding": 9377629650
     },
     "recentYearData": {
@@ -35628,10 +35484,10 @@ const data: ServiceData = {
       "minorityInterest": 498059833.9
     },
     "dynamicData": {
-      "price": 157.75,
-      "marketValue": 192449356021,
-      "PB": 4.96,
-      "PE_TTM": 15.65,
+      "price": 158.53,
+      "marketValue": 193400928114,
+      "PB": 4.99,
+      "PE_TTM": 15.73,
       "totalSharesOutstanding": 1219964222
     },
     "recentYearData": {
@@ -38513,10 +38369,10 @@ const data: ServiceData = {
       "minorityInterest": 49993520059.26
     },
     "dynamicData": {
-      "price": 15.01,
-      "marketValue": 120147458873,
-      "PB": 1.81,
-      "PE_TTM": 18.25,
+      "price": 14.52,
+      "marketValue": 116225256684,
+      "PB": 1.75,
+      "PE_TTM": 17.66,
       "totalSharesOutstanding": 8004494262
     },
     "recentYearData": {
@@ -41002,10 +40858,10 @@ const data: ServiceData = {
       "minorityInterest": 3938268760.82
     },
     "dynamicData": {
-      "price": 26.71,
-      "marketValue": 168950383416,
-      "PB": 3,
-      "PE_TTM": 21.09,
+      "price": 26.62,
+      "marketValue": 168381100956,
+      "PB": 2.99,
+      "PE_TTM": 21.02,
       "totalSharesOutstanding": 6325360667
     },
     "recentYearData": {
@@ -42987,10 +42843,10 @@ const data: ServiceData = {
       "minorityInterest": 11885963196.14
     },
     "dynamicData": {
-      "price": 27.5,
-      "marketValue": 672875987190,
-      "PB": 3.04,
-      "PE_TTM": 19.69,
+      "price": 27.35,
+      "marketValue": 669205754533,
+      "PB": 3.02,
+      "PE_TTM": 19.59,
       "totalSharesOutstanding": 24468217716
     },
     "recentYearData": {
@@ -44672,10 +44528,10 @@ const data: ServiceData = {
       "minorityInterest": 2007000000
     },
     "dynamicData": {
-      "price": 43,
-      "marketValue": 2043788021312,
-      "PB": 2.6,
-      "PE_TTM": 16.58,
+      "price": 38.95,
+      "marketValue": 1851291707677,
+      "PB": 2.36,
+      "PE_TTM": 15.02,
       "totalSharesOutstanding": 47529953984
     },
     "recentYearData": {
@@ -47773,10 +47629,10 @@ const data: ServiceData = {
       "minorityInterest": 3165000000
     },
     "dynamicData": {
-      "price": 96.44,
-      "marketValue": 2088304631252,
-      "PB": 1.53,
-      "PE_TTM": 14.62,
+      "price": 97.49,
+      "marketValue": 2111041253637,
+      "PB": 1.54,
+      "PE_TTM": 14.78,
       "totalSharesOutstanding": 21653926081
     },
     "recentYearData": {
@@ -49650,10 +49506,10 @@ const data: ServiceData = {
       "minorityInterest": 1664288681.81
     },
     "dynamicData": {
-      "price": 4.4,
-      "marketValue": 26074085902,
+      "price": 4.37,
+      "marketValue": 25896308043,
       "PB": 1.24,
-      "PE_TTM": 14.6,
+      "PE_TTM": 14.5,
       "totalSharesOutstanding": 5925928614
     },
     "recentYearData": {
@@ -51152,7 +51008,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "煤炭",
         "mainBusinessIncome": 277474000000,
-        "mbiRatio": 0.805363,
+        "mbiRatio": 0.655863,
         "mainBusinessCost": 177821000000,
         "mbcRatio": 0.846529,
         "mainBusinessProfit": 99653000000,
@@ -51164,7 +51020,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "发电",
         "mainBusinessIncome": 84525000000,
-        "mbiRatio": 0.245332,
+        "mbiRatio": 0.199791,
         "mainBusinessCost": 72432000000,
         "mbcRatio": 0.344817,
         "mainBusinessProfit": 12093000000,
@@ -51176,7 +51032,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "铁路",
         "mainBusinessIncome": 42197000000,
-        "mbiRatio": 0.122476,
+        "mbiRatio": 0.099741,
         "mainBusinessCost": 24710000000,
         "mbcRatio": 0.117634,
         "mainBusinessProfit": 17487000000,
@@ -51188,7 +51044,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "港口",
         "mainBusinessIncome": 6441000000,
-        "mbiRatio": 0.018695,
+        "mbiRatio": 0.015225,
         "mainBusinessCost": 3481000000,
         "mbcRatio": 0.016572,
         "mainBusinessProfit": 2960000000,
@@ -51200,7 +51056,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "煤化工",
         "mainBusinessIncome": 6379000000,
-        "mbiRatio": 0.018515,
+        "mbiRatio": 0.015078,
         "mainBusinessCost": 5363000000,
         "mbcRatio": 0.025531,
         "mainBusinessProfit": 1016000000,
@@ -51212,7 +51068,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "航运",
         "mainBusinessIncome": 6051000000,
-        "mbiRatio": 0.017563,
+        "mbiRatio": 0.014303,
         "mainBusinessCost": 5203000000,
         "mbcRatio": 0.024769,
         "mainBusinessProfit": 848000000,
@@ -51308,7 +51164,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "煤炭",
         "mainBusinessIncome": 292661000000,
-        "mbiRatio": 0.873052,
+        "mbiRatio": 0.703563,
         "mainBusinessCost": 212019000000,
         "mbcRatio": 0.944607,
         "mainBusinessProfit": 80642000000,
@@ -51320,7 +51176,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "发电",
         "mainBusinessIncome": 64124000000,
-        "mbiRatio": 0.191292,
+        "mbiRatio": 0.154155,
         "mainBusinessCost": 59173000000,
         "mbcRatio": 0.263633,
         "mainBusinessProfit": 4951000000,
@@ -51332,7 +51188,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "铁路",
         "mainBusinessIncome": 40699000000,
-        "mbiRatio": 0.121411,
+        "mbiRatio": 0.097841,
         "mainBusinessCost": 21546000000,
         "mbcRatio": 0.095994,
         "mainBusinessProfit": 19153000000,
@@ -51344,7 +51200,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "港口",
         "mainBusinessIncome": 6440000000,
-        "mbiRatio": 0.019211,
+        "mbiRatio": 0.015482,
         "mainBusinessCost": 3241000000,
         "mbcRatio": 0.01444,
         "mainBusinessProfit": 3199000000,
@@ -51356,7 +51212,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "航运",
         "mainBusinessIncome": 6195000000,
-        "mbiRatio": 0.018481,
+        "mbiRatio": 0.014893,
         "mainBusinessCost": 5006000000,
         "mbcRatio": 0.022303,
         "mainBusinessProfit": 1189000000,
@@ -51368,7 +51224,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "煤化工",
         "mainBusinessIncome": 5851000000,
-        "mbiRatio": 0.017454,
+        "mbiRatio": 0.014066,
         "mainBusinessCost": 4633000000,
         "mbcRatio": 0.020641,
         "mainBusinessProfit": 1218000000,
@@ -51464,7 +51320,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "煤炭",
         "mainBusinessIncome": 190029000000,
-        "mbiRatio": 0.814656,
+        "mbiRatio": 0.648842,
         "mainBusinessCost": 137871000000,
         "mbcRatio": 0.991714,
         "mainBusinessProfit": 52158000000,
@@ -51476,7 +51332,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "发电",
         "mainBusinessIncome": 49486000000,
-        "mbiRatio": 0.212147,
+        "mbiRatio": 0.168967,
         "mainBusinessCost": 36012000000,
         "mbcRatio": 0.259036,
         "mainBusinessProfit": 13474000000,
@@ -51488,7 +51344,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "铁路",
         "mainBusinessIncome": 38723000000,
-        "mbiRatio": 0.166006,
+        "mbiRatio": 0.132217,
         "mainBusinessCost": 16179000000,
         "mbcRatio": 0.116376,
         "mainBusinessProfit": 22544000000,
@@ -51500,7 +51356,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "港口",
         "mainBusinessIncome": 6359000000,
-        "mbiRatio": 0.027261,
+        "mbiRatio": 0.021712,
         "mainBusinessCost": 2783000000,
         "mbcRatio": 0.020018,
         "mainBusinessProfit": 3576000000,
@@ -51512,7 +51368,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "煤化工",
         "mainBusinessIncome": 5165000000,
-        "mbiRatio": 0.022142,
+        "mbiRatio": 0.017636,
         "mainBusinessCost": 4255000000,
         "mbcRatio": 0.030606,
         "mainBusinessProfit": 910000000,
@@ -51524,7 +51380,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "航运",
         "mainBusinessIncome": 3112000000,
-        "mbiRatio": 0.013341,
+        "mbiRatio": 0.010626,
         "mainBusinessCost": 2727000000,
         "mbcRatio": 0.019615,
         "mainBusinessProfit": 385000000,
@@ -52242,33 +52098,9 @@ const data: ServiceData = {
       {
         "year": "2016",
         "mainType": "产品",
-        "itemName": "煤炭收入",
-        "mainBusinessIncome": 98126000000,
-        "mbiRatio": 0.557648,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2016",
-        "mainType": "产品",
         "itemName": "发电收入",
         "mainBusinessIncome": 68935000000,
-        "mbiRatio": 0.391756,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2016",
-        "mainType": "产品",
-        "itemName": "运输收入",
-        "mainBusinessIncome": 4610000000,
-        "mbiRatio": 0.026199,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -52280,7 +52112,31 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "煤化工收入",
         "mainBusinessIncome": 4293000000,
-        "mbiRatio": 0.024397,
+        "mbiRatio": 0,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "煤炭收入",
+        "mainBusinessIncome": 98126000000,
+        "mbiRatio": 0,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "运输收入",
+        "mainBusinessIncome": 4610000000,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -52583,11 +52439,11 @@ const data: ServiceData = {
       "minorityInterest": 70179000000
     },
     "dynamicData": {
-      "price": 49.26,
-      "marketValue": 978723292983,
-      "PB": 2.35,
-      "PE_TTM": 18.01,
-      "totalSharesOutstanding": 19868519955
+      "price": 46.99,
+      "marketValue": 997680797163,
+      "PB": 2.24,
+      "PE_TTM": 18.36,
+      "totalSharesOutstanding": 21231768401
     },
     "recentYearData": {
       "netProfit": 54341000000
@@ -55780,10 +55636,10 @@ const data: ServiceData = {
       "minorityInterest": 43382010503.43
     },
     "dynamicData": {
-      "price": 26.7,
-      "marketValue": 258856500000,
-      "PB": 2.68,
-      "PE_TTM": 15.64,
+      "price": 25.31,
+      "marketValue": 245380450000,
+      "PB": 2.54,
+      "PE_TTM": 14.83,
       "totalSharesOutstanding": 9695000000
     },
     "recentYearData": {
@@ -58917,10 +58773,10 @@ const data: ServiceData = {
       "minorityInterest": 4632920976
     },
     "dynamicData": {
-      "price": 9.19,
-      "marketValue": 59653209000,
-      "PB": 1.32,
-      "PE_TTM": 10.88,
+      "price": 8.85,
+      "marketValue": 57446235000,
+      "PB": 1.26,
+      "PE_TTM": 10.9,
       "totalSharesOutstanding": 6491100000
     },
     "recentYearData": {
@@ -60237,6 +60093,18 @@ const data: ServiceData = {
       {
         "year": "2020",
         "mainType": "产品",
+        "itemName": "其中:手机上网",
+        "mainBusinessIncome": 130655000000,
+        "mbiRatio": 0.335065,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
         "itemName": "其中:固网及智慧家庭服务",
         "mainBusinessIncome": 109018000000,
         "mbiRatio": 0.279577,
@@ -60261,9 +60129,105 @@ const data: ServiceData = {
       {
         "year": "2020",
         "mainType": "产品",
+        "itemName": "其中:宽带接入",
+        "mainBusinessIncome": 71872000000,
+        "mbiRatio": 0.184316,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "其中:IDC",
+        "mainBusinessIncome": 27975000000,
+        "mbiRatio": 0.071742,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "其中:数字化平台",
+        "mainBusinessIncome": 20742000000,
+        "mbiRatio": 0.053193,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "其中:组网专线",
+        "mainBusinessIncome": 19744000000,
+        "mbiRatio": 0.050634,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "其中:固定电话",
+        "mainBusinessIncome": 19423000000,
+        "mbiRatio": 0.04981,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "其中:行业云",
+        "mainBusinessIncome": 11175000000,
+        "mbiRatio": 0.028658,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "其中:智慧家庭",
+        "mainBusinessIncome": 11102000000,
+        "mbiRatio": 0.028471,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
         "itemName": "其中:其他",
         "mainBusinessIncome": 5248000000,
         "mbiRatio": 0.013459,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "其中:物联网",
+        "mainBusinessIncome": 2169000000,
+        "mbiRatio": 0.005562,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -60818,10 +60782,10 @@ const data: ServiceData = {
       "minorityInterest": 7111494496.37
     },
     "dynamicData": {
-      "price": 6,
-      "marketValue": 549042832194,
-      "PB": 1.2,
-      "PE_TTM": 15.92,
+      "price": 6.08,
+      "marketValue": 556363403290,
+      "PB": 1.21,
+      "PE_TTM": 16.13,
       "totalSharesOutstanding": 91507138699
     },
     "recentYearData": {
@@ -63643,10 +63607,10 @@ const data: ServiceData = {
       "minorityInterest": 197733000000
     },
     "dynamicData": {
-      "price": 12.23,
-      "marketValue": 2238346558714,
-      "PB": 1.44,
-      "PE_TTM": 14.15,
+      "price": 11.68,
+      "marketValue": 2137685020914,
+      "PB": 1.37,
+      "PE_TTM": 13.52,
       "totalSharesOutstanding": 183020977818
     },
     "recentYearData": {
@@ -65851,7 +65815,7 @@ const data: ServiceData = {
       {
         "year": "2020",
         "mainType": "产品",
-        "itemName": "其他分部",
+        "itemName": "其他",
         "mainBusinessIncome": 7020116000,
         "mbiRatio": 0.049802,
         "mainBusinessCost": 5850150000,
@@ -65882,18 +65846,6 @@ const data: ServiceData = {
         "mbcRatio": -0.064995,
         "mainBusinessProfit": -400791000,
         "mbpRatio": -0.010994,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2020",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 0,
-        "mbiRatio": 0,
-        "mainBusinessCost": 806742000,
-        "mbcRatio": 0.00772,
-        "mainBusinessProfit": -806742000,
-        "mbpRatio": -0.02213,
         "grossProfitRatio": 0
       },
       {
@@ -66127,7 +66079,7 @@ const data: ServiceData = {
       {
         "year": "2018",
         "mainType": "行业",
-        "itemName": "其他业务",
+        "itemName": "其他",
         "mainBusinessIncome": 3713821000,
         "mbiRatio": 0.035662,
         "mainBusinessCost": 3863768000,
@@ -66319,7 +66271,7 @@ const data: ServiceData = {
       {
         "year": "2017",
         "mainType": "行业",
-        "itemName": "其他业务",
+        "itemName": "其他",
         "mainBusinessIncome": 2519918000,
         "mbiRatio": 0.031063,
         "mainBusinessCost": 2505553000,
@@ -66487,7 +66439,7 @@ const data: ServiceData = {
       {
         "year": "2016",
         "mainType": "行业",
-        "itemName": "其他业务",
+        "itemName": "其他",
         "mainBusinessIncome": 2438232000,
         "mbiRatio": 0.040214,
         "mainBusinessCost": 2141424000,
@@ -66499,43 +66451,19 @@ const data: ServiceData = {
       {
         "year": "2016",
         "mainType": "行业",
-        "itemName": "销售材料",
-        "mainBusinessIncome": 389230000,
-        "mbiRatio": 0.00642,
-        "mainBusinessCost": 409915000,
-        "mbcRatio": 0.010166,
-        "mainBusinessProfit": -20685000,
-        "mbpRatio": -0.001018,
-        "grossProfitRatio": -0.053143
+        "itemName": "其他主营业务",
+        "mainBusinessIncome": 733818000,
+        "mbiRatio": 0.012103,
+        "mainBusinessCost": 672920000,
+        "mbcRatio": 0.016689,
+        "mainBusinessProfit": 60898000,
+        "mbpRatio": 0.002998,
+        "grossProfitRatio": 0.082988
       },
       {
         "year": "2016",
         "mainType": "行业",
-        "itemName": "租赁收入",
-        "mainBusinessIncome": 216815000,
-        "mbiRatio": 0.003576,
-        "mainBusinessCost": 117202000,
-        "mbcRatio": 0.002907,
-        "mainBusinessProfit": 99613000,
-        "mbpRatio": 0.004904,
-        "grossProfitRatio": 0.459438
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "劳务收入",
-        "mainBusinessIncome": 126736000,
-        "mbiRatio": 0.00209,
-        "mainBusinessCost": 145617000,
-        "mbcRatio": 0.003611,
-        "mainBusinessProfit": -18881000,
-        "mbpRatio": -0.00093,
-        "grossProfitRatio": -0.148979
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "其他",
+        "itemName": "其他(补充)",
         "mainBusinessIncome": 55400000,
         "mbiRatio": 0.000914,
         "mainBusinessCost": 84346000,
@@ -66543,18 +66471,6 @@ const data: ServiceData = {
         "mainBusinessProfit": -28946000,
         "mbpRatio": -0.001425,
         "grossProfitRatio": -0.522491
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "代理费收入",
-        "mainBusinessIncome": 1037000,
-        "mbiRatio": 0.000017,
-        "mainBusinessCost": 186000,
-        "mbcRatio": 0.000005,
-        "mainBusinessProfit": 851000,
-        "mbpRatio": 0.000042,
-        "grossProfitRatio": 0.820636
       },
       {
         "year": "2016",
@@ -66571,73 +66487,97 @@ const data: ServiceData = {
       {
         "year": "2016",
         "mainType": "产品",
-        "itemName": "炼焦煤",
-        "mainBusinessIncome": 4900000000,
-        "mbiRatio": 0,
-        "mainBusinessCost": 1623000000,
-        "mbcRatio": 0.089683,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0.668776
-      },
-      {
-        "year": "2016",
-        "mainType": "产品",
-        "itemName": "甲醇",
-        "mainBusinessIncome": 598000000,
-        "mbiRatio": 0,
-        "mainBusinessCost": 532000000,
-        "mbcRatio": 0.029397,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0.110368
-      },
-      {
-        "year": "2016",
-        "mainType": "产品",
-        "itemName": "烯烃",
-        "mainBusinessIncome": 4970000000,
-        "mbiRatio": 0,
-        "mainBusinessCost": 3051000000,
-        "mbcRatio": 0.168591,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0.386117
+        "itemName": "平衡项目",
+        "mainBusinessIncome": 24276213000,
+        "mbiRatio": 0.400389,
+        "mainBusinessCost": 22139613000,
+        "mbcRatio": 0.549084,
+        "mainBusinessProfit": 2136600000,
+        "mbpRatio": 0.105196,
+        "grossProfitRatio": 0.088012
       },
       {
         "year": "2016",
         "mainType": "产品",
         "itemName": "动力煤",
         "mainBusinessIncome": 23591000000,
-        "mbiRatio": 0,
+        "mbiRatio": 0.389087,
         "mainBusinessCost": 11442000000,
-        "mbcRatio": 0.632259,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
+        "mbcRatio": 0.283773,
+        "mainBusinessProfit": 12149000000,
+        "mbpRatio": 0.598159,
         "grossProfitRatio": 0.514985
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "烯烃",
+        "mainBusinessIncome": 4970000000,
+        "mbiRatio": 0.08197,
+        "mainBusinessCost": 3051000000,
+        "mbcRatio": 0.075668,
+        "mainBusinessProfit": 1919000000,
+        "mbpRatio": 0.094482,
+        "grossProfitRatio": 0.386117
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "炼焦煤",
+        "mainBusinessIncome": 4900000000,
+        "mbiRatio": 0.080816,
+        "mainBusinessCost": 1623000000,
+        "mbcRatio": 0.040252,
+        "mainBusinessProfit": 3277000000,
+        "mbpRatio": 0.161344,
+        "grossProfitRatio": 0.668776
       },
       {
         "year": "2016",
         "mainType": "产品",
         "itemName": "尿素",
         "mainBusinessIncome": 2241000000,
-        "mbiRatio": 0,
+        "mbiRatio": 0.036961,
         "mainBusinessCost": 1449000000,
-        "mbcRatio": 0.080069,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
+        "mbcRatio": 0.035937,
+        "mainBusinessProfit": 792000000,
+        "mbpRatio": 0.038994,
         "grossProfitRatio": 0.353414
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "甲醇",
+        "mainBusinessIncome": 598000000,
+        "mbiRatio": 0.009863,
+        "mainBusinessCost": 532000000,
+        "mbcRatio": 0.013194,
+        "mainBusinessProfit": 66000000,
+        "mbpRatio": 0.00325,
+        "grossProfitRatio": 0.110368
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 55400000,
+        "mbiRatio": 0.000914,
+        "mainBusinessCost": 84346000,
+        "mbcRatio": 0.002092,
+        "mainBusinessProfit": -28946000,
+        "mbpRatio": -0.001425,
+        "grossProfitRatio": -0.522491
       },
       {
         "year": "2016",
         "mainType": "地区",
         "itemName": "国内市场",
         "mainBusinessIncome": 59791000000,
-        "mbiRatio": 0,
+        "mbiRatio": 0.986136,
         "mainBusinessCost": 39821000000,
-        "mbcRatio": 0.9876,
+        "mbcRatio": 0.987601,
         "mainBusinessProfit": 19970000000,
-        "mbpRatio": 0.983211,
+        "mbpRatio": 0.983228,
         "grossProfitRatio": 0.333997
       },
       {
@@ -66679,7 +66619,7 @@ const data: ServiceData = {
       {
         "year": "2015",
         "mainType": "行业",
-        "itemName": "其他业务",
+        "itemName": "其他",
         "mainBusinessIncome": 3065663000,
         "mbiRatio": 0.051723,
         "mainBusinessCost": 2713275000,
@@ -66715,7 +66655,7 @@ const data: ServiceData = {
       {
         "year": "2015",
         "mainType": "行业",
-        "itemName": "其他",
+        "itemName": "其他业务-其他",
         "mainBusinessIncome": 135235000,
         "mbiRatio": 0.002282,
         "mainBusinessCost": 156598000,
@@ -66763,25 +66703,73 @@ const data: ServiceData = {
       {
         "year": "2015",
         "mainType": "产品",
+        "itemName": "动力煤",
+        "mainBusinessIncome": 25335000000,
+        "mbiRatio": 0.427444,
+        "mainBusinessCost": 14696000000,
+        "mbcRatio": 0.361121,
+        "mainBusinessProfit": 10639000000,
+        "mbpRatio": 0.57275,
+        "grossProfitRatio": 0.419933
+      },
+      {
+        "year": "2015",
+        "mainType": "产品",
+        "itemName": "其他主营业务",
+        "mainBusinessIncome": 18865660000,
+        "mbiRatio": 0.318296,
+        "mainBusinessCost": 16969523000,
+        "mbcRatio": 0.416987,
+        "mainBusinessProfit": 1896137000,
+        "mbpRatio": 0.102078,
+        "grossProfitRatio": 0.100507
+      },
+      {
+        "year": "2015",
+        "mainType": "产品",
+        "itemName": "烯烃",
+        "mainBusinessIncome": 4926000000,
+        "mbiRatio": 0.08311,
+        "mainBusinessCost": 2632000000,
+        "mbcRatio": 0.064675,
+        "mainBusinessProfit": 2294000000,
+        "mbpRatio": 0.123497,
+        "grossProfitRatio": 0.465692
+      },
+      {
+        "year": "2015",
+        "mainType": "产品",
         "itemName": "焦煤",
         "mainBusinessIncome": 3757000000,
-        "mbiRatio": 0,
+        "mbiRatio": 0.063387,
         "mainBusinessCost": 1538000000,
-        "mbcRatio": 0.067379,
+        "mbcRatio": 0.037793,
         "mainBusinessProfit": 2219000000,
-        "mbpRatio": 0.132866,
+        "mbpRatio": 0.11946,
         "grossProfitRatio": 0.590631
+      },
+      {
+        "year": "2015",
+        "mainType": "产品",
+        "itemName": "尿素",
+        "mainBusinessIncome": 2870000000,
+        "mbiRatio": 0.048422,
+        "mainBusinessCost": 1714000000,
+        "mbcRatio": 0.042118,
+        "mainBusinessProfit": 1156000000,
+        "mbpRatio": 0.062233,
+        "grossProfitRatio": 0.402787
       },
       {
         "year": "2015",
         "mainType": "产品",
         "itemName": "焦炭",
         "mainBusinessIncome": 1500000000,
-        "mbiRatio": 0,
+        "mbiRatio": 0.025308,
         "mainBusinessCost": 1295000000,
-        "mbcRatio": 0.056734,
+        "mbcRatio": 0.031822,
         "mainBusinessProfit": 205000000,
-        "mbpRatio": 0.012275,
+        "mbpRatio": 0.011036,
         "grossProfitRatio": 0.136667
       },
       {
@@ -66789,59 +66777,35 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "甲醇",
         "mainBusinessIncome": 1139000000,
-        "mbiRatio": 0,
+        "mbiRatio": 0.019217,
         "mainBusinessCost": 951000000,
-        "mbcRatio": 0.041663,
+        "mbcRatio": 0.023369,
         "mainBusinessProfit": 188000000,
-        "mbpRatio": 0.011257,
+        "mbpRatio": 0.010121,
         "grossProfitRatio": 0.165057
       },
       {
         "year": "2015",
         "mainType": "产品",
-        "itemName": "烯烃",
-        "mainBusinessIncome": 4926000000,
-        "mbiRatio": 0,
-        "mainBusinessCost": 2632000000,
-        "mbcRatio": 0.115307,
-        "mainBusinessProfit": 2294000000,
-        "mbpRatio": 0.137357,
-        "grossProfitRatio": 0.465692
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "动力煤",
-        "mainBusinessIncome": 25335000000,
-        "mbiRatio": 0,
-        "mainBusinessCost": 14696000000,
-        "mbcRatio": 0.643827,
-        "mainBusinessProfit": 10639000000,
-        "mbpRatio": 0.637028,
-        "grossProfitRatio": 0.419933
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "尿素",
-        "mainBusinessIncome": 2870000000,
-        "mbiRatio": 0,
-        "mainBusinessCost": 1714000000,
-        "mbcRatio": 0.07509,
-        "mainBusinessProfit": 1156000000,
-        "mbpRatio": 0.069217,
-        "grossProfitRatio": 0.402787
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 878205000,
+        "mbiRatio": 0.014817,
+        "mainBusinessCost": 900032000,
+        "mbcRatio": 0.022116,
+        "mainBusinessProfit": -21827000,
+        "mbpRatio": -0.001175,
+        "grossProfitRatio": -0.024854
       },
       {
         "year": "2015",
         "mainType": "地区",
         "itemName": "国内市场",
         "mainBusinessIncome": 57904000000,
-        "mbiRatio": 0,
+        "mbiRatio": 0.976936,
         "mainBusinessCost": 39844000000,
-        "mbcRatio": 0.979064,
+        "mbcRatio": 0.979075,
         "mainBusinessProfit": 18060000000,
-        "mbpRatio": 0.972275,
+        "mbpRatio": 0.972258,
         "grossProfitRatio": 0.311896
       }
     ],
@@ -66972,10 +66936,10 @@ const data: ServiceData = {
       "minorityInterest": 41373718000
     },
     "dynamicData": {
-      "price": 19.36,
-      "marketValue": 256687723424,
-      "PB": 1.63,
-      "PE_TTM": 14.93,
+      "price": 17.8,
+      "marketValue": 236004208520,
+      "PB": 1.5,
+      "PE_TTM": 13.73,
       "totalSharesOutstanding": 13258663400
     },
     "recentYearData": {
@@ -68472,9 +68436,9 @@ const data: ServiceData = {
       {
         "year": "2022",
         "mainType": "地区",
-        "itemName": "集装箱航运业务",
-        "mainBusinessIncome": 384035553431.57,
-        "mbiRatio": 0.982041,
+        "itemName": "美洲地区",
+        "mainBusinessIncome": 115007179539.94,
+        "mbiRatio": 0.294092,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -68484,9 +68448,45 @@ const data: ServiceData = {
       {
         "year": "2022",
         "mainType": "地区",
-        "itemName": "码头业务",
-        "mainBusinessIncome": 9798133642.21,
-        "mbiRatio": 0.025055,
+        "itemName": "欧洲地区",
+        "mainBusinessIncome": 105379407800.65,
+        "mbiRatio": 0.269472,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "亚太地区",
+        "mainBusinessIncome": 93215744319.16,
+        "mbiRatio": 0.238368,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "其他国际地区",
+        "mainBusinessIncome": 51619298241.92,
+        "mbiRatio": 0.131999,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "中国大陆",
+        "mainBusinessIncome": 28612057172.11,
+        "mbiRatio": 0.073166,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -68506,42 +68506,6 @@ const data: ServiceData = {
         "grossProfitRatio": 0
       },
       {
-        "year": "2022",
-        "mainType": "地区",
-        "itemName": "其中:集装箱航运业务-美洲地区",
-        "mainBusinessIncome": 115007179539.94,
-        "mbiRatio": 0.294092,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2022",
-        "mainType": "地区",
-        "itemName": "其中:集装箱航运业务-欧洲地区",
-        "mainBusinessIncome": 100760668436.09,
-        "mbiRatio": 0.257661,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2022",
-        "mainType": "地区",
-        "itemName": "其中:集装箱航运业务-亚太地区",
-        "mainBusinessIncome": 92876196057.51,
-        "mbiRatio": 0.237499,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
         "year": "2021",
         "mainType": "行业",
         "itemName": "集装箱航运业务",
@@ -68616,9 +68580,9 @@ const data: ServiceData = {
       {
         "year": "2021",
         "mainType": "地区",
-        "itemName": "集装箱航运业务",
-        "mainBusinessIncome": 327926780274.58,
-        "mbiRatio": 0.982718,
+        "itemName": "欧洲地区",
+        "mainBusinessIncome": 99311358948.04,
+        "mbiRatio": 0.297612,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -68628,43 +68592,7 @@ const data: ServiceData = {
       {
         "year": "2021",
         "mainType": "地区",
-        "itemName": "码头业务",
-        "mainBusinessIncome": 7931409356.43,
-        "mbiRatio": 0.023769,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2021",
-        "mainType": "地区",
-        "itemName": "分部间抵销",
-        "mainBusinessIncome": -2164578880.05,
-        "mbiRatio": -0.006487,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2021",
-        "mainType": "地区",
-        "itemName": "其中:集装箱航运业务-欧洲地区",
-        "mainBusinessIncome": 95108012956.73,
-        "mbiRatio": 0.285016,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2021",
-        "mainType": "地区",
-        "itemName": "其中:集装箱航运业务-美洲地区",
+        "itemName": "美洲地区",
         "mainBusinessIncome": 86283078551.07,
         "mbiRatio": 0.25857,
         "mainBusinessCost": 0,
@@ -68676,9 +68604,45 @@ const data: ServiceData = {
       {
         "year": "2021",
         "mainType": "地区",
-        "itemName": "其中:集装箱航运业务-亚太地区",
-        "mainBusinessIncome": 76527231142.89,
-        "mbiRatio": 0.229334,
+        "itemName": "亚太地区",
+        "mainBusinessIncome": 76752620209.74,
+        "mbiRatio": 0.230009,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2021",
+        "mainType": "地区",
+        "itemName": "其他国际地区",
+        "mainBusinessIncome": 46513282758.28,
+        "mbiRatio": 0.139389,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2021",
+        "mainType": "地区",
+        "itemName": "中国地区",
+        "mainBusinessIncome": 26997849163.88,
+        "mbiRatio": 0.080906,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2021",
+        "mainType": "地区",
+        "itemName": "分部间抵销",
+        "mainBusinessIncome": -2164578880.05,
+        "mbiRatio": -0.006487,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -68727,11 +68691,11 @@ const data: ServiceData = {
         "itemName": "集装箱航运业务",
         "mainBusinessIncome": 166008592432.09,
         "mbiRatio": 0.969343,
-        "mainBusinessCost": 144078436165.86,
-        "mbcRatio": 0.980626,
-        "mainBusinessProfit": 21930156266.23,
-        "mbpRatio": 0.901222,
-        "grossProfitRatio": 0.132103
+        "mainBusinessCost": 143378436165.86,
+        "mbcRatio": 0.975861,
+        "mainBusinessProfit": 22630156266.23,
+        "mbpRatio": 0.929988,
+        "grossProfitRatio": 0.136319
       },
       {
         "year": "2020",
@@ -69036,7 +69000,7 @@ const data: ServiceData = {
       {
         "year": "2018",
         "mainType": "产品",
-        "itemName": "公司内各业务部间相互抵销",
+        "itemName": "分部间抵销",
         "mainBusinessIncome": -1727083715.26,
         "mbiRatio": -0.014294,
         "mainBusinessCost": -1720457401.32,
@@ -69048,9 +69012,9 @@ const data: ServiceData = {
       {
         "year": "2018",
         "mainType": "地区",
-        "itemName": "集装箱航运及相关业务",
-        "mainBusinessIncome": 114844680224.62,
-        "mbiRatio": 0.950469,
+        "itemName": "美洲地区",
+        "mainBusinessIncome": 34190809588.51,
+        "mbiRatio": 0.282967,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -69060,9 +69024,45 @@ const data: ServiceData = {
       {
         "year": "2018",
         "mainType": "地区",
-        "itemName": "码头及相关业务",
-        "mainBusinessIncome": 7711932278.61,
-        "mbiRatio": 0.063825,
+        "itemName": "欧洲地区",
+        "mainBusinessIncome": 27365969162.3,
+        "mbiRatio": 0.226484,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2018",
+        "mainType": "地区",
+        "itemName": "亚太地区",
+        "mainBusinessIncome": 25875226910.07,
+        "mbiRatio": 0.214147,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2018",
+        "mainType": "地区",
+        "itemName": "中国地区",
+        "mainBusinessIncome": 20840083837.83,
+        "mbiRatio": 0.172475,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2018",
+        "mainType": "地区",
+        "itemName": "其他国际地区",
+        "mainBusinessIncome": 14284523004.52,
+        "mbiRatio": 0.11822,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -69075,42 +69075,6 @@ const data: ServiceData = {
         "itemName": "分部间抵销",
         "mainBusinessIncome": -1727083715.26,
         "mbiRatio": -0.014294,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2018",
-        "mainType": "地区",
-        "itemName": "其中:美洲地区",
-        "mainBusinessIncome": 33197843212.41,
-        "mbiRatio": 0.274749,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2018",
-        "mainType": "地区",
-        "itemName": "其中:亚太地区",
-        "mainBusinessIncome": 25875226910.07,
-        "mbiRatio": 0.214147,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2018",
-        "mainType": "地区",
-        "itemName": "其中:欧洲地区",
-        "mainBusinessIncome": 23750636817.21,
-        "mbiRatio": 0.196563,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -69677,10 +69641,10 @@ const data: ServiceData = {
       "minorityInterest": 50462172470.91
     },
     "dynamicData": {
-      "price": 15.94,
-      "marketValue": 244084240121,
-      "PB": 1.06,
-      "PE_TTM": 6.42,
+      "price": 16.07,
+      "marketValue": 246074889507,
+      "PB": 1.07,
+      "PE_TTM": 6.47,
       "totalSharesOutstanding": 15312687586
     },
     "recentYearData": {
@@ -71320,54 +71284,6 @@ const data: ServiceData = {
       },
       {
         "year": "2017",
-        "mainType": "行业",
-        "itemName": "服务机器人业务",
-        "mainBusinessIncome": 2869913200,
-        "mbiRatio": 0.630608,
-        "mainBusinessCost": 1460108300,
-        "mbcRatio": 0.50592,
-        "mainBusinessProfit": 1409804900,
-        "mbpRatio": 0.846741,
-        "grossProfitRatio": 0.491236
-      },
-      {
-        "year": "2017",
-        "mainType": "行业",
-        "itemName": "清洁类小家电业务",
-        "mainBusinessIncome": 1575129100,
-        "mbiRatio": 0.346104,
-        "mainBusinessCost": 1329812600,
-        "mbcRatio": 0.460773,
-        "mainBusinessProfit": 245316500,
-        "mbpRatio": 0.147339,
-        "grossProfitRatio": 0.155744
-      },
-      {
-        "year": "2017",
-        "mainType": "行业",
-        "itemName": "电机、模具",
-        "mainBusinessIncome": 105983300,
-        "mbiRatio": 0.023288,
-        "mainBusinessCost": 96126600,
-        "mbcRatio": 0.033307,
-        "mainBusinessProfit": 9856700,
-        "mbpRatio": 0.00592,
-        "grossProfitRatio": 0.093002
-      },
-      {
-        "year": "2017",
-        "mainType": "行业",
-        "itemName": "平衡项目",
-        "mainBusinessIncome": 8.04,
-        "mbiRatio": 0,
-        "mainBusinessCost": -41.77,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 49.81,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2017",
         "mainType": "产品",
         "itemName": "地宝系列",
         "mainBusinessIncome": 2685078100,
@@ -71488,54 +71404,6 @@ const data: ServiceData = {
       },
       {
         "year": "2016",
-        "mainType": "行业",
-        "itemName": "服务机器人业务",
-        "mainBusinessIncome": 1882937400,
-        "mbiRatio": 0.574636,
-        "mainBusinessCost": 1009423300,
-        "mbcRatio": 0.46592,
-        "mainBusinessProfit": 873514100,
-        "mbpRatio": 0.786785,
-        "grossProfitRatio": 0.46391
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "清洁类小家电业务",
-        "mainBusinessIncome": 1312030100,
-        "mbiRatio": 0.400406,
-        "mainBusinessCost": 1086582400,
-        "mbcRatio": 0.501535,
-        "mainBusinessProfit": 225447700,
-        "mbpRatio": 0.203063,
-        "grossProfitRatio": 0.171831
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "其他业务",
-        "mainBusinessIncome": 81779500,
-        "mbiRatio": 0.024958,
-        "mainBusinessCost": 70508700,
-        "mbcRatio": 0.032545,
-        "mainBusinessProfit": 11270800,
-        "mbpRatio": 0.010152,
-        "grossProfitRatio": 0.137819
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
-        "itemName": "平衡项目",
-        "mainBusinessIncome": -9.44,
-        "mbiRatio": 0,
-        "mainBusinessCost": 10.61,
-        "mbcRatio": 0,
-        "mainBusinessProfit": -20.05,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2016",
         "mainType": "产品",
         "itemName": "地宝系列",
         "mainBusinessIncome": 1730613200,
@@ -71651,54 +71519,6 @@ const data: ServiceData = {
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "服务机器人业务",
-        "mainBusinessIncome": 1396331600,
-        "mbiRatio": 0.51815,
-        "mainBusinessCost": 712193400,
-        "mbcRatio": 0.387025,
-        "mainBusinessProfit": 684138200,
-        "mbpRatio": 0.800474,
-        "grossProfitRatio": 0.489954
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "清洁类小家电业务",
-        "mainBusinessIncome": 1219669100,
-        "mbiRatio": 0.452594,
-        "mainBusinessCost": 1059229800,
-        "mbcRatio": 0.575614,
-        "mainBusinessProfit": 160439300,
-        "mbpRatio": 0.187722,
-        "grossProfitRatio": 0.131543
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他业务",
-        "mainBusinessIncome": 78839100,
-        "mbiRatio": 0.029256,
-        "mainBusinessCost": 68750500,
-        "mbcRatio": 0.037361,
-        "mainBusinessProfit": 10088600,
-        "mbpRatio": 0.011804,
-        "grossProfitRatio": 0.127964
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "平衡项目",
-        "mainBusinessIncome": -15.3,
-        "mbiRatio": 0,
-        "mainBusinessCost": -49.77,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 34.47,
         "mbpRatio": 0,
         "grossProfitRatio": 0
       },
@@ -71950,10 +71770,10 @@ const data: ServiceData = {
       "minorityInterest": -147727.3
     },
     "dynamicData": {
-      "price": 64.18,
-      "marketValue": 37155169419,
-      "PB": 4.32,
-      "PE_TTM": 23.09,
+      "price": 63.57,
+      "marketValue": 36802027422,
+      "PB": 4.28,
+      "PE_TTM": 22.87,
       "totalSharesOutstanding": 578921306
     },
     "recentYearData": {
@@ -75099,10 +74919,10 @@ const data: ServiceData = {
       "minorityInterest": 120661696.3
     },
     "dynamicData": {
-      "price": 28.56,
-      "marketValue": 24787023566,
-      "PB": 2.61,
-      "PE_TTM": 10.58,
+      "price": 28.94,
+      "marketValue": 25116822899,
+      "PB": 2.64,
+      "PE_TTM": 10.73,
       "totalSharesOutstanding": 867892982
     },
     "recentYearData": {
@@ -77384,10 +77204,10 @@ const data: ServiceData = {
       "minorityInterest": 0
     },
     "dynamicData": {
-      "price": 15.68,
-      "marketValue": 14273023330,
-      "PB": 1.43,
-      "PE_TTM": 19.69,
+      "price": 14.25,
+      "marketValue": 12971338166,
+      "PB": 1.3,
+      "PE_TTM": 17.89,
       "totalSharesOutstanding": 910269345
     },
     "recentYearData": {
@@ -79377,10 +79197,10 @@ const data: ServiceData = {
       "minorityInterest": 105834551.35
     },
     "dynamicData": {
-      "price": 46.81,
-      "marketValue": 33827576557,
-      "PB": 4.7,
-      "PE_TTM": 19.28,
+      "price": 49.84,
+      "marketValue": 36017227422,
+      "PB": 5.01,
+      "PE_TTM": 20.53,
       "totalSharesOutstanding": 722657051
     },
     "recentYearData": {
@@ -79778,7 +79598,7 @@ const data: ServiceData = {
         "equity": 220559233000,
         "interestFreeLiabilities": 168393573000,
         "interestBearingDebt": 54717869000,
-        "interestExpense": -1687308000,
+        "interestExpense": 1687308000,
         "interestFreeLiabilitiesOverTotal": 0.2838191176470811,
         "interestBearingDebtOverTotal": 0.09222428755703505,
         "debtRatio": 60.542294
@@ -80249,8 +80069,8 @@ const data: ServiceData = {
       {
         "year": "2025Q3",
         "roe": 16.79,
-        "roa": 7.376262,
-        "roic": 12.476476,
+        "roa": 7.939795,
+        "roic": 13.639677,
         "netProfitMargin": 10.642365,
         "assetTurnover": 60.90449999999999,
         "equityMultiplier": 2.534359
@@ -81479,7 +81299,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "制造业",
         "mainBusinessIncome": 145266238000,
-        "mbiRatio": 0.913371,
+        "mbiRatio": 0,
         "mainBusinessCost": 103246836000,
         "mbcRatio": 0.893019,
         "mainBusinessProfit": 42019402000,
@@ -81491,7 +81311,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "其他(补充)",
         "mainBusinessIncome": 11870057000,
-        "mbiRatio": 0.074634,
+        "mbiRatio": 0,
         "mainBusinessCost": 10523979000,
         "mbcRatio": 0.091026,
         "mainBusinessProfit": 1346078000,
@@ -81503,7 +81323,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "物流运输",
         "mainBusinessIncome": 1907746000,
-        "mbiRatio": 0.011995,
+        "mbiRatio": 0,
         "mainBusinessCost": 1844622000,
         "mbcRatio": 0.015955,
         "mainBusinessProfit": 63124000,
@@ -81515,7 +81335,7 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "大家电",
         "mainBusinessIncome": 97855794000,
-        "mbiRatio": 0.638007,
+        "mbiRatio": 0,
         "mainBusinessCost": 69390846000,
         "mbcRatio": 0.695141,
         "mainBusinessProfit": 28464948000,
@@ -81525,21 +81345,9 @@ const data: ServiceData = {
       {
         "year": "2016",
         "mainType": "产品",
-        "itemName": "小家电",
-        "mainBusinessIncome": 43282927000,
-        "mbiRatio": 0.282199,
-        "mainBusinessCost": 30431915000,
-        "mbcRatio": 0.304859,
-        "mainBusinessProfit": 12851012000,
-        "mbpRatio": 0.311042,
-        "grossProfitRatio": 0.296907
-      },
-      {
-        "year": "2016",
-        "mainType": "产品",
         "itemName": "电机",
         "mainBusinessIncome": 7220463000,
-        "mbiRatio": 0.047076,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -81551,7 +81359,31 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "物流",
         "mainBusinessIncome": 5018196000,
-        "mbiRatio": 0.032718,
+        "mbiRatio": 0,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "小家电",
+        "mainBusinessIncome": 43282927000,
+        "mbiRatio": 0,
+        "mainBusinessCost": 30431915000,
+        "mbcRatio": 0.304859,
+        "mainBusinessProfit": 12851012000,
+        "mbpRatio": 0.311042,
+        "grossProfitRatio": 0.296907
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "其中:冰箱及零部件",
+        "mainBusinessIncome": 14955684000,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -81563,7 +81395,7 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "其中:空调及零部件",
         "mainBusinessIncome": 66780877000,
-        "mbiRatio": 0.435402,
+        "mbiRatio": 0,
         "mainBusinessCost": 46372262000,
         "mbcRatio": 0.464546,
         "mainBusinessProfit": 20408615000,
@@ -81575,24 +81407,12 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "其中:洗衣机及零部件",
         "mainBusinessIncome": 16119233000,
-        "mbiRatio": 0.105095,
+        "mbiRatio": 0,
         "mainBusinessCost": 11511915000,
         "mbcRatio": 0.115324,
         "mainBusinessProfit": 4607318000,
         "mbpRatio": 0.111514,
         "grossProfitRatio": 0.285827
-      },
-      {
-        "year": "2016",
-        "mainType": "产品",
-        "itemName": "其中:冰箱及零部件",
-        "mainBusinessIncome": 14955684000,
-        "mbiRatio": 0.097509,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
       },
       {
         "year": "2016",
@@ -81926,11 +81746,11 @@ const data: ServiceData = {
       "minorityInterest": 13548467000
     },
     "dynamicData": {
-      "price": 77.4,
-      "marketValue": 588470693951,
-      "PB": 2.7,
-      "PE_TTM": 13.16,
-      "totalSharesOutstanding": 7602980542
+      "price": 77.09,
+      "marketValue": 586136561179,
+      "PB": 2.69,
+      "PE_TTM": 13.11,
+      "totalSharesOutstanding": 7603276186
     },
     "recentYearData": {
       "netProfit": 44721506000
@@ -84319,10 +84139,10 @@ const data: ServiceData = {
       "minorityInterest": 25189476.01
     },
     "dynamicData": {
-      "price": 52.41,
-      "marketValue": 33750825346,
-      "PB": 3.39,
-      "PE_TTM": 20.11,
+      "price": 52.69,
+      "marketValue": 33931138857,
+      "PB": 3.41,
+      "PE_TTM": 20.22,
       "totalSharesOutstanding": 643976824
     },
     "recentYearData": {
@@ -87120,10 +86940,10 @@ const data: ServiceData = {
       "minorityInterest": 84470920.59
     },
     "dynamicData": {
-      "price": 56.3,
-      "marketValue": 100453984549,
-      "PB": 2.53,
-      "PE_TTM": 19.32,
+      "price": 56.62,
+      "marketValue": 101024948582,
+      "PB": 2.54,
+      "PE_TTM": 19.43,
       "totalSharesOutstanding": 1784262603
     },
     "recentYearData": {
@@ -89357,10 +89177,10 @@ const data: ServiceData = {
       "minorityInterest": 145235184.27
     },
     "dynamicData": {
-      "price": 105.18,
-      "marketValue": 154818855668,
-      "PB": 3.12,
-      "PE_TTM": 12.25,
+      "price": 106.89,
+      "marketValue": 157335876425,
+      "PB": 3.17,
+      "PE_TTM": 12.45,
       "totalSharesOutstanding": 1471941963
     },
     "recentYearData": {
@@ -90230,7 +90050,7 @@ const data: ServiceData = {
         "year": "2025Q3",
         "roe": 15.48,
         "roa": 13.902123,
-        "roic": 15.686758,
+        "roic": 15.604734,
         "netProfitMargin": 24.862014,
         "assetTurnover": 41.7151,
         "equityMultiplier": 1.43987
@@ -91267,7 +91087,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "制造业",
         "mainBusinessIncome": 6017143660.56,
-        "mbiRatio": 1,
+        "mbiRatio": 0,
         "mainBusinessCost": 1523585779.51,
         "mbcRatio": 1,
         "mainBusinessProfit": 4493557881.05,
@@ -91279,7 +91099,7 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "白酒业务",
         "mainBusinessIncome": 5876233721.58,
-        "mbiRatio": 0.976582,
+        "mbiRatio": 0,
         "mainBusinessCost": 1451465873.25,
         "mbcRatio": 0.952664,
         "mainBusinessProfit": 4424767848.33,
@@ -91291,7 +91111,7 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "酒店业务",
         "mainBusinessIncome": 83773044.79,
-        "mbiRatio": 0.013922,
+        "mbiRatio": 0,
         "mainBusinessCost": 35526066.93,
         "mbcRatio": 0.023317,
         "mainBusinessProfit": 48246977.86,
@@ -91303,7 +91123,7 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "其他",
         "mainBusinessIncome": 57136894.19,
-        "mbiRatio": 0.009496,
+        "mbiRatio": 0,
         "mainBusinessCost": 36593839.33,
         "mbcRatio": 0.024018,
         "mainBusinessProfit": 20543054.86,
@@ -91315,7 +91135,7 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "华中",
         "mainBusinessIncome": 5285863801.21,
-        "mbiRatio": 0.878467,
+        "mbiRatio": 0,
         "mainBusinessCost": 1264533247.94,
         "mbcRatio": 0.829972,
         "mainBusinessProfit": 4021330553.27,
@@ -91327,7 +91147,7 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "华南",
         "mainBusinessIncome": 383674353.55,
-        "mbiRatio": 0.063764,
+        "mbiRatio": 0,
         "mainBusinessCost": 131266223.31,
         "mbcRatio": 0.086156,
         "mainBusinessProfit": 252408130.24,
@@ -91339,7 +91159,7 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "华北",
         "mainBusinessIncome": 345881952.52,
-        "mbiRatio": 0.057483,
+        "mbiRatio": 0,
         "mainBusinessCost": 127359850.64,
         "mbcRatio": 0.083592,
         "mainBusinessProfit": 218522101.88,
@@ -91351,7 +91171,7 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "国际",
         "mainBusinessIncome": 1723553.28,
-        "mbiRatio": 0.000286,
+        "mbiRatio": 0,
         "mainBusinessCost": 426457.62,
         "mbcRatio": 0.00028,
         "mainBusinessProfit": 1297095.66,
@@ -91582,10 +91402,10 @@ const data: ServiceData = {
       "minorityInterest": 1085436221.68
     },
     "dynamicData": {
-      "price": 112.24,
-      "marketValue": 59330064000,
-      "PB": 2.33,
-      "PE_TTM": 12.54,
+      "price": 111.05,
+      "marketValue": 58701030000,
+      "PB": 2.31,
+      "PE_TTM": 12.41,
       "totalSharesOutstanding": 528600000
     },
     "recentYearData": {
@@ -94095,10 +93915,10 @@ const data: ServiceData = {
       "minorityInterest": 4087695897.39
     },
     "dynamicData": {
-      "price": 37.88,
-      "marketValue": 212181249469,
-      "PB": 1.47,
-      "PE_TTM": 6.7,
+      "price": 38.85,
+      "marketValue": 217614613038,
+      "PB": 1.51,
+      "PE_TTM": 6.87,
       "totalSharesOutstanding": 5601405741
     },
     "recentYearData": {
@@ -97398,6 +97218,18 @@ const data: ServiceData = {
         "grossProfitRatio": 0.623596
       },
       {
+        "year": "2024",
+        "mainType": "地区",
+        "itemName": "国内",
+        "mainBusinessIncome": 15119210531.82,
+        "mbiRatio": 0.999015,
+        "mainBusinessCost": 7272736771.29,
+        "mbcRatio": 0.998196,
+        "mainBusinessProfit": 7846473760.53,
+        "mbpRatio": 0.999775,
+        "grossProfitRatio": 0.518974
+      },
+      {
         "year": "2023",
         "mainType": "行业",
         "itemName": "制造业",
@@ -98528,7 +98360,7 @@ const data: ServiceData = {
       {
         "year": "2016",
         "mainType": "产品",
-        "itemName": "其他业务",
+        "itemName": "其他",
         "mainBusinessIncome": 12613963.59,
         "mbiRatio": 0.001217,
         "mainBusinessCost": 16723375.16,
@@ -98566,7 +98398,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "制造业",
         "mainBusinessIncome": 10535658867.04,
-        "mbiRatio": 0.968153,
+        "mbiRatio": 0,
         "mainBusinessCost": 4981170690.59,
         "mbcRatio": 0.879277,
         "mainBusinessProfit": 5554488176.45,
@@ -98576,21 +98408,9 @@ const data: ServiceData = {
       {
         "year": "2015",
         "mainType": "行业",
-        "itemName": "其他",
-        "mainBusinessIncome": 182197679.06,
-        "mbiRatio": 0.016743,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
         "itemName": "百货业",
         "mainBusinessIncome": 145694572.83,
-        "mbiRatio": 0.013388,
+        "mbiRatio": 0,
         "mainBusinessCost": 683905296.3,
         "mbcRatio": 0.120723,
         "mainBusinessProfit": -538210723.47,
@@ -98600,9 +98420,21 @@ const data: ServiceData = {
       {
         "year": "2015",
         "mainType": "行业",
+        "itemName": "其他",
+        "mainBusinessIncome": 182197679.06,
+        "mbiRatio": 0,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2015",
+        "mainType": "行业",
         "itemName": "酒店业",
         "mainBusinessIncome": 18671377.4,
-        "mbiRatio": 0.001716,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -98809,10 +98641,10 @@ const data: ServiceData = {
       "minorityInterest": 2791326629.32
     },
     "dynamicData": {
-      "price": 38.26,
-      "marketValue": 202455565419,
-      "PB": 4.93,
-      "PE_TTM": 33.6,
+      "price": 35.35,
+      "marketValue": 187057089324,
+      "PB": 4.56,
+      "PE_TTM": 31.05,
       "totalSharesOutstanding": 5291572541
     },
     "recentYearData": {
@@ -100021,14 +99853,38 @@ const data: ServiceData = {
       {
         "year": "2024",
         "mainType": "地区",
-        "itemName": "酒类产品",
-        "mainBusinessIncome": 83126834116.05,
-        "mbiRatio": 0.932175,
-        "mainBusinessCost": 14787381989.08,
-        "mbcRatio": 0.722696,
-        "mainBusinessProfit": 68339452126.97,
-        "mbpRatio": 0.994553,
-        "grossProfitRatio": 0.822111
+        "itemName": "南部片区-酒类",
+        "mainBusinessIncome": 39335834243.15,
+        "mbiRatio": 0.441107,
+        "mainBusinessCost": 8591952703.4,
+        "mbcRatio": 0.41991,
+        "mainBusinessProfit": 30743881539.75,
+        "mbpRatio": 0.44742,
+        "grossProfitRatio": 0.781574
+      },
+      {
+        "year": "2024",
+        "mainType": "地区",
+        "itemName": "东部片区-酒类",
+        "mainBusinessIncome": 31290019510.12,
+        "mbiRatio": 0.350883,
+        "mainBusinessCost": 4333281546.7,
+        "mbcRatio": 0.211778,
+        "mainBusinessProfit": 26956737963.42,
+        "mbpRatio": 0.392305,
+        "grossProfitRatio": 0.861512
+      },
+      {
+        "year": "2024",
+        "mainType": "地区",
+        "itemName": "北部片区-酒类",
+        "mainBusinessIncome": 12500980362.78,
+        "mbiRatio": 0.140185,
+        "mainBusinessCost": 1862147738.98,
+        "mbcRatio": 0.091008,
+        "mainBusinessProfit": 10638832623.8,
+        "mbpRatio": 0.154828,
+        "grossProfitRatio": 0.85104
       },
       {
         "year": "2024",
@@ -100041,42 +99897,6 @@ const data: ServiceData = {
         "mainBusinessProfit": 374303111.99,
         "mbpRatio": 0.005447,
         "grossProfitRatio": 0.061885
-      },
-      {
-        "year": "2024",
-        "mainType": "地区",
-        "itemName": "其中:南部片区",
-        "mainBusinessIncome": 39335834243.15,
-        "mbiRatio": 0.441107,
-        "mainBusinessCost": 8591952703.4,
-        "mbcRatio": 0.41991,
-        "mainBusinessProfit": 30743881539.75,
-        "mbpRatio": 0.44742,
-        "grossProfitRatio": 0.781574
-      },
-      {
-        "year": "2024",
-        "mainType": "地区",
-        "itemName": "其中:东部片区",
-        "mainBusinessIncome": 31290019510.12,
-        "mbiRatio": 0.350883,
-        "mainBusinessCost": 4333281546.7,
-        "mbcRatio": 0.211778,
-        "mainBusinessProfit": 26956737963.42,
-        "mbpRatio": 0.392305,
-        "grossProfitRatio": 0.861512
-      },
-      {
-        "year": "2024",
-        "mainType": "地区",
-        "itemName": "其中:北部片区",
-        "mainBusinessIncome": 12500980362.78,
-        "mbiRatio": 0.140185,
-        "mainBusinessCost": 1862147738.98,
-        "mbcRatio": 0.091008,
-        "mainBusinessProfit": 10638832623.8,
-        "mbpRatio": 0.154828,
-        "grossProfitRatio": 0.85104
       },
       {
         "year": "2023",
@@ -100153,14 +99973,50 @@ const data: ServiceData = {
       {
         "year": "2023",
         "mainType": "地区",
-        "itemName": "酒类产品",
-        "mainBusinessIncome": 76447093245.62,
-        "mbiRatio": 0.91804,
-        "mainBusinessCost": 13824929799.19,
-        "mbcRatio": 0.685858,
-        "mainBusinessProfit": 62622163446.43,
-        "mbpRatio": 0.992193,
-        "grossProfitRatio": 0.819157
+        "itemName": "西部区域-酒类",
+        "mainBusinessIncome": 26215491173.54,
+        "mbiRatio": 0.314817,
+        "mainBusinessCost": 6047557225.84,
+        "mbcRatio": 0.300021,
+        "mainBusinessProfit": 20167933947.7,
+        "mbpRatio": 0.319543,
+        "grossProfitRatio": 0.769314
+      },
+      {
+        "year": "2023",
+        "mainType": "地区",
+        "itemName": "东部区域-酒类",
+        "mainBusinessIncome": 22388529236.37,
+        "mbiRatio": 0.26886,
+        "mainBusinessCost": 3340594216.75,
+        "mbcRatio": 0.165728,
+        "mainBusinessProfit": 19047935019.62,
+        "mbpRatio": 0.301798,
+        "grossProfitRatio": 0.85079
+      },
+      {
+        "year": "2023",
+        "mainType": "地区",
+        "itemName": "中部区域-酒类",
+        "mainBusinessIncome": 12958259027.46,
+        "mbiRatio": 0.155614,
+        "mainBusinessCost": 2295397807.81,
+        "mbcRatio": 0.113875,
+        "mainBusinessProfit": 10662861219.65,
+        "mbpRatio": 0.168944,
+        "grossProfitRatio": 0.822862
+      },
+      {
+        "year": "2023",
+        "mainType": "地区",
+        "itemName": "北部区域-酒类",
+        "mainBusinessIncome": 8074372025.55,
+        "mbiRatio": 0.096964,
+        "mainBusinessCost": 1147821771.1,
+        "mbcRatio": 0.056944,
+        "mainBusinessProfit": 6926550254.45,
+        "mbpRatio": 0.109745,
+        "grossProfitRatio": 0.857844
       },
       {
         "year": "2023",
@@ -100177,55 +100033,7 @@ const data: ServiceData = {
       {
         "year": "2023",
         "mainType": "地区",
-        "itemName": "其中:西部区域",
-        "mainBusinessIncome": 26215491173.54,
-        "mbiRatio": 0.314817,
-        "mainBusinessCost": 6047557225.84,
-        "mbcRatio": 0.300021,
-        "mainBusinessProfit": 20167933947.7,
-        "mbpRatio": 0.319543,
-        "grossProfitRatio": 0.769314
-      },
-      {
-        "year": "2023",
-        "mainType": "地区",
-        "itemName": "其中:东部区域",
-        "mainBusinessIncome": 22388529236.37,
-        "mbiRatio": 0.26886,
-        "mainBusinessCost": 3340594216.75,
-        "mbcRatio": 0.165728,
-        "mainBusinessProfit": 19047935019.62,
-        "mbpRatio": 0.301798,
-        "grossProfitRatio": 0.85079
-      },
-      {
-        "year": "2023",
-        "mainType": "地区",
-        "itemName": "其中:中部区域",
-        "mainBusinessIncome": 12958259027.46,
-        "mbiRatio": 0.155614,
-        "mainBusinessCost": 2295397807.81,
-        "mbcRatio": 0.113875,
-        "mainBusinessProfit": 10662861219.65,
-        "mbpRatio": 0.168944,
-        "grossProfitRatio": 0.822862
-      },
-      {
-        "year": "2023",
-        "mainType": "地区",
-        "itemName": "其中:北部区域",
-        "mainBusinessIncome": 8074372025.55,
-        "mbiRatio": 0.096964,
-        "mainBusinessCost": 1147821771.1,
-        "mbcRatio": 0.056944,
-        "mainBusinessProfit": 6926550254.45,
-        "mbpRatio": 0.109745,
-        "grossProfitRatio": 0.857844
-      },
-      {
-        "year": "2023",
-        "mainType": "地区",
-        "itemName": "其中:南部区域",
+        "itemName": "南部区域-酒类",
         "mainBusinessIncome": 6810441782.7,
         "mbiRatio": 0.081785,
         "mainBusinessCost": 993558777.69,
@@ -100333,14 +100141,62 @@ const data: ServiceData = {
       {
         "year": "2022",
         "mainType": "地区",
-        "itemName": "酒类产品",
-        "mainBusinessIncome": 67562646631.24,
-        "mbiRatio": 0.913396,
-        "mainBusinessCost": 12242850024.31,
-        "mbcRatio": 0.673482,
-        "mainBusinessProfit": 55319796606.93,
-        "mbpRatio": 0.991568,
-        "grossProfitRatio": 0.818793
+        "itemName": "西部区域-酒类",
+        "mainBusinessIncome": 21538460675.15,
+        "mbiRatio": 0.291184,
+        "mainBusinessCost": 4731384798.37,
+        "mbcRatio": 0.260275,
+        "mainBusinessProfit": 16807075876.78,
+        "mbpRatio": 0.301255,
+        "grossProfitRatio": 0.780329
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "东部区域-酒类",
+        "mainBusinessIncome": 18985619872.12,
+        "mbiRatio": 0.256671,
+        "mainBusinessCost": 2810516337.59,
+        "mbcRatio": 0.154607,
+        "mainBusinessProfit": 16175103534.53,
+        "mbpRatio": 0.289927,
+        "grossProfitRatio": 0.851966
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "中部区域-酒类",
+        "mainBusinessIncome": 11142257189.48,
+        "mbiRatio": 0.150635,
+        "mainBusinessCost": 2392992899.47,
+        "mbcRatio": 0.131639,
+        "mainBusinessProfit": 8749264290.01,
+        "mbpRatio": 0.156824,
+        "grossProfitRatio": 0.785233
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "北部区域-酒类",
+        "mainBusinessIncome": 8414668164.38,
+        "mbiRatio": 0.11376,
+        "mainBusinessCost": 1181126024.59,
+        "mbcRatio": 0.064974,
+        "mainBusinessProfit": 7233542139.79,
+        "mbpRatio": 0.129656,
+        "grossProfitRatio": 0.859635
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "南部区域-酒类",
+        "mainBusinessIncome": 7481640730.11,
+        "mbiRatio": 0.101146,
+        "mainBusinessCost": 1126829964.29,
+        "mbcRatio": 0.061987,
+        "mainBusinessProfit": 6354810765.82,
+        "mbpRatio": 0.113905,
+        "grossProfitRatio": 0.849387
       },
       {
         "year": "2022",
@@ -100353,66 +100209,6 @@ const data: ServiceData = {
         "mainBusinessProfit": 470418437.97,
         "mbpRatio": 0.008432,
         "grossProfitRatio": 0.073434
-      },
-      {
-        "year": "2022",
-        "mainType": "地区",
-        "itemName": "其中:西部区域",
-        "mainBusinessIncome": 21538460675.15,
-        "mbiRatio": 0.291184,
-        "mainBusinessCost": 4731384798.37,
-        "mbcRatio": 0.260275,
-        "mainBusinessProfit": 16807075876.78,
-        "mbpRatio": 0.301255,
-        "grossProfitRatio": 0.780329
-      },
-      {
-        "year": "2022",
-        "mainType": "地区",
-        "itemName": "其中:东部区域",
-        "mainBusinessIncome": 18985619872.12,
-        "mbiRatio": 0.256671,
-        "mainBusinessCost": 2810516337.59,
-        "mbcRatio": 0.154607,
-        "mainBusinessProfit": 16175103534.53,
-        "mbpRatio": 0.289927,
-        "grossProfitRatio": 0.851966
-      },
-      {
-        "year": "2022",
-        "mainType": "地区",
-        "itemName": "其中:中部区域",
-        "mainBusinessIncome": 11142257189.48,
-        "mbiRatio": 0.150635,
-        "mainBusinessCost": 2392992899.47,
-        "mbcRatio": 0.131639,
-        "mainBusinessProfit": 8749264290.01,
-        "mbpRatio": 0.156824,
-        "grossProfitRatio": 0.785233
-      },
-      {
-        "year": "2022",
-        "mainType": "地区",
-        "itemName": "其中:北部区域",
-        "mainBusinessIncome": 8414668164.38,
-        "mbiRatio": 0.11376,
-        "mainBusinessCost": 1181126024.59,
-        "mbcRatio": 0.064974,
-        "mainBusinessProfit": 7233542139.79,
-        "mbpRatio": 0.129656,
-        "grossProfitRatio": 0.859635
-      },
-      {
-        "year": "2022",
-        "mainType": "地区",
-        "itemName": "其中:南部区域",
-        "mainBusinessIncome": 7481640730.11,
-        "mbiRatio": 0.101146,
-        "mainBusinessCost": 1126829964.29,
-        "mbcRatio": 0.061987,
-        "mainBusinessProfit": 6354810765.82,
-        "mbpRatio": 0.113905,
-        "grossProfitRatio": 0.849387
       },
       {
         "year": "2021",
@@ -100525,7 +100321,7 @@ const data: ServiceData = {
       {
         "year": "2021",
         "mainType": "地区",
-        "itemName": "东部区域",
+        "itemName": "东部区域-酒类",
         "mainBusinessIncome": 18782177440.32,
         "mbiRatio": 0.28368,
         "mainBusinessCost": 3412179998.04,
@@ -100537,7 +100333,7 @@ const data: ServiceData = {
       {
         "year": "2021",
         "mainType": "地区",
-        "itemName": "西部区域",
+        "itemName": "西部区域-酒类",
         "mainBusinessIncome": 16979243862.88,
         "mbiRatio": 0.256449,
         "mainBusinessCost": 4079790164.23,
@@ -100549,7 +100345,7 @@ const data: ServiceData = {
       {
         "year": "2021",
         "mainType": "地区",
-        "itemName": "中部区域",
+        "itemName": "中部区域-酒类",
         "mainBusinessIncome": 11004868723.15,
         "mbiRatio": 0.166214,
         "mainBusinessCost": 2253101428.98,
@@ -100561,7 +100357,7 @@ const data: ServiceData = {
       {
         "year": "2021",
         "mainType": "地区",
-        "itemName": "北部区域",
+        "itemName": "北部区域-酒类",
         "mainBusinessIncome": 7535414625.22,
         "mbiRatio": 0.113812,
         "mainBusinessCost": 1246334864.18,
@@ -100573,7 +100369,7 @@ const data: ServiceData = {
       {
         "year": "2021",
         "mainType": "地区",
-        "itemName": "南部区域",
+        "itemName": "南部区域-酒类",
         "mainBusinessIncome": 7430135341.39,
         "mbiRatio": 0.112222,
         "mainBusinessCost": 1174384448.56,
@@ -100600,11 +100396,11 @@ const data: ServiceData = {
         "itemName": "制造业",
         "mainBusinessIncome": 57321059453.15,
         "mbiRatio": 1,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
+        "mainBusinessCost": 14811961478.65,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 42509097974.5,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.741597
       },
       {
         "year": "2020",
@@ -100693,31 +100489,7 @@ const data: ServiceData = {
       {
         "year": "2020",
         "mainType": "地区",
-        "itemName": "酒类产品",
-        "mainBusinessIncome": 52434071866.48,
-        "mbiRatio": 0.914744,
-        "mainBusinessCost": 10342416169.52,
-        "mbcRatio": 0.698248,
-        "mainBusinessProfit": 42091655696.96,
-        "mbpRatio": 0.99018,
-        "grossProfitRatio": 0.802754
-      },
-      {
-        "year": "2020",
-        "mainType": "地区",
-        "itemName": "非酒类产品",
-        "mainBusinessIncome": 4886987586.67,
-        "mbiRatio": 0.085256,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2020",
-        "mainType": "地区",
-        "itemName": "其中:西部区域",
+        "itemName": "西部区域-酒类",
         "mainBusinessIncome": 18493709772.58,
         "mbiRatio": 0.322634,
         "mainBusinessCost": 3972887096.63,
@@ -100729,7 +100501,7 @@ const data: ServiceData = {
       {
         "year": "2020",
         "mainType": "地区",
-        "itemName": "其中:东部区域",
+        "itemName": "东部区域-酒类",
         "mainBusinessIncome": 14186030946.71,
         "mbiRatio": 0.247484,
         "mainBusinessCost": 2678440341.16,
@@ -100741,7 +100513,7 @@ const data: ServiceData = {
       {
         "year": "2020",
         "mainType": "地区",
-        "itemName": "其中:中部区域",
+        "itemName": "中部区域-酒类",
         "mainBusinessIncome": 8343102047.01,
         "mbiRatio": 0.14555,
         "mainBusinessCost": 1571918316.72,
@@ -100753,7 +100525,7 @@ const data: ServiceData = {
       {
         "year": "2020",
         "mainType": "地区",
-        "itemName": "其中:北部区域",
+        "itemName": "北部区域-酒类",
         "mainBusinessIncome": 5787446943.4,
         "mbiRatio": 0.100965,
         "mainBusinessCost": 1099621656.33,
@@ -100765,7 +100537,7 @@ const data: ServiceData = {
       {
         "year": "2020",
         "mainType": "地区",
-        "itemName": "其中:南部区域",
+        "itemName": "南部区域-酒类",
         "mainBusinessIncome": 5623782156.78,
         "mbiRatio": 0.09811,
         "mainBusinessCost": 1019548758.68,
@@ -100773,6 +100545,18 @@ const data: ServiceData = {
         "mainBusinessProfit": 4604233398.1,
         "mbpRatio": 0.108312,
         "grossProfitRatio": 0.818708
+      },
+      {
+        "year": "2020",
+        "mainType": "地区",
+        "itemName": "非酒类产品",
+        "mainBusinessIncome": 4886987586.67,
+        "mbiRatio": 0.085256,
+        "mainBusinessCost": 4469545309.13,
+        "mbcRatio": 0.301752,
+        "mainBusinessProfit": 417442277.54,
+        "mbpRatio": 0.00982,
+        "grossProfitRatio": 0.085419
       },
       {
         "year": "2019",
@@ -101478,10 +101262,10 @@ const data: ServiceData = {
       "minorityInterest": 3704743408.7
     },
     "dynamicData": {
-      "price": 102.27,
-      "marketValue": 396972050671,
-      "PB": 2.79,
-      "PE_TTM": 13.96,
+      "price": 103.8,
+      "marketValue": 402910910919,
+      "PB": 2.83,
+      "PE_TTM": 14.17,
       "totalSharesOutstanding": 3881608005
     },
     "recentYearData": {
@@ -104015,10 +103799,10 @@ const data: ServiceData = {
       "minorityInterest": 45772981.88
     },
     "dynamicData": {
-      "price": 11.97,
-      "marketValue": 7331527636,
-      "PB": 3.12,
-      "PE_TTM": 15.53,
+      "price": 12.15,
+      "marketValue": 7441776172,
+      "PB": 3.17,
+      "PE_TTM": 15.76,
       "totalSharesOutstanding": 612491866
     },
     "recentYearData": {
@@ -107248,10 +107032,10 @@ const data: ServiceData = {
       "minorityInterest": 10701259000
     },
     "dynamicData": {
-      "price": 37.34,
-      "marketValue": 188172331472,
-      "PB": 1.92,
-      "PE_TTM": 17.32,
+      "price": 37.12,
+      "marketValue": 187063656782,
+      "PB": 1.9,
+      "PE_TTM": 17.22,
       "totalSharesOutstanding": 5039430409
     },
     "recentYearData": {
@@ -109350,7 +109134,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "交通运输设备制造业",
         "mainBusinessIncome": 57010348000,
-        "mbiRatio": 0.550984,
+        "mbiRatio": 0,
         "mainBusinessCost": 40909356000,
         "mbcRatio": 0.53741,
         "mainBusinessProfit": 16100992000,
@@ -109362,7 +109146,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "日用电子器件制造业",
         "mainBusinessIncome": 39094090000,
-        "mbiRatio": 0.37783,
+        "mbiRatio": 0,
         "mainBusinessCost": 35194253000,
         "mbcRatio": 0.462333,
         "mainBusinessProfit": 3899837000,
@@ -109372,21 +109156,9 @@ const data: ServiceData = {
       {
         "year": "2016",
         "mainType": "行业",
-        "itemName": "电子元器件制造业",
-        "mainBusinessIncome": 7343890000,
-        "mbiRatio": 0.070976,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2016",
-        "mainType": "行业",
         "itemName": "其他",
         "mainBusinessIncome": 21669000,
-        "mbiRatio": 0.000209,
+        "mbiRatio": 0,
         "mainBusinessCost": 19558000,
         "mbcRatio": 0.000257,
         "mainBusinessProfit": 2111000,
@@ -109395,10 +109167,34 @@ const data: ServiceData = {
       },
       {
         "year": "2016",
+        "mainType": "行业",
+        "itemName": "电子元器件制造业",
+        "mainBusinessIncome": 7343890000,
+        "mbiRatio": 0,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "二次充电电池及光伏",
+        "mainBusinessIncome": 7343890000,
+        "mbiRatio": 0,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2016",
         "mainType": "产品",
         "itemName": "汽车及相关产品",
         "mainBusinessIncome": 57010348000,
-        "mbiRatio": 0.550984,
+        "mbiRatio": 0,
         "mainBusinessCost": 40909356000,
         "mbcRatio": 0.53741,
         "mainBusinessProfit": 16100992000,
@@ -109410,7 +109206,7 @@ const data: ServiceData = {
         "mainType": "产品",
         "itemName": "手机部件及组装等",
         "mainBusinessIncome": 39094090000,
-        "mbiRatio": 0.37783,
+        "mbiRatio": 0,
         "mainBusinessCost": 35194253000,
         "mbcRatio": 0.462333,
         "mainBusinessProfit": 3899837000,
@@ -109420,21 +109216,9 @@ const data: ServiceData = {
       {
         "year": "2016",
         "mainType": "产品",
-        "itemName": "二次充电电池及光伏",
-        "mainBusinessIncome": 7343890000,
-        "mbiRatio": 0.070976,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2016",
-        "mainType": "产品",
         "itemName": "其他",
         "mainBusinessIncome": 21669000,
-        "mbiRatio": 0.000209,
+        "mbiRatio": 0,
         "mainBusinessCost": 19558000,
         "mbcRatio": 0.000257,
         "mainBusinessProfit": 2111000,
@@ -109446,7 +109230,7 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "中国(包括港澳台地区)",
         "mainBusinessIncome": 95764557000,
-        "mbiRatio": 0.92553,
+        "mbiRatio": 0,
         "mainBusinessCost": 75505651000,
         "mbcRatio": 1,
         "mainBusinessProfit": 20258906000,
@@ -109456,21 +109240,9 @@ const data: ServiceData = {
       {
         "year": "2016",
         "mainType": "地区",
-        "itemName": "其他",
-        "mainBusinessIncome": 3557967000,
-        "mbiRatio": 0.034386,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2016",
-        "mainType": "地区",
         "itemName": "美国",
         "mainBusinessIncome": 2717577000,
-        "mbiRatio": 0.026264,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -109482,7 +109254,19 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "欧洲",
         "mainBusinessIncome": 1429896000,
-        "mbiRatio": 0.013819,
+        "mbiRatio": 0,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2016",
+        "mainType": "地区",
+        "itemName": "其他",
+        "mainBusinessIncome": 3557967000,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -109494,7 +109278,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "交通运输设备制造业",
         "mainBusinessIncome": 40655203000,
-        "mbiRatio": 0.508133,
+        "mbiRatio": 0,
         "mainBusinessCost": 30982083000,
         "mbcRatio": 0.465801,
         "mainBusinessProfit": 9673120000,
@@ -109506,7 +109290,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "日用电子器件制造业",
         "mainBusinessIncome": 33262988000,
-        "mbiRatio": 0.415741,
+        "mbiRatio": 0,
         "mainBusinessCost": 30300150000,
         "mbcRatio": 0.455548,
         "mainBusinessProfit": 2962838000,
@@ -109518,7 +109302,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "电子元器件制造业",
         "mainBusinessIncome": 6080075000,
-        "mbiRatio": 0.075992,
+        "mbiRatio": 0,
         "mainBusinessCost": 5221817000,
         "mbcRatio": 0.078508,
         "mainBusinessProfit": 858258000,
@@ -109530,7 +109314,7 @@ const data: ServiceData = {
         "mainType": "行业",
         "itemName": "其他(补充)",
         "mainBusinessIncome": 10702000,
-        "mbiRatio": 0.000134,
+        "mbiRatio": 0,
         "mainBusinessCost": 9509000,
         "mbcRatio": 0.000143,
         "mainBusinessProfit": 1193000,
@@ -109590,7 +109374,7 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "中国(包括港澳台地区)",
         "mainBusinessIncome": 72365195000,
-        "mbiRatio": 0.904464,
+        "mbiRatio": 0,
         "mainBusinessCost": 59359020000,
         "mbcRatio": 0.99984,
         "mainBusinessProfit": 13006175000,
@@ -109600,21 +109384,9 @@ const data: ServiceData = {
       {
         "year": "2015",
         "mainType": "地区",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 3333002000,
-        "mbiRatio": 0.041658,
-        "mainBusinessCost": 9509000,
-        "mbcRatio": 0.00016,
-        "mainBusinessProfit": 3323493000,
-        "mbpRatio": 0.161019,
-        "grossProfitRatio": 0.997147
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
         "itemName": "美国",
         "mainBusinessIncome": 2888867000,
-        "mbiRatio": 0.036107,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 2888867000,
@@ -109626,7 +109398,7 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "欧洲",
         "mainBusinessIncome": 1363431000,
-        "mbiRatio": 0.017041,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 1363431000,
@@ -109638,12 +109410,24 @@ const data: ServiceData = {
         "mainType": "地区",
         "itemName": "印度",
         "mainBusinessIncome": 58473000,
-        "mbiRatio": 0.000731,
+        "mbiRatio": 0,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 58473000,
         "mbpRatio": 0.002833,
         "grossProfitRatio": 0
+      },
+      {
+        "year": "2015",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 3333002000,
+        "mbiRatio": 0,
+        "mainBusinessCost": 9509000,
+        "mbcRatio": 0.00016,
+        "mainBusinessProfit": 3323493000,
+        "mbpRatio": 0.161019,
+        "grossProfitRatio": 0.997147
       }
     ],
     "valuationData": {
@@ -109773,10 +109557,10 @@ const data: ServiceData = {
       "minorityInterest": 12882940000
     },
     "dynamicData": {
-      "price": 99.1,
-      "marketValue": 903514278692,
-      "PB": 4.11,
-      "PE_TTM": 23.56,
+      "price": 101.38,
+      "marketValue": 924301489140,
+      "PB": 4.2,
+      "PE_TTM": 24.1,
       "totalSharesOutstanding": 9117197565
     },
     "recentYearData": {

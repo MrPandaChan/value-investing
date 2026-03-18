@@ -299,7 +299,6 @@ async function fetchAStockData(stockItem: StockItem) {
     getLlb(code),
     getPrimaryBusinessData(code),
     getCashflow(code),
-    getDynamicData([code]),
     getDividend(code),
   ]);
 
@@ -314,7 +313,6 @@ async function fetchAStockData(stockItem: StockItem) {
     llb,
     primaryBusiness,
     eastMoneyCashFlow,
-    dynamicData,
     dividendData,
   ] = res;
 
@@ -328,7 +326,14 @@ async function fetchAStockData(stockItem: StockItem) {
   const eastMoneyData: EastMoneyData = {
     primaryBusiness,
     eastMoneyCashFlow: eastMoneyCashFlow ?? [],
-    dynamicData: dynamicData[0],
+    // 直接获取 dynamicData 会报错
+    dynamicData: {
+      price: 0,
+      marketValue: 0,
+      PB: 0,
+      PE_TTM: 0,
+      totalSharesOutstanding: 0,
+    },
     dividendData,
   } as EastMoneyData;
 
