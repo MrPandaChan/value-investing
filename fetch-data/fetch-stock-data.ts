@@ -141,7 +141,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
     "https://push2.eastmoney.com/api/qt/ulist.np/get",
     {
       params: {
-        fields: "f12,f14,f2,f9,f23,f18,f20,f115",
+        fields: "f12,f14,f2,f9,f23,f18,f20,f38,f115",
         secids,
         v: v(),
       },

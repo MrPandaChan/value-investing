@@ -112,7 +112,7 @@ export class Stock {
   ) {
     this.stockItem = stockItem;
     this.data = data[stockItem.code];
-    this.dynamicData = ref(this.data.dynamicData);
+    this.dynamicData = ref(data[stockItem.code].dynamicData);
     this.calculateAnchor(valuationStyle);
   }
 
