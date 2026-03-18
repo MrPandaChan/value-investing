@@ -282,7 +282,8 @@ export async function getExchangeRate() {
       params: {
         fields: "f2",
         secids: "133.CNHHKD",
-        v: v(),
+        ut: "b2884a393a59ad64002292a3e90d46a5",
+        // v: v(),
       },
     },
   );
