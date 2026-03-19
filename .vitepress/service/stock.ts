@@ -1,4 +1,9 @@
-import { type ServiceData, type StockItem, ValuationStyle } from "../../types";
+import {
+  type ServiceData,
+  type StockItem,
+  ValuationStyle,
+  ValuationType,
+} from "../../types";
 import { getStockItem } from "../../types/stocks";
 import { computed, ref, type Ref } from "vue";
 import { RowType } from "../components/rotation-model/types";
@@ -121,14 +126,16 @@ export class Stock {
     const dynamicData = data[this.stockItem.code].dynamicData;
     const stockItem = getStockItem(this.stockItem.code);
 
-    const profitValuation = new ProfitValuation(
-      valuationData,
-      stockItem,
-      dynamicData,
-      this.stockItem.profitValuationConfig?.[valuationStyle],
-    );
+    if (this.stockItem.valuationConfig.type === ValuationType.PROFIT) {
+      const profitValuation = new ProfitValuation(
+        valuationData,
+        stockItem,
+        dynamicData,
+        this.stockItem.valuationConfig[valuationStyle],
+      );
 
-    this.anchor.value = profitValuation.anchor.value;
+      this.anchor.value = profitValuation.anchor.value;
+    }
   }
 
   setCollectionRatio(val?: number) {

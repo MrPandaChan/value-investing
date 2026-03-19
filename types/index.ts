@@ -36,13 +36,35 @@ export interface ProfitValuationGrowth {
   discount?: number;
 }
 
+export enum ValuationType {
+  DIRECT, // 直接估值
+  PROFIT, // 利润估值
+  DIVIDEND, // 股息估值
+}
+
 export interface ProfitValuationConfig {
+  type: ValuationType.PROFIT;
   [ValuationStyle.SPECIAL_OFFER]: ProfitValuationGrowth;
   conservative: ProfitValuationGrowth;
   neutral: ProfitValuationGrowth;
   optimistic: ProfitValuationGrowth;
   backYearsNum: number;
 }
+
+export interface DirectValuationConfig {
+  type: ValuationType.DIRECT;
+  price: number;
+}
+
+export interface DividendValuationConfig {
+  type: ValuationType.DIVIDEND;
+  dividendYield: number;
+}
+
+export type ValuationConfig =
+  | ProfitValuationConfig
+  | DirectValuationConfig
+  | DividendValuationConfig;
 
 // 港股部分设置
 export interface HKMarketConfig {
@@ -58,8 +80,8 @@ export interface StockItem {
   code: string; // A 股代码
   name: string; // 股票名称
   allocation: number; // 目标仓位
+  valuationConfig: ValuationConfig; // 估值配置
   sharesPerLot?: number; // 一手股数，默认100
-  profitValuationConfig?: ProfitValuationConfig;
   hkMarketConfig?: HKMarketConfig;
   bMarketConfig?: BMarketConfig;
 }

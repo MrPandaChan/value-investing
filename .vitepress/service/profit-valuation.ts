@@ -4,6 +4,7 @@ import {
   type ProfitValuationGrowth,
   type StockItem,
   type ValuationData,
+  ValuationType,
 } from "../../types";
 import { computed, ref } from "vue";
 import {
@@ -240,8 +241,8 @@ export class ProfitValuation {
       };
     }
 
-    if (stockItem.profitValuationConfig) {
-      this.backYearsNum.value = stockItem.profitValuationConfig.backYearsNum;
+    if (stockItem.valuationConfig.type === ValuationType.PROFIT) {
+      this.backYearsNum.value = stockItem.valuationConfig.backYearsNum;
     }
 
     this.stockItem = stockItem;
