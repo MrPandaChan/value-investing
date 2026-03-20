@@ -12,6 +12,7 @@ import { pesticideStockData } from "./stocks/pesticide";
 import { dairyStockData } from "./stocks/dairy";
 import { bankStockData } from "./stocks/bank";
 import { chemicalsStockData } from "./stocks/chemicals";
+import { nonferrousMetalsStockData } from "./stocks/nonferrous-metals";
 import { otherStockData } from "./stocks/other";
 
 export const stockData: StockItem[] = [
@@ -29,6 +30,7 @@ export const stockData: StockItem[] = [
   ...bankStockData,
   ...chemicalsStockData,
   ...otherStockData,
+  ...nonferrousMetalsStockData,
 ];
 
 (function validate() {

@@ -11,7 +11,7 @@ import type {
   SinaResponse,
 } from "./types";
 import { isHKCode, stocksToSecIds, toSECUCODE, v } from "./helper";
-import { type StockItem } from "../types";
+import { StockType, type StockItem } from "../types";
 import { stockData } from "../types/stocks";
 
 /**
@@ -152,6 +152,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
     // 股票停牌的时候 f2 会返回 0，因此取 f18 替代
     const price = v.f2 > 0 ? v.f2 : v.f18;
     return {
+      code: v.f12,
       price: isHKCode(v.f12) ? price / 1000 : price / 100,
       marketValue: v.f20,
       PB: v.f23 / 100,
@@ -362,7 +363,8 @@ export async function main() {
 
   for (let i = 0; i < stockData.length; i += 1) {
     const stock = stockData[i];
-    if (!stock) {
+    // 暂时只处理A股
+    if (!stock || stock.type !== StockType.A) {
       continue;
     }
 

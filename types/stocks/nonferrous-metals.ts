@@ -1,0 +1,36 @@
+import { StockType, ValuationType, type StockItem } from "../index";
+
+const nonferrousMetalsStockData: StockItem[] = [
+  {
+    type: StockType.A,
+    name: "紫金矿业",
+    code: "601899",
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 26.11,
+    },
+  },
+  {
+    type: StockType.HK,
+    name: "紫金矿业",
+    code: "02899",
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 22.33,
+    },
+  },
+  {
+    type: StockType.HK,
+    name: "洛阳钼业",
+    code: "03993",
+    allocation: 0.03,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 8.6,
+    },
+  },
+];
+
+export { nonferrousMetalsStockData };

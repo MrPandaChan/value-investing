@@ -1,8 +1,8 @@
 import {
   type ServiceData,
-  type StockItem,
   ValuationStyle,
   ValuationType,
+  type StockItem,
 } from "../../types";
 import { getStockItem } from "../../types/stocks";
 import { computed, ref, type Ref } from "vue";
@@ -10,6 +10,7 @@ import { RowType } from "../components/rotation-model/types";
 import { data } from "./data";
 import { ProfitValuation } from "./profit-valuation";
 import { type DynamicData } from "../../fetch-data/types";
+import { DividendValuation } from "./dividend-valuation";
 
 // 以 10 年回本进行计算
 const BACK_YEARS_NUM = 10;
@@ -40,14 +41,17 @@ export class Stock {
 
   // 股息率
   dividendYield = computed(() => {
-    const { historyData } = this.data.valuationData;
-    const lastData = historyData[historyData.length - 1];
-    const { totalDividend } = lastData;
-    return (
-      totalDividend /
-      this.dynamicData.value.totalSharesOutstanding /
-      this.price.value
-    );
+    if (this.data) {
+      const { historyData } = this.data.valuationData;
+      const lastData = historyData[historyData.length - 1];
+      const { totalDividend } = lastData;
+      return (
+        totalDividend /
+        this.dynamicData.value.totalSharesOutstanding /
+        this.price.value
+      );
+    }
+    return 0;
   });
 
   get waitYears() {
@@ -71,10 +75,15 @@ export class Stock {
 
   // 分红率
   get dividendPayoutRatio() {
-    const { historyData } = this.data.valuationData;
-    const lastData = historyData[historyData.length - 1];
-    const { totalDividend, profit } = lastData;
-    return totalDividend / profit;
+    if (this.data) {
+      const { historyData } = this.data.valuationData;
+      const lastData = historyData[historyData.length - 1];
+      const { totalDividend, profit } = lastData;
+      if (profit > 0) {
+        return totalDividend / profit;
+      }
+    }
+    return 0;
   }
 
   // 目标仓位
@@ -113,28 +122,46 @@ export class Stock {
 
   constructor(
     stockItem: StockItem,
+    dynamicData: DynamicData,
     valuationStyle: ValuationStyle = ValuationStyle.NEUTRAL,
   ) {
     this.stockItem = stockItem;
     this.data = data[stockItem.code];
-    this.dynamicData = ref(data[stockItem.code].dynamicData);
+    this.dynamicData = ref(dynamicData);
     this.calculateAnchor(valuationStyle);
   }
 
   calculateAnchor(valuationStyle: ValuationStyle = ValuationStyle.NEUTRAL) {
-    const valuationData = data[this.stockItem.code].valuationData;
-    const dynamicData = data[this.stockItem.code].dynamicData;
     const stockItem = getStockItem(this.stockItem.code);
 
-    if (this.stockItem.valuationConfig.type === ValuationType.PROFIT) {
+    const { valuationConfig } = this.stockItem;
+
+    if (valuationConfig.type === ValuationType.PROFIT) {
+      const valuationData = data[this.stockItem.code].valuationData;
+      const dynamicData = data[this.stockItem.code].dynamicData;
+
       const profitValuation = new ProfitValuation(
         valuationData,
         stockItem,
         dynamicData,
-        this.stockItem.valuationConfig[valuationStyle],
+        valuationConfig[valuationStyle],
       );
 
       this.anchor.value = profitValuation.anchor.value;
+    } else if (valuationConfig.type === ValuationType.DIVIDEND) {
+      const valuationData = data[this.stockItem.code].valuationData;
+      const dynamicData = data[this.stockItem.code].dynamicData;
+
+      const dividendValuation = new DividendValuation(
+        valuationData,
+        valuationConfig,
+        dynamicData,
+      );
+      this.anchor.value = dividendValuation.anchor;
+    } else if (valuationConfig.type === ValuationType.DIRECT) {
+      this.anchor.value = valuationConfig.price;
+    } else if (valuationConfig.type === ValuationType.REFERENCE) {
+      this.anchor.value = valuationConfig.price;
     }
   }
 

@@ -32,7 +32,7 @@ export const tableColumns: ColumnConfig[] = [
     label: "多等<br />年数",
     thClass: "bold bg-green",
     tdClass: "bold bg-green",
-    show: true,
+    show: false,
   },
   {
     key: "longTermAverageReturnYield",

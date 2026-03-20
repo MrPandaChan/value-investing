@@ -2,13 +2,13 @@ import { StockType, ValuationType, type StockItem } from "../index";
 
 const bankStockData: StockItem[] = [
   {
-    type: StockType.A,
-    name: "招商银行",
-    code: "600036",
-    allocation: 0.1,
+    type: StockType.HK,
+    name: "H腾讯控股",
+    code: "00700",
+    allocation: 0.2,
     valuationConfig: {
-      type: ValuationType.DIVIDEND,
-      dividendYield: 0.07,
+      type: ValuationType.REFERENCE,
+      price: 350,
     },
   },
 ];

@@ -1,32 +1,41 @@
-import { ProfitValuationGrowthType, type StockItem } from "../index";
+import {
+  ProfitValuationGrowthType,
+  StockType,
+  ValuationType,
+  type StockItem,
+} from "../index";
 
 const portStockData: StockItem[] = [
   {
+    type: StockType.A,
     name: "青岛港",
     code: "601298",
     allocation: 0.05,
-    profitValuationConfig: {
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0],
-        discount: 0.8,
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.03],
-        discount: 0.8,
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.05],
-        discount: 0.8,
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.08],
-        discount: 0.8,
-      },
-      backYearsNum: 10,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 7.2,
+      // type: ValuationType.PROFIT,
+      // specialOffer: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0],
+      //   discount: 0.8,
+      // },
+      // conservative: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0.03],
+      //   discount: 0.8,
+      // },
+      // neutral: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0.05],
+      //   discount: 0.8,
+      // },
+      // optimistic: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0.08],
+      //   discount: 0.8,
+      // },
+      // backYearsNum: 10,
     },
     hkMarketConfig: {
       code: "06198",
@@ -34,59 +43,129 @@ const portStockData: StockItem[] = [
     },
   },
   {
-    name: "上港集团",
-    code: "600018",
+    type: StockType.HK,
+    name: "青岛港H",
+    code: "06198",
     allocation: 0.05,
-    profitValuationConfig: {
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0],
-        discount: 0.8,
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.03],
-        discount: 0.8,
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.05],
-        discount: 0.8,
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.08],
-        discount: 0.8,
-      },
-      backYearsNum: 10,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 5.76,
+      // type: ValuationType.PROFIT,
+      // specialOffer: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0],
+      //   discount: 0.8,
+      // },
+      // conservative: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0.03],
+      //   discount: 0.8,
+      // },
+      // neutral: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0.05],
+      //   discount: 0.8,
+      // },
+      // optimistic: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0.08],
+      //   discount: 0.8,
+      // },
+      // backYearsNum: 10,
     },
   },
   {
+    type: StockType.A,
+    name: "上港集团",
+    code: "600018",
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 3.93,
+      // type: ValuationType.PROFIT,
+      // specialOffer: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0],
+      //   discount: 0.8,
+      // },
+      // conservative: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0.03],
+      //   discount: 0.8,
+      // },
+      // neutral: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0.05],
+      //   discount: 0.8,
+      // },
+      // optimistic: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0.08],
+      //   discount: 0.8,
+      // },
+      // backYearsNum: 10,
+    },
+  },
+  {
+    type: StockType.A,
     name: "唐山港",
     code: "601000",
-    allocation: 0,
-    profitValuationConfig: {
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0],
-        discount: 0.8,
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0.02],
-        discount: 0.8,
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0.03],
-        discount: 0.8,
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.2, 0.04],
-        discount: 0.8,
-      },
-      backYearsNum: 10,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 3.08,
+      // type: ValuationType.PROFIT,
+      // specialOffer: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [-0.2, 0],
+      //   discount: 0.8,
+      // },
+      // conservative: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [-0.2, 0.02],
+      //   discount: 0.8,
+      // },
+      // neutral: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [-0.2, 0.03],
+      //   discount: 0.8,
+      // },
+      // optimistic: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [-0.2, 0.04],
+      //   discount: 0.8,
+      // },
+      // backYearsNum: 10,
+    },
+  },
+  {
+    type: StockType.B,
+    name: "招港B",
+    code: "201872",
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 12.38,
+    },
+  },
+  {
+    type: StockType.A,
+    name: "招商港口",
+    code: "001872",
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 13.7,
+    },
+  },
+  {
+    type: StockType.A,
+    name: "宁波港",
+    code: "601018",
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 2.36,
     },
   },
 ];

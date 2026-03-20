@@ -1,11 +1,18 @@
-import { ProfitValuationGrowthType, type StockItem } from "../index";
+import {
+  ProfitValuationGrowthType,
+  StockType,
+  ValuationType,
+  type StockItem,
+} from "../index";
 
 const chemicalsStockData: StockItem[] = [
   {
+    type: StockType.A,
     name: "万华化学",
     code: "600309",
     allocation: 0,
-    profitValuationConfig: {
+    valuationConfig: {
+      type: ValuationType.PROFIT,
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
         data: [-0.3, -0.1, 0],

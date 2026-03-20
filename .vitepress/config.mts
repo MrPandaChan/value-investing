@@ -539,6 +539,10 @@ export default defineConfig({
               text: "藏格矿业",
               link: "/company/nonferrous-metals‌/nonferrous-metals‌.md",
             },
+            {
+              text: "紫金矿业",
+              link: "/company/nonferrous-metals‌/zijin.md",
+            },
           ],
         },
         {

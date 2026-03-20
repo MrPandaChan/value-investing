@@ -16,7 +16,7 @@ const stocks = shallowReactive<Stock[]>([]);
 const investmentAmount = ref(1000000); // 默认100万
 
 // 估值风格
-const valuationStyle = ref<ValuationStyle>(ValuationStyle.NEUTRAL);
+const valuationStyle = ref<ValuationStyle>(ValuationStyle.CONSERVATIVE);
 
 // 列显示控制
 const visibleColumnKeys = ref(
@@ -275,10 +275,19 @@ function onValuationStyleChange(style: ValuationStyle) {
   }
 }
 
-onBeforeMount(() => {
-  for (const stockItem of stockData) {
-    const stock = new Stock(stockItem, valuationStyle.value);
-    stocks.push(stock);
+onBeforeMount(async () => {
+  const stockCodes = stockData.map((s) => s.code);
+  const dynamicDataList = await getDynamicData(stockCodes);
+
+  for (let i = 0; i < stockData.length; i += 1) {
+    const stockItem = stockData[i];
+    const dynamicData = dynamicDataList.find((v) => v.code === stockItem.code);
+    if (dynamicData) {
+      const stock = new Stock(stockItem, dynamicData, valuationStyle.value);
+      stocks.push(stock);
+    } else {
+      console.log("动态数据未能找到: ", stockItem);
+    }
   }
 
   refreshDynamicData();
@@ -287,7 +296,7 @@ onBeforeMount(() => {
 
 <template>
   <div class="control-panel">
-    <el-select
+    <!-- <el-select
       class="valuation-style-select"
       v-model="valuationStyle"
       @change="onValuationStyleChange"
@@ -296,7 +305,7 @@ onBeforeMount(() => {
       <el-option label="保守" :value="ValuationStyle.CONSERVATIVE" />
       <el-option label="中性" :value="ValuationStyle.NEUTRAL" />
       <el-option label="激进" :value="ValuationStyle.OPTIMISTIC" />
-    </el-select>
+    </el-select> -->
 
     <el-button
       :loading="refreshLoading"

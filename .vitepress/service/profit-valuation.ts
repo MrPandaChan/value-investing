@@ -2,7 +2,7 @@ import {
   ProfitValuationGrowthType,
   type ValuationHistoryData,
   type ProfitValuationGrowth,
-  type StockItem,
+  type AStockItem,
   type ValuationData,
   ValuationType,
 } from "../../types";

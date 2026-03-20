@@ -40,6 +40,7 @@ export enum ValuationType {
   DIRECT, // 直接估值
   PROFIT, // 利润估值
   DIVIDEND, // 股息估值
+  REFERENCE, // 心智升级估值
 }
 
 export interface ProfitValuationConfig {
@@ -61,10 +62,16 @@ export interface DividendValuationConfig {
   dividendYield: number;
 }
 
+export interface ReferenceValuationConfig {
+  type: ValuationType.REFERENCE;
+  price: number; // RMB
+}
+
 export type ValuationConfig =
   | ProfitValuationConfig
   | DirectValuationConfig
-  | DividendValuationConfig;
+  | DividendValuationConfig
+  | ReferenceValuationConfig;
 
 // 港股部分设置
 export interface HKMarketConfig {
@@ -76,7 +83,14 @@ export interface HKMarketConfig {
 // B股部分设置
 export type BMarketConfig = Omit<HKMarketConfig, "dividendTaxRate">;
 
-export interface StockItem {
+export enum StockType {
+  A,
+  B,
+  HK,
+}
+
+export interface AStockItem {
+  type: StockType.A;
   code: string; // A 股代码
   name: string; // 股票名称
   allocation: number; // 目标仓位
@@ -85,6 +99,26 @@ export interface StockItem {
   hkMarketConfig?: HKMarketConfig;
   bMarketConfig?: BMarketConfig;
 }
+
+export interface BStockItem {
+  type: StockType.B;
+  code: string; // B 股代码
+  name: string; // 股票名称
+  allocation: number; // 目标仓位
+  valuationConfig: ValuationConfig; // 估值配置
+  sharesPerLot?: number; // 一手股数，默认100
+}
+
+export interface HKStockItem {
+  type: StockType.HK;
+  code: string; // H 股代码
+  name: string; // 股票名称
+  allocation: number; // 目标仓位
+  valuationConfig: ValuationConfig; // 估值配置
+  sharesPerLot?: number; // 一手股数，默认100
+}
+
+export type StockItem = AStockItem | BStockItem | HKStockItem;
 
 export interface BasicRevenueData {
   year: string;

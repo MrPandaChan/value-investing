@@ -62,7 +62,7 @@ export const v = () =>
  */
 export default function formatDate(
   time?: object | string | number | null,
-  formats = "Y-m-d"
+  formats = "Y-m-d",
 ): string {
   if (time === undefined || !time) {
     return "";
@@ -194,7 +194,7 @@ export function formatPercent(value: number, fractionDigits = 2) {
 export function presentValue(
   futureValue: number,
   discountRate: number,
-  periods: number
+  periods: number,
 ): number {
   if (discountRate <= -1) {
     throw new Error("折现率不能小于或等于-100%");
@@ -212,7 +212,7 @@ export function presentValue(
 export function calAnnualizedGrowthRate(
   current: number,
   base: number,
-  year: number
+  year: number,
 ) {
   if (current < 0 || base < 0) {
     // 如果有负数，无法直接计算，因此用总增长率法计算近似的年化收益

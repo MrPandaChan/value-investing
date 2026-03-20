@@ -1,11 +1,18 @@
-import { ProfitValuationGrowthType, type StockItem } from "../index";
+import {
+  ProfitValuationGrowthType,
+  StockType,
+  ValuationType,
+  type StockItem,
+} from "../index";
 
 const dairyStockData: StockItem[] = [
   {
+    type: StockType.A,
     name: "伊利股份",
     code: "600887",
     allocation: 0.05,
-    profitValuationConfig: {
+    valuationConfig: {
+      type: ValuationType.PROFIT,
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
         data: [0.2, 0.03, 0],

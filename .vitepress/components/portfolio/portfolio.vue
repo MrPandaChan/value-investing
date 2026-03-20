@@ -43,7 +43,7 @@ interface StockItem extends BasicItem {
 }
 
 interface portfolio {
-  stocks: StockItem[];
+  stocks: AStockItem[];
   sumShareHoldingValue: number; // 组合总成本
   sumDividendTax: number; // 股息扣税总额
   sumNetDividend: number; // 股息总额
@@ -278,7 +278,7 @@ const portfolio = computed<portfolio>(() => {
       industryMap.set(stock.industry, [stock]);
     }
   }
-  const stocks: StockItem[] = [];
+  const stocks: AStockItem[] = [];
   for (const arr of Array.from(industryMap.values())) {
     const total = arr.reduce((pre, cur) => pre + cur.shareholdingValue, 0);
     stocks.push(

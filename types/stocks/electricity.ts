@@ -1,67 +1,82 @@
-import { ProfitValuationGrowthType, type StockItem } from "../index";
+import {
+  ProfitValuationGrowthType,
+  StockType,
+  ValuationType,
+  type StockItem,
+} from "../index";
 
 const electricityStockData: StockItem[] = [
   {
+    type: StockType.A,
     name: "长江电力",
     code: "600900",
     allocation: 0.1,
-    profitValuationConfig: {
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0, 0, 0, 0],
-        discount: 0.9,
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0, 0, 0, 0.02],
-        discount: 0.9,
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0, 0, 0, 0.02, 0.04],
-        discount: 0.9,
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0, 0, 0, 0.02, 0.06],
-        discount: 0.9,
-      },
-      backYearsNum: 10,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 21.24,
+      // type: ValuationType.PROFIT,
+      // specialOffer: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0, 0, 0, 0],
+      //   discount: 0.9,
+      // },
+      // conservative: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0, 0, 0, 0.02],
+      //   discount: 0.9,
+      // },
+      // neutral: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0, 0, 0, 0.02, 0.04],
+      //   discount: 0.9,
+      // },
+      // optimistic: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [0, 0, 0, 0.02, 0.06],
+      //   discount: 0.9,
+      // },
+      // backYearsNum: 10,
     },
   },
   {
+    type: StockType.A,
     name: "国投电力",
     code: "600886",
     allocation: 0.1,
-    profitValuationConfig: {
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.1, -0.05, 0],
-        discount: 0.9,
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.1, -0.05, 0.02],
-        discount: 0.9,
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.1, -0.05, 0.04],
-        discount: 0.9,
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.1, -0.05, 0.06],
-        discount: 0.9,
-      },
-      backYearsNum: 10,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 11.78,
+      // type: ValuationType.PROFIT,
+      // specialOffer: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [-0.1, -0.05, 0],
+      //   discount: 0.9,
+      // },
+      // conservative: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [-0.1, -0.05, 0.02],
+      //   discount: 0.9,
+      // },
+      // neutral: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [-0.1, -0.05, 0.04],
+      //   discount: 0.9,
+      // },
+      // optimistic: {
+      //   type: ProfitValuationGrowthType.RATE,
+      //   data: [-0.1, -0.05, 0.06],
+      //   discount: 0.9,
+      // },
+      // backYearsNum: 10,
     },
   },
   {
+    type: StockType.A,
     name: "国电南瑞",
     code: "600406",
     allocation: 0.1,
-    profitValuationConfig: {
+    valuationConfig: {
+      type: ValuationType.PROFIT,
       specialOffer: {
         type: ProfitValuationGrowthType.RATE,
         data: [0],
