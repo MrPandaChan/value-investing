@@ -3,6 +3,7 @@ import {
   ValuationStyle,
   ValuationType,
   type StockItem,
+  StockType,
 } from "../../types";
 import { getStockItem } from "../../types/stocks";
 import { computed, ref, type Ref } from "vue";
@@ -11,12 +12,15 @@ import { data } from "./data";
 import { ProfitValuation } from "./profit-valuation";
 import { type DynamicData } from "../../fetch-data/types";
 import { DividendValuation } from "./dividend-valuation";
+import { getDynamicData } from "../../fetch-data/fetch-stock-data";
 
 // 以 10 年回本进行计算
 const BACK_YEARS_NUM = 10;
 
 export class Stock {
   rowType = RowType.STOCK;
+
+  private stockType!: StockType;
 
   private stockItem: StockItem;
 
@@ -60,7 +64,12 @@ export class Stock {
 
   // 股票名称
   get name() {
-    return `A${this.stockItem.name}`;
+    const map: Record<StockType, string> = {
+      [StockType.A]: "A",
+      [StockType.B]: "B",
+      [StockType.HK]: "H",
+    };
+    return `${map[this.stockItem.type]}${this.stockItem.name}`;
   }
 
   // 股票代码
@@ -126,17 +135,28 @@ export class Stock {
     valuationStyle: ValuationStyle = ValuationStyle.NEUTRAL,
   ) {
     this.stockItem = stockItem;
+    this.stockType = stockItem.type;
     this.data = data[stockItem.code];
     this.dynamicData = ref(dynamicData);
     this.calculateAnchor(valuationStyle);
   }
 
-  calculateAnchor(valuationStyle: ValuationStyle = ValuationStyle.NEUTRAL) {
+  async calculateAnchor(
+    valuationStyle: ValuationStyle = ValuationStyle.NEUTRAL,
+  ) {
+    const [{ price }] = await getDynamicData(["133.CNHHKD"]);
+    const exchangeRate = price / 100;
+
     const stockItem = getStockItem(this.stockItem.code);
 
     const { valuationConfig } = this.stockItem;
 
-    if (valuationConfig.type === ValuationType.PROFIT) {
+    // TODO: 利润估值目前只支持A股
+    // TODO: HKMarketValuation
+    if (
+      stockItem.type === StockType.A &&
+      valuationConfig.type === ValuationType.PROFIT
+    ) {
       const valuationData = data[this.stockItem.code].valuationData;
       const dynamicData = data[this.stockItem.code].dynamicData;
 
@@ -159,9 +179,20 @@ export class Stock {
       );
       this.anchor.value = dividendValuation.anchor;
     } else if (valuationConfig.type === ValuationType.DIRECT) {
-      this.anchor.value = valuationConfig.price;
+      // 汇率转换
+      this.anchor.value =
+        this.stockType === StockType.A
+          ? valuationConfig.price
+          : valuationConfig.price * exchangeRate;
     } else if (valuationConfig.type === ValuationType.REFERENCE) {
-      this.anchor.value = valuationConfig.price;
+      console.log(exchangeRate);
+      // 汇率转换
+      this.anchor.value =
+        this.stockType === StockType.A
+          ? valuationConfig.price
+          : valuationConfig.price * exchangeRate;
+    } else {
+      console.log("找不到估值方法");
     }
   }
 

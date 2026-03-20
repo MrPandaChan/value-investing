@@ -63,7 +63,7 @@ export class ProfitValuation {
 
   dynamicData: DynamicData;
 
-  stockItem: StockItem;
+  stockItem: AStockItem;
 
   lastData: ValuationHistoryData;
 
@@ -229,7 +229,7 @@ export class ProfitValuation {
 
   constructor(
     valuationData: ValuationData,
-    stockItem: StockItem,
+    stockItem: AStockItem,
     dynamicData: DynamicData,
     growth?: ProfitValuationGrowth,
   ) {

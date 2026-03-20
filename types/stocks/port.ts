@@ -44,7 +44,7 @@ const portStockData: StockItem[] = [
   },
   {
     type: StockType.HK,
-    name: "青岛港H",
+    name: "青岛港",
     code: "06198",
     allocation: 0.05,
     valuationConfig: {
