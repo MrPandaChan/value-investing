@@ -396,6 +396,10 @@ export default defineConfig({
               text: "盐湖股份",
               link: "/company/agricultural-chemicals/yanhu.md",
             },
+            {
+              text: "国光股份",
+              link: "/company/agricultural-chemicals/guoguang.md",
+            },
           ],
         },
         {
