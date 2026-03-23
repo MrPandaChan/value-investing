@@ -12,7 +12,6 @@ import { data } from "./data";
 import { ProfitValuation } from "./profit-valuation";
 import { type DynamicData } from "../../fetch-data/types";
 import { DividendValuation } from "./dividend-valuation";
-import { getDynamicData } from "../../fetch-data/fetch-stock-data";
 
 // 以 10 年回本进行计算
 const BACK_YEARS_NUM = 10;
@@ -20,7 +19,7 @@ const BACK_YEARS_NUM = 10;
 export class Stock {
   rowType = RowType.STOCK;
 
-  private stockType: StockType;
+  stockType: StockType;
 
   private stockItem: StockItem;
 
@@ -47,6 +46,7 @@ export class Stock {
 
   // 股息率
   dividendYield = computed(() => {
+    // TODO: 港股价格不正确，未港股股息率进行处理
     if (this.data) {
       const { historyData } = this.data.valuationData;
       const lastData = historyData[historyData.length - 1];
@@ -82,6 +82,13 @@ export class Stock {
   // 当前期望收益
   longTermAverageReturnYield = computed(() => {
     return this.anchor.value / this.price.value / BACK_YEARS_NUM;
+  });
+
+  // 如果是港币价格需要转换为人民币
+  exchangePrice = computed(() => {
+    return this.stockType === StockType.A
+      ? this.price.value
+      : this.price.value / this.exchangeRate;
   });
 
   // 分红率
@@ -148,6 +155,7 @@ export class Stock {
     this.data = data[stockItem.code];
     this.dynamicData = ref(dynamicData);
     this.exchangeRate = exchangeRate;
+    console.log("exchangeRate：", this.exchangeRate);
     this.calculateAnchor(valuationStyle);
   }
 
@@ -190,13 +198,13 @@ export class Stock {
       this.anchor.value =
         this.stockType === StockType.A
           ? valuationConfig.price
-          : valuationConfig.price * this.exchangeRate;
+          : valuationConfig.price / this.exchangeRate;
     } else if (valuationConfig.type === ValuationType.REFERENCE) {
       // 汇率转换
       this.anchor.value =
         this.stockType === StockType.A
           ? valuationConfig.price
-          : valuationConfig.price * this.exchangeRate;
+          : valuationConfig.price / this.exchangeRate;
     } else {
       console.log("找不到估值方法");
     }
@@ -210,22 +218,26 @@ export class Stock {
     this.cumulativeRatio = val;
   }
 
-  // 计算目标仓位的股数
+  // 计算目标仓位的股数，totalAmount 是 RMB
   calculateAllocationShares(totalAmount: number) {
     const amount = this.allocation * totalAmount;
-    const shares = Math.floor(amount / this.price.value);
+    const shares = Math.floor(amount / this.exchangePrice.value);
     const lots = Math.floor(shares / this.sharesPerLot);
     return lots * this.sharesPerLot;
   }
 
-  // 计算收集比例的股数
+  // 计算收集比例的股数，totalAmount 是 RMB
   calculateCollectionRatioShares(totalAmount: number) {
     if (this.collectionRatio === undefined || this.collectionRatio === 0) {
       return undefined;
     }
+    // 投入的金额
     const amount = this.collectionRatio * totalAmount;
-    const shares = Math.floor(amount / this.price.value);
+    // 相应的股数
+    const shares = Math.floor(amount / this.exchangePrice.value);
+    // 可以买多少手
     const lots = Math.floor(shares / this.sharesPerLot);
+    // 转换为股数
     return lots * this.sharesPerLot;
   }
 
@@ -234,26 +246,40 @@ export class Stock {
     if (this.cumulativeRatio === undefined || this.cumulativeRatio === 0) {
       return undefined;
     }
+    // 投入的金额
     const amount = this.cumulativeRatio * totalAmount;
-    const shares = Math.floor(amount / this.price.value);
+    // 相应的股数
+    const shares = Math.floor(amount / this.exchangePrice.value);
+    // 可以买多少手
     const lots = Math.floor(shares / this.sharesPerLot);
+    // 转换为股数
     return lots * this.sharesPerLot;
   }
 
   // 设置所有股数
   setAllShares(totalAmount: number) {
     this.allocationShares = this.calculateAllocationShares(totalAmount);
+
+    // 收集比例的股数
     this.collectionRatioShares =
       this.calculateCollectionRatioShares(totalAmount);
+    // 累计收集的股数
     this.cumulativeRatioShares =
       this.calculateCumulativeRatioShares(totalAmount);
-    this.allocationValue = this.allocationShares * this.price.value;
+
+    this.allocationValue = this.allocationShares * this.exchangePrice.value;
     this.collectionRatioValue = this.collectionRatioShares
-      ? this.collectionRatioShares * this.price.value
+      ? this.collectionRatioShares * this.exchangePrice.value
       : undefined;
     this.cumulativeRatioValue = this.cumulativeRatioShares
-      ? this.cumulativeRatioShares * this.price.value
+      ? this.cumulativeRatioShares * this.exchangePrice.value
       : undefined;
+
+    this.calculateTheoretical();
+  }
+
+  calculateTheoretical() {
+    //
   }
 
   // 更新动态数据

@@ -1,4 +1,5 @@
 import { formatNum, formatPercent } from "../../../fetch-data/helper";
+import { StockType } from "../../../types";
 import { Stock } from "../../service/stock";
 
 /**
@@ -88,7 +89,10 @@ export const tableColumns: ColumnConfig[] = [
     label: "当前<br />股价",
     thClass: "bold blue",
     tdClass: "bold blue",
-    formatter: (value: number) => formatNum(value, 2).toFixed(2),
+    formatter: (value: number, row: Stock) => {
+      const price = formatNum(value, 2).toFixed(2);
+      return row.stockType === StockType.A ? `￥${price}` : `HK$${price}`;
+    },
     show: true,
   },
   {

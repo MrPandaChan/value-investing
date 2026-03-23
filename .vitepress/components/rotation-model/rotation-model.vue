@@ -278,8 +278,8 @@ function onValuationStyleChange(style: ValuationStyle) {
 onBeforeMount(async () => {
   const stockCodes = stockData.map((s) => s.code);
   const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
-  const exchangeTarget = dynamicDataList.find((v) => v.code === "133");
-  let exchangeRate = 0.9;
+  const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
+  let exchangeRate = 1.13;
   if (exchangeTarget) {
     exchangeRate = exchangeTarget.price / 100;
   }

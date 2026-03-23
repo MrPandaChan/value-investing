@@ -3,7 +3,7 @@ import { StockType, ValuationType, type StockItem } from "../index";
 const internetStockData: StockItem[] = [
   {
     type: StockType.HK,
-    name: "H腾讯控股",
+    name: "腾讯控股",
     code: "00700",
     allocation: 0.2,
     sharesPerLot: 100,
