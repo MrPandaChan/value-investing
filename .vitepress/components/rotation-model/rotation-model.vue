@@ -310,7 +310,7 @@ function onValuationStyleChange(style: ValuationStyle) {
   }
 }
 
-onBeforeMount(async () => {
+async function init() {
   const stockCodes = stockData.map((s) => s.code);
   const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
   const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
@@ -335,6 +335,10 @@ onBeforeMount(async () => {
       console.log("动态数据未能找到: ", stockItem);
     }
   }
+}
+
+onBeforeMount(async () => {
+  init();
 });
 </script>
 
@@ -351,11 +355,15 @@ onBeforeMount(async () => {
       <el-option label="激进" :value="ValuationStyle.OPTIMISTIC" />
     </el-select> -->
 
-    <el-button
+    <!-- <el-button
       :loading="refreshLoading"
       type="primary"
       @click="refreshDynamicData"
       >刷新动态数据</el-button
+    > -->
+
+    <el-button type="primary" @click="init"
+      >手动初始化，避免高频调接口</el-button
     >
 
     <el-dropdown trigger="click" popper-class="visible-column-dropdown">
