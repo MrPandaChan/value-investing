@@ -14,7 +14,9 @@ export interface ColumnConfig {
     | "cumulativeRatioShares"
     | "allocationValue"
     | "collectionRatioValue"
-    | "cumulativeRatioValue";
+    | "cumulativeRatioValue"
+    | "theoreticalShares"
+    | "theoreticalValue";
   label: string;
   thClass?: string;
   tdClass?: string;
@@ -171,6 +173,24 @@ export const tableColumns: ColumnConfig[] = [
     },
     show: true,
   },
+  // {
+  //   key: "theoreticalShares",
+  //   label: "理论<br />股数",
+  //   formatter: (value: number | undefined) => {
+  //     if (value === undefined || value === 0) return "--";
+  //     return formatNum(value, 0);
+  //   },
+  //   show: true,
+  // },
+  // {
+  //   key: "theoreticalValue",
+  //   label: "理论<br />市值",
+  //   formatter: (value: number | undefined) => {
+  //     if (value === undefined || value === 0) return "--";
+  //     return formatNum(value, 0);
+  //   },
+  //   show: true,
+  // },
   {
     key: "pe",
     label: "市盈率<br />TTM",

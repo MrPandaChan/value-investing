@@ -277,20 +277,29 @@ function onValuationStyleChange(style: ValuationStyle) {
 
 onBeforeMount(async () => {
   const stockCodes = stockData.map((s) => s.code);
-  const dynamicDataList = await getDynamicData(stockCodes);
+  const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
+  const exchangeTarget = dynamicDataList.find((v) => v.code === "133");
+  let exchangeRate = 0.9;
+  if (exchangeTarget) {
+    exchangeRate = exchangeTarget.price / 100;
+  }
 
   for (let i = 0; i < stockData.length; i += 1) {
     const stockItem = stockData[i];
     const dynamicData = dynamicDataList.find((v) => v.code === stockItem.code);
     if (dynamicData) {
-      const stock = new Stock(stockItem, dynamicData, valuationStyle.value);
+      const stock = new Stock(
+        stockItem,
+        dynamicData,
+        exchangeRate,
+        valuationStyle.value,
+      );
+      stock.updateDynamicData(dynamicData);
       stocks.push(stock);
     } else {
       console.log("动态数据未能找到: ", stockItem);
     }
   }
-
-  refreshDynamicData();
 });
 </script>
 

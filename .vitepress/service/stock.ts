@@ -112,17 +112,23 @@ export class Stock {
   // 收集比例股数
   collectionRatioShares?: number;
 
-  // 累计收集股数
-  cumulativeRatioShares?: number;
-
   // 目标仓位市值
   allocationValue?: number;
 
   // 收集比例市值
   collectionRatioValue?: number;
 
+  // 累计收集股数
+  cumulativeRatioShares?: number;
+
   // 累计收集市值
   cumulativeRatioValue?: number;
+
+  // 理论累计收集股数
+  theoreticalShares?: number;
+
+  // 理论累计收集市值
+  theoreticalValue?: number;
 
   // 一手股数
   get sharesPerLot() {
@@ -132,6 +138,7 @@ export class Stock {
   constructor(
     stockItem: StockItem,
     dynamicData: DynamicData,
+    exchangeRate: number,
     valuationStyle: ValuationStyle = ValuationStyle.NEUTRAL,
   ) {
     this.stockItem = stockItem;
@@ -144,9 +151,6 @@ export class Stock {
   async calculateAnchor(
     valuationStyle: ValuationStyle = ValuationStyle.NEUTRAL,
   ) {
-    const [{ price }] = await getDynamicData(["133.CNHHKD"]);
-    const exchangeRate = price / 100;
-
     const stockItem = getStockItem(this.stockItem.code);
 
     const { valuationConfig } = this.stockItem;
@@ -183,14 +187,13 @@ export class Stock {
       this.anchor.value =
         this.stockType === StockType.A
           ? valuationConfig.price
-          : valuationConfig.price * exchangeRate;
+          : valuationConfig.price * this.exchangeRate;
     } else if (valuationConfig.type === ValuationType.REFERENCE) {
-      console.log(exchangeRate);
       // 汇率转换
       this.anchor.value =
         this.stockType === StockType.A
           ? valuationConfig.price
-          : valuationConfig.price * exchangeRate;
+          : valuationConfig.price * this.exchangeRate;
     } else {
       console.log("找不到估值方法");
     }

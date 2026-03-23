@@ -246,7 +246,7 @@ const otherStockData: StockItem[] = [
     sharesPerLot: 100,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 42,
+      price: 40.25,
     },
   },
   {

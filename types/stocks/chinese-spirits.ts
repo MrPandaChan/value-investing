@@ -96,29 +96,33 @@ const chineseSpiritsStockData: StockItem[] = [
     code: "000596",
     allocation: 0.05,
     valuationConfig: {
-      type: ValuationType.PROFIT,
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.3, -0.1, 0],
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.3, -0.1, 0.05],
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.3, -0.1, 0.05],
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [-0.3, -0.1, 0.07],
-      },
-      backYearsNum: 10,
+      type: ValuationType.REFERENCE,
+      price: 93,
     },
-    bMarketConfig: {
-      code: "200596",
-      discount: 0.7,
-    },
+    // valuationConfig: {
+    //   type: ValuationType.PROFIT,
+    //   specialOffer: {
+    //     type: ProfitValuationGrowthType.RATE,
+    //     data: [-0.3, -0.1, 0],
+    //   },
+    //   conservative: {
+    //     type: ProfitValuationGrowthType.RATE,
+    //     data: [-0.3, -0.1, 0.05],
+    //   },
+    //   neutral: {
+    //     type: ProfitValuationGrowthType.RATE,
+    //     data: [-0.3, -0.1, 0.05],
+    //   },
+    //   optimistic: {
+    //     type: ProfitValuationGrowthType.RATE,
+    //     data: [-0.3, -0.1, 0.07],
+    //   },
+    //   backYearsNum: 10,
+    // },
+    // bMarketConfig: {
+    //   code: "200596",
+    //   discount: 0.7,
+    // },
   },
   {
     type: StockType.B,
