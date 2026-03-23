@@ -274,7 +274,7 @@ const tableData = computed(() => {
             yieldValuePercent < config.maxYield
           ) {
             const currentRatio =
-              ((yieldValuePercent - config.minYield) / 100) * config.stepRatio;
+              ((yieldValuePercent - config.minYield) / 0.5) * config.stepRatio;
             ratio += currentRatio;
             break;
           }
