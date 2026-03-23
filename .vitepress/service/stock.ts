@@ -20,11 +20,13 @@ const BACK_YEARS_NUM = 10;
 export class Stock {
   rowType = RowType.STOCK;
 
-  private stockType!: StockType;
+  private stockType: StockType;
 
   private stockItem: StockItem;
 
   private data: ServiceData[string];
+
+  private exchangeRate: number;
 
   anchor = ref(0);
 
@@ -145,6 +147,7 @@ export class Stock {
     this.stockType = stockItem.type;
     this.data = data[stockItem.code];
     this.dynamicData = ref(dynamicData);
+    this.exchangeRate = exchangeRate;
     this.calculateAnchor(valuationStyle);
   }
 
