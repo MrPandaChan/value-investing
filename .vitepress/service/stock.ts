@@ -274,12 +274,13 @@ export class Stock {
     this.cumulativeRatioValue = this.cumulativeRatioShares
       ? this.cumulativeRatioShares * this.exchangePrice.value
       : undefined;
-
-    this.calculateTheoretical();
   }
 
-  calculateTheoretical() {
-    //
+  // totalAmount 是投入金额
+  // ratio 是当前位置需要收集的比例
+  calculateTheoretical(totalAmount: number, ratio: number) {
+    this.theoreticalValue = totalAmount * ratio * this.allocation;
+    this.theoreticalShares = this.theoreticalValue / this.exchangePrice.value;
   }
 
   // 更新动态数据

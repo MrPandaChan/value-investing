@@ -65,26 +65,29 @@ function renderRow(row: TableRow) {
 interface AreaConfig {
   name: string;
   minYield: number;
-  maxYield: number | null;
+  maxYield: number;
   trClass?: string;
   tdClass?: string;
   ratio: number; // 收集比例（0.15 表示 15%）
+  stepRatio: number; // 每跌 5% 收集比例
 }
 
 const areaConfigs: AreaConfig[] = [
   {
     name: "围攻区 (12% 以上预期收益率) 黑天鹅纷飞、鬼故事遍地的时候才可能出现",
     minYield: 12,
-    maxYield: null,
+    maxYield: Infinity,
     tdClass: "bold bg-orange",
-    ratio: 0,
+    ratio: 0, // 每百分之 5% 收益率加仓 15%
+    stepRatio: 0.15,
   },
   {
-    name: "(0) 主战区 (10.5% - 12%的预期收益率) 60%",
+    name: "(0) 主战区 (10% - 12%的预期收益率) 60%",
     minYield: 10.5,
     maxYield: 12,
     tdClass: "bold bg-pink",
     ratio: 0.6,
+    stepRatio: 0.15,
   },
   {
     name: "(0) 主战区3 (10% 的预期收益率) (0% 到 5%) 15%",
@@ -92,6 +95,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 10.5,
     tdClass: "bold bg-pink",
     ratio: 0.15,
+    stepRatio: 0.15,
   },
   {
     name: "(0) 主战区2 (9.5% 预期收益率) (-5% 以内) 10%",
@@ -99,6 +103,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 10,
     tdClass: "bold bg-pink",
     ratio: 0.1,
+    stepRatio: 0.1,
   },
   {
     name: "(0) 主战区1 (9%预期收益率) (-5% 到-10%) 10%",
@@ -106,6 +111,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 9.5,
     tdClass: "bold bg-pink",
     ratio: 0.1,
+    stepRatio: 0.1,
   },
   {
     name: "(1) 观察区2 (8.5%预期收益率) (-10% 到-15%) 5%",
@@ -113,6 +119,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 9,
     tdClass: "bold red",
     ratio: 0.05,
+    stepRatio: 0.05,
   },
   {
     name: "(2) 观察区1 (8%预期收益率) (-15% 到-20%) 5%",
@@ -120,6 +127,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 8.5,
     tdClass: "bold red",
     ratio: 0.05,
+    stepRatio: 0.05,
   },
   {
     name: "(3) 平庸区下沿 (6.5%-8%预期收益率) *备用弹药库2*耐心持有(-20% 到 -35%)",
@@ -127,6 +135,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 8,
     tdClass: "bold red",
     ratio: 0,
+    stepRatio: 0,
   },
   {
     name: "(4) 平庸区上沿 (5.5%-5.5%预期收益率) *备用弹药库1*分批轮动(-35% 到 -45%)",
@@ -134,6 +143,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 6.5,
     tdClass: "bold red",
     ratio: 0,
+    stepRatio: 0,
   },
   {
     name: "(5) 险地区下沿1 (低于5.5%的预期) 优先轮动或换现金等机会(-45% 到 -50%)",
@@ -141,6 +151,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 5.5,
     tdClass: "bold red",
     ratio: 0,
+    stepRatio: 0,
   },
   {
     name: "(6) 险地区下沿2 (低于5%的预期) 优先轮动或换现金等机会(-50 到 -55%)",
@@ -148,6 +159,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 5,
     tdClass: "bold red",
     ratio: 0,
+    stepRatio: 0,
   },
   {
     name: "(7) 险地区下沿3 (低于4.5%的预期) 优先轮动或换现金等机会(-55% 到 -60%)",
@@ -155,6 +167,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 4.5,
     tdClass: "bold red",
     ratio: 0,
+    stepRatio: 0,
   },
   {
     name: "(8) 险地区下沿4 (低于4%的预期) 优先轮动或换现金等机会(-60% 以上)",
@@ -162,6 +175,7 @@ const areaConfigs: AreaConfig[] = [
     maxYield: 4,
     tdClass: "bold red",
     ratio: 0,
+    stepRatio: 0,
   },
 ];
 
@@ -174,8 +188,7 @@ function getAreaConfig(stock: Stock): AreaConfig | null {
   return (
     areaConfigs.find(
       (area) =>
-        yieldValuePercent >= area.minYield &&
-        (area.maxYield === null || yieldValuePercent < area.maxYield),
+        yieldValuePercent >= area.minYield && yieldValuePercent < area.maxYield,
     ) || null
   );
 }
@@ -247,6 +260,28 @@ const tableData = computed(() => {
         }
         // 计算股数
         stock.setAllShares(investmentAmount.value);
+
+        // 计算当前需要收集的理论股数和理论市值
+        let ratio = 0;
+        for (const config of areaConfigs.slice().reverse()) {
+          // longTermAverageReturnYield 返回的是小数形式（如 0.08 表示 8%）
+          // areaConfigs 中配置的是百分比数值（如 12 表示 12%）
+          // 需要将小数转换为百分比进行比较
+          const yieldValuePercent =
+            stock.longTermAverageReturnYield.value * 100;
+          if (
+            yieldValuePercent >= config.minYield &&
+            yieldValuePercent < config.maxYield
+          ) {
+            const currentRatio =
+              ((yieldValuePercent - config.minYield) / 100) * config.stepRatio;
+            ratio += currentRatio;
+            break;
+          }
+
+          ratio += config.ratio;
+        }
+        stock.calculateTheoretical(investmentAmount.value, ratio);
       }
 
       // 添加该区域的所有股票行
