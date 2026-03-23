@@ -43,7 +43,7 @@ interface StockItem extends BasicItem {
 }
 
 interface portfolio {
-  stocks: AStockItem[];
+  stocks: StockItem[];
   sumShareHoldingValue: number; // 组合总成本
   sumDividendTax: number; // 股息扣税总额
   sumNetDividend: number; // 股息总额
@@ -113,7 +113,7 @@ const basicStocks = ref<BasicItem[]>([
   {
     code: "601919",
     hkCode: "01919",
-    name: "中远海控H",
+    name: "中远海控",
     industry: "航运",
     // costBasis: 12.091, // 11.0769
     costBasis: 11.1144,
@@ -278,7 +278,7 @@ const portfolio = computed<portfolio>(() => {
       industryMap.set(stock.industry, [stock]);
     }
   }
-  const stocks: AStockItem[] = [];
+  const stocks: StockItem[] = [];
   for (const arr of Array.from(industryMap.values())) {
     const total = arr.reduce((pre, cur) => pre + cur.shareholdingValue, 0);
     stocks.push(

@@ -43,7 +43,7 @@ const otherStockData: StockItem[] = [
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 12.49,
+      price: 12.5,
       // specialOffer: {
       //   type: ProfitValuationGrowthType.PROFIT,
       //   data: [100],

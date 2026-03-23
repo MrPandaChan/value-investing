@@ -317,6 +317,7 @@ async function init() {
   let exchangeRate = 1.13;
   if (exchangeTarget) {
     exchangeRate = exchangeTarget.price / 100;
+    console.log("exchangeRate：", exchangeRate);
   }
 
   for (let i = 0; i < stockData.length; i += 1) {
@@ -337,9 +338,9 @@ async function init() {
   }
 }
 
-onBeforeMount(async () => {
-  init();
-});
+// onBeforeMount(async () => {
+//   init();
+// });
 </script>
 
 <template>

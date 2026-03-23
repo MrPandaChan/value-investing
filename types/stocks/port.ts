@@ -13,7 +13,7 @@ const portStockData: StockItem[] = [
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 7.2,
+      price: 7.27,
       // type: ValuationType.PROFIT,
       // specialOffer: {
       //   type: ProfitValuationGrowthType.RATE,

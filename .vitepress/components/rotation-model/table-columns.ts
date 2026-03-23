@@ -81,7 +81,11 @@ export const tableColumns: ColumnConfig[] = [
     label: "10%预<br />期",
     thClass: "bold red",
     tdClass: "bold red",
-    formatter: (value: number) => formatNum(value, 2),
+    formatter: (value: number, row: Stock) => {
+      const price =
+        row.stockType === StockType.A ? value : value * row.exchangeRate;
+      return formatNum(price, 2).toFixed(2);
+    },
     show: true,
   },
   {

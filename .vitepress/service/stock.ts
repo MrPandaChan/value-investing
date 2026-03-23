@@ -25,7 +25,7 @@ export class Stock {
 
   private data: ServiceData[string];
 
-  private exchangeRate: number;
+  exchangeRate: number;
 
   anchor = ref(0);
 
@@ -33,7 +33,11 @@ export class Stock {
   private dynamicData: Ref<DynamicData>;
 
   loseYield = computed(() => {
-    return ((this.anchor.value - this.price.value) / this.price.value) * 100;
+    return (
+      ((this.anchor.value - this.exchangePrice.value) /
+        this.exchangePrice.value) *
+      100
+    );
   });
 
   price = computed(() => this.dynamicData.value.price);
@@ -81,7 +85,7 @@ export class Stock {
 
   // 当前期望收益
   longTermAverageReturnYield = computed(() => {
-    return this.anchor.value / this.price.value / BACK_YEARS_NUM;
+    return this.anchor.value / this.exchangePrice.value / BACK_YEARS_NUM;
   });
 
   // 如果是港币价格需要转换为人民币
@@ -155,7 +159,6 @@ export class Stock {
     this.data = data[stockItem.code];
     this.dynamicData = ref(dynamicData);
     this.exchangeRate = exchangeRate;
-    console.log("exchangeRate：", this.exchangeRate);
     this.calculateAnchor(valuationStyle);
   }
 
@@ -194,17 +197,11 @@ export class Stock {
       );
       this.anchor.value = dividendValuation.anchor;
     } else if (valuationConfig.type === ValuationType.DIRECT) {
-      // 汇率转换
-      this.anchor.value =
-        this.stockType === StockType.A
-          ? valuationConfig.price
-          : valuationConfig.price / this.exchangeRate;
+      // 这里的价格是人民币
+      this.anchor.value = valuationConfig.price;
     } else if (valuationConfig.type === ValuationType.REFERENCE) {
-      // 汇率转换
-      this.anchor.value =
-        this.stockType === StockType.A
-          ? valuationConfig.price
-          : valuationConfig.price / this.exchangeRate;
+      // 这里的价格是人民币
+      this.anchor.value = valuationConfig.price;
     } else {
       console.log("找不到估值方法");
     }
