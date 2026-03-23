@@ -103,6 +103,7 @@ const carStockData: StockItem[] = [
     name: "福耀玻璃",
     code: "03606",
     allocation: 0.1,
+    sharesPerLot: 400,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 36.3,
@@ -123,6 +124,7 @@ const carStockData: StockItem[] = [
     name: "宁德时代",
     code: "03750",
     allocation: 0.1,
+    sharesPerLot: 100,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 255.18,

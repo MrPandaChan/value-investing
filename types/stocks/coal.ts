@@ -42,6 +42,7 @@ const coalStockData: StockItem[] = [
     name: "中国神华",
     code: "01088",
     allocation: 0.1,
+    sharesPerLot: 500,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 24.46,
@@ -116,6 +117,7 @@ const coalStockData: StockItem[] = [
     name: "中煤能源",
     code: "01898",
     allocation: 0.05,
+    sharesPerLot: 1000,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 7.04,
@@ -158,6 +160,7 @@ const coalStockData: StockItem[] = [
     name: "兖矿能源",
     code: "01171",
     allocation: 0.02,
+    sharesPerLot: 2000,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 7.93,

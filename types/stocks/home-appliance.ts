@@ -67,9 +67,10 @@ const homeApplianceStockData: StockItem[] = [
     name: "海尔智家",
     code: "06690",
     allocation: 0.1,
+    sharesPerLot: 200,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 21.95,
+      price: 18,
     },
   },
   {

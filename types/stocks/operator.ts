@@ -43,6 +43,7 @@ const operatorStockData: StockItem[] = [
     name: "中国移动",
     code: "00941",
     allocation: 0.1,
+    sharesPerLot: 500,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 49.94,
@@ -105,6 +106,7 @@ const operatorStockData: StockItem[] = [
     name: "中国铁塔",
     code: "00788",
     allocation: 0.05,
+    sharesPerLot: 500,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 8.66,

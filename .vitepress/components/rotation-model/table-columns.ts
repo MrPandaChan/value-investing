@@ -160,7 +160,7 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
-    show: false,
+    show: true,
   },
   {
     key: "cumulativeRatioValue",
@@ -169,7 +169,7 @@ export const tableColumns: ColumnConfig[] = [
       if (value === undefined || value === 0) return "--";
       return formatNum(value, 0);
     },
-    show: false,
+    show: true,
   },
   {
     key: "pe",

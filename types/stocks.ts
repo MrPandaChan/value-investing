@@ -14,23 +14,25 @@ import { bankStockData } from "./stocks/bank";
 import { chemicalsStockData } from "./stocks/chemicals";
 import { nonferrousMetalsStockData } from "./stocks/nonferrous-metals";
 import { otherStockData } from "./stocks/other";
+import { internetStockData } from "./stocks/internet";
 
 export const stockData: StockItem[] = [
-  ...chineseSpiritsStockData,
-  ...homeApplianceStockData,
-  ...carStockData,
-  ...electricityStockData,
-  ...coalStockData,
-  ...operatorStockData,
-  ...oilStockData,
-  ...portStockData,
-  ...chineseMedicineStockData,
-  ...pesticideStockData,
-  ...dairyStockData,
   ...bankStockData,
+  ...carStockData,
   ...chemicalsStockData,
-  ...otherStockData,
+  ...chineseMedicineStockData,
+  ...chineseSpiritsStockData,
+  ...coalStockData,
+  ...dairyStockData,
+  ...electricityStockData,
+  ...homeApplianceStockData,
+  ...internetStockData,
   ...nonferrousMetalsStockData,
+  ...oilStockData,
+  ...operatorStockData,
+  ...otherStockData,
+  ...pesticideStockData,
+  ...portStockData,
 ];
 
 (function validate() {

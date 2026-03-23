@@ -16,6 +16,7 @@ const nonferrousMetalsStockData: StockItem[] = [
     name: "紫金矿业",
     code: "02899",
     allocation: 0.05,
+    sharesPerLot: 2000,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 22.33,
@@ -26,6 +27,7 @@ const nonferrousMetalsStockData: StockItem[] = [
     name: "洛阳钼业",
     code: "03993",
     allocation: 0.03,
+    sharesPerLot: 3000,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 8.6,

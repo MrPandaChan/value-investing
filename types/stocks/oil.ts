@@ -43,6 +43,7 @@ const oilStockData: StockItem[] = [
     name: "中国海油",
     code: "00883",
     allocation: 0.2,
+    sharesPerLot: 1000,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 15.48,

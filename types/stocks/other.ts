@@ -68,6 +68,7 @@ const otherStockData: StockItem[] = [
     name: "中远海控",
     code: "01919",
     allocation: 0.05,
+    sharesPerLot: 500,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 9.84,
@@ -242,9 +243,10 @@ const otherStockData: StockItem[] = [
     name: "申洲国际",
     code: "02313",
     allocation: 0.05,
+    sharesPerLot: 100,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 47.79,
+      price: 42,
     },
   },
   {
@@ -252,6 +254,7 @@ const otherStockData: StockItem[] = [
     name: "安踏体育",
     code: "02020",
     allocation: 0.05,
+    sharesPerLot: 200,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 54.9,
@@ -302,6 +305,7 @@ const otherStockData: StockItem[] = [
     name: "泡泡玛特",
     code: "09992",
     allocation: 0.05,
+    sharesPerLot: 200,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 139.3,
@@ -322,6 +326,7 @@ const otherStockData: StockItem[] = [
     name: "江南布衣",
     code: "03306",
     allocation: 0.03,
+    sharesPerLot: 500,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 13.13,
@@ -342,6 +347,7 @@ const otherStockData: StockItem[] = [
     name: "中国平安",
     code: "02318",
     allocation: 0.05,
+    sharesPerLot: 500,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 31.9,
@@ -402,6 +408,7 @@ const otherStockData: StockItem[] = [
     name: "华润万象",
     code: "01209",
     allocation: 0.05,
+    sharesPerLot: 200,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 17.05,

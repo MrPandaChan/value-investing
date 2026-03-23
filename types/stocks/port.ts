@@ -47,6 +47,7 @@ const portStockData: StockItem[] = [
     name: "青岛港",
     code: "06198",
     allocation: 0.05,
+    sharesPerLot: 500,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 5.76,

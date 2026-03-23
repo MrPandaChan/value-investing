@@ -115,7 +115,7 @@ export interface HKStockItem {
   name: string; // 股票名称
   allocation: number; // 目标仓位
   valuationConfig: ValuationConfig; // 估值配置
-  sharesPerLot?: number; // 一手股数，默认100
+  sharesPerLot: number; // 一手股数
 }
 
 export type StockItem = AStockItem | BStockItem | HKStockItem;

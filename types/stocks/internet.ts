@@ -1,11 +1,12 @@
 import { StockType, ValuationType, type StockItem } from "../index";
 
-const bankStockData: StockItem[] = [
+const internetStockData: StockItem[] = [
   {
     type: StockType.HK,
     name: "H腾讯控股",
     code: "00700",
     allocation: 0.2,
+    sharesPerLot: 100,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 350,
@@ -13,4 +14,4 @@ const bankStockData: StockItem[] = [
   },
 ];
 
-export { bankStockData };
+export { internetStockData };
