@@ -4,6 +4,7 @@ import {
   ValuationType,
   type StockItem,
   StockType,
+  StockLevel,
 } from "../../types";
 import { getStockItem } from "../../types/stocks";
 import { computed, ref, type Ref } from "vue";
@@ -20,6 +21,8 @@ export class Stock {
   rowType = RowType.STOCK;
 
   stockType: StockType;
+
+  stockLevel: StockLevel;
 
   private stockItem: StockItem;
 
@@ -156,6 +159,7 @@ export class Stock {
   ) {
     this.stockItem = stockItem;
     this.stockType = stockItem.type;
+    this.stockLevel = stockItem.level;
     this.data = data[stockItem.code];
     this.dynamicData = ref(dynamicData);
     this.exchangeRate = exchangeRate;

@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -10,6 +11,7 @@ const electricityStockData: StockItem[] = [
     type: StockType.A,
     name: "长江电力",
     code: "600900",
+    level: StockLevel.CORE,
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -42,6 +44,7 @@ const electricityStockData: StockItem[] = [
     type: StockType.A,
     name: "国投电力",
     code: "600886",
+    level: StockLevel.ROTATION,
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -74,6 +77,7 @@ const electricityStockData: StockItem[] = [
     type: StockType.A,
     name: "国电南瑞",
     code: "600406",
+    level: StockLevel.MARGIN,
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.PROFIT,

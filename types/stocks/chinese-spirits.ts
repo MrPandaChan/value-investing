@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -10,6 +11,7 @@ const chineseSpiritsStockData: StockItem[] = [
     type: StockType.A,
     name: "贵州茅台",
     code: "600519",
+    level: StockLevel.CORE,
     allocation: 0.2,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -38,6 +40,7 @@ const chineseSpiritsStockData: StockItem[] = [
     type: StockType.A,
     name: "五粮液",
     code: "000858",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -66,6 +69,7 @@ const chineseSpiritsStockData: StockItem[] = [
     type: StockType.A,
     name: "泸州老窖",
     code: "000568",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -94,6 +98,7 @@ const chineseSpiritsStockData: StockItem[] = [
     type: StockType.A,
     name: "古井贡酒",
     code: "000596",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -128,10 +133,11 @@ const chineseSpiritsStockData: StockItem[] = [
     type: StockType.B,
     name: "古井贡B",
     code: "200596",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 66.17,
+      price: 66.5,
       // type: ValuationType.PROFIT,
       // specialOffer: {
       //   type: ProfitValuationGrowthType.RATE,
@@ -156,6 +162,7 @@ const chineseSpiritsStockData: StockItem[] = [
     type: StockType.A,
     name: "山西汾酒",
     code: "600809",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,

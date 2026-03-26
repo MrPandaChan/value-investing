@@ -8,7 +8,7 @@ import StockRow from "./stock-row.vue";
 import AreaRow from "./area-row.vue";
 import { stockData } from "../../../types/stocks";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
-import { ValuationStyle } from "../../../types";
+import { StockLevel, ValuationStyle, ValuationType } from "../../../types";
 
 const stocks = shallowReactive<Stock[]>([]);
 
@@ -17,6 +17,9 @@ const investmentAmount = ref(1000000); // 默认100万
 
 // 估值风格
 const valuationStyle = ref<ValuationStyle>(ValuationStyle.CONSERVATIVE);
+
+// 股票等级
+const stockLevel = ref<StockLevel | -1>(-1);
 
 // 列显示控制
 const visibleColumnKeys = ref(
@@ -289,6 +292,21 @@ const tableData = computed(() => {
     }
   }
 
+  if (stockLevel.value > -1) {
+    const filterResult: TableRow[] = [];
+    for (const row of result) {
+      if (row.rowType === RowType.STOCK) {
+        if (stockLevel.value === row.stockLevel) {
+          filterResult.push(row);
+        }
+      } else {
+        filterResult.push(row);
+      }
+    }
+
+    return filterResult;
+  }
+
   return result;
 });
 
@@ -310,6 +328,10 @@ function onValuationStyleChange(style: ValuationStyle) {
   }
 }
 
+function onStockLevelChange(level: StockLevel | -1) {
+  stockLevel.value = level;
+}
+
 async function init() {
   const stockCodes = stockData.map((s) => s.code);
   const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
@@ -322,6 +344,11 @@ async function init() {
 
   for (let i = 0; i < stockData.length; i += 1) {
     const stockItem = stockData[i];
+    // TODO: 暂时只取心智升级的股票池
+    if (stockItem.valuationConfig.type !== ValuationType.REFERENCE) {
+      continue;
+    }
+
     const dynamicData = dynamicDataList.find((v) => v.code === stockItem.code);
     if (dynamicData) {
       const stock = new Stock(
@@ -362,6 +389,17 @@ async function init() {
       @click="refreshDynamicData"
       >刷新动态数据</el-button
     > -->
+
+    <el-select
+      class="level-select"
+      v-model="stockLevel"
+      @change="onStockLevelChange"
+    >
+      <el-option label="全部类型" :value="-1" />
+      <el-option label="核心良田区" :value="StockLevel.CORE" />
+      <el-option label="轮作备田区" :value="StockLevel.ROTATION" />
+      <el-option label="田边地头区" :value="StockLevel.MARGIN" />
+    </el-select>
 
     <el-button type="primary" @click="init"
       >手动初始化，避免高频调接口</el-button
@@ -421,6 +459,10 @@ async function init() {
   align-items: center;
   gap: 16px;
   margin-bottom: 10px;
+}
+
+.level-select {
+  width: 120px;
 }
 
 .valuation-style-select {

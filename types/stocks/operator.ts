@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -10,10 +11,11 @@ const operatorStockData: StockItem[] = [
     type: StockType.A,
     name: "中国移动",
     code: "600941",
+    level: StockLevel.CORE,
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 71.55,
+      price: 65.69,
       // type: ValuationType.PROFIT,
       // specialOffer: {
       //   type: ProfitValuationGrowthType.RATE,
@@ -42,17 +44,19 @@ const operatorStockData: StockItem[] = [
     type: StockType.HK,
     name: "中国移动",
     code: "00941",
+    level: StockLevel.CORE,
     allocation: 0.1,
     sharesPerLot: 500,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 49.94,
+      price: 52.71,
     },
   },
   {
     type: StockType.A,
     name: "中国电信",
     code: "601728",
+    level: StockLevel.MARGIN,
     allocation: 0,
     valuationConfig: {
       type: ValuationType.PROFIT,
@@ -79,6 +83,7 @@ const operatorStockData: StockItem[] = [
     type: StockType.A,
     name: "中国联通",
     code: "600050",
+    level: StockLevel.MARGIN,
     allocation: 0,
     valuationConfig: {
       type: ValuationType.PROFIT,
@@ -105,6 +110,7 @@ const operatorStockData: StockItem[] = [
     type: StockType.HK,
     name: "中国铁塔",
     code: "00788",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     sharesPerLot: 500,
     valuationConfig: {

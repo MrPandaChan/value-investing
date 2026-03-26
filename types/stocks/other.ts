@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -10,6 +11,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "科沃斯",
     code: "603486",
+    level: StockLevel.MARGIN,
     allocation: 0,
     valuationConfig: {
       type: ValuationType.PROFIT,
@@ -40,6 +42,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "中远海控",
     code: "601919",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -67,6 +70,7 @@ const otherStockData: StockItem[] = [
     type: StockType.HK,
     name: "中远海控",
     code: "01919",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     sharesPerLot: 500,
     valuationConfig: {
@@ -78,6 +82,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "盐湖股份",
     code: "000792",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.PROFIT,
@@ -104,6 +109,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "爱玛科技",
     code: "603529",
+    level: StockLevel.MARGIN,
     allocation: 0,
     valuationConfig: {
       type: ValuationType.PROFIT,
@@ -134,6 +140,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "九号公司",
     code: "689009",
+    level: StockLevel.MARGIN,
     allocation: 0,
     valuationConfig: {
       type: ValuationType.PROFIT,
@@ -164,6 +171,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "顺丰控股",
     code: "002352",
+    level: StockLevel.MARGIN,
     allocation: 0,
     valuationConfig: {
       type: ValuationType.PROFIT,
@@ -190,6 +198,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "永新股份",
     code: "002014",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.PROFIT,
@@ -212,36 +221,37 @@ const otherStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
-  {
-    type: StockType.A,
-    name: "安克创新",
-    code: "300866",
-    allocation: 0,
-    valuationConfig: {
-      type: ValuationType.PROFIT,
-      specialOffer: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.3, 0.1],
-      },
-      conservative: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.3, 0.1],
-      },
-      neutral: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.3, 0.2, 0.1],
-      },
-      optimistic: {
-        type: ProfitValuationGrowthType.RATE,
-        data: [0.3, 0.2, 0.1],
-      },
-      backYearsNum: 10,
-    },
-  },
+  // {
+  //   type: StockType.A,
+  //   name: "安克创新",
+  //   code: "300866",
+  //   allocation: 0,
+  //   valuationConfig: {
+  //     type: ValuationType.PROFIT,
+  //     specialOffer: {
+  //       type: ProfitValuationGrowthType.RATE,
+  //       data: [0.3, 0.1],
+  //     },
+  //     conservative: {
+  //       type: ProfitValuationGrowthType.RATE,
+  //       data: [0.3, 0.1],
+  //     },
+  //     neutral: {
+  //       type: ProfitValuationGrowthType.RATE,
+  //       data: [0.3, 0.2, 0.1],
+  //     },
+  //     optimistic: {
+  //       type: ProfitValuationGrowthType.RATE,
+  //       data: [0.3, 0.2, 0.1],
+  //     },
+  //     backYearsNum: 10,
+  //   },
+  // },
   {
     type: StockType.HK,
     name: "申洲国际",
     code: "02313",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     sharesPerLot: 100,
     valuationConfig: {
@@ -253,6 +263,7 @@ const otherStockData: StockItem[] = [
     type: StockType.HK,
     name: "安踏体育",
     code: "02020",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     sharesPerLot: 200,
     valuationConfig: {
@@ -264,6 +275,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "北新建材",
     code: "000786",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -274,6 +286,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "福斯达",
     code: "603173",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -284,6 +297,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "周大生",
     code: "002867",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -294,6 +308,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "云天化",
     code: "600096",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -304,6 +319,7 @@ const otherStockData: StockItem[] = [
     type: StockType.HK,
     name: "泡泡玛特",
     code: "09992",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     sharesPerLot: 200,
     valuationConfig: {
@@ -315,6 +331,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "中谷物流",
     code: "603565",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -325,6 +342,7 @@ const otherStockData: StockItem[] = [
     type: StockType.HK,
     name: "江南布衣",
     code: "03306",
+    level: StockLevel.MARGIN,
     allocation: 0.03,
     sharesPerLot: 500,
     valuationConfig: {
@@ -336,16 +354,18 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "中国平安",
     code: "601318",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 40.5,
+      price: 40.55,
     },
   },
   {
     type: StockType.HK,
     name: "中国平安",
     code: "02318",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     sharesPerLot: 500,
     valuationConfig: {
@@ -357,6 +377,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "梅花生物",
     code: "600873",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -367,6 +388,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "公牛集团",
     code: "603195",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -377,6 +399,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "华特达因",
     code: "000915",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -387,6 +410,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "分众传媒",
     code: "002027",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -397,16 +421,18 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "海天味业",
     code: "603288",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 17.69,
+      price: 17.71,
     },
   },
   {
     type: StockType.HK,
     name: "华润万象",
     code: "01209",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     sharesPerLot: 200,
     valuationConfig: {
@@ -418,6 +444,7 @@ const otherStockData: StockItem[] = [
     type: StockType.A,
     name: "中际旭创",
     code: "300308",
+    level: StockLevel.MARGIN,
     allocation: 0.03,
     valuationConfig: {
       type: ValuationType.REFERENCE,

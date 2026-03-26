@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -11,6 +12,7 @@ const coalStockData: StockItem[] = [
     name: "中国神华",
     code: "601088",
     allocation: 0.1,
+    level: StockLevel.CORE,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 25.48,
@@ -41,6 +43,7 @@ const coalStockData: StockItem[] = [
     type: StockType.HK,
     name: "中国神华",
     code: "01088",
+    level: StockLevel.CORE,
     allocation: 0.1,
     sharesPerLot: 500,
     valuationConfig: {
@@ -52,6 +55,7 @@ const coalStockData: StockItem[] = [
     type: StockType.A,
     name: "陕西煤业",
     code: "601225",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -84,6 +88,7 @@ const coalStockData: StockItem[] = [
     type: StockType.A,
     name: "中煤能源",
     code: "601898",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -116,6 +121,7 @@ const coalStockData: StockItem[] = [
     type: StockType.HK,
     name: "中煤能源",
     code: "01898",
+    level: StockLevel.ROTATION,
     allocation: 0.05,
     sharesPerLot: 1000,
     valuationConfig: {
@@ -127,6 +133,7 @@ const coalStockData: StockItem[] = [
     type: StockType.A,
     name: "兖矿能源",
     code: "600188",
+    level: StockLevel.MARGIN,
     allocation: 0.02,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -159,6 +166,7 @@ const coalStockData: StockItem[] = [
     type: StockType.HK,
     name: "兖矿能源",
     code: "01171",
+    level: StockLevel.MARGIN,
     allocation: 0.02,
     sharesPerLot: 2000,
     valuationConfig: {

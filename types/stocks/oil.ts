@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -11,6 +12,7 @@ const oilStockData: StockItem[] = [
     name: "中国海油",
     code: "600938",
     allocation: 0.2,
+    level: StockLevel.CORE,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 19.17,
@@ -42,6 +44,7 @@ const oilStockData: StockItem[] = [
     type: StockType.HK,
     name: "中国海油",
     code: "00883",
+    level: StockLevel.CORE,
     allocation: 0.2,
     sharesPerLot: 1000,
     valuationConfig: {
@@ -53,6 +56,7 @@ const oilStockData: StockItem[] = [
     type: StockType.A,
     name: "中国石油",
     code: "601857",
+    level: StockLevel.MARGIN,
     allocation: 0,
     valuationConfig: {
       type: ValuationType.PROFIT,
@@ -79,6 +83,7 @@ const oilStockData: StockItem[] = [
     type: StockType.A,
     name: "中国石化",
     code: "600028",
+    level: StockLevel.MARGIN,
     allocation: 0,
     valuationConfig: {
       type: ValuationType.PROFIT,

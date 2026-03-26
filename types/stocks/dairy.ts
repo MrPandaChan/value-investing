@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -10,7 +11,8 @@ const dairyStockData: StockItem[] = [
     type: StockType.A,
     name: "伊利股份",
     code: "600887",
-    allocation: 0.05,
+    level: StockLevel.MARGIN,
+    allocation: 0.03,
     valuationConfig: {
       type: ValuationType.PROFIT,
       specialOffer: {

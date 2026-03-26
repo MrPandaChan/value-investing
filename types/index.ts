@@ -89,32 +89,34 @@ export enum StockType {
   HK,
 }
 
-export interface AStockItem {
-  type: StockType.A;
-  code: string; // A 股代码
-  name: string; // 股票名称
-  allocation: number; // 目标仓位
+export enum StockLevel {
+  CORE, // 核心良田
+  ROTATION, // 轮作备田
+  MARGIN, // 田边地头区
+}
+
+interface BaseStockItem {
+  code: string;
+  name: string;
+  allocation: number;
   valuationConfig: ValuationConfig; // 估值配置
+  level: StockLevel;
+}
+
+export interface AStockItem extends BaseStockItem {
+  type: StockType.A;
   sharesPerLot?: number; // 一手股数，默认100
   hkMarketConfig?: HKMarketConfig;
   bMarketConfig?: BMarketConfig;
 }
 
-export interface BStockItem {
+export interface BStockItem extends BaseStockItem {
   type: StockType.B;
-  code: string; // B 股代码
-  name: string; // 股票名称
-  allocation: number; // 目标仓位
-  valuationConfig: ValuationConfig; // 估值配置
   sharesPerLot?: number; // 一手股数，默认100
 }
 
-export interface HKStockItem {
+export interface HKStockItem extends BaseStockItem {
   type: StockType.HK;
-  code: string; // H 股代码
-  name: string; // 股票名称
-  allocation: number; // 目标仓位
-  valuationConfig: ValuationConfig; // 估值配置
   sharesPerLot: number; // 一手股数
 }
 

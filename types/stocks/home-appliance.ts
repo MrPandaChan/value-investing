@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -10,10 +11,11 @@ const homeApplianceStockData: StockItem[] = [
     type: StockType.A,
     name: "格力电器",
     code: "000651",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 38.58,
+      price: 38.63,
       // type: ValuationType.PROFIT,
       // specialOffer: {
       //   type: ProfitValuationGrowthType.RATE,
@@ -38,6 +40,7 @@ const homeApplianceStockData: StockItem[] = [
     type: StockType.A,
     name: "海尔智家",
     code: "600690",
+    level: StockLevel.ROTATION,
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -66,6 +69,7 @@ const homeApplianceStockData: StockItem[] = [
     type: StockType.HK,
     name: "海尔智家",
     code: "06690",
+    level: StockLevel.ROTATION,
     allocation: 0.1,
     sharesPerLot: 200,
     valuationConfig: {
@@ -77,6 +81,7 @@ const homeApplianceStockData: StockItem[] = [
     type: StockType.A,
     name: "美的集团",
     code: "000333",
+    level: StockLevel.CORE,
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -105,6 +110,7 @@ const homeApplianceStockData: StockItem[] = [
     type: StockType.A,
     name: "老板电器",
     code: "002508",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,

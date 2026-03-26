@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -11,6 +12,7 @@ const carStockData: StockItem[] = [
     name: "比亚迪",
     code: "002594",
     allocation: 0.1,
+    level: StockLevel.CORE,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 67.32,
@@ -70,6 +72,7 @@ const carStockData: StockItem[] = [
     type: StockType.A,
     name: "福耀玻璃",
     code: "600660",
+    level: StockLevel.CORE,
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -102,6 +105,7 @@ const carStockData: StockItem[] = [
     type: StockType.HK,
     name: "福耀玻璃",
     code: "03606",
+    level: StockLevel.CORE,
     allocation: 0.1,
     sharesPerLot: 400,
     valuationConfig: {
@@ -113,18 +117,8 @@ const carStockData: StockItem[] = [
     type: StockType.A,
     name: "宁德时代",
     code: "300750",
+    level: StockLevel.CORE,
     allocation: 0.1,
-    valuationConfig: {
-      type: ValuationType.REFERENCE,
-      price: 255.18,
-    },
-  },
-  {
-    type: StockType.HK,
-    name: "宁德时代",
-    code: "03750",
-    allocation: 0.1,
-    sharesPerLot: 100,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 255.18,

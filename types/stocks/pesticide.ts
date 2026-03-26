@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -10,6 +11,7 @@ const pesticideStockData: StockItem[] = [
     type: StockType.A,
     name: "广信股份",
     code: "603599",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
