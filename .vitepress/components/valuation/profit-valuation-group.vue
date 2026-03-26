@@ -2,6 +2,7 @@
 import { getStockItem } from "../../../types/stocks";
 import profitValuation from "./profit-valuation.vue";
 import { data } from "../../service/data";
+import { ValuationType } from "../../../types";
 
 const props = defineProps<{
   code: string;
@@ -12,34 +13,34 @@ const stockItem = getStockItem(props.code);
 
 <template>
   <div class="profit-valuation-group-container">
-    <template v-if="stockItem.profitValuationConfig">
+    <template v-if="stockItem.valuationConfig.type === ValuationType.PROFIT">
       <profitValuation
-        v-if="stockItem.profitValuationConfig?.specialOffer"
+        v-if="stockItem.valuationConfig.specialOffer"
         class="valuation-item"
         :code="props.code"
         caption="特价估算"
-        :growth="stockItem.profitValuationConfig?.specialOffer"
+        :growth="stockItem.valuationConfig.specialOffer"
       />
       <profitValuation
-        v-if="stockItem.profitValuationConfig?.conservative"
+        v-if="stockItem.valuationConfig.conservative"
         class="valuation-item"
         :code="props.code"
         caption="保守估算"
-        :growth="stockItem.profitValuationConfig?.conservative"
+        :growth="stockItem.valuationConfig.conservative"
       />
       <profitValuation
-        v-if="stockItem.profitValuationConfig?.neutral"
+        v-if="stockItem.valuationConfig.neutral"
         class="valuation-item"
         :code="props.code"
         caption="均值估算"
-        :growth="stockItem.profitValuationConfig?.neutral"
+        :growth="stockItem.valuationConfig.neutral"
       />
       <profitValuation
-        v-if="stockItem.profitValuationConfig?.optimistic"
+        v-if="stockItem.valuationConfig.optimistic"
         class="valuation-item"
         :code="props.code"
         caption="激进估算"
-        :growth="stockItem.profitValuationConfig?.optimistic"
+        :growth="stockItem.valuationConfig.optimistic"
       />
     </template>
     <span v-else>请设置 profitValuationConfig</span>
