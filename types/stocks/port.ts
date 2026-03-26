@@ -12,7 +12,7 @@ const portStockData: StockItem[] = [
     name: "青岛港",
     code: "601298",
     level: StockLevel.CORE,
-    allocation: 0.05,
+    allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 7.27,
@@ -49,7 +49,7 @@ const portStockData: StockItem[] = [
     name: "青岛港",
     code: "06198",
     level: StockLevel.CORE,
-    allocation: 0.05,
+    allocation: 0.1,
     sharesPerLot: 500,
     valuationConfig: {
       type: ValuationType.REFERENCE,
