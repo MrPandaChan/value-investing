@@ -379,6 +379,15 @@ export default defineConfig({
                 { text: "爱玛科技", link: "/company/motorcycle/aima.md" },
               ],
             },
+            {
+              text: "潮玩",
+              items: [
+                {
+                  text: "泡泡玛特",
+                  link: "/company/toys/popmart.md",
+                },
+              ],
+            },
           ],
         },
         {
