@@ -51,8 +51,23 @@ export const stockData: StockItem[] = [
 export const getStockItem = (code: string) => {
   const item = stockData.find((v) => v.code === code);
   if (!item) {
-    console.log(`cannot find ${code}.`);
+    console.error(`[getStockItem] 找不到股票代码: ${code}`);
+    console.error(
+      "当前股票代码列表:",
+      stockData.map((v) => v.code).join(", "),
+    );
+    throw new Error(`找不到股票代码: ${code}`);
   }
 
-  return item!;
+  if (!item.valuationConfig) {
+    console.error(
+      `[getStockItem] 股票 ${code} (${item.name}) 缺少 valuationConfig 配置`,
+    );
+    console.error("股票完整数据:", JSON.stringify(item, null, 2));
+    throw new Error(
+      `股票 ${code} (${item.name}) 缺少 valuationConfig 配置`,
+    );
+  }
+
+  return item;
 };

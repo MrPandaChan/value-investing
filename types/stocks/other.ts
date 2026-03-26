@@ -221,32 +221,33 @@ const otherStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
-  // {
-  //   type: StockType.A,
-  //   name: "安克创新",
-  //   code: "300866",
-  //   allocation: 0,
-  //   valuationConfig: {
-  //     type: ValuationType.PROFIT,
-  //     specialOffer: {
-  //       type: ProfitValuationGrowthType.RATE,
-  //       data: [0.3, 0.1],
-  //     },
-  //     conservative: {
-  //       type: ProfitValuationGrowthType.RATE,
-  //       data: [0.3, 0.1],
-  //     },
-  //     neutral: {
-  //       type: ProfitValuationGrowthType.RATE,
-  //       data: [0.3, 0.2, 0.1],
-  //     },
-  //     optimistic: {
-  //       type: ProfitValuationGrowthType.RATE,
-  //       data: [0.3, 0.2, 0.1],
-  //     },
-  //     backYearsNum: 10,
-  //   },
-  // },
+  {
+    type: StockType.A,
+    name: "安克创新",
+    code: "300866",
+    allocation: 0,
+    level: StockLevel.MARGIN,
+    valuationConfig: {
+      type: ValuationType.PROFIT,
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.1],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.1],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.2, 0.1],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.3, 0.2, 0.1],
+      },
+      backYearsNum: 10,
+    },
+  },
   {
     type: StockType.HK,
     name: "申洲国际",

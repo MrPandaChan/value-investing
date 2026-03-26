@@ -1,10 +1,11 @@
-import { StockType, ValuationType, type StockItem } from "../index";
+import { StockLevel, StockType, ValuationType, type StockItem } from "../index";
 
 const chineseMedicineStockData: StockItem[] = [
   {
     type: StockType.A,
     name: "云南白药",
     code: "000538",
+    level: StockLevel.MARGIN,
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -15,6 +16,7 @@ const chineseMedicineStockData: StockItem[] = [
     type: StockType.A,
     name: "东阿阿胶",
     code: "000423",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,
@@ -47,6 +49,7 @@ const chineseMedicineStockData: StockItem[] = [
     type: StockType.A,
     name: "羚锐制药",
     code: "600285",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.REFERENCE,

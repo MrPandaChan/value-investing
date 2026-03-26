@@ -160,9 +160,16 @@ export class Stock {
     this.stockItem = stockItem;
     this.stockType = stockItem.type;
     this.stockLevel = stockItem.level;
-    this.data = data[stockItem.code];
     this.dynamicData = ref(dynamicData);
     this.exchangeRate = exchangeRate;
+
+    if (!stockItem.valuationConfig) {
+      console.error(
+        `[Stock] 股票 ${stockItem.code} (${stockItem.name}) 缺少 valuationConfig 配置`,
+      );
+    }
+
+    this.data = data[stockItem.code];
     this.calculateAnchor(valuationStyle);
   }
 
@@ -171,7 +178,16 @@ export class Stock {
   ) {
     const stockItem = getStockItem(this.stockItem.code);
 
-    const { valuationConfig } = this.stockItem;
+    if (!stockItem || !stockItem.valuationConfig) {
+      console.error(
+        `股票 ${this.stockItem.code} (${this.stockItem.name}) 缺少 valuationConfig 配置`,
+      );
+      console.error("stockItem:", stockItem);
+      this.anchor.value = 0;
+      return;
+    }
+
+    const { valuationConfig } = stockItem;
 
     // TODO: 利润估值目前只支持A股
     // TODO: HKMarketValuation
@@ -207,7 +223,9 @@ export class Stock {
       // 这里的价格是人民币
       this.anchor.value = valuationConfig.price;
     } else {
-      console.log("找不到估值方法");
+      console.error(
+        `股票 ${this.stockItem.code} (${this.stockItem.name}) 找不到对应的估值方法,估值类型: ${valuationConfig.type}`,
+      );
     }
   }
 

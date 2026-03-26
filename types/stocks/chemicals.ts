@@ -1,5 +1,6 @@
 import {
   ProfitValuationGrowthType,
+  StockLevel,
   StockType,
   ValuationType,
   type StockItem,
@@ -10,6 +11,7 @@ const chemicalsStockData: StockItem[] = [
     type: StockType.A,
     name: "万华化学",
     code: "600309",
+    level: StockLevel.MARGIN,
     allocation: 0,
     valuationConfig: {
       type: ValuationType.PROFIT,
