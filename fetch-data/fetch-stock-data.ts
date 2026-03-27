@@ -386,7 +386,7 @@ export async function main() {
 
     console.log(`正在获取 ${stock.name}(${stock.code}) 的数据...`);
     if (i > 0) {
-      await sleep(5000);
+      await sleep(10000);
     }
     await fetchAStockData(stock);
     console.log(`获取 ${stock.name}(${stock.code}) 数据成功`);
