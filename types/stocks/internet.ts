@@ -10,7 +10,7 @@ const internetStockData: StockItem[] = [
     sharesPerLot: 100,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 350,
+      price: 392,
     },
   },
 ];

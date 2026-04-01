@@ -85,7 +85,7 @@ const homeApplianceStockData: StockItem[] = [
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 65.14,
+      price: 71.16,
       // type: ValuationType.PROFIT,
       // specialOffer: {
       //   type: ProfitValuationGrowthType.RATE,
