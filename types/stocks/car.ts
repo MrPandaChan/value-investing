@@ -76,7 +76,7 @@ const carStockData: StockItem[] = [
     allocation: 0.1,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 45.35,
+      price: 46.85,
       // type: ValuationType.PROFIT,
       // specialOffer: {
       //   type: ProfitValuationGrowthType.RATE,
@@ -110,7 +110,7 @@ const carStockData: StockItem[] = [
     sharesPerLot: 400,
     valuationConfig: {
       type: ValuationType.REFERENCE,
-      price: 36.3,
+      price: 37.48,
     },
   },
   {
