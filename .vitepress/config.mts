@@ -254,6 +254,10 @@ export default defineConfig({
               text: "学知利行",
               link: "/value-investing/figures-and-cases/xuezhilixing.md",
             },
+            {
+              text: "超级鹿鼎公",
+              link: "/value-investing/figures-and-cases/ludinggong.md",
+            },
           ],
         },
         {
