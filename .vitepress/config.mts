@@ -572,6 +572,16 @@ export default defineConfig({
             },
           ],
         },
+        {
+          text: "其它",
+          link: "",
+          items: [
+            {
+              text: "国新文化",
+              link: "/company/other/guoxin.md",
+            },
+          ],
+        },
       ],
     },
 
