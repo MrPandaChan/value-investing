@@ -55,6 +55,10 @@ export default defineConfig({
               link: "/value-investing/value-investing/ai-tools.md",
             },
             {
+              text: "AI SKILL",
+              link: "/value-investing/value-investing/ai-skill.md",
+            },
+            {
               text: "AI融合增强系统",
               link: "/value-investing/value-investing/ai-system.md",
             },
