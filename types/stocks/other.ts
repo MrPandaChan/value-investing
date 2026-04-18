@@ -479,6 +479,33 @@ const otherStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+  {
+    type: StockType.A,
+    name: "老凤祥",
+    code: "600612",
+    level: StockLevel.MARGIN,
+    allocation: 0.03,
+    valuationConfig: {
+      type: ValuationType.PROFIT,
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      backYearsNum: 10,
+    },
+  },
 ];
 
 export { otherStockData };

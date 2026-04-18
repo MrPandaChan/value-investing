@@ -392,6 +392,15 @@ export default defineConfig({
                 },
               ],
             },
+            {
+              text: "饰品",
+              items: [
+                {
+                  text: "老凤祥",
+                  link: "/company/jwelry/laofengxiang.md",
+                },
+              ],
+            },
           ],
         },
         {
