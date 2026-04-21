@@ -199,6 +199,8 @@
 
 [耐克历史上遭受的七次重大冲击和对消费品的借鉴意义（2026.04.03 林文丰的价值思考）](https://mp.weixin.qq.com/s/RO5TXhefxSb2QP7uNNGajA)
 
+[石油价格巨震的影响（2026-04-19 简无知）](https://mp.weixin.qq.com/s/o9gGW9UKmA5KfaFVJ9RFZA)
+
 ### 周期股
 
 - [周期投资方法论（买点篇）20250718 喝口白粥](https://xueqiu.com/8417165820/343022484)
