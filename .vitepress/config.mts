@@ -590,6 +590,10 @@ export default defineConfig({
           link: "",
           items: [
             {
+              text: "小商品城",
+              link: "/company/other/small-commodity-market.md",
+            },
+            {
               text: "国新文化",
               link: "/company/other/guoxin.md",
             },

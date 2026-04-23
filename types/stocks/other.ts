@@ -506,6 +506,33 @@ const otherStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+  {
+    type: StockType.A,
+    name: "小商品城",
+    code: "600415",
+    level: StockLevel.MARGIN,
+    allocation: 0.03,
+    valuationConfig: {
+      type: ValuationType.PROFIT,
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.15, 0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.15, 0.03],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.15, 0.05],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [-0.15, 0.08],
+      },
+      backYearsNum: 10,
+    },
+  },
 ];
 
 export { otherStockData };
