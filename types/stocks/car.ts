@@ -41,6 +41,7 @@ const carStockData: StockItem[] = [
     name: "宇通客车",
     code: "600066",
     allocation: 0.05,
+    level: StockLevel.MARGIN,
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 24.48,
@@ -115,6 +116,34 @@ const carStockData: StockItem[] = [
   },
   {
     type: StockType.A,
+    name: "赛轮轮胎",
+    code: "601058",
+    level: StockLevel.ROTATION,
+    allocation: 0.05,
+    sharesPerLot: 100,
+    valuationConfig: {
+      type: ValuationType.PROFIT,
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0],
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.03],
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.05],
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.08],
+      },
+      backYearsNum: 10,
+    },
+  },
+  {
+    type: StockType.A,
     name: "宁德时代",
     code: "300750",
     level: StockLevel.CORE,
@@ -122,16 +151,6 @@ const carStockData: StockItem[] = [
     valuationConfig: {
       type: ValuationType.REFERENCE,
       price: 255.18,
-    },
-  },
-  {
-    type: StockType.A,
-    name: "三七互娱",
-    code: "002555",
-    allocation: 0.1,
-    valuationConfig: {
-      type: ValuationType.REFERENCE,
-      price: 13.98,
     },
   },
 ];

@@ -533,6 +533,17 @@ const otherStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+  {
+    type: StockType.A,
+    name: "三七互娱",
+    code: "002555",
+    level: StockLevel.MARGIN,
+    allocation: 0.1,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 13.98,
+    },
+  },
 ];
 
 export { otherStockData };
