@@ -2,6 +2,16 @@
 
 ## 综合信息
 
+### 文章推荐
+
+[五姑娘年报传奇（上）——五粮液同步披露2025年年报与2026年一季报，发布分红及股份回购方案！（2026.04.30 瞄会计说投资）](https://mp.weixin.qq.com/s/cnup35qVY3ew84ZDvv0Z6w)
+[五姑娘年报传奇（中）——五姑娘撕下了癌股市场最后一块遮羞布！（2026.05.01 瞄会计说投资）](https://mp.weixin.qq.com/s/ZSPMR_gUAYCgZfU0DGiGjA)
+[五姑娘年报传奇（番外篇）——五粮液真实收入知多少？（2026.04.30 瞄会计说投资）](https://mp.weixin.qq.com/s/9dXiqKURAEBfVn9QsOq8Dg)
+[五姑娘年报传奇（下）——五姑娘从良后投资价值分析！（2026.04.30 瞄会计说投资）](https://mp.weixin.qq.com/s/eC25wG7Xzu_53moNsIiN5A)
+[五姑娘年报传奇（后记）——在计算企业估值的时候，要不要算上账上的现金？（2026.04.30 瞄会计说投资）](https://mp.weixin.qq.com/s/N_g3VlpahITtxG49noRZXA)
+[五粮液，一份反常的年报（2026.05.02 薛定谔家的小猫）](https://mp.weixin.qq.com/s/ivM19Xay4wXp_bCMdR0zBg)
+[董宝珍：五粮液财报回溯没有合法依据（2026.05.03 北京凌通盛泰）](https://mp.weixin.qq.com/s/HPOPbijPoeNtx-AWJ5P7Vg)
+
 ### 书籍推荐
 
 - 《投资至简：从原点出发构建价值投资体系》第三章 第五节 2014 年的五粮液：四重悲观叠加下的大机会
