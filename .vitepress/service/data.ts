@@ -2264,10 +2264,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300308",
-      "price": 828.57,
-      "marketValue": 922695994456,
-      "PB": 25.87,
-      "PE_TTM": 61.72,
+      "price": 877.47,
+      "marketValue": 977151060569,
+      "PB": 28.27,
+      "PE_TTM": 65.37,
       "totalSharesOutstanding": 1113600534
     },
     "recentYearData": {
@@ -4478,11 +4478,11 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300750",
-      "price": 428.69,
-      "marketValue": 1956575510072,
-      "PB": 5.48,
-      "PE_TTM": 24.77,
-      "totalSharesOutstanding": 4564080128
+      "price": 451.64,
+      "marketValue": 2089509217676,
+      "PB": 6.39,
+      "PE_TTM": 26.46,
+      "totalSharesOutstanding": 4626492821
     },
     "recentYearData": {
       "netProfit": 78976434000
@@ -4490,6 +4490,23 @@ const data: ServiceData = {
   },
   "300866": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 7607645545.67,
+        "netProfit": 471594189.71,
+        "netProfitMargin": 0.061989506067145116,
+        "netProfitExcludingNon": 546758896.9,
+        "coreProfit": 1589343071.16,
+        "cashFlowFromOperating": -450631808.74,
+        "fcf": -475991632.41,
+        "capex": 25359823.67,
+        "fcfOverNetProfit": -1.009324632906746,
+        "netProfitExcludingNonOvernetProfit": 1.159384294442265,
+        "cashFlowFromOperatingOverNetProfit": -0.955549959207745,
+        "operatingProfit": 556671710.87,
+        "financialProfit": -85077521.16,
+        "operatingProfitOverNetProfit": 1.180404091094331
+      },
       {
         "year": "2025",
         "revenue": 30514403376.92,
@@ -4659,26 +4676,26 @@ const data: ServiceData = {
         "operatingProfit": 231367989.35,
         "financialProfit": -1136612.17,
         "operatingProfitOverNetProfit": 1.0049368256573967
-      },
-      {
-        "year": "2015",
-        "revenue": 1302159918.72,
-        "netProfit": 134905084.24,
-        "netProfitMargin": 0.10360101113587439,
-        "netProfitExcludingNon": 56651000,
-        "coreProfit": 197128331.89,
-        "cashFlowFromOperating": 96825844.53,
-        "fcf": 92064871.69,
-        "capex": 4760972.84,
-        "fcfOverNetProfit": 0.6824418235135894,
-        "netProfitExcludingNonOvernetProfit": 0.4199322829020754,
-        "cashFlowFromOperatingOverNetProfit": 0.7177331015763946,
-        "operatingProfit": 134905084.24,
-        "financialProfit": 0,
-        "operatingProfitOverNetProfit": 1
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 43.640113,
+        "netProfitMargin": 6.1989506067145115,
+        "grossProfitMinusNetProfit": 37.44116239328549,
+        "devExpenses": 805290945.64,
+        "manageExpenses": 253212697.93,
+        "devAndManageExpenses": 1058503643.5699999,
+        "sellingExpenses": 1456835246.94,
+        "financialExpenses": 77872748.04,
+        "totalOperatingExpenses": 2593211638.55,
+        "sellingExpensesRatio": 0.1914962044688292,
+        "devExpensesRatio": 0.10585284774450918,
+        "manageExpensesRatio": 0.03328397681121193,
+        "devAndManageExpensesRatio": 0.1391368245557211,
+        "totalOperatingExpensesRatio": 34.086914
+      },
       {
         "year": "2025",
         "grossProfitMargin": 45.065366,
@@ -4848,26 +4865,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.06215056291104032,
         "devAndManageExpensesRatio": 0.10394279510935739,
         "totalOperatingExpensesRatio": 43.404584
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 52.525008,
-        "netProfitMargin": 10.360101113587438,
-        "grossProfitMinusNetProfit": 42.16490688641256,
-        "devExpenses": 0,
-        "manageExpenses": 62222914.36,
-        "devAndManageExpenses": 62222914.36,
-        "sellingExpenses": 424318470.36,
-        "financialExpenses": -664934.59,
-        "totalOperatingExpenses": 485876450.13000005,
-        "sellingExpensesRatio": 0.32585741909265453,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.047784387666580934,
-        "devAndManageExpensesRatio": 0.047784387666580934,
-        "totalOperatingExpensesRatio": 37.313116
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 16156914783.39,
+        "cash": 3601247085.06,
+        "inventory": 5568863751.04,
+        "nonCurrentAssets": 4071442968.35,
+        "goodwill": 0,
+        "totalAssets": 20228357751.74,
+        "equity": 11170909982.81,
+        "interestFreeLiabilities": 2823941825.36,
+        "interestBearingDebt": 2928521199.71,
+        "interestExpense": 15724991.31,
+        "interestFreeLiabilitiesOverTotal": 0.1396031185535608,
+        "interestBearingDebtOverTotal": 0.14477305748945907,
+        "debtRatio": 43.919339
+      },
       {
         "year": "2025",
         "currentAssets": 16086526642.49,
@@ -5027,25 +5043,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.3071408759311692,
         "interestBearingDebtOverTotal": 0.0007374248066362281,
         "debtRatio": 45.014814
-      },
-      {
-        "year": "2015",
-        "currentAssets": 388123831.75,
-        "cash": 187772669.8,
-        "inventory": 88780291.68,
-        "nonCurrentAssets": 4708503.59,
-        "goodwill": 0,
-        "totalAssets": 392832335.34,
-        "equity": 89155928.2,
-        "interestFreeLiabilities": 88750846,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.22592551074795136,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 77.30433
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.710721323084962,
+        "wc": 5406915907.780001,
+        "receivables": 1954645116.93,
+        "prepayments": 142855100.79,
+        "inventory": 5568863751.04,
+        "accountsPayable": 1924004682.62,
+        "customerAdvances": 0,
+        "contractLiabilities": 335443378.36,
+        "receivablesToRevenueRatio": 0.2569316755356083,
+        "prepaymentsToRevenueRatio": 0.01877783342197219,
+        "inventoryToRevenueRatio": 0.7320088347451463,
+        "accountsPayableToRevenueRatio": 0.25290409116327384,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.044092929454491,
+        "changeInWC": 889825325.7200003
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.14803142392345006,
@@ -5225,27 +5243,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.025845768198321767,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 92318000.78999999
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.042737489297554165,
-        "wc": 55651045.59,
-        "receivables": 51195878.71,
-        "prepayments": 4425721.2,
-        "inventory": 88780291.68,
-        "accountsPayable": 87501281.8,
-        "customerAdvances": 1249564.2,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.03931612237022672,
-        "prepaymentsToRevenueRatio": 0.0033987539751265,
-        "inventoryToRevenueRatio": 0.06817925387172832,
-        "accountsPayableToRevenueRatio": 0.06719703205579557,
-        "advancesToRevenueRatio": 0.0009596088637318059,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 80279322.47000003
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.0678383061515977,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 516089787.61999995,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.058640575105047756,
@@ -5335,18 +5344,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 4929332.71,
         "depreciation": 2494819.72,
         "depreciationOverRevenue": 0.0009952378126295521
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0,
-        "fixedAssets": 0,
-        "longTermOperatingAssets": 0,
-        "depreciation": 702255.14,
-        "depreciationOverRevenue": 0.0005393002271873829
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 4.35,
+        "roa": 2.851198,
+        "roic": 3.956054,
+        "netProfitMargin": 6.19012,
+        "assetTurnover": 37.7595,
+        "equityMultiplier": 1.783145
+      },
       {
         "year": "2025",
         "roe": 26.1,
@@ -5436,18 +5445,24 @@ const data: ServiceData = {
         "netProfitMargin": 9.062764,
         "assetTurnover": 405.0681,
         "equityMultiplier": 1.818671
-      },
-      {
-        "year": "2015",
-        "roe": 299.57,
-        "roa": 69.009184,
-        "roic": 257.554357,
-        "netProfitMargin": 12.336025,
-        "assetTurnover": 459.0147,
-        "equityMultiplier": 4.406126
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 20228357751.74,
+        "avgTotalAssets": 20147625102.800003,
+        "avgCurrentAssets": 16121720712.939999,
+        "avgInventory": 5282991394.389999,
+        "equity": 11344196666.93,
+        "avgEquity": 11027933346.83,
+        "totalAssetsDays": 238.350518,
+        "currentAssetsDays": 190.723247,
+        "wcDays": 259.41328292601116,
+        "receivablesDays": 22.638684,
+        "inventoryDays": 110.892463,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 20066892453.86,
@@ -5596,21 +5611,6 @@ const data: ServiceData = {
         "wcDays": 21.545245109125904,
         "receivablesDays": 12.194676,
         "inventoryDays": 56.492108,
-        "fixedAssetsDays": 0
-      },
-      {
-        "year": "2015",
-        "totalAssets": 392832335.34,
-        "avgTotalAssets": 283685841.605,
-        "avgCurrentAssets": 280803496.09000003,
-        "avgInventory": 63322531.075,
-        "equity": 89155928.2,
-        "avgEquity": 57532245.005,
-        "totalAssetsDays": 78.428848,
-        "currentAssetsDays": 77.631984,
-        "wcDays": 15.59918359360727,
-        "receivablesDays": 11.656937,
-        "inventoryDays": 36.874959,
         "fixedAssetsDays": 0
       }
     ],
@@ -6641,33 +6641,50 @@ const data: ServiceData = {
           "totalDividendA": 375310323.5
         }
       ],
-      "cash": 3656509315.28,
-      "interestBearingDebt": 2918824235.48,
-      "debtRatio": 46.620185,
-      "interestBearingDebtOverTotal": 0.14545472061462833,
+      "cash": 3601247085.06,
+      "interestBearingDebt": 2928521199.71,
+      "debtRatio": 43.919339,
+      "interestBearingDebtOverTotal": 0.14477305748945907,
       "roe": 26.1,
       "roic": 21.554607,
       "roa": 16.222939,
       "grossProfitMargin": 45.065366,
       "netProfitMargin": 8.576913,
-      "tradingFinancialAssets": 2466995658.45,
-      "longTermEquityInvestment": 581969620.43,
-      "minorityInterest": 184066761.35
+      "tradingFinancialAssets": 2093838050.94,
+      "longTermEquityInvestment": 579423861.63,
+      "minorityInterest": 173286684.12
     },
     "dynamicData": {
       "code": "300866",
-      "price": 121.85,
-      "marketValue": 65330966961,
-      "PB": 6.21,
-      "PE_TTM": 25.67,
+      "price": 121.99,
+      "marketValue": 65406029213,
+      "PB": 5.86,
+      "PE_TTM": 25.94,
       "totalSharesOutstanding": 536158941
     },
     "recentYearData": {
-      "netProfit": 2545131880.4
+      "netProfit": 2520964864.82
     }
   },
   "600018": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 10283797181.16,
+        "netProfit": 4007930878.43,
+        "netProfitMargin": 0.3897325868865405,
+        "netProfitExcludingNon": 3925271571.8,
+        "coreProfit": 2884012681.7899995,
+        "cashFlowFromOperating": 3336656591.01,
+        "fcf": 2365090647.03,
+        "capex": 971565943.98,
+        "fcfOverNetProfit": 0.5901026536556592,
+        "netProfitExcludingNonOvernetProfit": 0.979376064823159,
+        "cashFlowFromOperatingOverNetProfit": 0.8325135068988632,
+        "operatingProfit": 1879072481.87,
+        "financialProfit": 2128858396.56,
+        "operatingProfitOverNetProfit": 0.4688385450913955
+      },
       {
         "year": "2025",
         "revenue": 39611497351.53,
@@ -6837,26 +6854,26 @@ const data: ServiceData = {
         "operatingProfit": 3476610874.56,
         "financialProfit": 3462466326.52,
         "operatingProfitOverNetProfit": 0.5010191951775518
-      },
-      {
-        "year": "2015",
-        "revenue": 29510831899.38,
-        "netProfit": 6562453504.51,
-        "netProfitMargin": 0.22237439889479604,
-        "netProfitExcludingNon": 5687842921.1,
-        "coreProfit": 7197983330.560001,
-        "cashFlowFromOperating": 9667366614.38,
-        "fcf": 8410111194.209999,
-        "capex": 1257255420.17,
-        "fcfOverNetProfit": 1.2815498332186597,
-        "netProfitExcludingNonOvernetProfit": 0.8667250620809839,
-        "cashFlowFromOperatingOverNetProfit": 1.4731329689019768,
-        "operatingProfit": 4301257579.46,
-        "financialProfit": 2261195925.05,
-        "operatingProfitOverNetProfit": 0.6554343701641453
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 39.423448,
+        "netProfitMargin": 38.97325868865405,
+        "grossProfitMinusNetProfit": 0.45018931134595164,
+        "devExpenses": 15989675.23,
+        "manageExpenses": 789450883.42,
+        "devAndManageExpenses": 805440558.65,
+        "sellingExpenses": 13073409.85,
+        "financialExpenses": 183941731.98,
+        "totalOperatingExpenses": 1002455700.48,
+        "sellingExpensesRatio": 0.001271262902184671,
+        "devExpensesRatio": 0.0015548415578725352,
+        "manageExpensesRatio": 0.07676647735393696,
+        "devAndManageExpensesRatio": 0.0783213189118095,
+        "totalOperatingExpensesRatio": 9.747913
+      },
       {
         "year": "2025",
         "grossProfitMargin": 36.122433,
@@ -7026,26 +7043,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.08164302958172312,
         "devAndManageExpensesRatio": 0.08164302958172312,
         "totalOperatingExpensesRatio": 10.588483
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 33.172922,
-        "netProfitMargin": 22.237439889479603,
-        "grossProfitMinusNetProfit": 10.935482110520397,
-        "devExpenses": 0,
-        "manageExpenses": 2334059227,
-        "devAndManageExpenses": 2334059227,
-        "sellingExpenses": 11699610.52,
-        "financialExpenses": 849235319.06,
-        "totalOperatingExpenses": 3194994156.58,
-        "sellingExpensesRatio": 0.0003964513965546935,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.07909161066547354,
-        "devAndManageExpensesRatio": 0.07909161066547354,
-        "totalOperatingExpensesRatio": 10.826513
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 52709283254.58,
+        "cash": 36315194343.9,
+        "inventory": 6681968916.54,
+        "nonCurrentAssets": 175833470338.48,
+        "goodwill": 362504741.28,
+        "totalAssets": 228542753593.06,
+        "equity": 145275776127.4,
+        "interestFreeLiabilities": 6389850794.179999,
+        "interestBearingDebt": 49666897118.1,
+        "interestExpense": 255150151.92,
+        "interestFreeLiabilitiesOverTotal": 0.02795910477895824,
+        "interestBearingDebtOverTotal": 0.21731993833651,
+        "debtRatio": 29.085285
+      },
       {
         "year": "2025",
         "currentAssets": 47413401186.78,
@@ -7205,25 +7221,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.019113568791285028,
         "interestBearingDebtOverTotal": 0.3174990698812442,
         "debtRatio": 41.569119
-      },
-      {
-        "year": "2015",
-        "currentAssets": 18992388305.72,
-        "cash": 11537309222.83,
-        "inventory": 3433547470.47,
-        "nonCurrentAssets": 79522529004.97,
-        "goodwill": 15024099.69,
-        "totalAssets": 98514917310.69,
-        "equity": 59608197367.05,
-        "interestFreeLiabilities": 2525238427.3,
-        "interestBearingDebt": 21952840740.36,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.025633056355679272,
-        "interestBearingDebtOverTotal": 0.22283773198658377,
-        "debtRatio": 31.843253
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.51973363210836,
+        "wc": 5344835260.830001,
+        "receivables": 4752774677.54,
+        "prepayments": 235380596.77,
+        "inventory": 6681968916.54,
+        "accountsPayable": 5978452547.74,
+        "customerAdvances": 97680237.73,
+        "contractLiabilities": 313718008.71,
+        "receivablesToRevenueRatio": 0.4621614559111611,
+        "prepaymentsToRevenueRatio": 0.022888490761099334,
+        "inventoryToRevenueRatio": 0.6497569719462595,
+        "accountsPayableToRevenueRatio": 0.5813467965599879,
+        "advancesToRevenueRatio": 0.009498460151368114,
+        "contractLiabilitiesToRevenueRatio": 0.030506047832675458,
+        "changeInWC": 1078936071.1600022
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.10769345959867452,
@@ -7403,27 +7421,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.005753311680070326,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 3362127340.29
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.13648455346576047,
-        "wc": 4027772714.1899996,
-        "receivables": 2825950306.32,
-        "prepayments": 293513364.7,
-        "inventory": 3433547470.47,
-        "accountsPayable": 1859055306.05,
-        "customerAdvances": 666183121.25,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.0957597642775828,
-        "prepaymentsToRevenueRatio": 0.0099459535976743,
-        "inventoryToRevenueRatio": 0.11634871840200939,
-        "accountsPayableToRevenueRatio": 0.06299569298448199,
-        "advancesToRevenueRatio": 0.02257418982702402,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 264840612.18999958
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 1.8984410402090224,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 19523182617.9,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 1.275503799063493,
@@ -7513,18 +7522,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 53991832484.43,
         "depreciation": 3210807409.78,
         "depreciationOverRevenue": 0.10238812242210024
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 1.2499737531196127,
-        "longTermOperatingAssetsPerYuanRevenue": 1.8835787266504618,
-        "fixedAssets": 36887765306.950005,
-        "longTermOperatingAssets": 55585975171.43001,
-        "depreciation": 3007303379.94,
-        "depreciationOverRevenue": 0.10190506964336647
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.8021,
+        "roa": 2.458527,
+        "roic": 2.217223,
+        "netProfitMargin": 43.312459,
+        "assetTurnover": 4.5677,
+        "equityMultiplier": 1.410144
+      },
       {
         "year": "2025",
         "roe": 9.879,
@@ -7614,18 +7623,24 @@ const data: ServiceData = {
         "netProfitMargin": 25.791177,
         "assetTurnover": 29.130699999999997,
         "equityMultiplier": 1.711423
-      },
-      {
-        "year": "2015",
-        "roe": 11.5338,
-        "roa": 11.225051,
-        "roic": 9.466824,
-        "netProfitMargin": 26.652152,
-        "assetTurnover": 30.613699999999998,
-        "equityMultiplier": 1.467206
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 228542753593.06,
+        "avgTotalAssets": 225139198292.895,
+        "avgCurrentAssets": 50061342220.68,
+        "avgInventory": 6621336132.745,
+        "equity": 162070440721.42,
+        "avgEquity": 159001024216.22504,
+        "totalAssetsDays": 1970.335226,
+        "currentAssetsDays": 438.118403,
+        "wcDays": 189.7027757195514,
+        "receivablesDays": 36.751033,
+        "inventoryDays": 95.659938,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 221735642992.72998,
@@ -7775,21 +7790,6 @@ const data: ServiceData = {
         "receivablesDays": 29.618048,
         "inventoryDays": 79.18211,
         "fixedAssetsDays": 409.4596682717712
-      },
-      {
-        "year": "2015",
-        "totalAssets": 98514917310.69,
-        "avgTotalAssets": 96397208834.58499,
-        "avgCurrentAssets": 18298908371.79,
-        "avgInventory": 3356610232.21,
-        "equity": 67144562750.25,
-        "avgEquity": 63685980444.64,
-        "totalAssetsDays": 1175.940932,
-        "currentAssetsDays": 223.226747,
-        "wcDays": 49.81686201500258,
-        "receivablesDays": 27.879586,
-        "inventoryDays": 61.273049,
-        "fixedAssetsDays": 456.24041988865855
       }
     ],
     "primaryBusinessData": [
@@ -9695,33 +9695,50 @@ const data: ServiceData = {
           "totalDividendA": 1163998025.2
         }
       ],
-      "cash": 31597464469.62,
-      "interestBearingDebt": 48658160939.75,
-      "debtRatio": 29.676796,
-      "interestBearingDebtOverTotal": 0.21944221633932506,
+      "cash": 36315194343.9,
+      "interestBearingDebt": 49666897118.1,
+      "debtRatio": 29.085285,
+      "interestBearingDebtOverTotal": 0.21731993833651,
       "roe": 9.879,
       "roic": 7.861845,
       "roa": 8.897921,
       "grossProfitMargin": 36.122433,
       "netProfitMargin": 37.750898,
       "tradingFinancialAssets": 639160.8,
-      "longTermEquityInvestment": 89461680587.55,
-      "minorityInterest": 14990095964.43
+      "longTermEquityInvestment": 91337740304.7,
+      "minorityInterest": 16794664594.02
     },
     "dynamicData": {
       "code": "600018",
-      "price": 4.89,
-      "marketValue": 113839006865,
+      "price": 5.06,
+      "marketValue": 117796600150,
       "PB": 0.81,
-      "PE_TTM": 8.39,
+      "PE_TTM": 8.62,
       "totalSharesOutstanding": 23279960504
     },
     "recentYearData": {
-      "netProfit": 13564589175.03
+      "netProfit": 13665069366.44
     }
   },
   "600028": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 706695000000,
+        "netProfit": 17006000000,
+        "netProfitMargin": 0.024064129504241576,
+        "netProfitExcludingNon": 17087000000,
+        "coreProfit": 36557000000,
+        "cashFlowFromOperating": -5558000000,
+        "fcf": -34207000000,
+        "capex": 28649000000,
+        "fcfOverNetProfit": -2.0114665412207455,
+        "netProfitExcludingNonOvernetProfit": 1.0047630248147712,
+        "cashFlowFromOperatingOverNetProfit": -0.32682582617899564,
+        "operatingProfit": 25123000000,
+        "financialProfit": -8117000000,
+        "operatingProfitOverNetProfit": 1.4773021286604728
+      },
       {
         "year": "2025",
         "revenue": 2783583000000,
@@ -9891,26 +9908,26 @@ const data: ServiceData = {
         "operatingProfit": 15853000000,
         "financialProfit": 30563000000,
         "operatingProfitOverNetProfit": 0.34154170975525683
-      },
-      {
-        "year": "2015",
-        "revenue": 2020375000000,
-        "netProfit": 32281000000,
-        "netProfitMargin": 0.015977726907133578,
-        "netProfitExcludingNon": 28901000000,
-        "coreProfit": 70841000000,
-        "cashFlowFromOperating": 165740000000,
-        "fcf": 63042000000,
-        "capex": 102698000000,
-        "fcfOverNetProfit": 1.9529134785167745,
-        "netProfitExcludingNonOvernetProfit": 0.8952944456491435,
-        "cashFlowFromOperatingOverNetProfit": 5.134289520151173,
-        "operatingProfit": 22670000000,
-        "financialProfit": 9611000000,
-        "operatingProfitOverNetProfit": 0.7022706855425792
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 19.888919,
+        "netProfitMargin": 2.4064129504241576,
+        "grossProfitMinusNetProfit": 17.482506049575843,
+        "devExpenses": 3427000000,
+        "manageExpenses": 13434000000,
+        "devAndManageExpenses": 16861000000,
+        "sellingExpenses": 14447000000,
+        "financialExpenses": 3317000000,
+        "totalOperatingExpenses": 34625000000,
+        "sellingExpensesRatio": 0.02044304827400788,
+        "devExpensesRatio": 0.004849333871047623,
+        "manageExpensesRatio": 0.019009615180523423,
+        "devAndManageExpensesRatio": 0.023858949051571047,
+        "totalOperatingExpensesRatio": 4.899567
+      },
       {
         "year": "2025",
         "grossProfitMargin": 15.886,
@@ -10080,26 +10097,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.0384041522369493,
         "devAndManageExpensesRatio": 0.0384041522369493,
         "totalOperatingExpensesRatio": 6.748938
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 21.106324,
-        "netProfitMargin": 1.5977726907133578,
-        "grossProfitMinusNetProfit": 19.50855130928664,
-        "devExpenses": 0,
-        "manageExpenses": 72194000000,
-        "devAndManageExpenses": 72194000000,
-        "sellingExpenses": 46921000000,
-        "financialExpenses": 8980000000,
-        "totalOperatingExpenses": 128095000000,
-        "sellingExpensesRatio": 0.023223906453009962,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.035732970364412545,
-        "devAndManageExpensesRatio": 0.035732970364412545,
-        "totalOperatingExpensesRatio": 6.328747
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 620447000000,
+        "cash": 156123000000,
+        "inventory": 258586000000,
+        "nonCurrentAssets": 1635466000000,
+        "goodwill": 5472000000,
+        "totalAssets": 2255913000000,
+        "equity": 833137000000,
+        "interestFreeLiabilities": 391232000000,
+        "interestBearingDebt": 576170000000,
+        "interestExpense": 4724000000,
+        "interestFreeLiabilitiesOverTotal": 0.17342512765341572,
+        "interestBearingDebtOverTotal": 0.2554043529160921,
+        "debtRatio": 55.893068
+      },
       {
         "year": "2025",
         "currentAssets": 522741000000,
@@ -10259,25 +10275,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.18420882298184516,
         "interestBearingDebtOverTotal": 0.12464358615222516,
         "debtRatio": 44.446817
-      },
-      {
-        "year": "2015",
-        "currentAssets": 333657000000,
-        "cash": 69666000000,
-        "inventory": 145608000000,
-        "nonCurrentAssets": 1113611000000,
-        "goodwill": 6271000000,
-        "totalAssets": 1447268000000,
-        "equity": 677538000000,
-        "interestFreeLiabilities": 226812000000,
-        "interestBearingDebt": 225752000000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.1567173460616831,
-        "interestBearingDebtOverTotal": 0.1559849316090731,
-        "debtRatio": 45.561138
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.026302718994757286,
+        "wc": 18588000000,
+        "receivables": 84439000000,
+        "prepayments": 6206000000,
+        "inventory": 258586000000,
+        "accountsPayable": 202090000000,
+        "customerAdvances": 0,
+        "contractLiabilities": 128553000000,
+        "receivablesToRevenueRatio": 0.11948436029687488,
+        "prepaymentsToRevenueRatio": 0.008781723374298672,
+        "inventoryToRevenueRatio": 0.36590891402939035,
+        "accountsPayableToRevenueRatio": 0.28596494951853346,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.18190732918727315,
+        "changeInWC": 49605000000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.01114283281655334,
@@ -10457,33 +10475,24 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.049680176869881625,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -38871000000
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.003767617397760317,
-        "wc": -7612000000,
-        "receivables": 67106000000,
-        "prepayments": 2920000000,
-        "inventory": 145608000000,
-        "accountsPayable": 130558000000,
-        "customerAdvances": 92688000000,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.033214625997648954,
-        "prepaymentsToRevenueRatio": 0.001445276248221246,
-        "inventoryToRevenueRatio": 0.0720697890243148,
-        "accountsPayableToRevenueRatio": 0.06462067685454433,
-        "advancesToRevenueRatio": 0.04587663181340098,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -16125000000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.4655233162821302,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 328983000000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.3138268196062413,
-        "longTermOperatingAssetsPerYuanRevenue": 0.4325453920360916,
-        "fixedAssets": 873563000000,
-        "longTermOperatingAssets": 1204026000000,
+        "fixedAssetsPerYuanRevenue": 0.3839508288418201,
+        "longTermOperatingAssetsPerYuanRevenue": 0.5026694012716704,
+        "fixedAssets": 1068759000000,
+        "longTermOperatingAssets": 1399222000000,
         "depreciation": 116363000000,
         "depreciationOverRevenue": 0.041803316085778655
       },
@@ -10567,18 +10576,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 979850000000,
         "depreciation": 108425000000,
         "depreciationOverRevenue": 0.0561522514502222
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.4584010394110004,
-        "longTermOperatingAssetsPerYuanRevenue": 0.5085283672585534,
-        "fixedAssets": 926142000000,
-        "longTermOperatingAssets": 1027418000000,
-        "depreciation": 96460000000,
-        "depreciationOverRevenue": 0.0477436119532265
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.04,
+        "roa": 1.311563,
+        "roic": 1.567643,
+        "netProfitMargin": 2.775454,
+        "assetTurnover": 32.0385,
+        "equityMultiplier": 2.267217
+      },
       {
         "year": "2025",
         "roe": 3.86,
@@ -10668,18 +10677,24 @@ const data: ServiceData = {
         "netProfitMargin": 3.064356,
         "assetTurnover": 131.0924,
         "equityMultiplier": 1.800076
-      },
-      {
-        "year": "2015",
-        "roe": 5.07,
-        "roa": 4.353848,
-        "roic": 4.232513,
-        "netProfitMargin": 2.147028,
-        "assetTurnover": 139.49800000000002,
-        "equityMultiplier": 1.836923
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 2255913000000,
+        "avgTotalAssets": 2205765000000,
+        "avgCurrentAssets": 571594000000,
+        "avgInventory": 244698500000,
+        "equity": 995014000000,
+        "avgEquity": 992393000000,
+        "totalAssetsDays": 280.911637,
+        "currentAssetsDays": 72.79443,
+        "wcDays": 9.600492433086409,
+        "receivablesDays": 7.453738,
+        "inventoryDays": 38.899964,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 2155617000000,
@@ -10693,7 +10708,7 @@ const data: ServiceData = {
         "wcDays": -4.06713397804197,
         "receivablesDays": 6.175817,
         "inventoryDays": 37.470623,
-        "fixedAssetsDays": 114.54678915627808
+        "fixedAssetsDays": 140.14205252726433
       },
       {
         "year": "2024",
@@ -10829,21 +10844,6 @@ const data: ServiceData = {
         "receivablesDays": 9.921524,
         "inventoryDays": 36.444642,
         "fixedAssetsDays": 165.38929292960682
-      },
-      {
-        "year": "2015",
-        "totalAssets": 1447268000000,
-        "avgTotalAssets": 1449318000000,
-        "avgCurrentAssets": 346900500000,
-        "avgInventory": 166915500000,
-        "equity": 789565000000,
-        "avgEquity": 718330000000,
-        "totalAssetsDays": 258.068179,
-        "currentAssetsDays": 61.746431,
-        "wcDays": -1.3751803501825155,
-        "receivablesDays": 13.102423,
-        "inventoryDays": 37.714009,
-        "fixedAssetsDays": 167.31637938501515
       }
     ],
     "primaryBusinessData": [
@@ -12617,33 +12617,50 @@ const data: ServiceData = {
           "totalDividendA": 8554925552.62
         }
       ],
-      "cash": 152318000000,
-      "interestBearingDebt": 532683000000,
-      "debtRatio": 54.084051,
-      "interestBearingDebtOverTotal": 0.24711393536050236,
+      "cash": 156123000000,
+      "interestBearingDebt": 576170000000,
+      "debtRatio": 55.893068,
+      "interestBearingDebtOverTotal": 0.2554043529160921,
       "roe": 3.86,
       "roic": 3.83712,
       "roa": 2.944589,
       "grossProfitMargin": 15.886,
       "netProfitMargin": 1.266353,
       "tradingFinancialAssets": 4000000,
-      "longTermEquityInvestment": 252114000000,
-      "minorityInterest": 159448000000
+      "longTermEquityInvestment": 253566000000,
+      "minorityInterest": 161877000000
     },
     "dynamicData": {
       "code": "600028",
-      "price": 5.31,
-      "marketValue": 642114480519,
-      "PB": 0.77,
-      "PE_TTM": 20.19,
+      "price": 5.27,
+      "marketValue": 637277459950,
+      "PB": 0.76,
+      "PE_TTM": 17.93,
       "totalSharesOutstanding": 120925514222
     },
     "recentYearData": {
-      "netProfit": 31809000000
+      "netProfit": 35551000000
     }
   },
   "600036": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 86940000000,
+        "netProfit": 0,
+        "netProfitMargin": 0,
+        "netProfitExcludingNon": 37795000000,
+        "coreProfit": 86167000000,
+        "cashFlowFromOperating": 125849000000,
+        "fcf": 120425000000,
+        "capex": 5424000000,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
+        "operatingProfit": -119731000000,
+        "financialProfit": 119731000000,
+        "operatingProfitOverNetProfit": 0
+      },
       {
         "year": "2025",
         "revenue": 337532000000,
@@ -12813,26 +12830,26 @@ const data: ServiceData = {
         "operatingProfit": -296713000000,
         "financialProfit": 296713000000,
         "operatingProfitOverNetProfit": 0
-      },
-      {
-        "year": "2015",
-        "revenue": 201471000000,
-        "netProfit": 0,
-        "netProfitMargin": 0,
-        "netProfitExcludingNon": 57045000000,
-        "coreProfit": 189542000000,
-        "cashFlowFromOperating": 400420000000,
-        "fcf": 391341000000,
-        "capex": 9079000000,
-        "fcfOverNetProfit": 0,
-        "netProfitExcludingNonOvernetProfit": 0,
-        "cashFlowFromOperatingOverNetProfit": 0,
-        "operatingProfit": -338080000000,
-        "financialProfit": 338080000000,
-        "operatingProfitOverNetProfit": 0
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 51.374511,
+        "netProfitMargin": 0,
+        "grossProfitMinusNetProfit": 51.374511,
+        "devExpenses": 0,
+        "manageExpenses": 0,
+        "devAndManageExpenses": 0,
+        "sellingExpenses": 0,
+        "financialExpenses": 0,
+        "totalOperatingExpenses": 0,
+        "sellingExpensesRatio": 0,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0,
+        "devAndManageExpensesRatio": 0,
+        "totalOperatingExpensesRatio": 0
+      },
       {
         "year": "2025",
         "grossProfitMargin": 53.106668,
@@ -13002,26 +13019,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0,
         "devAndManageExpensesRatio": 0,
         "totalOperatingExpensesRatio": 0
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 36.852946,
-        "netProfitMargin": 0,
-        "grossProfitMinusNetProfit": 36.852946,
-        "devExpenses": 0,
-        "manageExpenses": 0,
-        "devAndManageExpenses": 0,
-        "sellingExpenses": 0,
-        "financialExpenses": 0,
-        "totalOperatingExpenses": 0,
-        "sellingExpensesRatio": 0,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0,
-        "devAndManageExpensesRatio": 0,
-        "totalOperatingExpensesRatio": 0
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 0,
+        "cash": 0,
+        "inventory": 0,
+        "nonCurrentAssets": 0,
+        "goodwill": 9954000000,
+        "totalAssets": 13484882000000,
+        "equity": 0,
+        "interestFreeLiabilities": 3386000000,
+        "interestBearingDebt": 153453000000,
+        "interestExpense": 0,
+        "interestFreeLiabilitiesOverTotal": 0.00025109600514116475,
+        "interestBearingDebtOverTotal": 0.011379632391295675,
+        "debtRatio": 90.429393
+      },
       {
         "year": "2025",
         "currentAssets": 0,
@@ -13181,25 +13197,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0,
         "interestBearingDebtOverTotal": 0.04629209073708865,
         "debtRatio": 93.212034
-      },
-      {
-        "year": "2015",
-        "currentAssets": 0,
-        "cash": 0,
-        "inventory": 0,
-        "nonCurrentAssets": 0,
-        "goodwill": 9954000000,
-        "totalAssets": 5474978000000,
-        "equity": 0,
-        "interestFreeLiabilities": 0,
-        "interestBearingDebt": 251507000000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0,
-        "interestBearingDebtOverTotal": 0.045937536187360024,
-        "debtRatio": 93.392521
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.03894639981596503,
+        "wc": -3386000000,
+        "receivables": 0,
+        "prepayments": 0,
+        "inventory": 0,
+        "accountsPayable": 0,
+        "customerAdvances": 0,
+        "contractLiabilities": 3386000000,
+        "receivablesToRevenueRatio": 0,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0,
+        "accountsPayableToRevenueRatio": 0,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.03894639981596503,
+        "changeInWC": 162000000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.010511595937570364,
@@ -13379,27 +13397,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 0
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0,
-        "wc": 0,
-        "receivables": 0,
-        "prepayments": 0,
-        "inventory": 0,
-        "accountsPayable": 0,
-        "customerAdvances": 0,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0,
-        "prepaymentsToRevenueRatio": 0,
-        "inventoryToRevenueRatio": 0,
-        "accountsPayableToRevenueRatio": 0,
-        "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 0
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0.0007476420519898781,
+        "longTermOperatingAssetsPerYuanRevenue": 0.30858063031976074,
+        "fixedAssets": 65000000,
+        "longTermOperatingAssets": 26828000000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.38968749629664745,
@@ -13489,18 +13498,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 56936000000,
         "depreciation": 0,
         "depreciationOverRevenue": 0
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.15294012537784593,
-        "longTermOperatingAssetsPerYuanRevenue": 0.22019049888073222,
-        "fixedAssets": 30813000000,
-        "longTermOperatingAssets": 44362000000,
-        "depreciation": 0,
-        "depreciationOverRevenue": 0
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 3.37,
+        "roa": 0,
+        "roic": 0,
+        "netProfitMargin": 43.763515,
+        "assetTurnover": 0.6547,
+        "equityMultiplier": 10.448658
+      },
       {
         "year": "2025",
         "roe": 13.44,
@@ -13590,18 +13599,24 @@ const data: ServiceData = {
         "netProfitMargin": 29.84332,
         "assetTurnover": 3.6615,
         "equityMultiplier": 14.731955
-      },
-      {
-        "year": "2015",
-        "roe": 17.09,
-        "roa": 0,
-        "roic": 0,
-        "netProfitMargin": 28.797196,
-        "assetTurnover": 3.9476999999999998,
-        "equityMultiplier": 15.134366
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 0,
+        "avgTotalAssets": 0,
+        "avgCurrentAssets": 0,
+        "avgInventory": 0,
+        "equity": 0,
+        "avgEquity": 0,
+        "totalAssetsDays": 13745.033643,
+        "currentAssetsDays": 0,
+        "wcDays": -14.215435932827237,
+        "receivablesDays": 0,
+        "inventoryDays": 0,
+        "fixedAssetsDays": 0.2728893489763055
+      },
       {
         "year": "2025",
         "totalAssets": 0,
@@ -13751,21 +13766,6 @@ const data: ServiceData = {
         "receivablesDays": 0,
         "inventoryDays": 0,
         "fixedAssetsDays": 74.95622735075338
-      },
-      {
-        "year": "2015",
-        "totalAssets": 0,
-        "avgTotalAssets": 0,
-        "avgCurrentAssets": 0,
-        "avgInventory": 0,
-        "equity": 0,
-        "avgEquity": 0,
-        "totalAssetsDays": 9119.055645,
-        "currentAssetsDays": 0,
-        "wcDays": 0,
-        "receivablesDays": 0,
-        "inventoryDays": 0,
-        "fixedAssetsDays": 55.82314576291377
       }
     ],
     "primaryBusinessData": [
@@ -15324,28 +15324,28 @@ const data: ServiceData = {
         }
       ],
       "cash": 0,
-      "interestBearingDebt": 154740000000,
-      "debtRatio": 90.200093,
-      "interestBearingDebtOverTotal": 0.011838852967092441,
+      "interestBearingDebt": 153453000000,
+      "debtRatio": 90.429393,
+      "interestBearingDebtOverTotal": 0.011379632391295675,
       "roe": 13.44,
       "roic": 0,
       "roa": 0,
       "grossProfitMargin": 53.106668,
       "netProfitMargin": 44.773828,
-      "tradingFinancialAssets": 647796000000,
-      "longTermEquityInvestment": 32914000000,
-      "minorityInterest": 8024000000
+      "tradingFinancialAssets": 737220000000,
+      "longTermEquityInvestment": 33957000000,
+      "minorityInterest": 8230000000
     },
     "dynamicData": {
       "code": "600036",
-      "price": 39.32,
-      "marketValue": 991644329031,
-      "PB": 0.91,
-      "PE_TTM": 6.6,
+      "price": 37.95,
+      "marketValue": 957093140558,
+      "PB": 0.85,
+      "PE_TTM": 6.35,
       "totalSharesOutstanding": 25219845601
     },
     "recentYearData": {
-      "netProfit": 150181000000
+      "netProfit": 150747000000
     }
   },
   "600050": {
@@ -17684,10 +17684,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600050",
-      "price": 4.51,
-      "marketValue": 141002558225,
-      "PB": 0.83,
-      "PE_TTM": 16.29,
+      "price": 4.49,
+      "marketValue": 140377269718,
+      "PB": 0.82,
+      "PE_TTM": 16.21,
       "totalSharesOutstanding": 31264425327
     },
     "recentYearData": {
@@ -17696,6 +17696,23 @@ const data: ServiceData = {
   },
   "600066": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 5909377255.56,
+        "netProfit": 659203966.6,
+        "netProfitMargin": 0.11155218868109491,
+        "netProfitExcludingNon": 607463526.86,
+        "coreProfit": 930467512.3200004,
+        "cashFlowFromOperating": 3493731164.26,
+        "fcf": 3319885212.1000004,
+        "capex": 173845952.16,
+        "fcfOverNetProfit": 5.036203330545918,
+        "netProfitExcludingNonOvernetProfit": 0.9215107275417902,
+        "cashFlowFromOperatingOverNetProfit": 5.299924365260942,
+        "operatingProfit": 666606076.7,
+        "financialProfit": -7402110.1,
+        "operatingProfitOverNetProfit": 1.0112288615891956
+      },
       {
         "year": "2025",
         "revenue": 41426173982.34,
@@ -17865,26 +17882,26 @@ const data: ServiceData = {
         "operatingProfit": 3998401913.5899997,
         "financialProfit": 45343652.11,
         "operatingProfitOverNetProfit": 0.9887867197939911
-      },
-      {
-        "year": "2015",
-        "revenue": 31210873852.54,
-        "netProfit": 3535215876.01,
-        "netProfitMargin": 0.11326872463464517,
-        "netProfitExcludingNon": 3247437407.36,
-        "coreProfit": 3905923906.459999,
-        "cashFlowFromOperating": 6009740480.1,
-        "fcf": 4707500609.52,
-        "capex": 1302239870.58,
-        "fcfOverNetProfit": 1.331602022231551,
-        "netProfitExcludingNonOvernetProfit": 0.9185966349034392,
-        "cashFlowFromOperatingOverNetProfit": 1.6999642145992107,
-        "operatingProfit": 3514517075.1200004,
-        "financialProfit": 20698800.89,
-        "operatingProfitOverNetProfit": 0.9941449683368809
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 23.55832,
+        "netProfitMargin": 11.155218868109491,
+        "grossProfitMinusNetProfit": 12.403101131890507,
+        "devExpenses": 359287133.13,
+        "manageExpenses": 175397469.77,
+        "devAndManageExpenses": 534684602.9,
+        "sellingExpenses": 228549386.99,
+        "financialExpenses": 26031078.18,
+        "totalOperatingExpenses": 789265068.0699999,
+        "sellingExpensesRatio": 0.03867571439527964,
+        "devExpensesRatio": 0.060799491654041006,
+        "manageExpensesRatio": 0.02968121041941813,
+        "devAndManageExpensesRatio": 0.09048070207345914,
+        "totalOperatingExpensesRatio": 13.356146
+      },
       {
         "year": "2025",
         "grossProfitMargin": 24.141091,
@@ -18054,26 +18071,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.05092093186953337,
         "devAndManageExpensesRatio": 0.05092093186953337,
         "totalOperatingExpensesRatio": 14.021591
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 25.327632,
-        "netProfitMargin": 11.326872463464516,
-        "grossProfitMinusNetProfit": 14.000759536535485,
-        "devExpenses": 0,
-        "manageExpenses": 1812930608.92,
-        "devAndManageExpenses": 1812930608.92,
-        "sellingExpenses": 2034365059.76,
-        "financialExpenses": -142401040.71,
-        "totalOperatingExpenses": 3704894627.9700003,
-        "sellingExpensesRatio": 0.06518129128237912,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.05808650592371864,
-        "devAndManageExpensesRatio": 0.05808650592371864,
-        "totalOperatingExpensesRatio": 11.870525
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 22131065025.87,
+        "cash": 5859868488.83,
+        "inventory": 4470299835.47,
+        "nonCurrentAssets": 11717988103.43,
+        "goodwill": 0,
+        "totalAssets": 33849053129.3,
+        "equity": 16225000513.15,
+        "interestFreeLiabilities": 6850760887.799999,
+        "interestBearingDebt": 168257634.53,
+        "interestExpense": 17595.99,
+        "interestFreeLiabilitiesOverTotal": 0.20239150742653797,
+        "interestBearingDebtOverTotal": 0.004970822489103984,
+        "debtRatio": 51.326222
+      },
       {
         "year": "2025",
         "currentAssets": 21121874885.13,
@@ -18233,25 +18249,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.48198681188793585,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 61.087812
-      },
-      {
-        "year": "2015",
-        "currentAssets": 22983104270.06,
-        "cash": 6699164486.59,
-        "inventory": 1547379434.19,
-        "nonCurrentAssets": 7156027041.52,
-        "goodwill": 492016.01,
-        "totalAssets": 30139131311.58,
-        "equity": 12860576681.94,
-        "interestFreeLiabilities": 14124749694.2,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.4686515197859407,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 57.067822
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.14613143524683742,
+        "wc": 863545779.77,
+        "receivables": 2575768835.95,
+        "prepayments": 629729212.23,
+        "inventory": 4470299835.47,
+        "accountsPayable": 4718557751.23,
+        "customerAdvances": 489175.32,
+        "contractLiabilities": 2128604754.25,
+        "receivablesToRevenueRatio": 0.435878219405694,
+        "prepaymentsToRevenueRatio": 0.10656439502783512,
+        "inventoryToRevenueRatio": 0.7564756220740512,
+        "accountsPayableToRevenueRatio": 0.7984864643377463,
+        "advancesToRevenueRatio": 0.00008277950431066928,
+        "contractLiabilitiesToRevenueRatio": 0.36020796476434863,
+        "changeInWC": -3634989360.78
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.10859161510951333,
@@ -18431,27 +18449,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.03298768884776277,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 3243890786.4800005
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.11331371723519312,
-        "wc": 3536620134.3900003,
-        "receivables": 11363424349.49,
-        "prepayments": 427599707.66,
-        "inventory": 1547379434.19,
-        "accountsPayable": 7868166485.11,
-        "customerAdvances": 1933616871.84,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.3640854275076705,
-        "prepaymentsToRevenueRatio": 0.013700343978840603,
-        "inventoryToRevenueRatio": 0.049578215640510535,
-        "accountsPayableToRevenueRatio": 0.25209696217684313,
-        "advancesToRevenueRatio": 0.06195330771498531,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 376188425.0100002
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.2639346886395725,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1559689646,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.002926768530004406,
@@ -18541,18 +18550,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 6101694872.950001,
         "depreciation": 714071090.64,
         "depreciationOverRevenue": 0.019918055397729843
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.1493399913867095,
-        "longTermOperatingAssetsPerYuanRevenue": 0.19657650094538115,
-        "fixedAssets": 4661031632.31,
-        "longTermOperatingAssets": 6135324373.380001,
-        "depreciation": 738224759.51,
-        "depreciationOverRevenue": 0.023652806486541927
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 4.14,
+        "roa": 2.14265,
+        "roic": 4.098013,
+        "netProfitMargin": 11.295594,
+        "assetTurnover": 17.6823,
+        "equityMultiplier": 2.054494
+      },
       {
         "year": "2025",
         "roe": 38.03,
@@ -18642,18 +18651,24 @@ const data: ServiceData = {
         "netProfitMargin": 11.442925,
         "assetTurnover": 109.8141,
         "equityMultiplier": 2.569888
-      },
-      {
-        "year": "2015",
-        "roe": 30.19,
-        "roa": 15.630429,
-        "roic": 30.818017,
-        "netProfitMargin": 11.494997,
-        "assetTurnover": 115.6758,
-        "equityMultiplier": 2.329255
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 33849053129.3,
+        "avgTotalAssets": 33419649638.815002,
+        "avgCurrentAssets": 21626469955.5,
+        "avgInventory": 4005958488.355,
+        "equity": 16475612881.58,
+        "avgEquity": 16159958966.08,
+        "totalAssetsDays": 508.982306,
+        "currentAssetsDays": 329.371812,
+        "wcDays": 53.337973865095655,
+        "receivablesDays": 58.549663,
+        "inventoryDays": 79.813621,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 32990246148.33,
@@ -18803,21 +18818,6 @@ const data: ServiceData = {
         "receivablesDays": 125.512844,
         "inventoryDays": 24.143802,
         "fixedAssetsDays": 47.167921359189556
-      },
-      {
-        "year": "2015",
-        "totalAssets": 30139131311.58,
-        "avgTotalAssets": 26981315556.370003,
-        "avgCurrentAssets": 20103296634.34,
-        "avgInventory": 1353444592.095,
-        "equity": 12939385288.64,
-        "avgEquity": 11899979784.36,
-        "totalAssetsDays": 311.214407,
-        "currentAssetsDays": 231.880299,
-        "wcDays": 41.359506790845494,
-        "receivablesDays": 106.886536,
-        "inventoryDays": 20.906297,
-        "fixedAssetsDays": 54.509096856148965
       }
     ],
     "primaryBusinessData": [
@@ -19991,33 +19991,50 @@ const data: ServiceData = {
           "totalDividendA": 1106969611.5
         }
       ],
-      "cash": 6367991239.76,
-      "interestBearingDebt": 174441677.21,
-      "debtRatio": 51.972758,
-      "interestBearingDebtOverTotal": 0.005287674315180289,
+      "cash": 5859868488.83,
+      "interestBearingDebt": 168257634.53,
+      "debtRatio": 51.326222,
+      "interestBearingDebtOverTotal": 0.004970822489103984,
       "roe": 38.03,
       "roic": 37.964568,
       "roa": 20.014063,
       "grossProfitMargin": 24.141091,
       "netProfitMargin": 13.578797,
-      "tradingFinancialAssets": 3121473950.18,
+      "tradingFinancialAssets": 6815635014.21,
       "longTermEquityInvestment": 722947992.88,
-      "minorityInterest": 242317061.26
+      "minorityInterest": 250612368.43
     },
     "dynamicData": {
       "code": "600066",
-      "price": 35.69,
-      "marketValue": 79015490869,
-      "PB": 4.87,
-      "PE_TTM": 14.48,
+      "price": 35.1,
+      "marketValue": 77709266727,
+      "PB": 4.79,
+      "PE_TTM": 14.24,
       "totalSharesOutstanding": 2213939223
     },
     "recentYearData": {
-      "netProfit": 5554481970.9
+      "netProfit": 5458683348.65
     }
   },
   "600096": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 11980782595.76,
+        "netProfit": 1424767712.69,
+        "netProfitMargin": 0.11892108894407494,
+        "netProfitExcludingNon": 1392395551.77,
+        "coreProfit": 1684393256.73,
+        "cashFlowFromOperating": 2401603831.52,
+        "fcf": 1936355891.03,
+        "capex": 465247940.49,
+        "fcfOverNetProfit": 1.3590677791077308,
+        "netProfitExcludingNonOvernetProfit": 0.9772789903703808,
+        "cashFlowFromOperatingOverNetProfit": 1.6856107912395817,
+        "operatingProfit": 1265175332.3200002,
+        "financialProfit": 159592380.37,
+        "operatingProfitOverNetProfit": 0.8879870880364876
+      },
       {
         "year": "2025",
         "revenue": 48414923741.78,
@@ -20187,26 +20204,26 @@ const data: ServiceData = {
         "operatingProfit": -2923516231.16,
         "financialProfit": -332343352.79,
         "operatingProfitOverNetProfit": 0
-      },
-      {
-        "year": "2015",
-        "revenue": 50266903519.89,
-        "netProfit": 101191532.06,
-        "netProfitMargin": 0.00201308465360234,
-        "netProfitExcludingNon": -472799745.15,
-        "coreProfit": 2145374570.11,
-        "cashFlowFromOperating": 2821442956.93,
-        "fcf": 1399177489.9499998,
-        "capex": 1422265466.98,
-        "fcfOverNetProfit": 13.827021505321003,
-        "netProfitExcludingNonOvernetProfit": -4.672325198808735,
-        "cashFlowFromOperatingOverNetProfit": 27.88220416760829,
-        "operatingProfit": -265147854.75,
-        "financialProfit": 366339386.81,
-        "operatingProfitOverNetProfit": -2.6202573412248027
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 19.556745,
+        "netProfitMargin": 11.892108894407494,
+        "grossProfitMinusNetProfit": 7.664636105592505,
+        "devExpenses": 70617224.32,
+        "manageExpenses": 176091499.66,
+        "devAndManageExpenses": 246708723.98,
+        "sellingExpenses": 190096083.41,
+        "financialExpenses": 51624162.02,
+        "totalOperatingExpenses": 488428969.40999997,
+        "sellingExpensesRatio": 0.0158667500967153,
+        "devExpensesRatio": 0.005894207974777159,
+        "manageExpensesRatio": 0.014697829482551397,
+        "devAndManageExpensesRatio": 0.020592037457328558,
+        "totalOperatingExpensesRatio": 4.07677
+      },
       {
         "year": "2025",
         "grossProfitMargin": 20.213773,
@@ -20376,26 +20393,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.037204078191037146,
         "devAndManageExpensesRatio": 0.037204078191037146,
         "totalOperatingExpensesRatio": 11.641615
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 14.440327,
-        "netProfitMargin": 0.20130846536023397,
-        "grossProfitMinusNetProfit": 14.239018534639765,
-        "devExpenses": 0,
-        "manageExpenses": 1951032019.42,
-        "devAndManageExpenses": 1951032019.42,
-        "sellingExpenses": 2735659555.31,
-        "financialExpenses": 2286913409.47,
-        "totalOperatingExpenses": 6973604984.199999,
-        "sellingExpensesRatio": 0.05442267901438434,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.03881345145216674,
-        "devAndManageExpensesRatio": 0.03881345145216674,
-        "totalOperatingExpensesRatio": 13.873154
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 17395309366.78,
+        "cash": 7155367208.39,
+        "inventory": 6714937451.13,
+        "nonCurrentAssets": 35392905196.69,
+        "goodwill": 86713377.25,
+        "totalAssets": 52788214563.47,
+        "equity": 26053326915.11,
+        "interestFreeLiabilities": 8943983961.210001,
+        "interestBearingDebt": 11678573392.230001,
+        "interestExpense": 63518808.42,
+        "interestFreeLiabilitiesOverTotal": 0.1694314542587188,
+        "interestBearingDebtOverTotal": 0.221234483659004,
+        "debtRatio": 46.66719
+      },
       {
         "year": "2025",
         "currentAssets": 14815316925.48,
@@ -20555,25 +20571,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.3387143496416379,
         "interestBearingDebtOverTotal": 0.5189964352624772,
         "debtRatio": 92.479956
-      },
-      {
-        "year": "2015",
-        "currentAssets": 30623635093.35,
-        "cash": 5424915208.31,
-        "inventory": 10301197084.17,
-        "nonCurrentAssets": 36453396558.93,
-        "goodwill": 86713377.25,
-        "totalAssets": 67077031652.28,
-        "equity": 5634273506.33,
-        "interestFreeLiabilities": 18903133556.109997,
-        "interestBearingDebt": 33445693860.4,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.28181231474436397,
-        "interestBearingDebtOverTotal": 0.4986161885305066,
-        "debtRatio": 89.557532
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.10002563166984677,
+        "wc": 1198385347.0400004,
+        "receivables": 1749088013.4,
+        "prepayments": 1032863403.65,
+        "inventory": 6714937451.13,
+        "accountsPayable": 4745398528.57,
+        "customerAdvances": 34380546.71,
+        "contractLiabilities": 3518724445.86,
+        "receivablesToRevenueRatio": 0.1459911319999248,
+        "prepaymentsToRevenueRatio": 0.08621001135731571,
+        "inventoryToRevenueRatio": 0.5604756949271759,
+        "accountsPayableToRevenueRatio": 0.39608418654131966,
+        "advancesToRevenueRatio": 0.0028696411469954623,
+        "contractLiabilitiesToRevenueRatio": 0.2936973789262545,
+        "changeInWC": 46236813.32000017
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.023797384043501974,
@@ -20753,27 +20771,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.08730855631871334,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -2420524322.8499985
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.30398671761358254,
-        "wc": 15280471005.609999,
-        "receivables": 8239377530.27,
-        "prepayments": 3793176075.74,
-        "inventory": 10301197084.17,
-        "accountsPayable": 5497250890.22,
-        "customerAdvances": 1556028794.35,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.16391257374765048,
-        "prepaymentsToRevenueRatio": 0.07546070694883934,
-        "inventoryToRevenueRatio": 0.20493001085881374,
-        "accountsPayableToRevenueRatio": 0.10936123980751679,
-        "advancesToRevenueRatio": 0.030955334134204194,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 594678125.8999996
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.600216175987111,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 7191059514.96,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.540803549234866,
@@ -20863,18 +20872,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 34439555931.62,
         "depreciation": 2014797863.67,
         "depreciationOverRevenue": 0.03801063234519291
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.5706116853428326,
-        "longTermOperatingAssetsPerYuanRevenue": 0.681624201156383,
-        "fixedAssets": 28682882534.449997,
-        "longTermOperatingAssets": 34263137956.35,
-        "depreciation": 1902816981.9099998,
-        "depreciationOverRevenue": 0.03785427087540967
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 5.63,
+        "roa": 3.699845,
+        "roic": 4.025406,
+        "netProfitMargin": 12.540604,
+        "assetTurnover": 23.234099999999998,
+        "equityMultiplier": 1.875018
+      },
       {
         "year": "2025",
         "roe": 21.87,
@@ -20964,18 +20973,24 @@ const data: ServiceData = {
         "netProfitMargin": -6.719827,
         "assetTurnover": 78.0907,
         "equityMultiplier": 13.297795
-      },
-      {
-        "year": "2015",
-        "roe": 1.81,
-        "roa": 3.829773,
-        "roic": 5.740212,
-        "netProfitMargin": 0.380534,
-        "assetTurnover": 74.1475,
-        "equityMultiplier": 9.57628
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 52788214563.47,
+        "avgTotalAssets": 51565341517.7,
+        "avgCurrentAssets": 16105313146.13,
+        "avgInventory": 6803262511.195,
+        "equity": 28153437870.65,
+        "avgEquity": 27374206517.17,
+        "totalAssetsDays": 387.360399,
+        "currentAssetsDays": 120.983597,
+        "wcDays": 36.509355559494075,
+        "receivablesDays": 6.207745,
+        "inventoryDays": 63.530887,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 50342468471.93,
@@ -21125,21 +21140,6 @@ const data: ServiceData = {
         "receivablesDays": 41.418077,
         "inventoryDays": 75.891539,
         "fixedAssetsDays": 197.45221948390068
-      },
-      {
-        "year": "2015",
-        "totalAssets": 67077031652.28,
-        "avgTotalAssets": 67793084962.119995,
-        "avgCurrentAssets": 31120709975.235,
-        "avgInventory": 12522452058.9,
-        "equity": 7004497527.46,
-        "avgEquity": 6893561642.145,
-        "totalAssetsDays": 485.518479,
-        "currentAssetsDays": 222.879366,
-        "wcDays": 110.95515192895762,
-        "receivablesDays": 32.238165,
-        "inventoryDays": 104.819149,
-        "fixedAssetsDays": 208.2732651501339
       }
     ],
     "primaryBusinessData": [
@@ -22620,38 +22620,55 @@ const data: ServiceData = {
           "basicEps": 2.8283,
           "totalSharesOutstanding": 1822990731,
           "dps": 1.4,
-          "dividendRatio": 0.07071277347035083,
-          "totalDividend": 364598146.2,
-          "totalDividendA": 364598146.2
+          "dividendRatio": 0.4949894142924559,
+          "totalDividend": 2552187023.4,
+          "totalDividendA": 2552187023.4
         }
       ],
-      "cash": 4981411660.75,
-      "interestBearingDebt": 11628652891.96,
-      "debtRatio": 47.171888,
-      "interestBearingDebtOverTotal": 0.23099091572046995,
+      "cash": 7155367208.39,
+      "interestBearingDebt": 11678573392.230001,
+      "debtRatio": 46.66719,
+      "interestBearingDebtOverTotal": 0.221234483659004,
       "roe": 21.87,
       "roic": 14.809087,
       "roa": 13.479747,
       "grossProfitMargin": 20.213773,
       "netProfitMargin": 11.355404,
-      "tradingFinancialAssets": 1441510,
-      "longTermEquityInvestment": 3709190247.51,
-      "minorityInterest": 2013636028.67
+      "tradingFinancialAssets": 770000,
+      "longTermEquityInvestment": 4000526124.17,
+      "minorityInterest": 2100110955.54
     },
     "dynamicData": {
       "code": "600096",
-      "price": 35.69,
-      "marketValue": 65062539189,
-      "PB": 2.5,
-      "PE_TTM": 12.3,
+      "price": 35.1,
+      "marketValue": 63986974658,
+      "PB": 2.68,
+      "PE_TTM": 12.1,
       "totalSharesOutstanding": 1822990731
     },
     "recentYearData": {
-      "netProfit": 5156043643.98
+      "netProfit": 5290164912.17
     }
   },
   "600188": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 34588720000,
+        "netProfit": 3954969000,
+        "netProfitMargin": 0.11434273948269841,
+        "netProfitExcludingNon": 1060297000,
+        "coreProfit": 2914653000,
+        "cashFlowFromOperating": 6182253000,
+        "fcf": 1251400000,
+        "capex": 4930853000,
+        "fcfOverNetProfit": 0.3164120881857734,
+        "netProfitExcludingNonOvernetProfit": 0.26809236684282484,
+        "cashFlowFromOperatingOverNetProfit": 1.563160924902319,
+        "operatingProfit": 576630000,
+        "financialProfit": 3378339000,
+        "operatingProfitOverNetProfit": 0.14579886719718915
+      },
       {
         "year": "2025",
         "revenue": 144932859000,
@@ -22821,26 +22838,26 @@ const data: ServiceData = {
         "operatingProfit": 1468239000,
         "financialProfit": 693575000,
         "operatingProfitOverNetProfit": 0.6791699008332817
-      },
-      {
-        "year": "2015",
-        "revenue": 69007382000,
-        "netProfit": 859514000,
-        "netProfitMargin": 0.012455392091240325,
-        "netProfitExcludingNon": 218541000,
-        "coreProfit": 2669450000,
-        "cashFlowFromOperating": 2817924000,
-        "fcf": -3764228000,
-        "capex": 6582152000,
-        "fcfOverNetProfit": -4.379484220152318,
-        "netProfitExcludingNonOvernetProfit": 0.2542611289635771,
-        "cashFlowFromOperatingOverNetProfit": 3.2785085525075797,
-        "operatingProfit": 239347000,
-        "financialProfit": 620167000,
-        "operatingProfitOverNetProfit": 0.2784678318212385
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 25.918172,
+        "netProfitMargin": 11.43427394826984,
+        "grossProfitMinusNetProfit": 14.483898051730158,
+        "devExpenses": 262061000,
+        "manageExpenses": 2199724000,
+        "devAndManageExpenses": 2461785000,
+        "sellingExpenses": 1064722000,
+        "financialExpenses": 1101091000,
+        "totalOperatingExpenses": 4627598000,
+        "sellingExpensesRatio": 0.03078234753989162,
+        "devExpensesRatio": 0.007576487363510416,
+        "manageExpensesRatio": 0.06359657136777538,
+        "devAndManageExpensesRatio": 0.07117305873128581,
+        "totalOperatingExpensesRatio": 13.378922
+      },
       {
         "year": "2025",
         "grossProfitMargin": 29.34026,
@@ -23010,26 +23027,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.03566088580775601,
         "devAndManageExpensesRatio": 0.03566088580775601,
         "totalOperatingExpensesRatio": 8.264128
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 14.515835,
-        "netProfitMargin": 1.2455392091240325,
-        "grossProfitMinusNetProfit": 13.270295790875966,
-        "devExpenses": 0,
-        "manageExpenses": 3738518000,
-        "devAndManageExpenses": 3738518000,
-        "sellingExpenses": 2824452000,
-        "financialExpenses": 2051920000,
-        "totalOperatingExpenses": 8614890000,
-        "sellingExpensesRatio": 0.040929708070942324,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.054175624283210745,
-        "devAndManageExpensesRatio": 0.054175624283210745,
-        "totalOperatingExpensesRatio": 12.484012
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 144223052000,
+        "cash": 49942737000,
+        "inventory": 8720155000,
+        "nonCurrentAssets": 324773458000,
+        "goodwill": 897838000,
+        "totalAssets": 468996510000,
+        "equity": 105326393000,
+        "interestFreeLiabilities": 46593399000,
+        "interestBearingDebt": 139345792000,
+        "interestExpense": 1066025000,
+        "interestFreeLiabilitiesOverTotal": 0.0993470058018129,
+        "interestBearingDebtOverTotal": 0.29711477383914864,
+        "debtRatio": 62.101139
+      },
       {
         "year": "2025",
         "currentAssets": 125505176000,
@@ -23189,25 +23205,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.05783054848327952,
         "interestBearingDebtOverTotal": 0.33963536055587756,
         "debtRatio": 64.942859
-      },
-      {
-        "year": "2015",
-        "currentAssets": 48052876000,
-        "cash": 23577895000,
-        "inventory": 2000029000,
-        "nonCurrentAssets": 91009086000,
-        "goodwill": 646182000,
-        "totalAssets": 139061962000,
-        "equity": 39807679000,
-        "interestFreeLiabilities": 5400397000,
-        "interestBearingDebt": 60039464000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.038834465747002764,
-        "interestBearingDebtOverTotal": 0.4317461305486255,
-        "debtRatio": 69.078148
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.019445963886492473,
+        "wc": 672611000,
+        "receivables": 13513710000,
+        "prepayments": 8499828000,
+        "inventory": 8720155000,
+        "accountsPayable": 23300356000,
+        "customerAdvances": 0,
+        "contractLiabilities": 6785856000,
+        "receivablesToRevenueRatio": 0.39069702492604524,
+        "prepaymentsToRevenueRatio": 0.24573988282885287,
+        "inventoryToRevenueRatio": 0.2521097918627807,
+        "accountsPayableToRevenueRatio": 0.6736403081698311,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.19618696499899388,
+        "changeInWC": 9306327000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.05957045255003215,
@@ -23387,27 +23405,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.026258570557200267,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 985268000
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.08869732226618886,
-        "wc": 6120770000,
-        "receivables": 5976838000,
-        "prepayments": 2702166000,
-        "inventory": 2000029000,
-        "accountsPayable": 3550208000,
-        "customerAdvances": 1008055000,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.08661157439648993,
-        "prepaymentsToRevenueRatio": 0.03915763678732226,
-        "inventoryToRevenueRatio": 0.028982826793805917,
-        "accountsPayableToRevenueRatio": 0.051446785794598035,
-        "advancesToRevenueRatio": 0.014607929916831217,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -2105702000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 3.0443694649585185,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 105300843000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 1.147299799005552,
@@ -23497,18 +23506,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 82372594000,
         "depreciation": 3948148000,
         "depreciationOverRevenue": 0.038600558134543675
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.8637466930711848,
-        "longTermOperatingAssetsPerYuanRevenue": 1.1334248124352841,
-        "fixedAssets": 59604898000,
-        "longTermOperatingAssets": 78214679000,
-        "depreciation": 4393676000,
-        "depreciationOverRevenue": 0.06366965203809645
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 3.84,
+        "roa": 1.473462,
+        "roic": 2.292377,
+        "netProfitMargin": 15.15993,
+        "assetTurnover": 7.5034,
+        "equityMultiplier": 2.638601
+      },
       {
         "year": "2025",
         "roe": 9.95,
@@ -23598,18 +23607,24 @@ const data: ServiceData = {
         "netProfitMargin": 2.248093,
         "assetTurnover": 71.64580000000001,
         "equityMultiplier": 2.852485
-      },
-      {
-        "year": "2015",
-        "roe": 2.21,
-        "roa": 3.267686,
-        "roic": 4.056352,
-        "netProfitMargin": 1.204523,
-        "assetTurnover": 50.602599999999995,
-        "equityMultiplier": 3.233959
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 468996510000,
+        "avgTotalAssets": 460970391500,
+        "avgCurrentAssets": 134864114000,
+        "avgInventory": 8142386500,
+        "equity": 177744331000,
+        "avgEquity": 174420582000,
+        "totalAssetsDays": 1199.446965,
+        "currentAssetsDays": 350.917011,
+        "wcDays": 7.097776818569753,
+        "receivablesDays": 23.475912,
+        "inventoryDays": 28.598815,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 452944273000,
@@ -23759,21 +23774,6 @@ const data: ServiceData = {
         "receivablesDays": 9.296265,
         "inventoryDays": 9.418018,
         "fixedAssetsDays": 199.63786036249454
-      },
-      {
-        "year": "2015",
-        "totalAssets": 139061962000,
-        "avgTotalAssets": 136371044000,
-        "avgCurrentAssets": 43305122000,
-        "avgInventory": 1999170000,
-        "equity": 43000533000,
-        "avgEquity": 43427210500,
-        "totalAssetsDays": 711.424986,
-        "currentAssetsDays": 225.915597,
-        "wcDays": 32.37452262715893,
-        "receivablesDays": 13.48388,
-        "inventoryDays": 12.200313,
-        "fixedAssetsDays": 315.2675429709824
       }
     ],
     "primaryBusinessData": [
@@ -25535,49 +25535,66 @@ const data: ServiceData = {
           "totalDividendA": 1073156497.92
         }
       ],
-      "cash": 37428025000,
-      "interestBearingDebt": 149792627000,
-      "debtRatio": 62.225632,
-      "interestBearingDebtOverTotal": 0.3307087337872136,
+      "cash": 49942737000,
+      "interestBearingDebt": 139345792000,
+      "debtRatio": 62.101139,
+      "interestBearingDebtOverTotal": 0.29711477383914864,
       "roe": 9.95,
       "roic": 6.138027,
       "roa": 5.208015,
       "grossProfitMargin": 29.34026,
       "netProfitMargin": 9.815373,
-      "tradingFinancialAssets": 256537000,
-      "longTermEquityInvestment": 26883409000,
-      "minorityInterest": 70616541000
+      "tradingFinancialAssets": 286885000,
+      "longTermEquityInvestment": 26730463000,
+      "minorityInterest": 72417938000
     },
     "dynamicData": {
       "code": "600188",
-      "price": 21.28,
-      "marketValue": 213597585976,
-      "PB": 2.98,
-      "PE_TTM": 25.49,
+      "price": 21.44,
+      "marketValue": 215203582863,
+      "PB": 2.81,
+      "PE_TTM": 22.53,
       "totalSharesOutstanding": 10037480544
     },
     "recentYearData": {
-      "netProfit": 8380948000
+      "netProfit": 9553548000
     }
   },
   "600285": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 3041361639.17,
-        "netProfit": 650932609.77,
-        "netProfitMargin": 0.21402670481095504,
-        "netProfitExcludingNon": 605225066.74,
-        "coreProfit": 799054252.2299999,
-        "cashFlowFromOperating": 490387656.36,
-        "fcf": 452161771.25,
-        "capex": 38225885.11,
-        "fcfOverNetProfit": 0.6946368402249297,
-        "netProfitExcludingNonOvernetProfit": 0.9297814514990266,
-        "cashFlowFromOperatingOverNetProfit": 0.7533616368263886,
-        "operatingProfit": 613404456.46,
-        "financialProfit": 37528153.31,
-        "operatingProfitOverNetProfit": 0.9423470989980666
+        "year": "2026Q1",
+        "revenue": 1126074496.05,
+        "netProfit": 246333622.73,
+        "netProfitMargin": 0.21875428632304472,
+        "netProfitExcludingNon": 227551542.24,
+        "coreProfit": 290741693.98,
+        "cashFlowFromOperating": 268450155.61,
+        "fcf": 255318894.38000003,
+        "capex": 13131261.23,
+        "fcfOverNetProfit": 1.0364760260918526,
+        "netProfitExcludingNonOvernetProfit": 0.9237534840682852,
+        "cashFlowFromOperatingOverNetProfit": 1.0897828426135778,
+        "operatingProfit": 234473436.39999998,
+        "financialProfit": 11860186.33,
+        "operatingProfitOverNetProfit": 0.9518531567125952
+      },
+      {
+        "year": "2025",
+        "revenue": 3853391129.7,
+        "netProfit": 759503032.53,
+        "netProfitMargin": 0.1970999068005666,
+        "netProfitExcludingNon": 711549474.02,
+        "coreProfit": 974731580.6,
+        "cashFlowFromOperating": 553882713.79,
+        "fcf": 497052512.26,
+        "capex": 56830201.53,
+        "fcfOverNetProfit": 0.6544444076862415,
+        "netProfitExcludingNonOvernetProfit": 0.9368619262121171,
+        "cashFlowFromOperatingOverNetProfit": 0.7292699173892,
+        "operatingProfit": 716831514.06,
+        "financialProfit": 42671518.47,
+        "operatingProfitOverNetProfit": 0.943816526541236
       },
       {
         "year": "2024",
@@ -25731,42 +25748,42 @@ const data: ServiceData = {
         "operatingProfit": 90775211.25000003,
         "financialProfit": 254996963.48,
         "operatingProfitOverNetProfit": 0.262528965267037
-      },
-      {
-        "year": "2015",
-        "revenue": 1084814774.99,
-        "netProfit": 131909364.42,
-        "netProfitMargin": 0.12159620928947613,
-        "netProfitExcludingNon": 120694679.24,
-        "coreProfit": 66261271.339999974,
-        "cashFlowFromOperating": 225452248.79,
-        "fcf": 128065972.33999999,
-        "capex": 97386276.45,
-        "fcfOverNetProfit": 0.9708633871681571,
-        "netProfitExcludingNonOvernetProfit": 0.9149818875308018,
-        "cashFlowFromOperatingOverNetProfit": 1.7091451375063793,
-        "operatingProfit": 106164994.19,
-        "financialProfit": 25744370.23,
-        "operatingProfitOverNetProfit": 0.80483288397911
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 81.018402,
-        "netProfitMargin": 21.402670481095505,
-        "grossProfitMinusNetProfit": 59.61573151890449,
-        "devExpenses": 104600773.85,
-        "manageExpenses": 176993366.27,
-        "devAndManageExpenses": 281594140.12,
-        "sellingExpenses": 1437387330.38,
-        "financialExpenses": -5112540.94,
-        "totalOperatingExpenses": 1713868929.56,
-        "sellingExpensesRatio": 0.47261309272391194,
-        "devExpensesRatio": 0.034392744520360945,
-        "manageExpensesRatio": 0.05819543588321914,
-        "devAndManageExpensesRatio": 0.09258818040358008,
-        "totalOperatingExpensesRatio": 56.352026
+        "year": "2026Q1",
+        "grossProfitMargin": 78.18779,
+        "netProfitMargin": 21.875428632304473,
+        "grossProfitMinusNetProfit": 56.31236136769553,
+        "devExpenses": 31483551.8,
+        "manageExpenses": 36249379.91,
+        "devAndManageExpenses": 67732931.71,
+        "sellingExpenses": 527336627.13,
+        "financialExpenses": -6102992.75,
+        "totalOperatingExpenses": 588966566.09,
+        "sellingExpensesRatio": 0.46829639511397403,
+        "devExpensesRatio": 0.027958675834002786,
+        "manageExpensesRatio": 0.032190925233769305,
+        "devAndManageExpensesRatio": 0.06014960106777209,
+        "totalOperatingExpensesRatio": 52.302629
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 80.029223,
+        "netProfitMargin": 19.70999068005666,
+        "grossProfitMinusNetProfit": 60.31923231994334,
+        "devExpenses": 169124390.58,
+        "manageExpenses": 215598513.87,
+        "devAndManageExpenses": 384722904.45000005,
+        "sellingExpenses": 1828759703.53,
+        "financialExpenses": -5090337.33,
+        "totalOperatingExpenses": 2208392270.65,
+        "sellingExpensesRatio": 0.474584500243134,
+        "devExpensesRatio": 0.04388975447534363,
+        "manageExpensesRatio": 0.05595033221732285,
+        "devAndManageExpensesRatio": 0.09984008669266649,
+        "totalOperatingExpensesRatio": 57.310358
       },
       {
         "year": "2024",
@@ -25920,41 +25937,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.10870967134312912,
         "devAndManageExpensesRatio": 0.10870967134312912,
         "totalOperatingExpensesRatio": 54.22981
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 63.016401,
-        "netProfitMargin": 12.159620928947614,
-        "grossProfitMinusNetProfit": 50.856780071052384,
-        "devExpenses": 0,
-        "manageExpenses": 133031483.04,
-        "devAndManageExpenses": 133031483.04,
-        "sellingExpenses": 398499333.16,
-        "financialExpenses": 12870343.03,
-        "totalOperatingExpenses": 544401159.23,
-        "sellingExpensesRatio": 0.3673432021274539,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.1226305965838512,
-        "devAndManageExpensesRatio": 0.1226305965838512,
-        "totalOperatingExpensesRatio": 49.881732
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 2574106317.5,
-        "cash": 459656290.81,
-        "inventory": 407276808.11,
-        "nonCurrentAssets": 3181581407.38,
+        "year": "2026Q1",
+        "currentAssets": 2566464708.69,
+        "cash": 452893627.32,
+        "inventory": 392614720.7,
+        "nonCurrentAssets": 3399220128.59,
         "goodwill": 482016236.04,
-        "totalAssets": 5755687724.88,
-        "equity": 3248239730.07,
-        "interestFreeLiabilities": 138818995.93,
-        "interestBearingDebt": 525076346.75,
-        "interestExpense": 3260401.6,
-        "interestFreeLiabilitiesOverTotal": 0.02411857671324485,
-        "interestBearingDebtOverTotal": 0.09122738616972957,
-        "debtRatio": 42.955812
+        "totalAssets": 5965684837.28,
+        "equity": 3648870888.17,
+        "interestFreeLiabilities": 174915227.76,
+        "interestBearingDebt": 281002190.87,
+        "interestExpense": 763973.76,
+        "interestFreeLiabilitiesOverTotal": 0.029320226014445477,
+        "interestBearingDebtOverTotal": 0.047103090179017974,
+        "debtRatio": 38.224604
+      },
+      {
+        "year": "2025",
+        "currentAssets": 2279888243.92,
+        "cash": 382843943.47,
+        "inventory": 436636298.59,
+        "nonCurrentAssets": 3355618696.34,
+        "goodwill": 482016236.04,
+        "totalAssets": 5635506940.26,
+        "equity": 3400583878.89,
+        "interestFreeLiabilities": 181053720.5,
+        "interestBearingDebt": 398512156.01,
+        "interestExpense": 3900518.95,
+        "interestFreeLiabilitiesOverTotal": 0.03212731745684744,
+        "interestBearingDebtOverTotal": 0.07071451783033635,
+        "debtRatio": 39.030965
       },
       {
         "year": "2024",
@@ -26099,42 +26115,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.05480574667544706,
         "interestBearingDebtOverTotal": 0.07529712866562852,
         "debtRatio": 29.15793
-      },
-      {
-        "year": "2015",
-        "currentAssets": 963843445.07,
-        "cash": 415045017.93,
-        "inventory": 298154117.69,
-        "nonCurrentAssets": 1868887780.37,
-        "goodwill": 8054423.43,
-        "totalAssets": 2832731225.44,
-        "equity": 1725459650.53,
-        "interestFreeLiabilities": 144004092.26999998,
-        "interestBearingDebt": 451500000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.050835776785576346,
-        "interestBearingDebtOverTotal": 0.1593868122556773,
-        "debtRatio": 36.349689
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.34883367969668083,
-        "wc": 1060929371.88,
-        "receivables": 773856065.99,
-        "prepayments": 18615493.71,
-        "inventory": 407276808.11,
-        "accountsPayable": 91771131.61,
-        "customerAdvances": 129123,
-        "contractLiabilities": 46918741.32,
-        "receivablesToRevenueRatio": 0.25444394905999684,
-        "prepaymentsToRevenueRatio": 0.006120776125485769,
-        "inventoryToRevenueRatio": 0.13391265374845313,
-        "accountsPayableToRevenueRatio": 0.030174356915688826,
-        "advancesToRevenueRatio": 0.00004245565484124347,
-        "contractLiabilitiesToRevenueRatio": 0.015426886666724815,
-        "changeInWC": 324006250.5500001
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 1.030535263138109,
+        "wc": 1160459477.1000001,
+        "receivables": 906697232.4100001,
+        "prepayments": 36062751.75,
+        "inventory": 392614720.7,
+        "accountsPayable": 102583238.3,
+        "customerAdvances": 455758.51,
+        "contractLiabilities": 71876230.95,
+        "receivablesToRevenueRatio": 0.8051840580623015,
+        "prepaymentsToRevenueRatio": 0.03202519182922578,
+        "inventoryToRevenueRatio": 0.3486578570753521,
+        "accountsPayableToRevenueRatio": 0.09109809223087591,
+        "advancesToRevenueRatio": 0.00040473211283861935,
+        "contractLiabilitiesToRevenueRatio": 0.06382901948505594,
+        "changeInWC": 180006544.8900001
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.25443898613176386,
+        "wc": 980452932.21,
+        "receivables": 713336413.02,
+        "prepayments": 11533941.1,
+        "inventory": 436636298.59,
+        "accountsPayable": 97273440.13,
+        "customerAdvances": 141637.97,
+        "contractLiabilities": 83638642.4,
+        "receivablesToRevenueRatio": 0.1851191298806814,
+        "prepaymentsToRevenueRatio": 0.0029931924146246627,
+        "inventoryToRevenueRatio": 0.11331221874276584,
+        "accountsPayableToRevenueRatio": 0.025243593721972647,
+        "advancesToRevenueRatio": 0.00003675670733456716,
+        "contractLiabilitiesToRevenueRatio": 0.021705204477000903,
+        "changeInWC": 243529810.8800001
       },
       {
         "year": "2024",
@@ -26297,35 +26315,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.07077854432947432,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 312653173.8699999
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.33442244278369476,
-        "wc": 362786407.02,
-        "receivables": 190844544.32,
-        "prepayments": 17791837.28,
-        "inventory": 298154117.69,
-        "accountsPayable": 59368817.66,
-        "customerAdvances": 84635274.61,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.17592362191209945,
-        "prepaymentsToRevenueRatio": 0.016400806561805918,
-        "inventoryToRevenueRatio": 0.27484334152136564,
-        "accountsPayableToRevenueRatio": 0.054727147001244765,
-        "advancesToRevenueRatio": 0.07801818021033147,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 97539292.00999999
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.2774215024558079,
+        "longTermOperatingAssetsPerYuanRevenue": 0.7377635233229826,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 843739115.45,
+        "longTermOperatingAssets": 830776687.73,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.18551800340227997,
+        "longTermOperatingAssetsPerYuanRevenue": 0.40302184231448795,
+        "fixedAssets": 714873428.71,
+        "longTermOperatingAssets": 1553000792.25,
+        "depreciation": 101291029.34,
+        "depreciationOverRevenue": 0.0262862050413984
       },
       {
         "year": "2024",
@@ -26407,26 +26416,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 901538969.35,
         "depreciation": 44200561.41,
         "depreciationOverRevenue": 0.030709475207926232
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.4991147483449339,
-        "longTermOperatingAssetsPerYuanRevenue": 0.7001648550067006,
-        "fixedAssets": 541447053.42,
-        "longTermOperatingAssets": 759549179.6399999,
-        "depreciation": 38146372.370000005,
-        "depreciationOverRevenue": 0.035163949873702305
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 20.4,
-        "roa": 14.12517,
-        "roic": 18.996686,
-        "netProfitMargin": 21.488287,
-        "assetTurnover": 56.4651,
-        "equityMultiplier": 1.753026
+        "year": "2026Q1",
+        "roe": 6.99,
+        "roa": 4.935284,
+        "roic": 6.394063,
+        "netProfitMargin": 21.973849,
+        "assetTurnover": 19.413,
+        "equityMultiplier": 1.618767
+      },
+      {
+        "year": "2025",
+        "roe": 23.9,
+        "roa": 16.585375,
+        "roic": 22.085314,
+        "netProfitMargin": 19.786412,
+        "assetTurnover": 72.3481,
+        "equityMultiplier": 1.640176
       },
       {
         "year": "2024",
@@ -26508,32 +26517,38 @@ const data: ServiceData = {
         "netProfitMargin": 24.159039,
         "assetTurnover": 49.5098,
         "equityMultiplier": 1.41159
-      },
-      {
-        "year": "2015",
-        "roe": 8.07,
-        "roa": 6.435493,
-        "roic": 6.98956,
-        "netProfitMargin": 12.486951,
-        "assetTurnover": 41.3177,
-        "equityMultiplier": 1.571084
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 5755687724.88,
-        "avgTotalAssets": 5386265466.305,
-        "avgCurrentAssets": 2516072282.3050003,
-        "avgInventory": 421125243.52,
-        "equity": 3283285317.04,
-        "avgEquity": 3181788690.52,
-        "totalAssetsDays": 478.171243,
-        "currentAssetsDays": 223.366898,
-        "wcDays": 127.3242930892885,
-        "receivablesDays": 37.828456,
-        "inventoryDays": 196.95827,
+        "year": "2026Q1",
+        "totalAssets": 5965684837.28,
+        "avgTotalAssets": 5800595888.77,
+        "avgCurrentAssets": 2423176476.3050003,
+        "avgInventory": 414625509.645,
+        "equity": 3685325432.26,
+        "avgEquity": 3560619808.88,
+        "totalAssetsDays": 463.604878,
+        "currentAssetsDays": 193.669143,
+        "wcDays": 376.1453710454098,
+        "receivablesDays": 39.218782,
+        "inventoryDays": 151.925872,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 5635506940.26,
+        "avgTotalAssets": 5326175073.995,
+        "avgCurrentAssets": 2368963245.5150003,
+        "avgInventory": 435804988.76,
+        "equity": 3435914185.5,
+        "avgEquity": 3258103124.75,
+        "totalAssetsDays": 497.593668,
+        "currentAssetsDays": 221.318506,
+        "wcDays": 92.8702299380938,
+        "receivablesDays": 35.023385,
+        "inventoryDays": 203.871559,
+        "fixedAssetsDays": 67.71407124183219
       },
       {
         "year": "2024",
@@ -26669,24 +26684,141 @@ const data: ServiceData = {
         "receivablesDays": 7.333519,
         "inventoryDays": 300.328688,
         "fixedAssetsDays": 173.92821899441574
-      },
-      {
-        "year": "2015",
-        "totalAssets": 2832731225.44,
-        "avgTotalAssets": 2653592199.365,
-        "avgCurrentAssets": 892268223.0250001,
-        "avgInventory": 260571340.29500002,
-        "equity": 1744806067.12,
-        "avgEquity": 1652779704.53,
-        "totalAssetsDays": 871.295685,
-        "currentAssetsDays": 296.410706,
-        "wcDays": 122.06419161604859,
-        "receivablesDays": 4.84361,
-        "inventoryDays": 234.563569,
-        "fixedAssetsDays": 182.1768831459009
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "制造业",
+        "mainBusinessIncome": 3701620000,
+        "mbiRatio": 0.960614,
+        "mainBusinessCost": 633460000,
+        "mbcRatio": 0.823154,
+        "mainBusinessProfit": 3068160000,
+        "mbpRatio": 0.994916,
+        "grossProfitRatio": 0.82887
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他",
+        "mainBusinessIncome": 146750000,
+        "mbiRatio": 0.038083,
+        "mainBusinessCost": 134300000,
+        "mbcRatio": 0.174517,
+        "mainBusinessProfit": 12450000,
+        "mbpRatio": 0.004037,
+        "grossProfitRatio": 0.084838
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 5018810.39,
+        "mbiRatio": 0.001302,
+        "mainBusinessCost": 1796644.37,
+        "mbcRatio": 0.002335,
+        "mainBusinessProfit": 3222166.02,
+        "mbpRatio": 0.001045,
+        "grossProfitRatio": 0.642018
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "贴剂",
+        "mainBusinessIncome": 2170600000,
+        "mbiRatio": 0.563296,
+        "mainBusinessCost": 351560000,
+        "mbcRatio": 0.456837,
+        "mainBusinessProfit": 1819040000,
+        "mbpRatio": 0.589862,
+        "grossProfitRatio": 0.838036
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "胶囊剂",
+        "mainBusinessIncome": 718040000,
+        "mbiRatio": 0.18634,
+        "mainBusinessCost": 140790000,
+        "mbcRatio": 0.182951,
+        "mainBusinessProfit": 577250000,
+        "mbpRatio": 0.187186,
+        "grossProfitRatio": 0.803925
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 453000000,
+        "mbiRatio": 0.117559,
+        "mainBusinessCost": 173260000,
+        "mbcRatio": 0.225144,
+        "mainBusinessProfit": 279740000,
+        "mbpRatio": 0.090712,
+        "grossProfitRatio": 0.617528
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "片剂",
+        "mainBusinessIncome": 370760000,
+        "mbiRatio": 0.096217,
+        "mainBusinessCost": 73010000,
+        "mbcRatio": 0.094873,
+        "mainBusinessProfit": 297750000,
+        "mbpRatio": 0.096552,
+        "grossProfitRatio": 0.80308
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "软膏剂",
+        "mainBusinessIncome": 135970000,
+        "mbiRatio": 0.035286,
+        "mainBusinessCost": 29140000,
+        "mbcRatio": 0.037866,
+        "mainBusinessProfit": 106830000,
+        "mbpRatio": 0.034642,
+        "grossProfitRatio": 0.785688
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 5018810.39,
+        "mbiRatio": 0.001302,
+        "mainBusinessCost": 1796644.37,
+        "mbcRatio": 0.002335,
+        "mainBusinessProfit": 3222166.02,
+        "mbpRatio": 0.001045,
+        "grossProfitRatio": 0.642018
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华东",
+        "mainBusinessIncome": 1192530000,
+        "mbiRatio": 0.309475,
+        "mainBusinessCost": 241960000,
+        "mbcRatio": 0.314417,
+        "mainBusinessProfit": 950570000,
+        "mbpRatio": 0.308242,
+        "grossProfitRatio": 0.797104
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华北",
+        "mainBusinessIncome": 791580000,
+        "mbiRatio": 0.205424,
+        "mainBusinessCost": 115510000,
+        "mbcRatio": 0.1501,
+        "mainBusinessProfit": 676070000,
+        "mbpRatio": 0.21923,
+        "grossProfitRatio": 0.854077
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -27922,165 +28054,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 157160000,
         "mbpRatio": 0.161936,
         "grossProfitRatio": 0.678965
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "制造业",
-        "mainBusinessIncome": 1055680000,
-        "mbiRatio": 0.985907,
-        "mainBusinessCost": 383400000,
-        "mbcRatio": 0.968157,
-        "mainBusinessProfit": 672280000,
-        "mbpRatio": 0.996325,
-        "grossProfitRatio": 0.636822
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他",
-        "mainBusinessIncome": 13470000,
-        "mbiRatio": 0.01258,
-        "mainBusinessCost": 12600000,
-        "mbcRatio": 0.031817,
-        "mainBusinessProfit": 870000,
-        "mbpRatio": 0.001289,
-        "grossProfitRatio": 0.064588
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 1620900,
-        "mbiRatio": 0.001514,
-        "mainBusinessCost": 5600,
-        "mbcRatio": 0.000014,
-        "mainBusinessProfit": 1615300,
-        "mbpRatio": 0.002394,
-        "grossProfitRatio": 0.996545
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "贴膏剂",
-        "mainBusinessIncome": 738790000,
-        "mbiRatio": 0.689961,
-        "mainBusinessCost": 233830000,
-        "mbcRatio": 0.590465,
-        "mainBusinessProfit": 504960000,
-        "mbpRatio": 0.748355,
-        "grossProfitRatio": 0.683496
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "胶囊剂",
-        "mainBusinessIncome": 176590000,
-        "mbiRatio": 0.164919,
-        "mainBusinessCost": 88640000,
-        "mbcRatio": 0.223833,
-        "mainBusinessProfit": 87950000,
-        "mbpRatio": 0.130343,
-        "grossProfitRatio": 0.498046
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "片剂",
-        "mainBusinessIncome": 88000000,
-        "mbiRatio": 0.082184,
-        "mainBusinessCost": 42980000,
-        "mbcRatio": 0.108533,
-        "mainBusinessProfit": 45020000,
-        "mbpRatio": 0.06672,
-        "grossProfitRatio": 0.511591
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "软膏剂",
-        "mainBusinessIncome": 40310000,
-        "mbiRatio": 0.037646,
-        "mainBusinessCost": 13410000,
-        "mbcRatio": 0.033863,
-        "mainBusinessProfit": 26900000,
-        "mbpRatio": 0.039866,
-        "grossProfitRatio": 0.667328
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他",
-        "mainBusinessIncome": 25460000,
-        "mbiRatio": 0.023777,
-        "mainBusinessCost": 17140000,
-        "mbcRatio": 0.043282,
-        "mainBusinessProfit": 8320000,
-        "mbpRatio": 0.01233,
-        "grossProfitRatio": 0.326787
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 1620900,
-        "mbiRatio": 0.001514,
-        "mainBusinessCost": 5600,
-        "mbcRatio": 0.000014,
-        "mainBusinessProfit": 1615300,
-        "mbpRatio": 0.002394,
-        "grossProfitRatio": 0.996545
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "其它",
-        "mainBusinessIncome": 493700000,
-        "mbiRatio": 0.46107,
-        "mainBusinessCost": 172590000,
-        "mbcRatio": 0.435822,
-        "mainBusinessProfit": 321110000,
-        "mbpRatio": 0.475888,
-        "grossProfitRatio": 0.650415
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "北京",
-        "mainBusinessIncome": 136520000,
-        "mbiRatio": 0.127497,
-        "mainBusinessCost": 53980000,
-        "mbcRatio": 0.13631,
-        "mainBusinessProfit": 82540000,
-        "mbpRatio": 0.122325,
-        "grossProfitRatio": 0.6046
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "河南",
-        "mainBusinessIncome": 115010000,
-        "mbiRatio": 0.107409,
-        "mainBusinessCost": 47240000,
-        "mbcRatio": 0.11929,
-        "mainBusinessProfit": 67770000,
-        "mbpRatio": 0.100436,
-        "grossProfitRatio": 0.589253
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 131909364.42,
-          "profit_tb": 0.73176,
-          "basicEps": 0.246,
-          "totalSharesOutstanding": 535481864,
-          "dps": 0,
-          "dividendRatio": 0,
-          "totalDividend": 0,
-          "totalDividendA": 0
-        },
         {
           "year": "2016",
           "profit": 345772174.73,
@@ -28179,31 +28156,42 @@ const data: ServiceData = {
           "dividendRatio": 0.706391846504618,
           "totalDividend": 510403937.4,
           "totalDividendA": 510403937.4
+        },
+        {
+          "year": "2025",
+          "profit": 759503032.53,
+          "profit_tb": 0.05114,
+          "basicEps": 1.34,
+          "totalSharesOutstanding": 567115486,
+          "dps": 1.1,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
-      "cash": 459656290.81,
-      "interestBearingDebt": 525076346.75,
-      "debtRatio": 42.955812,
-      "interestBearingDebtOverTotal": 0.09122738616972957,
-      "roe": 24.8,
-      "roic": 23.843124,
-      "roa": 16.892955,
-      "grossProfitMargin": 75.818256,
-      "netProfitMargin": 20.640374,
-      "tradingFinancialAssets": 325723298.21,
-      "longTermEquityInvestment": 72933218.23,
-      "minorityInterest": 35045586.97
+      "cash": 452893627.32,
+      "interestBearingDebt": 281002190.87,
+      "debtRatio": 38.224604,
+      "interestBearingDebtOverTotal": 0.047103090179017974,
+      "roe": 23.9,
+      "roic": 22.085314,
+      "roa": 16.585375,
+      "grossProfitMargin": 80.029223,
+      "netProfitMargin": 19.786412,
+      "tradingFinancialAssets": 290866573.38,
+      "longTermEquityInvestment": 72662921.29,
+      "minorityInterest": 36454544.09
     },
     "dynamicData": {
       "code": "600285",
-      "price": 22.57,
-      "marketValue": 12799796519,
-      "PB": 3.51,
-      "PE_TTM": 16.22,
+      "price": 22.19,
+      "marketValue": 12584292634,
+      "PB": 3.45,
+      "PE_TTM": 15.95,
       "totalSharesOutstanding": 567115486
     },
     "recentYearData": {
-      "netProfit": 799610236.06
+      "netProfit": 789019115.14
     }
   },
   "600309": {
@@ -28975,10 +28963,10 @@ const data: ServiceData = {
       },
       {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.778637043734052,
-        "longTermOperatingAssetsPerYuanRevenue": 0.913336181434055,
-        "fixedAssets": 158245967739.40997,
-        "longTermOperatingAssets": 185621489583.03998,
+        "fixedAssetsPerYuanRevenue": 0.9490053747466037,
+        "longTermOperatingAssetsPerYuanRevenue": 1.083704512446607,
+        "fixedAssets": 192870702884.21997,
+        "longTermOperatingAssets": 220246224727.84998,
         "depreciation": 16637061371.349998,
         "depreciationOverRevenue": 0.0818613735797819
       },
@@ -29194,7 +29182,7 @@ const data: ServiceData = {
         "wcDays": 30.954657350931658,
         "receivablesDays": 24.968952,
         "inventoryDays": 51.38631,
-        "fixedAssetsDays": 284.202520962929
+        "fixedAssetsDays": 346.38696178251035
       },
       {
         "year": "2024",
@@ -30854,10 +30842,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600309",
-      "price": 89.29,
-      "marketValue": 279519811486,
-      "PB": 2.51,
-      "PE_TTM": 21.24,
+      "price": 84.8,
+      "marketValue": 265463993885,
+      "PB": 2.38,
+      "PE_TTM": 20.17,
       "totalSharesOutstanding": 3130471626
     },
     "recentYearData": {
@@ -30867,38 +30855,55 @@ const data: ServiceData = {
   "600406": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 38576507202.81,
-        "netProfit": 4855280899.04,
-        "netProfitMargin": 0.12586108103344126,
-        "netProfitExcludingNon": 4638602096.7,
-        "coreProfit": 7092140775.189997,
-        "cashFlowFromOperating": 4714110770.9,
-        "fcf": 3476461732.5999994,
-        "capex": 1237649038.3,
-        "fcfOverNetProfit": 0.7160166023117994,
-        "netProfitExcludingNonOvernetProfit": 0.9553725506627552,
-        "cashFlowFromOperatingOverNetProfit": 0.9709244158936483,
-        "operatingProfit": 4598332002.79,
-        "financialProfit": 256948896.25,
-        "operatingProfitOverNetProfit": 0.9470784694865327
+        "year": "2026Q1",
+        "revenue": 9564242921.53,
+        "netProfit": 721291973.43,
+        "netProfitMargin": 0.0754154802787688,
+        "netProfitExcludingNon": 641986345.23,
+        "coreProfit": 1076634021.7200003,
+        "cashFlowFromOperating": -1514283397.01,
+        "fcf": -1965976602.8899999,
+        "capex": 451693205.88,
+        "fcfOverNetProfit": -2.725632164657374,
+        "netProfitExcludingNonOvernetProfit": 0.890050588220366,
+        "cashFlowFromOperatingOverNetProfit": -2.099404198010195,
+        "operatingProfit": 594191158.91,
+        "financialProfit": 127100814.52000001,
+        "operatingProfitOverNetProfit": 0.8237872883631432
+      },
+      {
+        "year": "2025",
+        "revenue": 66228963223.21,
+        "netProfit": 8278971723.32,
+        "netProfitMargin": 0.12500530463413062,
+        "netProfitExcludingNon": 7982955643.59,
+        "coreProfit": 12290992254.330002,
+        "cashFlowFromOperating": 12768702125.04,
+        "fcf": 10658347202.94,
+        "capex": 2110354922.1,
+        "fcfOverNetProfit": 1.2873998799775865,
+        "netProfitExcludingNonOvernetProfit": 0.9642448253692921,
+        "cashFlowFromOperatingOverNetProfit": 1.5423053190378029,
+        "operatingProfit": 7928309732.139999,
+        "financialProfit": 350661991.18,
+        "operatingProfitOverNetProfit": 0.9576442578983252
       },
       {
         "year": "2024",
-        "revenue": 57417254946.56,
-        "netProfit": 7610121306.96,
-        "netProfitMargin": 0.13254066767982853,
+        "revenue": 57829172321.78,
+        "netProfit": 7610235695.07,
+        "netProfitMargin": 0.13159855812433585,
         "netProfitExcludingNon": 7388560296.53,
-        "coreProfit": 10650462394.8,
-        "cashFlowFromOperating": 11085892935.16,
-        "fcf": 9254141491.38,
-        "capex": 1831751443.78,
-        "fcfOverNetProfit": 1.2160307461743645,
-        "netProfitExcludingNonOvernetProfit": 0.9708860080551717,
-        "cashFlowFromOperatingOverNetProfit": 1.4567301213741701,
-        "operatingProfit": 7423635793.87,
+        "coreProfit": 10683187634.679996,
+        "cashFlowFromOperating": 11086788479.77,
+        "fcf": 9236618723.78,
+        "capex": 1850169755.99,
+        "fcfOverNetProfit": 1.2137099419619277,
+        "netProfitExcludingNonOvernetProfit": 0.9708714148388855,
+        "cashFlowFromOperatingOverNetProfit": 1.4568259018511283,
+        "operatingProfit": 7423750181.98,
         "financialProfit": 186485513.09,
-        "operatingProfitOverNetProfit": 0.9754950669551816
+        "operatingProfitOverNetProfit": 0.9754954352845067
       },
       {
         "year": "2023",
@@ -31035,58 +31040,58 @@ const data: ServiceData = {
         "operatingProfit": 3144213926.68,
         "financialProfit": 16936282.54,
         "operatingProfitOverNetProfit": 0.9946423670439315
-      },
-      {
-        "year": "2015",
-        "revenue": 9711555239.79,
-        "netProfit": 1299503413.76,
-        "netProfitMargin": 0.13381002132755207,
-        "netProfitExcludingNon": 1274491341.59,
-        "coreProfit": 1230022012.3500013,
-        "cashFlowFromOperating": 1199945731.79,
-        "fcf": 1027093474.6099999,
-        "capex": 172852257.18,
-        "fcfOverNetProfit": 0.7903738179788188,
-        "netProfitExcludingNonOvernetProfit": 0.9807525921785539,
-        "cashFlowFromOperatingOverNetProfit": 0.9233879027051275,
-        "operatingProfit": 1299503413.76,
-        "financialProfit": 0,
-        "operatingProfitOverNetProfit": 1
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 26.470646,
-        "netProfitMargin": 12.586108103344126,
-        "grossProfitMinusNetProfit": 13.884537896655873,
-        "devExpenses": 2305177025.37,
-        "manageExpenses": 959564240.87,
-        "devAndManageExpenses": 3264741266.24,
-        "sellingExpenses": 1510118490.13,
-        "financialExpenses": -159278706.81,
-        "totalOperatingExpenses": 4615581049.559999,
-        "sellingExpensesRatio": 0.0391460658216356,
-        "devExpensesRatio": 0.059755980842197284,
-        "manageExpensesRatio": 0.024874316272990707,
-        "devAndManageExpensesRatio": 0.08463029711518799,
-        "totalOperatingExpensesRatio": 11.964745
+        "year": "2026Q1",
+        "grossProfitMargin": 25.095322,
+        "netProfitMargin": 7.541548027876881,
+        "grossProfitMinusNetProfit": 17.553773972123118,
+        "devExpenses": 837373918.18,
+        "manageExpenses": 339145376.69,
+        "devAndManageExpenses": 1176519294.87,
+        "sellingExpenses": 502003520.27,
+        "financialExpenses": 69617855.28,
+        "totalOperatingExpenses": 1748140670.4199998,
+        "sellingExpensesRatio": 0.05248753345023717,
+        "devExpensesRatio": 0.08755255643862761,
+        "manageExpensesRatio": 0.03545972007115714,
+        "devAndManageExpensesRatio": 0.12301227650978475,
+        "totalOperatingExpensesRatio": 18.277878
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 25.837093,
+        "netProfitMargin": 12.500530463413062,
+        "grossProfitMinusNetProfit": 13.336562536586937,
+        "devExpenses": 3604120246.36,
+        "manageExpenses": 1569344581.33,
+        "devAndManageExpenses": 5173464827.690001,
+        "sellingExpenses": 2426002615.44,
+        "financialExpenses": -169421300.09,
+        "totalOperatingExpenses": 7430046143.040001,
+        "sellingExpensesRatio": 0.03663053892696006,
+        "devExpensesRatio": 0.0544190950749616,
+        "manageExpensesRatio": 0.023695744353431487,
+        "devAndManageExpensesRatio": 0.07811483942839309,
+        "totalOperatingExpensesRatio": 11.218726
       },
       {
         "year": "2024",
         "grossProfitMargin": 26.65801,
-        "netProfitMargin": 13.254066767982852,
-        "grossProfitMinusNetProfit": 13.403943232017149,
-        "devExpenses": 3235169857.71,
-        "manageExpenses": 1451165183.29,
-        "devAndManageExpenses": 4686335041,
-        "sellingExpenses": 2261396238.07,
-        "financialExpenses": -475852442.3,
-        "totalOperatingExpenses": 6471878836.7699995,
-        "sellingExpensesRatio": 0.03938530743371049,
-        "devExpensesRatio": 0.05634490643485259,
-        "manageExpensesRatio": 0.025274025807061725,
-        "devAndManageExpensesRatio": 0.08161893224191431,
+        "netProfitMargin": 13.159855812433586,
+        "grossProfitMinusNetProfit": 13.498154187566415,
+        "devExpenses": 3259035257.32,
+        "manageExpenses": 1476737843.35,
+        "devAndManageExpenses": 4735773100.67,
+        "sellingExpenses": 2265476251.92,
+        "financialExpenses": -476316560.54,
+        "totalOperatingExpenses": 6524932792.05,
+        "sellingExpensesRatio": 0.03917531863181728,
+        "devExpensesRatio": 0.056356249388901616,
+        "manageExpensesRatio": 0.025536209218644156,
+        "devAndManageExpensesRatio": 0.08189245860754577,
         "totalOperatingExpensesRatio": 11.271661
       },
       {
@@ -31224,41 +31229,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.0639998866078606,
         "devAndManageExpensesRatio": 0.0639998866078606,
         "totalOperatingExpensesRatio": 9.766052
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 25.192208,
-        "netProfitMargin": 13.381002132755206,
-        "grossProfitMinusNetProfit": 11.811205867244794,
-        "devExpenses": 0,
-        "manageExpenses": 625058373.37,
-        "devAndManageExpenses": 625058373.37,
-        "sellingExpenses": 405099313,
-        "financialExpenses": -15563371.5,
-        "totalOperatingExpenses": 1014594314.87,
-        "sellingExpensesRatio": 0.041713124519977475,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.06436233517048048,
-        "devAndManageExpensesRatio": 0.06436233517048048,
-        "totalOperatingExpensesRatio": 10.397646
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 76575475093.77,
-        "cash": 6128493944.18,
-        "inventory": 15936892141.33,
-        "nonCurrentAssets": 16242382318.27,
+        "year": "2026Q1",
+        "currentAssets": 77564146362.27,
+        "cash": 5603870216.15,
+        "inventory": 16590949099.58,
+        "nonCurrentAssets": 18299294449.48,
         "goodwill": 1444697.69,
-        "totalAssets": 92817857412.04,
-        "equity": 49220127964.58,
-        "interestFreeLiabilities": 35511005959.22,
-        "interestBearingDebt": 711143426.0400001,
-        "interestExpense": 15924417.73,
-        "interestFreeLiabilitiesOverTotal": 0.38258808110144593,
-        "interestBearingDebtOverTotal": 0.0076617091351621,
-        "debtRatio": 43.18176
+        "totalAssets": 95863440811.75,
+        "equity": 53493346571.18,
+        "interestFreeLiabilities": 34931280346.66,
+        "interestBearingDebt": 647057775.17,
+        "interestExpense": 3682691.5,
+        "interestFreeLiabilitiesOverTotal": 0.36438583938642094,
+        "interestBearingDebtOverTotal": 0.006749786672488079,
+        "debtRatio": 40.194985
+      },
+      {
+        "year": "2025",
+        "currentAssets": 81929921500.23,
+        "cash": 7323259338.52,
+        "inventory": 13058218914.99,
+        "nonCurrentAssets": 16655736160.79,
+        "goodwill": 1444697.69,
+        "totalAssets": 98585657661.02,
+        "equity": 52646425094.68,
+        "interestFreeLiabilities": 37548206632.42,
+        "interestBearingDebt": 903595070.85,
+        "interestExpense": 20002353.81,
+        "interestFreeLiabilitiesOverTotal": 0.3808688558078795,
+        "interestBearingDebtOverTotal": 0.009165583435644864,
+        "debtRatio": 42.730569
       },
       {
         "year": "2024",
@@ -31403,46 +31407,48 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.37651460185678126,
         "interestBearingDebtOverTotal": 0.002187733065456565,
         "debtRatio": 48.947301
-      },
-      {
-        "year": "2015",
-        "currentAssets": 14856471516.96,
-        "cash": 4175522388.39,
-        "inventory": 2148327937.13,
-        "nonCurrentAssets": 1477350800.81,
-        "goodwill": 1444697.69,
-        "totalAssets": 16333822317.77,
-        "equity": 8059083310.69,
-        "interestFreeLiabilities": 7893833753.12,
-        "interestBearingDebt": 101143000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.4832814756734612,
-        "interestBearingDebtOverTotal": 0.00619224318915015,
-        "debtRatio": 49.991108
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.4555086424923929,
-        "wc": 17571932428.05,
-        "receivables": 30979443253.58,
-        "prepayments": 2585103614.88,
-        "inventory": 15936892141.33,
-        "accountsPayable": 25191996609.52,
-        "customerAdvances": 10584711.2,
-        "contractLiabilities": 8225597738.23,
-        "receivablesToRevenueRatio": 0.8030650128771479,
-        "prepaymentsToRevenueRatio": 0.06701238142917448,
-        "inventoryToRevenueRatio": 0.4131242898053021,
-        "accountsPayableToRevenueRatio": 0.6530398534288495,
-        "advancesToRevenueRatio": 0.0002743823110877437,
-        "contractLiabilitiesToRevenueRatio": 0.21322816228501965,
-        "changeInWC": 2859785682.170002
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 1.7769673485626223,
+        "wc": 16995347385.279993,
+        "receivables": 29646499284.57,
+        "prepayments": 2815483394.73,
+        "inventory": 16590949099.58,
+        "accountsPayable": 24837415178.3,
+        "customerAdvances": 4766484.29,
+        "contractLiabilities": 8634661875.03,
+        "receivablesToRevenueRatio": 3.099722531914468,
+        "prepaymentsToRevenueRatio": 0.2943759812281728,
+        "inventoryToRevenueRatio": 1.7346850383977837,
+        "accountsPayableToRevenueRatio": 2.5969034226837406,
+        "advancesToRevenueRatio": 0.0004983650383105808,
+        "contractLiabilitiesToRevenueRatio": 0.9028066252471039,
+        "changeInWC": 1083160767.7999916
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.2402602402796419,
+        "wc": 15912186617.480001,
+        "receivables": 34587988227.43,
+        "prepayments": 2412648345.32,
+        "inventory": 13058218914.99,
+        "accountsPayable": 27828765884.55,
+        "customerAdvances": 5541838.36,
+        "contractLiabilities": 7806968367.65,
+        "receivablesToRevenueRatio": 0.5222486740560753,
+        "prepaymentsToRevenueRatio": 0.03642890101100791,
+        "inventoryToRevenueRatio": 0.19716779909388246,
+        "accountsPayableToRevenueRatio": 0.4201902691841835,
+        "advancesToRevenueRatio": 0.00008367696080825645,
+        "contractLiabilitiesToRevenueRatio": 0.1178784626499187,
+        "changeInWC": 1200039871.6000042
       },
       {
         "year": "2024",
-        "wcPerYuanRevenue": 0.25623215111159603,
+        "wcPerYuanRevenue": 0.25440700869825544,
         "wc": 14712146745.879997,
         "receivables": 33537723181.21,
         "prepayments": 1567515459.56,
@@ -31450,12 +31456,12 @@ const data: ServiceData = {
         "accountsPayable": 26816093748.27,
         "customerAdvances": 8600.04,
         "contractLiabilities": 6436584866.52,
-        "receivablesToRevenueRatio": 0.5841053044494131,
-        "prepaymentsToRevenueRatio": 0.027300424950982675,
-        "inventoryToRevenueRatio": 0.197401290430884,
-        "accountsPayableToRevenueRatio": 0.467038937567262,
-        "advancesToRevenueRatio": 1.4978145520896675e-7,
-        "contractLiabilitiesToRevenueRatio": 0.11210192602399274,
+        "receivablesToRevenueRatio": 0.5799447205399273,
+        "prepaymentsToRevenueRatio": 0.027105963938716653,
+        "inventoryToRevenueRatio": 0.1959952004220753,
+        "accountsPayableToRevenueRatio": 0.4637122177550231,
+        "advancesToRevenueRatio": 1.487145614353017e-7,
+        "contractLiabilitiesToRevenueRatio": 0.11130342365449716,
         "changeInWC": 2607124624.869999
       },
       {
@@ -31601,44 +31607,35 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.1115245191631932,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 3937074415.000002
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.3988908912599426,
-        "wc": 3873850925.119999,
-        "receivables": 7940088926.46,
-        "prepayments": 479753026.64,
-        "inventory": 2148327937.13,
-        "accountsPayable": 5197810066.06,
-        "customerAdvances": 1496508899.05,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.8175919026777522,
-        "prepaymentsToRevenueRatio": 0.04940022630714851,
-        "inventoryToRevenueRatio": 0.22121358362128357,
-        "accountsPayableToRevenueRatio": 0.5352191217286837,
-        "advancesToRevenueRatio": 0.15409569961755784,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 709075897.539998
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.05759667784511485,
+        "longTermOperatingAssetsPerYuanRevenue": 0.24466053769948257,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 2221878657.75,
+        "longTermOperatingAssets": 2339992815.87,
         "depreciation": 0,
         "depreciationOverRevenue": 0
       },
       {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.13181264965341674,
+        "longTermOperatingAssetsPerYuanRevenue": 0.16697742369420718,
+        "fixedAssets": 8729815126.250002,
+        "longTermOperatingAssets": 11058741652.95,
+        "depreciation": 1220661952.5,
+        "depreciationOverRevenue": 0.018430938566651425
+      },
+      {
         "year": "2024",
-        "fixedAssetsPerYuanRevenue": 0.16226450528332323,
-        "longTermOperatingAssetsPerYuanRevenue": 0.20234486697201587,
-        "fixedAssets": 9316782468.630001,
-        "longTermOperatingAssets": 11618086814.060003,
-        "depreciation": 1741356744.8300002,
-        "depreciationOverRevenue": 0.030328108622586267
+        "fixedAssetsPerYuanRevenue": 0.16138337323124838,
+        "longTermOperatingAssetsPerYuanRevenue": 0.20117824237834267,
+        "fixedAssets": 9332666900.46,
+        "longTermOperatingAssets": 11633971245.890001,
+        "depreciation": 1752095625.25,
+        "depreciationOverRevenue": 0.030297781464012314
       },
       {
         "year": "2023",
@@ -31711,30 +31708,30 @@ const data: ServiceData = {
         "longTermOperatingAssets": 6405829503.05,
         "depreciation": 506830696.7,
         "depreciationOverRevenue": 0.017941939861510346
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.060992019811937796,
-        "longTermOperatingAssetsPerYuanRevenue": 0.10328299375782465,
-        "fixedAssets": 592327369.59,
-        "longTermOperatingAssets": 1003038499.21,
-        "depreciation": 108356280.53,
-        "depreciationOverRevenue": 0.011157459114894873
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 9.68,
-        "roa": 6.33001,
-        "roic": 9.728368,
-        "netProfitMargin": 13.339429,
-        "assetTurnover": 41.5046,
-        "equityMultiplier": 1.759998
+        "year": "2026Q1",
+        "roe": 1.36,
+        "roa": 0.903113,
+        "roic": 1.346405,
+        "netProfitMargin": 7.789957,
+        "assetTurnover": 9.8372,
+        "equityMultiplier": 1.6721
+      },
+      {
+        "year": "2025",
+        "roe": 16.26,
+        "roa": 10.267164,
+        "roic": 15.996003,
+        "netProfitMargin": 13.374922,
+        "assetTurnover": 69.1116,
+        "equityMultiplier": 1.746132
       },
       {
         "year": "2024",
-        "roe": 15.87,
+        "roe": 15.85,
         "roa": 10.235328,
         "roic": 15.573903,
         "netProfitMargin": 14.188424,
@@ -31812,32 +31809,38 @@ const data: ServiceData = {
         "netProfitMargin": 12.713217,
         "assetTurnover": 67.414,
         "equityMultiplier": 1.95876
-      },
-      {
-        "year": "2015",
-        "roe": 17.09,
-        "roa": 9.910038,
-        "roic": 16.549385,
-        "netProfitMargin": 13.693743,
-        "assetTurnover": 62.246100000000006,
-        "equityMultiplier": 1.999644
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 92817857412.04,
-        "avgTotalAssets": 92945044829.625,
-        "avgCurrentAssets": 76088162986.595,
-        "avgInventory": 13635566180.39,
-        "equity": 52737472173.93,
-        "avgEquity": 52787403110.82,
-        "totalAssetsDays": 650.529659,
-        "currentAssetsDays": 532.547021,
-        "wcDays": 166.26065450972342,
-        "receivablesDays": 209.21768,
-        "inventoryDays": 129.793603,
+        "year": "2026Q1",
+        "totalAssets": 95863440811.75,
+        "avgTotalAssets": 97224549236.38501,
+        "avgCurrentAssets": 79747033931.25,
+        "avgInventory": 14824584007.285,
+        "equity": 57331144983.06,
+        "avgEquity": 56895294769.979996,
+        "totalAssetsDays": 914.887827,
+        "currentAssetsDays": 750.423542,
+        "wcDays": 648.5930822253571,
+        "receivablesDays": 272.431026,
+        "inventoryDays": 186.236794,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 98585657661.02,
+        "avgTotalAssets": 95828944954.115,
+        "avgCurrentAssets": 78765386189.825,
+        "avgInventory": 12196229567.220001,
+        "equity": 56459444556.9,
+        "avgEquity": 54648389302.305,
+        "totalAssetsDays": 520.896274,
+        "currentAssetsDays": 428.144087,
+        "wcDays": 87.69498770206928,
+        "receivablesDays": 168.985649,
+        "inventoryDays": 89.390917,
+        "fixedAssetsDays": 48.11161712349711
       },
       {
         "year": "2024",
@@ -31849,10 +31852,10 @@ const data: ServiceData = {
         "avgEquity": 51651906439.994995,
         "totalAssetsDays": 560.922636,
         "currentAssetsDays": 447.426404,
-        "wcDays": 93.52473515573256,
+        "wcDays": 92.85855817486323,
         "receivablesDays": 179.645006,
         "inventoryDays": 90.258384,
-        "fixedAssetsDays": 59.22654442841297
+        "fixedAssetsDays": 58.904931229405655
       },
       {
         "year": "2023",
@@ -31973,24 +31976,141 @@ const data: ServiceData = {
         "receivablesDays": 214.693689,
         "inventoryDays": 85.66263,
         "fixedAssetsDays": 70.02382967019388
-      },
-      {
-        "year": "2015",
-        "totalAssets": 16333822317.77,
-        "avgTotalAssets": 15565246799.555,
-        "avgCurrentAssets": 14165699340.145,
-        "avgInventory": 2126013537.27,
-        "equity": 8159441438.98,
-        "avgEquity": 7689070614.315,
-        "totalAssetsDays": 578.349221,
-        "currentAssetsDays": 526.330163,
-        "wcDays": 145.59517530987904,
-        "receivablesDays": 249.539583,
-        "inventoryDays": 105.714721,
-        "fixedAssetsDays": 22.26208723135729
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "电工电气装备制造业",
+        "mainBusinessIncome": 66156250303.69,
+        "mbiRatio": 0.998902,
+        "mainBusinessCost": 49093485223.68,
+        "mbcRatio": 0.999515,
+        "mainBusinessProfit": 17062765080.01,
+        "mbpRatio": 0.997144,
+        "grossProfitRatio": 0.257916
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 72712919.52,
+        "mbiRatio": 0.001098,
+        "mainBusinessCost": 23838628.91,
+        "mbcRatio": 0.000485,
+        "mainBusinessProfit": 48874290.61,
+        "mbpRatio": 0.002856,
+        "grossProfitRatio": 0.672154
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "电网智能",
+        "mainBusinessIncome": 33422155368.42,
+        "mbiRatio": 0.504646,
+        "mainBusinessCost": 23355515362.68,
+        "mbcRatio": 0.475505,
+        "mainBusinessProfit": 10066640005.74,
+        "mbpRatio": 0.588292,
+        "grossProfitRatio": 0.301197
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "能源低碳",
+        "mainBusinessIncome": 16729807029.41,
+        "mbiRatio": 0.252606,
+        "mainBusinessCost": 13349087357.57,
+        "mbcRatio": 0.27178,
+        "mainBusinessProfit": 3380719671.84,
+        "mbpRatio": 0.197568,
+        "grossProfitRatio": 0.202078
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "数能融合",
+        "mainBusinessIncome": 12303335932.73,
+        "mbiRatio": 0.18577,
+        "mainBusinessCost": 9520677773.3,
+        "mbcRatio": 0.193835,
+        "mainBusinessProfit": 2782658159.43,
+        "mbpRatio": 0.162618,
+        "grossProfitRatio": 0.226171
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "工业互联",
+        "mainBusinessIncome": 3013877121.23,
+        "mbiRatio": 0.045507,
+        "mainBusinessCost": 2364168104,
+        "mbcRatio": 0.048133,
+        "mainBusinessProfit": 649709017.23,
+        "mbpRatio": 0.037969,
+        "grossProfitRatio": 0.215572
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "集成及其他",
+        "mainBusinessIncome": 687074851.9,
+        "mbiRatio": 0.010374,
+        "mainBusinessCost": 504036626.13,
+        "mbcRatio": 0.010262,
+        "mainBusinessProfit": 183038225.77,
+        "mbpRatio": 0.010697,
+        "grossProfitRatio": 0.266402
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 72712919.52,
+        "mbiRatio": 0.001098,
+        "mainBusinessCost": 23838628.91,
+        "mbcRatio": 0.000485,
+        "mainBusinessProfit": 48874290.61,
+        "mbpRatio": 0.002856,
+        "grossProfitRatio": 0.672154
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "国内",
+        "mainBusinessIncome": 60118741922.17,
+        "mbiRatio": 0.907741,
+        "mainBusinessCost": 44214809632.82,
+        "mbcRatio": 0.900188,
+        "mainBusinessProfit": 15903932289.35,
+        "mbpRatio": 0.929422,
+        "grossProfitRatio": 0.264542
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "海外",
+        "mainBusinessIncome": 6037508381.52,
+        "mbiRatio": 0.091161,
+        "mainBusinessCost": 4878675590.86,
+        "mbcRatio": 0.099327,
+        "mainBusinessProfit": 1158832790.66,
+        "mbpRatio": 0.067722,
+        "grossProfitRatio": 0.191939
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 72712919.52,
+        "mbiRatio": 0.001098,
+        "mainBusinessCost": 23838628.91,
+        "mbcRatio": 0.000485,
+        "mainBusinessProfit": 48874290.61,
+        "mbpRatio": 0.002856,
+        "grossProfitRatio": 0.672154
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -33190,153 +33310,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 238024884.83,
         "mbpRatio": 0.091544,
         "grossProfitRatio": 0.234924
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "电工电气装备制造业",
-        "mainBusinessIncome": 9662763993.89,
-        "mbiRatio": 0.998424,
-        "mainBusinessCost": 7237187887.18,
-        "mbcRatio": 0.999624,
-        "mainBusinessProfit": 2425576106.71,
-        "mbpRatio": 0.994861,
-        "grossProfitRatio": 0.251023
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 15249514.69,
-        "mbiRatio": 0.001576,
-        "mainBusinessCost": 2720245.15,
-        "mbcRatio": 0.000376,
-        "mainBusinessProfit": 12529269.54,
-        "mbpRatio": 0.005139,
-        "grossProfitRatio": 0.821618
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "电网自动化",
-        "mainBusinessIncome": 6162729822.55,
-        "mbiRatio": 0.636776,
-        "mainBusinessCost": 4336570129.45,
-        "mbcRatio": 0.598981,
-        "mainBusinessProfit": 1826159693.1,
-        "mbpRatio": 0.749008,
-        "grossProfitRatio": 0.296323
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "发电及新能源",
-        "mainBusinessIncome": 1896973352.84,
-        "mbiRatio": 0.196009,
-        "mainBusinessCost": 1625940569.25,
-        "mbcRatio": 0.22458,
-        "mainBusinessProfit": 271032783.59,
-        "mbpRatio": 0.111165,
-        "grossProfitRatio": 0.142876
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "节能环保",
-        "mainBusinessIncome": 1098658999.68,
-        "mbiRatio": 0.113521,
-        "mainBusinessCost": 874236574.97,
-        "mbcRatio": 0.120752,
-        "mainBusinessProfit": 224422424.71,
-        "mbpRatio": 0.092048,
-        "grossProfitRatio": 0.204269
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "工业控制(含轨道交通)",
-        "mainBusinessIncome": 504401818.82,
-        "mbiRatio": 0.052118,
-        "mainBusinessCost": 400440613.51,
-        "mbcRatio": 0.05531,
-        "mainBusinessProfit": 103961205.31,
-        "mbpRatio": 0.04264,
-        "grossProfitRatio": 0.206108
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 15249514.69,
-        "mbiRatio": 0.001576,
-        "mainBusinessCost": 2720245.15,
-        "mbcRatio": 0.000376,
-        "mainBusinessProfit": 12529269.54,
-        "mbpRatio": 0.005139,
-        "grossProfitRatio": 0.821618
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华东",
-        "mainBusinessIncome": 5058280263.07,
-        "mbiRatio": 0.522657,
-        "mainBusinessCost": 3766055038.86,
-        "mbcRatio": 0.52018,
-        "mainBusinessProfit": 1292225224.21,
-        "mbpRatio": 0.530012,
-        "grossProfitRatio": 0.255467
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华北",
-        "mainBusinessIncome": 1371182400.74,
-        "mbiRatio": 0.14168,
-        "mainBusinessCost": 1015062836.89,
-        "mbcRatio": 0.140204,
-        "mainBusinessProfit": 356119563.85,
-        "mbpRatio": 0.146064,
-        "grossProfitRatio": 0.259717
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "西北",
-        "mainBusinessIncome": 1341953442.69,
-        "mbiRatio": 0.13866,
-        "mainBusinessCost": 1028632298.97,
-        "mbcRatio": 0.142078,
-        "mainBusinessProfit": 313321143.72,
-        "mbpRatio": 0.12851,
-        "grossProfitRatio": 0.233481
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "中南",
-        "mainBusinessIncome": 921172705.65,
-        "mbiRatio": 0.095182,
-        "mainBusinessCost": 655764157.37,
-        "mbcRatio": 0.090576,
-        "mainBusinessProfit": 265408548.28,
-        "mbpRatio": 0.108859,
-        "grossProfitRatio": 0.28812
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 1299503413.76,
-          "profit_tb": 0.01282,
-          "basicEps": 0.54,
-          "totalSharesOutstanding": 2428953351,
-          "dps": 0.27,
-          "dividendRatio": 0.5046677044675469,
-          "totalDividend": 655817404.77,
-          "totalDividendA": 655817404.77
-        },
         {
           "year": "2016",
           "profit": 3161150209.22,
@@ -33427,39 +33404,50 @@ const data: ServiceData = {
         },
         {
           "year": "2024",
-          "profit": 7610121306.96,
-          "profit_tb": 0.06062,
+          "profit": 7610235695.07,
+          "profit_tb": 0.06063,
           "basicEps": 0.95,
           "totalSharesOutstanding": 8032824078,
           "dps": 0.57,
-          "dividendRatio": 0.5994561421692168,
+          "dividendRatio": 0.5994471318497105,
           "totalDividend": 4561933960.11,
           "totalDividendA": 4561933960.11
+        },
+        {
+          "year": "2025",
+          "profit": 8278971723.32,
+          "profit_tb": 0.08787,
+          "basicEps": 1.04,
+          "totalSharesOutstanding": 8031756156,
+          "dps": 0.622,
+          "dividendRatio": 0.14183864849813688,
+          "totalDividend": 1174278160.19,
+          "totalDividendA": 1174278160.19
         }
       ],
-      "cash": 6128493944.18,
-      "interestBearingDebt": 711143426.0400001,
-      "debtRatio": 43.18176,
-      "interestBearingDebtOverTotal": 0.0076617091351621,
-      "roe": 15.87,
-      "roic": 15.573903,
-      "roa": 10.235328,
-      "grossProfitMargin": 26.65801,
-      "netProfitMargin": 14.188424,
-      "tradingFinancialAssets": 14075635005.87,
-      "longTermEquityInvestment": 63198463.69,
-      "minorityInterest": 3517344209.35
+      "cash": 5603870216.15,
+      "interestBearingDebt": 647057775.17,
+      "debtRatio": 40.194985,
+      "interestBearingDebtOverTotal": 0.006749786672488079,
+      "roe": 16.26,
+      "roic": 15.996003,
+      "roa": 10.267164,
+      "grossProfitMargin": 25.837093,
+      "netProfitMargin": 13.374922,
+      "tradingFinancialAssets": 15402971387.54,
+      "longTermEquityInvestment": 49474524.44,
+      "minorityInterest": 3837798411.88
     },
     "dynamicData": {
       "code": "600406",
-      "price": 26.01,
-      "marketValue": 208905977618,
-      "PB": 4.24,
-      "PE_TTM": 26.15,
+      "price": 26.44,
+      "marketValue": 212359632765,
+      "PB": 3.97,
+      "PE_TTM": 25.52,
       "totalSharesOutstanding": 8031756156
     },
     "recentYearData": {
-      "netProfit": 7987419906.91
+      "netProfit": 8320071755.78
     }
   },
   "600415": {
@@ -36014,10 +36002,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600415",
-      "price": 13.82,
-      "marketValue": 75782788503,
-      "PB": 3.18,
-      "PE_TTM": 17.26,
+      "price": 13.18,
+      "marketValue": 72273310599,
+      "PB": 3.03,
+      "PE_TTM": 16.46,
       "totalSharesOutstanding": 5483559226
     },
     "recentYearData": {
@@ -36026,6 +36014,23 @@ const data: ServiceData = {
   },
   "600519": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 53909252220.51,
+        "netProfit": 27242512886.45,
+        "netProfitMargin": 0.5053402108977032,
+        "netProfitExcludingNon": 27239985194.41,
+        "coreProfit": 36567910177.380005,
+        "cashFlowFromOperating": 26909891269.13,
+        "fcf": 26305099685.24,
+        "capex": 604791583.89,
+        "fcfOverNetProfit": 0.9655900611989339,
+        "netProfitExcludingNonOvernetProfit": 0.9999072151658499,
+        "cashFlowFromOperatingOverNetProfit": 0.9877903474357742,
+        "operatingProfit": 26410562228.36,
+        "financialProfit": 831950658.09,
+        "operatingProfitOverNetProfit": 0.9694613099181537
+      },
       {
         "year": "2025",
         "revenue": 168838102514.79,
@@ -36195,26 +36200,26 @@ const data: ServiceData = {
         "operatingProfit": 15302678774.96,
         "financialProfit": 1415683959.2,
         "operatingProfitOverNetProfit": 0.9153216148189328
-      },
-      {
-        "year": "2015",
-        "revenue": 32659583725.28,
-        "netProfit": 15503090276.38,
-        "netProfitMargin": 0.47468732016874743,
-        "netProfitExcludingNon": 15616866431.94,
-        "coreProfit": 21374262043.42,
-        "cashFlowFromOperating": 17436340141.72,
-        "fcf": 15374869660.400002,
-        "capex": 2061470481.32,
-        "fcfOverNetProfit": 0.9917293511361828,
-        "netProfitExcludingNonOvernetProfit": 1.0073389339500491,
-        "cashFlowFromOperatingOverNetProfit": 1.1247009358053883,
-        "operatingProfit": 14638516059.9,
-        "financialProfit": 864574216.4799999,
-        "operatingProfitOverNetProfit": 0.9442321368793655
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 89.759217,
+        "netProfitMargin": 50.53402108977032,
+        "grossProfitMinusNetProfit": 39.22519591022969,
+        "devExpenses": 59310724.46,
+        "manageExpenses": 1853763865.81,
+        "devAndManageExpenses": 1913074590.27,
+        "sellingExpenses": 1605764764.88,
+        "financialExpenses": -115803334.98,
+        "totalOperatingExpenses": 3403036020.17,
+        "sellingExpensesRatio": 0.029786441079015378,
+        "devExpensesRatio": 0.0011001956439201912,
+        "manageExpensesRatio": 0.03438674790418866,
+        "devAndManageExpensesRatio": 0.03548694354810885,
+        "totalOperatingExpensesRatio": 6.312526
+      },
       {
         "year": "2025",
         "grossProfitMargin": 91.179551,
@@ -36384,26 +36389,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.10774456717657206,
         "devAndManageExpensesRatio": 0.10774456717657206,
         "totalOperatingExpensesRatio": 15.014765
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 92.227894,
-        "netProfitMargin": 47.468732016874746,
-        "grossProfitMinusNetProfit": 44.75916198312526,
-        "devExpenses": 0,
-        "manageExpenses": 3812852076.19,
-        "devAndManageExpenses": 3812852076.19,
-        "sellingExpenses": 1484961519.21,
-        "financialExpenses": -67266800.97,
-        "totalOperatingExpenses": 5230546794.429999,
-        "sellingExpensesRatio": 0.0454678642477789,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.11674527477944184,
-        "devAndManageExpensesRatio": 0.11674527477944184,
-        "totalOperatingExpensesRatio": 16.01535
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 271524528742.4,
+        "cash": 48786691397.55,
+        "inventory": 60692316104.51,
+        "nonCurrentAssets": 48394316163.18,
+        "goodwill": 0,
+        "totalAssets": 319918844905.58,
+        "equity": 270894035676.27002,
+        "interestFreeLiabilities": 6698808991.76,
+        "interestBearingDebt": 242421556.75,
+        "interestExpense": 15366726.62,
+        "interestFreeLiabilitiesOverTotal": 0.02093908845456437,
+        "interestBearingDebtOverTotal": 0.0007577595399906737,
+        "debtRatio": 12.122748
+      },
       {
         "year": "2025",
         "currentAssets": 252518662398.56998,
@@ -36563,25 +36567,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.16453505475935734,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 32.794215
-      },
-      {
-        "year": "2015",
-        "currentAssets": 65004514023.59,
-        "cash": 36800749895.06,
-        "inventory": 18013297022.7,
-        "nonCurrentAssets": 21296949399.18,
-        "goodwill": 0,
-        "totalAssets": 86301463422.77,
-        "equity": 63925978438.99,
-        "interestFreeLiabilities": 9142558145.13,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.10593746365971592,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 23.252552
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 1.068194465054578,
+        "wc": 57585564837.18,
+        "receivables": 3564004305.54,
+        "prepayments": 28053418.89,
+        "inventory": 60692316104.51,
+        "accountsPayable": 3671613767.68,
+        "customerAdvances": 0,
+        "contractLiabilities": 3027195224.08,
+        "receivablesToRevenueRatio": 0.06611118052541007,
+        "prepaymentsToRevenueRatio": 0.0005203822671338587,
+        "inventoryToRevenueRatio": 1.1258237427641289,
+        "accountsPayableToRevenueRatio": 0.06810730285520672,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.056153537646888206,
+        "changeInWC": 3705881348.850006
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.3191204040190525,
@@ -36761,33 +36767,24 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.4513662827491301,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -15023350658.899998
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.5795432076658451,
-        "wc": 18927639913.18,
-        "receivables": 8579166175.71,
-        "prepayments": 1477734859.9,
-        "inventory": 18013297022.7,
-        "accountsPayable": 880976072.09,
-        "customerAdvances": 8261582073.04,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.26268449248694303,
-        "prepaymentsToRevenueRatio": 0.04524659200589156,
-        "inventoryToRevenueRatio": 0.5515470489220257,
-        "accountsPayableToRevenueRatio": 0.026974504007780252,
-        "advancesToRevenueRatio": 0.2529604217412349,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 1412688105.6100006
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.16891586526970107,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 9106127984.87,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.13319972912619044,
-        "longTermOperatingAssetsPerYuanRevenue": 0.187451058314148,
-        "fixedAssets": 22489189521.15,
-        "longTermOperatingAssets": 31648881000.149998,
+        "fixedAssetsPerYuanRevenue": 0.14784029896061787,
+        "longTermOperatingAssetsPerYuanRevenue": 0.20209162814857543,
+        "fixedAssets": 24961075551.730003,
+        "longTermOperatingAssets": 34120767030.73,
         "depreciation": 2259387054.2799997,
         "depreciationOverRevenue": 0.013381973740684987
       },
@@ -36871,18 +36868,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 20920648792.419994,
         "depreciation": 934194672.1999999,
         "depreciationOverRevenue": 0.024038652282541928
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.49947759977519884,
-        "longTermOperatingAssetsPerYuanRevenue": 0.6152496194266093,
-        "fixedAssets": 16312730488.76,
-        "longTermOperatingAssets": 20093796457.61,
-        "depreciation": 848146697.7299999,
-        "depreciationOverRevenue": 0.025969305208060442
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 10.57,
+        "roa": 12.042771,
+        "roic": 9.898213,
+        "netProfitMargin": 52.224488,
+        "assetTurnover": 17.5399,
+        "equityMultiplier": 1.13795
+      },
       {
         "year": "2025",
         "roe": 32.53,
@@ -36972,18 +36969,24 @@ const data: ServiceData = {
         "netProfitMargin": 46.139044,
         "assetTurnover": 40.309,
         "equityMultiplier": 1.487967
-      },
-      {
-        "year": "2015",
-        "roe": 26.23,
-        "roa": 28.970763,
-        "roic": 24.413513,
-        "netProfitMargin": 50.383363,
-        "assetTurnover": 43.9585,
-        "equityMultiplier": 1.302974
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 319918844905.58,
+        "avgTotalAssets": 311876844463.51,
+        "avgCurrentAssets": 262021595570.485,
+        "avgInventory": 61059868950.345,
+        "equity": 281135886435.69,
+        "avgEquity": 267547570172.38,
+        "totalAssetsDays": 513.115568,
+        "currentAssetsDays": 431.09119,
+        "wcDays": 389.89097974492097,
+        "receivablesDays": 0.029177,
+        "inventoryDays": 995.409846,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 303834844021.44,
@@ -36997,7 +37000,7 @@ const data: ServiceData = {
         "wcDays": 116.47894746695418,
         "receivablesDays": 0.02301,
         "inventoryDays": 1399.297532,
-        "fixedAssetsDays": 48.61790113105951
+        "fixedAssetsDays": 53.96170912062553
       },
       {
         "year": "2024",
@@ -37133,21 +37136,6 @@ const data: ServiceData = {
         "receivablesDays": 0.002137,
         "inventoryDays": 2039.350887,
         "fixedAssetsDays": 161.55260752053124
-      },
-      {
-        "year": "2015",
-        "totalAssets": 86301463422.77,
-        "avgTotalAssets": 76087314323.7,
-        "avgCurrentAssets": 56287721548.955,
-        "avgInventory": 16497830695.275002,
-        "equity": 66234170421.29,
-        "avgEquity": 60772860631.205,
-        "totalAssetsDays": 818.953825,
-        "currentAssetsDays": 605.844026,
-        "wcDays": 211.53327079803344,
-        "receivablesDays": 0.025004,
-        "inventoryDays": 2339.806731,
-        "fixedAssetsDays": 182.30932391794758
       }
     ],
     "primaryBusinessData": [
@@ -38225,49 +38213,66 @@ const data: ServiceData = {
           "totalDividendA": 30000637540.76
         }
       ],
-      "cash": 51690610946.5,
-      "interestBearingDebt": 233711179.82,
-      "debtRatio": 16.415362,
-      "interestBearingDebtOverTotal": 0.0007692046663466559,
+      "cash": 48786691397.55,
+      "interestBearingDebt": 242421556.75,
+      "debtRatio": 12.122748,
+      "interestBearingDebtOverTotal": 0.0007577595399906737,
       "roe": 32.53,
       "roic": 31.700377,
       "roa": 38.084908,
       "grossProfitMargin": 91.179551,
       "netProfitMargin": 50.527886,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 147181873.67,
-      "minorityInterest": 9321442876.89
+      "longTermEquityInvestment": 147269141.83,
+      "minorityInterest": 10241850759.42
     },
     "dynamicData": {
       "code": "600519",
-      "price": 1401.03,
-      "marketValue": 1754468139321,
-      "PB": 6.48,
-      "PE_TTM": 21.21,
+      "price": 1371.05,
+      "marketValue": 1716925078276,
+      "PB": 6.34,
+      "PE_TTM": 20.76,
       "totalSharesOutstanding": 1252270215
     },
     "recentYearData": {
-      "netProfit": 82320067101.68
+      "netProfit": 82715105749.37
     }
   },
   "600612": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 48001461013.94,
-        "netProfit": 1437537679.05,
-        "netProfitMargin": 0.02994779010231642,
-        "netProfitExcludingNon": 1273780691.08,
-        "coreProfit": 2345018458.500003,
-        "cashFlowFromOperating": 2365936870.36,
-        "fcf": 2240435897.9700003,
-        "capex": 125500972.39,
-        "fcfOverNetProfit": 1.5585232516831125,
-        "netProfitExcludingNonOvernetProfit": 0.8860850812075971,
-        "cashFlowFromOperatingOverNetProfit": 1.645825987617615,
-        "operatingProfit": 1495928770.96,
-        "financialProfit": -58391091.91,
-        "operatingProfitOverNetProfit": 1.0406188253434776
+        "year": "2026Q1",
+        "revenue": 13742215546.74,
+        "netProfit": 547053537.21,
+        "netProfitMargin": 0.039808248920951826,
+        "netProfitExcludingNon": 653726282.73,
+        "coreProfit": 1222282945.569999,
+        "cashFlowFromOperating": -2349187765.15,
+        "fcf": -2367698278.82,
+        "capex": 18510513.67,
+        "fcfOverNetProfit": -4.328092440267141,
+        "netProfitExcludingNonOvernetProfit": 1.1949950750049734,
+        "cashFlowFromOperatingOverNetProfit": -4.294255690459426,
+        "operatingProfit": 782062157.54,
+        "financialProfit": -235008620.32999998,
+        "operatingProfitOverNetProfit": 1.4295898012625152
+      },
+      {
+        "year": "2025",
+        "revenue": 52823382917.63,
+        "netProfit": 1754963856.38,
+        "netProfitMargin": 0.03322323863877856,
+        "netProfitExcludingNon": 1588403009.62,
+        "coreProfit": 2739408629.469996,
+        "cashFlowFromOperating": 5962470282.18,
+        "fcf": 5791163328.110001,
+        "capex": 171306954.07,
+        "fcfOverNetProfit": 3.2998761239764516,
+        "netProfitExcludingNonOvernetProfit": 0.9050915800034943,
+        "cashFlowFromOperatingOverNetProfit": 3.3974889343185164,
+        "operatingProfit": 1830400348.8300002,
+        "financialProfit": -75436492.45,
+        "operatingProfitOverNetProfit": 1.0429846416356428
       },
       {
         "year": "2024",
@@ -38421,42 +38426,42 @@ const data: ServiceData = {
         "operatingProfit": 1039298691.9300001,
         "financialProfit": 18187890.770000003,
         "operatingProfitOverNetProfit": 0.9828008306984263
-      },
-      {
-        "year": "2015",
-        "revenue": 35712372882.39,
-        "netProfit": 1117351693.38,
-        "netProfitMargin": 0.03128752315226226,
-        "netProfitExcludingNon": 926792390.07,
-        "coreProfit": 1783823909.699998,
-        "cashFlowFromOperating": 956729899.41,
-        "fcf": 893792123.3199999,
-        "capex": 62937776.09,
-        "fcfOverNetProfit": 0.7999201402883901,
-        "netProfitExcludingNonOvernetProfit": 0.8294544999224405,
-        "cashFlowFromOperatingOverNetProfit": 0.8562477732645506,
-        "operatingProfit": 1067337426.2500001,
-        "financialProfit": 50014267.129999995,
-        "operatingProfitOverNetProfit": 0.9552385632685566
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 8.170558,
-        "netProfitMargin": 2.994779010231642,
-        "grossProfitMinusNetProfit": 5.175778989768357,
-        "devExpenses": 12739607.62,
-        "manageExpenses": 360177583.4,
-        "devAndManageExpenses": 372917191.02,
-        "sellingExpenses": 683804681.05,
-        "financialExpenses": 122114923.29,
-        "totalOperatingExpenses": 1178836795.36,
-        "sellingExpensesRatio": 0.01424549725374854,
-        "devExpensesRatio": 0.0002654004138811591,
-        "manageExpensesRatio": 0.007503471265080902,
-        "devAndManageExpensesRatio": 0.007768871678962061,
-        "totalOperatingExpensesRatio": 2.455835
+        "year": "2026Q1",
+        "grossProfitMargin": 12.745555,
+        "netProfitMargin": 3.9808248920951828,
+        "grossProfitMinusNetProfit": 8.764730107904818,
+        "devExpenses": 4303159.24,
+        "manageExpenses": 99266653.81,
+        "devAndManageExpenses": 103569813.05,
+        "sellingExpenses": 244499965.84,
+        "financialExpenses": 69643086.81,
+        "totalOperatingExpenses": 417712865.7,
+        "sellingExpensesRatio": 0.017791888433739605,
+        "devExpensesRatio": 0.00031313431414054763,
+        "manageExpensesRatio": 0.007223482521604645,
+        "devAndManageExpensesRatio": 0.007536616835745192,
+        "totalOperatingExpensesRatio": 3.039632
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 9.092955,
+        "netProfitMargin": 3.322323863877856,
+        "grossProfitMinusNetProfit": 5.7706311361221445,
+        "devExpenses": 18238914.13,
+        "manageExpenses": 480716121.29,
+        "devAndManageExpenses": 498955035.42,
+        "sellingExpenses": 957411010.63,
+        "financialExpenses": 171601068.45,
+        "totalOperatingExpenses": 1627967114.5,
+        "sellingExpensesRatio": 0.01812475759310865,
+        "devExpensesRatio": 0.00034528106915153087,
+        "manageExpensesRatio": 0.00910044178805442,
+        "devAndManageExpensesRatio": 0.00944572285720595,
+        "totalOperatingExpensesRatio": 3.081906
       },
       {
         "year": "2024",
@@ -38610,41 +38615,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.012660990353660317,
         "devAndManageExpensesRatio": 0.012660990353660317,
         "totalOperatingExpensesRatio": 3.588457
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 8.385987,
-        "netProfitMargin": 3.1287523152262264,
-        "grossProfitMinusNetProfit": 5.257234684773774,
-        "devExpenses": 0,
-        "manageExpenses": 443712629.5,
-        "devAndManageExpenses": 443712629.5,
-        "sellingExpenses": 551835270.47,
-        "financialExpenses": 156863270.72,
-        "totalOperatingExpenses": 1152411170.69,
-        "sellingExpensesRatio": 0.015452215182881717,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.012424619079814703,
-        "devAndManageExpensesRatio": 0.012424619079814703,
-        "totalOperatingExpensesRatio": 3.226924
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 23582231948.61,
-        "cash": 10675868083.6,
-        "inventory": 8050963569.32,
-        "nonCurrentAssets": 1308449133.97,
+        "year": "2026Q1",
+        "currentAssets": 23226903325.67,
+        "cash": 11002178814.65,
+        "inventory": 9572688693.86,
+        "nonCurrentAssets": 1264900241.65,
         "goodwill": 0,
-        "totalAssets": 24890681082.58,
-        "equity": 12860559241.11,
-        "interestFreeLiabilities": 654773998.5,
-        "interestBearingDebt": 7059735624.2699995,
-        "interestExpense": 155420085.02,
-        "interestFreeLiabilitiesOverTotal": 0.026305989632330724,
-        "interestBearingDebtOverTotal": 0.2836296685031583,
-        "debtRatio": 39.245746
+        "totalAssets": 24491803567.32,
+        "equity": 13729270889.73,
+        "interestFreeLiabilities": 557670623.21,
+        "interestBearingDebt": 6649915918.16,
+        "interestExpense": 46953946.27,
+        "interestFreeLiabilitiesOverTotal": 0.022769683811857504,
+        "interestBearingDebtOverTotal": 0.271515974717074,
+        "debtRatio": 33.936376
+      },
+      {
+        "year": "2025",
+        "currentAssets": 19466194700.52,
+        "cash": 10049402984.53,
+        "inventory": 8572059759.24,
+        "nonCurrentAssets": 1260210918.05,
+        "goodwill": 0,
+        "totalAssets": 20726405618.57,
+        "equity": 13185906274.73,
+        "interestFreeLiabilities": 1183255285.04,
+        "interestBearingDebt": 3043939796.24,
+        "interestExpense": 195493696.53,
+        "interestFreeLiabilitiesOverTotal": 0.05708926607032395,
+        "interestBearingDebtOverTotal": 0.14686288844568188,
+        "debtRatio": 25.095833
       },
       {
         "year": "2024",
@@ -38789,42 +38793,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.08106145547159531,
         "interestBearingDebtOverTotal": 0.3422625613858143,
         "debtRatio": 57.143919
-      },
-      {
-        "year": "2015",
-        "currentAssets": 10328696695.31,
-        "cash": 4728123356.75,
-        "inventory": 4914241649.73,
-        "nonCurrentAssets": 1231421286.58,
-        "goodwill": 0,
-        "totalAssets": 11560117981.89,
-        "equity": 4542400445.68,
-        "interestFreeLiabilities": 2608370243.8900003,
-        "interestBearingDebt": 2833305129.76,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.22563526150652224,
-        "interestBearingDebtOverTotal": 0.24509309802881218,
-        "debtRatio": 53.057181
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.23765816475309046,
-        "wc": 11407939130.04,
-        "receivables": 3966498362.36,
-        "prepayments": 45251196.86,
-        "inventory": 8050963569.32,
-        "accountsPayable": 419733161.7,
-        "customerAdvances": 1894660.82,
-        "contractLiabilities": 233146175.98,
-        "receivablesToRevenueRatio": 0.0826328673872676,
-        "prepaymentsToRevenueRatio": 0.0009427045740724162,
-        "inventoryToRevenueRatio": 0.16772330256743512,
-        "accountsPayableToRevenueRatio": 0.008744174715392645,
-        "advancesToRevenueRatio": 0.000039470899009715054,
-        "contractLiabilitiesToRevenueRatio": 0.0048570641612823515,
-        "changeInWC": 371645649.8200016
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.8124239688693066,
+        "wc": 11164505295.539999,
+        "receivables": 2109895831.89,
+        "prepayments": 39591393,
+        "inventory": 9572688693.86,
+        "accountsPayable": 365703742.44,
+        "customerAdvances": 1822958.53,
+        "contractLiabilities": 190143922.24,
+        "receivablesToRevenueRatio": 0.15353389158493594,
+        "prepaymentsToRevenueRatio": 0.002881005094509093,
+        "inventoryToRevenueRatio": 0.6965899102150879,
+        "accountsPayableToRevenueRatio": 0.026611701817379377,
+        "advancesToRevenueRatio": 0.00013265390313517907,
+        "contractLiabilitiesToRevenueRatio": 0.013836482304711554,
+        "changeInWC": 3499937760.3099976
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.14509800607018533,
+        "wc": 7664567535.230001,
+        "receivables": 237591861.82,
+        "prepayments": 38171199.21,
+        "inventory": 8572059759.24,
+        "accountsPayable": 1021943710.36,
+        "customerAdvances": 1456835.53,
+        "contractLiabilities": 159854739.15,
+        "receivablesToRevenueRatio": 0.004497853955898436,
+        "prepaymentsToRevenueRatio": 0.0007226193610038599,
+        "inventoryToRevenueRatio": 0.1622777506053866,
+        "accountsPayableToRevenueRatio": 0.019346426788938626,
+        "advancesToRevenueRatio": 0.000027579368255753567,
+        "contractLiabilitiesToRevenueRatio": 0.0030262116949092235,
+        "changeInWC": -3371725944.989998
       },
       {
         "year": "2024",
@@ -38987,35 +38993,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.018151006862541282,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 3959982672.95
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.07898188740633559,
-        "wc": 2820630614.0099993,
-        "receivables": 456271721.95,
-        "prepayments": 58487486.22,
-        "inventory": 4914241649.73,
-        "accountsPayable": 1830085131.15,
-        "customerAdvances": 778285112.74,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.012776292503794686,
-        "prepaymentsToRevenueRatio": 0.001637737330213657,
-        "inventoryToRevenueRatio": 0.1376061362798226,
-        "accountsPayableToRevenueRatio": 0.051245128325046886,
-        "advancesToRevenueRatio": 0.02179315038244847,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 649283020.5699997
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.01167211136797046,
+        "longTermOperatingAssetsPerYuanRevenue": 0.039467967320499904,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 560278398.78,
+        "longTermOperatingAssets": 542377314.11,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.007651508986280845,
+        "longTermOperatingAssetsPerYuanRevenue": 0.01859672390524121,
+        "fixedAssets": 404178589.08,
+        "longTermOperatingAssets": 982341867.86,
+        "depreciation": 262017470.55,
+        "depreciationOverRevenue": 0.0049602554035317326
       },
       {
         "year": "2024",
@@ -39097,26 +39094,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 579848559.64,
         "depreciation": 89803189.05,
         "depreciationOverRevenue": 0.0025684637551701365
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.011597781825755884,
-        "longTermOperatingAssetsPerYuanRevenue": 0.017257124293297742,
-        "fixedAssets": 414184309.17,
-        "longTermOperatingAssets": 616292857.64,
-        "depreciation": 84382934.94,
-        "depreciationOverRevenue": 0.002362848730827678
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 11.15,
-        "roa": 10.907441,
-        "roic": 8.034722,
-        "netProfitMargin": 3.828894,
-        "assetTurnover": 201.5943,
-        "equityMultiplier": 1.645975
+        "year": "2026Q1",
+        "roe": 4.06,
+        "roa": 4.283544,
+        "roic": 3.236474,
+        "netProfitMargin": 5.022629,
+        "assetTurnover": 60.78170000000001,
+        "equityMultiplier": 1.513692
+      },
+      {
+        "year": "2025",
+        "roe": 13.64,
+        "roa": 14.776555,
+        "roic": 11.183465,
+        "netProfitMargin": 4.275983,
+        "assetTurnover": 243.10330000000002,
+        "equityMultiplier": 1.335039
       },
       {
         "year": "2024",
@@ -39198,32 +39195,38 @@ const data: ServiceData = {
         "netProfitMargin": 3.905192,
         "assetTurnover": 272.9812,
         "equityMultiplier": 2.333391
-      },
-      {
-        "year": "2015",
-        "roe": 26.09,
-        "roa": 17.856675,
-        "roic": 17.971436,
-        "netProfitMargin": 3.980801,
-        "assetTurnover": 308.7717,
-        "equityMultiplier": 2.130251
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 24890681082.58,
-        "avgTotalAssets": 23810911742.035004,
-        "avgCurrentAssets": 22548785554.65,
-        "avgInventory": 9937800251.7,
-        "equity": 15122147421,
-        "avgEquity": 14935839338.715,
-        "totalAssetsDays": 133.932301,
-        "currentAssetsDays": 126.833058,
-        "wcDays": 86.74523013487801,
-        "receivablesDays": 11.834207,
-        "inventoryDays": 60.872007,
+        "year": "2026Q1",
+        "totalAssets": 24491803567.32,
+        "avgTotalAssets": 22609104592.945,
+        "avgCurrentAssets": 21346549013.095,
+        "avgInventory": 9072374226.55,
+        "equity": 16180172800.42,
+        "avgEquity": 15852557119.755001,
+        "totalAssetsDays": 148.070695,
+        "currentAssetsDays": 139.802014,
+        "wcDays": 296.5347486372969,
+        "receivablesDays": 7.684157,
+        "inventoryDays": 68.095615,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 20726405618.57,
+        "avgTotalAssets": 21728774010.03,
+        "avgCurrentAssets": 20490766930.605,
+        "avgInventory": 10198348346.66,
+        "equity": 15524941439.09,
+        "avgEquity": 15137236347.76,
+        "totalAssetsDays": 148.085151,
+        "currentAssetsDays": 139.64793,
+        "wcDays": 52.960772215617645,
+        "receivablesDays": 1.631549,
+        "inventoryDays": 76.455475,
+        "fixedAssetsDays": 2.7928007799925085
       },
       {
         "year": "2024",
@@ -39359,24 +39362,129 @@ const data: ServiceData = {
         "receivablesDays": 4.730749,
         "inventoryDays": 69.6605,
         "fixedAssetsDays": 4.180867192736145
-      },
-      {
-        "year": "2015",
-        "totalAssets": 11560117981.89,
-        "avgTotalAssets": 11565947006.715,
-        "avgCurrentAssets": 10279482005.904999,
-        "avgInventory": 5025296381.91,
-        "equity": 5426645242.57,
-        "avgEquity": 5028014785.565001,
-        "totalAssetsDays": 116.59099,
-        "currentAssetsDays": 103.622728,
-        "wcDays": 28.82838890331249,
-        "receivablesDays": 3.643513,
-        "inventoryDays": 55.294708,
-        "fixedAssetsDays": 4.233190366400898
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "珠宝首饰",
+        "mainBusinessIncome": 42583268956.11,
+        "mbiRatio": 0.806144,
+        "mainBusinessCost": 38057557326.22,
+        "mbcRatio": 0.792533,
+        "mainBusinessProfit": 4525711629.89,
+        "mbpRatio": 0.942227,
+        "grossProfitRatio": 0.106279
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "黄金交易",
+        "mainBusinessIncome": 9791399851.9,
+        "mbiRatio": 0.185361,
+        "mainBusinessCost": 9697160299.5,
+        "mbcRatio": 0.201939,
+        "mainBusinessProfit": 94239552.4,
+        "mbpRatio": 0.01962,
+        "grossProfitRatio": 0.009625
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 199179889.81,
+        "mbiRatio": 0.003771,
+        "mainBusinessCost": 86906821.83,
+        "mbcRatio": 0.00181,
+        "mainBusinessProfit": 112273067.98,
+        "mbpRatio": 0.023375,
+        "grossProfitRatio": 0.563677
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "笔类",
+        "mainBusinessIncome": 186564071.11,
+        "mbiRatio": 0.003532,
+        "mainBusinessCost": 135577529.67,
+        "mbcRatio": 0.002823,
+        "mainBusinessProfit": 50986541.44,
+        "mbpRatio": 0.010615,
+        "grossProfitRatio": 0.273292
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "工艺品销售",
+        "mainBusinessIncome": 50331149.66,
+        "mbiRatio": 0.000953,
+        "mainBusinessCost": 42795809.22,
+        "mbcRatio": 0.000891,
+        "mainBusinessProfit": 7535340.44,
+        "mbpRatio": 0.001569,
+        "grossProfitRatio": 0.149715
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他",
+        "mainBusinessIncome": 12638999.04,
+        "mbiRatio": 0.000239,
+        "mainBusinessCost": 178278.92,
+        "mbcRatio": 0.000004,
+        "mainBusinessProfit": 12460720.12,
+        "mbpRatio": 0.002594,
+        "grossProfitRatio": 0.985895
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "珠宝首饰",
+        "mainBusinessIncome": 42583268956.11,
+        "mbiRatio": 0.806144,
+        "mainBusinessCost": 38057557326.22,
+        "mbcRatio": 0.792533,
+        "mainBusinessProfit": 4525711629.89,
+        "mbpRatio": 0.942227,
+        "grossProfitRatio": 0.106279
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "黄金交易",
+        "mainBusinessIncome": 9791399851.9,
+        "mbiRatio": 0.185361,
+        "mainBusinessCost": 9697160299.5,
+        "mbcRatio": 0.201939,
+        "mainBusinessProfit": 94239552.4,
+        "mbpRatio": 0.01962,
+        "grossProfitRatio": 0.009625
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 199179889.81,
+        "mbiRatio": 0.003771,
+        "mainBusinessCost": 86906821.83,
+        "mbcRatio": 0.00181,
+        "mainBusinessProfit": 112273067.98,
+        "mbpRatio": 0.023375,
+        "grossProfitRatio": 0.563677
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "笔类",
+        "mainBusinessIncome": 186564071.11,
+        "mbiRatio": 0.003532,
+        "mainBusinessCost": 135577529.67,
+        "mbcRatio": 0.002823,
+        "mainBusinessProfit": 50986541.44,
+        "mbpRatio": 0.010615,
+        "grossProfitRatio": 0.273292
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -40708,177 +40816,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 111398014.83,
         "mbpRatio": 0.035594,
         "grossProfitRatio": 0.290025
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "珠宝首饰",
-        "mainBusinessIncome": 25998619096.76,
-        "mbiRatio": 0.728,
-        "mainBusinessCost": 23347498888.34,
-        "mbcRatio": 0.713608,
-        "mainBusinessProfit": 2651120208.42,
-        "mbpRatio": 0.885231,
-        "grossProfitRatio": 0.101972
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 4681295222.85,
-        "mbiRatio": 0.131083,
-        "mainBusinessCost": 4598059833.43,
-        "mbcRatio": 0.140538,
-        "mainBusinessProfit": 83235389.42,
-        "mbpRatio": 0.027793,
-        "grossProfitRatio": 0.01778
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "黄金交易",
-        "mainBusinessIncome": 4309273852.5,
-        "mbiRatio": 0.120666,
-        "mainBusinessCost": 4234076774.86,
-        "mbcRatio": 0.129413,
-        "mainBusinessProfit": 75197077.64,
-        "mbpRatio": 0.025109,
-        "grossProfitRatio": 0.01745
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "笔类",
-        "mainBusinessIncome": 427944040.11,
-        "mbiRatio": 0.011983,
-        "mainBusinessCost": 296625041.42,
-        "mbcRatio": 0.009066,
-        "mainBusinessProfit": 131318998.69,
-        "mbpRatio": 0.043848,
-        "grossProfitRatio": 0.30686
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "工艺品销售",
-        "mainBusinessIncome": 167043416.61,
-        "mbiRatio": 0.004677,
-        "mainBusinessCost": 150884456.19,
-        "mbcRatio": 0.004612,
-        "mainBusinessProfit": 16158960.42,
-        "mbpRatio": 0.005396,
-        "grossProfitRatio": 0.096735
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "商贸",
-        "mainBusinessIncome": 76552575.94,
-        "mbiRatio": 0.002144,
-        "mainBusinessCost": 70847718.12,
-        "mbcRatio": 0.002165,
-        "mainBusinessProfit": 5704857.82,
-        "mbpRatio": 0.001905,
-        "grossProfitRatio": 0.074522
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "化工原料",
-        "mainBusinessIncome": 28967261.02,
-        "mbiRatio": 0.000811,
-        "mainBusinessCost": 19544887.2,
-        "mbcRatio": 0.000597,
-        "mainBusinessProfit": 9422373.82,
-        "mbpRatio": 0.003146,
-        "grossProfitRatio": 0.325277
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "拍卖佣金",
-        "mainBusinessIncome": 20336220.5,
-        "mbiRatio": 0.000569,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 20336220.5,
-        "mbpRatio": 0.00679,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "物业管理",
-        "mainBusinessIncome": 2341196.1,
-        "mbiRatio": 0.000066,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 2341196.1,
-        "mbpRatio": 0.000782,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "珠宝首饰",
-        "mainBusinessIncome": 25998619096.76,
-        "mbiRatio": 0.728,
-        "mainBusinessCost": 23347498888.34,
-        "mbcRatio": 0.713608,
-        "mainBusinessProfit": 2651120208.42,
-        "mbpRatio": 0.885231,
-        "grossProfitRatio": 0.101972
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 4681295222.85,
-        "mbiRatio": 0.131083,
-        "mainBusinessCost": 4598059833.43,
-        "mbcRatio": 0.140538,
-        "mainBusinessProfit": 83235389.42,
-        "mbpRatio": 0.027793,
-        "grossProfitRatio": 0.01778
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "黄金交易",
-        "mainBusinessIncome": 4309273852.5,
-        "mbiRatio": 0.120666,
-        "mainBusinessCost": 4234076774.86,
-        "mbcRatio": 0.129413,
-        "mainBusinessProfit": 75197077.64,
-        "mbpRatio": 0.025109,
-        "grossProfitRatio": 0.01745
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "笔类",
-        "mainBusinessIncome": 427944040.11,
-        "mbiRatio": 0.011983,
-        "mainBusinessCost": 296625041.42,
-        "mbcRatio": 0.009066,
-        "mainBusinessProfit": 131318998.69,
-        "mbpRatio": 0.043848,
-        "grossProfitRatio": 0.30686
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 1117351693.38,
-          "profit_tb": 0.1888,
-          "basicEps": 2.1359,
-          "totalSharesOutstanding": 523117764,
-          "dps": 0.96,
-          "dividendRatio": 0.44944940470879047,
-          "totalDividend": 502193053.44,
-          "totalDividendA": 502193053.44
-        },
         {
           "year": "2016",
           "profit": 1057486582.7,
@@ -40977,51 +40918,79 @@ const data: ServiceData = {
           "dividendRatio": 0.4614636243513341,
           "totalDividend": 899762554.08,
           "totalDividendA": 899762554.08
+        },
+        {
+          "year": "2025",
+          "profit": 1754963856.38,
+          "profit_tb": -0.09993,
+          "basicEps": 3.3548,
+          "totalSharesOutstanding": 523117764,
+          "dps": 1.65,
+          "dividendRatio": 0.09836604981488627,
+          "totalDividend": 172628862.12,
+          "totalDividendA": 172628862.12
         }
       ],
-      "cash": 10675868083.6,
-      "interestBearingDebt": 7059735624.2699995,
-      "debtRatio": 39.245746,
-      "interestBearingDebtOverTotal": 0.2836296685031583,
-      "roe": 16.2,
-      "roic": 11.299571,
-      "roa": 15.642918,
-      "grossProfitMargin": 8.92534,
-      "netProfitMargin": 4.479207,
-      "tradingFinancialAssets": 319060379.9,
+      "cash": 11002178814.65,
+      "interestBearingDebt": 6649915918.16,
+      "debtRatio": 33.936376,
+      "interestBearingDebtOverTotal": 0.271515974717074,
+      "roe": 13.64,
+      "roic": 11.183465,
+      "roa": 14.776555,
+      "grossProfitMargin": 9.092955,
+      "netProfitMargin": 4.275983,
+      "tradingFinancialAssets": 196508915.72,
       "longTermEquityInvestment": 0,
-      "minorityInterest": 2261588179.89
+      "minorityInterest": 2450901910.69
     },
     "dynamicData": {
       "code": "600612",
-      "price": 39.27,
-      "marketValue": 20542834592,
+      "price": 39.39,
+      "marketValue": 20605608724,
       "PB": 1.5,
-      "PE_TTM": 12.16,
+      "PE_TTM": 12.2,
       "totalSharesOutstanding": 523117764
     },
     "recentYearData": {
-      "netProfit": 1611481706.2199998
+      "netProfit": 1688971134.5100002
     }
   },
   "600636": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 230495859.31,
-        "netProfit": 34405257.7,
-        "netProfitMargin": 0.14926627230091566,
-        "netProfitExcludingNon": 17466290.07,
-        "coreProfit": 46784387.70999999,
-        "cashFlowFromOperating": -52287124.91,
-        "fcf": -52874828.20999999,
-        "capex": 587703.3,
-        "fcfOverNetProfit": -1.5368240712232768,
-        "netProfitExcludingNonOvernetProfit": 0.5076633990740316,
-        "cashFlowFromOperatingOverNetProfit": -1.5197422837498464,
-        "operatingProfit": 5495335.8500000015,
-        "financialProfit": 28909921.85,
-        "operatingProfitOverNetProfit": 0.15972372298202553
+        "year": "2026Q1",
+        "revenue": 24487184.85,
+        "netProfit": -21713409.32,
+        "netProfitMargin": -0.8867254220119141,
+        "netProfitExcludingNon": -25293288.66,
+        "coreProfit": -19866677.64,
+        "cashFlowFromOperating": -58339261.2,
+        "fcf": -58409800.82,
+        "capex": 70539.62,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
+        "operatingProfit": -27970048.17,
+        "financialProfit": 6256638.85,
+        "operatingProfitOverNetProfit": 0
+      },
+      {
+        "year": "2025",
+        "revenue": 295674286.58,
+        "netProfit": -250105368.59,
+        "netProfitMargin": -0.8458813631814733,
+        "netProfitExcludingNon": -273603908.51,
+        "coreProfit": 20945741.889999986,
+        "cashFlowFromOperating": -54268498.28,
+        "fcf": -55115877.58,
+        "capex": 847379.3,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
+        "operatingProfit": -295463920.26,
+        "financialProfit": 45358551.67,
+        "operatingProfitOverNetProfit": 0
       },
       {
         "year": "2024",
@@ -41175,42 +41144,42 @@ const data: ServiceData = {
         "operatingProfit": -315168127.89000005,
         "financialProfit": 7292469.54,
         "operatingProfitOverNetProfit": 0
-      },
-      {
-        "year": "2015",
-        "revenue": 3571190564.37,
-        "netProfit": -311013572.94,
-        "netProfitMargin": -0.08708960424655089,
-        "netProfitExcludingNon": -309777456.2,
-        "coreProfit": -157151599.9300003,
-        "cashFlowFromOperating": -74342170.44,
-        "fcf": -332430913.02,
-        "capex": 258088742.58,
-        "fcfOverNetProfit": 0,
-        "netProfitExcludingNonOvernetProfit": 0,
-        "cashFlowFromOperatingOverNetProfit": 0,
-        "operatingProfit": -315708956.12,
-        "financialProfit": 4695383.18,
-        "operatingProfitOverNetProfit": 0
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 72.419407,
-        "netProfitMargin": 14.926627230091565,
-        "grossProfitMinusNetProfit": 57.49277976990844,
-        "devExpenses": 42669351.7,
-        "manageExpenses": 40377893.56,
-        "devAndManageExpenses": 83047245.26,
-        "sellingExpenses": 76699697.3,
-        "financialExpenses": -10731661.48,
-        "totalOperatingExpenses": 149015281.08,
-        "sellingExpensesRatio": 0.33275954513718414,
-        "devExpensesRatio": 0.18511981875827477,
-        "manageExpensesRatio": 0.1751783901058921,
-        "devAndManageExpensesRatio": 0.36029820886416686,
-        "totalOperatingExpensesRatio": 64.649873
+        "year": "2026Q1",
+        "grossProfitMargin": 63.556496,
+        "netProfitMargin": -88.6725422011914,
+        "grossProfitMinusNetProfit": 152.2290382011914,
+        "devExpenses": 11221108.07,
+        "manageExpenses": 15270203.89,
+        "devAndManageExpenses": 26491311.96,
+        "sellingExpenses": 19686894.84,
+        "financialExpenses": -1088455.45,
+        "totalOperatingExpenses": 45089751.349999994,
+        "sellingExpensesRatio": 0.8039672571835059,
+        "devExpensesRatio": 0.4582441035479013,
+        "manageExpensesRatio": 0.623599812862931,
+        "devAndManageExpensesRatio": 1.0818439164108322,
+        "totalOperatingExpensesRatio": 184.136117
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 69.796282,
+        "netProfitMargin": -84.58813631814733,
+        "grossProfitMinusNetProfit": 154.38441831814734,
+        "devExpenses": 60932806.56,
+        "manageExpenses": 70140923.71,
+        "devAndManageExpenses": 131073730.27,
+        "sellingExpenses": 110898585.73,
+        "financialExpenses": -14493634.08,
+        "totalOperatingExpenses": 227478681.92,
+        "sellingExpensesRatio": 0.37507010505627586,
+        "devExpensesRatio": 0.20608084410990382,
+        "manageExpensesRatio": 0.23722361697834723,
+        "devAndManageExpensesRatio": 0.44330446108825106,
+        "totalOperatingExpensesRatio": 76.935564
       },
       {
         "year": "2024",
@@ -41364,41 +41333,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.09609418152192088,
         "devAndManageExpensesRatio": 0.09609418152192088,
         "totalOperatingExpensesRatio": 11.666349
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 9.054176,
-        "netProfitMargin": -8.70896042465509,
-        "grossProfitMinusNetProfit": 17.763136424655087,
-        "devExpenses": 0,
-        "manageExpenses": 381127356.91,
-        "devAndManageExpenses": 381127356.91,
-        "sellingExpenses": 88806282.63,
-        "financialExpenses": 21678651.91,
-        "totalOperatingExpenses": 491612291.45000005,
-        "sellingExpensesRatio": 0.024867416350173536,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.10672277215126305,
-        "devAndManageExpensesRatio": 0.10672277215126305,
-        "totalOperatingExpensesRatio": 13.766061
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 1595396080.48,
-        "cash": 266760453.42,
-        "inventory": 100725761.2,
-        "nonCurrentAssets": 581491405.9,
-        "goodwill": 250062202.43,
-        "totalAssets": 2176887486.38,
-        "equity": 2057936621.36,
-        "interestFreeLiabilities": 58192204.19,
-        "interestBearingDebt": 4066823.49,
-        "interestExpense": 188854.82,
-        "interestFreeLiabilitiesOverTotal": 0.026731838257184917,
-        "interestBearingDebtOverTotal": 0.001868182676157885,
-        "debtRatio": 5.464263
+        "year": "2026Q1",
+        "currentAssets": 1539728511.47,
+        "cash": 696315296.67,
+        "inventory": 107459215.51,
+        "nonCurrentAssets": 322317690.94,
+        "goodwill": 52016410.04,
+        "totalAssets": 1862046202.41,
+        "equity": 1750685681.96,
+        "interestFreeLiabilities": 58428937.5,
+        "interestBearingDebt": 3357969.9800000004,
+        "interestExpense": 38788.18,
+        "interestFreeLiabilitiesOverTotal": 0.03137888706755873,
+        "interestBearingDebtOverTotal": 0.0018033762941294708,
+        "debtRatio": 5.980545
+      },
+      {
+        "year": "2025",
+        "currentAssets": 1596861227.83,
+        "cash": 731836064.33,
+        "inventory": 101949365.82,
+        "nonCurrentAssets": 325763451.71,
+        "goodwill": 52016410.04,
+        "totalAssets": 1922624679.54,
+        "equity": 1772399091.28,
+        "interestFreeLiabilities": 59833453.31999999,
+        "interestBearingDebt": 3570352.4800000004,
+        "interestExpense": 233912.59,
+        "interestFreeLiabilitiesOverTotal": 0.03112071428018677,
+        "interestBearingDebtOverTotal": 0.0018570199987520339,
+        "debtRatio": 7.813568
       },
       {
         "year": "2024",
@@ -41543,42 +41511,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.09456076296995096,
         "interestBearingDebtOverTotal": 0.10478222605363419,
         "debtRatio": 26.311237
-      },
-      {
-        "year": "2015",
-        "currentAssets": 2363091891.78,
-        "cash": 594702721.5,
-        "inventory": 516120180.14,
-        "nonCurrentAssets": 2206880872.21,
-        "goodwill": 34291617.17,
-        "totalAssets": 4569972763.99,
-        "equity": 2786874394.59,
-        "interestFreeLiabilities": 692509624.6999999,
-        "interestBearingDebt": 300672026.94,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.1515347378340558,
-        "interestBearingDebtOverTotal": 0.06579295817892054,
-        "debtRatio": 27.340759
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.5438201475949975,
-        "wc": 125348292.22999997,
-        "receivables": 66011838.16,
-        "prepayments": 12952798.05,
-        "inventory": 100725761.2,
-        "accountsPayable": 28781511.74,
-        "customerAdvances": 1213830,
-        "contractLiabilities": 28196862.45,
-        "receivablesToRevenueRatio": 0.286390559715951,
-        "prepaymentsToRevenueRatio": 0.05619536111743959,
-        "inventoryToRevenueRatio": 0.4369959681771604,
-        "accountsPayableToRevenueRatio": 0.12486780381287015,
-        "advancesToRevenueRatio": 0.0052661683538856455,
-        "contractLiabilitiesToRevenueRatio": 0.12233131881157695,
-        "changeInWC": 63482880.26999997
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 4.436004888491705,
+        "wc": 108625271.70000002,
+        "receivables": 51167526.81,
+        "prepayments": 6332020.83,
+        "inventory": 107459215.51,
+        "accountsPayable": 19788732.9,
+        "customerAdvances": 1194546,
+        "contractLiabilities": 37445658.6,
+        "receivablesToRevenueRatio": 2.089563464458431,
+        "prepaymentsToRevenueRatio": 0.25858508721144396,
+        "inventoryToRevenueRatio": 4.388385850323664,
+        "accountsPayableToRevenueRatio": 0.8081260880423335,
+        "advancesToRevenueRatio": 0.04878249612266066,
+        "contractLiabilitiesToRevenueRatio": 1.5291941000723077,
+        "changeInWC": -6430832.169999972
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.3891312470922949,
+        "wc": 115056103.86999999,
+        "receivables": 61268097.86,
+        "prepayments": 8016654.63,
+        "inventory": 101949365.82,
+        "accountsPayable": 21091638.74,
+        "customerAdvances": 1249856,
+        "contractLiabilities": 37491958.58,
+        "receivablesToRevenueRatio": 0.2072148328103696,
+        "prepaymentsToRevenueRatio": 0.027113127498257953,
+        "inventoryToRevenueRatio": 0.34480294853917154,
+        "accountsPayableToRevenueRatio": 0.07133403105140587,
+        "advancesToRevenueRatio": 0.004227137957976705,
+        "contractLiabilitiesToRevenueRatio": 0.12680155252477754,
+        "changeInWC": 53190691.90999999
       },
       {
         "year": "2024",
@@ -41741,35 +41711,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.003827006857622143,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -276212489.49999976
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.35681259701546947,
-        "wc": 1274245779.7099998,
-        "receivables": 930293158.28,
-        "prepayments": 253994070.99,
-        "inventory": 516120180.14,
-        "accountsPayable": 397615619.78,
-        "customerAdvances": 28546009.92,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.2604994445162337,
-        "prepaymentsToRevenueRatio": 0.07112307965979618,
-        "inventoryToRevenueRatio": 0.14452328175633206,
-        "accountsPayableToRevenueRatio": 0.11133979344228696,
-        "advancesToRevenueRatio": 0.007993415474605414,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 71068668.43999982
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 1.1297305203638541,
+        "longTermOperatingAssetsPerYuanRevenue": 2.4998007376090845,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 260398207.08,
+        "longTermOperatingAssets": 61213082.75,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.29819258596957704,
+        "longTermOperatingAssetsPerYuanRevenue": 0.5088928832142073,
+        "fixedAssets": 88167880.12,
+        "longTermOperatingAssets": 150466540.19,
+        "depreciation": 10206293.649999999,
+        "depreciationOverRevenue": 0.03451870559342164
       },
       {
         "year": "2024",
@@ -41851,26 +41812,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 2289074064.6400003,
         "depreciation": 216879976.87,
         "depreciationOverRevenue": 0.04578335582370924
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.5310456493952344,
-        "longTermOperatingAssetsPerYuanRevenue": 0.5870377165352513,
-        "fixedAssets": 1896465212.37,
-        "longTermOperatingAssets": 2096423554.22,
-        "depreciation": 191114183.76999998,
-        "depreciationOverRevenue": 0.05351553783680955
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 1.67,
-        "roa": 1.470246,
-        "roic": 1.681942,
-        "netProfitMargin": 14.926627,
-        "assetTurnover": 10.485899999999999,
-        "equityMultiplier": 1.057801
+        "year": "2026Q1",
+        "roe": -1.23,
+        "roa": -1.085392,
+        "roic": -1.228019,
+        "netProfitMargin": -88.672542,
+        "assetTurnover": 1.294,
+        "equityMultiplier": 1.063609
+      },
+      {
+        "year": "2025",
+        "roe": -13.09,
+        "roa": -12.275097,
+        "roic": -13.056452,
+        "netProfitMargin": -84.588136,
+        "assetTurnover": 14.276800000000001,
+        "equityMultiplier": 1.084758
       },
       {
         "year": "2024",
@@ -41952,32 +41913,38 @@ const data: ServiceData = {
         "netProfitMargin": -4.860949,
         "assetTurnover": 108.53829999999999,
         "equityMultiplier": 1.357059
-      },
-      {
-        "year": "2015",
-        "roe": -14.09,
-        "roa": -5.772347,
-        "roic": -9.351287,
-        "netProfitMargin": -8.61091,
-        "assetTurnover": 84.5124,
-        "equityMultiplier": 1.376287
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 2176887486.38,
-        "avgTotalAssets": 2198137023.0299997,
-        "avgCurrentAssets": 1602748823.45,
-        "avgInventory": 95311354.66499999,
-        "equity": 2057936621.36,
-        "avgEquity": 2052218071.61,
-        "totalAssetsDays": 2574.870533,
-        "currentAssetsDays": 1877.440157,
-        "wcDays": 198.49435387217406,
-        "receivablesDays": 71.50949,
-        "inventoryDays": 404.8011,
+        "year": "2026Q1",
+        "totalAssets": 1862046202.41,
+        "avgTotalAssets": 1892335440.975,
+        "avgCurrentAssets": 1568294869.65,
+        "avgInventory": 104704290.66499999,
+        "equity": 1750685681.96,
+        "avgEquity": 1761542386.62,
+        "totalAssetsDays": 6955.074286,
+        "currentAssetsDays": 5764.098206,
+        "wcDays": 1619.1417842994722,
+        "receivablesDays": 196.649963,
+        "inventoryDays": 1055.961322,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 1922624679.54,
+        "avgTotalAssets": 2071005619.61,
+        "avgCurrentAssets": 1603481397.125,
+        "avgInventory": 95923156.975,
+        "equity": 1772399091.28,
+        "avgEquity": 1909449306.57,
+        "totalAssetsDays": 2521.565306,
+        "currentAssetsDays": 1952.328386,
+        "wcDays": 142.03290518868764,
+        "receivablesDays": 70.219741,
+        "inventoryDays": 386.680263,
+        "fixedAssetsDays": 108.84029387889562
       },
       {
         "year": "2024",
@@ -42113,24 +42080,93 @@ const data: ServiceData = {
         "receivablesDays": 47.648603,
         "inventoryDays": 42.957014,
         "fixedAssetsDays": 160.57961004938778
-      },
-      {
-        "year": "2015",
-        "totalAssets": 4569972763.99,
-        "avgTotalAssets": 4225637688.745,
-        "avgCurrentAssets": 2123072378.4050002,
-        "avgInventory": 516556824.085,
-        "equity": 3320507501.67,
-        "avgEquity": 2715023215.21,
-        "totalAssetsDays": 425.972666,
-        "currentAssetsDays": 214.019958,
-        "wcDays": 130.23659791064637,
-        "receivablesDays": 50.238878,
-        "inventoryDays": 57.256503,
-        "fixedAssetsDays": 193.8316620292605
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "教育信息化",
+        "mainBusinessIncome": 293859460.77,
+        "mbiRatio": 0.993862,
+        "mainBusinessCost": 88218163.31,
+        "mbcRatio": 0.987834,
+        "mainBusinessProfit": 205641297.46,
+        "mbpRatio": 0.996471,
+        "grossProfitRatio": 0.699795
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 1814825.81,
+        "mbiRatio": 0.006138,
+        "mainBusinessCost": 1086463.18,
+        "mbcRatio": 0.012166,
+        "mainBusinessProfit": 728362.63,
+        "mbpRatio": 0.003529,
+        "grossProfitRatio": 0.40134
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "教育信息化",
+        "mainBusinessIncome": 293859460.77,
+        "mbiRatio": 0.993862,
+        "mainBusinessCost": 88218163.31,
+        "mbcRatio": 0.987834,
+        "mainBusinessProfit": 205641297.46,
+        "mbpRatio": 0.996471,
+        "grossProfitRatio": 0.699795
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 1814825.81,
+        "mbiRatio": 0.006138,
+        "mainBusinessCost": 1086463.18,
+        "mbcRatio": 0.012166,
+        "mainBusinessProfit": 728362.63,
+        "mbpRatio": 0.003529,
+        "grossProfitRatio": 0.40134
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "广州地区",
+        "mainBusinessIncome": 287855530.66,
+        "mbiRatio": 0.973556,
+        "mainBusinessCost": 83651796.06,
+        "mbcRatio": 0.936702,
+        "mainBusinessProfit": 204203734.6,
+        "mbpRatio": 0.989505,
+        "grossProfitRatio": 0.709397
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "北京地区",
+        "mainBusinessIncome": 6003930.11,
+        "mbiRatio": 0.020306,
+        "mainBusinessCost": 4566367.26,
+        "mbcRatio": 0.051132,
+        "mainBusinessProfit": 1437562.85,
+        "mbpRatio": 0.006966,
+        "grossProfitRatio": 0.239437
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 1814825.81,
+        "mbiRatio": 0.006138,
+        "mainBusinessCost": 1086463.18,
+        "mbcRatio": 0.012166,
+        "mainBusinessProfit": 728362.63,
+        "mbpRatio": 0.003529,
+        "grossProfitRatio": 0.40134
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -43102,153 +43138,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 5430354.96,
         "mbpRatio": 0.008179,
         "grossProfitRatio": 0.187051
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "工业",
-        "mainBusinessIncome": 2257515325.91,
-        "mbiRatio": 0.632146,
-        "mainBusinessCost": 1939138224.85,
-        "mbcRatio": 0.597053,
-        "mainBusinessProfit": 318377101.06,
-        "mbpRatio": 0.984645,
-        "grossProfitRatio": 0.14103
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "商业",
-        "mainBusinessIncome": 1276539340.52,
-        "mbiRatio": 0.357455,
-        "mainBusinessCost": 1277188141.32,
-        "mbcRatio": 0.393241,
-        "mainBusinessProfit": -648800.8,
-        "mbpRatio": -0.002007,
-        "grossProfitRatio": -0.000508
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 37135897.94,
-        "mbiRatio": 0.010399,
-        "mainBusinessCost": 31522295.65,
-        "mbcRatio": 0.009706,
-        "mainBusinessProfit": 5613602.29,
-        "mbpRatio": 0.017361,
-        "grossProfitRatio": 0.151164
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "CFC替代品",
-        "mainBusinessIncome": 1588660678.42,
-        "mbiRatio": 0.444855,
-        "mainBusinessCost": 1208686851.7,
-        "mbcRatio": 0.37215,
-        "mainBusinessProfit": 379973826.72,
-        "mbpRatio": 1.175146,
-        "grossProfitRatio": 0.239179
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 1313675238.46,
-        "mbiRatio": 0.367854,
-        "mainBusinessCost": 1308710436.97,
-        "mbcRatio": 0.402947,
-        "mainBusinessProfit": 4964801.49,
-        "mbpRatio": 0.015355,
-        "grossProfitRatio": 0.003779
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "含氟聚合物",
-        "mainBusinessIncome": 611367107.83,
-        "mbiRatio": 0.171194,
-        "mainBusinessCost": 683974695.98,
-        "mbcRatio": 0.210593,
-        "mainBusinessProfit": -72607588.15,
-        "mbpRatio": -0.224554,
-        "grossProfitRatio": -0.118763
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "CFC产品",
-        "mainBusinessIncome": 57487539.66,
-        "mbiRatio": 0.016098,
-        "mainBusinessCost": 46476677.17,
-        "mbcRatio": 0.01431,
-        "mainBusinessProfit": 11010862.49,
-        "mbpRatio": 0.034053,
-        "grossProfitRatio": 0.191535
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "上海地区",
-        "mainBusinessIncome": 1688379274.65,
-        "mbiRatio": 0.472778,
-        "mainBusinessCost": 1752215655.61,
-        "mbcRatio": 0.5395,
-        "mainBusinessProfit": -63836380.96,
-        "mbpRatio": -0.197427,
-        "grossProfitRatio": -0.037809
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "常熟地区",
-        "mainBusinessIncome": 1629870097.7,
-        "mbiRatio": 0.456394,
-        "mainBusinessCost": 1270491517.62,
-        "mbcRatio": 0.391179,
-        "mainBusinessProfit": 359378580.08,
-        "mbpRatio": 1.111451,
-        "grossProfitRatio": 0.220495
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "内蒙古地区",
-        "mainBusinessIncome": 215805294.08,
-        "mbiRatio": 0.06043,
-        "mainBusinessCost": 193619192.94,
-        "mbcRatio": 0.059615,
-        "mainBusinessProfit": 22186101.14,
-        "mbpRatio": 0.068615,
-        "grossProfitRatio": 0.102806
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 37135897.94,
-        "mbiRatio": 0.010399,
-        "mainBusinessCost": 31522295.65,
-        "mbcRatio": 0.009706,
-        "mainBusinessProfit": 5613602.29,
-        "mbpRatio": 0.017361,
-        "grossProfitRatio": 0.151164
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": -311013572.94,
-          "profit_tb": -49.0937,
-          "basicEps": -0.696,
-          "totalSharesOutstanding": 446941905,
-          "dps": 0,
-          "dividendRatio": 0,
-          "totalDividend": 0,
-          "totalDividendA": 0
-        },
         {
           "year": "2016",
           "profit": -307875658.35,
@@ -43347,31 +43240,42 @@ const data: ServiceData = {
           "dividendRatio": 0,
           "totalDividend": 17545472.08,
           "totalDividendA": 17545472.08
+        },
+        {
+          "year": "2025",
+          "profit": -250105368.59,
+          "profit_tb": 0.38802,
+          "basicEps": -0.5702,
+          "totalSharesOutstanding": 438636802,
+          "dps": 0.01,
+          "dividendRatio": 0,
+          "totalDividend": 4386368.02,
+          "totalDividendA": 4386368.02
         }
       ],
-      "cash": 266760453.42,
-      "interestBearingDebt": 4066823.49,
-      "debtRatio": 5.464263,
-      "interestBearingDebtOverTotal": 0.001868182676157885,
-      "roe": -18.09,
-      "roic": -18.001779,
-      "roa": -17.088548,
-      "grossProfitMargin": 73.3364,
-      "netProfitMargin": -144.433791,
-      "tradingFinancialAssets": 1064566442.45,
-      "longTermEquityInvestment": 197601046.55,
+      "cash": 696315296.67,
+      "interestBearingDebt": 3357969.9800000004,
+      "debtRatio": 5.980545,
+      "interestBearingDebtOverTotal": 0.0018033762941294708,
+      "roe": -13.09,
+      "roic": -13.056452,
+      "roa": -12.275097,
+      "grossProfitMargin": 69.796282,
+      "netProfitMargin": -84.588136,
+      "tradingFinancialAssets": 582468600,
+      "longTermEquityInvestment": 135746741.85,
       "minorityInterest": 0
     },
     "dynamicData": {
       "code": "600636",
-      "price": 4.75,
-      "marketValue": 2083524810,
-      "PB": 1.01,
-      "PE_TTM": -5.85,
+      "price": 4.51,
+      "marketValue": 1978251977,
+      "PB": 1.13,
+      "PE_TTM": -7.51,
       "totalSharesOutstanding": 438636802
     },
     "recentYearData": {
-      "netProfit": -355917217.93
+      "netProfit": -263554113.63000003
     }
   },
   "600660": {
@@ -45570,9 +45474,9 @@ const data: ServiceData = {
           "basicEps": 3.57,
           "totalSharesOutstanding": 2609743532,
           "dps": 2.1,
-          "dividendRatio": 0.2522221290205604,
-          "totalDividend": 2348769178.8,
-          "totalDividendA": 1802687698.8
+          "dividendRatio": 0.5885183010479742,
+          "totalDividend": 5480461417.2,
+          "totalDividendA": 4206271297.2
         }
       ],
       "cash": 20715842029,
@@ -45590,10 +45494,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600660",
-      "price": 59.51,
-      "marketValue": 155305837589,
-      "PB": 3.97,
-      "PE_TTM": 17.27,
+      "price": 59.42,
+      "marketValue": 155070960671,
+      "PB": 4.31,
+      "PE_TTM": 17.24,
       "totalSharesOutstanding": 2609743532
     },
     "recentYearData": {
@@ -45602,6 +45506,23 @@ const data: ServiceData = {
   },
   "600690": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 73686720161.13,
+        "netProfit": 4651612980.68,
+        "netProfitMargin": 0.063126883249904,
+        "netProfitExcludingNon": 4441374498.46,
+        "coreProfit": 8228823332.289999,
+        "cashFlowFromOperating": 1611474493.67,
+        "fcf": -634927212.4699998,
+        "capex": 2246401706.14,
+        "fcfOverNetProfit": -0.13649613910424302,
+        "netProfitExcludingNonOvernetProfit": 0.9548031009688028,
+        "cashFlowFromOperatingOverNetProfit": 0.34643348454892847,
+        "operatingProfit": 4135942564.3,
+        "financialProfit": 515670416.38,
+        "operatingProfitOverNetProfit": 0.8891415905575583
+      },
       {
         "year": "2025",
         "revenue": 302346783918.30005,
@@ -45771,26 +45692,26 @@ const data: ServiceData = {
         "operatingProfit": 3327416770.93,
         "financialProfit": 1714365509.85,
         "operatingProfitOverNetProfit": 0.6599683575418541
-      },
-      {
-        "year": "2015",
-        "revenue": 89797165994.89,
-        "netProfit": 4303751562.92,
-        "netProfitMargin": 0.047927476499257333,
-        "netProfitExcludingNon": 3674952510.15,
-        "coreProfit": 4942507974.619999,
-        "cashFlowFromOperating": 5604166955.11,
-        "fcf": 3112425932.1899996,
-        "capex": 2491741022.92,
-        "fcfOverNetProfit": 0.7231890332624794,
-        "netProfitExcludingNonOvernetProfit": 0.8538951322870101,
-        "cashFlowFromOperatingOverNetProfit": 1.3021585640291227,
-        "operatingProfit": 3073672405.8100004,
-        "financialProfit": 1230079157.11,
-        "operatingProfitOverNetProfit": 0.714184441381784
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 25.343786,
+        "netProfitMargin": 6.3126883249904,
+        "grossProfitMinusNetProfit": 19.0310976750096,
+        "devExpenses": 3108930892.84,
+        "manageExpenses": 2914299230.25,
+        "devAndManageExpenses": 6023230123.09,
+        "sellingExpenses": 6317159208.54,
+        "financialExpenses": 734651517.53,
+        "totalOperatingExpenses": 13075040849.160002,
+        "sellingExpensesRatio": 0.08572995506824475,
+        "devExpensesRatio": 0.04219119654181557,
+        "manageExpensesRatio": 0.03954985679749799,
+        "devAndManageExpensesRatio": 0.08174105333931357,
+        "totalOperatingExpensesRatio": 17.744093
+      },
       {
         "year": "2025",
         "grossProfitMargin": 26.660786,
@@ -45960,26 +45881,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.07054470316606413,
         "devAndManageExpensesRatio": 0.07054470316606413,
         "totalOperatingExpensesRatio": 25.49635
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 27.955795,
-        "netProfitMargin": 4.792747649925733,
-        "grossProfitMinusNetProfit": 23.163047350074265,
-        "devExpenses": 0,
-        "manageExpenses": 6553796904.32,
-        "devAndManageExpenses": 6553796904.32,
-        "sellingExpenses": 13108350234.27,
-        "financialExpenses": -513893437.86,
-        "totalOperatingExpenses": 19148253700.73,
-        "sellingExpensesRatio": 0.1459773266677029,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.07298445147693136,
-        "devAndManageExpensesRatio": 0.07298445147693136,
-        "totalOperatingExpensesRatio": 21.340071
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 161585281650.18,
+        "cash": 50580305356.36,
+        "inventory": 46577517719.22,
+        "nonCurrentAssets": 138989747743.29,
+        "goodwill": 26770151373.44,
+        "totalAssets": 300575029393.47003,
+        "equity": 125187727232.54,
+        "interestFreeLiabilities": 83521952883.51001,
+        "interestBearingDebt": 47263918394.659996,
+        "interestExpense": 447969015.43,
+        "interestFreeLiabilitiesOverTotal": 0.2778738907621463,
+        "interestBearingDebtOverTotal": 0.15724499300568578,
+        "debtRatio": 55.154706
+      },
       {
         "year": "2025",
         "currentAssets": 152833489986.4,
@@ -46139,25 +46059,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.29469968754923787,
         "interestBearingDebtOverTotal": 0.27975325790827776,
         "debtRatio": 71.368493
-      },
-      {
-        "year": "2015",
-        "currentAssets": 54854401454.48,
-        "cash": 24756574148.64,
-        "inventory": 8563533478.52,
-        "nonCurrentAssets": 21106316873.01,
-        "goodwill": 392484932.55,
-        "totalAssets": 75960718327.49,
-        "equity": 22733334660.35,
-        "interestFreeLiabilities": 29402917574.9,
-        "interestBearingDebt": 3410898931.4799995,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.38708056245775596,
-        "interestBearingDebtOverTotal": 0.04490345808440839,
-        "debtRatio": 57.343371
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.3697895169575444,
+        "wc": 27248576654.570015,
+        "receivables": 35684585643.240005,
+        "prepayments": 2901943768.66,
+        "inventory": 46577517719.22,
+        "accountsPayable": 53790188053.81,
+        "customerAdvances": 0,
+        "contractLiabilities": 5207550270.85,
+        "receivablesToRevenueRatio": 0.48427431109986824,
+        "prepaymentsToRevenueRatio": 0.03938218124397922,
+        "inventoryToRevenueRatio": 0.632101925792998,
+        "accountsPayableToRevenueRatio": 0.7299848322219735,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.07067148950940824,
+        "changeInWC": 3288794394.160019
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.07924602983997472,
@@ -46337,27 +46259,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.04815948789102159,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 5595822816.110004
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.11141018059032406,
-        "wc": 10004318479.990002,
-        "receivables": 18720094865.7,
-        "prepayments": 526722364.61,
-        "inventory": 8563533478.52,
-        "accountsPayable": 14662615841.25,
-        "customerAdvances": 3143416387.59,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.20847088723006343,
-        "prepaymentsToRevenueRatio": 0.005865690289601942,
-        "inventoryToRevenueRatio": 0.09536529782028218,
-        "accountsPayableToRevenueRatio": 0.1632859531678805,
-        "advancesToRevenueRatio": 0.03500574158174301,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -3414505819.829994
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.6442915938667821,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 47475734379.43,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.14981507266420893,
@@ -46447,18 +46360,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 46622133944.009995,
         "depreciation": 2424630170.12,
         "depreciationOverRevenue": 0.020352422897727797
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.10892474177388409,
-        "longTermOperatingAssetsPerYuanRevenue": 0.13161919755655288,
-        "fixedAssets": 9781133118.019999,
-        "longTermOperatingAssets": 11819030931.099998,
-        "depreciation": 1054204191.0600001,
-        "depreciationOverRevenue": 0.011739838104912918
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 3.86,
+        "roa": 2.068768,
+        "roic": 3.503061,
+        "netProfitMargin": 6.52328,
+        "assetTurnover": 24.7117,
+        "equityMultiplier": 2.229888
+      },
       {
         "year": "2025",
         "roe": 16.98,
@@ -46548,18 +46461,24 @@ const data: ServiceData = {
         "netProfitMargin": 5.619861,
         "assetTurnover": 114.9195,
         "equityMultiplier": 3.492655
-      },
-      {
-        "year": "2015",
-        "roe": 16.22,
-        "roa": 8.962342,
-        "roic": 16.514036,
-        "netProfitMargin": 6.598551,
-        "assetTurnover": 113.3834,
-        "equityMultiplier": 2.344301
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 300575029393.47003,
+        "avgTotalAssets": 298185048992.52,
+        "avgCurrentAssets": 157209385818.28998,
+        "avgInventory": 46713154203.17,
+        "equity": 134793753085.14,
+        "avgEquity": 130385377200.125,
+        "totalAssetsDays": 364.199334,
+        "currentAssetsDays": 192.013495,
+        "wcDays": 134.9731736895037,
+        "receivablesDays": 33.477517,
+        "inventoryDays": 76.423428,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 295795068591.57,
@@ -46709,21 +46628,6 @@ const data: ServiceData = {
         "receivablesDays": 27.655825,
         "inventoryDays": 52.166422,
         "fixedAssetsDays": 53.04857942158682
-      },
-      {
-        "year": "2015",
-        "totalAssets": 75960718327.49,
-        "avgTotalAssets": 79154718985.965,
-        "avgCurrentAssets": 60440183155.86,
-        "avgInventory": 8792587209.715,
-        "equity": 32441620556.28,
-        "avgEquity": 32182308358.245,
-        "totalAssetsDays": 317.506673,
-        "currentAssetsDays": 242.464447,
-        "wcDays": 40.664715915468285,
-        "receivablesDays": 25.827763,
-        "inventoryDays": 48.942692,
-        "fixedAssetsDays": 39.75753074746769
       }
     ],
     "primaryBusinessData": [
@@ -48065,33 +47969,50 @@ const data: ServiceData = {
           "totalDividendA": 1665158169.65
         }
       ],
-      "cash": 47621657441.3,
-      "interestBearingDebt": 45316978620.770004,
-      "debtRatio": 57.410716,
-      "interestBearingDebtOverTotal": 0.1532039693445434,
+      "cash": 50580305356.36,
+      "interestBearingDebt": 47263918394.659996,
+      "debtRatio": 55.154706,
+      "interestBearingDebtOverTotal": 0.15724499300568578,
       "roe": 16.98,
       "roic": 13.884181,
       "roa": 8.919633,
       "grossProfitMargin": 26.660786,
       "netProfitMargin": 6.668863,
-      "tradingFinancialAssets": 2034270761.53,
-      "longTermEquityInvestment": 21756902299.19,
-      "minorityInterest": 7278599898.53
+      "tradingFinancialAssets": 5083959790.76,
+      "longTermEquityInvestment": 21697254659.88,
+      "minorityInterest": 9606025852.6
     },
     "dynamicData": {
       "code": "600690",
-      "price": 21.29,
-      "marketValue": 199649735249,
-      "PB": 1.59,
-      "PE_TTM": 10.67,
+      "price": 21.44,
+      "marketValue": 201056379696,
+      "PB": 1.61,
+      "PE_TTM": 10.74,
       "totalSharesOutstanding": 9377629650
     },
     "recentYearData": {
-      "netProfit": 19552798222.85
+      "netProfit": 18717796027.35
     }
   },
   "600809": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 14923228703.48,
+        "netProfit": 5382557651,
+        "netProfitMargin": 0.3606831844468632,
+        "netProfitExcludingNon": 5378987443.17,
+        "coreProfit": 7284084966.11,
+        "cashFlowFromOperating": 8253609929.89,
+        "fcf": 8068486550.320001,
+        "capex": 185123379.57,
+        "fcfOverNetProfit": 1.499006062447096,
+        "netProfitExcludingNonOvernetProfit": 0.9993367079255832,
+        "cashFlowFromOperatingOverNetProfit": 1.533399262032354,
+        "operatingProfit": 5389445258.77,
+        "financialProfit": -6887607.77,
+        "operatingProfitOverNetProfit": 1.0012796161632789
+      },
       {
         "year": "2025",
         "revenue": 38718257657.74,
@@ -48261,26 +48182,26 @@ const data: ServiceData = {
         "operatingProfit": 606005914.89,
         "financialProfit": -879954.14,
         "operatingProfitOverNetProfit": 1.0014541668959458
-      },
-      {
-        "year": "2015",
-        "revenue": 4128558454.69,
-        "netProfit": 520602935.56,
-        "netProfitMargin": 0.12609799310667394,
-        "netProfitExcludingNon": 519068032.75,
-        "coreProfit": 763504224.4899999,
-        "cashFlowFromOperating": 427832561.62,
-        "fcf": 250927338.39000002,
-        "capex": 176905223.23,
-        "fcfOverNetProfit": 0.4819937062400225,
-        "netProfitExcludingNonOvernetProfit": 0.9970516823760339,
-        "cashFlowFromOperatingOverNetProfit": 0.8218020537279354,
-        "operatingProfit": 520227587.36,
-        "financialProfit": 375348.2,
-        "operatingProfitOverNetProfit": 0.9992790125172917
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 75.046836,
+        "netProfitMargin": 36.06831844468632,
+        "grossProfitMinusNetProfit": 38.97851755531368,
+        "devExpenses": 34929872.73,
+        "manageExpenses": 320687740.59,
+        "devAndManageExpenses": 355617613.32,
+        "sellingExpenses": 1323969083.63,
+        "financialExpenses": -4230582.47,
+        "totalOperatingExpenses": 1675356114.48,
+        "sellingExpensesRatio": 0.0887186754245252,
+        "devExpensesRatio": 0.0023406377684109725,
+        "manageExpensesRatio": 0.02148916611558849,
+        "devAndManageExpensesRatio": 0.023829803883999464,
+        "totalOperatingExpensesRatio": 11.226498
+      },
       {
         "year": "2025",
         "grossProfitMargin": 74.852504,
@@ -48450,26 +48371,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.10042506685494822,
         "devAndManageExpensesRatio": 0.10042506685494822,
         "totalOperatingExpensesRatio": 27.236919
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 67.368536,
-        "netProfitMargin": 12.609799310667395,
-        "grossProfitMinusNetProfit": 54.75873668933261,
-        "devExpenses": 0,
-        "manageExpenses": 420034142.61,
-        "devAndManageExpenses": 420034142.61,
-        "sellingExpenses": 915468116.93,
-        "financialExpenses": -13086314.24,
-        "totalOperatingExpenses": 1322415945.3,
-        "sellingExpensesRatio": 0.22174037911223893,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.10173869335260241,
-        "devAndManageExpensesRatio": 0.10173869335260241,
-        "totalOperatingExpensesRatio": 32.030936
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 53616731114.92,
+        "cash": 12513587586.94,
+        "inventory": 13650291620.48,
+        "nonCurrentAssets": 10767335258.41,
+        "goodwill": 0,
+        "totalAssets": 64384066373.33,
+        "equity": 45023082548.52,
+        "interestFreeLiabilities": 12266495272.48,
+        "interestBearingDebt": 23866179.049999997,
+        "interestExpense": 201167.68,
+        "interestFreeLiabilitiesOverTotal": 0.19052066704443485,
+        "interestBearingDebtOverTotal": 0.0003706845558901535,
+        "debtRatio": 29.256859
+      },
       {
         "year": "2025",
         "currentAssets": 45910577243.32,
@@ -48629,25 +48549,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.19572849577299095,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 34.781189
-      },
-      {
-        "year": "2015",
-        "currentAssets": 4264080907.01,
-        "cash": 1046072721.81,
-        "inventory": 1917807342.11,
-        "nonCurrentAssets": 2442545751.01,
-        "goodwill": 0,
-        "totalAssets": 6706626658.02,
-        "equity": 4424730318.83,
-        "interestFreeLiabilities": 1199477516.67,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.17884960321082227,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 32.972963
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.36015110187292604,
+        "wc": 5374617261.059999,
+        "receivables": 2652587925.2799997,
+        "prepayments": 143651768.86,
+        "inventory": 13650291620.48,
+        "accountsPayable": 3168257217.31,
+        "customerAdvances": 0,
+        "contractLiabilities": 7903656836.25,
+        "receivablesToRevenueRatio": 0.17774892940302078,
+        "prepaymentsToRevenueRatio": 0.0096260515545474,
+        "inventoryToRevenueRatio": 0.9147009599401797,
+        "accountsPayableToRevenueRatio": 0.21230373669547684,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.529621102329345,
+        "changeInWC": -1023991283.1400003
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.16526075632747078,
@@ -48827,33 +48749,24 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.12206975459396295,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -20979541.30000019
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.5385485952110494,
-        "wc": 2223429356.0200005,
-        "receivables": 1238351590.72,
-        "prepayments": 37255148.34,
-        "inventory": 1917807342.11,
-        "accountsPayable": 581381522.41,
-        "customerAdvances": 388603202.74,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.29994769465193,
-        "prepaymentsToRevenueRatio": 0.0090237667090988,
-        "inventoryToRevenueRatio": 0.46452226925148427,
-        "accountsPayableToRevenueRatio": 0.1408194963909392,
-        "advancesToRevenueRatio": 0.09412563901052455,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -105527960.58999968
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.08988592578542987,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1341388227.72,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.0839483939427796,
-        "longTermOperatingAssetsPerYuanRevenue": 0.12127120315243217,
-        "fixedAssets": 3250335546.63,
-        "longTermOperatingAssets": 4695409690.12,
+        "fixedAssetsPerYuanRevenue": 0.15831571074982598,
+        "longTermOperatingAssetsPerYuanRevenue": 0.19563851995947854,
+        "fixedAssets": 6129708480.08,
+        "longTermOperatingAssets": 7574782623.57,
         "depreciation": 620148148.5500001,
         "depreciationOverRevenue": 0.01601694358335954
       },
@@ -48937,18 +48850,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 2404354726.6000004,
         "depreciation": 139642581.5,
         "depreciationOverRevenue": 0.03170129854505897
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.4879259709624862,
-        "longTermOperatingAssetsPerYuanRevenue": 0.5452338236177455,
-        "fixedAssets": 2014430892.6799998,
-        "longTermOperatingAssets": 2251029712.2799997,
-        "depreciation": 75363265.72999999,
-        "depreciationOverRevenue": 0.018254135567437126
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 12.57,
+        "roa": 12.014561,
+        "roic": 12.683678,
+        "netProfitMargin": 36.215315,
+        "assetTurnover": 24.726200000000002,
+        "equityMultiplier": 1.413564
+      },
       {
         "year": "2025",
         "roe": 33.48,
@@ -49038,18 +48951,24 @@ const data: ServiceData = {
         "netProfitMargin": 14.56484,
         "assetTurnover": 62.37859999999999,
         "equityMultiplier": 1.533299
-      },
-      {
-        "year": "2015",
-        "roe": 12.52,
-        "roa": 12.189057,
-        "roic": 12.556217,
-        "netProfitMargin": 13.123413,
-        "assetTurnover": 66.0953,
-        "equityMultiplier": 1.491935
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 64384066373.33,
+        "avgTotalAssets": 60353770851.935,
+        "avgCurrentAssets": 49763654179.119995,
+        "avgInventory": 14020910104.994999,
+        "equity": 45547310509.76,
+        "avgEquity": 42840890253.18,
+        "totalAssetsDays": 363.985534,
+        "currentAssetsDays": 300.117954,
+        "wcDays": 131.45515218361803,
+        "receivablesDays": 0.000574,
+        "inventoryDays": 338.867798,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 56323475330.54,
@@ -49063,7 +48982,7 @@ const data: ServiceData = {
         "wcDays": 60.320176059526844,
         "receivablesDays": 0.0008,
         "inventoryDays": 511.377303,
-        "fixedAssetsDays": 30.64116378911455
+        "fixedAssetsDays": 57.78523442368648
       },
       {
         "year": "2024",
@@ -49199,21 +49118,6 @@ const data: ServiceData = {
         "receivablesDays": 2.96376,
         "inventoryDays": 500.586603,
         "fixedAssetsDays": 179.46353828788324
-      },
-      {
-        "year": "2015",
-        "totalAssets": 6706626658.02,
-        "avgTotalAssets": 6246364233.83,
-        "avgCurrentAssets": 4035346319.62,
-        "avgInventory": 1907987754.55,
-        "equity": 4495253110.33,
-        "avgEquity": 4215481028.355,
-        "totalAssetsDays": 544.667381,
-        "currentAssetsDays": 351.872134,
-        "wcDays": 196.57023725203302,
-        "receivablesDays": 0.53887,
-        "inventoryDays": 509.850779,
-        "fixedAssetsDays": 178.09297940130745
       }
     ],
     "primaryBusinessData": [
@@ -50363,29 +50267,29 @@ const data: ServiceData = {
           "totalDividendA": 0
         }
       ],
-      "cash": 9766895738.57,
-      "interestBearingDebt": 196844114.48,
-      "debtRatio": 28.742909,
-      "interestBearingDebtOverTotal": 0.003494885806048019,
+      "cash": 12513587586.94,
+      "interestBearingDebt": 23866179.049999997,
+      "debtRatio": 29.256859,
+      "interestBearingDebtOverTotal": 0.0003706845558901535,
       "roe": 33.48,
       "roic": 32.635531,
       "roa": 30.346454,
       "grossProfitMargin": 74.852504,
       "netProfitMargin": 31.755703,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 118769623.6,
-      "minorityInterest": 501330282.24
+      "longTermEquityInvestment": 121799888.28,
+      "minorityInterest": 524227961.24
     },
     "dynamicData": {
       "code": "600809",
-      "price": 137.66,
-      "marketValue": 167940274801,
-      "PB": 4.24,
-      "PE_TTM": 13.71,
+      "price": 143.75,
+      "marketValue": 175369856913,
+      "PB": 3.9,
+      "PE_TTM": 15.97,
       "totalSharesOutstanding": 1219964222
     },
     "recentYearData": {
-      "netProfit": 12246329337.25
+      "netProfit": 10981304120.380001
     }
   },
   "600873": {
@@ -51157,10 +51061,10 @@ const data: ServiceData = {
       },
       {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.5627300223889455,
-        "longTermOperatingAssetsPerYuanRevenue": 0.6332360716583502,
-        "fixedAssets": 13622948284.8,
-        "longTermOperatingAssets": 15329806324.619999,
+        "fixedAssetsPerYuanRevenue": 0.5769216266669887,
+        "longTermOperatingAssetsPerYuanRevenue": 0.6474276759363933,
+        "fixedAssets": 13966508222.01,
+        "longTermOperatingAssets": 15673366261.83,
         "depreciation": 1446803549.16,
         "depreciationOverRevenue": 0.05976384675258756
       },
@@ -51376,7 +51280,7 @@ const data: ServiceData = {
         "wcDays": 21.325865938399364,
         "receivablesDays": 8.66427,
         "inventoryDays": 52.724887,
-        "fixedAssetsDays": 205.39645817196512
+        "fixedAssetsDays": 210.57639373345089
       },
       {
         "year": "2024",
@@ -52964,10 +52868,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600873",
-      "price": 10.1,
-      "marketValue": 28322840665,
-      "PB": 1.73,
-      "PE_TTM": 11.9,
+      "price": 9.48,
+      "marketValue": 26584210842,
+      "PB": 1.62,
+      "PE_TTM": 11.17,
       "totalSharesOutstanding": 2804241650
     },
     "recentYearData": {
@@ -52977,21 +52881,38 @@ const data: ServiceData = {
   "600886": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 40572491647.42,
-        "netProfit": 6517030546.19,
-        "netProfitMargin": 0.16062682575237938,
-        "netProfitExcludingNon": 6500836063.15,
-        "coreProfit": 12292681548.49,
-        "cashFlowFromOperating": 24072540650.59,
-        "fcf": 10220069873.19,
-        "capex": 13852470777.4,
-        "fcfOverNetProfit": 1.5682096010989053,
-        "netProfitExcludingNonOvernetProfit": 0.9975150518437469,
-        "cashFlowFromOperatingOverNetProfit": 3.693789752859658,
-        "operatingProfit": 5779976341.92,
-        "financialProfit": 737054204.27,
-        "operatingProfitOverNetProfit": 0.8869033681757257
+        "year": "2026Q1",
+        "revenue": 12513846246.56,
+        "netProfit": 2117951994.59,
+        "netProfitMargin": 0.16924868284778674,
+        "netProfitExcludingNon": 2115745795.92,
+        "coreProfit": 3969229508.12,
+        "cashFlowFromOperating": 6878714894.21,
+        "fcf": 2911051128.5,
+        "capex": 3967663765.71,
+        "fcfOverNetProfit": 1.3744651134378194,
+        "netProfitExcludingNonOvernetProfit": 0.9989583339586378,
+        "cashFlowFromOperatingOverNetProfit": 3.2478143564068853,
+        "operatingProfit": 1878273922.07,
+        "financialProfit": 239678072.52,
+        "operatingProfitOverNetProfit": 0.8868349834499447
+      },
+      {
+        "year": "2025",
+        "revenue": 53014434927.3,
+        "netProfit": 7393381322,
+        "netProfitMargin": 0.13945977792913808,
+        "netProfitExcludingNon": 7355063862.23,
+        "coreProfit": 14125009724.4,
+        "cashFlowFromOperating": 31569574019.8,
+        "fcf": 10131240097.279999,
+        "capex": 21438333922.52,
+        "fcfOverNetProfit": 1.370312128651221,
+        "netProfitExcludingNonOvernetProfit": 0.9948173294327479,
+        "cashFlowFromOperatingOverNetProfit": 4.269977787546341,
+        "operatingProfit": 6417099304.79,
+        "financialProfit": 976282017.21,
+        "operatingProfitOverNetProfit": 0.8679518917406652
       },
       {
         "year": "2024",
@@ -53145,42 +53066,42 @@ const data: ServiceData = {
         "operatingProfit": 3108670334.3900003,
         "financialProfit": 807777307.99,
         "operatingProfitOverNetProfit": 0.793747451325784
-      },
-      {
-        "year": "2015",
-        "revenue": 31279699772.91,
-        "netProfit": 5427522203.84,
-        "netProfitMargin": 0.1735158023652306,
-        "netProfitExcludingNon": 5603740502.41,
-        "coreProfit": 14978247881.57,
-        "cashFlowFromOperating": 22896771649,
-        "fcf": 6564461303.09,
-        "capex": 16332310345.91,
-        "fcfOverNetProfit": 1.2094766371375891,
-        "netProfitExcludingNonOvernetProfit": 1.0324675407951946,
-        "cashFlowFromOperatingOverNetProfit": 4.218641728043123,
-        "operatingProfit": 4848182686.37,
-        "financialProfit": 579339517.47,
-        "operatingProfitOverNetProfit": 0.8932589318455272
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 43.506605,
-        "netProfitMargin": 16.06268257523794,
-        "grossProfitMinusNetProfit": 27.44392242476206,
-        "devExpenses": 64618973.07,
-        "manageExpenses": 1324798828.45,
-        "devAndManageExpenses": 1389417801.52,
-        "sellingExpenses": 32306921.82,
-        "financialExpenses": 2053553076.66,
-        "totalOperatingExpenses": 3475277800,
-        "sellingExpensesRatio": 0.0007962765043061977,
-        "devExpensesRatio": 0.0015926794349123766,
-        "manageExpensesRatio": 0.032652636667293365,
-        "devAndManageExpensesRatio": 0.03424531610220574,
-        "totalOperatingExpensesRatio": 8.565601
+        "year": "2026Q1",
+        "grossProfitMargin": 45.045652,
+        "netProfitMargin": 16.924868284778675,
+        "grossProfitMinusNetProfit": 28.12078371522132,
+        "devExpenses": 9893503.26,
+        "manageExpenses": 431357367,
+        "devAndManageExpenses": 441250870.26,
+        "sellingExpenses": 17186781.94,
+        "financialExpenses": 529369377.16,
+        "totalOperatingExpenses": 987807029.36,
+        "sellingExpensesRatio": 0.00137342121689601,
+        "devExpensesRatio": 0.0007906045084036157,
+        "manageExpensesRatio": 0.034470406500205976,
+        "devAndManageExpensesRatio": 0.035261011008609594,
+        "totalOperatingExpensesRatio": 7.893712
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 41.136814,
+        "netProfitMargin": 13.945977792913808,
+        "grossProfitMinusNetProfit": 27.190836207086193,
+        "devExpenses": 196482336.17,
+        "manageExpenses": 2033219901.71,
+        "devAndManageExpenses": 2229702237.88,
+        "sellingExpenses": 60043660.04,
+        "financialExpenses": 2687092580.25,
+        "totalOperatingExpenses": 4976838478.17,
+        "sellingExpensesRatio": 0.0011325907768768892,
+        "devExpensesRatio": 0.003706204478826211,
+        "manageExpensesRatio": 0.03835219416180149,
+        "devAndManageExpensesRatio": 0.0420583986406277,
+        "totalOperatingExpensesRatio": 9.387704
       },
       {
         "year": "2024",
@@ -53334,41 +53255,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.03196028981518782,
         "devAndManageExpensesRatio": 0.03196028981518782,
         "totalOperatingExpensesRatio": 20.442546
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 52.205555,
-        "netProfitMargin": 17.35158023652306,
-        "grossProfitMinusNetProfit": 34.85397476347694,
-        "devExpenses": 0,
-        "manageExpenses": 867126250.91,
-        "devAndManageExpenses": 867126250.91,
-        "sellingExpenses": 6555754.27,
-        "financialExpenses": 5890142561.15,
-        "totalOperatingExpenses": 6763824566.33,
-        "sellingExpensesRatio": 0.00020958494862785275,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.027721693533036423,
-        "devAndManageExpensesRatio": 0.027721693533036423,
-        "totalOperatingExpensesRatio": 21.623687
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 45060158955.78,
-        "cash": 26878974573.45,
-        "inventory": 1216292775.06,
-        "nonCurrentAssets": 268951097854.98,
-        "goodwill": 146292117.53,
-        "totalAssets": 314011256810.76,
-        "equity": 71969118764.73,
-        "interestFreeLiabilities": 7282843360.889999,
-        "interestBearingDebt": 159885452400.91,
-        "interestExpense": 3102731937.57,
-        "interestFreeLiabilitiesOverTotal": 0.023192937205047493,
-        "interestBearingDebtOverTotal": 0.5091710852177046,
-        "debtRatio": 61.159787
+        "year": "2026Q1",
+        "currentAssets": 38900276882.37,
+        "cash": 24546578196.23,
+        "inventory": 1000748642.74,
+        "nonCurrentAssets": 277607637128.18,
+        "goodwill": 106468305.17,
+        "totalAssets": 316507914010.55,
+        "equity": 74715549861.45,
+        "interestFreeLiabilities": 6120715434.679999,
+        "interestBearingDebt": 158634859461.21002,
+        "interestExpense": 921321811.87,
+        "interestFreeLiabilitiesOverTotal": 0.019338269799079908,
+        "interestBearingDebtOverTotal": 0.5012034531810232,
+        "debtRatio": 59.584463
+      },
+      {
+        "year": "2025",
+        "currentAssets": 37785482245.22,
+        "cash": 23113000367.25,
+        "inventory": 1312132891.09,
+        "nonCurrentAssets": 275794336461.59,
+        "goodwill": 106468305.17,
+        "totalAssets": 313579818706.81,
+        "equity": 72641738935.18,
+        "interestFreeLiabilities": 7222177414.04,
+        "interestBearingDebt": 161642894488.99,
+        "interestExpense": 4092146146.44,
+        "interestFreeLiabilitiesOverTotal": 0.023031384621063807,
+        "interestBearingDebtOverTotal": 0.515476076093157,
+        "debtRatio": 60.524132
       },
       {
         "year": "2024",
@@ -53513,42 +53433,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.034278373651591,
         "interestBearingDebtOverTotal": 0.6169850093745921,
         "debtRatio": 72.100206
-      },
-      {
-        "year": "2015",
-        "currentAssets": 11558879523.79,
-        "cash": 6326753352.63,
-        "inventory": 845372179.05,
-        "nonCurrentAssets": 171985901644.05,
-        "goodwill": 5165055.18,
-        "totalAssets": 183544781167.84,
-        "equity": 26578474517.14,
-        "interestFreeLiabilities": 5120903231.98,
-        "interestBearingDebt": 115678195979.36002,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.02790002090714451,
-        "interestBearingDebtOverTotal": 0.6302450837519574,
-        "debtRatio": 72.001577
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.2206189790542281,
-        "wc": 8951061684.939997,
-        "receivables": 14549795336.89,
-        "prepayments": 466364263.88,
-        "inventory": 1216292775.06,
-        "accountsPayable": 7161764748.24,
-        "customerAdvances": 3460597.36,
-        "contractLiabilities": 116165345.29,
-        "receivablesToRevenueRatio": 0.3586123194831003,
-        "prepaymentsToRevenueRatio": 0.01149459264007652,
-        "inventoryToRevenueRatio": 0.029978261764885814,
-        "accountsPayableToRevenueRatio": 0.1765177453353525,
-        "advancesToRevenueRatio": 0.00008529417887550564,
-        "contractLiabilitiesToRevenueRatio": 0.002863155319606479,
-        "changeInWC": -1564697416.6100006
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.5017588743066147,
+        "wc": 6278933405.920001,
+        "receivables": 11125351988.32,
+        "prepayments": 273548209.54,
+        "inventory": 1000748642.74,
+        "accountsPayable": 6039927501.4,
+        "customerAdvances": 21028894.9,
+        "contractLiabilities": 59759038.38,
+        "receivablesToRevenueRatio": 0.8890433659737756,
+        "prepaymentsToRevenueRatio": 0.021859642842838763,
+        "inventoryToRevenueRatio": 0.07997130722419586,
+        "accountsPayableToRevenueRatio": 0.482659558252152,
+        "advancesToRevenueRatio": 0.0016804501578226397,
+        "contractLiabilitiesToRevenueRatio": 0.00477543332422096,
+        "changeInWC": 957094150.3200016
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.10038472093304339,
+        "wc": 5321839255.599999,
+        "receivables": 10997910640.14,
+        "prepayments": 233973138.41,
+        "inventory": 1312132891.09,
+        "accountsPayable": 7144375541.44,
+        "customerAdvances": 5891844.3,
+        "contractLiabilities": 71910028.3,
+        "receivablesToRevenueRatio": 0.2074512471032032,
+        "prepaymentsToRevenueRatio": 0.00441338550021052,
+        "inventoryToRevenueRatio": 0.02475048338984203,
+        "accountsPayableToRevenueRatio": 0.13476283490029192,
+        "advancesToRevenueRatio": 0.00011113660473943805,
+        "contractLiabilitiesToRevenueRatio": 0.001356423555180999,
+        "changeInWC": -5193919845.949998
       },
       {
         "year": "2024",
@@ -53711,35 +53633,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.008774485691523231,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -2849027664.660001
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.04820495149719667,
-        "wc": 1507836410.4,
-        "receivables": 2644966676.61,
-        "prepayments": 1607915486.72,
-        "inventory": 845372179.05,
-        "accountsPayable": 3553330902.86,
-        "customerAdvances": 37087029.12,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.08455856980125787,
-        "prepaymentsToRevenueRatio": 0.051404441167704124,
-        "inventoryToRevenueRatio": 0.027026224202514257,
-        "accountsPayableToRevenueRatio": 0.11359862558327324,
-        "advancesToRevenueRatio": 0.0011856580910063425,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -2460133738.74
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.21503058962770852,
+        "longTermOperatingAssetsPerYuanRevenue": 0.847543330913591,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 8724326801.61,
+        "longTermOperatingAssets": 10606026930.35,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 4.430416700070298,
+        "longTermOperatingAssetsPerYuanRevenue": 4.631760431597716,
+        "fixedAssets": 234876037846.7,
+        "longTermOperatingAssets": 245550161999.78006,
+        "depreciation": 10533158292.05,
+        "depreciationOverRevenue": 0.19868472250047328
       },
       {
         "year": "2024",
@@ -53821,26 +53734,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 182651934354.59003,
         "depreciation": 6082673299.87,
         "depreciationOverRevenue": 0.20780684790381365
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 5.2268198600069224,
-        "longTermOperatingAssetsPerYuanRevenue": 5.391192591721018,
-        "fixedAssets": 163493355988.1,
-        "longTermOperatingAssets": 168634885686.97,
-        "depreciation": 6114344092.879999,
-        "depreciationOverRevenue": 0.19547323463044775
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 10.06,
-        "roa": 5.615045,
-        "roic": 4.378033,
-        "netProfitMargin": 29.099418,
-        "assetTurnover": 13.2905,
-        "equityMultiplier": 2.574651
+        "year": "2026Q1",
+        "roe": 3.06,
+        "roa": 1.733922,
+        "roic": 1.332312,
+        "netProfitMargin": 31.019408,
+        "assetTurnover": 3.972,
+        "equityMultiplier": 2.474296
+      },
+      {
+        "year": "2025",
+        "roe": 11.35,
+        "roa": 6.690652,
+        "roic": 5.198413,
+        "netProfitMargin": 25.390823,
+        "assetTurnover": 17.3784,
+        "equityMultiplier": 2.533193
       },
       {
         "year": "2024",
@@ -53922,32 +53835,38 @@ const data: ServiceData = {
         "netProfitMargin": 26.851363,
         "assetTurnover": 15.1334,
         "equityMultiplier": 3.584255
-      },
-      {
-        "year": "2015",
-        "roe": 21.84,
-        "roa": 9.449897,
-        "roic": 8.016294,
-        "netProfitMargin": 32.297569,
-        "assetTurnover": 17.509,
-        "equityMultiplier": 3.571629
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 314011256810.76,
-        "avgTotalAssets": 305273971308.25,
-        "avgCurrentAssets": 37451396187.57,
-        "avgInventory": 1448795010.23,
-        "equity": 121962638823.99,
-        "avgEquity": 115518158425.23001,
-        "totalAssetsDays": 2031.523549,
-        "currentAssetsDays": 249.229873,
-        "wcDays": 80.52592735479324,
-        "receivablesDays": 101.094949,
-        "inventoryDays": 17.066377,
+        "year": "2026Q1",
+        "totalAssets": 316507914010.55,
+        "avgTotalAssets": 315043866358.68,
+        "avgCurrentAssets": 38342879563.795,
+        "avgInventory": 1156440766.915,
+        "equity": 127918370603.12,
+        "avgEquity": 125853362871.825,
+        "totalAssetsDays": 2265.806005,
+        "currentAssetsDays": 275.763269,
+        "wcDays": 183.14198912191438,
+        "receivablesDays": 79.549518,
+        "inventoryDays": 15.134672,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 313579818706.81,
+        "avgTotalAssets": 305058252256.275,
+        "avgCurrentAssets": 33814057832.29,
+        "avgInventory": 1496715068.245,
+        "equity": 123788355140.53,
+        "avgEquity": 116431016583.5,
+        "totalAssetsDays": 2071.529593,
+        "currentAssetsDays": 229.617854,
+        "wcDays": 36.640423140560834,
+        "receivablesDays": 91.098779,
+        "inventoryDays": 17.266476,
+        "fixedAssetsDays": 1617.1020955256586
       },
       {
         "year": "2024",
@@ -54083,24 +54002,165 @@ const data: ServiceData = {
         "receivablesDays": 30.649262,
         "inventoryDays": 22.808197,
         "fixedAssetsDays": 2210.884719284411
-      },
-      {
-        "year": "2015",
-        "totalAssets": 183544781167.84,
-        "avgTotalAssets": 178648332314.22,
-        "avgCurrentAssets": 12680575001.725,
-        "avgInventory": 968489744.405,
-        "equity": 51389642485.7,
-        "avgEquity": 47064390337.59,
-        "totalAssetsDays": 2056.074709,
-        "currentAssetsDays": 145.941522,
-        "wcDays": 17.594807296476784,
-        "receivablesDays": 30.814002,
-        "inventoryDays": 23.321556,
-        "fixedAssetsDays": 1907.7892489025267
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "电力",
+        "mainBusinessIncome": 48770170900,
+        "mbiRatio": 0.919941,
+        "mainBusinessCost": 26957728000,
+        "mbcRatio": 0.863864,
+        "mainBusinessProfit": 21812442900,
+        "mbpRatio": 1.000183,
+        "grossProfitRatio": 0.44725
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他",
+        "mainBusinessIncome": 3800941800,
+        "mbiRatio": 0.071696,
+        "mainBusinessCost": 4035698100,
+        "mbcRatio": 0.129324,
+        "mainBusinessProfit": -234756300,
+        "mbpRatio": -0.010764,
+        "grossProfitRatio": -0.061763
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 443322248.03,
+        "mbiRatio": 0.008362,
+        "mainBusinessCost": 212559029.5,
+        "mbcRatio": 0.006811,
+        "mainBusinessProfit": 230763218.53,
+        "mbpRatio": 0.010581,
+        "grossProfitRatio": 0.520532
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "电力",
+        "mainBusinessIncome": 48770170900,
+        "mbiRatio": 0.919941,
+        "mainBusinessCost": 26957728000,
+        "mbcRatio": 0.863864,
+        "mainBusinessProfit": 21812442900,
+        "mbpRatio": 1.000183,
+        "grossProfitRatio": 0.44725
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 3800941800,
+        "mbiRatio": 0.071696,
+        "mainBusinessCost": 4035698100,
+        "mbcRatio": 0.129324,
+        "mainBusinessProfit": -234756300,
+        "mbpRatio": -0.010764,
+        "grossProfitRatio": -0.061763
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 443322248.03,
+        "mbiRatio": 0.008362,
+        "mainBusinessCost": 212559029.5,
+        "mbcRatio": 0.006811,
+        "mainBusinessProfit": 230763218.53,
+        "mbpRatio": 0.010581,
+        "grossProfitRatio": 0.520532
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "西南",
+        "mainBusinessIncome": 27532798800,
+        "mbiRatio": 0.519345,
+        "mainBusinessCost": 11398815600,
+        "mbcRatio": 0.365277,
+        "mainBusinessProfit": 16133983200,
+        "mbpRatio": 0.739804,
+        "grossProfitRatio": 0.585991
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华东",
+        "mainBusinessIncome": 7648195400,
+        "mbiRatio": 0.144266,
+        "mainBusinessCost": 5868330100,
+        "mbcRatio": 0.188051,
+        "mainBusinessProfit": 1779865300,
+        "mbpRatio": 0.081614,
+        "grossProfitRatio": 0.232717
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华南",
+        "mainBusinessIncome": 6271132500,
+        "mbiRatio": 0.118291,
+        "mainBusinessCost": 5064312800,
+        "mbcRatio": 0.162287,
+        "mainBusinessProfit": 1206819700,
+        "mbpRatio": 0.055337,
+        "grossProfitRatio": 0.19244
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华北",
+        "mainBusinessIncome": 5890974200,
+        "mbiRatio": 0.11112,
+        "mainBusinessCost": 4886710600,
+        "mbcRatio": 0.156595,
+        "mainBusinessProfit": 1004263600,
+        "mbpRatio": 0.046049,
+        "grossProfitRatio": 0.170475
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "西北",
+        "mainBusinessIncome": 2549239900,
+        "mbiRatio": 0.048086,
+        "mainBusinessCost": 1384716800,
+        "mbcRatio": 0.044373,
+        "mainBusinessProfit": 1164523100,
+        "mbpRatio": 0.053398,
+        "grossProfitRatio": 0.456812
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "印尼",
+        "mainBusinessIncome": 1319434900,
+        "mbiRatio": 0.024888,
+        "mainBusinessCost": 1285213800,
+        "mbcRatio": 0.041185,
+        "mainBusinessProfit": 34221100,
+        "mbpRatio": 0.001569,
+        "grossProfitRatio": 0.025936
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "泰国",
+        "mainBusinessIncome": 1050310600,
+        "mbiRatio": 0.019812,
+        "mainBusinessCost": 962490000,
+        "mbcRatio": 0.030843,
+        "mainBusinessProfit": 87820600,
+        "mbpRatio": 0.004027,
+        "grossProfitRatio": 0.083614
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -55038,18 +55098,6 @@ const data: ServiceData = {
         "grossProfitRatio": 0.061535
       },
       {
-        "year": "2019",
-        "mainType": "地区",
-        "itemName": "新疆",
-        "mainBusinessIncome": 1105249021,
-        "mbiRatio": 0.026047,
-        "mainBusinessCost": 723262884.3,
-        "mbcRatio": 0.027977,
-        "mainBusinessProfit": 381986136.7,
-        "mbpRatio": 0.023037,
-        "grossProfitRatio": 0.345611
-      },
-      {
         "year": "2018",
         "mainType": "行业",
         "itemName": "电力",
@@ -55204,18 +55252,6 @@ const data: ServiceData = {
         "mainBusinessProfit": 1274237761.75,
         "mbpRatio": 0.076895,
         "grossProfitRatio": 0.72621
-      },
-      {
-        "year": "2018",
-        "mainType": "地区",
-        "itemName": "新疆",
-        "mainBusinessIncome": 826272652.41,
-        "mbiRatio": 0.020147,
-        "mainBusinessCost": 653608023.88,
-        "mbcRatio": 0.026743,
-        "mainBusinessProfit": 172664628.53,
-        "mbpRatio": 0.01042,
-        "grossProfitRatio": 0.208968
       },
       {
         "year": "2017",
@@ -55374,18 +55410,6 @@ const data: ServiceData = {
         "grossProfitRatio": 0.61209
       },
       {
-        "year": "2017",
-        "mainType": "地区",
-        "itemName": "贵州",
-        "mainBusinessIncome": 693407238.82,
-        "mbiRatio": 0.021912,
-        "mainBusinessCost": 574847983.09,
-        "mbcRatio": 0.030572,
-        "mainBusinessProfit": 118559255.73,
-        "mbpRatio": 0.009232,
-        "grossProfitRatio": 0.170981
-      },
-      {
         "year": "2016",
         "mainType": "行业",
         "itemName": "电力",
@@ -55540,201 +55564,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 601766491.63,
         "mbpRatio": 0.042467,
         "grossProfitRatio": 0.617425
-      },
-      {
-        "year": "2016",
-        "mainType": "地区",
-        "itemName": "贵州",
-        "mainBusinessIncome": 635045389.52,
-        "mbiRatio": 0.021696,
-        "mainBusinessCost": 508288421.42,
-        "mbcRatio": 0.03366,
-        "mainBusinessProfit": 126756968.1,
-        "mbpRatio": 0.008945,
-        "grossProfitRatio": 0.199603
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "电力",
-        "mainBusinessIncome": 30918315719.12,
-        "mbiRatio": 0.988447,
-        "mainBusinessCost": 14598043599.47,
-        "mbcRatio": 0.97646,
-        "mainBusinessProfit": 16320272119.65,
-        "mbpRatio": 0.99942,
-        "grossProfitRatio": 0.527851
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他",
-        "mainBusinessIncome": 215632106.43,
-        "mbiRatio": 0.006894,
-        "mainBusinessCost": 323784702.02,
-        "mbcRatio": 0.021658,
-        "mainBusinessProfit": -108152595.59,
-        "mbpRatio": -0.006623,
-        "grossProfitRatio": -0.501561
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 145751947.36,
-        "mbiRatio": 0.00466,
-        "mainBusinessCost": 28130463.28,
-        "mbcRatio": 0.001882,
-        "mainBusinessProfit": 117621484.08,
-        "mbpRatio": 0.007203,
-        "grossProfitRatio": 0.806998
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "电力销售",
-        "mainBusinessIncome": 30918315719.12,
-        "mbiRatio": 0.988447,
-        "mainBusinessCost": 14598043599.47,
-        "mbcRatio": 0.97646,
-        "mainBusinessProfit": 16320272119.65,
-        "mbpRatio": 0.99942,
-        "grossProfitRatio": 0.527851
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他",
-        "mainBusinessIncome": 215632106.43,
-        "mbiRatio": 0.006894,
-        "mainBusinessCost": 323784702.02,
-        "mbcRatio": 0.021658,
-        "mainBusinessProfit": -108152595.59,
-        "mbpRatio": -0.006623,
-        "grossProfitRatio": -0.501561
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 145751947.36,
-        "mbiRatio": 0.00466,
-        "mainBusinessCost": 28130463.28,
-        "mbcRatio": 0.001882,
-        "mainBusinessProfit": 117621484.08,
-        "mbpRatio": 0.007203,
-        "grossProfitRatio": 0.806998
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "四川",
-        "mainBusinessIncome": 16716280005.62,
-        "mbiRatio": 0.534413,
-        "mainBusinessCost": 4896258487.97,
-        "mbcRatio": 0.32751,
-        "mainBusinessProfit": 11820021517.65,
-        "mbpRatio": 0.723834,
-        "grossProfitRatio": 0.707096
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "天津",
-        "mainBusinessIncome": 3314111265.88,
-        "mbiRatio": 0.105951,
-        "mainBusinessCost": 2062171738.51,
-        "mbcRatio": 0.137938,
-        "mainBusinessProfit": 1251939527.37,
-        "mbpRatio": 0.076666,
-        "grossProfitRatio": 0.37776
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "福建",
-        "mainBusinessIncome": 3041118676.13,
-        "mbiRatio": 0.097223,
-        "mainBusinessCost": 2139391945.45,
-        "mbcRatio": 0.143104,
-        "mainBusinessProfit": 901726730.68,
-        "mbpRatio": 0.05522,
-        "grossProfitRatio": 0.296512
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "广西",
-        "mainBusinessIncome": 2220809634.79,
-        "mbiRatio": 0.070998,
-        "mainBusinessCost": 1704214520.45,
-        "mbcRatio": 0.113995,
-        "mainBusinessProfit": 516595114.34,
-        "mbpRatio": 0.031635,
-        "grossProfitRatio": 0.232616
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "甘肃",
-        "mainBusinessIncome": 1841512911.33,
-        "mbiRatio": 0.058872,
-        "mainBusinessCost": 1531795164.61,
-        "mbcRatio": 0.102461,
-        "mainBusinessProfit": 309717746.72,
-        "mbpRatio": 0.018966,
-        "grossProfitRatio": 0.168187
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "安徽",
-        "mainBusinessIncome": 1529810737.74,
-        "mbiRatio": 0.048907,
-        "mainBusinessCost": 1124088361.17,
-        "mbcRatio": 0.07519,
-        "mainBusinessProfit": 405722376.57,
-        "mbpRatio": 0.024846,
-        "grossProfitRatio": 0.265211
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "云南",
-        "mainBusinessIncome": 998809630.94,
-        "mbiRatio": 0.031932,
-        "mainBusinessCost": 414185816.72,
-        "mbcRatio": 0.027705,
-        "mainBusinessProfit": 584623814.22,
-        "mbpRatio": 0.035801,
-        "grossProfitRatio": 0.585321
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "贵州",
-        "mainBusinessIncome": 664131683.41,
-        "mbiRatio": 0.021232,
-        "mainBusinessCost": 531363622.18,
-        "mbcRatio": 0.035543,
-        "mainBusinessProfit": 132768061.23,
-        "mbpRatio": 0.00813,
-        "grossProfitRatio": 0.199912
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 5427522203.84,
-          "profit_tb": -0.03077,
-          "basicEps": 0.7998,
-          "totalSharesOutstanding": 6786023347,
-          "dps": 0.27993,
-          "dividendRatio": 0.349999999999263,
-          "totalDividend": 1899632771.34,
-          "totalDividendA": 1899632771.34
-        },
         {
           "year": "2016",
           "profit": 3916447642.38,
@@ -55833,51 +55666,79 @@ const data: ServiceData = {
           "dividendRatio": 0.550057704693043,
           "totalDividend": 3654051630.6,
           "totalDividendA": 3654051630.6
+        },
+        {
+          "year": "2025",
+          "profit": 7393381322,
+          "profit_tb": 0.11295,
+          "basicEps": 0.9166,
+          "totalSharesOutstanding": 8004494262,
+          "dps": 0.5081,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
-      "cash": 26878974573.45,
-      "interestBearingDebt": 159885452400.91,
-      "debtRatio": 61.159787,
-      "interestBearingDebtOverTotal": 0.5091710852177046,
-      "roe": 11.8,
-      "roic": 5.293994,
-      "roa": 6.995599,
-      "grossProfitMargin": 37.477097,
-      "netProfitMargin": 20.797154,
-      "tradingFinancialAssets": 19355026.95,
-      "longTermEquityInvestment": 10145649153.04,
-      "minorityInterest": 49993520059.26
+      "cash": 24546578196.23,
+      "interestBearingDebt": 158634859461.21002,
+      "debtRatio": 59.584463,
+      "interestBearingDebtOverTotal": 0.5012034531810232,
+      "roe": 11.35,
+      "roic": 5.198413,
+      "roa": 6.690652,
+      "grossProfitMargin": 41.136814,
+      "netProfitMargin": 25.390823,
+      "tradingFinancialAssets": 24997891.95,
+      "longTermEquityInvestment": 10723561070.17,
+      "minorityInterest": 53202820741.67
     },
     "dynamicData": {
       "code": "600886",
-      "price": 13.44,
-      "marketValue": 107580402881,
-      "PB": 1.62,
-      "PE_TTM": 16.34,
+      "price": 13.61,
+      "marketValue": 108941166906,
+      "PB": 1.58,
+      "PE_TTM": 14.66,
       "totalSharesOutstanding": 8004494262
     },
     "recentYearData": {
-      "netProfit": 6582268183.029999
+      "netProfit": 7433159797.88
     }
   },
   "600887": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 90340548118.19,
-        "netProfit": 10426102617.04,
-        "netProfitMargin": 0.11540889262039702,
-        "netProfitExcludingNon": 10102781490.65,
-        "coreProfit": 11387182091.240004,
-        "cashFlowFromOperating": 9399863342.62,
-        "fcf": 7176853185.550001,
-        "capex": 2223010157.07,
-        "fcfOverNetProfit": 0.6883543591658539,
-        "netProfitExcludingNonOvernetProfit": 0.9689892629810128,
-        "cashFlowFromOperatingOverNetProfit": 0.9015701924185212,
-        "operatingProfit": 9922291818.26,
-        "financialProfit": 503810798.78000003,
-        "operatingProfitOverNetProfit": 0.9516779359185864
+        "year": "2026Q1",
+        "revenue": 34741223880.93,
+        "netProfit": 5394651297.16,
+        "netProfitMargin": 0.15528098018795497,
+        "netProfitExcludingNon": 5328824365.82,
+        "coreProfit": 6008185001.010002,
+        "cashFlowFromOperating": 3734648413.05,
+        "fcf": 3179466491.83,
+        "capex": 555181921.22,
+        "fcfOverNetProfit": 0.5893738662040717,
+        "netProfitExcludingNonOvernetProfit": 0.9877977411858567,
+        "cashFlowFromOperatingOverNetProfit": 0.6922872688761359,
+        "operatingProfit": 5241778026.88,
+        "financialProfit": 152873270.27999997,
+        "operatingProfitOverNetProfit": 0.9716620663951941
+      },
+      {
+        "year": "2025",
+        "revenue": 115636231250.05,
+        "netProfit": 11565166497.81,
+        "netProfitMargin": 0.1000133467926818,
+        "netProfitExcludingNon": 11068321695.12,
+        "coreProfit": 13069716947.859993,
+        "cashFlowFromOperating": 14343920490.32,
+        "fcf": 11307276333.64,
+        "capex": 3036644156.68,
+        "fcfOverNetProfit": 0.9777011282787123,
+        "netProfitExcludingNonOvernetProfit": 0.957039546055469,
+        "cashFlowFromOperatingOverNetProfit": 1.2402692596804543,
+        "operatingProfit": 11085357666.31,
+        "financialProfit": 479808831.5,
+        "operatingProfitOverNetProfit": 0.9585125876405793
       },
       {
         "year": "2024",
@@ -56031,42 +55892,42 @@ const data: ServiceData = {
         "operatingProfit": 4965334885.110001,
         "financialProfit": 696472862.03,
         "operatingProfitOverNetProfit": 0.8769875465337347
-      },
-      {
-        "year": "2015",
-        "revenue": 59863485730.88,
-        "netProfit": 4631791823.05,
-        "netProfitMargin": 0.07737257138470865,
-        "netProfitExcludingNon": 4018368911.66,
-        "coreProfit": 4522369862.739996,
-        "cashFlowFromOperating": 9536498591.5,
-        "fcf": 5884367012.85,
-        "capex": 3652131578.65,
-        "fcfOverNetProfit": 1.270429941079517,
-        "netProfitExcludingNonOvernetProfit": 0.8675625039240071,
-        "cashFlowFromOperatingOverNetProfit": 2.058922109590903,
-        "operatingProfit": 3949056159.9500003,
-        "financialProfit": 682735663.1,
-        "operatingProfitOverNetProfit": 0.8525979385121796
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 35.322943,
-        "netProfitMargin": 11.540889262039702,
-        "grossProfitMinusNetProfit": 23.7820537379603,
-        "devExpenses": 627680048.05,
-        "manageExpenses": 3474093858.11,
-        "devAndManageExpenses": 4101773906.16,
-        "sellingExpenses": 16552963553.94,
-        "financialExpenses": -758761889.33,
-        "totalOperatingExpenses": 19895975570.769997,
-        "sellingExpensesRatio": 0.18322850479370817,
-        "devExpensesRatio": 0.00694793269605608,
-        "manageExpensesRatio": 0.03845553221090645,
-        "devAndManageExpensesRatio": 0.04540346490696253,
-        "totalOperatingExpensesRatio": 22.023306
+        "year": "2026Q1",
+        "grossProfitMargin": 38.374706,
+        "netProfitMargin": 15.528098018795497,
+        "grossProfitMinusNetProfit": 22.846607981204507,
+        "devExpenses": 170119070.51,
+        "manageExpenses": 1277333339.43,
+        "devAndManageExpenses": 1447452409.94,
+        "sellingExpenses": 5820246404.9,
+        "financialExpenses": -279011674.41,
+        "totalOperatingExpenses": 6988687140.43,
+        "sellingExpensesRatio": 0.1675314152675785,
+        "devExpensesRatio": 0.004896749495442531,
+        "manageExpensesRatio": 0.036767079473304,
+        "devAndManageExpensesRatio": 0.04166382896874653,
+        "totalOperatingExpensesRatio": 20.11641
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 34.576003,
+        "netProfitMargin": 10.00133467926818,
+        "grossProfitMinusNetProfit": 24.57466832073182,
+        "devExpenses": 915007208.81,
+        "manageExpenses": 4695602170.41,
+        "devAndManageExpenses": 5610609379.219999,
+        "sellingExpenses": 21544580668.38,
+        "financialExpenses": -690854042.99,
+        "totalOperatingExpenses": 26464336004.609997,
+        "sellingExpensesRatio": 0.1863134109048602,
+        "devExpensesRatio": 0.007912807248373586,
+        "manageExpensesRatio": 0.04060666903140679,
+        "devAndManageExpensesRatio": 0.04851947627978038,
+        "totalOperatingExpensesRatio": 22.885851
       },
       {
         "year": "2024",
@@ -56220,41 +56081,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.057313063306244104,
         "devAndManageExpensesRatio": 0.057313063306244104,
         "totalOperatingExpensesRatio": 29.173065
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 35.894848,
-        "netProfitMargin": 7.7372571384708655,
-        "grossProfitMinusNetProfit": 28.157590861529137,
-        "devExpenses": 0,
-        "manageExpenses": 3456163869.74,
-        "devAndManageExpenses": 3456163869.74,
-        "sellingExpenses": 13258334249.39,
-        "financialExpenses": 297162787.03,
-        "totalOperatingExpenses": 17011660906.16,
-        "sellingExpensesRatio": 0.22147614839860247,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.05773408994720752,
-        "devAndManageExpensesRatio": 0.05773408994720752,
-        "totalOperatingExpensesRatio": 28.417424
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 67656931487.54,
-        "cash": 13826577237.5,
-        "inventory": 9022472775.14,
-        "nonCurrentAssets": 85069428506.9,
-        "goodwill": 2332718975.99,
-        "totalAssets": 152726359994.44,
-        "equity": 56310618404.84,
-        "interestFreeLiabilities": 18070263221.29,
-        "interestBearingDebt": 54154176886.36,
-        "interestExpense": 835299952.62,
-        "interestFreeLiabilitiesOverTotal": 0.1183179067578632,
-        "interestBearingDebtOverTotal": 0.35458303915795203,
-        "debtRatio": 60.551088
+        "year": "2026Q1",
+        "currentAssets": 62624395369.11,
+        "cash": 19755302604.96,
+        "inventory": 10331165379.44,
+        "nonCurrentAssets": 94120852500.53,
+        "goodwill": 2173279390.31,
+        "totalAssets": 156745247869.64,
+        "equity": 59588118155.22,
+        "interestFreeLiabilities": 20944311757.8,
+        "interestBearingDebt": 62140697350.170006,
+        "interestExpense": 266188213.61,
+        "interestFreeLiabilitiesOverTotal": 0.13362007488238947,
+        "interestBearingDebtOverTotal": 0.3964438998613242,
+        "debtRatio": 59.498365
+      },
+      {
+        "year": "2025",
+        "currentAssets": 66369720588.56,
+        "cash": 19494920358,
+        "inventory": 10823125184.53,
+        "nonCurrentAssets": 85728796043.78,
+        "goodwill": 2181530707.86,
+        "totalAssets": 152098516632.34,
+        "equity": 54655690475.89,
+        "interestFreeLiabilities": 23694457176.2,
+        "interestBearingDebt": 50806333185.57001,
+        "interestExpense": 1366436483.7,
+        "interestFreeLiabilitiesOverTotal": 0.15578361775529612,
+        "interestBearingDebtOverTotal": 0.33403569154051366,
+        "debtRatio": 61.508975
       },
       {
         "year": "2024",
@@ -56399,42 +56259,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.27207288185829304,
         "interestBearingDebtOverTotal": 0.0038278222057435895,
         "debtRatio": 40.81879
-      },
-      {
-        "year": "2015",
-        "currentAssets": 19786152407.02,
-        "cash": 13083666953.14,
-        "inventory": 4663128747.3,
-        "nonCurrentAssets": 19844815841.48,
-        "goodwill": 10678610.25,
-        "totalAssets": 39630968248.5,
-        "equity": 19984397434.55,
-        "interestFreeLiabilities": 8677492221.98,
-        "interestBearingDebt": 6190289000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.21895736101043747,
-        "interestBearingDebtOverTotal": 0.15619827810374776,
-        "debtRatio": 49.166227
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": -0.04097059354087255,
-        "wc": -3701305877.210001,
-        "receivables": 3334907699.83,
-        "prepayments": 1190629271.83,
-        "inventory": 9022472775.14,
-        "accountsPayable": 12072276404.94,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.08499771690688498,
+        "wc": -2952924712.4300003,
+        "receivables": 3733725064.04,
+        "prepayments": 1314319078.37,
+        "inventory": 10331165379.44,
+        "accountsPayable": 12933122566.7,
         "customerAdvances": 0,
-        "contractLiabilities": 5177039219.07,
-        "receivablesToRevenueRatio": 0.036914849082684706,
-        "prepaymentsToRevenueRatio": 0.01317934522903639,
-        "inventoryToRevenueRatio": 0.0998717958112912,
-        "accountsPayableToRevenueRatio": 0.13363076333283014,
+        "contractLiabilities": 5399011667.58,
+        "receivablesToRevenueRatio": 0.10747246777594095,
+        "prepaymentsToRevenueRatio": 0.03783168615114478,
+        "inventoryToRevenueRatio": 0.2973748252176844,
+        "accountsPayableToRevenueRatio": 0.3722702058806625,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.05730582033105472,
-        "changeInWC": 5634298042.199999
+        "contractLiabilitiesToRevenueRatio": 0.15540649017099256,
+        "changeInWC": 3935163981.4799995
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": -0.05956687293807858,
+        "wc": -6888088693.91,
+        "receivables": 3135016278.28,
+        "prepayments": 1197447120.87,
+        "inventory": 10823125184.53,
+        "accountsPayable": 11479437770.67,
+        "customerAdvances": 0,
+        "contractLiabilities": 10564239506.92,
+        "receivablesToRevenueRatio": 0.02711102086595065,
+        "prepaymentsToRevenueRatio": 0.010355293560896659,
+        "inventoryToRevenueRatio": 0.0935963155105448,
+        "accountsPayableToRevenueRatio": 0.0992719811652028,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.09135752171026788,
+        "changeInWC": 2447515225.5
       },
       {
         "year": "2024",
@@ -56597,35 +56459,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.05955146050982055,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -2656532284.7699995
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.03537012379029861,
-        "wc": -2117378900.8199997,
-        "receivables": 719350554.42,
-        "prepayments": 614524341.58,
-        "inventory": 4663128747.3,
-        "accountsPayable": 6078848281.58,
-        "customerAdvances": 2035534262.54,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.012016516339424084,
-        "prepaymentsToRevenueRatio": 0.010265428651158608,
-        "inventoryToRevenueRatio": 0.07789604448132846,
-        "accountsPayableToRevenueRatio": 0.10154517745438076,
-        "advancesToRevenueRatio": 0.034002935807829,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -724261488.2499995
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.08299189481063572,
+        "longTermOperatingAssetsPerYuanRevenue": 0.2216458593946308,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 7497533266.559999,
+        "longTermOperatingAssets": 7700248423.51,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.31259851178853054,
+        "longTermOperatingAssetsPerYuanRevenue": 0.38012284445478234,
+        "fixedAssets": 36147713797.6,
+        "longTermOperatingAssets": 43955973144.799995,
+        "depreciation": 4594560933.86,
+        "depreciationOverRevenue": 0.03973288375271235
       },
       {
         "year": "2024",
@@ -56707,26 +56560,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 15713363667.070002,
         "depreciation": 1611780932.9099998,
         "depreciationOverRevenue": 0.026724046200714172
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.2566826528434785,
-        "longTermOperatingAssetsPerYuanRevenue": 0.27645232206906306,
-        "fixedAssets": 15365918325.859999,
-        "longTermOperatingAssets": 16549399637.449999,
-        "depreciation": 1780840929.09,
-        "depreciationOverRevenue": 0.029748366760597278
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 18.6,
-        "roa": 8.298886,
-        "roic": 10.515898,
-        "netProfitMargin": 11.534195,
-        "assetTurnover": 59.106,
-        "equityMultiplier": 2.534924
+        "year": "2026Q1",
+        "roe": 9.44,
+        "roa": 4.299854,
+        "roic": 4.983334,
+        "netProfitMargin": 15.656436,
+        "assetTurnover": 22.5518,
+        "equityMultiplier": 2.469036
+      },
+      {
+        "year": "2025",
+        "roe": 20.87,
+        "roa": 9.391426,
+        "roic": 12.364337,
+        "netProfitMargin": 9.957009,
+        "assetTurnover": 75.8174,
+        "equityMultiplier": 2.598008
       },
       {
         "year": "2024",
@@ -56808,32 +56661,38 @@ const data: ServiceData = {
         "netProfitMargin": 9.399513,
         "assetTurnover": 153.6487,
         "equityMultiplier": 1.689725
-      },
-      {
-        "year": "2015",
-        "roe": 23.87,
-        "roa": 14.389282,
-        "roic": 17.919478,
-        "netProfitMargin": 7.775065,
-        "assetTurnover": 152.5678,
-        "equityMultiplier": 1.967196
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 152726359994.44,
-        "avgTotalAssets": 153222181961.205,
-        "avgCurrentAssets": 67138156456.96,
-        "avgInventory": 9883573597.755001,
-        "equity": 60248887165.66,
-        "avgEquity": 58628268921.285,
-        "totalAssetsDays": 456.805842,
-        "currentAssetsDays": 200.16098,
-        "wcDays": -14.954266642418482,
-        "receivablesDays": 8.994326,
-        "inventoryDays": 45.671449,
+        "year": "2026Q1",
+        "totalAssets": 156745247869.64,
+        "avgTotalAssets": 154421882250.99,
+        "avgCurrentAssets": 64497057978.835,
+        "avgInventory": 10577145281.985,
+        "equity": 63484386903.96,
+        "avgEquity": 61014331791.06,
+        "totalAssetsDays": 399.080683,
+        "currentAssetsDays": 166.683177,
+        "wcDays": -31.02416667101302,
+        "receivablesDays": 8.484099,
+        "inventoryDays": 44.463829,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 152098516632.34,
+        "avgTotalAssets": 152908260280.15497,
+        "avgCurrentAssets": 66494551007.47,
+        "avgInventory": 10783899802.45,
+        "equity": 58544276678.16,
+        "avgEquity": 57775963677.535,
+        "totalAssetsDays": 474.824882,
+        "currentAssetsDays": 206.485034,
+        "wcDays": -21.74190862239868,
+        "receivablesDays": 9.130781,
+        "inventoryDays": 51.315356,
+        "fixedAssetsDays": 114.09845680281364
       },
       {
         "year": "2024",
@@ -56969,24 +56828,129 @@ const data: ServiceData = {
         "receivablesDays": 3.415183,
         "inventoryDays": 43.230419,
         "fixedAssetsDays": 88.16444234129976
-      },
-      {
-        "year": "2015",
-        "totalAssets": 39630968248.5,
-        "avgTotalAssets": 39562633532.765,
-        "avgCurrentAssets": 20393609353.775,
-        "avgInventory": 4835687573.450001,
-        "equity": 20145916307.05,
-        "avgEquity": 19483735399.754997,
-        "totalAssetsDays": 235.960534,
-        "currentAssetsDays": 121.632119,
-        "wcDays": -12.910095183458992,
-        "receivablesDays": 3.263025,
-        "inventoryDays": 45.363421,
-        "fixedAssetsDays": 93.68916828786965
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "液体乳及乳制品制造业",
+        "mainBusinessIncome": 113013613394.45,
+        "mbiRatio": 0.97732,
+        "mainBusinessCost": 73533117230.06,
+        "mbcRatio": 0.971968,
+        "mainBusinessProfit": 39480496164.39,
+        "mbpRatio": 0.987447,
+        "grossProfitRatio": 0.349343
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他",
+        "mainBusinessIncome": 1531679442.94,
+        "mbiRatio": 0.013246,
+        "mainBusinessCost": 1504342743.27,
+        "mbcRatio": 0.019885,
+        "mainBusinessProfit": 27336699.67,
+        "mbpRatio": 0.000684,
+        "grossProfitRatio": 0.017848
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 1090938412.66,
+        "mbiRatio": 0.009434,
+        "mainBusinessCost": 616383827.66,
+        "mbcRatio": 0.008147,
+        "mainBusinessProfit": 474554585,
+        "mbpRatio": 0.011869,
+        "grossProfitRatio": 0.434997
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "液体乳",
+        "mainBusinessIncome": 70422480013.97,
+        "mbiRatio": 0.609,
+        "mainBusinessCost": 48288027644.55,
+        "mbcRatio": 0.638276,
+        "mainBusinessProfit": 22134452369.42,
+        "mbpRatio": 0.553605,
+        "grossProfitRatio": 0.314309
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "奶粉及奶制品",
+        "mainBusinessIncome": 32768634710.63,
+        "mbiRatio": 0.283377,
+        "mainBusinessCost": 19144578085.02,
+        "mbcRatio": 0.253055,
+        "mainBusinessProfit": 13624056625.61,
+        "mbpRatio": 0.340751,
+        "grossProfitRatio": 0.415765
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "冷饮产品",
+        "mainBusinessIncome": 9822498669.85,
+        "mbiRatio": 0.084943,
+        "mainBusinessCost": 6100511500.49,
+        "mbcRatio": 0.080637,
+        "mainBusinessProfit": 3721987169.36,
+        "mbpRatio": 0.093091,
+        "grossProfitRatio": 0.378925
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 1531679442.94,
+        "mbiRatio": 0.013246,
+        "mainBusinessCost": 1504342743.27,
+        "mbcRatio": 0.019885,
+        "mainBusinessProfit": 27336699.67,
+        "mbpRatio": 0.000684,
+        "grossProfitRatio": 0.017848
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 1090938412.66,
+        "mbiRatio": 0.009434,
+        "mainBusinessCost": 616383827.66,
+        "mbcRatio": 0.008147,
+        "mainBusinessProfit": 474554585,
+        "mbpRatio": 0.011869,
+        "grossProfitRatio": 0.434997
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华北",
+        "mainBusinessIncome": 32466185606.83,
+        "mbiRatio": 0.280761,
+        "mainBusinessCost": 21290117912.27,
+        "mbcRatio": 0.281415,
+        "mainBusinessProfit": 11176067694.56,
+        "mbpRatio": 0.279525,
+        "grossProfitRatio": 0.344237
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华南",
+        "mainBusinessIncome": 28022574295.56,
+        "mbiRatio": 0.242334,
+        "mainBusinessCost": 17758460912.22,
+        "mbcRatio": 0.234733,
+        "mainBusinessProfit": 10264113383.34,
+        "mbpRatio": 0.256716,
+        "grossProfitRatio": 0.36628
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -58042,189 +58006,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 7266364441.13,
         "mbpRatio": 0.317522,
         "grossProfitRatio": 0.38886
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "液体乳及乳制品制造业",
-        "mainBusinessIncome": 57696406338.75,
-        "mbiRatio": 0,
-        "mainBusinessCost": 36530047403.61,
-        "mbcRatio": 0.951909,
-        "mainBusinessProfit": 21166358935.14,
-        "mbpRatio": 0.962794,
-        "grossProfitRatio": 0.366857
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "销售材料等其他业务",
-        "mainBusinessIncome": 1099977835.85,
-        "mbiRatio": 0,
-        "mainBusinessCost": 999513465.17,
-        "mbcRatio": 0.026046,
-        "mainBusinessProfit": 100464370.68,
-        "mbpRatio": 0.00457,
-        "grossProfitRatio": 0.091333
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "混合饲料制造业",
-        "mainBusinessIncome": 1058183502.25,
-        "mbiRatio": 0,
-        "mainBusinessCost": 846017258.95,
-        "mbcRatio": 0.022046,
-        "mainBusinessProfit": 212166243.3,
-        "mbpRatio": 0.009651,
-        "grossProfitRatio": 0.2005
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "利息收入",
-        "mainBusinessIncome": 496388115.74,
-        "mbiRatio": 0,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 496388115.74,
-        "mbpRatio": 0.022579,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "担保、保理业务",
-        "mainBusinessIncome": 8918054.03,
-        "mbiRatio": 0,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 8918054.03,
-        "mbpRatio": 0.000406,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "担保、保理业务",
-        "mainBusinessIncome": 8918054.03,
-        "mbiRatio": 0,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 8918054.03,
-        "mbpRatio": 0.000406,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "混合饲料",
-        "mainBusinessIncome": 1058183502.25,
-        "mbiRatio": 0,
-        "mainBusinessCost": 846017258.95,
-        "mbcRatio": 0.022046,
-        "mainBusinessProfit": 212166243.3,
-        "mbpRatio": 0.009651,
-        "grossProfitRatio": 0.2005
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "冷饮产品系列",
-        "mainBusinessIncome": 4097822503.71,
-        "mbiRatio": 0,
-        "mainBusinessCost": 2609305440.9,
-        "mbcRatio": 0.067994,
-        "mainBusinessProfit": 1488517062.81,
-        "mbpRatio": 0.067708,
-        "grossProfitRatio": 0.363246
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "奶粉及奶制品",
-        "mainBusinessIncome": 6447197323.62,
-        "mbiRatio": 0,
-        "mainBusinessCost": 2838546557.16,
-        "mbcRatio": 0.073968,
-        "mainBusinessProfit": 3608650766.46,
-        "mbpRatio": 0.164147,
-        "grossProfitRatio": 0.559724
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "液体乳",
-        "mainBusinessIncome": 47151386511.42,
-        "mbiRatio": 0,
-        "mainBusinessCost": 31082195405.55,
-        "mbcRatio": 0.809947,
-        "mainBusinessProfit": 16069191105.87,
-        "mbpRatio": 0.73094,
-        "grossProfitRatio": 0.3408
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "销售材料等其他业务",
-        "mainBusinessIncome": 1099977835.85,
-        "mbiRatio": 0,
-        "mainBusinessCost": 999513465.17,
-        "mbcRatio": 0.026046,
-        "mainBusinessProfit": 100464370.68,
-        "mbpRatio": 0.00457,
-        "grossProfitRatio": 0.091333
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "利息收入",
-        "mainBusinessIncome": 496388115.74,
-        "mbiRatio": 0,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 496388115.74,
-        "mbpRatio": 0.022579,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "其他",
-        "mainBusinessIncome": 22261028117.33,
-        "mbiRatio": 0.371863,
-        "mainBusinessCost": 13891374786.36,
-        "mbcRatio": 0.361985,
-        "mainBusinessProfit": 8369653330.97,
-        "mbpRatio": 0.389505,
-        "grossProfitRatio": 0.375978
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华北",
-        "mainBusinessIncome": 18910029988.77,
-        "mbiRatio": 0.315886,
-        "mainBusinessCost": 11874990046.41,
-        "mbcRatio": 0.309441,
-        "mainBusinessProfit": 7035039942.36,
-        "mbpRatio": 0.327395,
-        "grossProfitRatio": 0.372027
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 4631791823.05,
-          "profit_tb": 0.11763,
-          "basicEps": 0.76,
-          "totalSharesOutstanding": 6064800108,
-          "dps": 0.45,
-          "dividendRatio": 0.589223383274352,
-          "totalDividend": 2729160048.6,
-          "totalDividendA": 2729160048.6
-        },
         {
           "year": "2016",
           "profit": 5661807747.14,
@@ -58323,51 +58108,79 @@ const data: ServiceData = {
           "dividendRatio": 0.9129383451241638,
           "totalDividend": 7716940013.74,
           "totalDividendA": 7716940013.74
+        },
+        {
+          "year": "2025",
+          "profit": 11565166497.81,
+          "profit_tb": 0.3682,
+          "basicEps": 1.83,
+          "totalSharesOutstanding": 6325360667,
+          "dps": 1.38,
+          "dividendRatio": 0.26252740250085765,
+          "totalDividend": 3036173120.16,
+          "totalDividendA": 3036173120.16
         }
       ],
-      "cash": 13826577237.5,
-      "interestBearingDebt": 54154176886.36,
-      "debtRatio": 60.551088,
-      "interestBearingDebtOverTotal": 0.35458303915795203,
-      "roe": 15.81,
-      "roic": 9.557387,
-      "roa": 7.824928,
-      "grossProfitMargin": 33.879327,
-      "netProfitMargin": 7.334662,
-      "tradingFinancialAssets": 106387013.17,
-      "longTermEquityInvestment": 4121640945.38,
-      "minorityInterest": 3938268760.82
+      "cash": 19755302604.96,
+      "interestBearingDebt": 62140697350.170006,
+      "debtRatio": 59.498365,
+      "interestBearingDebtOverTotal": 0.3964438998613242,
+      "roe": 20.87,
+      "roic": 12.364337,
+      "roa": 9.391426,
+      "grossProfitMargin": 34.576003,
+      "netProfitMargin": 9.957009,
+      "tradingFinancialAssets": 302959055.06,
+      "longTermEquityInvestment": 4317496058.93,
+      "minorityInterest": 3896268748.74
     },
     "dynamicData": {
       "code": "600887",
-      "price": 25.35,
-      "marketValue": 160347892908,
-      "PB": 2.85,
-      "PE_TTM": 20.02,
+      "price": 27.53,
+      "marketValue": 174137179163,
+      "PB": 2.92,
+      "PE_TTM": 14.41,
       "totalSharesOutstanding": 6325360667
     },
     "recentYearData": {
-      "netProfit": 8010482264.880001
+      "netProfit": 12085713552.039999
     }
   },
   "600900": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 65741285681.72,
-        "netProfit": 28192874494.95,
-        "netProfitMargin": 0.42884580370762815,
-        "netProfitExcludingNon": 28206547059.13,
-        "coreProfit": 29914476069.429996,
-        "cashFlowFromOperating": 42895214451.84,
-        "fcf": 34544055217.31,
-        "capex": 8351159234.53,
-        "fcfOverNetProfit": 1.2252760967491145,
-        "netProfitExcludingNonOvernetProfit": 1.0004849652412156,
-        "cashFlowFromOperatingOverNetProfit": 1.5214913420596232,
-        "operatingProfit": 23816290738.260002,
-        "financialProfit": 4376583756.690001,
-        "operatingProfitOverNetProfit": 0.8447627694907822
+        "year": "2026Q1",
+        "revenue": 18111540767.5,
+        "netProfit": 6761006898.48,
+        "netProfitMargin": 0.37329827347500955,
+        "netProfitExcludingNon": 6237332251.35,
+        "coreProfit": 6782713333.919998,
+        "cashFlowFromOperating": 11710663090.9,
+        "fcf": 8490472218.17,
+        "capex": 3220190872.73,
+        "fcfOverNetProfit": 1.2557999637714934,
+        "netProfitExcludingNonOvernetProfit": 0.9225448731241894,
+        "cashFlowFromOperatingOverNetProfit": 1.7320886173822385,
+        "operatingProfit": 5261959647.959999,
+        "financialProfit": 1499047250.52,
+        "operatingProfitOverNetProfit": 0.7782804731560007
+      },
+      {
+        "year": "2025",
+        "revenue": 86241940222.2,
+        "netProfit": 34502809176.39,
+        "netProfitMargin": 0.40006995537779483,
+        "netProfitExcludingNon": 33445575299.94,
+        "coreProfit": 38363993449.88,
+        "cashFlowFromOperating": 60562925570.41,
+        "fcf": 42074458711.12,
+        "capex": 18488466859.29,
+        "fcfOverNetProfit": 1.219450233632316,
+        "netProfitExcludingNonOvernetProfit": 0.9693580348473927,
+        "cashFlowFromOperatingOverNetProfit": 1.7553041916323944,
+        "operatingProfit": 27867041259.89,
+        "financialProfit": 6635767916.5,
+        "operatingProfitOverNetProfit": 0.807674561147305
       },
       {
         "year": "2024",
@@ -58377,9 +58190,9 @@ const data: ServiceData = {
         "netProfitExcludingNon": 32507551977.06,
         "coreProfit": 34698585870.740005,
         "cashFlowFromOperating": 59648468284.22,
-        "fcf": 45228388771.48,
-        "capex": 14420079512.74,
-        "fcfOverNetProfit": 1.3918066302084926,
+        "fcf": 45014393232.81,
+        "capex": 14634075051.41,
+        "fcfOverNetProfit": 1.3852213766178592,
         "netProfitExcludingNonOvernetProfit": 1.0003501694946357,
         "cashFlowFromOperatingOverNetProfit": 1.8355536399764116,
         "operatingProfit": 27026715362,
@@ -58521,42 +58334,42 @@ const data: ServiceData = {
         "operatingProfit": 19513117411.280003,
         "financialProfit": 1268065186.05,
         "operatingProfitOverNetProfit": 0.9389801239601772
-      },
-      {
-        "year": "2015",
-        "revenue": 47434965001.27,
-        "netProfit": 18234662090.59,
-        "netProfitMargin": 0.38441394633898845,
-        "netProfitExcludingNon": 10832893977.75,
-        "coreProfit": 27545665416.729996,
-        "cashFlowFromOperating": 39793140082.49,
-        "fcf": 34968598340.32,
-        "capex": 4824541742.17,
-        "fcfOverNetProfit": 1.9176992788018568,
-        "netProfitExcludingNonOvernetProfit": 0.5940825184438332,
-        "cashFlowFromOperatingOverNetProfit": 2.182280092978814,
-        "operatingProfit": 16023582941.04,
-        "financialProfit": 2211079149.55,
-        "operatingProfitOverNetProfit": 0.8787430697336022
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 62.477197,
-        "netProfitMargin": 42.88458037076281,
-        "grossProfitMinusNetProfit": 19.592616629237185,
-        "devExpenses": 411682995.77,
-        "manageExpenses": 997059661.17,
-        "devAndManageExpenses": 1408742656.94,
-        "sellingExpenses": 137574448.83,
-        "financialExpenses": 7161129089.09,
-        "totalOperatingExpenses": 8707446194.86,
-        "sellingExpensesRatio": 0.0020926644102467547,
-        "devExpensesRatio": 0.006262168308711255,
-        "manageExpensesRatio": 0.01516641560673405,
-        "devAndManageExpensesRatio": 0.021428583915445307,
-        "totalOperatingExpensesRatio": 13.245019
+        "year": "2026Q1",
+        "grossProfitMargin": 55.646317,
+        "netProfitMargin": 37.32982734750095,
+        "grossProfitMinusNetProfit": 18.31648965249905,
+        "devExpenses": 132360569.04,
+        "manageExpenses": 313109741.36,
+        "devAndManageExpenses": 445470310.40000004,
+        "sellingExpenses": 51284061.34,
+        "financialExpenses": 2106454014.87,
+        "totalOperatingExpenses": 2603208386.6099997,
+        "sellingExpensesRatio": 0.002831568114405041,
+        "devExpensesRatio": 0.007308078906103481,
+        "manageExpensesRatio": 0.01728785780179759,
+        "devAndManageExpensesRatio": 0.024595936707901073,
+        "totalOperatingExpensesRatio": 14.373202
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 61.668487,
+        "netProfitMargin": 40.00699553777948,
+        "grossProfitMinusNetProfit": 21.661491462220518,
+        "devExpenses": 1166892834.72,
+        "manageExpenses": 1617349026.38,
+        "devAndManageExpenses": 2784241861.1000004,
+        "sellingExpenses": 234079316.4,
+        "financialExpenses": 9371372984.05,
+        "totalOperatingExpenses": 12389694161.55,
+        "sellingExpensesRatio": 0.0027142167232891683,
+        "devExpensesRatio": 0.013530456663121592,
+        "manageExpensesRatio": 0.018753625233998036,
+        "devAndManageExpensesRatio": 0.032284081897119635,
+        "totalOperatingExpensesRatio": 14.366205
       },
       {
         "year": "2024",
@@ -58710,56 +58523,55 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.01686138733836466,
         "devAndManageExpensesRatio": 0.01686138733836466,
         "totalOperatingExpensesRatio": 15.35087
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 59.575741,
-        "netProfitMargin": 38.441394633898845,
-        "grossProfitMinusNetProfit": 21.134346366101155,
-        "devExpenses": 0,
-        "manageExpenses": 878015684.83,
-        "devAndManageExpenses": 878015684.83,
-        "sellingExpenses": 4661225.11,
-        "financialExpenses": 8781100736.18,
-        "totalOperatingExpenses": 9663777646.12,
-        "sellingExpensesRatio": 0.00009826559606136957,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.018509883686147813,
-        "devAndManageExpensesRatio": 0.018509883686147813,
-        "totalOperatingExpensesRatio": 13.888773
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 27112931148.25,
-        "cash": 10328949334.16,
-        "inventory": 830768173.22,
-        "nonCurrentAssets": 541656071657.45996,
-        "goodwill": 1139980554.49,
-        "totalAssets": 568769002805.71,
-        "equity": 221105824660.31003,
-        "interestFreeLiabilities": 1840559584.27,
-        "interestBearingDebt": 288709654869.91,
-        "interestExpense": 7258299004.69,
-        "interestFreeLiabilitiesOverTotal": 0.0032360405985393166,
-        "interestBearingDebtOverTotal": 0.5076044113615883,
-        "debtRatio": 59.035779
+        "year": "2026Q1",
+        "currentAssets": 18326388708.19,
+        "cash": 8036182404.35,
+        "inventory": 840650353.26,
+        "nonCurrentAssets": 543664112181.35004,
+        "goodwill": 1095719577.66,
+        "totalAssets": 561990500889.5399,
+        "equity": 227903660002.59003,
+        "interestFreeLiabilities": 1611505309.73,
+        "interestBearingDebt": 289636327131.39,
+        "interestExpense": 2133104788.77,
+        "interestFreeLiabilitiesOverTotal": 0.0028674956377007232,
+        "interestBearingDebtOverTotal": 0.5153758411804873,
+        "debtRatio": 57.327069
+      },
+      {
+        "year": "2025",
+        "currentAssets": 13788280669.65,
+        "cash": 4585856068.06,
+        "inventory": 836598890.26,
+        "nonCurrentAssets": 545420059377.19,
+        "goodwill": 1116546264.67,
+        "totalAssets": 559208340046.84,
+        "equity": 221338010639.92,
+        "interestFreeLiabilities": 1649896587.53,
+        "interestBearingDebt": 287986161889.05005,
+        "interestExpense": 9508718717.67,
+        "interestFreeLiabilitiesOverTotal": 0.0029504148442990007,
+        "interestBearingDebtOverTotal": 0.5149890322896972,
+        "debtRatio": 58.269459
       },
       {
         "year": "2024",
-        "currentAssets": 17203768778.54,
-        "cash": 6569054425.22,
+        "currentAssets": 17207438757.64,
+        "cash": 6572724404.32,
         "inventory": 641979948.58,
-        "nonCurrentAssets": 549189470391.69,
+        "nonCurrentAssets": 549377690216.17,
         "goodwill": 1152786257.22,
-        "totalAssets": 566393239170.23,
-        "equity": 210288410895.96997,
+        "totalAssets": 566585128973.8099,
+        "equity": 210348910895.96997,
         "interestFreeLiabilities": 1885014938.49,
-        "interestBearingDebt": 297626849433.62,
+        "interestBearingDebt": 297691622643.08,
         "interestExpense": 11327295992.21,
-        "interestFreeLiabilitiesOverTotal": 0.0033281028234933736,
-        "interestBearingDebtOverTotal": 0.525477404832101,
+        "interestFreeLiabilitiesOverTotal": 0.0033269756689592424,
+        "interestBearingDebtOverTotal": 0.5254137594155611,
         "debtRatio": 60.790164
       },
       {
@@ -58889,42 +58701,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.0011565735695419717,
         "interestBearingDebtOverTotal": 0.47229212811314303,
         "debtRatio": 56.999484
-      },
-      {
-        "year": "2015",
-        "currentAssets": 8256389196.13,
-        "cash": 4529631276.68,
-        "inventory": 507100926.91,
-        "nonCurrentAssets": 296261043621.06,
-        "goodwill": 0,
-        "totalAssets": 304517432817.19,
-        "equity": 120765721847.77,
-        "interestFreeLiabilities": 377773144.96,
-        "interestBearingDebt": 142508852627.68,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.0012405632789725617,
-        "interestBearingDebtOverTotal": 0.4679825759375552,
-        "debtRatio": 35.664282
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.21850670495655217,
-        "wc": 14364911713.92,
-        "receivables": 15202998830.95,
-        "prepayments": 171704294.02,
-        "inventory": 830768173.22,
-        "accountsPayable": 1481896625.76,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.4418272817268748,
+        "wc": 8002172825.190001,
+        "receivables": 8559518872.6,
+        "prepayments": 213508909.06,
+        "inventory": 840650353.26,
+        "accountsPayable": 1453556220.83,
         "customerAdvances": 0,
-        "contractLiabilities": 358662958.51,
-        "receivablesToRevenueRatio": 0.23125496669708942,
-        "prepaymentsToRevenueRatio": 0.002611818315377791,
-        "inventoryToRevenueRatio": 0.01263693225048994,
-        "accountsPayableToRevenueRatio": 0.022541339287680765,
+        "contractLiabilities": 157949088.9,
+        "receivablesToRevenueRatio": 0.47260025982767345,
+        "prepaymentsToRevenueRatio": 0.011788555805430319,
+        "inventoryToRevenueRatio": 0.046415176049985386,
+        "accountsPayableToRevenueRatio": 0.0802558015074186,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.005455673018724209,
-        "changeInWC": 6193892996.849999
+        "contractLiabilitiesToRevenueRatio": 0.008720908448795783,
+        "changeInWC": 1370424381.7300005
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.07689702279857667,
+        "wc": 6631748443.46,
+        "receivables": 7251847539.23,
+        "prepayments": 193198601.5,
+        "inventory": 836598890.26,
+        "accountsPayable": 1468707269.07,
+        "customerAdvances": 0,
+        "contractLiabilities": 181189318.46,
+        "receivablesToRevenueRatio": 0.08408724943508707,
+        "prepaymentsToRevenueRatio": 0.0022401931241601137,
+        "inventoryToRevenueRatio": 0.009700603767778484,
+        "accountsPayableToRevenueRatio": 0.017030081481074242,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.002100942047374754,
+        "changeInWC": -1539270273.6100006
       },
       {
         "year": "2024",
@@ -59087,42 +58901,33 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.0019808533415751456,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 88114267.28000021
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.07040326065278193,
-        "wc": 3339576205.04,
-        "receivables": 3072900297.06,
-        "prepayments": 10031323.53,
-        "inventory": 507100926.91,
-        "accountsPayable": 161015689.45,
-        "customerAdvances": 89440653.01,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.06478133370558464,
-        "prepaymentsToRevenueRatio": 0.00021147530159938826,
-        "inventoryToRevenueRatio": 0.01069044589568946,
-        "accountsPayableToRevenueRatio": 0.003394451528438759,
-        "advancesToRevenueRatio": 0.0018855427216528014,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 1228284977.14
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.4134577459989957,
+        "longTermOperatingAssetsPerYuanRevenue": 1.462782182865437,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 27181243797.04,
+        "longTermOperatingAssets": 26493239138.940002,
         "depreciation": 0,
         "depreciationOverRevenue": 0
       },
       {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 5.014405817068807,
+        "longTermOperatingAssetsPerYuanRevenue": 5.327848441269203,
+        "fixedAssets": 432452086725.5,
+        "longTermOperatingAssets": 459483986784.88,
+        "depreciation": 19529159458.59,
+        "depreciationOverRevenue": 0.22644619785076328
+      },
+      {
         "year": "2024",
-        "fixedAssetsPerYuanRevenue": 5.201166417245413,
-        "longTermOperatingAssetsPerYuanRevenue": 5.528121774025932,
-        "fixedAssets": 439456279720.83,
-        "longTermOperatingAssets": 467081349406.95996,
+        "fixedAssetsPerYuanRevenue": 5.201179372365742,
+        "longTermOperatingAssetsPerYuanRevenue": 5.52813472914626,
+        "fixedAssets": 439457374323.18,
+        "longTermOperatingAssets": 467082444009.30994,
         "depreciation": 19779813764.84,
         "depreciationOverRevenue": 0.23410315847212138
       },
@@ -59197,26 +59002,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 267728941756.37997,
         "depreciation": 12319463598.19,
         "depreciationOverRevenue": 0.25172900442276513
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 5.890517322514712,
-        "longTermOperatingAssetsPerYuanRevenue": 5.894221868958991,
-        "fixedAssets": 279416483032.86,
-        "longTermOperatingAssets": 279592208063.79,
-        "depreciation": 6180364689.24,
-        "depreciationOverRevenue": 0.1302913302260164
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 13.01,
-        "roa": 7.201275,
-        "roic": 6.967832,
-        "netProfitMargin": 43.436141,
-        "assetTurnover": 11.582699999999999,
-        "equityMultiplier": 2.441154
+        "year": "2026Q1",
+        "roe": 3.01,
+        "roa": 1.842021,
+        "roic": 1.732285,
+        "netProfitMargin": 38.005035,
+        "assetTurnover": 3.2307,
+        "equityMultiplier": 2.343405
+      },
+      {
+        "year": "2025",
+        "roe": 15.9,
+        "roa": 9.104433,
+        "roic": 8.65401,
+        "netProfitMargin": 40.52468,
+        "assetTurnover": 15.321000000000002,
+        "equityMultiplier": 2.396326
       },
       {
         "year": "2024",
@@ -59298,47 +59103,53 @@ const data: ServiceData = {
         "netProfitMargin": 42.783075,
         "assetTurnover": 16.2208,
         "equityMultiplier": 2.325553
-      },
-      {
-        "year": "2015",
-        "roe": 15.56,
-        "roa": 12.269177,
-        "roic": 10.508074,
-        "netProfitMargin": 47.527451,
-        "assetTurnover": 16.774900000000002,
-        "equityMultiplier": 1.554346
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 568769002805.71,
-        "avgTotalAssets": 567581120987.97,
-        "avgCurrentAssets": 22158349963.395,
-        "avgInventory": 736374060.9000001,
-        "equity": 232991787856.44998,
-        "avgEquity": 227495940785.10498,
-        "totalAssetsDays": 2331.060323,
-        "currentAssetsDays": 91.004525,
-        "wcDays": 79.75494730914154,
-        "receivablesDays": 50.371681,
-        "inventoryDays": 8.059883,
+        "year": "2026Q1",
+        "totalAssets": 561990500889.5399,
+        "avgTotalAssets": 560599420468.19,
+        "avgCurrentAssets": 16057334688.919998,
+        "avgInventory": 838624621.76,
+        "equity": 239817817649.91,
+        "avgEquity": 236589239483.78,
+        "totalAssetsDays": 2785.734714,
+        "currentAssetsDays": 79.792224,
+        "wcDays": 161.26695783030928,
+        "receivablesDays": 39.284978,
+        "inventoryDays": 9.395611,
         "fixedAssetsDays": 0
       },
       {
+        "year": "2025",
+        "totalAssets": 559208340046.84,
+        "avgTotalAssets": 562896734510.325,
+        "avgCurrentAssets": 15497859713.645,
+        "avgInventory": 739289419.4200001,
+        "equity": 233360661317.65,
+        "avgEquity": 227722377515.70502,
+        "totalAssetsDays": 2349.701594,
+        "currentAssetsDays": 64.692764,
+        "wcDays": 28.067413321480487,
+        "receivablesDays": 34.601782,
+        "inventoryDays": 8.050864,
+        "fixedAssetsDays": 1830.2581232301145
+      },
+      {
         "year": "2024",
-        "totalAssets": 566393239170.23,
-        "avgTotalAssets": 569666054356.655,
-        "avgCurrentAssets": 17474498598.915,
+        "totalAssets": 566585128973.8099,
+        "avgTotalAssets": 569761999258.445,
+        "avgCurrentAssets": 17476333588.465,
         "avgInventory": 614263976.02,
-        "equity": 222000093713.76,
-        "avgEquity": 217270349765.13,
+        "equity": 222084093713.76,
+        "avgEquity": 217312349765.13,
         "totalAssetsDays": 2426.528747,
         "currentAssetsDays": 74.425362,
         "wcDays": 35.298328841974275,
         "receivablesDays": 38.008638,
         "inventoryDays": 6.404448,
-        "fixedAssetsDays": 1898.4257422945757
+        "fixedAssetsDays": 1898.4304709134956
       },
       {
         "year": "2023",
@@ -59459,25 +59270,82 @@ const data: ServiceData = {
         "receivablesDays": 22.341785,
         "inventoryDays": 8.851064,
         "fixedAssetsDays": 1995.5264916000103
-      },
-      {
-        "year": "2015",
-        "totalAssets": 304517432817.19,
-        "avgTotalAssets": 225755776712.83502,
-        "avgCurrentAssets": 7055854996.385,
-        "avgInventory": 467427541.18,
-        "equity": 133416204339.8,
-        "avgEquity": 109776349176.32501,
-        "totalAssetsDays": 2146.062418,
-        "currentAssetsDays": 88.740262,
-        "wcDays": 25.697190138265405,
-        "receivablesDays": 25.726755,
-        "inventoryDays": 15.245254,
-        "fixedAssetsDays": 2150.0388227178696
       }
     ],
     "primaryBusinessData": [
       {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "境内水电行业",
+        "mainBusinessIncome": 75661563315.43,
+        "mbiRatio": 0.877317,
+        "mainBusinessCost": 25881578129.36,
+        "mbcRatio": 0.782918,
+        "mainBusinessProfit": 49779985186.07,
+        "mbpRatio": 0.935994,
+        "grossProfitRatio": 0.65793
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他行业",
+        "mainBusinessIncome": 10323376439.8,
+        "mbiRatio": 0.119703,
+        "mainBusinessCost": 7067072381.81,
+        "mbcRatio": 0.213779,
+        "mainBusinessProfit": 3256304057.99,
+        "mbpRatio": 0.061227,
+        "grossProfitRatio": 0.31543
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 257000466.97,
+        "mbiRatio": 0.00298,
+        "mainBusinessCost": 109189523.6,
+        "mbcRatio": 0.003303,
+        "mainBusinessProfit": 147810943.37,
+        "mbpRatio": 0.002779,
+        "grossProfitRatio": 0.575139
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "境内水电行业",
+        "mainBusinessIncome": 75661563315.43,
+        "mbiRatio": 0.877317,
+        "mainBusinessCost": 25881578129.36,
+        "mbcRatio": 0.782918,
+        "mainBusinessProfit": 49779985186.07,
+        "mbpRatio": 0.935994,
+        "grossProfitRatio": 0.65793
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他行业",
+        "mainBusinessIncome": 10323376439.8,
+        "mbiRatio": 0.119703,
+        "mainBusinessCost": 7067072381.81,
+        "mbcRatio": 0.213779,
+        "mainBusinessProfit": 3256304057.99,
+        "mbpRatio": 0.061227,
+        "grossProfitRatio": 0.31543
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 257000466.97,
+        "mbiRatio": 0.00298,
+        "mainBusinessCost": 109189523.6,
+        "mbcRatio": 0.003303,
+        "mainBusinessProfit": 147810943.37,
+        "mbpRatio": 0.002779,
+        "grossProfitRatio": 0.575139
+      },
+      {
         "year": "2024",
         "mainType": "行业",
         "itemName": "境内水电行业",
@@ -60124,93 +59992,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 45578794.58,
         "mbpRatio": 0.001535,
         "grossProfitRatio": 0.871654
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "电力行业",
-        "mainBusinessIncome": 22823479231.35,
-        "mbiRatio": 0.941599,
-        "mainBusinessCost": 8640934481.1,
-        "mbcRatio": 0.881866,
-        "mainBusinessProfit": 14182544750.25,
-        "mbpRatio": 0.982129,
-        "grossProfitRatio": 0.621402
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 709362614.5,
-        "mbiRatio": 0.029265,
-        "mainBusinessCost": 609405032.55,
-        "mbcRatio": 0.062194,
-        "mainBusinessProfit": 99957581.95,
-        "mbpRatio": 0.006922,
-        "grossProfitRatio": 0.140912
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他行业",
-        "mainBusinessIncome": 706230829.66,
-        "mbiRatio": 0.029136,
-        "mainBusinessCost": 548126003.81,
-        "mbcRatio": 0.05594,
-        "mainBusinessProfit": 158104825.85,
-        "mbpRatio": 0.010949,
-        "grossProfitRatio": 0.223871
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "电力",
-        "mainBusinessIncome": 22823479231.35,
-        "mbiRatio": 0.941599,
-        "mainBusinessCost": 8640934481.1,
-        "mbcRatio": 0.881866,
-        "mainBusinessProfit": 14182544750.25,
-        "mbpRatio": 0.982129,
-        "grossProfitRatio": 0.621402
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 709362614.5,
-        "mbiRatio": 0.029265,
-        "mainBusinessCost": 609405032.55,
-        "mbcRatio": 0.062194,
-        "mainBusinessProfit": 99957581.95,
-        "mbpRatio": 0.006922,
-        "grossProfitRatio": 0.140912
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他",
-        "mainBusinessIncome": 706230829.66,
-        "mbiRatio": 0.029136,
-        "mainBusinessCost": 548126003.81,
-        "mbcRatio": 0.05594,
-        "mainBusinessProfit": 158104825.85,
-        "mbpRatio": 0.010949,
-        "grossProfitRatio": 0.223871
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 18234662090.59,
-          "profit_tb": 0.54139,
-          "basicEps": 0.8288,
-          "totalSharesOutstanding": 16500000000,
-          "dps": 0.4,
-          "dividendRatio": 0.4306693461598391,
-          "totalDividend": 7853110000,
-          "totalDividendA": 7853110000
-        },
         {
           "year": "2016",
           "profit": 20781182597.33,
@@ -60309,35 +60094,63 @@ const data: ServiceData = {
           "dividendRatio": 0.7100383618112767,
           "totalDividend": 23073529306.19,
           "totalDividendA": 23073529306.19
+        },
+        {
+          "year": "2025",
+          "profit": 34502809176.39,
+          "profit_tb": 0.06175,
+          "basicEps": 1.4101,
+          "totalSharesOutstanding": 24468217716,
+          "dps": 1,
+          "dividendRatio": 0.14892485113577694,
+          "totalDividend": 5138325720.36,
+          "totalDividendA": 5138325720.36
         }
       ],
-      "cash": 10328949334.16,
-      "interestBearingDebt": 288709654869.91,
-      "debtRatio": 59.035779,
-      "interestBearingDebtOverTotal": 0.5076044113615883,
-      "roe": 15.71,
-      "roic": 8.556417,
-      "roa": 8.812852,
-      "grossProfitMargin": 59.13412,
-      "netProfitMargin": 38.974399,
+      "cash": 8036182404.35,
+      "interestBearingDebt": 289636327131.39,
+      "debtRatio": 57.327069,
+      "interestBearingDebtOverTotal": 0.5153758411804873,
+      "roe": 15.9,
+      "roic": 8.65401,
+      "roa": 9.104433,
+      "grossProfitMargin": 61.668487,
+      "netProfitMargin": 40.52468,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 76123371667.62,
-      "minorityInterest": 11885963196.14
+      "longTermEquityInvestment": 75728534667.87,
+      "minorityInterest": 11914157647.32
     },
     "dynamicData": {
       "code": "600900",
-      "price": 26.67,
-      "marketValue": 652567366486,
-      "PB": 2.95,
-      "PE_TTM": 19.1,
+      "price": 27.05,
+      "marketValue": 661865289218,
+      "PB": 2.9,
+      "PE_TTM": 18.34,
       "totalSharesOutstanding": 24468217716
     },
     "recentYearData": {
-      "netProfit": 32664124090.780003
+      "netProfit": 36083030477
     }
   },
   "600938": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 116079000000,
+        "netProfit": 39144000000,
+        "netProfitMargin": 0.33721861835474115,
+        "netProfitExcludingNon": 39038000000,
+        "coreProfit": 52155000000,
+        "cashFlowFromOperating": 55148000000,
+        "fcf": 26830000000,
+        "capex": 28318000000,
+        "fcfOverNetProfit": 0.685417944001635,
+        "netProfitExcludingNonOvernetProfit": 0.9972920498671571,
+        "cashFlowFromOperatingOverNetProfit": 1.4088493766605354,
+        "operatingProfit": 38784000000,
+        "financialProfit": 360000000,
+        "operatingProfitOverNetProfit": 0.9908031882280809
+      },
       {
         "year": "2025",
         "revenue": 398220000000,
@@ -60477,6 +60290,23 @@ const data: ServiceData = {
     ],
     "costsExpensesData": [
       {
+        "year": "2026Q1",
+        "grossProfitMargin": 51.173769,
+        "netProfitMargin": 33.721861835474115,
+        "grossProfitMinusNetProfit": 17.451907164525885,
+        "devExpenses": 306000000,
+        "manageExpenses": 1693000000,
+        "devAndManageExpenses": 1999000000,
+        "sellingExpenses": 124000000,
+        "financialExpenses": -100000000,
+        "totalOperatingExpenses": 2023000000,
+        "sellingExpensesRatio": 0.0010682380103205576,
+        "devExpensesRatio": 0.002636135735145892,
+        "manageExpensesRatio": 0.01458489476994116,
+        "devAndManageExpensesRatio": 0.017221030505087054,
+        "totalOperatingExpensesRatio": 1.742778
+      },
+      {
         "year": "2025",
         "grossProfitMargin": 51.468786,
         "netProfitMargin": 30.656923308723822,
@@ -60615,6 +60445,22 @@ const data: ServiceData = {
     ],
     "balanceData": [
       {
+        "year": "2026Q1",
+        "currentAssets": 342932000000,
+        "cash": 246335000000,
+        "inventory": 5545000000,
+        "nonCurrentAssets": 808631000000,
+        "goodwill": 14713000000,
+        "totalAssets": 1151563000000,
+        "equity": 837102000000,
+        "interestFreeLiabilities": 68794000000,
+        "interestBearingDebt": 69352000000,
+        "interestExpense": 554000000,
+        "interestFreeLiabilitiesOverTotal": 0.0597396755540079,
+        "interestBearingDebtOverTotal": 0.0602242343666825,
+        "debtRatio": 27.092482
+      },
+      {
         "year": "2025",
         "currentAssets": 295383000000,
         "cash": 214695000000,
@@ -60744,6 +60590,24 @@ const data: ServiceData = {
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.020822026378586996,
+        "wc": -2417000000,
+        "receivables": 55761000000,
+        "prepayments": 5071000000,
+        "inventory": 5545000000,
+        "accountsPayable": 68069000000,
+        "customerAdvances": 0,
+        "contractLiabilities": 725000000,
+        "receivablesToRevenueRatio": 0.48037112656035974,
+        "prepaymentsToRevenueRatio": 0.04368576572851248,
+        "inventoryToRevenueRatio": 0.04776919167118945,
+        "accountsPayableToRevenueRatio": 0.586402363907339,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.006245746431309712,
+        "changeInWC": 14186000000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.04169303400130581,
@@ -60891,11 +60755,20 @@ const data: ServiceData = {
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.25176819235176046,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 29225000000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.01711365576816835,
-        "longTermOperatingAssetsPerYuanRevenue": 0.08979458590728744,
-        "fixedAssets": 6815000000,
-        "longTermOperatingAssets": 35758000000,
+        "fixedAssetsPerYuanRevenue": 0.39608256742504144,
+        "longTermOperatingAssetsPerYuanRevenue": 0.4687634975641605,
+        "fixedAssets": 157728000000,
+        "longTermOperatingAssets": 186671000000,
         "depreciation": 79771000000,
         "depreciationOverRevenue": 0.20031891919039727
       },
@@ -60964,6 +60837,15 @@ const data: ServiceData = {
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 4.77,
+        "roa": 4.703033,
+        "roic": 4.462946,
+        "netProfitMargin": 33.756321,
+        "assetTurnover": 10.3175,
+        "equityMultiplier": 1.3716
+      },
       {
         "year": "2025",
         "roe": 15.64,
@@ -61039,6 +60921,21 @@ const data: ServiceData = {
     ],
     "turnoverRateData": [
       {
+        "year": "2026Q1",
+        "totalAssets": 1151563000000,
+        "avgTotalAssets": 1125061000000,
+        "avgCurrentAssets": 319157500000,
+        "avgInventory": 5817500000,
+        "equity": 839576000000,
+        "avgEquity": 822380000000,
+        "totalAssetsDays": 872.29809,
+        "currentAssetsDays": 247.453673,
+        "wcDays": -7.600039628184255,
+        "receivablesDays": 33.942185,
+        "inventoryDays": 9.237874,
+        "fixedAssetsDays": 0
+      },
+      {
         "year": "2025",
         "totalAssets": 1098559000000,
         "avgTotalAssets": 1077420000000,
@@ -61051,7 +60948,7 @@ const data: ServiceData = {
         "wcDays": -15.21795741047662,
         "receivablesDays": 29.531264,
         "inventoryDays": 11.010809,
-        "fixedAssetsDays": 6.2464843553814475
+        "fixedAssetsDays": 144.5701371101401
       },
       {
         "year": "2024",
@@ -62116,29 +62013,29 @@ const data: ServiceData = {
           "totalDividendA": 1991698800
         }
       ],
-      "cash": 214695000000,
-      "interestBearingDebt": 69800000000,
-      "debtRatio": 26.705438,
-      "interestBearingDebtOverTotal": 0.06353777994627507,
+      "cash": 246335000000,
+      "interestBearingDebt": 69352000000,
+      "debtRatio": 27.092482,
+      "interestBearingDebtOverTotal": 0.0602242343666825,
       "roe": 15.64,
       "roic": 14.573492,
       "roa": 15.99237,
       "grossProfitMargin": 51.468786,
       "netProfitMargin": 30.673497,
-      "tradingFinancialAssets": 25998000000,
-      "longTermEquityInvestment": 45819000000,
-      "minorityInterest": 2434000000
+      "tradingFinancialAssets": 19977000000,
+      "longTermEquityInvestment": 45435000000,
+      "minorityInterest": 2474000000
     },
     "dynamicData": {
       "code": "600938",
-      "price": 39.23,
-      "marketValue": 1864600094792,
-      "PB": 2.32,
-      "PE_TTM": 15.27,
+      "price": 36.36,
+      "marketValue": 1728189126858,
+      "PB": 2.06,
+      "PE_TTM": 13.86,
       "totalSharesOutstanding": 47529953984
     },
     "recentYearData": {
-      "netProfit": 122082000000
+      "netProfit": 124663000000
     }
   },
   "600941": {
@@ -65329,11 +65226,11 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600941",
-      "price": 95.37,
-      "marketValue": 2065470011982,
-      "PB": 1.45,
-      "PE_TTM": 15.21,
-      "totalSharesOutstanding": 21657439572
+      "price": 96.02,
+      "marketValue": 2080677963231,
+      "PB": 1.46,
+      "PE_TTM": 15.32,
+      "totalSharesOutstanding": 21669214364
     },
     "recentYearData": {
       "netProfit": 135806000000
@@ -65341,6 +65238,23 @@ const data: ServiceData = {
   },
   "601000": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 1515274896.91,
+        "netProfit": 470867805.23,
+        "netProfitMargin": 0.31074744667796556,
+        "netProfitExcludingNon": 470332183.03,
+        "coreProfit": 594863465.2500001,
+        "cashFlowFromOperating": 526299898.07,
+        "fcf": 444319448.03,
+        "capex": 81980450.04,
+        "fcfOverNetProfit": 0.9436182365727208,
+        "netProfitExcludingNonOvernetProfit": 0.9988624786106614,
+        "cashFlowFromOperatingOverNetProfit": 1.117723259531247,
+        "operatingProfit": 398459639.97,
+        "financialProfit": 72408165.26,
+        "operatingProfitOverNetProfit": 0.8462240050057542
+      },
       {
         "year": "2025",
         "revenue": 5683742176.2,
@@ -65510,26 +65424,26 @@ const data: ServiceData = {
         "operatingProfit": 1269886589.43,
         "financialProfit": 44582369.24,
         "operatingProfitOverNetProfit": 0.9660833609299461
-      },
-      {
-        "year": "2015",
-        "revenue": 5157369192.01,
-        "netProfit": 1199790316.23,
-        "netProfitMargin": 0.23263611185500593,
-        "netProfitExcludingNon": 1207426811.19,
-        "coreProfit": 1749858717.8600004,
-        "cashFlowFromOperating": 1084798501.66,
-        "fcf": 399798679.10000014,
-        "capex": 684999822.56,
-        "fcfOverNetProfit": 0.33322379226751375,
-        "netProfitExcludingNonOvernetProfit": 1.0063648579728461,
-        "cashFlowFromOperatingOverNetProfit": 0.9041567405450237,
-        "operatingProfit": 1160024857.75,
-        "financialProfit": 39765458.48,
-        "operatingProfitOverNetProfit": 0.9668563265246617
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 48.370363,
+        "netProfitMargin": 31.074744667796555,
+        "grossProfitMinusNetProfit": 17.295618332203443,
+        "devExpenses": 31256351.57,
+        "manageExpenses": 102683220.03,
+        "devAndManageExpenses": 133939571.6,
+        "sellingExpenses": 110880.93,
+        "financialExpenses": -21776987.98,
+        "totalOperatingExpenses": 112273464.55,
+        "sellingExpensesRatio": 0.00007317545497923323,
+        "devExpensesRatio": 0.02062751229743132,
+        "manageExpensesRatio": 0.06776540694985121,
+        "devAndManageExpensesRatio": 0.08839291924728253,
+        "totalOperatingExpensesRatio": 7.409445
+      },
       {
         "year": "2025",
         "grossProfitMargin": 48.5984,
@@ -65699,26 +65613,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.056591169691498654,
         "devAndManageExpensesRatio": 0.056591169691498654,
         "totalOperatingExpensesRatio": 7.289003
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 40.637744,
-        "netProfitMargin": 23.263611185500594,
-        "grossProfitMinusNetProfit": 17.374132814499404,
-        "devExpenses": 0,
-        "manageExpenses": 331786908.01,
-        "devAndManageExpenses": 331786908.01,
-        "sellingExpenses": 1876396.21,
-        "financialExpenses": 151407355.78,
-        "totalOperatingExpenses": 485070660,
-        "sellingExpensesRatio": 0.0003638281728806592,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.06433258811954307,
-        "devAndManageExpensesRatio": 0.06433258811954307,
-        "totalOperatingExpensesRatio": 9.405389
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 9245696155.74,
+        "cash": 8379393029.49,
+        "inventory": 112796530.38,
+        "nonCurrentAssets": 16601252397.02,
+        "goodwill": 0,
+        "totalAssets": 25846948552.76,
+        "equity": 21920419394.65,
+        "interestFreeLiabilities": 916468390.6,
+        "interestBearingDebt": 90438185.03,
+        "interestExpense": 134692.25,
+        "interestFreeLiabilitiesOverTotal": 0.035457508213368474,
+        "interestBearingDebtOverTotal": 0.0034989888591836424,
+        "debtRatio": 8.330244
+      },
       {
         "year": "2025",
         "currentAssets": 9012099676.88,
@@ -65878,25 +65791,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.09861771944266823,
         "interestBearingDebtOverTotal": 0.05773503054304693,
         "debtRatio": 26.762928
-      },
-      {
-        "year": "2015",
-        "currentAssets": 4042150092.42,
-        "cash": 2184329620.64,
-        "inventory": 370262607.58,
-        "nonCurrentAssets": 12602285041.09,
-        "goodwill": 0,
-        "totalAssets": 16644435133.51,
-        "equity": 10396306984.06,
-        "interestFreeLiabilities": 2356394031.93,
-        "interestBearingDebt": 1882157625.59,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.14157248431855196,
-        "interestBearingDebtOverTotal": 0.11308029443430491,
-        "debtRatio": 31.646366
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.06497905827568659,
+        "wc": -98461135.8299999,
+        "receivables": 667048274.7,
+        "prepayments": 38162449.69,
+        "inventory": 112796530.38,
+        "accountsPayable": 702690037.76,
+        "customerAdvances": 1898684.34,
+        "contractLiabilities": 211879668.5,
+        "receivablesToRevenueRatio": 0.44021601364892105,
+        "prepaymentsToRevenueRatio": 0.02518516591796126,
+        "inventoryToRevenueRatio": 0.07443964828429382,
+        "accountsPayableToRevenueRatio": 0.4637376618545911,
+        "advancesToRevenueRatio": 0.0012530296277407232,
+        "contractLiabilitiesToRevenueRatio": 0.13982919464453097,
+        "changeInWC": 204923190.7700002
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.05337756660926426,
@@ -66076,27 +65991,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.030183671380223705,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 526043631.55
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.12106786268032395,
-        "wc": -624391665.13,
-        "receivables": 1286056452.19,
-        "prepayments": 75683307.03,
-        "inventory": 370262607.58,
-        "accountsPayable": 2129756802.31,
-        "customerAdvances": 226637229.62,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.24936288334416884,
-        "prepaymentsToRevenueRatio": 0.014674789454137114,
-        "inventoryToRevenueRatio": 0.07179292266949308,
-        "accountsPayableToRevenueRatio": 0.4129541095505637,
-        "advancesToRevenueRatio": 0.04394434859755926,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 480024480.16999996
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 1.5133850646812401,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 2293194397.87,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 1.4227409193191827,
@@ -66186,18 +66092,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 12492205942.71,
         "depreciation": 728232174.16,
         "depreciationOverRevenue": 0.11155368021083298
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 2.1510010801120263,
-        "longTermOperatingAssetsPerYuanRevenue": 2.3467642761702314,
-        "fixedAssets": 11093506702.55,
-        "longTermOperatingAssets": 12103129778.83,
-        "depreciation": 629431327.78,
-        "depreciationOverRevenue": 0.12204503969875567
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.17,
+        "roa": 2.5726,
+        "roic": 2.165762,
+        "netProfitMargin": 34.48897,
+        "assetTurnover": 5.9016,
+        "equityMultiplier": 1.090872
+      },
       {
         "year": "2025",
         "roe": 9.5,
@@ -66287,18 +66193,24 @@ const data: ServiceData = {
         "netProfitMargin": 25.357911,
         "assetTurnover": 30.4645,
         "equityMultiplier": 1.365428
-      },
-      {
-        "year": "2015",
-        "roe": 13.44,
-        "roa": 11.051095,
-        "roic": 11.872865,
-        "netProfitMargin": 25.087158,
-        "assetTurnover": 32.342999999999996,
-        "equityMultiplier": 1.46298
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 25846948552.76,
+        "avgTotalAssets": 25675586516.864998,
+        "avgCurrentAssets": 9128897916.31,
+        "avgInventory": 109911557.715,
+        "equity": 23693834589.33,
+        "avgEquity": 23449642381.265,
+        "totalAssetsDays": 1525.005654,
+        "currentAssetsDays": 542.212382,
+        "wcDays": -23.717356270625608,
+        "receivablesDays": 15.543542,
+        "inventoryDays": 12.644316,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 25504224480.97,
@@ -66448,21 +66360,6 @@ const data: ServiceData = {
         "receivablesDays": 46.425512,
         "inventoryDays": 30.779284,
         "fixedAssetsDays": 616.0565701185164
-      },
-      {
-        "year": "2015",
-        "totalAssets": 16644435133.51,
-        "avgTotalAssets": 15945846541.42,
-        "avgCurrentAssets": 3403092094.71,
-        "avgInventory": 426662950.67499995,
-        "equity": 11377076240.33,
-        "avgEquity": 9601487207.81,
-        "totalAssetsDays": 1113.068415,
-        "currentAssetsDays": 237.546141,
-        "wcDays": -44.18976987831824,
-        "receivablesDays": 36.405304,
-        "inventoryDays": 50.170545,
-        "fixedAssetsDays": 785.1153942408896
       }
     ],
     "primaryBusinessData": [
@@ -67252,33 +67149,50 @@ const data: ServiceData = {
           "totalDividendA": 0
         }
       ],
-      "cash": 8135108277.91,
-      "interestBearingDebt": 81861903.25,
-      "debtRatio": 9.013308,
-      "interestBearingDebtOverTotal": 0.003209738971325371,
+      "cash": 8379393029.49,
+      "interestBearingDebt": 90438185.03,
+      "debtRatio": 8.330244,
+      "interestBearingDebtOverTotal": 0.0034989888591836424,
       "roe": 9.5,
       "roic": 9.442458,
       "roa": 10.896736,
       "grossProfitMargin": 48.5984,
       "netProfitMargin": 38.350185,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 3535183439.26,
-      "minorityInterest": 1720999388.87
+      "longTermEquityInvestment": 3567178867.25,
+      "minorityInterest": 1773415194.68
     },
     "dynamicData": {
       "code": "601000",
-      "price": 4.87,
-      "marketValue": 28859272350,
-      "PB": 1.34,
-      "PE_TTM": 14.44,
+      "price": 4.74,
+      "marketValue": 28088901630,
+      "PB": 1.28,
+      "PE_TTM": 13.45,
       "totalSharesOutstanding": 5925928614
     },
     "recentYearData": {
-      "netProfit": 1998358912.6
+      "netProfit": 2087826977.73
     }
   },
   "601018": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 8190825000,
+        "netProfit": 1169936000,
+        "netProfitMargin": 0.1428349403143151,
+        "netProfitExcludingNon": 1134989000,
+        "coreProfit": 1381447000,
+        "cashFlowFromOperating": -1155518000,
+        "fcf": -2482282000,
+        "capex": 1326764000,
+        "fcfOverNetProfit": -2.1217246071579985,
+        "netProfitExcludingNonOvernetProfit": 0.9701291352689377,
+        "cashFlowFromOperatingOverNetProfit": -0.987676248957208,
+        "operatingProfit": 1008511000,
+        "financialProfit": 161425000,
+        "operatingProfitOverNetProfit": 0.8620223670354618
+      },
       {
         "year": "2025",
         "revenue": 31020365000,
@@ -67448,26 +67362,26 @@ const data: ServiceData = {
         "operatingProfit": 1514383000,
         "financialProfit": 784537000,
         "operatingProfitOverNetProfit": 0.6587367111513233
-      },
-      {
-        "year": "2015",
-        "revenue": 16663790000,
-        "netProfit": 2642058000,
-        "netProfitMargin": 0.1585508458759982,
-        "netProfitExcludingNon": 2486408000,
-        "coreProfit": 3090465000,
-        "cashFlowFromOperating": 2836285000,
-        "fcf": -376369000,
-        "capex": 3212654000,
-        "fcfOverNetProfit": -0.14245296658892423,
-        "netProfitExcludingNonOvernetProfit": 0.941087591566877,
-        "cashFlowFromOperatingOverNetProfit": 1.073513526198138,
-        "operatingProfit": 1727786000,
-        "financialProfit": 914272000,
-        "operatingProfitOverNetProfit": 0.6539546065983411
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 27.883906,
+        "netProfitMargin": 14.283494031431509,
+        "grossProfitMinusNetProfit": 13.60041196856849,
+        "devExpenses": 75247000,
+        "manageExpenses": 789601000,
+        "devAndManageExpenses": 864848000,
+        "sellingExpenses": 41000,
+        "financialExpenses": 58903000,
+        "totalOperatingExpenses": 923792000,
+        "sellingExpensesRatio": 0.000005005600778920317,
+        "devExpensesRatio": 0.009186742483205293,
+        "manageExpensesRatio": 0.09640066782039661,
+        "devAndManageExpensesRatio": 0.1055874103036019,
+        "totalOperatingExpensesRatio": 11.278375
+      },
       {
         "year": "2025",
         "grossProfitMargin": 28.861726,
@@ -67637,26 +67551,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.08413006561766688,
         "devAndManageExpensesRatio": 0.08413006561766688,
         "totalOperatingExpensesRatio": 10.411826
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 24.596703,
-        "netProfitMargin": 15.85508458759982,
-        "grossProfitMinusNetProfit": 8.741618412400182,
-        "devExpenses": 0,
-        "manageExpenses": 1343976000,
-        "devAndManageExpenses": 1343976000,
-        "sellingExpenses": 1525000,
-        "financialExpenses": 446651000,
-        "totalOperatingExpenses": 1792152000,
-        "sellingExpensesRatio": 0.0000915157956263251,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.08065248061815469,
-        "devAndManageExpensesRatio": 0.08065248061815469,
-        "totalOperatingExpensesRatio": 9.421358
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 17432444000,
+        "cash": 5242802000,
+        "inventory": 595729000,
+        "nonCurrentAssets": 103663879000,
+        "goodwill": 602160000,
+        "totalAssets": 121096323000,
+        "equity": 81960106000,
+        "interestFreeLiabilities": 3283847000,
+        "interestBearingDebt": 10607691000,
+        "interestExpense": 44238000,
+        "interestFreeLiabilitiesOverTotal": 0.027117644191392995,
+        "interestBearingDebtOverTotal": 0.08759713538122871,
+        "debtRatio": 24.461978
+      },
       {
         "year": "2025",
         "currentAssets": 23642828000,
@@ -67816,25 +67729,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.02274054022401319,
         "interestBearingDebtOverTotal": 0.18824270827251502,
         "debtRatio": 36.964922
-      },
-      {
-        "year": "2015",
-        "currentAssets": 9031033000,
-        "cash": 2580707000,
-        "inventory": 313020000,
-        "nonCurrentAssets": 45966238000,
-        "goodwill": 143364000,
-        "totalAssets": 54997271000,
-        "equity": 33241363000,
-        "interestFreeLiabilities": 1646550000,
-        "interestBearingDebt": 11571957000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.029938758234022193,
-        "interestBearingDebtOverTotal": 0.21040965832650133,
-        "debtRatio": 28.835201
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.4088556403048533,
+        "wc": 3348865000,
+        "receivables": 5412464000,
+        "prepayments": 594958000,
+        "inventory": 595729000,
+        "accountsPayable": 2920009000,
+        "customerAdvances": 126030000,
+        "contractLiabilities": 237808000,
+        "receivablesToRevenueRatio": 0.6607959515677603,
+        "prepaymentsToRevenueRatio": 0.07263712751767984,
+        "inventoryToRevenueRatio": 0.07273125722988832,
+        "accountsPayableToRevenueRatio": 0.3564975445086423,
+        "advancesToRevenueRatio": 0.015386728443105548,
+        "contractLiabilitiesToRevenueRatio": 0.029033461220328842,
+        "changeInWC": 460346000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.09311686048826312,
@@ -68014,27 +67929,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.008539307232338166,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 107545000
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.1467907360810476,
-        "wc": 2446090000,
-        "receivables": 3244967000,
-        "prepayments": 427698000,
-        "inventory": 313020000,
-        "accountsPayable": 1193691000,
-        "customerAdvances": 345904000,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.1947316306794553,
-        "prepaymentsToRevenueRatio": 0.02566631000510688,
-        "inventoryToRevenueRatio": 0.01878444219472281,
-        "accountsPayableToRevenueRatio": 0.07163382399802205,
-        "advancesToRevenueRatio": 0.020757822800215316,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -269200000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 1.9975218613509629,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 16361352000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 2.1394711828826,
@@ -68124,18 +68030,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 35958434000,
         "depreciation": 1554795000,
         "depreciationOverRevenue": 0.09523820316270502
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 1.8076349978006203,
-        "longTermOperatingAssetsPerYuanRevenue": 2.1380037794523337,
-        "fixedAssets": 30122050000,
-        "longTermOperatingAssets": 35627246000,
-        "depreciation": 1481824000,
-        "depreciationOverRevenue": 0.08892478841848103
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 1.44,
+        "roa": 1.385854,
+        "roic": 1.33363,
+        "netProfitMargin": 16.015663,
+        "assetTurnover": 6.6994,
+        "equityMultiplier": 1.323836
+      },
       {
         "year": "2025",
         "roe": 6.46,
@@ -68225,18 +68131,24 @@ const data: ServiceData = {
         "netProfitMargin": 15.248666,
         "assetTurnover": 28.857300000000002,
         "equityMultiplier": 1.586418
-      },
-      {
-        "year": "2015",
-        "roe": 8.17,
-        "roa": 8.328756,
-        "roic": 7.46308,
-        "netProfitMargin": 16.822678,
-        "assetTurnover": 35.6229,
-        "equityMultiplier": 1.405189
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 121096323000,
+        "avgTotalAssets": 122260701500,
+        "avgCurrentAssets": 20537636000,
+        "avgInventory": 693775000,
+        "equity": 91473767000,
+        "avgEquity": 90794168500,
+        "totalAssetsDays": 1343.388869,
+        "currentAssetsDays": 225.665575,
+        "wcDays": 149.23230871127146,
+        "receivablesDays": 45.524298,
+        "inventoryDays": 10.57064,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 123425080000,
@@ -68386,21 +68298,6 @@ const data: ServiceData = {
         "receivablesDays": 46.858563,
         "inventoryDays": 7.13076,
         "fixedAssetsDays": 677.2596696213595
-      },
-      {
-        "year": "2015",
-        "totalAssets": 54997271000,
-        "avgTotalAssets": 49952942500,
-        "avgCurrentAssets": 8390188000,
-        "avgInventory": 266244000,
-        "equity": 35880592000,
-        "avgEquity": 34202783500,
-        "totalAssetsDays": 1010.584946,
-        "currentAssetsDays": 172.785293,
-        "wcDays": 53.57861866958237,
-        "receivablesDays": 38.443141,
-        "inventoryDays": 7.60019,
-        "fixedAssetsDays": 659.7867741972265
       }
     ],
     "primaryBusinessData": [
@@ -70486,29 +70383,29 @@ const data: ServiceData = {
           "totalDividendA": 583631651.97
         }
       ],
-      "cash": 7454715000,
-      "interestBearingDebt": 11868785000,
-      "debtRatio": 26.988445,
-      "interestBearingDebtOverTotal": 0.09616185786551647,
+      "cash": 5242802000,
+      "interestBearingDebt": 10607691000,
+      "debtRatio": 24.461978,
+      "interestBearingDebtOverTotal": 0.08759713538122871,
       "roe": 6.46,
       "roic": 5.555081,
       "roa": 6.469203,
       "grossProfitMargin": 28.861726,
       "netProfitMargin": 18.288946,
-      "tradingFinancialAssets": 49556000,
-      "longTermEquityInvestment": 11680516000,
-      "minorityInterest": 9361536000
+      "tradingFinancialAssets": 139209000,
+      "longTermEquityInvestment": 12734515000,
+      "minorityInterest": 9513661000
     },
     "dynamicData": {
       "code": "601018",
-      "price": 3.82,
-      "marketValue": 74315763684,
-      "PB": 0.92,
-      "PE_TTM": 14.38,
+      "price": 3.73,
+      "marketValue": 72564868728,
+      "PB": 0.89,
+      "PE_TTM": 14.05,
       "totalSharesOutstanding": 19454388399
     },
     "recentYearData": {
-      "netProfit": 5168472000
+      "netProfit": 5163270000
     }
   },
   "601058": {
@@ -71280,10 +71177,10 @@ const data: ServiceData = {
       },
       {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.4513991710748464,
-        "longTermOperatingAssetsPerYuanRevenue": 0.5872793624665478,
-        "fixedAssets": 16608074190.07,
-        "longTermOperatingAssets": 21607437157.93,
+        "fixedAssetsPerYuanRevenue": 0.5306392262339537,
+        "longTermOperatingAssetsPerYuanRevenue": 0.6665194176256551,
+        "fixedAssets": 19523508686.27,
+        "longTermOperatingAssets": 24522871654.13,
         "depreciation": 2072636114.8,
         "depreciationOverRevenue": 0.056333215606653476
       },
@@ -71499,7 +71396,7 @@ const data: ServiceData = {
         "wcDays": 85.26811010178741,
         "receivablesDays": 53.523088,
         "inventoryDays": 88.751597,
-        "fixedAssetsDays": 164.76069744231896
+        "fixedAssetsDays": 193.6833175753931
       },
       {
         "year": "2024",
@@ -72811,10 +72708,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601058",
-      "price": 14.32,
-      "marketValue": 47085595709,
-      "PB": 2.1,
-      "PE_TTM": 13.3,
+      "price": 13.72,
+      "marketValue": 45112735553,
+      "PB": 2.01,
+      "PE_TTM": 12.74,
       "totalSharesOutstanding": 3288100259
     },
     "recentYearData": {
@@ -72823,6 +72720,23 @@ const data: ServiceData = {
   },
   "601088": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 70397000000,
+        "netProfit": 10667000000,
+        "netProfitMargin": 0.15152634345213575,
+        "netProfitExcludingNon": 10712000000,
+        "coreProfit": 16111000000,
+        "cashFlowFromOperating": 17363000000,
+        "fcf": 7780000000,
+        "capex": 9583000000,
+        "fcfOverNetProfit": 0.7293522077435081,
+        "netProfitExcludingNonOvernetProfit": 1.0042186181681823,
+        "cashFlowFromOperatingOverNetProfit": 1.627730383425518,
+        "operatingProfit": 10224000000,
+        "financialProfit": 443000000,
+        "operatingProfitOverNetProfit": 0.9584700478110059
+      },
       {
         "year": "2025",
         "revenue": 294916000000,
@@ -72992,26 +72906,26 @@ const data: ServiceData = {
         "operatingProfit": 22408000000,
         "financialProfit": 304000000,
         "operatingProfitOverNetProfit": 0.9866150052835505
-      },
-      {
-        "year": "2015",
-        "revenue": 177069000000,
-        "netProfit": 16144000000,
-        "netProfitMargin": 0.09117349733719624,
-        "netProfitExcludingNon": 15109000000,
-        "coreProfit": 41892000000,
-        "cashFlowFromOperating": 55406000000,
-        "fcf": 25530000000,
-        "capex": 29876000000,
-        "fcfOverNetProfit": 1.581392467789891,
-        "netProfitExcludingNonOvernetProfit": 0.9358894945490585,
-        "cashFlowFromOperatingOverNetProfit": 3.4319871159563924,
-        "operatingProfit": 15506000000,
-        "financialProfit": 638000000,
-        "operatingProfitOverNetProfit": 0.9604806739345887
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 32.889185,
+        "netProfitMargin": 15.152634345213576,
+        "grossProfitMinusNetProfit": 17.73655065478642,
+        "devExpenses": 333000000,
+        "manageExpenses": 2410000000,
+        "devAndManageExpenses": 2743000000,
+        "sellingExpenses": 114000000,
+        "financialExpenses": 292000000,
+        "totalOperatingExpenses": 3149000000,
+        "sellingExpensesRatio": 0.0016193871897950197,
+        "devExpensesRatio": 0.004730315212295978,
+        "manageExpensesRatio": 0.034234413398298226,
+        "devAndManageExpensesRatio": 0.038964728610594204,
+        "totalOperatingExpensesRatio": 4.473201
+      },
       {
         "year": "2025",
         "grossProfitMargin": 35.078123,
@@ -73181,26 +73095,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.09792111485471831,
         "devAndManageExpensesRatio": 0.09792111485471831,
         "totalOperatingExpensesRatio": 12.887777
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 37.636175,
-        "netProfitMargin": 9.117349733719623,
-        "grossProfitMinusNetProfit": 28.51882526628038,
-        "devExpenses": 0,
-        "manageExpenses": 18333000000,
-        "devAndManageExpenses": 18333000000,
-        "sellingExpenses": 584000000,
-        "financialExpenses": 4669000000,
-        "totalOperatingExpenses": 23586000000,
-        "sellingExpensesRatio": 0.003298149309026425,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.10353590973010521,
-        "devAndManageExpensesRatio": 0.10353590973010521,
-        "totalOperatingExpensesRatio": 13.320231
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 167634000000,
+        "cash": 118585000000,
+        "inventory": 10792000000,
+        "nonCurrentAssets": 615645000000,
+        "goodwill": 0,
+        "totalAssets": 783279000000,
+        "equity": 480902000000,
+        "interestFreeLiabilities": 39686000000,
+        "interestBearingDebt": 125543000000,
+        "interestExpense": 634000000,
+        "interestFreeLiabilitiesOverTotal": 0.050666493037602185,
+        "interestBearingDebtOverTotal": 0.1602787767832407,
+        "debtRatio": 29.03129
+      },
       {
         "year": "2025",
         "currentAssets": 146969000000,
@@ -73360,25 +73273,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.06883763889277618,
         "interestBearingDebtOverTotal": 0.1895589017324862,
         "debtRatio": 33.544179
-      },
-      {
-        "year": "2015",
-        "currentAssets": 121036000000,
-        "cash": 47850000000,
-        "inventory": 12816000000,
-        "nonCurrentAssets": 432929000000,
-        "goodwill": 0,
-        "totalAssets": 553965000000,
-        "equity": 292790000000,
-        "interestFreeLiabilities": 37614000000,
-        "interestBearingDebt": 104323000000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.06789959654490807,
-        "interestBearingDebtOverTotal": 0.18832056176834278,
-        "debtRatio": 35.346637
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.01573930707274458,
+        "wc": -1108000000,
+        "receivables": 19401000000,
+        "prepayments": 7864000000,
+        "inventory": 10792000000,
+        "accountsPayable": 34365000000,
+        "customerAdvances": 85000000,
+        "contractLiabilities": 4715000000,
+        "receivablesToRevenueRatio": 0.2755941304316945,
+        "prepaymentsToRevenueRatio": 0.11170930579428101,
+        "inventoryToRevenueRatio": 0.1533019873005952,
+        "accountsPayableToRevenueRatio": 0.4881600068184724,
+        "advancesToRevenueRatio": 0.001207437816952427,
+        "contractLiabilitiesToRevenueRatio": 0.0669772859638905,
+        "changeInWC": 5209000000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.021419658479024536,
@@ -73558,27 +73473,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.022913060335177225,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -21430000000
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.12597913807611721,
-        "wc": 22307000000,
-        "receivables": 41019000000,
-        "prepayments": 3613000000,
-        "inventory": 12816000000,
-        "accountsPayable": 31517000000,
-        "customerAdvances": 3624000000,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.23165545634752555,
-        "prepaymentsToRevenueRatio": 0.020404475091630948,
-        "inventoryToRevenueRatio": 0.0723785642884977,
-        "accountsPayableToRevenueRatio": 0.17799275988456478,
-        "advancesToRevenueRatio": 0.020466597766972197,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 8568000000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 1.0864809579953691,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 76485000000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 1.081748701325123,
@@ -73668,18 +73574,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 399492000000,
         "depreciation": 23945000000,
         "depreciationOverRevenue": 0.13075625112626757
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 2.0208732189146605,
-        "longTermOperatingAssetsPerYuanRevenue": 2.2368285809486697,
-        "fixedAssets": 357834000000,
-        "longTermOperatingAssets": 396073000000,
-        "depreciation": 23625000000,
-        "depreciationOverRevenue": 0.13342256408518713
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.4,
+        "roa": 2.441886,
+        "roic": 2.143255,
+        "netProfitMargin": 18.909896,
+        "assetTurnover": 9.978,
+        "equityMultiplier": 1.409071
+      },
       {
         "year": "2025",
         "roe": 12.76,
@@ -73769,18 +73675,24 @@ const data: ServiceData = {
         "netProfitMargin": 16.128697,
         "assetTurnover": 32.5377,
         "equityMultiplier": 1.504759
-      },
-      {
-        "year": "2015",
-        "roe": 5.48,
-        "roa": 6.836371,
-        "roic": 5.318052,
-        "netProfitMargin": 13.138381,
-        "assetTurnover": 32.2372,
-        "equityMultiplier": 1.546709
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 783279000000,
+        "avgTotalAssets": 705520000000,
+        "avgCurrentAssets": 157301500000,
+        "avgInventory": 11321000000,
+        "equity": 555883000000,
+        "avgEquity": 518667000000,
+        "totalAssetsDays": 901.981618,
+        "currentAssetsDays": 201.104237,
+        "wcDays": -5.744847081551771,
+        "receivablesDays": 16.960736,
+        "inventoryDays": 21.566548,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 627761000000,
@@ -73930,21 +73842,6 @@ const data: ServiceData = {
         "receivablesDays": 38.873677,
         "inventoryDays": 42.505213,
         "fixedAssetsDays": 714.1404872028702
-      },
-      {
-        "year": "2015",
-        "totalAssets": 553965000000,
-        "avgTotalAssets": 549268000000,
-        "avgCurrentAssets": 120341000000,
-        "avgInventory": 14398000000,
-        "equity": 358157000000,
-        "avgEquity": 358877500000,
-        "totalAssetsDays": 1116.719922,
-        "currentAssetsDays": 244.665977,
-        "wcDays": 45.982385397782785,
-        "receivablesDays": 48.798603,
-        "inventoryDays": 46.93852,
-        "fixedAssetsDays": 737.6187249038511
       }
     ],
     "primaryBusinessData": [
@@ -75730,49 +75627,66 @@ const data: ServiceData = {
           "totalDividendA": 16161217195.9
         }
       ],
-      "cash": 96772000000,
-      "interestBearingDebt": 39012000000,
-      "debtRatio": 23.30664,
-      "interestBearingDebtOverTotal": 0.062144669707101904,
+      "cash": 118585000000,
+      "interestBearingDebt": 125543000000,
+      "debtRatio": 29.03129,
+      "interestBearingDebtOverTotal": 0.1602787767832407,
       "roe": 12.76,
       "roic": 11.549581,
       "roa": 12.208988,
       "grossProfitMargin": 35.078123,
       "netProfitMargin": 21.288434,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 62044000000,
-      "minorityInterest": 72344000000
+      "longTermEquityInvestment": 62243000000,
+      "minorityInterest": 74981000000
     },
     "dynamicData": {
       "code": "601088",
-      "price": 47.41,
-      "marketValue": 1028296080353,
-      "PB": 2.09,
-      "PE_TTM": 19.94,
+      "price": 45.59,
+      "marketValue": 988821309919,
+      "PB": 2.06,
+      "PE_TTM": 19.18,
       "totalSharesOutstanding": 21689434304
     },
     "recentYearData": {
-      "netProfit": 52849000000
+      "netProfit": 51567000000
     }
   },
   "601225": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 118083109267.01,
-        "netProfit": 12713003978.99,
-        "netProfitMargin": 0.10766149416207618,
-        "netProfitExcludingNon": 11493531100,
-        "coreProfit": 20449650348.299995,
-        "cashFlowFromOperating": 27724204366.72,
-        "fcf": 17830211788.71,
-        "capex": 9893992578.01,
-        "fcfOverNetProfit": 1.4025175967990644,
-        "netProfitExcludingNonOvernetProfit": 0.9040767326899805,
-        "cashFlowFromOperatingOverNetProfit": 2.180775244980501,
-        "operatingProfit": 9113279295.15,
-        "financialProfit": 3599724683.84,
-        "operatingProfitOverNetProfit": 0.716847041832989
+        "year": "2026Q1",
+        "revenue": 38953072382.69,
+        "netProfit": 4209991046.33,
+        "netProfitMargin": 0.10807853626973053,
+        "netProfitExcludingNon": 4212077200,
+        "coreProfit": 7556986521.900001,
+        "cashFlowFromOperating": 9677280197.73,
+        "fcf": 6687377276.73,
+        "capex": 2989902921,
+        "fcfOverNetProfit": 1.5884540378202527,
+        "netProfitExcludingNonOvernetProfit": 1.0004955244909175,
+        "cashFlowFromOperatingOverNetProfit": 2.298646265807627,
+        "operatingProfit": 3624003787.72,
+        "financialProfit": 585987258.61,
+        "operatingProfitOverNetProfit": 0.8608103313851876
+      },
+      {
+        "year": "2025",
+        "revenue": 158178519718.2,
+        "netProfit": 16764763168.36,
+        "netProfitMargin": 0.10598634503741058,
+        "netProfitExcludingNon": 15345253400,
+        "coreProfit": 28394754524.200016,
+        "cashFlowFromOperating": 35269272762.06,
+        "fcf": 18209635945.239998,
+        "capex": 17059636816.82,
+        "fcfOverNetProfit": 1.0861850992089703,
+        "netProfitExcludingNonOvernetProfit": 0.9153277768314061,
+        "cashFlowFromOperatingOverNetProfit": 2.1037739935762056,
+        "operatingProfit": 12339203925.16,
+        "financialProfit": 4425559243.2,
+        "operatingProfitOverNetProfit": 0.73602017524755
       },
       {
         "year": "2024",
@@ -75926,42 +75840,42 @@ const data: ServiceData = {
         "operatingProfit": 2229339691.5,
         "financialProfit": 525545640.71,
         "operatingProfitOverNetProfit": 0.8092313917514667
-      },
-      {
-        "year": "2015",
-        "revenue": 32511200869.52,
-        "netProfit": -2988541603.76,
-        "netProfitMargin": -0.09192344557662362,
-        "netProfitExcludingNon": -2556450000,
-        "coreProfit": -554857654.2899995,
-        "cashFlowFromOperating": -888587629.23,
-        "fcf": -3547816661.41,
-        "capex": 2659229032.18,
-        "fcfOverNetProfit": 0,
-        "netProfitExcludingNonOvernetProfit": 0,
-        "cashFlowFromOperatingOverNetProfit": 0,
-        "operatingProfit": -3420894055.01,
-        "financialProfit": 432352451.25,
-        "operatingProfitOverNetProfit": 0
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 28.187852,
-        "netProfitMargin": 10.766149416207618,
-        "grossProfitMinusNetProfit": 17.42170258379238,
-        "devExpenses": 105612897.01,
-        "manageExpenses": 4663026601.98,
-        "devAndManageExpenses": 4768639498.99,
-        "sellingExpenses": 587371183.99,
-        "financialExpenses": 137803450.4,
-        "totalOperatingExpenses": 5493814133.379999,
-        "sellingExpensesRatio": 0.004974218477444001,
-        "devExpensesRatio": 0.000894394614653885,
-        "manageExpensesRatio": 0.03948936161086295,
-        "devAndManageExpensesRatio": 0.040383756225516834,
-        "totalOperatingExpensesRatio": 4.652497
+        "year": "2026Q1",
+        "grossProfitMargin": 31.12328,
+        "netProfitMargin": 10.807853626973053,
+        "grossProfitMinusNetProfit": 20.31542637302695,
+        "devExpenses": 17708069.54,
+        "manageExpenses": 1557514803.41,
+        "devAndManageExpenses": 1575222872.95,
+        "sellingExpenses": 227151256.1,
+        "financialExpenses": 57299240.92,
+        "totalOperatingExpenses": 1859673369.97,
+        "sellingExpensesRatio": 0.005831407953354192,
+        "devExpensesRatio": 0.000454600072775495,
+        "manageExpensesRatio": 0.039984389115918104,
+        "devAndManageExpensesRatio": 0.0404389891886936,
+        "totalOperatingExpensesRatio": 4.774137
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 29.058717,
+        "netProfitMargin": 10.598634503741058,
+        "grossProfitMinusNetProfit": 18.46008249625894,
+        "devExpenses": 502101573.5,
+        "manageExpenses": 6629697301.12,
+        "devAndManageExpenses": 7131798874.62,
+        "sellingExpenses": 882386768.13,
+        "financialExpenses": 170032743.71,
+        "totalOperatingExpenses": 8184218386.46,
+        "sellingExpensesRatio": 0.005578423478118265,
+        "devExpensesRatio": 0.0031742715407535086,
+        "manageExpensesRatio": 0.04191275346950404,
+        "devAndManageExpensesRatio": 0.04508702501025754,
+        "totalOperatingExpensesRatio": 5.174039
       },
       {
         "year": "2024",
@@ -76115,41 +76029,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.11239954281032585,
         "devAndManageExpensesRatio": 0.11239954281032585,
         "totalOperatingExpensesRatio": 24.50721
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 32.203704,
-        "netProfitMargin": -9.192344557662361,
-        "grossProfitMinusNetProfit": 41.39604855766236,
-        "devExpenses": 0,
-        "manageExpenses": 4178078534.78,
-        "devAndManageExpenses": 4178078534.78,
-        "sellingExpenses": 5656494532.95,
-        "financialExpenses": 811904951.34,
-        "totalOperatingExpenses": 10646478019.07,
-        "sellingExpensesRatio": 0.17398602271419306,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.12851197196769945,
-        "devAndManageExpensesRatio": 0.12851197196769945,
-        "totalOperatingExpensesRatio": 32.747107
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 55385333938.81,
-        "cash": 35059967826.22,
-        "inventory": 3930173776.25,
-        "nonCurrentAssets": 182919428469.34,
+        "year": "2026Q1",
+        "currentAssets": 57104105377.99,
+        "cash": 38728622450.11,
+        "inventory": 3310248653.3,
+        "nonCurrentAssets": 186354276651.96997,
         "goodwill": 40969118.74,
-        "totalAssets": 238304762408.15002,
-        "equity": 94429966005.46,
-        "interestFreeLiabilities": 31979373731.81,
-        "interestBearingDebt": 22491305575.67,
-        "interestExpense": 348903787.9,
-        "interestFreeLiabilitiesOverTotal": 0.13419527754564214,
-        "interestBearingDebtOverTotal": 0.09438042844124375,
-        "debtRatio": 42.16986
+        "totalAssets": 243458382029.96,
+        "equity": 102099411487.44,
+        "interestFreeLiabilities": 29755489040.059998,
+        "interestBearingDebt": 26009018005.050003,
+        "interestExpense": 138537047.09,
+        "interestFreeLiabilitiesOverTotal": 0.12222002295405991,
+        "interestBearingDebtOverTotal": 0.10683147480150974,
+        "debtRatio": 40.100244
+      },
+      {
+        "year": "2025",
+        "currentAssets": 50342764318.98,
+        "cash": 31797840554.32,
+        "inventory": 3687653811.36,
+        "nonCurrentAssets": 185926525595.5,
+        "goodwill": 40969118.74,
+        "totalAssets": 236269289914.48,
+        "equity": 96928701432.05,
+        "interestFreeLiabilities": 31075105091.69,
+        "interestBearingDebt": 30662163542.27,
+        "interestExpense": 482863640.23,
+        "interestFreeLiabilitiesOverTotal": 0.13152409736761786,
+        "interestBearingDebtOverTotal": 0.12977633933452998,
+        "debtRatio": 41.842873
       },
       {
         "year": "2024",
@@ -76294,42 +76207,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.1455002595617568,
         "interestBearingDebtOverTotal": 0.31163963159966435,
         "debtRatio": 52.429155
-      },
-      {
-        "year": "2015",
-        "currentAssets": 17906520454.64,
-        "cash": 4703146036.61,
-        "inventory": 1115649793.66,
-        "nonCurrentAssets": 77912851222.57,
-        "goodwill": 8728589.38,
-        "totalAssets": 95819371677.21,
-        "equity": 31638302290.89,
-        "interestFreeLiabilities": 14249447066.35,
-        "interestBearingDebt": 33206333779.35,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.14871154774790843,
-        "interestBearingDebtOverTotal": 0.3465513621944142,
-        "debtRatio": 56.591985
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": -0.13942191818249766,
-        "wc": -16463373598.96,
-        "receivables": 5032440638.389999,
-        "prepayments": 5052430071.25,
-        "inventory": 3930173776.25,
-        "accountsPayable": 21500848195.42,
-        "customerAdvances": 1938954.68,
-        "contractLiabilities": 10434204502.7,
-        "receivablesToRevenueRatio": 0.042617785639524654,
-        "prepaymentsToRevenueRatio": 0.042787068384398864,
-        "inventoryToRevenueRatio": 0.03328311560092033,
-        "accountsPayableToRevenueRatio": 0.1820823344582009,
-        "advancesToRevenueRatio": 0.000016420254277143295,
-        "contractLiabilitiesToRevenueRatio": 0.08836322626893349,
-        "changeInWC": -1129181776.0699997
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.4150580545668242,
+        "wc": -16167786442.56,
+        "receivables": 6016950541.13,
+        "prepayments": 3599363649.86,
+        "inventory": 3310248653.3,
+        "accountsPayable": 22285955115.89,
+        "customerAdvances": 2499779.18,
+        "contractLiabilities": 7467034144.99,
+        "receivablesToRevenueRatio": 0.15446664853588846,
+        "prepaymentsToRevenueRatio": 0.09240256107396264,
+        "inventoryToRevenueRatio": 0.08498042518389412,
+        "accountsPayableToRevenueRatio": 0.5721231664846403,
+        "advancesToRevenueRatio": 0.00006417412098951285,
+        "contractLiabilitiesToRevenueRatio": 0.19169307292711027,
+        "changeInWC": 1156869809.6299992
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": -0.10952597282522568,
+        "wc": -17324656252.19,
+        "receivables": 6682414611.79,
+        "prepayments": 2770567051.12,
+        "inventory": 3687653811.36,
+        "accountsPayable": 23638759443.13,
+        "customerAdvances": 2452367.21,
+        "contractLiabilities": 7384159490.04,
+        "receivablesToRevenueRatio": 0.04224603077393145,
+        "prepaymentsToRevenueRatio": 0.0175154442970882,
+        "inventoryToRevenueRatio": 0.0233132401158493,
+        "accountsPayableToRevenueRatio": 0.1494435495112939,
+        "advancesToRevenueRatio": 0.000015503794158454442,
+        "contractLiabilitiesToRevenueRatio": 0.04668244147938109,
+        "changeInWC": -1990464429.2999992
       },
       {
         "year": "2024",
@@ -76492,35 +76407,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.054128103695499696,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 1879237530.9700005
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.01978599051113729,
-        "wc": -643266311.910001,
-        "receivables": 10044946088.07,
-        "prepayments": 889744671.21,
-        "inventory": 1115649793.66,
-        "accountsPayable": 11905683106.82,
-        "customerAdvances": 787923758.03,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.3089687805868582,
-        "prepaymentsToRevenueRatio": 0.027367327179973724,
-        "inventoryToRevenueRatio": 0.03431585926762697,
-        "accountsPayableToRevenueRatio": 0.3662025021653953,
-        "advancesToRevenueRatio": 0.024235455380200877,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -1330725065.460002
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.24239646058233208,
+        "longTermOperatingAssetsPerYuanRevenue": 0.7272659452497763,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 28622927740.88,
+        "longTermOperatingAssets": 28329243006.78,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.7585703482807596,
+        "longTermOperatingAssetsPerYuanRevenue": 0.9399101641943964,
+        "fixedAssets": 119989534793.17,
+        "longTermOperatingAssets": 148673598440.35995,
+        "depreciation": 13504554154.77,
+        "depreciationOverRevenue": 0.08537539849803112
       },
       {
         "year": "2024",
@@ -76602,26 +76508,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 66127731003.91,
         "depreciation": 3385168429.2999997,
         "depreciationOverRevenue": 0.10217295497225518
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 1.5384059529080827,
-        "longTermOperatingAssetsPerYuanRevenue": 2.2678708121592246,
-        "fixedAssets": 50015424953.86,
-        "longTermOperatingAssets": 73731203520.23001,
-        "depreciation": 3368682789.46,
-        "depreciationOverRevenue": 0.10361606767402486
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 13.74,
-        "roa": 10.650498,
-        "roic": 11.288084,
-        "netProfitMargin": 16.879234,
-        "assetTurnover": 50.586299999999994,
-        "equityMultiplier": 1.729202
+        "year": "2026Q1",
+        "roe": 4.21,
+        "roa": 3.500709,
+        "roic": 3.401282,
+        "netProfitMargin": 17.970705,
+        "assetTurnover": 16.239600000000003,
+        "equityMultiplier": 1.669455
+      },
+      {
+        "year": "2025",
+        "roe": 17.88,
+        "roa": 14.121606,
+        "roic": 14.248476,
+        "netProfitMargin": 16.822187,
+        "assetTurnover": 68.05980000000001,
+        "equityMultiplier": 1.719479
       },
       {
         "year": "2024",
@@ -76703,32 +76609,38 @@ const data: ServiceData = {
         "netProfitMargin": 13.219073,
         "assetTurnover": 34.9659,
         "equityMultiplier": 2.102127
-      },
-      {
-        "year": "2015",
-        "roe": -9.1,
-        "roa": -0.854609,
-        "roic": -3.492438,
-        "netProfitMargin": -7.228468,
-        "assetTurnover": 36.0243,
-        "equityMultiplier": 2.303722
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 238304762408.15002,
-        "avgTotalAssets": 233428811763.05002,
-        "avgCurrentAssets": 53781862276.465,
-        "avgInventory": 4037204484.925,
-        "equity": 137811976508.89,
-        "avgEquity": 133229442132.74501,
-        "totalAssetsDays": 533.74085,
-        "currentAssetsDays": 122.973581,
-        "wcDays": -50.88900013661165,
-        "receivablesDays": 10.839951,
-        "inventoryDays": 12.854607,
+        "year": "2026Q1",
+        "totalAssets": 243458382029.96,
+        "avgTotalAssets": 239863835972.22,
+        "avgCurrentAssets": 53723434848.485,
+        "avgInventory": 3498951232.33,
+        "equity": 145830974744.84998,
+        "avgEquity": 141619202260.03998,
+        "totalAssetsDays": 554.198781,
+        "currentAssetsDays": 124.126515,
+        "wcDays": -151.49618991689084,
+        "receivablesDays": 13.400708,
+        "inventoryDays": 11.737246,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 236269289914.48,
+        "avgTotalAssets": 232411075516.21503,
+        "avgCurrentAssets": 51260577466.55,
+        "avgInventory": 3915944502.48,
+        "equity": 137407429775.23,
+        "avgEquity": 133027168765.91501,
+        "totalAssetsDays": 528.94658,
+        "currentAssetsDays": 116.664436,
+        "wcDays": -39.97698008120737,
+        "receivablesDays": 12.044262,
+        "inventoryDays": 12.562974,
+        "fixedAssetsDays": 276.8781771224773
       },
       {
         "year": "2024",
@@ -76864,24 +76776,225 @@ const data: ServiceData = {
         "receivablesDays": 55.24362,
         "inventoryDays": 18.961154,
         "fixedAssetsDays": 487.74120342082546
-      },
-      {
-        "year": "2015",
-        "totalAssets": 95819371677.21,
-        "avgTotalAssets": 92920414508.19,
-        "avgCurrentAssets": 18594475127.035,
-        "avgInventory": 1260847154.4,
-        "equity": 40173135803.31,
-        "avgEquity": 41770043280.66,
-        "totalAssetsDays": 999.32489,
-        "currentAssetsDays": 205.338109,
-        "wcDays": -7.221886536565109,
-        "receivablesDays": 57.854748,
-        "inventoryDays": 20.593301,
-        "fixedAssetsDays": 561.5181728114502
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "煤炭采掘业",
+        "mainBusinessIncome": 138803441000,
+        "mbiRatio": 0.877511,
+        "mainBusinessCost": 96910399500,
+        "mbcRatio": 0.863622,
+        "mainBusinessProfit": 41893041500,
+        "mbpRatio": 0.911419,
+        "grossProfitRatio": 0.301816
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "电力",
+        "mainBusinessIncome": 15545284500,
+        "mbiRatio": 0.098277,
+        "mainBusinessCost": 13085324900,
+        "mbcRatio": 0.116611,
+        "mainBusinessProfit": 2459959600,
+        "mbpRatio": 0.053519,
+        "grossProfitRatio": 0.158245
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他",
+        "mainBusinessIncome": 3549703800,
+        "mbiRatio": 0.022441,
+        "mainBusinessCost": 2066827600,
+        "mbcRatio": 0.018419,
+        "mainBusinessProfit": 1482876200,
+        "mbpRatio": 0.032261,
+        "grossProfitRatio": 0.417746
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "铁路运输业",
+        "mainBusinessIncome": 280090300,
+        "mbiRatio": 0.001771,
+        "mainBusinessCost": 151318400,
+        "mbcRatio": 0.001348,
+        "mainBusinessProfit": 128771900,
+        "mbpRatio": 0.002802,
+        "grossProfitRatio": 0.459751
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "自产煤",
+        "mainBusinessIncome": 87894366400,
+        "mbiRatio": 0.555666,
+        "mainBusinessCost": 46708724400,
+        "mbcRatio": 0.416247,
+        "mainBusinessProfit": 41185642000,
+        "mbpRatio": 0.896029,
+        "grossProfitRatio": 0.468581
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "贸易煤",
+        "mainBusinessIncome": 50909074600,
+        "mbiRatio": 0.321846,
+        "mainBusinessCost": 50201675100,
+        "mbcRatio": 0.447375,
+        "mainBusinessProfit": 707399500,
+        "mbpRatio": 0.01539,
+        "grossProfitRatio": 0.013895
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "电力",
+        "mainBusinessIncome": 15545284500,
+        "mbiRatio": 0.098277,
+        "mainBusinessCost": 13085324900,
+        "mbcRatio": 0.116611,
+        "mainBusinessProfit": 2459959600,
+        "mbpRatio": 0.053519,
+        "grossProfitRatio": 0.158245
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 3549703800,
+        "mbiRatio": 0.022441,
+        "mainBusinessCost": 2066827600,
+        "mbcRatio": 0.018419,
+        "mainBusinessProfit": 1482876200,
+        "mbpRatio": 0.032261,
+        "grossProfitRatio": 0.417746
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "运输",
+        "mainBusinessIncome": 280090300,
+        "mbiRatio": 0.001771,
+        "mainBusinessCost": 151318400,
+        "mbcRatio": 0.001348,
+        "mainBusinessProfit": 128771900,
+        "mbpRatio": 0.002802,
+        "grossProfitRatio": 0.459751
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其中:自产煤-原选煤",
+        "mainBusinessIncome": 61966801100,
+        "mbiRatio": 0.391752,
+        "mainBusinessCost": 32741070600,
+        "mbcRatio": 0.291774,
+        "mainBusinessProfit": 29225730500,
+        "mbpRatio": 0.635831,
+        "grossProfitRatio": 0.471635
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其中:自产煤-洗煤",
+        "mainBusinessIncome": 25927565300,
+        "mbiRatio": 0.163913,
+        "mainBusinessCost": 13967653800,
+        "mbcRatio": 0.124474,
+        "mainBusinessProfit": 11959911500,
+        "mbpRatio": 0.260198,
+        "grossProfitRatio": 0.461282
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "西北地区",
+        "mainBusinessIncome": 93432756400,
+        "mbiRatio": 0.590679,
+        "mainBusinessCost": 67794631000,
+        "mbcRatio": 0.604156,
+        "mainBusinessProfit": 25638125400,
+        "mbpRatio": 0.557779,
+        "grossProfitRatio": 0.274402
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华中地区",
+        "mainBusinessIncome": 21217395900,
+        "mbiRatio": 0.134136,
+        "mainBusinessCost": 14511170400,
+        "mbcRatio": 0.129317,
+        "mainBusinessProfit": 6706225500,
+        "mbpRatio": 0.1459,
+        "grossProfitRatio": 0.316072
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华东地区",
+        "mainBusinessIncome": 17902518100,
+        "mbiRatio": 0.113179,
+        "mainBusinessCost": 12875800500,
+        "mbcRatio": 0.114743,
+        "mainBusinessProfit": 5026717600,
+        "mbpRatio": 0.109361,
+        "grossProfitRatio": 0.280783
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华北地区",
+        "mainBusinessIncome": 12125123000,
+        "mbiRatio": 0.076655,
+        "mainBusinessCost": 7889163600,
+        "mbcRatio": 0.070305,
+        "mainBusinessProfit": 4235959400,
+        "mbpRatio": 0.092157,
+        "grossProfitRatio": 0.349354
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "西南地区",
+        "mainBusinessIncome": 11553457100,
+        "mbiRatio": 0.073041,
+        "mainBusinessCost": 7977013800,
+        "mbcRatio": 0.071088,
+        "mainBusinessProfit": 3576443300,
+        "mbpRatio": 0.077809,
+        "grossProfitRatio": 0.309556
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华南地区",
+        "mainBusinessIncome": 1460299800,
+        "mbiRatio": 0.009232,
+        "mainBusinessCost": 927446800,
+        "mbcRatio": 0.008265,
+        "mainBusinessProfit": 532853000,
+        "mbpRatio": 0.011593,
+        "grossProfitRatio": 0.364893
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "东北地区",
+        "mainBusinessIncome": 486969400,
+        "mbiRatio": 0.003079,
+        "mainBusinessCost": 238644200,
+        "mbcRatio": 0.002127,
+        "mainBusinessProfit": 248325200,
+        "mbpRatio": 0.005403,
+        "grossProfitRatio": 0.50994
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -78609,225 +78722,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 14535800,
         "mbpRatio": 0.001011,
         "grossProfitRatio": 0.295742
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "煤炭采掘业",
-        "mainBusinessIncome": 30922466300,
-        "mbiRatio": 0.951133,
-        "mainBusinessCost": 20749243200,
-        "mbcRatio": 0.941376,
-        "mainBusinessProfit": 10173223100,
-        "mbpRatio": 0.971672,
-        "grossProfitRatio": 0.328991
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他",
-        "mainBusinessIncome": 993111700,
-        "mbiRatio": 0.030547,
-        "mainBusinessCost": 800896500,
-        "mbcRatio": 0.036336,
-        "mainBusinessProfit": 192215200,
-        "mbpRatio": 0.018359,
-        "grossProfitRatio": 0.193548
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "铁路运输业",
-        "mainBusinessIncome": 595622900,
-        "mbiRatio": 0.018321,
-        "mainBusinessCost": 491250000,
-        "mbcRatio": 0.022288,
-        "mainBusinessProfit": 104372900,
-        "mbpRatio": 0.009969,
-        "grossProfitRatio": 0.175233
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "调整项目",
-        "mainBusinessIncome": -30.48,
-        "mbiRatio": 0,
-        "mainBusinessCost": 21.86,
-        "mbcRatio": 0,
-        "mainBusinessProfit": -52.34,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "原选煤",
-        "mainBusinessIncome": 27201634700,
-        "mbiRatio": 0.836685,
-        "mainBusinessCost": 18456427700,
-        "mbcRatio": 0.837353,
-        "mainBusinessProfit": 8745207000,
-        "mbpRatio": 0.835278,
-        "grossProfitRatio": 0.321496
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "洗煤",
-        "mainBusinessIncome": 3720831600,
-        "mbiRatio": 0.114448,
-        "mainBusinessCost": 2292815500,
-        "mbcRatio": 0.104023,
-        "mainBusinessProfit": 1428016100,
-        "mbpRatio": 0.136394,
-        "grossProfitRatio": 0.38379
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他",
-        "mainBusinessIncome": 993111700,
-        "mbiRatio": 0.030547,
-        "mainBusinessCost": 800896500,
-        "mbcRatio": 0.036336,
-        "mainBusinessProfit": 192215200,
-        "mbpRatio": 0.018359,
-        "grossProfitRatio": 0.193548
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "运输",
-        "mainBusinessIncome": 595622900,
-        "mbiRatio": 0.018321,
-        "mainBusinessCost": 491250000,
-        "mbcRatio": 0.022288,
-        "mainBusinessProfit": 104372900,
-        "mbpRatio": 0.009969,
-        "grossProfitRatio": 0.175233
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "调整项目",
-        "mainBusinessIncome": -30.48,
-        "mbiRatio": 0,
-        "mainBusinessCost": 21.86,
-        "mbcRatio": 0,
-        "mainBusinessProfit": -52.34,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "西北地区",
-        "mainBusinessIncome": 16702435600,
-        "mbiRatio": 0.513744,
-        "mainBusinessCost": 10206526400,
-        "mbcRatio": 0.463062,
-        "mainBusinessProfit": 6495909200,
-        "mbpRatio": 0.620442,
-        "grossProfitRatio": 0.38892
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华中地区",
-        "mainBusinessIncome": 5247487100,
-        "mbiRatio": 0.161406,
-        "mainBusinessCost": 3439659800,
-        "mbcRatio": 0.156055,
-        "mainBusinessProfit": 1807827300,
-        "mbpRatio": 0.17267,
-        "grossProfitRatio": 0.344513
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华东地区",
-        "mainBusinessIncome": 5227016600,
-        "mbiRatio": 0.160776,
-        "mainBusinessCost": 4202785100,
-        "mbcRatio": 0.190677,
-        "mainBusinessProfit": 1024231500,
-        "mbpRatio": 0.097827,
-        "grossProfitRatio": 0.19595
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华北地区",
-        "mainBusinessIncome": 3033673800,
-        "mbiRatio": 0.093312,
-        "mainBusinessCost": 2485657400,
-        "mbcRatio": 0.112772,
-        "mainBusinessProfit": 548016400,
-        "mbpRatio": 0.052343,
-        "grossProfitRatio": 0.180644
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "西南地区",
-        "mainBusinessIncome": 1251219100,
-        "mbiRatio": 0.038486,
-        "mainBusinessCost": 844243400,
-        "mbcRatio": 0.038303,
-        "mainBusinessProfit": 406975700,
-        "mbpRatio": 0.038871,
-        "grossProfitRatio": 0.325263
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "东北地区",
-        "mainBusinessIncome": 907687000,
-        "mbiRatio": 0.027919,
-        "mainBusinessCost": 743583300,
-        "mbcRatio": 0.033736,
-        "mainBusinessProfit": 164103700,
-        "mbpRatio": 0.015674,
-        "grossProfitRatio": 0.180793
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华南地区",
-        "mainBusinessIncome": 141681600,
-        "mbiRatio": 0.004358,
-        "mainBusinessCost": 118934400,
-        "mbcRatio": 0.005396,
-        "mainBusinessProfit": 22747200,
-        "mbpRatio": 0.002173,
-        "grossProfitRatio": 0.160552
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "调整项目",
-        "mainBusinessIncome": 69.52,
-        "mbiRatio": 0,
-        "mainBusinessCost": -78.14,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 147.66,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": -2988541603.76,
-          "profit_tb": -4.14088,
-          "basicEps": -0.3,
-          "totalSharesOutstanding": 10000000000,
-          "dps": 0,
-          "dividendRatio": 0,
-          "totalDividend": 0,
-          "totalDividendA": 0
-        },
         {
           "year": "2016",
           "profit": 2754885332.21,
@@ -78926,35 +78824,63 @@ const data: ServiceData = {
           "dividendRatio": 0.5845438176476179,
           "totalDividend": 13070275000,
           "totalDividendA": 13070275000
+        },
+        {
+          "year": "2025",
+          "profit": 16764763168.36,
+          "profit_tb": -0.25023,
+          "basicEps": 1.73,
+          "totalSharesOutstanding": 9695000000,
+          "dps": 0.9480000000000001,
+          "dividendRatio": 0.022553554512096802,
+          "totalDividend": 378105000,
+          "totalDividendA": 378105000
         }
       ],
-      "cash": 35059967826.22,
-      "interestBearingDebt": 22491305575.67,
-      "debtRatio": 42.16986,
-      "interestBearingDebtOverTotal": 0.09438042844124375,
-      "roe": 21.32,
-      "roic": 20.69171,
-      "roa": 19.243904,
-      "grossProfitMargin": 32.688412,
-      "netProfitMargin": 19.852445,
-      "tradingFinancialAssets": 2787554191.97,
-      "longTermEquityInvestment": 27531430859.43,
-      "minorityInterest": 43382010503.43
+      "cash": 38728622450.11,
+      "interestBearingDebt": 26009018005.050003,
+      "debtRatio": 40.100244,
+      "interestBearingDebtOverTotal": 0.10683147480150974,
+      "roe": 17.88,
+      "roic": 14.248476,
+      "roa": 14.121606,
+      "grossProfitMargin": 29.058717,
+      "netProfitMargin": 16.822187,
+      "tradingFinancialAssets": 2112146273.6,
+      "longTermEquityInvestment": 28093148375.87,
+      "minorityInterest": 43731563257.41
     },
     "dynamicData": {
       "code": "601225",
-      "price": 25.67,
-      "marketValue": 248870650000,
-      "PB": 2.44,
-      "PE_TTM": 15.39,
+      "price": 24.08,
+      "marketValue": 233455600000,
+      "PB": 2.29,
+      "PE_TTM": 14.44,
       "totalSharesOutstanding": 9695000000
     },
     "recentYearData": {
-      "netProfit": 17604167107.9
+      "netProfit": 16169982632.740002
     }
   },
   "601298": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 5153813560,
+        "netProfit": 1374467621,
+        "netProfitMargin": 0.26668943394995454,
+        "netProfitExcludingNon": 1369764552,
+        "coreProfit": 1681160847,
+        "cashFlowFromOperating": 1102025880,
+        "fcf": 271332777,
+        "capex": 830693103,
+        "fcfOverNetProfit": 0.19740936261749886,
+        "netProfitExcludingNonOvernetProfit": 0.9965782613368671,
+        "cashFlowFromOperatingOverNetProfit": 0.8017838057168755,
+        "operatingProfit": 1181677811,
+        "financialProfit": 192789810,
+        "operatingProfitOverNetProfit": 0.8597349205943935
+      },
       {
         "year": "2025",
         "revenue": 18806323315,
@@ -79124,26 +79050,26 @@ const data: ServiceData = {
         "operatingProfit": 1382209091,
         "financialProfit": 803944446,
         "operatingProfitOverNetProfit": 0.6322561831118085
-      },
-      {
-        "year": "2015",
-        "revenue": 7369237404,
-        "netProfit": 1911916281,
-        "netProfitMargin": 0.2594456083016429,
-        "netProfitExcludingNon": 1750904800,
-        "coreProfit": 1552913974,
-        "cashFlowFromOperating": 1451145516,
-        "fcf": -629996384,
-        "capex": 2081141900,
-        "fcfOverNetProfit": -0.32951044470968655,
-        "netProfitExcludingNonOvernetProfit": 0.9157852869395593,
-        "cashFlowFromOperatingOverNetProfit": 0.7590005537486189,
-        "operatingProfit": 1068787503,
-        "financialProfit": 843128778,
-        "operatingProfitOverNetProfit": 0.5590137568371907
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 41.774052,
+        "netProfitMargin": 26.668943394995452,
+        "grossProfitMinusNetProfit": 15.105108605004546,
+        "devExpenses": 45779195,
+        "manageExpenses": 271762776,
+        "devAndManageExpenses": 317541971,
+        "sellingExpenses": 15229502,
+        "financialExpenses": 23261152,
+        "totalOperatingExpenses": 356032625,
+        "sellingExpensesRatio": 0.0029549966879283077,
+        "devExpensesRatio": 0.00888258654820257,
+        "manageExpensesRatio": 0.052730424342319435,
+        "devAndManageExpensesRatio": 0.061613010890522006,
+        "totalOperatingExpensesRatio": 6.908139
+      },
       {
         "year": "2025",
         "grossProfitMargin": 36.660578,
@@ -79313,26 +79239,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.07307537253413092,
         "devAndManageExpensesRatio": 0.07307537253413092,
         "totalOperatingExpensesRatio": 6.058364
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 28.156876,
-        "netProfitMargin": 25.944560830164292,
-        "grossProfitMinusNetProfit": 2.2123151698357084,
-        "devExpenses": 0,
-        "manageExpenses": 428010664,
-        "devAndManageExpenses": 428010664,
-        "sellingExpenses": 18609797,
-        "financialExpenses": -102040673,
-        "totalOperatingExpenses": 344579788,
-        "sellingExpensesRatio": 0.0025253355238492735,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.058080726747611236,
-        "devAndManageExpensesRatio": 0.058080726747611236,
-        "totalOperatingExpensesRatio": 4.675921
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 20078554203,
+        "cash": 14416395441,
+        "inventory": 70447106,
+        "nonCurrentAssets": 48439189924,
+        "goodwill": 28014688,
+        "totalAssets": 68517744127,
+        "equity": 47091980232,
+        "interestFreeLiabilities": 2690347042,
+        "interestBearingDebt": 4264915338,
+        "interestExpense": 29623909,
+        "interestFreeLiabilitiesOverTotal": 0.03926496816668904,
+        "interestBearingDebtOverTotal": 0.06224541383170515,
+        "debtRatio": 24.509719
+      },
       {
         "year": "2025",
         "currentAssets": 18708526200,
@@ -79492,25 +79417,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.05949396421839982,
         "interestBearingDebtOverTotal": 0.1040310816500896,
         "debtRatio": 59.557164
-      },
-      {
-        "year": "2015",
-        "currentAssets": 11145934976,
-        "cash": 7558190196,
-        "inventory": 348118612,
-        "nonCurrentAssets": 20535898456,
-        "goodwill": 18836008,
-        "totalAssets": 31681833432,
-        "equity": 12664440496,
-        "interestFreeLiabilities": 2049932665,
-        "interestBearingDebt": 1037378861,
-        "interestExpense": 42660358,
-        "interestFreeLiabilitiesOverTotal": 0.06470372585601314,
-        "interestBearingDebtOverTotal": 0.032743649865673595,
-        "debtRatio": 57.237654
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.18225785257160138,
+        "wc": 939322992,
+        "receivables": 2752025287,
+        "prepayments": 321033855,
+        "inventory": 70447106,
+        "accountsPayable": 1647269636,
+        "customerAdvances": 12487685,
+        "contractLiabilities": 686032116,
+        "receivablesToRevenueRatio": 0.5339784326618132,
+        "prepaymentsToRevenueRatio": 0.06229054490671176,
+        "inventoryToRevenueRatio": 0.013668927907434819,
+        "accountsPayableToRevenueRatio": 0.3196215029555706,
+        "advancesToRevenueRatio": 0.0024229989801959387,
+        "contractLiabilitiesToRevenueRatio": 0.13311155089591561,
+        "changeInWC": 536414899
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.02142407562878805,
@@ -79690,27 +79617,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.03847519663327445,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 109507197
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.28098385755303046,
-        "wc": 2070636753,
-        "receivables": 1982357925,
-        "prepayments": 48105441,
-        "inventory": 348118612,
-        "accountsPayable": 0,
-        "customerAdvances": 307945225,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.2690044866683196,
-        "prepaymentsToRevenueRatio": 0.006527872337765711,
-        "inventoryToRevenueRatio": 0.04723943508877082,
-        "accountsPayableToRevenueRatio": 0,
-        "advancesToRevenueRatio": 0.04178793654182565,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 858193554
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.7455238415725695,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 3842290884,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 1.407508933704621,
@@ -79800,18 +79718,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 14989078587,
         "depreciation": 538473493,
         "depreciationOverRevenue": 0.06200618753275396
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 1.62425851601727,
-        "longTermOperatingAssetsPerYuanRevenue": 1.7448798582632825,
-        "fixedAssets": 11969546610,
-        "longTermOperatingAssets": 12858433917,
-        "depreciation": 502945302,
-        "depreciationOverRevenue": 0.06824930103717418
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.96,
+        "roa": 2.913436,
+        "roic": 2.892953,
+        "netProfitMargin": 29.095206,
+        "assetTurnover": 7.6298,
+        "equityMultiplier": 1.324673
+      },
       {
         "year": "2025",
         "roe": 11.95,
@@ -79901,18 +79819,24 @@ const data: ServiceData = {
         "netProfitMargin": 26.474458,
         "assetTurnover": 24.8245,
         "equityMultiplier": 2.472625
-      },
-      {
-        "year": "2015",
-        "roe": 15.4,
-        "roa": 8.315828,
-        "roic": 15.244362,
-        "netProfitMargin": 26.856736,
-        "assetTurnover": 24.4617,
-        "equityMultiplier": 2.338505
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 68517744127,
+        "avgTotalAssets": 67548255636,
+        "avgCurrentAssets": 19393540201.5,
+        "avgInventory": 63619340,
+        "equity": 51724237391,
+        "avgEquity": 50920365421.5,
+        "totalAssetsDays": 1179.581476,
+        "currentAssetsDays": 338.665455,
+        "wcDays": 66.52411618863451,
+        "receivablesDays": 39.460357,
+        "inventoryDays": 1.908035,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 66578767145,
@@ -80062,21 +79986,6 @@ const data: ServiceData = {
         "receivablesDays": 0,
         "inventoryDays": 24.692265,
         "fixedAssetsDays": 589.4323577346198
-      },
-      {
-        "year": "2015",
-        "totalAssets": 31681833432,
-        "avgTotalAssets": 30125584071,
-        "avgCurrentAssets": 10756519789.5,
-        "avgInventory": 274181547,
-        "equity": 13547895045,
-        "avgEquity": 13105677797.5,
-        "totalAssetsDays": 1471.686915,
-        "currentAssetsDays": 525.474606,
-        "wcDays": 102.55910800685612,
-        "receivablesDays": 67.989315,
-        "inventoryDays": 18.643737,
-        "fixedAssetsDays": 592.8543583463036
       }
     ],
     "primaryBusinessData": [
@@ -82006,33 +81915,50 @@ const data: ServiceData = {
           "totalDividendA": 790478195
         }
       ],
-      "cash": 14486405958,
-      "interestBearingDebt": 4335835471,
-      "debtRatio": 24.726011,
-      "interestBearingDebtOverTotal": 0.0651233967964157,
+      "cash": 14416395441,
+      "interestBearingDebt": 4264915338,
+      "debtRatio": 24.509719,
+      "interestBearingDebtOverTotal": 0.06224541383170515,
       "roe": 11.95,
       "roic": 11.279241,
       "roa": 11.226941,
       "grossProfitMargin": 36.660578,
       "netProfitMargin": 30.43416,
-      "tradingFinancialAssets": 7139277,
-      "longTermEquityInvestment": 15588269337,
-      "minorityInterest": 4403624011
+      "tradingFinancialAssets": 507139277,
+      "longTermEquityInvestment": 15710606610,
+      "minorityInterest": 4632257159
     },
     "dynamicData": {
       "code": "601298",
-      "price": 9.03,
-      "marketValue": 58614633000,
-      "PB": 1.28,
-      "PE_TTM": 11.12,
+      "price": 8.96,
+      "marketValue": 58160256000,
+      "PB": 1.24,
+      "PE_TTM": 11.09,
       "totalSharesOutstanding": 6491100000
     },
     "recentYearData": {
-      "netProfit": 5271506093
+      "netProfit": 5243478141
     }
   },
   "601318": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 218405000000,
+        "netProfit": 0,
+        "netProfitMargin": 0,
+        "netProfitExcludingNon": 23912000000,
+        "coreProfit": 217407000000,
+        "cashFlowFromOperating": 131064000000,
+        "fcf": 129672000000,
+        "capex": 1392000000,
+        "fcfOverNetProfit": 0,
+        "netProfitExcludingNonOvernetProfit": 0,
+        "cashFlowFromOperatingOverNetProfit": 0,
+        "operatingProfit": 8852000000,
+        "financialProfit": -8852000000,
+        "operatingProfitOverNetProfit": 0
+      },
       {
         "year": "2025",
         "revenue": 1050506000000,
@@ -82202,26 +82128,26 @@ const data: ServiceData = {
         "operatingProfit": -114910000000,
         "financialProfit": 114910000000,
         "operatingProfitOverNetProfit": 0
-      },
-      {
-        "year": "2015",
-        "revenue": 619990000000,
-        "netProfit": 0,
-        "netProfitMargin": 0,
-        "netProfitExcludingNon": 53892000000,
-        "coreProfit": 599175000000,
-        "cashFlowFromOperating": 135618000000,
-        "fcf": 119089000000,
-        "capex": 16529000000,
-        "fcfOverNetProfit": 0,
-        "netProfitExcludingNonOvernetProfit": 0,
-        "cashFlowFromOperatingOverNetProfit": 0,
-        "operatingProfit": -138225000000,
-        "financialProfit": 138225000000,
-        "operatingProfitOverNetProfit": 0
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 16.106316,
+        "netProfitMargin": 0,
+        "grossProfitMinusNetProfit": 16.106316,
+        "devExpenses": 0,
+        "manageExpenses": 0,
+        "devAndManageExpenses": 0,
+        "sellingExpenses": 0,
+        "financialExpenses": 0,
+        "totalOperatingExpenses": 0,
+        "sellingExpensesRatio": 0,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0,
+        "devAndManageExpensesRatio": 0,
+        "totalOperatingExpensesRatio": 0
+      },
       {
         "year": "2025",
         "grossProfitMargin": 17.867199,
@@ -82391,26 +82317,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0,
         "devAndManageExpensesRatio": 0,
         "totalOperatingExpensesRatio": 0
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 14.991693,
-        "netProfitMargin": 0,
-        "grossProfitMinusNetProfit": 14.991693,
-        "devExpenses": 0,
-        "manageExpenses": 0,
-        "devAndManageExpenses": 0,
-        "sellingExpenses": 0,
-        "financialExpenses": 7539000000,
-        "totalOperatingExpenses": 7539000000,
-        "sellingExpensesRatio": 0,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0,
-        "devAndManageExpensesRatio": 0,
-        "totalOperatingExpensesRatio": 0
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 0,
+        "cash": 725711000000,
+        "inventory": 0,
+        "nonCurrentAssets": 0,
+        "goodwill": 38113000000,
+        "totalAssets": 14169947000000,
+        "equity": 1018310000000,
+        "interestFreeLiabilities": 5488163000000,
+        "interestBearingDebt": 1116684000000,
+        "interestExpense": 0,
+        "interestFreeLiabilitiesOverTotal": 0.3873100583933024,
+        "interestBearingDebtOverTotal": 0.07880650506314527,
+        "debtRatio": 89.877943
+      },
       {
         "year": "2025",
         "currentAssets": 0,
@@ -82570,25 +82495,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0,
         "interestBearingDebtOverTotal": 0.08570832234306389,
         "debtRatio": 91.277219
-      },
-      {
-        "year": "2015",
-        "currentAssets": 0,
-        "cash": 475057000000,
-        "inventory": 0,
-        "nonCurrentAssets": 0,
-        "goodwill": 12460000000,
-        "totalAssets": 4765159000000,
-        "equity": 334248000000,
-        "interestFreeLiabilities": 0,
-        "interestBearingDebt": 359413000000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0,
-        "interestBearingDebtOverTotal": 0.075425185182698,
-        "debtRatio": 91.32094
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -25.155783979304502,
+        "wc": -5494149000000,
+        "receivables": 0,
+        "prepayments": 0,
+        "inventory": 0,
+        "accountsPayable": 5986000000,
+        "customerAdvances": 0,
+        "contractLiabilities": 5488163000000,
+        "receivablesToRevenueRatio": 0,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0,
+        "accountsPayableToRevenueRatio": 0.027407797440534787,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 25.128376181863967,
+        "changeInWC": -127448000000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -5.108681911383657,
@@ -82768,27 +82695,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -3830000000
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.007637219955160567,
-        "wc": -4735000000,
-        "receivables": 0,
-        "prepayments": 0,
-        "inventory": 0,
-        "accountsPayable": 4735000000,
-        "customerAdvances": 0,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0,
-        "prepaymentsToRevenueRatio": 0,
-        "inventoryToRevenueRatio": 0,
-        "accountsPayableToRevenueRatio": 0.007637219955160567,
-        "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -2014000000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.31218149767633524,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 68182000000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.04324106668595896,
@@ -82878,18 +82796,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 93422000000,
         "depreciation": 0,
         "depreciationOverRevenue": 0
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.052216971241471635,
-        "longTermOperatingAssetsPerYuanRevenue": 0.12033742479717414,
-        "fixedAssets": 32374000000,
-        "longTermOperatingAssets": 74608000000,
-        "depreciation": 0,
-        "depreciationOverRevenue": 0
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.5,
+        "roa": 0,
+        "roic": 0,
+        "netProfitMargin": 15.229962,
+        "assetTurnover": 1.5562,
+        "equityMultiplier": 9.879415
+      },
       {
         "year": "2025",
         "roe": 14,
@@ -82979,18 +82897,24 @@ const data: ServiceData = {
         "netProfitMargin": 10.157582,
         "assetTurnover": 13.777700000000001,
         "equityMultiplier": 11.464234
-      },
-      {
-        "year": "2015",
-        "roe": 17.12,
-        "roa": 0,
-        "roic": 0,
-        "netProfitMargin": 10.51275,
-        "assetTurnover": 14.1371,
-        "equityMultiplier": 11.521985
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 0,
+        "avgTotalAssets": 0,
+        "avgCurrentAssets": 0,
+        "avgInventory": 0,
+        "equity": 0,
+        "avgEquity": 0,
+        "totalAssetsDays": 5783.195485,
+        "currentAssetsDays": 0,
+        "wcDays": -9181.861152446143,
+        "receivablesDays": 0,
+        "inventoryDays": 0,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 0,
@@ -83140,21 +83064,6 @@ const data: ServiceData = {
         "receivablesDays": 0,
         "inventoryDays": 0,
         "fixedAssetsDays": 18.562691152960266
-      },
-      {
-        "year": "2015",
-        "totalAssets": 0,
-        "avgTotalAssets": 0,
-        "avgCurrentAssets": 0,
-        "avgInventory": 0,
-        "equity": 0,
-        "avgEquity": 0,
-        "totalAssetsDays": 2546.480749,
-        "currentAssetsDays": 0,
-        "wcDays": -2.787585283633607,
-        "receivablesDays": 0,
-        "inventoryDays": 0,
-        "fixedAssetsDays": 19.05919450313715
       }
     ],
     "primaryBusinessData": [
@@ -84544,25 +84453,25 @@ const data: ServiceData = {
           "totalDividendA": 10127061828.85
         }
       ],
-      "cash": 745679000000,
-      "interestBearingDebt": 1096682000000,
-      "debtRatio": 89.811915,
-      "interestBearingDebtOverTotal": 0.07890666534469871,
+      "cash": 725711000000,
+      "interestBearingDebt": 1116684000000,
+      "debtRatio": 89.877943,
+      "interestBearingDebtOverTotal": 0.07880650506314527,
       "roe": 14,
       "roic": 0,
       "roa": 0,
       "grossProfitMargin": 17.867199,
       "netProfitMargin": 15.069023,
-      "tradingFinancialAssets": 2713327000000,
-      "longTermEquityInvestment": 141251000000,
-      "minorityInterest": 415569000000
+      "tradingFinancialAssets": 2824486000000,
+      "longTermEquityInvestment": 139228000000,
+      "minorityInterest": 415980000000
     },
     "dynamicData": {
       "code": "601318",
-      "price": 57.62,
-      "marketValue": 1043362331752,
-      "PB": 1.04,
-      "PE_TTM": 7.74,
+      "price": 60.04,
+      "marketValue": 1087182825380,
+      "PB": 1.07,
+      "PE_TTM": 8.19,
       "totalSharesOutstanding": 18107641995
     },
     "recentYearData": {
@@ -84571,6 +84480,23 @@ const data: ServiceData = {
   },
   "601728": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 131393926307.26,
+        "netProfit": 7350127688.98,
+        "netProfitMargin": 0.05593963051071318,
+        "netProfitExcludingNon": 6573766324.59,
+        "coreProfit": 10007453708.08,
+        "cashFlowFromOperating": 23215066427.94,
+        "fcf": 8522574069.199999,
+        "capex": 14692492358.74,
+        "fcfOverNetProfit": 1.1595137431391622,
+        "netProfitExcludingNonOvernetProfit": 0.8943744384803011,
+        "cashFlowFromOperatingOverNetProfit": 3.1584575683965603,
+        "operatingProfit": 5488836267.299999,
+        "financialProfit": 1861291421.6799998,
+        "operatingProfitOverNetProfit": 0.7467674712004496
+      },
       {
         "year": "2025",
         "revenue": 523924731368.75,
@@ -84740,26 +84666,26 @@ const data: ServiceData = {
         "operatingProfit": 17724719446.43,
         "financialProfit": 282835745.91999996,
         "operatingProfitOverNetProfit": 0.9842934955412408
-      },
-      {
-        "year": "2015",
-        "revenue": 329721226110.75,
-        "netProfit": 20055630377.06,
-        "netProfitMargin": 0.06082602146555017,
-        "netProfitExcludingNon": 0,
-        "coreProfit": 28958342744.650013,
-        "cashFlowFromOperating": 113324925202.19,
-        "fcf": 11303008962.940002,
-        "capex": 102021916239.25,
-        "fcfOverNetProfit": 0.5635828318749129,
-        "netProfitExcludingNonOvernetProfit": 0,
-        "cashFlowFromOperatingOverNetProfit": 5.650529206591937,
-        "operatingProfit": 20645398052.52,
-        "financialProfit": -589767675.4599999,
-        "operatingProfitOverNetProfit": 1.0294065887918729
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 28.123671,
+        "netProfitMargin": 5.593963051071317,
+        "grossProfitMinusNetProfit": 22.529707948928685,
+        "devExpenses": 1780171868.99,
+        "manageExpenses": 10114210957.72,
+        "devAndManageExpenses": 11894382826.71,
+        "sellingExpenses": 13397453248.17,
+        "financialExpenses": 16692708.1,
+        "totalOperatingExpenses": 25308528782.979996,
+        "sellingExpensesRatio": 0.10196402242247131,
+        "devExpensesRatio": 0.013548357363392367,
+        "manageExpensesRatio": 0.07697624419920505,
+        "devAndManageExpensesRatio": 0.09052460156259742,
+        "totalOperatingExpensesRatio": 19.261566
+      },
       {
         "year": "2025",
         "grossProfitMargin": 29.081116,
@@ -84929,26 +84855,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.07156544658919281,
         "devAndManageExpensesRatio": 0.07156544658919281,
         "totalOperatingExpensesRatio": 22.777187
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 31.868472,
-        "netProfitMargin": 6.082602146555017,
-        "grossProfitMinusNetProfit": 25.785869853444986,
-        "devExpenses": 0,
-        "manageExpenses": 23149849246.57,
-        "devAndManageExpenses": 23149849246.57,
-        "sellingExpenses": 51510562510.35,
-        "financialExpenses": 4272991670.13,
-        "totalOperatingExpenses": 78933403427.05,
-        "sellingExpensesRatio": 0.15622458741266515,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.07021036989227439,
-        "devAndManageExpensesRatio": 0.07021036989227439,
-        "totalOperatingExpensesRatio": 23.939436
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 223197776568.94,
+        "cash": 83340320421.18,
+        "inventory": 3746688240.6,
+        "nonCurrentAssets": 655881297326.2101,
+        "goodwill": 30913096020.42,
+        "totalAssets": 879079073895.1499,
+        "equity": 468328168448.88995,
+        "interestFreeLiabilities": 217471414204.11002,
+        "interestBearingDebt": 45696974708.03999,
+        "interestExpense": 440083258.1,
+        "interestFreeLiabilitiesOverTotal": 0.24738549768965198,
+        "interestBearingDebtOverTotal": 0.05198278069065991,
+        "debtRatio": 45.866552
+      },
       {
         "year": "2025",
         "currentAssets": 206134989473.93,
@@ -85108,25 +85033,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.2841217361086057,
         "interestBearingDebtOverTotal": 0.14442591532964463,
         "debtRatio": 51.51524
-      },
-      {
-        "year": "2015",
-        "currentAssets": 78108222361.27,
-        "cash": 34388177412.61,
-        "inventory": 6281396440.2,
-        "nonCurrentAssets": 551460233064.68,
-        "goodwill": 29926884186.27,
-        "totalAssets": 629568455425.95,
-        "equity": 303791404890.72,
-        "interestFreeLiabilities": 174208318045.49,
-        "interestBearingDebt": 83154807489.57,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.2767106841902126,
-        "interestBearingDebtOverTotal": 0.13208223311206022,
-        "debtRatio": 51.59249
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.8990853394878163,
+        "wc": -118134352840.59998,
+        "receivables": 69707888685.48,
+        "prepayments": 8506866490.14,
+        "inventory": 3746688240.6,
+        "accountsPayable": 141538888103.93,
+        "customerAdvances": 178049188.24,
+        "contractLiabilities": 62789647779.28,
+        "receivablesToRevenueRatio": 0.5305259584257387,
+        "prepaymentsToRevenueRatio": 0.06474322466205171,
+        "inventoryToRevenueRatio": 0.02851492718041246,
+        "accountsPayableToRevenueRatio": 1.077210279666553,
+        "advancesToRevenueRatio": 0.0013550792890048688,
+        "contractLiabilitiesToRevenueRatio": 0.4778732894582102,
+        "changeInWC": 21017723039.170044
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.2655955475059101,
@@ -85306,27 +85233,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.17970134718771544,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -12546020756.480011
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.4245846018511627,
-        "wc": -139994555510.11,
-        "receivables": 21104469720.58,
-        "prepayments": 4758079943.25,
-        "inventory": 6281396440.2,
-        "accountsPayable": 115985034790.65,
-        "customerAdvances": 56153466823.49,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.06400700970792589,
-        "prepaymentsToRevenueRatio": 0.014430614611544025,
-        "inventoryToRevenueRatio": 0.019050628054167622,
-        "accountsPayableToRevenueRatio": 0.35176696434973165,
-        "advancesToRevenueRatio": 0.17030588987506864,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -34826296867.06998
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.8920383198659603,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 117208417263.72,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.797355523543906,
@@ -85416,18 +85334,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 148129578929.99,
         "depreciation": 69433778456.76,
         "depreciationOverRevenue": 0.19833753550856406
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.20952508918208104,
-        "longTermOperatingAssetsPerYuanRevenue": 0.41691768850640015,
-        "fixedAssets": 69084869306.08,
-        "longTermOperatingAssets": 137466611441.59,
-        "depreciation": 69287104693.35,
-        "depreciationOverRevenue": 0.2101384418304849
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 1.58,
+        "roa": 1.116077,
+        "roic": 1.520738,
+        "netProfitMargin": 5.535076,
+        "assetTurnover": 15.018799999999999,
+        "equityMultiplier": 1.847286
+      },
       {
         "year": "2025",
         "roe": 7.24,
@@ -85517,18 +85435,24 @@ const data: ServiceData = {
         "netProfitMargin": 5.174567,
         "assetTurnover": 54.6168,
         "equityMultiplier": 2.062503
-      },
-      {
-        "year": "2015",
-        "roe": 0,
-        "roa": 5.218234,
-        "roic": 6.393648,
-        "netProfitMargin": 6.10986,
-        "assetTurnover": 55.3758,
-        "equityMultiplier": 2.065795
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 879079073895.1499,
+        "avgTotalAssets": 874861358206.945,
+        "avgCurrentAssets": 214666383021.435,
+        "avgInventory": 3588957494.71,
+        "equity": 475875808761.2,
+        "avgEquity": 472067558619.93,
+        "totalAssetsDays": 599.247807,
+        "currentAssetsDays": 147.038565,
+        "wcDays": -328.16614891305295,
+        "receivablesDays": 40.220097,
+        "inventoryDays": 3.420185,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 870643642518.74,
@@ -85678,21 +85602,6 @@ const data: ServiceData = {
         "receivablesDays": 21.794588,
         "inventoryDays": 8.42736,
         "fixedAssetsDays": 83.79487758199232
-      },
-      {
-        "year": "2015",
-        "totalAssets": 629568455425.95,
-        "avgTotalAssets": 595424665405.7449,
-        "avgCurrentAssets": 68825450394.46,
-        "avgInventory": 5253038807.58,
-        "equity": 304758409638.8,
-        "avgEquity": 297436764409.275,
-        "totalAssetsDays": 650.103367,
-        "currentAssetsDays": 75.14579,
-        "wcDays": -154.9733796756744,
-        "receivablesDays": 23.231374,
-        "inventoryDays": 8.418177,
-        "fixedAssetsDays": 76.47665755145957
       }
     ],
     "primaryBusinessData": [
@@ -86506,33 +86415,50 @@ const data: ServiceData = {
           "totalDividendA": 14066506840.26
         }
       ],
-      "cash": 99806451207.12,
-      "interestBearingDebt": 49676795309.149994,
-      "debtRatio": 46.21688,
-      "interestBearingDebtOverTotal": 0.05705755246249413,
+      "cash": 83340320421.18,
+      "interestBearingDebt": 45696974708.03999,
+      "debtRatio": 45.866552,
+      "interestBearingDebtOverTotal": 0.05198278069065991,
       "roe": 7.24,
       "roic": 6.884104,
       "roa": 5.149926,
       "grossProfitMargin": 29.081116,
       "netProfitMargin": 6.341137,
-      "tradingFinancialAssets": 11709263926.7,
-      "longTermEquityInvestment": 45279853644.63,
-      "minorityInterest": 7431586024.02
+      "tradingFinancialAssets": 27269453081.01,
+      "longTermEquityInvestment": 46217202377.62,
+      "minorityInterest": 7547640312.31
     },
     "dynamicData": {
       "code": "601728",
-      "price": 6,
-      "marketValue": 549042832194,
+      "price": 5.99,
+      "marketValue": 548127760807,
       "PB": 1.17,
-      "PE_TTM": 17.34,
+      "PE_TTM": 17.31,
       "totalSharesOutstanding": 91507138699
     },
     "recentYearData": {
-      "netProfit": 33184733428.28
+      "netProfit": 31670609200.719997
     }
   },
   "601857": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 736383000000,
+        "netProfit": 48332000000,
+        "netProfitMargin": 0.06563432344309958,
+        "netProfitExcludingNon": 49579000000,
+        "coreProfit": 73060000000,
+        "cashFlowFromOperating": 84472000000,
+        "fcf": 29743000000,
+        "capex": 54729000000,
+        "fcfOverNetProfit": 0.6153893900521393,
+        "netProfitExcludingNonOvernetProfit": 1.0258007117437722,
+        "cashFlowFromOperatingOverNetProfit": 1.747744765372838,
+        "operatingProfit": 48575000000,
+        "financialProfit": -243000000,
+        "operatingProfitOverNetProfit": 1.005027724902756
+      },
       {
         "year": "2025",
         "revenue": 2864469000000,
@@ -86702,26 +86628,26 @@ const data: ServiceData = {
         "operatingProfit": -21068000000,
         "financialProfit": 28968000000,
         "operatingProfitOverNetProfit": -2.6668354430379746
-      },
-      {
-        "year": "2015",
-        "revenue": 1725428000000,
-        "netProfit": 35653000000,
-        "netProfitMargin": 0.020663278908189735,
-        "netProfitExcludingNon": 18394000000,
-        "coreProfit": 82134000000,
-        "cashFlowFromOperating": 261312000000,
-        "fcf": 37452000000,
-        "capex": 223860000000,
-        "fcfOverNetProfit": 1.0504585869351808,
-        "netProfitExcludingNonOvernetProfit": 0.5159173141110145,
-        "cashFlowFromOperatingOverNetProfit": 7.3293131012818,
-        "operatingProfit": 9026000000,
-        "financialProfit": 26627000000,
-        "operatingProfitOverNetProfit": 0.2531624267242588
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 22.924076,
+        "netProfitMargin": 6.563432344309958,
+        "grossProfitMinusNetProfit": 16.36064365569004,
+        "devExpenses": 7506000000,
+        "manageExpenses": 15629000000,
+        "devAndManageExpenses": 23135000000,
+        "sellingExpenses": 14190000000,
+        "financialExpenses": 2942000000,
+        "totalOperatingExpenses": 40267000000,
+        "sellingExpensesRatio": 0.01926986364432639,
+        "devExpensesRatio": 0.01019306529346821,
+        "manageExpensesRatio": 0.02122400978838458,
+        "devAndManageExpensesRatio": 0.031417075081852784,
+        "totalOperatingExpensesRatio": 5.468214
+      },
       {
         "year": "2025",
         "grossProfitMargin": 21.586828,
@@ -86891,40 +86817,39 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.046977462469919344,
         "devAndManageExpensesRatio": 0.046977462469919344,
         "totalOperatingExpensesRatio": 9.931702
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 24.632091,
-        "netProfitMargin": 2.0663278908189735,
-        "grossProfitMinusNetProfit": 22.565763109181027,
-        "devExpenses": 0,
-        "manageExpenses": 79659000000,
-        "devAndManageExpenses": 79659000000,
-        "sellingExpenses": 62961000000,
-        "financialExpenses": 23826000000,
-        "totalOperatingExpenses": 166446000000,
-        "sellingExpensesRatio": 0.036490076665036154,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.046167675498485015,
-        "devAndManageExpensesRatio": 0.046167675498485015,
-        "totalOperatingExpensesRatio": 9.646649
       }
     ],
     "balanceData": [
       {
+        "year": "2026Q1",
+        "currentAssets": 750846000000,
+        "cash": 261503000000,
+        "inventory": 169425000000,
+        "nonCurrentAssets": 2287703000000,
+        "goodwill": 7117000000,
+        "totalAssets": 3038549000000,
+        "equity": 1624532000000,
+        "interestFreeLiabilities": 358223000000,
+        "interestBearingDebt": 432064000000,
+        "interestExpense": 4249000000,
+        "interestFreeLiabilitiesOverTotal": 0.11789278369379595,
+        "interestBearingDebtOverTotal": 0.14219418544838341,
+        "debtRatio": 39.584058
+      },
+      {
         "year": "2025",
-        "currentAssets": 595297000000,
-        "cash": 238908000000,
-        "inventory": 150553000000,
-        "nonCurrentAssets": 2232720000000,
+        "currentAssets": 599269000000,
+        "cash": 238909000000,
+        "inventory": 150598000000,
+        "nonCurrentAssets": 2264189000000,
         "goodwill": 7263000000,
-        "totalAssets": 2828017000000,
-        "equity": 1586061000000,
-        "interestFreeLiabilities": 354139000000,
-        "interestBearingDebt": 353775000000,
+        "totalAssets": 2863458000000,
+        "equity": 1617287000000,
+        "interestFreeLiabilities": 354285000000,
+        "interestBearingDebt": 356407000000,
         "interestExpense": 17567000000,
-        "interestFreeLiabilitiesOverTotal": 0.12522520197014375,
-        "interestBearingDebtOverTotal": 0.12509648987258562,
+        "interestFreeLiabilitiesOverTotal": 0.12372627780816062,
+        "interestBearingDebtOverTotal": 0.1244673398387544,
         "debtRatio": 36.367143
       },
       {
@@ -87070,42 +86995,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.11228436137591523,
         "interestBearingDebtOverTotal": 0.21538663718475562,
         "debtRatio": 42.717703
-      },
-      {
-        "year": "2015",
-        "currentAssets": 349344000000,
-        "cash": 73692000000,
-        "inventory": 126877000000,
-        "nonCurrentAssets": 2044750000000,
-        "goodwill": 45589000000,
-        "totalAssets": 2394094000000,
-        "equity": 1179968000000,
-        "interestFreeLiabilities": 260881000000,
-        "interestBearingDebt": 540701000000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.10896857015639319,
-        "interestBearingDebtOverTotal": 0.22584785726876222,
-        "debtRatio": 43.849823
       }
     ],
     "workingCapitalData": [
       {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.0445189527732172,
+        "wc": -32783000000,
+        "receivables": 124057000000,
+        "prepayments": 19175000000,
+        "inventory": 169425000000,
+        "accountsPayable": 267809000000,
+        "customerAdvances": 0,
+        "contractLiabilities": 77631000000,
+        "receivablesToRevenueRatio": 0.16846803905033114,
+        "prepaymentsToRevenueRatio": 0.02603943871599426,
+        "inventoryToRevenueRatio": 0.2300772831529245,
+        "accountsPayableToRevenueRatio": 0.3636816710869208,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.1054220426055463,
+        "changeInWC": 62780000000
+      },
+      {
         "year": "2025",
-        "wcPerYuanRevenue": -0.0333293884486095,
-        "wc": -95471000000,
+        "wcPerYuanRevenue": -0.03336150609414869,
+        "wc": -95563000000,
         "receivables": 79793000000,
-        "prepayments": 14664000000,
-        "inventory": 150553000000,
-        "accountsPayable": 255882000000,
+        "prepayments": 14673000000,
+        "inventory": 150598000000,
+        "accountsPayable": 256028000000,
         "customerAdvances": 0,
         "contractLiabilities": 84599000000,
         "receivablesToRevenueRatio": 0.027856122722920023,
-        "prepaymentsToRevenueRatio": 0.0051192734150727415,
-        "inventoryToRevenueRatio": 0.05255878140067147,
-        "accountsPayableToRevenueRatio": 0.08932964538977381,
+        "prepaymentsToRevenueRatio": 0.005122415358658097,
+        "inventoryToRevenueRatio": 0.05257449111859824,
+        "accountsPayableToRevenueRatio": 0.08938061469682514,
         "advancesToRevenueRatio": 0,
         "contractLiabilitiesToRevenueRatio": 0.02953392059749992,
-        "changeInWC": -5428000000
+        "changeInWC": -5520000000
       },
       {
         "year": "2024",
@@ -87268,33 +87195,24 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.03747287252234673,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 9867000000
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.027314961852943152,
-        "wc": -47130000000,
-        "receivables": 60495000000,
-        "prepayments": 19313000000,
-        "inventory": 126877000000,
-        "accountsPayable": 202885000000,
-        "customerAdvances": 50930000000,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.035060866057581075,
-        "prepaymentsToRevenueRatio": 0.011193164826350332,
-        "inventoryToRevenueRatio": 0.07353363918981261,
-        "accountsPayableToRevenueRatio": 0.11758531796168835,
-        "advancesToRevenueRatio": 0.02951731396499883,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -7737000000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.39389149396441797,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 290055000000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.2828597551588095,
-        "longTermOperatingAssetsPerYuanRevenue": 0.3682546398651897,
+        "longTermOperatingAssetsPerYuanRevenue": 0.36837927029407547,
         "fixedAssets": 810243000000,
-        "longTermOperatingAssets": 1054854000000,
+        "longTermOperatingAssets": 1055211000000,
         "depreciation": 237608000000,
         "depreciationOverRevenue": 0.08295010349213065
       },
@@ -87378,18 +87296,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 1073562000000,
         "depreciation": 209651000000,
         "depreciationOverRevenue": 0.12966207620370548
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.5482790356943321,
-        "longTermOperatingAssetsPerYuanRevenue": 0.6318362748257244,
-        "fixedAssets": 946016000000,
-        "longTermOperatingAssets": 1090188000000,
-        "depreciation": 177858000000,
-        "depreciationOverRevenue": 0.10308051103842061
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 3,
+        "roa": 2.480105,
+        "roic": 2.607663,
+        "netProfitMargin": 7.262117,
+        "assetTurnover": 24.9536,
+        "equityMultiplier": 1.655192
+      },
       {
         "year": "2025",
         "roe": 10.1,
@@ -87479,29 +87397,35 @@ const data: ServiceData = {
         "netProfitMargin": 1.819156,
         "assetTurnover": 67.49680000000001,
         "equityMultiplier": 1.74574
-      },
-      {
-        "year": "2015",
-        "roe": 3,
-        "roa": 3.437629,
-        "roic": 3.491217,
-        "netProfitMargin": 2.455274,
-        "assetTurnover": 71.9007,
-        "equityMultiplier": 1.780938
       }
     ],
     "turnoverRateData": [
       {
+        "year": "2026Q1",
+        "totalAssets": 3038549000000,
+        "avgTotalAssets": 2951003500000,
+        "avgCurrentAssets": 675057500000,
+        "avgInventory": 160011500000,
+        "equity": 1835768000000,
+        "avgEquity": 1833271000000,
+        "totalAssetsDays": 360.668721,
+        "currentAssetsDays": 82.504858,
+        "wcDays": -16.249417762224276,
+        "receivablesDays": 11.8297,
+        "inventoryDays": 25.372964,
+        "fixedAssetsDays": 0
+      },
+      {
         "year": "2025",
-        "totalAssets": 2828017000000,
-        "avgTotalAssets": 2790512000000,
-        "avgCurrentAssets": 593070500000,
-        "avgInventory": 159445500000,
-        "equity": 1799548000000,
-        "avgEquity": 1754705500000,
+        "totalAssets": 2863458000000,
+        "avgTotalAssets": 2808232500000,
+        "avgCurrentAssets": 595056500000,
+        "avgInventory": 159468000000,
+        "equity": 1830774000000,
+        "avgEquity": 1770318500000,
         "totalAssetsDays": 350.705251,
         "currentAssetsDays": 74.535762,
-        "wcDays": -12.165226783742467,
+        "wcDays": -12.176949724364272,
         "receivablesDays": 9.396862,
         "inventoryDays": 25.555337,
         "fixedAssetsDays": 103.24381063296549
@@ -87640,21 +87564,6 @@ const data: ServiceData = {
         "receivablesDays": 11.085303,
         "inventoryDays": 39.874792,
         "fixedAssetsDays": 209.92980407606393
-      },
-      {
-        "year": "2015",
-        "totalAssets": 2394094000000,
-        "avgTotalAssets": 2399735000000,
-        "avgCurrentAssets": 370326000000,
-        "avgInventory": 146427000000,
-        "equity": 1344288000000,
-        "avgEquity": 1331024000000,
-        "totalAssetsDays": 500.690031,
-        "currentAssetsDays": 77.266255,
-        "wcDays": -9.96996107632425,
-        "receivablesDays": 10.991985,
-        "inventoryDays": 40.53595,
-        "fixedAssetsDays": 200.1218480284312
       }
     ],
     "primaryBusinessData": [
@@ -89236,33 +89145,50 @@ const data: ServiceData = {
           "totalDividendA": 35623000000
         }
       ],
-      "cash": 238908000000,
-      "interestBearingDebt": 353775000000,
-      "debtRatio": 36.367143,
-      "interestBearingDebtOverTotal": 0.12509648987258562,
+      "cash": 261503000000,
+      "interestBearingDebt": 432064000000,
+      "debtRatio": 39.584058,
+      "interestBearingDebtOverTotal": 0.14219418544838341,
       "roe": 10.1,
       "roic": 9.158036,
       "roa": 8.733737,
       "grossProfitMargin": 21.586828,
       "netProfitMargin": 6.004777,
-      "tradingFinancialAssets": 6175000000,
-      "longTermEquityInvestment": 303575000000,
-      "minorityInterest": 213487000000
+      "tradingFinancialAssets": 7881000000,
+      "longTermEquityInvestment": 307149000000,
+      "minorityInterest": 211236000000
     },
     "dynamicData": {
       "code": "601857",
-      "price": 12.03,
-      "marketValue": 2201742363151,
-      "PB": 1.39,
-      "PE_TTM": 14,
+      "price": 11.27,
+      "marketValue": 2062646420009,
+      "PB": 1.27,
+      "PE_TTM": 13.04,
       "totalSharesOutstanding": 183020977818
     },
     "recentYearData": {
-      "netProfit": 157302000000
+      "netProfit": 158184000000
     }
   },
   "601898": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 34188624000,
+        "netProfit": 3844352000,
+        "netProfitMargin": 0.11244535609271669,
+        "netProfitExcludingNon": 3847661000,
+        "coreProfit": 5116217000,
+        "cashFlowFromOperating": 5747394000,
+        "fcf": 1356886000,
+        "capex": 4390508000,
+        "fcfOverNetProfit": 0.3529557126922821,
+        "netProfitExcludingNonOvernetProfit": 1.0008607432409935,
+        "cashFlowFromOperatingOverNetProfit": 1.4950228282945994,
+        "operatingProfit": 3204960000,
+        "financialProfit": 639392000,
+        "operatingProfitOverNetProfit": 0.8336801624825199
+      },
       {
         "year": "2025",
         "revenue": 148056698000,
@@ -89432,26 +89358,26 @@ const data: ServiceData = {
         "operatingProfit": 384876000,
         "financialProfit": 1642717000,
         "operatingProfitOverNetProfit": 0.18981915995961715
-      },
-      {
-        "year": "2015",
-        "revenue": 59270865000,
-        "netProfit": -2520089000,
-        "netProfitMargin": -0.042518174823330146,
-        "netProfitExcludingNon": -2829314000,
-        "coreProfit": 1098001000,
-        "cashFlowFromOperating": 7284642000,
-        "fcf": -4156305000,
-        "capex": 11440947000,
-        "fcfOverNetProfit": 0,
-        "netProfitExcludingNonOvernetProfit": 0,
-        "cashFlowFromOperatingOverNetProfit": 0,
-        "operatingProfit": -2964749000,
-        "financialProfit": 444660000,
-        "operatingProfitOverNetProfit": 0
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 25.509379,
+        "netProfitMargin": 11.244535609271669,
+        "grossProfitMinusNetProfit": 14.26484339072833,
+        "devExpenses": 147329000,
+        "manageExpenses": 1283577000,
+        "devAndManageExpenses": 1430906000,
+        "sellingExpenses": 214407000,
+        "financialExpenses": 430367000,
+        "totalOperatingExpenses": 2075680000,
+        "sellingExpensesRatio": 0.006271296557591789,
+        "devExpensesRatio": 0.0043092989059752744,
+        "manageExpensesRatio": 0.037543979541264955,
+        "devAndManageExpensesRatio": 0.04185327844724023,
+        "totalOperatingExpensesRatio": 6.071259
+      },
       {
         "year": "2025",
         "grossProfitMargin": 27.489115,
@@ -89621,26 +89547,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.058035188483523265,
         "devAndManageExpensesRatio": 0.058035188483523265,
         "totalOperatingExpensesRatio": 26.423608
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 31.339697,
-        "netProfitMargin": -4.251817482333014,
-        "grossProfitMinusNetProfit": 35.59151448233302,
-        "devExpenses": 0,
-        "manageExpenses": 3687977000,
-        "devAndManageExpenses": 3687977000,
-        "sellingExpenses": 12296624000,
-        "financialExpenses": 3981210000,
-        "totalOperatingExpenses": 19965811000,
-        "sellingExpensesRatio": 0.2074648986479276,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.06222242580735071,
-        "devAndManageExpensesRatio": 0.06222242580735071,
-        "totalOperatingExpensesRatio": 33.685708
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 117165397000,
+        "cash": 88394701000,
+        "inventory": 6811655000,
+        "nonCurrentAssets": 257167804000,
+        "goodwill": 6084000,
+        "totalAssets": 374333201000,
+        "equity": 164013145000,
+        "interestFreeLiabilities": 26376652000,
+        "interestBearingDebt": 72382637000,
+        "interestExpense": 445324000,
+        "interestFreeLiabilitiesOverTotal": 0.07046303114320869,
+        "interestBearingDebtOverTotal": 0.1933641921332006,
+        "debtRatio": 45.310208
+      },
       {
         "year": "2025",
         "currentAssets": 114844652000,
@@ -89800,25 +89725,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.09727289685614746,
         "interestBearingDebtOverTotal": 0.3830846962853136,
         "debtRatio": 57.841225
-      },
-      {
-        "year": "2015",
-        "currentAssets": 62018579000,
-        "cash": 32197961000,
-        "inventory": 6825048000,
-        "nonCurrentAssets": 194960947000,
-        "goodwill": 0,
-        "totalAssets": 256979526000,
-        "equity": 83484300000,
-        "interestFreeLiabilities": 22045153000,
-        "interestBearingDebt": 111549405000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.08578563959215957,
-        "interestBearingDebtOverTotal": 0.43407895849259215,
-        "debtRatio": 61.079699
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.0389199343032934,
+        "wc": -1330619000,
+        "receivables": 9921004000,
+        "prepayments": 2751846000,
+        "inventory": 6811655000,
+        "accountsPayable": 21234241000,
+        "customerAdvances": 0,
+        "contractLiabilities": 2737445000,
+        "receivablesToRevenueRatio": 0.2901843607394085,
+        "prepaymentsToRevenueRatio": 0.08049010688467602,
+        "inventoryToRevenueRatio": 0.1992374715051416,
+        "accountsPayableToRevenueRatio": 0.6210908341909286,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.08006888490159768,
+        "changeInWC": 3371123000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.031756361336654965,
@@ -89998,27 +89925,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.03904926717047802,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 1696356000
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.015760120929566322,
-        "wc": 934116000,
-        "receivables": 13268942000,
-        "prepayments": 1259021000,
-        "inventory": 6825048000,
-        "accountsPayable": 19039397000,
-        "customerAdvances": 1379498000,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.223869552097814,
-        "prepaymentsToRevenueRatio": 0.02124181923108428,
-        "inventoryToRevenueRatio": 0.11515013320625572,
-        "accountsPayableToRevenueRatio": 0.32122691308790585,
-        "advancesToRevenueRatio": 0.023274470517681833,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -498876000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 1.5612592949046442,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 53377307000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 1.0542547558368485,
@@ -90108,18 +90026,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 167728376000,
         "depreciation": 6309660000,
         "depreciationOverRevenue": 0.10400976959869303
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 2.1550766974634166,
-        "longTermOperatingAssetsPerYuanRevenue": 2.8157572864846836,
-        "fixedAssets": 127733260000,
-        "longTermOperatingAssets": 166892370000,
-        "depreciation": 6741579000,
-        "depreciationOverRevenue": 0.11374186963527527
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.37,
+        "roa": 1.634839,
+        "roic": 1.834883,
+        "netProfitMargin": 13.053763,
+        "assetTurnover": 9.1832,
+        "equityMultiplier": 1.828494
+      },
       {
         "year": "2025",
         "roe": 11.43,
@@ -90209,18 +90127,24 @@ const data: ServiceData = {
         "netProfitMargin": 4.835276,
         "assetTurnover": 24.3096,
         "equityMultiplier": 2.371985
-      },
-      {
-        "year": "2015",
-        "roe": -2.97,
-        "roa": 0.973113,
-        "roic": 1.292292,
-        "netProfitMargin": -3.48262,
-        "assetTurnover": 23.7232,
-        "equityMultiplier": 2.569353
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 374333201000,
+        "avgTotalAssets": 372293719000,
+        "avgCurrentAssets": 116005024500,
+        "avgInventory": 6903329500,
+        "equity": 204722047000,
+        "avgEquity": 202668938000,
+        "totalAssetsDays": 980.046307,
+        "currentAssetsDays": 305.377958,
+        "wcDays": -14.205776020702091,
+        "receivablesDays": 21.59978,
+        "inventoryDays": 24.395959,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 370254237000,
@@ -90370,21 +90294,6 @@ const data: ServiceData = {
         "receivablesDays": 51.474322,
         "inventoryDays": 63.462539,
         "fixedAssetsDays": 766.9784214583948
-      },
-      {
-        "year": "2015",
-        "totalAssets": 256979526000,
-        "avgTotalAssets": 249842914000,
-        "avgCurrentAssets": 58899759000,
-        "avgInventory": 7723760500,
-        "equity": 100017203000,
-        "avgEquity": 101361083500,
-        "totalAssetsDays": 1517.498505,
-        "currentAssetsDays": 357.745972,
-        "wcDays": 5.752444139291708,
-        "receivablesDays": 54.366218,
-        "inventoryDays": 68.325736,
-        "fixedAssetsDays": 786.602994574147
       }
     ],
     "primaryBusinessData": [
@@ -92482,29 +92391,29 @@ const data: ServiceData = {
           "totalDividendA": 1519232066.4
         }
       ],
-      "cash": 88717371000,
-      "interestBearingDebt": 71040438000,
-      "debtRatio": 45.816736,
-      "interestBearingDebtOverTotal": 0.19186934517105877,
+      "cash": 88394701000,
+      "interestBearingDebt": 72382637000,
+      "debtRatio": 45.310208,
+      "interestBearingDebtOverTotal": 0.1933641921332006,
       "roe": 11.43,
       "roic": 8.934044,
       "roa": 7.877756,
       "grossProfitMargin": 27.489115,
       "netProfitMargin": 14.750689,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 34515384000,
-      "minorityInterest": 40482746000
+      "longTermEquityInvestment": 34899334000,
+      "minorityInterest": 40708902000
     },
     "dynamicData": {
       "code": "601898",
-      "price": 18.22,
-      "marketValue": 241572847148,
-      "PB": 1.47,
-      "PE_TTM": 13.6,
+      "price": 17.09,
+      "marketValue": 226590557506,
+      "PB": 1.38,
+      "PE_TTM": 12.76,
       "totalSharesOutstanding": 13258663400
     },
     "recentYearData": {
-      "netProfit": 17883577000
+      "netProfit": 17757042000
     }
   },
   "601899": {
@@ -95647,10 +95556,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601899",
-      "price": 33.19,
-      "marketValue": 882545818304,
-      "PB": 4.47,
-      "PE_TTM": 14.31,
+      "price": 34.46,
+      "marketValue": 916316025874,
+      "PB": 4.64,
+      "PE_TTM": 14.85,
       "totalSharesOutstanding": 26590714622
     },
     "recentYearData": {
@@ -95659,6 +95568,23 @@ const data: ServiceData = {
   },
   "601919": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 51796875575.87,
+        "netProfit": 5876939302.39,
+        "netProfitMargin": 0.11346127033824065,
+        "netProfitExcludingNon": 5860336405.33,
+        "coreProfit": 6546471969.55,
+        "cashFlowFromOperating": 11124842134.58,
+        "fcf": 5076130251.84,
+        "capex": 6048711882.74,
+        "fcfOverNetProfit": 0.8637370560855833,
+        "netProfitExcludingNonOvernetProfit": 0.9971749075146568,
+        "cashFlowFromOperatingOverNetProfit": 1.8929652940359298,
+        "operatingProfit": 4589348724.4800005,
+        "financialProfit": 1287590577.91,
+        "operatingProfitOverNetProfit": 0.7809079672838598
+      },
       {
         "year": "2025",
         "revenue": 219503805222.7,
@@ -95828,26 +95754,26 @@ const data: ServiceData = {
         "operatingProfit": -8944620459.15,
         "financialProfit": -961383153.6500001,
         "operatingProfitOverNetProfit": 0
-      },
-      {
-        "year": "2015",
-        "revenue": 65035590782.76,
-        "netProfit": 469301789.49,
-        "netProfitMargin": 0.0072160763643651735,
-        "netProfitExcludingNon": -4616430386.55,
-        "coreProfit": -1714322315.8799973,
-        "cashFlowFromOperating": 7071791349.42,
-        "fcf": -209564502.21000004,
-        "capex": 7281355851.63,
-        "fcfOverNetProfit": -0.4465452868563278,
-        "netProfitExcludingNonOvernetProfit": -9.836805420168483,
-        "cashFlowFromOperatingOverNetProfit": 15.06875001926812,
-        "operatingProfit": -1906842094.51,
-        "financialProfit": 2376143884,
-        "operatingProfitOverNetProfit": -4.063146864584098
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 17.241117,
+        "netProfitMargin": 11.346127033824065,
+        "grossProfitMinusNetProfit": 5.894989966175935,
+        "devExpenses": 262946282.71,
+        "manageExpenses": 1892087281.45,
+        "devAndManageExpenses": 2155033564.16,
+        "sellingExpenses": 197847745.98,
+        "financialExpenses": -66727028.79,
+        "totalOperatingExpenses": 2286154281.35,
+        "sellingExpensesRatio": 0.0038196849477957506,
+        "devExpensesRatio": 0.005076489262848427,
+        "manageExpensesRatio": 0.03652898481644025,
+        "devAndManageExpensesRatio": 0.04160547407928867,
+        "totalOperatingExpensesRatio": 4.413691
+      },
       {
         "year": "2025",
         "grossProfitMargin": 20.049416,
@@ -96017,26 +95943,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.058038311236140415,
         "devAndManageExpensesRatio": 0.058038311236140415,
         "totalOperatingExpensesRatio": 8.447193
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 4.142798,
-        "netProfitMargin": 0.7216076364365174,
-        "grossProfitMinusNetProfit": 3.4211903635634826,
-        "devExpenses": 0,
-        "manageExpenses": 4726622077.76,
-        "devAndManageExpenses": 4726622077.76,
-        "sellingExpenses": 131260605.1,
-        "financialExpenses": 2272146844.05,
-        "totalOperatingExpenses": 7130029526.910001,
-        "sellingExpensesRatio": 0.002018288809560492,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.072677468150454,
-        "devAndManageExpensesRatio": 0.072677468150454,
-        "totalOperatingExpensesRatio": 11.42256
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 174761480180.32,
+        "cash": 150334257508.27002,
+        "inventory": 6603996406.74,
+        "nonCurrentAssets": 311261525132.08997,
+        "goodwill": 6243624355.32,
+        "totalAssets": 486023005312.41,
+        "equity": 235689581989.21,
+        "interestFreeLiabilities": 78532456228.45999,
+        "interestBearingDebt": 73617241024.81999,
+        "interestExpense": 710957308.2,
+        "interestFreeLiabilitiesOverTotal": 0.16158176746794164,
+        "interestBearingDebtOverTotal": 0.15146863465341456,
+        "debtRatio": 40.895384
+      },
       {
         "year": "2025",
         "currentAssets": 173315578625.74,
@@ -96196,25 +96121,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.14253750891964173,
         "interestBearingDebtOverTotal": 0.48006579374324754,
         "debtRatio": 68.618461
-      },
-      {
-        "year": "2015",
-        "currentAssets": 46643458860.54,
-        "cash": 34227176496.78,
-        "inventory": 1502288182.62,
-        "nonCurrentAssets": 113850038836.77,
-        "goodwill": 2809409.13,
-        "totalAssets": 160493497697.31003,
-        "equity": 28559548928.71,
-        "interestFreeLiabilities": 12058167113.93,
-        "interestBearingDebt": 87165980292.83002,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.07513181086421113,
-        "interestBearingDebtOverTotal": 0.5431122228840987,
-        "debtRatio": 69.676391
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -1.1527471037171164,
+        "wc": -59708698301.67999,
+        "receivables": 10537051956.5,
+        "prepayments": 1400799647.38,
+        "inventory": 6603996406.74,
+        "accountsPayable": 77866940698.79,
+        "customerAdvances": 78308504.29,
+        "contractLiabilities": 569012162.22,
+        "receivablesToRevenueRatio": 0.20343026175518533,
+        "prepaymentsToRevenueRatio": 0.027044095455683703,
+        "inventoryToRevenueRatio": 0.12749796842604394,
+        "accountsPayableToRevenueRatio": 1.503313468873882,
+        "advancesToRevenueRatio": 0.0015118383767240328,
+        "contractLiabilitiesToRevenueRatio": 0.01098545338678843,
+        "changeInWC": 1644832668.8399963
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.27951010192407866,
@@ -96394,27 +96321,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.0036079313161586067,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -4246530936.3199973
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.03941586123900532,
-        "wc": -2563433821.890002,
-        "receivables": 6487798681.19,
-        "prepayments": 1388876284.36,
-        "inventory": 1502288182.62,
-        "accountsPayable": 11469489372.42,
-        "customerAdvances": 472907597.64,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.09975766504315083,
-        "prepaymentsToRevenueRatio": 0.021355634163442872,
-        "inventoryToRevenueRatio": 0.023099477755774225,
-        "accountsPayableToRevenueRatio": 0.17635711822364802,
-        "advancesToRevenueRatio": 0.0072715199777251965,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 120634797.53999758
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 1.0864959918031647,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 56277097701.11,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.7499065923495759,
@@ -96504,18 +96422,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 50571692796.509995,
         "depreciation": 2725117174.7299995,
         "depreciationOverRevenue": 0.038295534690578927
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 1.3288745123348642,
-        "longTermOperatingAssetsPerYuanRevenue": 1.3651739470610853,
-        "fixedAssets": 86424138985.84999,
-        "longTermOperatingAssets": 88784894168.35,
-        "depreciation": 4204940098.83,
-        "depreciationOverRevenue": 0.06465598371937399
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.51,
+        "roa": 1.807283,
+        "roic": 2.432878,
+        "netProfitMargin": 13.286302,
+        "assetTurnover": 10.6821,
+        "equityMultiplier": 1.691915
+      },
       {
         "year": "2025",
         "roe": 13.17,
@@ -96605,18 +96523,24 @@ const data: ServiceData = {
         "netProfitMargin": -12.789782,
         "assetTurnover": 50.802099999999996,
         "equityMultiplier": 3.186586
-      },
-      {
-        "year": "2015",
-        "roe": 1.64,
-        "roa": 2.853775,
-        "roic": 2.479412,
-        "netProfitMargin": 3.116204,
-        "assetTurnover": 38.7119,
-        "equityMultiplier": 3.29776
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 486023005312.41,
+        "avgTotalAssets": 484890514575.6,
+        "avgCurrentAssets": 174038529403.03,
+        "avgInventory": 6455800776.525,
+        "equity": 287262030420.6,
+        "avgEquity": 285334027670.05,
+        "totalAssetsDays": 842.524685,
+        "currentAssetsDays": 302.401785,
+        "wcDays": -420.7526928567475,
+        "receivablesDays": 16.043278,
+        "inventoryDays": 13.554217,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 483758023838.79004,
@@ -96766,21 +96690,6 @@ const data: ServiceData = {
         "receivablesDays": 30.851338,
         "inventoryDays": 7.681763,
         "fixedAssetsDays": 248.50018699059987
-      },
-      {
-        "year": "2015",
-        "totalAssets": 160493497697.31003,
-        "avgTotalAssets": 154656945861.87003,
-        "avgCurrentAssets": 48743367031.020004,
-        "avgInventory": 1851058919.855,
-        "equity": 53171074720.32,
-        "avgEquity": 48064516240.6,
-        "totalAssetsDays": 929.944563,
-        "currentAssetsDays": 290.226285,
-        "wcDays": -14.386789352236944,
-        "receivablesDays": 22.26957,
-        "inventoryDays": 11.984252,
-        "fixedAssetsDays": 485.0391970022254
       }
     ],
     "primaryBusinessData": [
@@ -98338,49 +98247,66 @@ const data: ServiceData = {
           "totalDividendA": 7061563733.84
         }
       ],
-      "cash": 151469711074.1,
-      "interestBearingDebt": 76565736238.4,
-      "debtRatio": 41.415746,
-      "interestBearingDebtOverTotal": 0.15827279851778778,
+      "cash": 150334257508.27002,
+      "interestBearingDebt": 73617241024.81999,
+      "debtRatio": 40.895384,
+      "interestBearingDebtOverTotal": 0.15146863465341456,
       "roe": 13.17,
       "roic": 10.934323,
       "roa": 9.174747,
       "grossProfitMargin": 20.049416,
       "netProfitMargin": 16.048915,
-      "tradingFinancialAssets": 78260426.73,
-      "longTermEquityInvestment": 76870627704.06,
-      "minorityInterest": 51140700568.88
+      "tradingFinancialAssets": 72268408.43,
+      "longTermEquityInvestment": 77811608299.16,
+      "minorityInterest": 51572448431.39
     },
     "dynamicData": {
       "code": "601919",
-      "price": 14.19,
-      "marketValue": 217287036845,
-      "PB": 0.95,
-      "PE_TTM": 7.04,
-      "totalSharesOutstanding": 15312687586
+      "price": 14.07,
+      "marketValue": 215449964575,
+      "PB": 0.91,
+      "PE_TTM": 8.6,
+      "totalSharesOutstanding": 15312719586
     },
     "recentYearData": {
-      "netProfit": 30868147821.38
+      "netProfit": 25050548277.95
     }
   },
   "603173": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 2141456882.73,
-        "netProfit": 344817342.14,
-        "netProfitMargin": 0.16101997893154657,
-        "netProfitExcludingNon": 339975053.82,
-        "coreProfit": 491506857.08000004,
-        "cashFlowFromOperating": 905522980.02,
-        "fcf": 817339403.6,
-        "capex": 88183576.42,
-        "fcfOverNetProfit": 2.3703546884487916,
-        "netProfitExcludingNonOvernetProfit": 0.985956946683865,
-        "cashFlowFromOperatingOverNetProfit": 2.6260946575371107,
-        "operatingProfit": 342886623.09,
-        "financialProfit": 1930719.05,
-        "operatingProfitOverNetProfit": 0.9944007484135873
+        "year": "2026Q1",
+        "revenue": 609190619.87,
+        "netProfit": 92468454.16,
+        "netProfitMargin": 0.15178903145247472,
+        "netProfitExcludingNon": 89400066.32,
+        "coreProfit": 139130329.43999997,
+        "cashFlowFromOperating": 239430457.98,
+        "fcf": 205062484.98999998,
+        "capex": 34367972.99,
+        "fcfOverNetProfit": 2.2176480276741333,
+        "netProfitExcludingNonOvernetProfit": 0.966816922940112,
+        "cashFlowFromOperatingOverNetProfit": 2.589320435331478,
+        "operatingProfit": 89787332.2,
+        "financialProfit": 2681121.96,
+        "operatingProfitOverNetProfit": 0.9710050093909779
+      },
+      {
+        "year": "2025",
+        "revenue": 3002902194.41,
+        "netProfit": 421348835.38,
+        "netProfitMargin": 0.14031387241461096,
+        "netProfitExcludingNon": 410197449.93,
+        "coreProfit": 646612633.6499997,
+        "cashFlowFromOperating": 912062581.04,
+        "fcf": 798758696.87,
+        "capex": 113303884.17,
+        "fcfOverNetProfit": 1.895718297523303,
+        "netProfitExcludingNonOvernetProfit": 0.9735340779097136,
+        "cashFlowFromOperatingOverNetProfit": 2.164625850258829,
+        "operatingProfit": 415305809.26,
+        "financialProfit": 6043026.12,
+        "operatingProfitOverNetProfit": 0.9856579024015814
       },
       {
         "year": "2024",
@@ -98504,21 +98430,38 @@ const data: ServiceData = {
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 27.341776,
-        "netProfitMargin": 16.101997893154657,
-        "grossProfitMinusNetProfit": 11.239778106845343,
-        "devExpenses": 84062894.48,
-        "manageExpenses": 62702176.86,
-        "devAndManageExpenses": 146765071.34,
-        "sellingExpenses": 16390898.17,
-        "financialExpenses": -31428162.05,
-        "totalOperatingExpenses": 131727807.46,
-        "sellingExpensesRatio": 0.007654087412259425,
-        "devExpensesRatio": 0.0392550021239904,
-        "manageExpensesRatio": 0.02928014911982033,
-        "devAndManageExpensesRatio": 0.06853515124381072,
-        "totalOperatingExpensesRatio": 6.151317
+        "year": "2026Q1",
+        "grossProfitMargin": 27.263503,
+        "netProfitMargin": 15.178903145247471,
+        "grossProfitMinusNetProfit": 12.084599854752529,
+        "devExpenses": 17492633.16,
+        "manageExpenses": 18801620.4,
+        "devAndManageExpenses": 36294253.56,
+        "sellingExpenses": 4180017.25,
+        "financialExpenses": 9932356.44,
+        "totalOperatingExpenses": 50406627.25,
+        "sellingExpensesRatio": 0.006861591616253065,
+        "devExpensesRatio": 0.028714547777726602,
+        "manageExpensesRatio": 0.03086327954953119,
+        "devAndManageExpensesRatio": 0.0595778273272578,
+        "totalOperatingExpensesRatio": 8.27436
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 26.307719,
+        "netProfitMargin": 14.031387241461097,
+        "grossProfitMinusNetProfit": 12.276331758538902,
+        "devExpenses": 115350002.35,
+        "manageExpenses": 94784941.77,
+        "devAndManageExpenses": 210134944.12,
+        "sellingExpenses": 21482769.44,
+        "financialExpenses": -30197264.34,
+        "totalOperatingExpenses": 201420449.22,
+        "sellingExpensesRatio": 0.007154002378096388,
+        "devExpensesRatio": 0.038412840273228936,
+        "manageExpensesRatio": 0.03156444520452423,
+        "devAndManageExpensesRatio": 0.06997728547775317,
+        "totalOperatingExpensesRatio": 6.707526
       },
       {
         "year": "2024",
@@ -98642,20 +98585,36 @@ const data: ServiceData = {
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 5108344289.98,
-        "cash": 1623033481.29,
-        "inventory": 1272833254.95,
-        "nonCurrentAssets": 695132430.65,
+        "year": "2026Q1",
+        "currentAssets": 5314866361.09,
+        "cash": 1884210120.99,
+        "inventory": 1094907160.7,
+        "nonCurrentAssets": 749657822.72,
         "goodwill": 0,
-        "totalAssets": 5803476720.63,
-        "equity": 1893663713.53,
-        "interestFreeLiabilities": 3647235177.4,
-        "interestBearingDebt": 167210.38,
-        "interestExpense": 3780.21,
-        "interestFreeLiabilitiesOverTotal": 0.6284569324513586,
-        "interestBearingDebtOverTotal": 0.0000288121048897476,
-        "debtRatio": 67.370185
+        "totalAssets": 6064524183.81,
+        "equity": 2077540431.36,
+        "interestFreeLiabilities": 3642601389,
+        "interestBearingDebt": 0,
+        "interestExpense": 553546.24,
+        "interestFreeLiabilitiesOverTotal": 0.6006409206388156,
+        "interestBearingDebtOverTotal": 0,
+        "debtRatio": 65.500794
+      },
+      {
+        "year": "2025",
+        "currentAssets": 4867916248.71,
+        "cash": 1623002595.1,
+        "inventory": 1205741373.19,
+        "nonCurrentAssets": 714151598.12,
+        "goodwill": 0,
+        "totalAssets": 5582067846.83,
+        "equity": 1976087767.16,
+        "interestFreeLiabilities": 3276301854.75,
+        "interestBearingDebt": 0,
+        "interestExpense": 3843004.14,
+        "interestFreeLiabilitiesOverTotal": 0.5869333631640788,
+        "interestBearingDebtOverTotal": 0,
+        "debtRatio": 64.599359
       },
       {
         "year": "2024",
@@ -98772,22 +98731,40 @@ const data: ServiceData = {
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.04737782659469609,
-        "wc": 101457572.85000038,
-        "receivables": 633480747.28,
-        "prepayments": 625265692.53,
-        "inventory": 1272833254.95,
-        "accountsPayable": 698936803.83,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.017800271600232134,
+        "wc": 10843758.489999771,
+        "receivables": 710297674.81,
+        "prepayments": 691047096.85,
+        "inventory": 1094907160.7,
+        "accountsPayable": 654284454.81,
         "customerAdvances": 0,
-        "contractLiabilities": 2269874464.27,
-        "receivablesToRevenueRatio": 0.29581765217351363,
-        "prepaymentsToRevenueRatio": 0.2919814531744812,
-        "inventoryToRevenueRatio": 0.5943772509336495,
-        "accountsPayableToRevenueRatio": 0.3263837854811124,
+        "contractLiabilities": 2513324685.43,
+        "receivablesToRevenueRatio": 1.1659694874513595,
+        "prepaymentsToRevenueRatio": 1.1343692340460987,
+        "inventoryToRevenueRatio": 1.7973145432437074,
+        "accountsPayableToRevenueRatio": 1.0740225365742218,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 1.0599673906935212,
-        "changeInWC": -306675206.6099999
+        "contractLiabilitiesToRevenueRatio": 4.125678569979193,
+        "changeInWC": -237855653.4500003
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.08281968437165955,
+        "wc": 248699411.94000006,
+        "receivables": 670808029.52,
+        "prepayments": 543995245.8,
+        "inventory": 1205741373.19,
+        "accountsPayable": 686201131.79,
+        "customerAdvances": 0,
+        "contractLiabilities": 1981538596.77,
+        "receivablesToRevenueRatio": 0.22338657275242962,
+        "prepaymentsToRevenueRatio": 0.1811564981412531,
+        "inventoryToRevenueRatio": 0.4015253561819385,
+        "accountsPayableToRevenueRatio": 0.22851264788689613,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.6598745042241797,
+        "changeInWC": -159433367.52000022
       },
       {
         "year": "2024",
@@ -98918,13 +98895,22 @@ const data: ServiceData = {
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.0437038365538738,
+        "longTermOperatingAssetsPerYuanRevenue": 0.16557961119218373,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 93589881.59,
+        "longTermOperatingAssets": 100869545.98,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.1727704277934149,
+        "longTermOperatingAssetsPerYuanRevenue": 0.20367339240303406,
+        "fixedAssets": 518812696.75,
+        "longTermOperatingAssets": 611611276.99,
+        "depreciation": 56749568.88,
+        "depreciationOverRevenue": 0.018898240837027982
       },
       {
         "year": "2024",
@@ -98992,13 +98978,22 @@ const data: ServiceData = {
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 19.54,
-        "roa": 7.123276,
-        "roic": 19.588193,
-        "netProfitMargin": 16.101997,
-        "assetTurnover": 38.5768,
-        "equityMultiplier": 3.064681
+        "year": "2026Q1",
+        "roe": 4.54,
+        "roa": 1.864268,
+        "roic": 4.589567,
+        "netProfitMargin": 15.174347,
+        "assetTurnover": 10.4612,
+        "equityMultiplier": 2.898617
+      },
+      {
+        "year": "2025",
+        "roe": 23.48,
+        "roa": 8.970731,
+        "roic": 23.602359,
+        "netProfitMargin": 14.031387,
+        "assetTurnover": 55.195899999999995,
+        "equityMultiplier": 2.824807
       },
       {
         "year": "2024",
@@ -99066,19 +99061,34 @@ const data: ServiceData = {
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 5803476720.63,
-        "avgTotalAssets": 5551146253.805,
-        "avgCurrentAssets": 4879645298.48,
-        "avgInventory": 1149609650.35,
-        "equity": 1893663713.53,
-        "avgEquity": 1760186504.445,
-        "totalAssetsDays": 699.901782,
-        "currentAssetsDays": 615.237337,
-        "wcDays": 17.29290670706407,
-        "receivablesDays": 79.281184,
-        "inventoryDays": 199.489506,
+        "year": "2026Q1",
+        "totalAssets": 6064524183.81,
+        "avgTotalAssets": 5823296015.32,
+        "avgCurrentAssets": 5091391304.9,
+        "avgInventory": 1150324266.9450002,
+        "equity": 2092212678.17,
+        "avgEquity": 2034150222.665,
+        "totalAssetsDays": 860.316334,
+        "currentAssetsDays": 752.186922,
+        "wcDays": 6.497099134084729,
+        "receivablesDays": 85.31453,
+        "inventoryDays": 233.645383,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 5582067846.83,
+        "avgTotalAssets": 5440441816.905,
+        "avgCurrentAssets": 4759431277.844999,
+        "avgInventory": 1116063709.47,
+        "equity": 1976087767.16,
+        "avgEquity": 1801398531.26,
+        "totalAssetsDays": 652.222059,
+        "currentAssetsDays": 570.579775,
+        "wcDays": 30.22918479565574,
+        "receivablesDays": 79.854825,
+        "inventoryDays": 181.563399,
+        "fixedAssetsDays": 63.06120614459643
       },
       {
         "year": "2024",
@@ -99187,6 +99197,114 @@ const data: ServiceData = {
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "制造业",
+        "mainBusinessIncome": 2985475628.97,
+        "mbiRatio": 0.994197,
+        "mainBusinessCost": 2202643624.87,
+        "mbcRatio": 0.995362,
+        "mainBusinessProfit": 782832004.1,
+        "mbpRatio": 0.990933,
+        "grossProfitRatio": 0.262213
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 17426565.44,
+        "mbiRatio": 0.005803,
+        "mainBusinessCost": 10263469.61,
+        "mbcRatio": 0.004638,
+        "mainBusinessProfit": 7163095.83,
+        "mbpRatio": 0.009067,
+        "grossProfitRatio": 0.411045
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "空分设备",
+        "mainBusinessIncome": 1995399397.49,
+        "mbiRatio": 0.66449,
+        "mainBusinessCost": 1569350156.28,
+        "mbcRatio": 0.70918,
+        "mainBusinessProfit": 426049241.21,
+        "mbpRatio": 0.539306,
+        "grossProfitRatio": 0.213516
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "天然气处理及液化装置",
+        "mainBusinessIncome": 967854035.85,
+        "mbiRatio": 0.322306,
+        "mainBusinessCost": 614618882.41,
+        "mbcRatio": 0.277743,
+        "mainBusinessProfit": 353235153.44,
+        "mbpRatio": 0.447136,
+        "grossProfitRatio": 0.364967
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 22222195.63,
+        "mbiRatio": 0.0074,
+        "mainBusinessCost": 18674586.18,
+        "mbcRatio": 0.008439,
+        "mainBusinessProfit": 3547609.45,
+        "mbpRatio": 0.004491,
+        "grossProfitRatio": 0.159643
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 17426565.44,
+        "mbiRatio": 0.005803,
+        "mainBusinessCost": 10263469.61,
+        "mbcRatio": 0.004638,
+        "mainBusinessProfit": 7163095.83,
+        "mbpRatio": 0.009067,
+        "grossProfitRatio": 0.411045
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "外销",
+        "mainBusinessIncome": 1873983456.58,
+        "mbiRatio": 0.624057,
+        "mainBusinessCost": 1238732307.19,
+        "mbcRatio": 0.559776,
+        "mainBusinessProfit": 635251149.39,
+        "mbpRatio": 0.80412,
+        "grossProfitRatio": 0.338984
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "内销",
+        "mainBusinessIncome": 1111492172.39,
+        "mbiRatio": 0.370139,
+        "mainBusinessCost": 963911317.68,
+        "mbcRatio": 0.435586,
+        "mainBusinessProfit": 147580854.71,
+        "mbpRatio": 0.186812,
+        "grossProfitRatio": 0.132777
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 17426565.44,
+        "mbiRatio": 0.005803,
+        "mainBusinessCost": 10263469.61,
+        "mbcRatio": 0.004638,
+        "mainBusinessProfit": 7163095.83,
+        "mbpRatio": 0.009067,
+        "grossProfitRatio": 0.411045
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -99986,51 +100104,79 @@ const data: ServiceData = {
           "dividendRatio": 0.3032905179531718,
           "totalDividend": 79208250,
           "totalDividendA": 79208250
+        },
+        {
+          "year": "2025",
+          "profit": 421348835.38,
+          "profit_tb": 0.61336,
+          "basicEps": 2.66,
+          "totalSharesOutstanding": 160000000,
+          "dps": 0.82,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
-      "cash": 1623033481.29,
-      "interestBearingDebt": 167210.38,
-      "debtRatio": 67.370185,
-      "interestBearingDebtOverTotal": 0.0000288121048897476,
-      "roe": 16.9,
-      "roic": 16.70747,
-      "roa": 6.074727,
-      "grossProfitMargin": 23.368616,
-      "netProfitMargin": 10.796876,
-      "tradingFinancialAssets": 346363068.06,
+      "cash": 1884210120.99,
+      "interestBearingDebt": 0,
+      "debtRatio": 65.500794,
+      "interestBearingDebtOverTotal": 0,
+      "roe": 23.48,
+      "roic": 23.602359,
+      "roa": 8.970731,
+      "grossProfitMargin": 26.307719,
+      "netProfitMargin": 14.031387,
+      "tradingFinancialAssets": 210967000.04,
       "longTermEquityInvestment": 0,
-      "minorityInterest": 0
+      "minorityInterest": 14672246.81
     },
     "dynamicData": {
       "code": "603173",
-      "price": 38.14,
-      "marketValue": 6102400000,
-      "PB": 2.94,
-      "PE_TTM": 15.33,
+      "price": 39.39,
+      "marketValue": 6302400000,
+      "PB": 3.03,
+      "PE_TTM": 15.83,
       "totalSharesOutstanding": 160000000
     },
     "recentYearData": {
-      "netProfit": 398395817.97999996
+      "netProfit": 398059245.05999994
     }
   },
   "603195": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 12197681954.69,
-        "netProfit": 2978823094.86,
-        "netProfitMargin": 0.244212228677978,
-        "netProfitExcludingNon": 2701197810.7,
-        "coreProfit": 3599868633.7099996,
-        "cashFlowFromOperating": 3621486874.87,
-        "fcf": 3208914939.59,
-        "capex": 412571935.28,
-        "fcfOverNetProfit": 1.0772425341830558,
-        "netProfitExcludingNonOvernetProfit": 0.9068003451970523,
-        "cashFlowFromOperatingOverNetProfit": 1.2157441914287979,
-        "operatingProfit": 2729018261.46,
-        "financialProfit": 249804833.4,
-        "operatingProfitOverNetProfit": 0.9161397553849231
+        "year": "2026Q1",
+        "revenue": 4060221001.34,
+        "netProfit": 1058244024.62,
+        "netProfitMargin": 0.2606370501188843,
+        "netProfitExcludingNon": 983604877.44,
+        "coreProfit": 1298607464.1000004,
+        "cashFlowFromOperating": 1699187932.26,
+        "fcf": 1459405746.61,
+        "capex": 239782185.65,
+        "fcfOverNetProfit": 1.3790824352956315,
+        "netProfitExcludingNonOvernetProfit": 0.9294688697091374,
+        "cashFlowFromOperatingOverNetProfit": 1.6056674006452847,
+        "operatingProfit": 973811809.54,
+        "financialProfit": 84432215.08,
+        "operatingProfitOverNetProfit": 0.9202147962892411
+      },
+      {
+        "year": "2025",
+        "revenue": 16026312556.45,
+        "netProfit": 4070632747.77,
+        "netProfitMargin": 0.25399684009854906,
+        "netProfitExcludingNon": 3624581661.66,
+        "coreProfit": 4863743412.82,
+        "cashFlowFromOperating": 4743692351.84,
+        "fcf": 4243553241.6000004,
+        "capex": 500139110.24,
+        "fcfOverNetProfit": 1.0424800036123945,
+        "netProfitExcludingNonOvernetProfit": 0.8904221742051384,
+        "cashFlowFromOperatingOverNetProfit": 1.1653452044866293,
+        "operatingProfit": 3679575091.09,
+        "financialProfit": 391057656.68,
+        "operatingProfitOverNetProfit": 0.9039319730097903
       },
       {
         "year": "2024",
@@ -100184,42 +100330,42 @@ const data: ServiceData = {
         "operatingProfit": 1337995146.58,
         "financialProfit": 69455027.38,
         "operatingProfitOverNetProfit": 0.9506518748123199
-      },
-      {
-        "year": "2015",
-        "revenue": 4458913100,
-        "netProfit": 999742200,
-        "netProfitMargin": 0.22421208433059617,
-        "netProfitExcludingNon": 858810700,
-        "coreProfit": 1190352900,
-        "cashFlowFromOperating": 1083742800,
-        "fcf": 843002600,
-        "capex": 240740200,
-        "fcfOverNetProfit": 0.8432199821113883,
-        "netProfitExcludingNonOvernetProfit": 0.8590321584904589,
-        "cashFlowFromOperatingOverNetProfit": 1.08402226093887,
-        "operatingProfit": 963890200,
-        "financialProfit": 35852000,
-        "operatingProfitOverNetProfit": 0.9641387549710315
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 42.113933,
-        "netProfitMargin": 24.421222867797802,
-        "grossProfitMinusNetProfit": 17.6927101322022,
-        "devExpenses": 443289063.89,
-        "manageExpenses": 577232056.23,
-        "devAndManageExpenses": 1020521120.12,
-        "sellingExpenses": 853762695.59,
-        "financialExpenses": -76136954.97,
-        "totalOperatingExpenses": 1798146860.74,
-        "sellingExpensesRatio": 0.0699938479099079,
-        "devExpensesRatio": 0.03634207430040063,
-        "manageExpensesRatio": 0.047323094533388343,
-        "devAndManageExpensesRatio": 0.08366516883378898,
-        "totalOperatingExpensesRatio": 14.741709
+        "year": "2026Q1",
+        "grossProfitMargin": 42.739761,
+        "netProfitMargin": 26.063705011888427,
+        "grossProfitMinusNetProfit": 16.676055988111575,
+        "devExpenses": 135888136.37,
+        "manageExpenses": 129084998.23,
+        "devAndManageExpenses": 264973134.60000002,
+        "sellingExpenses": 264694341.04,
+        "financialExpenses": -17379810.25,
+        "totalOperatingExpenses": 512287665.39,
+        "sellingExpensesRatio": 0.06519210184683114,
+        "devExpensesRatio": 0.033468162527397566,
+        "manageExpensesRatio": 0.03179260394628714,
+        "devAndManageExpensesRatio": 0.0652607664736847,
+        "totalOperatingExpensesRatio": 12.617235
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 43.136098,
+        "netProfitMargin": 25.399684009854905,
+        "grossProfitMinusNetProfit": 17.736413990145092,
+        "devExpenses": 643963783.6,
+        "manageExpenses": 712375179.18,
+        "devAndManageExpenses": 1356338962.78,
+        "sellingExpenses": 1183478613.6,
+        "financialExpenses": -96686209.09,
+        "totalOperatingExpenses": 2443131367.29,
+        "sellingExpensesRatio": 0.07384597108233068,
+        "devExpensesRatio": 0.04018165634370012,
+        "manageExpensesRatio": 0.04445034855465209,
+        "devAndManageExpensesRatio": 0.08463200489835221,
+        "totalOperatingExpensesRatio": 15.2445
       },
       {
         "year": "2024",
@@ -100373,41 +100519,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.035951328122935396,
         "devAndManageExpensesRatio": 0.06944671774506977,
         "totalOperatingExpensesRatio": 15.170426
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 41.606487,
-        "netProfitMargin": 22.42120843305962,
-        "grossProfitMinusNetProfit": 19.185278566940383,
-        "devExpenses": 151048800,
-        "manageExpenses": 175671700,
-        "devAndManageExpenses": 326720500,
-        "sellingExpenses": 456269400,
-        "financialExpenses": -6309200,
-        "totalOperatingExpenses": 776680700,
-        "sellingExpensesRatio": 0.10232749321802212,
-        "devExpensesRatio": 0.03387569943895072,
-        "manageExpensesRatio": 0.03939787478701928,
-        "devAndManageExpensesRatio": 0.07327357422597,
-        "totalOperatingExpensesRatio": 17.41861
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 17059099965.13,
-        "cash": 4481507468.66,
-        "inventory": 1167952699.84,
-        "nonCurrentAssets": 4214728836.72,
+        "year": "2026Q1",
+        "currentAssets": 20105837492.65,
+        "cash": 4553036704.72,
+        "inventory": 1637053372.17,
+        "nonCurrentAssets": 4270279134.83,
         "goodwill": 0,
-        "totalAssets": 21273828801.85,
-        "equity": 15661389322.69,
-        "interestFreeLiabilities": 2657069535.08,
-        "interestBearingDebt": 1250703385.8400002,
-        "interestExpense": 12215596.07,
-        "interestFreeLiabilitiesOverTotal": 0.12489851073958712,
-        "interestBearingDebtOverTotal": 0.05879070464886121,
-        "debtRatio": 26.340131
+        "totalAssets": 24376116627.48,
+        "equity": 17816277778.3,
+        "interestFreeLiabilities": 3498259622.63,
+        "interestBearingDebt": 1045858056.9200001,
+        "interestExpense": 1503933.63,
+        "interestFreeLiabilitiesOverTotal": 0.143511769166968,
+        "interestBearingDebtOverTotal": 0.04290503171210503,
+        "debtRatio": 26.860352
+      },
+      {
+        "year": "2025",
+        "currentAssets": 18321188058.55,
+        "cash": 4167319154.36,
+        "inventory": 1630826167.95,
+        "nonCurrentAssets": 4235054484.08,
+        "goodwill": 0,
+        "totalAssets": 22556242542.63,
+        "equity": 16797615200.75,
+        "interestFreeLiabilities": 3048068191.68,
+        "interestBearingDebt": 800775621.22,
+        "interestExpense": 16216500.05,
+        "interestFreeLiabilitiesOverTotal": 0.1351319124149036,
+        "interestBearingDebtOverTotal": 0.03550128616087454,
+        "debtRatio": 25.481515
       },
       {
         "year": "2024",
@@ -100552,42 +100697,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.2795160090981657,
         "interestBearingDebtOverTotal": 0.0025516733065371923,
         "debtRatio": 37.526039
-      },
-      {
-        "year": "2015",
-        "currentAssets": 1925213600,
-        "cash": 70632100,
-        "inventory": 389886400,
-        "nonCurrentAssets": 753013600,
-        "goodwill": 0,
-        "totalAssets": 2678227200,
-        "equity": 1627373000,
-        "interestFreeLiabilities": 701752700,
-        "interestBearingDebt": 41818500,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.2620213475540835,
-        "interestBearingDebtOverTotal": 0.01561424661806138,
-        "debtRatio": 39.236928
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": -0.0903136694514673,
-        "wc": -1101617416.13,
-        "receivables": 322637637.31,
-        "prepayments": 64861781.8,
-        "inventory": 1167952699.84,
-        "accountsPayable": 2044436639.7,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.34689819450349046,
+        "wc": -1408483334.65,
+        "receivables": 402208201.26,
+        "prepayments": 50514714.55,
+        "inventory": 1637053372.17,
+        "accountsPayable": 2055799736.21,
         "customerAdvances": 0,
-        "contractLiabilities": 612632895.38,
-        "receivablesToRevenueRatio": 0.026450733713871435,
-        "prepaymentsToRevenueRatio": 0.005317549846023054,
-        "inventoryToRevenueRatio": 0.09575202109536254,
-        "accountsPayableToRevenueRatio": 0.16760862000619023,
+        "contractLiabilities": 1442459886.42,
+        "receivablesToRevenueRatio": 0.09906066717236787,
+        "prepaymentsToRevenueRatio": 0.012441370687292282,
+        "inventoryToRevenueRatio": 0.403193168950587,
+        "accountsPayableToRevenueRatio": 0.5063270535105162,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.05022535410053408,
-        "changeInWC": -408303093.8499999
+        "contractLiabilitiesToRevenueRatio": 0.3552663478032213,
+        "changeInWC": -390657336.0300002
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": -0.06350968103454106,
+        "wc": -1017825998.6199999,
+        "receivables": 327360204.44,
+        "prepayments": 72055820.67,
+        "inventory": 1630826167.95,
+        "accountsPayable": 2455395948.37,
+        "customerAdvances": 0,
+        "contractLiabilities": 592672243.31,
+        "receivablesToRevenueRatio": 0.020426420818072062,
+        "prepaymentsToRevenueRatio": 0.004496094807598158,
+        "inventoryToRevenueRatio": 0.1017592888074339,
+        "accountsPayableToRevenueRatio": 0.15321028712757717,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.036981198340068015,
+        "changeInWC": -324511676.3399997
       },
       {
         "year": "2024",
@@ -100750,35 +100897,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.037028336469021136,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -906978735.23
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.08199478029746755,
-        "wc": 365607600,
-        "receivables": 88157800,
-        "prepayments": 5694600,
-        "inventory": 389886400,
-        "accountsPayable": 0,
-        "customerAdvances": 118131200,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.01977114108817236,
-        "prepaymentsToRevenueRatio": 0.0012771273788672848,
-        "inventoryToRevenueRatio": 0.08743978437256379,
-        "accountsPayableToRevenueRatio": 0,
-        "advancesToRevenueRatio": 0.026493272542135887,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 365607600
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.0303345434250916,
+        "longTermOperatingAssetsPerYuanRevenue": 0.09578052205573394,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 370011112.94,
+        "longTermOperatingAssets": 388890087.17,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.22340260666132167,
+        "longTermOperatingAssetsPerYuanRevenue": 0.24743859718273256,
+        "fixedAssets": 3580320000.28,
+        "longTermOperatingAssets": 3965528296.9800005,
+        "depreciation": 331339000.28000003,
+        "depreciationOverRevenue": 0.020674687275248994
       },
       {
         "year": "2024",
@@ -100860,26 +100998,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 864812387.64,
         "depreciation": 61761061.39,
         "depreciationOverRevenue": 0.011508669183687061
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.03222054271477056,
-        "longTermOperatingAssetsPerYuanRevenue": 0.08153132654682146,
-        "fixedAssets": 143668600,
-        "longTermOperatingAssets": 363541100,
-        "depreciation": 0,
-        "depreciationOverRevenue": 0
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 18.26,
-        "roa": 17.312696,
-        "roic": 18.076657,
-        "netProfitMargin": 24.450593,
-        "assetTurnover": 58.407,
-        "equityMultiplier": 1.357591
+        "year": "2026Q1",
+        "roe": 6.1,
+        "roa": 5.405653,
+        "roic": 5.813124,
+        "netProfitMargin": 26.097525,
+        "assetTurnover": 17.302400000000002,
+        "equityMultiplier": 1.367247
+      },
+      {
+        "year": "2025",
+        "roe": 24.91,
+        "roa": 22.864421,
+        "roic": 24.197482,
+        "netProfitMargin": 25.435058,
+        "assetTurnover": 74.45389999999999,
+        "equityMultiplier": 1.341948
       },
       {
         "year": "2024",
@@ -100961,32 +101099,38 @@ const data: ServiceData = {
         "netProfitMargin": 26.226684,
         "assetTurnover": 162.689,
         "equityMultiplier": 1.600666
-      },
-      {
-        "year": "2015",
-        "roe": 75.4,
-        "roa": 43.74621,
-        "roic": 59.512493,
-        "netProfitMargin": 22.421208,
-        "assetTurnover": 166.4874,
-        "equityMultiplier": 1.645736
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 21273828801.85,
-        "avgTotalAssets": 20883931646.265,
-        "avgCurrentAssets": 16698247006.38,
-        "avgInventory": 1370812759.58,
-        "equity": 15670274348.39,
-        "avgEquity": 15772627359.575,
-        "totalAssetsDays": 462.273206,
-        "currentAssetsDays": 369.621597,
-        "wcDays": -32.964489349785566,
-        "receivablesDays": 6.718038,
-        "inventoryDays": 52.419219,
+        "year": "2026Q1",
+        "totalAssets": 24376116627.48,
+        "avgTotalAssets": 23466179585.055,
+        "avgCurrentAssets": 19213512775.6,
+        "avgInventory": 1633939770.06,
+        "equity": 17828605767.28,
+        "avgEquity": 17318587892.305,
+        "totalAssetsDays": 520.157932,
+        "currentAssetsDays": 425.892124,
+        "wcDays": -126.61784099377401,
+        "receivablesDays": 7.562552,
+        "inventoryDays": 63.252213,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 22556242542.63,
+        "avgTotalAssets": 21525138516.655,
+        "avgCurrentAssets": 17329291053.09,
+        "avgInventory": 1602249493.635,
+        "equity": 16808570017.33,
+        "avgEquity": 16341775194.045,
+        "totalAssetsDays": 483.52045,
+        "currentAssetsDays": 389.268882,
+        "wcDays": -23.181033577607487,
+        "receivablesDays": 6.822475,
+        "inventoryDays": 63.293976,
+        "fixedAssetsDays": 81.54195143138242
       },
       {
         "year": "2024",
@@ -101122,24 +101266,117 @@ const data: ServiceData = {
         "receivablesDays": 5.116508,
         "inventoryDays": 52.054743,
         "fixedAssetsDays": 44.20228242559051
-      },
-      {
-        "year": "2015",
-        "totalAssets": 2678227200,
-        "avgTotalAssets": 2678227200,
-        "avgCurrentAssets": 1925213600,
-        "avgInventory": 389886400,
-        "equity": 1627373000,
-        "avgEquity": 1627373000,
-        "totalAssetsDays": 216.232469,
-        "currentAssetsDays": 155.436286,
-        "wcDays": 29.928094808575658,
-        "receivablesDays": 0,
-        "inventoryDays": 53.907224,
-        "fixedAssetsDays": 11.760498090891254
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "民用电工",
+        "mainBusinessIncome": 15996154942.04,
+        "mbiRatio": 0.998118,
+        "mainBusinessCost": 9095041487.62,
+        "mbcRatio": 0.998009,
+        "mainBusinessProfit": 6901113454.42,
+        "mbpRatio": 0.998262,
+        "grossProfitRatio": 0.431423
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 30157614.41,
+        "mbiRatio": 0.001882,
+        "mainBusinessCost": 18145158.74,
+        "mbcRatio": 0.001991,
+        "mainBusinessProfit": 12012455.67,
+        "mbpRatio": 0.001738,
+        "grossProfitRatio": 0.398322
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "智能电工照明产品",
+        "mainBusinessIncome": 8097778712.42,
+        "mbiRatio": 0.50528,
+        "mainBusinessCost": 4349329105.14,
+        "mbcRatio": 0.477257,
+        "mainBusinessProfit": 3748449607.28,
+        "mbpRatio": 0.542222,
+        "grossProfitRatio": 0.462898
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "电连接产品",
+        "mainBusinessIncome": 7076551275.31,
+        "mbiRatio": 0.441558,
+        "mainBusinessCost": 4166704001.71,
+        "mbcRatio": 0.457217,
+        "mainBusinessProfit": 2909847273.6,
+        "mbpRatio": 0.420916,
+        "grossProfitRatio": 0.411196
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "新能源产品",
+        "mainBusinessIncome": 821824954.31,
+        "mbiRatio": 0.05128,
+        "mainBusinessCost": 579008380.77,
+        "mbcRatio": 0.063535,
+        "mainBusinessProfit": 242816573.54,
+        "mbpRatio": 0.035124,
+        "grossProfitRatio": 0.29546
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 30157614.41,
+        "mbiRatio": 0.001882,
+        "mainBusinessCost": 18145158.74,
+        "mbcRatio": 0.001991,
+        "mainBusinessProfit": 12012455.67,
+        "mbpRatio": 0.001738,
+        "grossProfitRatio": 0.398322
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "境内",
+        "mainBusinessIncome": 15726306463.94,
+        "mbiRatio": 0.98128,
+        "mainBusinessCost": 8885401865.75,
+        "mbcRatio": 0.975005,
+        "mainBusinessProfit": 6840904598.19,
+        "mbpRatio": 0.989553,
+        "grossProfitRatio": 0.434998
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "境外",
+        "mainBusinessIncome": 269848478.1,
+        "mbiRatio": 0.016838,
+        "mainBusinessCost": 209639621.87,
+        "mbcRatio": 0.023004,
+        "mainBusinessProfit": 60208856.23,
+        "mbpRatio": 0.008709,
+        "grossProfitRatio": 0.223121
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 30157614.41,
+        "mbiRatio": 0.001882,
+        "mainBusinessCost": 18145158.74,
+        "mbcRatio": 0.001991,
+        "mainBusinessProfit": 12012455.67,
+        "mbpRatio": 0.001738,
+        "grossProfitRatio": 0.398322
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -102812,17 +103049,6 @@ const data: ServiceData = {
     "valuationData": {
       "historyData": [
         {
-          "year": "2015",
-          "profit": 999742200,
-          "profit_tb": 0,
-          "basicEps": 0,
-          "totalSharesOutstanding": 81670000,
-          "dps": 0,
-          "dividendRatio": 0,
-          "totalDividend": 0,
-          "totalDividendA": 0
-        },
-        {
           "year": "2016",
           "profit": 1407450173.96,
           "profit_tb": 0.40781,
@@ -102914,41 +103140,69 @@ const data: ServiceData = {
           "year": "2024",
           "profit": 4272204565.03,
           "profit_tb": 0.10389,
-          "basicEps": 3.31,
+          "basicEps": 2.36,
           "totalSharesOutstanding": 1292158890,
           "dps": 2.4,
           "dividendRatio": 0.7258971600247385,
           "totalDividend": 3101181160.8,
           "totalDividendA": 3101181160.8
+        },
+        {
+          "year": "2025",
+          "profit": 4070632747.77,
+          "profit_tb": -0.04718,
+          "basicEps": 2.26,
+          "totalSharesOutstanding": 1807973428,
+          "dps": 1.9,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
-      "cash": 4481507468.66,
-      "interestBearingDebt": 1250703385.8400002,
-      "debtRatio": 26.340131,
-      "interestBearingDebtOverTotal": 0.05879070464886121,
-      "roe": 28.64,
-      "roic": 27.128007,
-      "roa": 25.328241,
-      "grossProfitMargin": 43.247165,
-      "netProfitMargin": 25.365648,
-      "tradingFinancialAssets": 10946038771.43,
+      "cash": 4553036704.72,
+      "interestBearingDebt": 1045858056.9200001,
+      "debtRatio": 26.860352,
+      "interestBearingDebtOverTotal": 0.04290503171210503,
+      "roe": 24.91,
+      "roic": 24.197482,
+      "roa": 22.864421,
+      "grossProfitMargin": 43.136098,
+      "netProfitMargin": 25.435058,
+      "tradingFinancialAssets": 13381391063.86,
       "longTermEquityInvestment": 0,
-      "minorityInterest": 8885025.7
+      "minorityInterest": 12327988.98
     },
     "dynamicData": {
       "code": "603195",
-      "price": 41.02,
-      "marketValue": 74160449249,
-      "PB": 4.74,
-      "PE_TTM": 18.6,
+      "price": 44.52,
+      "marketValue": 80488132632,
+      "PB": 4.52,
+      "PE_TTM": 19.38,
       "totalSharesOutstanding": 1807909538
     },
     "recentYearData": {
-      "netProfit": 3987625002.5600004
+      "netProfit": 4153960464.89
     }
   },
   "603288": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 9028967209.89,
+        "netProfit": 2443715832.21,
+        "netProfitMargin": 0.2706528637664387,
+        "netProfitExcludingNon": 2347422648.43,
+        "coreProfit": 2989891871.899999,
+        "cashFlowFromOperating": -467096320.49,
+        "fcf": -711793358.38,
+        "capex": 244697037.89,
+        "fcfOverNetProfit": -0.2912750120116389,
+        "netProfitExcludingNonOvernetProfit": 0.9605955886888384,
+        "cashFlowFromOperatingOverNetProfit": -0.19114183176837568,
+        "operatingProfit": 2348007165.04,
+        "financialProfit": 95708667.17,
+        "operatingProfitOverNetProfit": 0.9608347804157552
+      },
       {
         "year": "2025",
         "revenue": 28873380466.76,
@@ -103118,26 +103372,26 @@ const data: ServiceData = {
         "operatingProfit": 2756054608.98,
         "financialProfit": 87079359.19,
         "operatingProfitOverNetProfit": 0.9693720520506991
-      },
-      {
-        "year": "2015",
-        "revenue": 11294380030.09,
-        "netProfit": 2509632367.33,
-        "netProfitMargin": 0.2222018703677356,
-        "netProfitExcludingNon": 2439404808.55,
-        "coreProfit": 2869785455.2700005,
-        "cashFlowFromOperating": 2194831656.35,
-        "fcf": 1450550439.21,
-        "capex": 744281217.14,
-        "fcfOverNetProfit": 0.5779931985628803,
-        "netProfitExcludingNonOvernetProfit": 0.9720167942945703,
-        "cashFlowFromOperatingOverNetProfit": 0.8745630176443266,
-        "operatingProfit": 2439064321.0699997,
-        "financialProfit": 70568046.26,
-        "operatingProfitOverNetProfit": 0.971881122040565
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 41.995545,
+        "netProfitMargin": 27.065286376643872,
+        "grossProfitMinusNetProfit": 14.930258623356128,
+        "devExpenses": 206085680.21,
+        "manageExpenses": 200544507.1,
+        "devAndManageExpenses": 406630187.31,
+        "sellingExpenses": 519616506.18,
+        "financialExpenses": 19554451.34,
+        "totalOperatingExpenses": 945801144.83,
+        "sellingExpensesRatio": 0.05754993833744696,
+        "devExpensesRatio": 0.0228249450262995,
+        "manageExpensesRatio": 0.02221123440124258,
+        "devAndManageExpensesRatio": 0.04503617942754208,
+        "totalOperatingExpensesRatio": 10.475186
+      },
       {
         "year": "2025",
         "grossProfitMargin": 40.222872,
@@ -103307,26 +103561,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.04171311338004653,
         "devAndManageExpensesRatio": 0.04171311338004653,
         "totalOperatingExpensesRatio": 16.325383
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 41.942409,
-        "netProfitMargin": 22.22018703677356,
-        "grossProfitMinusNetProfit": 19.72222196322644,
-        "devExpenses": 0,
-        "manageExpenses": 534901347.04,
-        "devAndManageExpenses": 534901347.04,
-        "sellingExpenses": 1227220684.17,
-        "financialExpenses": -48786754.34,
-        "totalOperatingExpenses": 1713335276.8700001,
-        "sellingExpensesRatio": 0.10865764042829192,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.047359956510666275,
-        "devAndManageExpensesRatio": 0.047359956510666275,
-        "totalOperatingExpensesRatio": 15.169803
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 33798287483.24,
+        "cash": 21856254933.9,
+        "inventory": 1988612589.56,
+        "nonCurrentAssets": 14580222937.87,
+        "goodwill": 112937041.73,
+        "totalAssets": 48378510421.11,
+        "equity": 42022448518.89,
+        "interestFreeLiabilities": 2977730954.12,
+        "interestBearingDebt": 363638341.08,
+        "interestExpense": 1700590.21,
+        "interestFreeLiabilitiesOverTotal": 0.06155069530252971,
+        "interestBearingDebtOverTotal": 0.007516526199643512,
+        "debtRatio": 12.085105
+      },
       {
         "year": "2025",
         "currentAssets": 37983734459.01,
@@ -103486,25 +103739,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.17710386728463862,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 25.62335
-      },
-      {
-        "year": "2015",
-        "currentAssets": 7174758210.69,
-        "cash": 4519091067.15,
-        "inventory": 999924009.12,
-        "nonCurrentAssets": 4323244032.15,
-        "goodwill": 17177837.38,
-        "totalAssets": 11498002242.84,
-        "equity": 8751125601.73,
-        "interestFreeLiabilities": 1703698389.09,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.14817342640117517,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 23.890033
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.027933931221251266,
+        "wc": -252214549.0400002,
+        "receivables": 301606360.1,
+        "prepayments": 118069630.31,
+        "inventory": 1988612589.56,
+        "accountsPayable": 1384916705.5,
+        "customerAdvances": 0,
+        "contractLiabilities": 1275586423.51,
+        "receivablesToRevenueRatio": 0.033404303403564414,
+        "prepaymentsToRevenueRatio": 0.013076759231185474,
+        "inventoryToRevenueRatio": 0.220248068614287,
+        "accountsPayableToRevenueRatio": 0.15338594916847334,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.14127711330181478,
+        "changeInWC": 2551117637.1800003
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.09709054294654865,
@@ -103684,27 +103939,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.14522181011348737,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -702808525.3600001
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.06166738326888491,
-        "wc": -696494862.0999999,
-        "receivables": 0,
-        "prepayments": 7279517.87,
-        "inventory": 999924009.12,
-        "accountsPayable": 584833180.73,
-        "customerAdvances": 1118865208.36,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0,
-        "prepaymentsToRevenueRatio": 0.000644525671228188,
-        "inventoryToRevenueRatio": 0.08853288152656857,
-        "accountsPayableToRevenueRatio": 0.05178090157865351,
-        "advancesToRevenueRatio": 0.09906388888802815,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 748746300.1200001
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.1252294719269199,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1130692795.74,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.23803796958040233,
@@ -103794,18 +104040,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 4569894349.93,
         "depreciation": 381224591.92,
         "depreciationOverRevenue": 0.030599413120825553
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.3586106745345388,
-        "longTermOperatingAssetsPerYuanRevenue": 0.3728941296104448,
-        "fixedAssets": 4050285241.04,
-        "longTermOperatingAssets": 4211608010.81,
-        "depreciation": 353634365.8,
-        "depreciationOverRevenue": 0.03131064873484535
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 5.97,
+        "roa": 5.742937,
+        "roic": 5.822779,
+        "netProfitMargin": 27.058144,
+        "assetTurnover": 17.9569,
+        "equityMultiplier": 1.137463
+      },
       {
         "year": "2025",
         "roe": 19.59,
@@ -103895,18 +104141,24 @@ const data: ServiceData = {
         "netProfitMargin": 22.820728,
         "assetTurnover": 99.82180000000001,
         "equityMultiplier": 1.344507
-      },
-      {
-        "year": "2015",
-        "roe": 32,
-        "roa": 26.335119,
-        "roic": 30.093047,
-        "netProfitMargin": 22.220187,
-        "assetTurnover": 100.40070000000001,
-        "equityMultiplier": 1.313888
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 48378510421.11,
+        "avgTotalAssets": 50281227673.615005,
+        "avgCurrentAssets": 35891010971.125,
+        "avgInventory": 2198164006.7799997,
+        "equity": 42531916383.34,
+        "avgEquity": 42185796754.53,
+        "totalAssetsDays": 501.199127,
+        "currentAssetsDays": 357.758635,
+        "wcDays": -10.195884895756713,
+        "receivablesDays": 2.976572,
+        "inventoryDays": 37.774887,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 52183944926.12,
@@ -104056,21 +104308,6 @@ const data: ServiceData = {
         "receivablesDays": 0,
         "inventoryDays": 50.00079,
         "fixedAssetsDays": 129.27946108136592
-      },
-      {
-        "year": "2015",
-        "totalAssets": 11498002242.84,
-        "avgTotalAssets": 11249298404.505001,
-        "avgCurrentAssets": 7103684444.605,
-        "avgInventory": 1077066164.285,
-        "equity": 8751125601.73,
-        "avgEquity": 8119518878.559999,
-        "totalAssetsDays": 358.563056,
-        "currentAssetsDays": 226.424681,
-        "wcDays": -22.50859489314299,
-        "receivablesDays": 0,
-        "inventoryDays": 59.132124,
-        "fixedAssetsDays": 130.89289620510667
       }
     ],
     "primaryBusinessData": [
@@ -105760,49 +105997,66 @@ const data: ServiceData = {
           "totalDividendA": 3109674189.68
         }
       ],
-      "cash": 24603677724.73,
-      "interestBearingDebt": 279157259.98,
-      "debtRatio": 19.822701,
-      "interestBearingDebtOverTotal": 0.005349485562565651,
+      "cash": 21856254933.9,
+      "interestBearingDebt": 363638341.08,
+      "debtRatio": 12.085105,
+      "interestBearingDebtOverTotal": 0.007516526199643512,
       "roe": 19.59,
       "roic": 19.384127,
       "roa": 18.527904,
       "grossProfitMargin": 40.222872,
       "netProfitMargin": 24.401203,
-      "tradingFinancialAssets": 10105463050.02,
+      "tradingFinancialAssets": 9064787910.49,
       "longTermEquityInvestment": 0,
-      "minorityInterest": 510112669.24
+      "minorityInterest": 509467864.45
     },
     "dynamicData": {
       "code": "603288",
-      "price": 39.48,
-      "marketValue": 231030048789,
-      "PB": 5.5,
-      "PE_TTM": 31.73,
+      "price": 38.73,
+      "marketValue": 226641180081,
+      "PB": 5.39,
+      "PE_TTM": 31.13,
       "totalSharesOutstanding": 5851824944
     },
     "recentYearData": {
-      "netProfit": 7038465194.15
+      "netProfit": 7280005363.94
     }
   },
   "603486": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 12877214351.06,
-        "netProfit": 1417934929.49,
-        "netProfitMargin": 0.11011193033167778,
-        "netProfitExcludingNon": 1284463383.89,
-        "coreProfit": 2014964346.98,
-        "cashFlowFromOperating": 1962908583.14,
-        "fcf": 1337666806.88,
-        "capex": 625241776.26,
-        "fcfOverNetProfit": 0.9433908277872309,
-        "netProfitExcludingNonOvernetProfit": 0.905869061531613,
-        "cashFlowFromOperatingOverNetProfit": 1.3843432038492876,
-        "operatingProfit": 1284221497.27,
-        "financialProfit": 133713432.22,
-        "operatingProfitOverNetProfit": 0.90569847075557
+        "year": "2026Q1",
+        "revenue": 4902247441.35,
+        "netProfit": 404774348.55,
+        "netProfitMargin": 0.08256913862318864,
+        "netProfitExcludingNon": 396566358.11,
+        "coreProfit": 855217803.3400003,
+        "cashFlowFromOperating": 191345089.5,
+        "fcf": -151780660.61,
+        "capex": 343125750.11,
+        "fcfOverNetProfit": -0.3749759863828209,
+        "netProfitExcludingNonOvernetProfit": 0.9797220587979376,
+        "cashFlowFromOperatingOverNetProfit": 0.47272039393169196,
+        "operatingProfit": 417804449.74,
+        "financialProfit": -13030101.19,
+        "operatingProfitOverNetProfit": 1.032191025040685
+      },
+      {
+        "year": "2025",
+        "revenue": 19039662854.51,
+        "netProfit": 1758313596.6,
+        "netProfitMargin": 0.0923500384453237,
+        "netProfitExcludingNon": 1619669218.2,
+        "coreProfit": 2662621424.0799994,
+        "cashFlowFromOperating": 3386757987.75,
+        "fcf": 2703220857.6,
+        "capex": 683537130.15,
+        "fcfOverNetProfit": 1.5373940478121422,
+        "netProfitExcludingNonOvernetProfit": 0.9211492314749243,
+        "cashFlowFromOperatingOverNetProfit": 1.9261399071808782,
+        "operatingProfit": 1617966792.84,
+        "financialProfit": 140346803.76,
+        "operatingProfitOverNetProfit": 0.9201810166108113
       },
       {
         "year": "2024",
@@ -105956,42 +106210,42 @@ const data: ServiceData = {
         "operatingProfit": 52105091.5,
         "financialProfit": -1097144.4499999993,
         "operatingProfitOverNetProfit": 1.0215092846007807
-      },
-      {
-        "year": "2015",
-        "revenue": 2694839784.7,
-        "netProfit": 178773346.04,
-        "netProfitMargin": 0.06633913713720155,
-        "netProfitExcludingNon": 169918700,
-        "coreProfit": 234684886.69999978,
-        "cashFlowFromOperating": 492929090.41,
-        "fcf": 379617356.72,
-        "capex": 113311733.69,
-        "fcfOverNetProfit": 2.1234561254733233,
-        "netProfitExcludingNonOvernetProfit": 0.950469987634405,
-        "cashFlowFromOperatingOverNetProfit": 2.7572851396969917,
-        "operatingProfit": 213562968.35999998,
-        "financialProfit": -34789622.32,
-        "operatingProfitOverNetProfit": 1.1946018413293888
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 49.738383,
-        "netProfitMargin": 11.011193033167778,
-        "grossProfitMinusNetProfit": 38.72718996683222,
-        "devExpenses": 711595290.53,
-        "manageExpenses": 408339738.23,
-        "devAndManageExpenses": 1119935028.76,
-        "sellingExpenses": 3910428767.88,
-        "financialExpenses": -132434871.85,
-        "totalOperatingExpenses": 4897928924.79,
-        "sellingExpensesRatio": 0.3036703949529356,
-        "devExpensesRatio": 0.055260033042117095,
-        "manageExpensesRatio": 0.031710254026825854,
-        "devAndManageExpensesRatio": 0.08697028706894294,
-        "totalOperatingExpensesRatio": 38.035624
+        "year": "2026Q1",
+        "grossProfitMargin": 49.589634,
+        "netProfitMargin": 8.256913862318864,
+        "grossProfitMinusNetProfit": 41.332720137681136,
+        "devExpenses": 243302648.19,
+        "manageExpenses": 151020427.84,
+        "devAndManageExpenses": 394323076.03,
+        "sellingExpenses": 1384876737.29,
+        "financialExpenses": 123757987.47,
+        "totalOperatingExpenses": 1902957800.79,
+        "sellingExpensesRatio": 0.282498334459557,
+        "devExpensesRatio": 0.04963083791686336,
+        "manageExpensesRatio": 0.030806365783611157,
+        "devAndManageExpensesRatio": 0.08043720370047451,
+        "totalOperatingExpensesRatio": 38.818069
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 48.823279,
+        "netProfitMargin": 9.23500384453237,
+        "grossProfitMinusNetProfit": 39.58827515546763,
+        "devExpenses": 980519969.24,
+        "manageExpenses": 597971824.11,
+        "devAndManageExpenses": 1578491793.35,
+        "sellingExpenses": 5937959604.04,
+        "financialExpenses": -98008708.55,
+        "totalOperatingExpenses": 7418442688.839999,
+        "sellingExpensesRatio": 0.3118731486694079,
+        "devExpensesRatio": 0.05149880944492357,
+        "manageExpensesRatio": 0.03140663932336155,
+        "devAndManageExpensesRatio": 0.08290544876828512,
+        "totalOperatingExpensesRatio": 38.963099
       },
       {
         "year": "2024",
@@ -106145,41 +106399,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.15232119802594224,
         "devAndManageExpensesRatio": 0.15232119802594224,
         "totalOperatingExpensesRatio": 30.292684
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 31.714914,
-        "netProfitMargin": 6.633913713720155,
-        "grossProfitMinusNetProfit": 25.081000286279846,
-        "devExpenses": 0,
-        "manageExpenses": 230864114.03,
-        "devAndManageExpenses": 230864114.03,
-        "sellingExpenses": 369994864.74,
-        "financialExpenses": -20196834.59,
-        "totalOperatingExpenses": 580662144.18,
-        "sellingExpensesRatio": 0.137297536885366,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.08566895714570308,
-        "devAndManageExpensesRatio": 0.08566895714570308,
-        "totalOperatingExpensesRatio": 21.547186
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 12203137973.59,
-        "cash": 5622839874.16,
-        "inventory": 3413144990.35,
-        "nonCurrentAssets": 4293706151.39,
+        "year": "2026Q1",
+        "currentAssets": 13410361860.51,
+        "cash": 5747689414.02,
+        "inventory": 3966593336.46,
+        "nonCurrentAssets": 4632783122.95,
         "goodwill": 0,
-        "totalAssets": 16496844124.98,
-        "equity": 8713176834.99,
-        "interestFreeLiabilities": 4495021460.26,
-        "interestBearingDebt": 1516317572.28,
-        "interestExpense": 32699977.52,
-        "interestFreeLiabilitiesOverTotal": 0.2724776585270336,
-        "interestBearingDebtOverTotal": 0.09191561493776546,
-        "debtRatio": 47.183661
+        "totalAssets": 18043144983.46,
+        "equity": 9396537516.28,
+        "interestFreeLiabilities": 5670188726.14,
+        "interestBearingDebt": 1086487293.1799998,
+        "interestExpense": 10836818.94,
+        "interestFreeLiabilitiesOverTotal": 0.3142572279576435,
+        "interestBearingDebtOverTotal": 0.06021607065597343,
+        "debtRatio": 47.922984
+      },
+      {
+        "year": "2025",
+        "currentAssets": 12995785809.23,
+        "cash": 6528159871.66,
+        "inventory": 3252831144.09,
+        "nonCurrentAssets": 4436215709.99,
+        "goodwill": 0,
+        "totalAssets": 17432001519.22,
+        "equity": 9043287195.51,
+        "interestFreeLiabilities": 5214730957.9800005,
+        "interestBearingDebt": 1085373564.9599998,
+        "interestExpense": 40389850.17,
+        "interestFreeLiabilitiesOverTotal": 0.29914699997188476,
+        "interestBearingDebtOverTotal": 0.0622632784745515,
+        "debtRatio": 48.123704
       },
       {
         "year": "2024",
@@ -106324,42 +106577,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.5212260644284943,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 58.416426
-      },
-      {
-        "year": "2015",
-        "currentAssets": 1245679956.68,
-        "cash": 278609586.39,
-        "inventory": 474846598.8,
-        "nonCurrentAssets": 477647344.33,
-        "goodwill": 0,
-        "totalAssets": 1723327301.01,
-        "equity": 572324263.69,
-        "interestFreeLiabilities": 858859851.43,
-        "interestBearingDebt": 39004288.08,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.4983730315922246,
-        "interestBearingDebtOverTotal": 0.022633128400589102,
-        "debtRatio": 65.187679
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.19155721138298434,
-        "wc": 2466723271.47,
-        "receivables": 2255281310.06,
-        "prepayments": 374999342.71,
-        "inventory": 3413144990.35,
-        "accountsPayable": 3194019281.34,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.3671307033829311,
+        "wc": 1799765551.2999997,
+        "receivables": 2298022383.53,
+        "prepayments": 300804183.17,
+        "inventory": 3966593336.46,
+        "accountsPayable": 4177309675.52,
         "customerAdvances": 0,
-        "contractLiabilities": 382683090.31,
-        "receivablesToRevenueRatio": 0.17513735879331344,
-        "prepaymentsToRevenueRatio": 0.029121154038965855,
-        "inventoryToRevenueRatio": 0.2650530539680769,
-        "accountsPayableToRevenueRatio": 0.24803650807265482,
+        "contractLiabilities": 588344676.34,
+        "receivablesToRevenueRatio": 0.4687691535409648,
+        "prepaymentsToRevenueRatio": 0.06136046512722813,
+        "inventoryToRevenueRatio": 0.809137723853381,
+        "accountsPayableToRevenueRatio": 0.852121343423994,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.029717847344716997,
-        "changeInWC": 179653687.31999922
+        "contractLiabilitiesToRevenueRatio": 0.12001529571464865,
+        "changeInWC": 243553010.2399993
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.08173529925144522,
+        "wc": 1556212541.0600004,
+        "receivables": 2395788200.29,
+        "prepayments": 226034834.39,
+        "inventory": 3252831144.09,
+        "accountsPayable": 3870301354.08,
+        "customerAdvances": 0,
+        "contractLiabilities": 448140283.63,
+        "receivablesToRevenueRatio": 0.1258314403252419,
+        "prepaymentsToRevenueRatio": 0.01187178765281856,
+        "inventoryToRevenueRatio": 0.17084499704360517,
+        "accountsPayableToRevenueRatio": 0.20327572938946378,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.023537196380756673,
+        "changeInWC": -730857043.0900002
       },
       {
         "year": "2024",
@@ -106522,35 +106777,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.027440798779716936,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 76319348.13999987
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.08265734011151883,
-        "wc": 222748288.63000005,
-        "receivables": 337560612.82,
-        "prepayments": 86001735.74,
-        "inventory": 474846598.8,
-        "accountsPayable": 642755258.92,
-        "customerAdvances": 32905399.81,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.12526184849151564,
-        "prepaymentsToRevenueRatio": 0.03191348748384834,
-        "inventoryToRevenueRatio": 0.17620587372056398,
-        "accountsPayableToRevenueRatio": 0.23851334783212502,
-        "advancesToRevenueRatio": 0.012210521752284119,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -81086710.92000002
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.022585307861716194,
+        "longTermOperatingAssetsPerYuanRevenue": 0.0728497633386806,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 290835850.52,
+        "longTermOperatingAssets": 357127565.93,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.14625203166874376,
+        "longTermOperatingAssetsPerYuanRevenue": 0.16573401361319484,
+        "fixedAssets": 2784589374.76,
+        "longTermOperatingAssets": 3155519742.7200003,
+        "depreciation": 485290700.28,
+        "depreciationOverRevenue": 0.02548840827636017
       },
       {
         "year": "2024",
@@ -106632,26 +106878,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 494601336.57,
         "depreciation": 94310171.69999999,
         "depreciationOverRevenue": 0.028781645934733053
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.13754725034284893,
-        "longTermOperatingAssetsPerYuanRevenue": 0.15997346460728165,
-        "fixedAssets": 370667802.5,
-        "longTermOperatingAssets": 431102856.91999996,
-        "depreciation": 84218237.28,
-        "depreciationOverRevenue": 0.03125166763462174
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 18.2,
-        "roa": 9.933712,
-        "roic": 15.039667,
-        "netProfitMargin": 11.008721,
-        "assetTurnover": 81.7006,
-        "equityMultiplier": 1.893353
+        "year": "2026Q1",
+        "roe": 4.38,
+        "roa": 2.54046,
+        "roic": 4.076458,
+        "netProfitMargin": 8.257001,
+        "assetTurnover": 27.637600000000003,
+        "equityMultiplier": 1.920232
+      },
+      {
+        "year": "2025",
+        "roe": 22.19,
+        "roa": 11.865369,
+        "roic": 18.757789,
+        "netProfitMargin": 9.233659,
+        "assetTurnover": 117.31849999999999,
+        "equityMultiplier": 1.927662
       },
       {
         "year": "2024",
@@ -106733,32 +106979,38 @@ const data: ServiceData = {
         "netProfitMargin": 1.613193,
         "assetTurnover": 169.8183,
         "equityMultiplier": 2.404795
-      },
-      {
-        "year": "2015",
-        "roe": 26.63,
-        "roa": 13.093309,
-        "roic": 25.367093,
-        "netProfitMargin": 6.647559,
-        "assetTurnover": 162.08249999999998,
-        "equityMultiplier": 2.872546
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 16496844124.98,
-        "avgTotalAssets": 15761451008.335,
-        "avgCurrentAssets": 11827895581.08,
-        "avgInventory": 2890933719.79,
-        "equity": 8713029107.69,
-        "avgEquity": 7954881390.21,
-        "totalAssetsDays": 330.474561,
-        "currentAssetsDays": 247.998652,
-        "wcDays": 69.91838215478928,
-        "receivablesDays": 53.515163,
-        "inventoryDays": 120.598948,
+        "year": "2026Q1",
+        "totalAssets": 18043144983.46,
+        "avgTotalAssets": 17737573251.34,
+        "avgCurrentAssets": 13203073834.869999,
+        "avgInventory": 3609712240.275,
+        "equity": 9396331331.25,
+        "avgEquity": 9219704012.24,
+        "totalAssetsDays": 325.642801,
+        "currentAssetsDays": 242.39426,
+        "wcDays": 134.00270673476984,
+        "receivablesDays": 42.170204,
+        "inventoryDays": 131.461934,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 17432001519.22,
+        "avgTotalAssets": 16229029705.455002,
+        "avgCurrentAssets": 12224219498.9,
+        "avgInventory": 2810776796.66,
+        "equity": 9043076693.23,
+        "avgEquity": 8119905182.98,
+        "totalAssetsDays": 306.856835,
+        "currentAssetsDays": 231.134293,
+        "wcDays": 29.833384226777504,
+        "receivablesDays": 49.881648,
+        "inventoryDays": 103.847765,
+        "fixedAssetsDays": 53.38199155909147
       },
       {
         "year": "2024",
@@ -106894,24 +107146,81 @@ const data: ServiceData = {
         "receivablesDays": 44.589942,
         "inventoryDays": 87.784744,
         "fixedAssetsDays": 43.92974287076383
-      },
-      {
-        "year": "2015",
-        "totalAssets": 1723327301.01,
-        "avgTotalAssets": 1662634079.7649999,
-        "avgCurrentAssets": 1230783412.2800002,
-        "avgInventory": 412913331.995,
-        "equity": 599930229.75,
-        "avgEquity": 700895238.345,
-        "totalAssetsDays": 222.109036,
-        "currentAssetsDays": 164.41869,
-        "wcDays": 30.169929140704372,
-        "receivablesDays": 55.573641,
-        "inventoryDays": 80.779767,
-        "fixedAssetsDays": 50.20474637513986
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "家电行业",
+        "mainBusinessIncome": 19039662854.51,
+        "mbiRatio": 1,
+        "mainBusinessCost": 9743874978.73,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 9295787875.78,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.488233
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "服务机器人",
+        "mainBusinessIncome": 10680015224.82,
+        "mbiRatio": 0.560935,
+        "mainBusinessCost": 5631711584.49,
+        "mbcRatio": 0.577975,
+        "mainBusinessProfit": 5048303640.33,
+        "mbpRatio": 0.543074,
+        "grossProfitRatio": 0.472687
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "智能生活电器",
+        "mainBusinessIncome": 8218881939.15,
+        "mbiRatio": 0.431672,
+        "mainBusinessCost": 3998431806.95,
+        "mbcRatio": 0.410353,
+        "mainBusinessProfit": 4220450132.2,
+        "mbpRatio": 0.454017,
+        "grossProfitRatio": 0.513507
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 140765690.54,
+        "mbiRatio": 0.007393,
+        "mainBusinessCost": 113731587.29,
+        "mbcRatio": 0.011672,
+        "mainBusinessProfit": 27034103.25,
+        "mbpRatio": 0.002908,
+        "grossProfitRatio": 0.19205
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "境内",
+        "mainBusinessIncome": 10192222889.63,
+        "mbiRatio": 0.535315,
+        "mainBusinessCost": 5291194263.59,
+        "mbcRatio": 0.543028,
+        "mainBusinessProfit": 4901028626.04,
+        "mbpRatio": 0.527231,
+        "grossProfitRatio": 0.48086
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "境外",
+        "mainBusinessIncome": 8847439964.88,
+        "mbiRatio": 0.464685,
+        "mainBusinessCost": 4452680715.14,
+        "mbcRatio": 0.456972,
+        "mainBusinessProfit": 4394759249.74,
+        "mbpRatio": 0.472769,
+        "grossProfitRatio": 0.496727
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -107655,141 +107964,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 0,
         "mbpRatio": 0,
         "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "地宝系列",
-        "mainBusinessIncome": 1272052400,
-        "mbiRatio": 0.472033,
-        "mainBusinessCost": 661188500,
-        "mbcRatio": 0.359308,
-        "mainBusinessProfit": 610863900,
-        "mbpRatio": 0.71474,
-        "grossProfitRatio": 0.480219
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "代工产品",
-        "mainBusinessIncome": 1160025400,
-        "mbiRatio": 0.430462,
-        "mainBusinessCost": 1020611700,
-        "mbcRatio": 0.554628,
-        "mainBusinessProfit": 139413700,
-        "mbpRatio": 0.163121,
-        "grossProfitRatio": 0.120182
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "窗宝系列",
-        "mainBusinessIncome": 117110500,
-        "mbiRatio": 0.043457,
-        "mainBusinessCost": 47593000,
-        "mbcRatio": 0.025863,
-        "mainBusinessProfit": 69517500,
-        "mbpRatio": 0.081339,
-        "grossProfitRatio": 0.593606
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "电机、模具等",
-        "mainBusinessIncome": 78839100,
-        "mbiRatio": 0.029256,
-        "mainBusinessCost": 68750500,
-        "mbcRatio": 0.037361,
-        "mainBusinessProfit": 10088600,
-        "mbpRatio": 0.011804,
-        "grossProfitRatio": 0.127964
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "清洁类小家电业务-其他",
-        "mainBusinessIncome": 59643600,
-        "mbiRatio": 0.022133,
-        "mainBusinessCost": 38618100,
-        "mbcRatio": 0.020986,
-        "mainBusinessProfit": 21025500,
-        "mbpRatio": 0.024601,
-        "grossProfitRatio": 0.352519
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "服务机器人业务-其他",
-        "mainBusinessIncome": 7168700,
-        "mbiRatio": 0.00266,
-        "mainBusinessCost": 3411800,
-        "mbcRatio": 0.001854,
-        "mainBusinessProfit": 3756900,
-        "mbpRatio": 0.004396,
-        "grossProfitRatio": 0.52407
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "平衡项目",
-        "mainBusinessIncome": 84.7,
-        "mbiRatio": 0,
-        "mainBusinessCost": 50.23,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 34.47,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0.406966
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "国内",
-        "mainBusinessIncome": 1444134000,
-        "mbiRatio": 0.535889,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "国外",
-        "mainBusinessIncome": 1250705800,
-        "mbiRatio": 0.464111,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "平衡项目",
-        "mainBusinessIncome": -15.3,
-        "mbiRatio": 0,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 178773346.04,
-          "profit_tb": 0.13659,
-          "basicEps": 1.15,
-          "totalSharesOutstanding": 156038550,
-          "dps": 0,
-          "dividendRatio": 0,
-          "totalDividend": 0,
-          "totalDividendA": 0
-        },
         {
           "year": "2016",
           "profit": 51007947.05,
@@ -107888,31 +108066,42 @@ const data: ServiceData = {
           "dividendRatio": 0.32116009317014094,
           "totalDividend": 258883004.25,
           "totalDividendA": 258883004.25
+        },
+        {
+          "year": "2025",
+          "profit": 1758313596.6,
+          "profit_tb": 1.18129,
+          "basicEps": 3.1,
+          "totalSharesOutstanding": 578921306,
+          "dps": 0.9199999999999999,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
-      "cash": 5622839874.16,
-      "interestBearingDebt": 1516317572.28,
-      "debtRatio": 47.183661,
-      "interestBearingDebtOverTotal": 0.09191561493776546,
-      "roe": 11.76,
-      "roic": 9.75867,
-      "roa": 6.61389,
-      "grossProfitMargin": 46.523946,
-      "netProfitMargin": 4.870385,
-      "tradingFinancialAssets": 100000000,
-      "longTermEquityInvestment": 281537457.87,
-      "minorityInterest": -147727.3
+      "cash": 5747689414.02,
+      "interestBearingDebt": 1086487293.1799998,
+      "debtRatio": 47.922984,
+      "interestBearingDebtOverTotal": 0.06021607065597343,
+      "roe": 22.19,
+      "roic": 18.757789,
+      "roa": 11.865369,
+      "grossProfitMargin": 48.823279,
+      "netProfitMargin": 9.233659,
+      "tradingFinancialAssets": 605199554.79,
+      "longTermEquityInvestment": 329992762.64,
+      "minorityInterest": -206185.03
     },
     "dynamicData": {
       "code": "603486",
-      "price": 68.32,
-      "marketValue": 39551989299,
-      "PB": 4.26,
-      "PE_TTM": 23.43,
+      "price": 66.48,
+      "marketValue": 38486771789,
+      "PB": 4.15,
+      "PE_TTM": 22.79,
       "totalSharesOutstanding": 578922560
     },
     "recentYearData": {
-      "netProfit": 1609007780.9099998
+      "netProfit": 1688408396.06
     }
   },
   "603529": {
@@ -108684,10 +108873,10 @@ const data: ServiceData = {
       },
       {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.21150797338186617,
-        "longTermOperatingAssetsPerYuanRevenue": 0.2529920092959824,
-        "fixedAssets": 5307701189.67,
-        "longTermOperatingAssets": 6348725143.77,
+        "fixedAssetsPerYuanRevenue": 0.3045514511534134,
+        "longTermOperatingAssetsPerYuanRevenue": 0.34603548706752973,
+        "fixedAssets": 7642587055.969999,
+        "longTermOperatingAssets": 8683611010.07,
         "depreciation": 667181321.36,
         "depreciationOverRevenue": 0.02658668303214386
       },
@@ -108903,7 +109092,7 @@ const data: ServiceData = {
         "wcDays": -33.10849938111239,
         "receivablesDays": 6.299661,
         "inventoryDays": 14.791862,
-        "fixedAssetsDays": 77.20041028438114
+        "fixedAssetsDays": 111.16127967099591
       },
       {
         "year": "2024",
@@ -111151,10 +111340,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603529",
-      "price": 23.34,
-      "marketValue": 20256622200,
-      "PB": 2.05,
-      "PE_TTM": 12.46,
+      "price": 23.19,
+      "marketValue": 20126438253,
+      "PB": 2.04,
+      "PE_TTM": 12.38,
       "totalSharesOutstanding": 867892982
     },
     "recentYearData": {
@@ -111163,6 +111352,23 @@ const data: ServiceData = {
   },
   "603565": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 2578534819.35,
+        "netProfit": 526992933.9,
+        "netProfitMargin": 0.2043768926234027,
+        "netProfitExcludingNon": 494345153.6,
+        "coreProfit": 714665334.3500001,
+        "cashFlowFromOperating": 661967232.19,
+        "fcf": 172991590.9100001,
+        "capex": 488975641.28,
+        "fcfOverNetProfit": 0.32826168963932684,
+        "netProfitExcludingNonOvernetProfit": 0.9380489221014963,
+        "cashFlowFromOperatingOverNetProfit": 1.2561216471938734,
+        "operatingProfit": 495830975.02,
+        "financialProfit": 31161958.880000003,
+        "operatingProfitOverNetProfit": 0.940868355388778
+      },
       {
         "year": "2025",
         "revenue": 10616882022.15,
@@ -111332,26 +111538,26 @@ const data: ServiceData = {
         "operatingProfit": 429922269.6,
         "financialProfit": 26132028.45,
         "operatingProfitOverNetProfit": 0.9426997430750341
-      },
-      {
-        "year": "2015",
-        "revenue": 3106017139.1,
-        "netProfit": 134259069.13,
-        "netProfitMargin": 0.04322547594470227,
-        "netProfitExcludingNon": 38656986.62,
-        "coreProfit": 87025155.67999974,
-        "cashFlowFromOperating": 489271445.9,
-        "fcf": 174741810.91999996,
-        "capex": 314529634.98,
-        "fcfOverNetProfit": 1.3015270555078962,
-        "netProfitExcludingNonOvernetProfit": 0.28792830808747316,
-        "cashFlowFromOperatingOverNetProfit": 3.6442338612242993,
-        "operatingProfit": 122486729.1,
-        "financialProfit": 11772340.03,
-        "operatingProfitOverNetProfit": 0.9123162397424258
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 33.472459,
+        "netProfitMargin": 20.43768926234027,
+        "grossProfitMinusNetProfit": 13.03476973765973,
+        "devExpenses": 6185468.27,
+        "manageExpenses": 63227229.1,
+        "devAndManageExpenses": 69412697.37,
+        "sellingExpenses": 7735799.56,
+        "financialExpenses": 141152127.03,
+        "totalOperatingExpenses": 218300623.96,
+        "sellingExpensesRatio": 0.0030000756638803305,
+        "devExpensesRatio": 0.0023988306163572537,
+        "manageExpensesRatio": 0.02452060318345377,
+        "devAndManageExpensesRatio": 0.026919433799811026,
+        "totalOperatingExpensesRatio": 8.466072
+      },
       {
         "year": "2025",
         "grossProfitMargin": 23.53606,
@@ -111521,26 +111727,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.01697199979018337,
         "devAndManageExpensesRatio": 0.017083159399570814,
         "totalOperatingExpensesRatio": 2.840827
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 5.556601,
-        "netProfitMargin": 4.322547594470227,
-        "grossProfitMinusNetProfit": 1.2340534055297727,
-        "devExpenses": 0,
-        "manageExpenses": 77247134.65,
-        "devAndManageExpenses": 77247134.65,
-        "sellingExpenses": 0,
-        "financialExpenses": 26089597.27,
-        "totalOperatingExpenses": 103336731.92,
-        "sellingExpensesRatio": 0,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.024870157243363812,
-        "devAndManageExpensesRatio": 0.024870157243363812,
-        "totalOperatingExpensesRatio": 3.326985
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 13276935765.74,
+        "cash": 7292550856.81,
+        "inventory": 50676888.83,
+        "nonCurrentAssets": 11778294852.75,
+        "goodwill": 0,
+        "totalAssets": 25055230618.49,
+        "equity": 10962681217.3,
+        "interestFreeLiabilities": 2457337567.78,
+        "interestBearingDebt": 10198738630.7,
+        "interestExpense": 73348253.81,
+        "interestFreeLiabilitiesOverTotal": 0.09807682895429266,
+        "interestBearingDebtOverTotal": 0.4070502796798701,
+        "debtRatio": 56.149594
+      },
       {
         "year": "2025",
         "currentAssets": 13354913480.29,
@@ -111700,25 +111905,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.31496783865767863,
         "interestBearingDebtOverTotal": 0.0957404122397037,
         "debtRatio": 68.155388
-      },
-      {
-        "year": "2015",
-        "currentAssets": 1164407074.55,
-        "cash": 221589804.56,
-        "inventory": 34965645.86,
-        "nonCurrentAssets": 631470095.63,
-        "goodwill": 0,
-        "totalAssets": 1795877170.18,
-        "equity": 374291527.93,
-        "interestFreeLiabilities": 728362655.4699999,
-        "interestBearingDebt": 524779639.64,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.405574873139568,
-        "interestBearingDebtOverTotal": 0.29221354798301796,
-        "debtRatio": 79.158289
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.7501683926756552,
+        "wc": -1934335320.8900003,
+        "receivables": 464286578.37,
+        "prepayments": 8038779.69,
+        "inventory": 50676888.83,
+        "accountsPayable": 2253014251.53,
+        "customerAdvances": 0,
+        "contractLiabilities": 204323316.25,
+        "receivablesToRevenueRatio": 0.18005829313836372,
+        "prepaymentsToRevenueRatio": 0.003117576551487649,
+        "inventoryToRevenueRatio": 0.019653366109197892,
+        "accountsPayableToRevenueRatio": 0.8737575442545091,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.07924008422019528,
+        "changeInWC": 217736091.90999937
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.20270277170925827,
@@ -111898,33 +112105,24 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.02305078089138717,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 540275734.4599998
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.14322440398023747,
-        "wc": -444857453.4999999,
-        "receivables": 196128054.03,
-        "prepayments": 52411502.08,
-        "inventory": 34965645.86,
-        "accountsPayable": 681350864.31,
-        "customerAdvances": 47011791.16,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.0631445498355589,
-        "prepaymentsToRevenueRatio": 0.016874183152507254,
-        "inventoryToRevenueRatio": 0.011257389864285055,
-        "accountsPayableToRevenueRatio": 0.2193648115243267,
-        "advancesToRevenueRatio": 0.015135715308261995,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -313173335.41999996
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.7635272719940593,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1968781656.3600001,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.6676603919758478,
-        "longTermOperatingAssetsPerYuanRevenue": 0.860671857628833,
-        "fixedAssets": 7088471612.47,
-        "longTermOperatingAssets": 9137651572.230001,
+        "fixedAssetsPerYuanRevenue": 0.6717621126513857,
+        "longTermOperatingAssetsPerYuanRevenue": 0.864773578304371,
+        "fixedAssets": 7132019096.97,
+        "longTermOperatingAssets": 9181199056.730001,
         "depreciation": 763377990.06,
         "depreciationOverRevenue": 0.07190227681416865
       },
@@ -112008,18 +112206,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 8166478.23,
         "depreciation": 0,
         "depreciationOverRevenue": 0
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.004181131728643011,
-        "fixedAssets": 0,
-        "longTermOperatingAssets": 12986666.81,
-        "depreciation": 35391995.47,
-        "depreciationOverRevenue": 0.011394655562092355
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 4.92,
+        "roa": 3.070101,
+        "roic": 2.851891,
+        "netProfitMargin": 20.42938,
+        "assetTurnover": 10.3223,
+        "equityMultiplier": 2.28048
+      },
       {
         "year": "2025",
         "roe": 18.7,
@@ -112109,18 +112307,24 @@ const data: ServiceData = {
         "netProfitMargin": 11.171823,
         "assetTurnover": 183.6011,
         "equityMultiplier": 3.140248
-      },
-      {
-        "year": "2015",
-        "roe": 40.56,
-        "roa": 14.898747,
-        "roic": 23.952846,
-        "netProfitMargin": 4.322547,
-        "assetTurnover": 223.85660000000001,
-        "equityMultiplier": 4.79807
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 25055230618.49,
+        "avgTotalAssets": 24980142628.07,
+        "avgCurrentAssets": 13315924623.015,
+        "avgInventory": 52368944.445,
+        "equity": 10986820100.29,
+        "avgEquity": 10733427345.455002,
+        "totalAssetsDays": 871.895473,
+        "currentAssetsDays": 464.772942,
+        "wcDays": -273.81146332661416,
+        "receivablesDays": 15.03459,
+        "inventoryDays": 2.747526,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 24905054637.65,
@@ -112134,7 +112338,7 @@ const data: ServiceData = {
         "wcDays": -73.98651167387926,
         "receivablesDays": 14.210117,
         "inventoryDays": 2.348084,
-        "fixedAssetsDays": 243.69604307118445
+        "fixedAssetsDays": 245.1931711177558
       },
       {
         "year": "2024",
@@ -112269,21 +112473,6 @@ const data: ServiceData = {
         "wcDays": 8.5316289938503,
         "receivablesDays": 17.165697,
         "inventoryDays": 2.897257,
-        "fixedAssetsDays": 0
-      },
-      {
-        "year": "2015",
-        "totalAssets": 1795877170.18,
-        "avgTotalAssets": 1387502741.68,
-        "avgCurrentAssets": 970834744.625,
-        "avgInventory": 35586232.735,
-        "equity": 374291527.93,
-        "avgEquity": 330121993.365,
-        "totalAssetsDays": 160.817202,
-        "currentAssetsDays": 112.523689,
-        "wcDays": -52.27690745278668,
-        "receivablesDays": 18.927553,
-        "inventoryDays": 4.36726,
         "fixedAssetsDays": 0
       }
     ],
@@ -113530,49 +113719,66 @@ const data: ServiceData = {
           "totalDividendA": 903027134.29
         }
       ],
-      "cash": 10068884856.35,
-      "interestBearingDebt": 10484156430.72,
-      "debtRatio": 57.920049,
-      "interestBearingDebtOverTotal": 0.420965004223306,
+      "cash": 7292550856.81,
+      "interestBearingDebt": 10198738630.7,
+      "debtRatio": 56.149594,
+      "interestBearingDebtOverTotal": 0.4070502796798701,
       "roe": 18.7,
       "roic": 10.959061,
       "roa": 11.789898,
       "grossProfitMargin": 23.53606,
       "netProfitMargin": 18.873485,
-      "tradingFinancialAssets": 2351476675.15,
-      "longTermEquityInvestment": 1778493906.41,
-      "minorityInterest": 24349887.7
+      "tradingFinancialAssets": 5038079505.39,
+      "longTermEquityInvestment": 1785756022.38,
+      "minorityInterest": 24138882.99
     },
     "dynamicData": {
       "code": "603565",
-      "price": 10.72,
-      "marketValue": 22512676464,
+      "price": 11.23,
+      "marketValue": 23583708647,
       "PB": 2.15,
-      "PE_TTM": 11.25,
+      "PE_TTM": 11.9,
       "totalSharesOutstanding": 2100063103
     },
     "recentYearData": {
-      "netProfit": 2001054067.0500002
+      "netProfit": 1981187089.8400002
     }
   },
   "603599": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 2662746744.93,
-        "netProfit": 520433042.18,
-        "netProfitMargin": 0.19544969613461363,
-        "netProfitExcludingNon": 464137154.63,
-        "coreProfit": 542623061.9799998,
-        "cashFlowFromOperating": 254867790.12,
-        "fcf": 153020618.17000002,
-        "capex": 101847171.95,
-        "fcfOverNetProfit": 0.29402556288321796,
-        "netProfitExcludingNonOvernetProfit": 0.8918287599223395,
-        "cashFlowFromOperatingOverNetProfit": 0.4897225377013052,
-        "operatingProfit": 479861738.72,
-        "financialProfit": 40571303.46,
-        "operatingProfitOverNetProfit": 0.9220431829423165
+        "year": "2026Q1",
+        "revenue": 911720423.29,
+        "netProfit": 157326949.62,
+        "netProfitMargin": 0.17256051921297968,
+        "netProfitExcludingNon": 131858010.7,
+        "coreProfit": 211980681.92999995,
+        "cashFlowFromOperating": 127244031.44,
+        "fcf": 92524885.19,
+        "capex": 34719146.25,
+        "fcfOverNetProfit": 0.5881057594613014,
+        "netProfitExcludingNonOvernetProfit": 0.8381145825205634,
+        "cashFlowFromOperatingOverNetProfit": 0.8087872532159248,
+        "operatingProfit": 120266762.69,
+        "financialProfit": 37060186.93,
+        "operatingProfitOverNetProfit": 0.7644384066460742
+      },
+      {
+        "year": "2025",
+        "revenue": 3532344150.04,
+        "netProfit": 656907533.17,
+        "netProfitMargin": 0.18596928987300437,
+        "netProfitExcludingNon": 509138703.21,
+        "coreProfit": 693151406.2900003,
+        "cashFlowFromOperating": 390906319.92,
+        "fcf": 302838843.36,
+        "capex": 88067476.56,
+        "fcfOverNetProfit": 0.4610068054762722,
+        "netProfitExcludingNonOvernetProfit": 0.775053835587909,
+        "cashFlowFromOperatingOverNetProfit": 0.5950705391269094,
+        "operatingProfit": 509037420.8299999,
+        "financialProfit": 147870112.34,
+        "operatingProfitOverNetProfit": 0.7748996550147143
       },
       {
         "year": "2024",
@@ -113726,42 +113932,42 @@ const data: ServiceData = {
         "operatingProfit": 178286380.02,
         "financialProfit": 2844658.64,
         "operatingProfitOverNetProfit": 0.9842950238620357
-      },
-      {
-        "year": "2015",
-        "revenue": 1325481813.86,
-        "netProfit": 130258216.13,
-        "netProfitMargin": 0.09827235256489014,
-        "netProfitExcludingNon": 125575404.01,
-        "coreProfit": 179461818.55999988,
-        "cashFlowFromOperating": 76764673.47,
-        "fcf": -135617437.31,
-        "capex": 212382110.78,
-        "fcfOverNetProfit": -1.0411430567623574,
-        "netProfitExcludingNonOvernetProfit": 0.9640497754450555,
-        "cashFlowFromOperatingOverNetProfit": 0.589326921177759,
-        "operatingProfit": 128255160.92999999,
-        "financialProfit": 2003055.2,
-        "operatingProfitOverNetProfit": 0.9846224272102658
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 31.252495,
-        "netProfitMargin": 19.54496961346136,
-        "grossProfitMinusNetProfit": 11.707525386538638,
-        "devExpenses": 123776047.49,
-        "manageExpenses": 228376863.65,
-        "devAndManageExpenses": 352152911.14,
-        "sellingExpenses": 41968701.5,
-        "financialExpenses": -170226930.63,
-        "totalOperatingExpenses": 223894682.01,
-        "sellingExpensesRatio": 0.015761431904821765,
-        "devExpensesRatio": 0.04648434843669442,
-        "manageExpensesRatio": 0.0857673994287443,
-        "devAndManageExpensesRatio": 0.13225174786543872,
-        "totalOperatingExpensesRatio": 8.40841
+        "year": "2026Q1",
+        "grossProfitMargin": 34.975765,
+        "netProfitMargin": 17.256051921297967,
+        "grossProfitMinusNetProfit": 17.719713078702036,
+        "devExpenses": 33740312.2,
+        "manageExpenses": 76020911.01,
+        "devAndManageExpenses": 109761223.21000001,
+        "sellingExpenses": 10885140.11,
+        "financialExpenses": 37514468.81,
+        "totalOperatingExpenses": 158160832.13,
+        "sellingExpensesRatio": 0.011939120625070888,
+        "devExpensesRatio": 0.0370073010739915,
+        "manageExpensesRatio": 0.08338182305456514,
+        "devAndManageExpensesRatio": 0.12038912412855664,
+        "totalOperatingExpensesRatio": 17.347514
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 32.363432,
+        "netProfitMargin": 18.596928987300437,
+        "grossProfitMinusNetProfit": 13.766503012699566,
+        "devExpenses": 159556973.29,
+        "manageExpenses": 378865631.74,
+        "devAndManageExpenses": 538422605.03,
+        "sellingExpenses": 46126166.67,
+        "financialExpenses": -148287575.57,
+        "totalOperatingExpenses": 436261196.12999994,
+        "sellingExpensesRatio": 0.013058231222877213,
+        "devExpensesRatio": 0.04517027971020128,
+        "manageExpensesRatio": 0.10725614935784492,
+        "devAndManageExpensesRatio": 0.15242642906804618,
+        "totalOperatingExpensesRatio": 12.350472
       },
       {
         "year": "2024",
@@ -113915,41 +114121,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.15894292248795605,
         "devAndManageExpensesRatio": 0.15894292248795605,
         "totalOperatingExpensesRatio": 16.622524
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 30.439757,
-        "netProfitMargin": 9.827235256489015,
-        "grossProfitMinusNetProfit": 20.612521743510985,
-        "devExpenses": 0,
-        "manageExpenses": 173293679.95,
-        "devAndManageExpenses": 173293679.95,
-        "sellingExpenses": 45133961.22,
-        "financialExpenses": -19848397.68,
-        "totalOperatingExpenses": 198579243.48999998,
-        "sellingExpensesRatio": 0.034050984893231544,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.13074014153792352,
-        "devAndManageExpensesRatio": 0.13074014153792352,
-        "totalOperatingExpensesRatio": 14.981664
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 11257084250.83,
-        "cash": 1857362593.24,
-        "inventory": 532568147.17,
-        "nonCurrentAssets": 3827956124.97,
+        "year": "2026Q1",
+        "currentAssets": 9812928332.45,
+        "cash": 921573540.95,
+        "inventory": 585053337.84,
+        "nonCurrentAssets": 4565137381.29,
         "goodwill": 0,
-        "totalAssets": 15085040375.8,
-        "equity": 9969198040.48,
-        "interestFreeLiabilities": 1611111026.6599998,
-        "interestBearingDebt": 3270672855.4,
-        "interestExpense": 3552513.8,
-        "interestFreeLiabilitiesOverTotal": 0.10680190350995719,
-        "interestBearingDebtOverTotal": 0.21681565139506945,
-        "debtRatio": 33.913348
+        "totalAssets": 14378065713.74,
+        "equity": 10221295807.54,
+        "interestFreeLiabilities": 1029494806.11,
+        "interestBearingDebt": 2944470950.49,
+        "interestExpense": 12576424.26,
+        "interestFreeLiabilitiesOverTotal": 0.07160175969471275,
+        "interestBearingDebtOverTotal": 0.20478908701023654,
+        "debtRatio": 28.910494
+      },
+      {
+        "year": "2025",
+        "currentAssets": 9809502398.53,
+        "cash": 866111819.25,
+        "inventory": 621220064.22,
+        "nonCurrentAssets": 4317935407.38,
+        "goodwill": 0,
+        "totalAssets": 14127437805.91,
+        "equity": 10079662242.18,
+        "interestFreeLiabilities": 1410977155.7,
+        "interestBearingDebt": 2404000517.5,
+        "interestExpense": 10645596.52,
+        "interestFreeLiabilitiesOverTotal": 0.09987495079325276,
+        "interestBearingDebtOverTotal": 0.17016535839884023,
+        "debtRatio": 28.651873
       },
       {
         "year": "2024",
@@ -114094,42 +114299,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.20433691040483926,
         "interestBearingDebtOverTotal": 0.0007790838766278866,
         "debtRatio": 28.877465
-      },
-      {
-        "year": "2015",
-        "currentAssets": 1635073432.66,
-        "cash": 690523538.43,
-        "inventory": 420196543.11,
-        "nonCurrentAssets": 1405634528.61,
-        "goodwill": 0,
-        "totalAssets": 3040707961.27,
-        "equity": 2228946647.61,
-        "interestFreeLiabilities": 545606954.15,
-        "interestBearingDebt": 509200,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.17943418476864137,
-        "interestBearingDebtOverTotal": 0.00016746100134763502,
-        "debtRatio": 26.696457
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.08908586809904669,
-        "wc": 237213105.29999986,
-        "receivables": 536664488.78999996,
-        "prepayments": 46995170.16,
-        "inventory": 532568147.17,
-        "accountsPayable": 803631097.73,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.8776871433047525,
+        "wc": 800205293.8099998,
+        "receivables": 793692291.5699999,
+        "prepayments": 47437563.25,
+        "inventory": 585053337.84,
+        "accountsPayable": 586019416.36,
         "customerAdvances": 0,
-        "contractLiabilities": 75383603.09,
-        "receivablesToRevenueRatio": 0.20154544919145442,
-        "prepaymentsToRevenueRatio": 0.017649132516819748,
-        "inventoryToRevenueRatio": 0.20000705969654675,
-        "accountsPayableToRevenueRatio": 0.3018053065918315,
+        "contractLiabilities": 39958482.49,
+        "receivablesToRevenueRatio": 0.8705435035730711,
+        "prepaymentsToRevenueRatio": 0.05203082221062746,
+        "inventoryToRevenueRatio": 0.6417025690055276,
+        "accountsPayableToRevenueRatio": 0.6427621904589045,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.02831046671394269,
-        "changeInWC": 294487610.4699999
+        "contractLiabilitiesToRevenueRatio": 0.04382756102556892,
+        "changeInWC": 253343822.3499998
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.15481545631781304,
+        "wc": 546861471.46,
+        "receivables": 592576276.36,
+        "prepayments": 17370760.1,
+        "inventory": 621220064.22,
+        "accountsPayable": 634396931.52,
+        "customerAdvances": 0,
+        "contractLiabilities": 49908697.7,
+        "receivablesToRevenueRatio": 0.16775723179557397,
+        "prepaymentsToRevenueRatio": 0.004917629585951668,
+        "inventoryToRevenueRatio": 0.17586623438516472,
+        "accountsPayableToRevenueRatio": 0.17959658078978974,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.014129058659087576,
+        "changeInWC": 604135976.6300001
       },
       {
         "year": "2024",
@@ -114292,35 +114499,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.0884342587425331,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -2312097.0999999046
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.1855887016537991,
-        "wc": 245994448.89999998,
-        "receivables": 195334913.8,
-        "prepayments": 18653390.14,
-        "inventory": 420196543.11,
-        "accountsPayable": 341298086.52,
-        "customerAdvances": 46892311.63,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.1473689882105253,
-        "prepaymentsToRevenueRatio": 0.0140729129173629,
-        "inventoryToRevenueRatio": 0.3170141896449905,
-        "accountsPayableToRevenueRatio": 0.25748982969905054,
-        "advancesToRevenueRatio": 0.03537755942002903,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 14018061.689999908
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.10384740086773417,
+        "longTermOperatingAssetsPerYuanRevenue": 0.30170592978205696,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 276519328.63,
+        "longTermOperatingAssets": 275071458.01,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.5478635553130025,
+        "longTermOperatingAssetsPerYuanRevenue": 0.6264255388011791,
+        "fixedAssets": 1935242624.63,
+        "longTermOperatingAssets": 2212750587.42,
+        "depreciation": 311878350.79999995,
+        "depreciationOverRevenue": 0.08829217583356601
       },
       {
         "year": "2024",
@@ -114402,26 +114600,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 1378422642.81,
         "depreciation": 118177530.37,
         "depreciationOverRevenue": 0.07867114380639144
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.7273298946384686,
-        "longTermOperatingAssetsPerYuanRevenue": 0.8882666051609497,
-        "fixedAssets": 964062548.02,
-        "longTermOperatingAssets": 1177381231,
-        "depreciation": 90324749.03,
-        "depreciationOverRevenue": 0.06814484218909116
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 5.34,
-        "roa": 4.112164,
-        "roic": 4.052752,
-        "netProfitMargin": 19.544969,
-        "assetTurnover": 17.903,
-        "equityMultiplier": 1.513164
+        "year": "2026Q1",
+        "roe": 1.55,
+        "roa": 1.352915,
+        "roic": 1.324812,
+        "netProfitMargin": 17.256051,
+        "assetTurnover": 6.3968,
+        "equityMultiplier": 1.406677
+      },
+      {
+        "year": "2025",
+        "roe": 6.66,
+        "roa": 5.502976,
+        "roic": 5.318715,
+        "netProfitMargin": 18.596928,
+        "assetTurnover": 24.5397,
+        "equityMultiplier": 1.401578
       },
       {
         "year": "2024",
@@ -114503,32 +114701,38 @@ const data: ServiceData = {
         "netProfitMargin": 12.057948,
         "assetTurnover": 46.783,
         "equityMultiplier": 1.406024
-      },
-      {
-        "year": "2015",
-        "roe": 6.99,
-        "roa": 6.03102,
-        "roic": 7.197293,
-        "netProfitMargin": 9.827235,
-        "assetTurnover": 50.9458,
-        "equityMultiplier": 1.36419
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 15085040375.8,
-        "avgTotalAssets": 14873175225.119999,
-        "avgCurrentAssets": 10554272085.275,
-        "avgInventory": 706357004.115,
-        "equity": 9969198040.48,
-        "avgEquity": 9837127808.61,
-        "totalAssetsDays": 1508.125892,
-        "currentAssetsDays": 1070.193201,
-        "wcDays": 32.51634185615204,
-        "receivablesDays": 21.788336,
-        "inventoryDays": 104.184045,
+        "year": "2026Q1",
+        "totalAssets": 14378065713.74,
+        "avgTotalAssets": 14252751759.825,
+        "avgCurrentAssets": 9811215365.490002,
+        "avgInventory": 603136701.03,
+        "equity": 10221295807.54,
+        "avgEquity": 10150479024.86,
+        "totalAssetsDays": 1406.952861,
+        "currentAssetsDays": 968.508942,
+        "wcDays": 320.3558073062347,
+        "receivablesDays": 38.530172,
+        "inventoryDays": 91.563279,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 14127437805.91,
+        "avgTotalAssets": 14394373940.175,
+        "avgCurrentAssets": 9830481159.125,
+        "avgInventory": 750682962.64,
+        "equity": 10079662242.18,
+        "avgEquity": 9892359909.46,
+        "totalAssetsDays": 1467.007289,
+        "currentAssetsDays": 1001.876676,
+        "wcDays": 56.50764155600176,
+        "receivablesDays": 24.10075,
+        "inventoryDays": 113.113512,
+        "fixedAssetsDays": 199.9701976892459
       },
       {
         "year": "2024",
@@ -114664,24 +114868,81 @@ const data: ServiceData = {
         "receivablesDays": 33.029692,
         "inventoryDays": 179.986983,
         "fixedAssetsDays": 283.51767523696685
-      },
-      {
-        "year": "2015",
-        "totalAssets": 3040707961.27,
-        "avgTotalAssets": 2601748861.95,
-        "avgCurrentAssets": 1252348021.9250002,
-        "avgInventory": 348051033.845,
-        "equity": 2228946647.61,
-        "avgEquity": 1809567558.145,
-        "totalAssetsDays": 706.633301,
-        "currentAssetsDays": 340.136909,
-        "wcDays": 67.73987610363666,
-        "receivablesDays": 54.960098,
-        "inventoryDays": 135.897219,
-        "fixedAssetsDays": 265.47541154304105
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "农药",
+        "mainBusinessIncome": 1925127748.69,
+        "mbiRatio": 0.545,
+        "mainBusinessCost": 1256815827.82,
+        "mbcRatio": 0.52605,
+        "mainBusinessProfit": 668311920.87,
+        "mbpRatio": 0.584604,
+        "grossProfitRatio": 0.347152
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "农药中间体及其他产品",
+        "mainBusinessIncome": 1574576296.44,
+        "mbiRatio": 0.44576,
+        "mainBusinessCost": 1090954849.08,
+        "mbcRatio": 0.456628,
+        "mainBusinessProfit": 483621447.36,
+        "mbpRatio": 0.423046,
+        "grossProfitRatio": 0.307144
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 32640104.91,
+        "mbiRatio": 0.00924,
+        "mainBusinessCost": 41385670.84,
+        "mbcRatio": 0.017322,
+        "mainBusinessProfit": -8745565.93,
+        "mbpRatio": -0.00765,
+        "grossProfitRatio": -0.267939
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "境内地区",
+        "mainBusinessIncome": 2409990840.97,
+        "mbiRatio": 0.682264,
+        "mainBusinessCost": 1628724676.09,
+        "mbcRatio": 0.681715,
+        "mainBusinessProfit": 781266164.88,
+        "mbpRatio": 0.68341,
+        "grossProfitRatio": 0.324178
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "境外地区",
+        "mainBusinessIncome": 1089713204.16,
+        "mbiRatio": 0.308496,
+        "mainBusinessCost": 719046000.81,
+        "mbcRatio": 0.300962,
+        "mainBusinessProfit": 370667203.35,
+        "mbpRatio": 0.32424,
+        "grossProfitRatio": 0.340151
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 32640104.91,
+        "mbiRatio": 0.00924,
+        "mainBusinessCost": 41385670.84,
+        "mbcRatio": 0.017322,
+        "mainBusinessProfit": -8745565.93,
+        "mbpRatio": -0.00765,
+        "grossProfitRatio": -0.267939
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -115533,189 +115794,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 392042.18,
         "mbpRatio": 0.000829,
         "grossProfitRatio": 0.559211
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "农药",
-        "mainBusinessIncome": 1325481813.86,
-        "mbiRatio": 1,
-        "mainBusinessCost": 922008358.23,
-        "mbcRatio": 1,
-        "mainBusinessProfit": 403473455.63,
-        "mbpRatio": 1,
-        "grossProfitRatio": 0.304398
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "杀菌剂",
-        "mainBusinessIncome": 646566176.39,
-        "mbiRatio": 0.487797,
-        "mainBusinessCost": 406453849.16,
-        "mbcRatio": 0.440835,
-        "mainBusinessProfit": 240112327.23,
-        "mbpRatio": 0.595113,
-        "grossProfitRatio": 0.371365
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "精细化工及其他",
-        "mainBusinessIncome": 369927859.74,
-        "mbiRatio": 0.279089,
-        "mainBusinessCost": 237706373.18,
-        "mbcRatio": 0.257814,
-        "mainBusinessProfit": 132221486.56,
-        "mbpRatio": 0.327708,
-        "grossProfitRatio": 0.357425
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "除草剂",
-        "mainBusinessIncome": 308353337.63,
-        "mbiRatio": 0.232635,
-        "mainBusinessCost": 277182443.14,
-        "mbcRatio": 0.300629,
-        "mainBusinessProfit": 31170894.49,
-        "mbpRatio": 0.077256,
-        "grossProfitRatio": 0.101088
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 634440.1,
-        "mbiRatio": 0.000479,
-        "mainBusinessCost": 665692.75,
-        "mbcRatio": 0.000722,
-        "mainBusinessProfit": -31252.65,
-        "mbpRatio": -0.000077,
-        "grossProfitRatio": -0.04926
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华东地区",
-        "mainBusinessIncome": 806445289.6,
-        "mbiRatio": 0.608417,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "境外地区",
-        "mainBusinessIncome": 400529855.8,
-        "mbiRatio": 0.302177,
-        "mainBusinessCost": 229406170.93,
-        "mbcRatio": 0.997107,
-        "mainBusinessProfit": 171123684.87,
-        "mbpRatio": 1.000183,
-        "grossProfitRatio": 0.427243
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华南地区",
-        "mainBusinessIncome": 46070784.92,
-        "mbiRatio": 0.034758,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华北地区",
-        "mainBusinessIncome": 32931318.66,
-        "mbiRatio": 0.024845,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华中地区",
-        "mainBusinessIncome": 14480121.33,
-        "mbiRatio": 0.010924,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "西南地区",
-        "mainBusinessIncome": 13729239.74,
-        "mbiRatio": 0.010358,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "西北地区",
-        "mainBusinessIncome": 9621648.66,
-        "mbiRatio": 0.007259,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "东北地区",
-        "mainBusinessIncome": 1039115.05,
-        "mbiRatio": 0.000784,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 634440.1,
-        "mbiRatio": 0.000479,
-        "mainBusinessCost": 665692.75,
-        "mbcRatio": 0.002893,
-        "mainBusinessProfit": -31252.65,
-        "mbpRatio": -0.000183,
-        "grossProfitRatio": -0.04926
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 130258216.13,
-          "profit_tb": -0.14877,
-          "basicEps": 0.39,
-          "totalSharesOutstanding": 188240000,
-          "dps": 0.12495,
-          "dividendRatio": 0.18056893990108108,
-          "totalDividend": 23520588,
-          "totalDividendA": 23520588
-        },
         {
           "year": "2016",
           "profit": 181131038.66,
@@ -115814,35 +115896,63 @@ const data: ServiceData = {
           "dividendRatio": 0.31560390637942454,
           "totalDividend": 245772723.15,
           "totalDividendA": 245772723.15
+        },
+        {
+          "year": "2025",
+          "profit": 656907533.17,
+          "profit_tb": -0.15645,
+          "basicEps": 0.72,
+          "totalSharesOutstanding": 910269345,
+          "dps": 0.22000000000000003,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
-      "cash": 1857362593.24,
-      "interestBearingDebt": 3270672855.4,
-      "debtRatio": 33.913348,
-      "interestBearingDebtOverTotal": 0.21681565139506945,
-      "roe": 8.08,
-      "roic": 6.383991,
-      "roa": 6.142219,
-      "grossProfitMargin": 30.739298,
-      "netProfitMargin": 16.678667,
-      "tradingFinancialAssets": 2911677720.27,
+      "cash": 921573540.95,
+      "interestBearingDebt": 2944470950.49,
+      "debtRatio": 28.910494,
+      "interestBearingDebtOverTotal": 0.20478908701023654,
+      "roe": 6.66,
+      "roic": 5.318715,
+      "roa": 5.502976,
+      "grossProfitMargin": 32.363432,
+      "netProfitMargin": 18.596928,
+      "tradingFinancialAssets": 1844131040.55,
       "longTermEquityInvestment": 0,
       "minorityInterest": 0
     },
     "dynamicData": {
       "code": "603599",
-      "price": 15.02,
-      "marketValue": 13672245562,
-      "PB": 1.34,
-      "PE_TTM": 20.93,
+      "price": 12.99,
+      "marketValue": 11824398792,
+      "PB": 1.16,
+      "PE_TTM": 18.1,
       "totalSharesOutstanding": 910269345
     },
     "recentYearData": {
-      "netProfit": 724989688.7
+      "netProfit": 653247312.02
     }
   },
   "689009": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 5869970864.48,
+        "netProfit": 203367666.19,
+        "netProfitMargin": 0.03464543025598401,
+        "netProfitExcludingNon": 173719661.59,
+        "coreProfit": 795321838.8699994,
+        "cashFlowFromOperating": -476552990.04,
+        "fcf": -798113134.78,
+        "capex": 321560144.74,
+        "fcfOverNetProfit": -3.9244839149324164,
+        "netProfitExcludingNonOvernetProfit": 0.8542147571664573,
+        "cashFlowFromOperatingOverNetProfit": -2.343307561954178,
+        "operatingProfit": 174317485.07,
+        "financialProfit": 29050181.119999997,
+        "operatingProfitOverNetProfit": 0.8571543762868413
+      },
       {
         "year": "2025",
         "revenue": 21277876666.95,
@@ -116016,6 +116126,23 @@ const data: ServiceData = {
     ],
     "costsExpensesData": [
       {
+        "year": "2026Q1",
+        "grossProfitMargin": 26.541549,
+        "netProfitMargin": 3.464543025598401,
+        "grossProfitMinusNetProfit": 23.077005974401597,
+        "devExpenses": 371103561.06,
+        "manageExpenses": 279449139.1,
+        "devAndManageExpenses": 650552700.1600001,
+        "sellingExpenses": 444569359.52,
+        "financialExpenses": 223573520.99,
+        "totalOperatingExpenses": 1318695580.67,
+        "sellingExpensesRatio": 0.07573621228857375,
+        "devExpensesRatio": 0.06322068194675354,
+        "manageExpensesRatio": 0.04760656322691228,
+        "devAndManageExpensesRatio": 0.11082724517366584,
+        "totalOperatingExpensesRatio": 22.465112
+      },
+      {
         "year": "2025",
         "grossProfitMargin": 29.629636,
         "netProfitMargin": 8.262908763687362,
@@ -116188,6 +116315,22 @@ const data: ServiceData = {
     ],
     "balanceData": [
       {
+        "year": "2026Q1",
+        "currentAssets": 14980456213.94,
+        "cash": 7673572027.92,
+        "inventory": 3052378798.08,
+        "nonCurrentAssets": 5675009952.84,
+        "goodwill": 132583006.93,
+        "totalAssets": 20655466166.78,
+        "equity": 7403707144.97,
+        "interestFreeLiabilities": 9765992937.21,
+        "interestBearingDebt": 325634486.13,
+        "interestExpense": 4283300.33,
+        "interestFreeLiabilitiesOverTotal": 0.47280428620471215,
+        "interestBearingDebtOverTotal": 0.015765051415480277,
+        "debtRatio": 63.630562
+      },
+      {
         "year": "2025",
         "currentAssets": 16348488581.69,
         "cash": 8301492268.16,
@@ -116349,6 +116492,24 @@ const data: ServiceData = {
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.02099537293204559,
+        "wc": 123242227.39999962,
+        "receivables": 1697798966.98,
+        "prepayments": 277045825.84,
+        "inventory": 3052378798.08,
+        "accountsPayable": 3035417920.15,
+        "customerAdvances": 0,
+        "contractLiabilities": 1868563443.35,
+        "receivablesToRevenueRatio": 0.2892346497413837,
+        "prepaymentsToRevenueRatio": 0.04719713815215717,
+        "inventoryToRevenueRatio": 0.5199989690835373,
+        "accountsPayableToRevenueRatio": 0.5171095377181054,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.3183258463269271,
+        "changeInWC": 862584371.2900004
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.034746988877813585,
@@ -116532,11 +116693,20 @@ const data: ServiceData = {
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.20205425121221082,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1186052567.66,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.09420640279410594,
-        "longTermOperatingAssetsPerYuanRevenue": 0.147114566777809,
-        "fixedAssets": 2004512219.89,
-        "longTermOperatingAssets": 3130285607.8100004,
+        "fixedAssetsPerYuanRevenue": 0.11919366924517195,
+        "longTermOperatingAssetsPerYuanRevenue": 0.17210183322887504,
+        "fixedAssets": 2536188193.6800003,
+        "longTermOperatingAssets": 3661961581.6000004,
         "depreciation": 240617005.44999996,
         "depreciationOverRevenue": 0.01130831845753387
       },
@@ -116623,6 +116793,15 @@ const data: ServiceData = {
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.79,
+        "roa": 1.193996,
+        "roic": 2.739616,
+        "netProfitMargin": 3.562344,
+        "assetTurnover": 27.836,
+        "equityMultiplier": 2.749561
+      },
       {
         "year": "2025",
         "roe": 26.08,
@@ -116716,6 +116895,21 @@ const data: ServiceData = {
     ],
     "turnoverRateData": [
       {
+        "year": "2026Q1",
+        "totalAssets": 20655466166.78,
+        "avgTotalAssets": 21087651062.364998,
+        "avgCurrentAssets": 15664472397.815,
+        "avgInventory": 3109236219.1549997,
+        "equity": 7512276799.07,
+        "avgEquity": 7386655538.125,
+        "totalAssetsDays": 323.321638,
+        "currentAssetsDays": 240.171978,
+        "wcDays": 7.663311120196639,
+        "receivablesDays": 24.194441,
+        "inventoryDays": 64.896087,
+        "fixedAssetsDays": 0
+      },
+      {
         "year": "2025",
         "totalAssets": 21519835957.95,
         "avgTotalAssets": 18598877477.285,
@@ -116728,7 +116922,7 @@ const data: ServiceData = {
         "wcDays": -12.682650940401958,
         "receivablesDays": 21.757263,
         "inventoryDays": 60.171044,
-        "fixedAssetsDays": 34.38533701984867
+        "fixedAssetsDays": 43.505689274487764
       },
       {
         "year": "2024",
@@ -117929,33 +118123,50 @@ const data: ServiceData = {
           "totalDividendA": 300345899.47
         }
       ],
-      "cash": 8301492268.16,
-      "interestBearingDebt": 269489212.71,
-      "debtRatio": 66.258877,
-      "interestBearingDebtOverTotal": 0.012522828391284437,
+      "cash": 7673572027.92,
+      "interestBearingDebt": 325634486.13,
+      "debtRatio": 63.630562,
+      "interestBearingDebtOverTotal": 0.015765051415480277,
       "roe": 26.08,
       "roic": 25.765727,
       "roa": 11.631711,
       "grossProfitMargin": 29.629636,
       "netProfitMargin": 8.282358,
-      "tradingFinancialAssets": 2288385549.09,
-      "longTermEquityInvestment": 133966905.87,
-      "minorityInterest": 100736312.91
+      "tradingFinancialAssets": 1408335174.48,
+      "longTermEquityInvestment": 134270710.4,
+      "minorityInterest": 108569654.1
     },
     "dynamicData": {
       "code": "689009",
-      "price": 43.86,
-      "marketValue": 31695738257,
-      "PB": 4.41,
-      "PE_TTM": 18.03,
+      "price": 42.68,
+      "marketValue": 30843002937,
+      "PB": 4.17,
+      "PE_TTM": 20.49,
       "totalSharesOutstanding": 722657051
     },
     "recentYearData": {
-      "netProfit": 1758171535.84
+      "netProfit": 1505369795.32
     }
   },
   "000333": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 131098601000,
+        "netProfit": 12674556000,
+        "netProfitMargin": 0.09667956716029334,
+        "netProfitExcludingNon": 10961722000,
+        "coreProfit": 17548892000,
+        "cashFlowFromOperating": 14529165000,
+        "fcf": 12386206000,
+        "capex": 2142959000,
+        "fcfOverNetProfit": 0.9772496961629268,
+        "netProfitExcludingNonOvernetProfit": 0.8648604337698299,
+        "cashFlowFromOperatingOverNetProfit": 1.1463253624032275,
+        "operatingProfit": 10497272000,
+        "financialProfit": 2177284000,
+        "operatingProfitOverNetProfit": 0.828216152108208
+      },
       {
         "year": "2025",
         "revenue": 456451731000,
@@ -118125,26 +118336,26 @@ const data: ServiceData = {
         "operatingProfit": 12051999000,
         "financialProfit": 2632358000,
         "operatingProfitOverNetProfit": 0.8207372648322293
-      },
-      {
-        "year": "2015",
-        "revenue": 138441226000,
-        "netProfit": 12706725000,
-        "netProfitMargin": 0.09178425651908052,
-        "netProfitExcludingNon": 10911341000,
-        "coreProfit": 12625554000,
-        "cashFlowFromOperating": 26764254000,
-        "fcf": 23633322000,
-        "capex": 3130932000,
-        "fcfOverNetProfit": 1.8599066242481836,
-        "netProfitExcludingNonOvernetProfit": 0.8587060001692017,
-        "cashFlowFromOperatingOverNetProfit": 2.106306227607822,
-        "operatingProfit": 9152170000,
-        "financialProfit": 3554555000,
-        "operatingProfitOverNetProfit": 0.720261908556296
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 25.571131,
+        "netProfitMargin": 9.667956716029334,
+        "grossProfitMinusNetProfit": 15.903174283970667,
+        "devExpenses": 4165725000,
+        "manageExpenses": 3681084000,
+        "devAndManageExpenses": 7846809000,
+        "sellingExpenses": 11355567000,
+        "financialExpenses": 1349928000,
+        "totalOperatingExpenses": 20552304000,
+        "sellingExpensesRatio": 0.08661852158132488,
+        "devExpensesRatio": 0.03177551070892053,
+        "manageExpensesRatio": 0.0280787435710317,
+        "devAndManageExpensesRatio": 0.05985425427995223,
+        "totalOperatingExpensesRatio": 15.676981
+      },
       {
         "year": "2025",
         "grossProfitMargin": 26.391005,
@@ -118314,26 +118525,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.0604912761239511,
         "devAndManageExpensesRatio": 0.0604912761239511,
         "totalOperatingExpensesRatio": 16.532055
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 25.843752,
-        "netProfitMargin": 9.178425651908052,
-        "grossProfitMinusNetProfit": 16.665326348091945,
-        "devExpenses": 0,
-        "manageExpenses": 7441755000,
-        "devAndManageExpenses": 7441755000,
-        "sellingExpenses": 14799769000,
-        "financialExpenses": 138932000,
-        "totalOperatingExpenses": 22380456000,
-        "sellingExpensesRatio": 0.10690290333025511,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.05375389408932279,
-        "devAndManageExpensesRatio": 0.05375389408932279,
-        "totalOperatingExpensesRatio": 16.166034
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 411205202000,
+        "cash": 94092090000,
+        "inventory": 57824460000,
+        "nonCurrentAssets": 202676369000,
+        "goodwill": 33215220000,
+        "totalAssets": 613881571000,
+        "equity": 232307706000,
+        "interestFreeLiabilities": 181460791000,
+        "interestBearingDebt": 58225042000,
+        "interestExpense": 367508000,
+        "interestFreeLiabilitiesOverTotal": 0.2955957623950239,
+        "interestBearingDebtOverTotal": 0.09484735289439077,
+        "debtRatio": 60.018162
+      },
       {
         "year": "2025",
         "currentAssets": 416662341000,
@@ -118493,25 +118703,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.3170811755878321,
         "interestBearingDebtOverTotal": 0.062268023021310855,
         "debtRatio": 59.568342
-      },
-      {
-        "year": "2015",
-        "currentAssets": 93367706000,
-        "cash": 12910022000,
-        "inventory": 10448937000,
-        "nonCurrentAssets": 35474229000,
-        "goodwill": 2393066000,
-        "totalAssets": 128841935000,
-        "equity": 49201852000,
-        "interestFreeLiabilities": 40143565000,
-        "interestBearingDebt": 4010994000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.3115721989117906,
-        "interestBearingDebtOverTotal": 0.03113112202172375,
-        "debtRatio": 56.511347
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.0833443218818178,
+        "wc": -10926324000,
+        "receivables": 69292882000,
+        "prepayments": 3743527000,
+        "inventory": 57824460000,
+        "accountsPayable": 105590743000,
+        "customerAdvances": 0,
+        "contractLiabilities": 41199188000,
+        "receivablesToRevenueRatio": 0.5285554649053806,
+        "prepaymentsToRevenueRatio": 0.02855504918774839,
+        "inventoryToRevenueRatio": 0.44107610271142406,
+        "accountsPayableToRevenueRatio": 0.8054299755647278,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.3142610804824683,
+        "changeInWC": 7230396000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.03977796285320693,
@@ -118691,33 +118903,24 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.06446249061289885,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -9146459000
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.08403122636316439,
-        "wc": 11633386000,
-        "receivables": 23260869000,
-        "prepayments": 988625000,
-        "inventory": 10448937000,
-        "accountsPayable": 17448684000,
-        "customerAdvances": 5616361000,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.1680198136933575,
-        "prepaymentsToRevenueRatio": 0.007141117054250878,
-        "inventoryToRevenueRatio": 0.07547561735692807,
-        "accountsPayableToRevenueRatio": 0.12603676306651604,
-        "advancesToRevenueRatio": 0.040568558674856,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -7130456000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.4546592682556544,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 59605194000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.0992374065506611,
-        "longTermOperatingAssetsPerYuanRevenue": 0.2337956847402119,
-        "fixedAssets": 45297086000,
-        "longTermOperatingAssets": 106716445000,
+        "fixedAssetsPerYuanRevenue": 0.10592996086151331,
+        "longTermOperatingAssetsPerYuanRevenue": 0.2404882390510641,
+        "fixedAssets": 48351914000,
+        "longTermOperatingAssets": 109771273000,
         "depreciation": 9339695000,
         "depreciationOverRevenue": 0.020461517320875273
       },
@@ -118801,18 +119004,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 34881791000,
         "depreciation": 3578000000,
         "depreciationOverRevenue": 0.022496913292086185
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.14229901431239853,
-        "longTermOperatingAssetsPerYuanRevenue": 0.18973305682802896,
-        "fixedAssets": 19700050000,
-        "longTermOperatingAssets": 26266877000,
-        "depreciation": 2852017000,
-        "depreciationOverRevenue": 0.02060092273381052
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 5.56,
+        "roa": 2.537321,
+        "roic": 4.476516,
+        "netProfitMargin": 9.809037,
+        "assetTurnover": 21.523400000000002,
+        "equityMultiplier": 2.501135
+      },
       {
         "year": "2025",
         "roe": 19.7,
@@ -118902,18 +119105,24 @@ const data: ServiceData = {
         "netProfitMargin": 9.973282,
         "assetTurnover": 106.7594,
         "equityMultiplier": 2.473309
-      },
-      {
-        "year": "2015",
-        "roe": 29.06,
-        "roa": 13.071913,
-        "roic": 25.812888,
-        "netProfitMargin": 9.841472,
-        "assetTurnover": 111.86510000000001,
-        "equityMultiplier": 2.29945
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 613881571000,
+        "avgTotalAssets": 611336668500,
+        "avgCurrentAssets": 413933771500,
+        "avgInventory": 61226647000,
+        "equity": 245441131000,
+        "avgEquity": 240932677000,
+        "totalAssetsDays": 418.148171,
+        "currentAssetsDays": 283.126562,
+        "wcDays": -30.420677486863497,
+        "receivablesDays": 31.918066,
+        "inventoryDays": 56.473345,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 608791766000,
@@ -118927,7 +119136,7 @@ const data: ServiceData = {
         "wcDays": -14.518956441420528,
         "receivablesDays": 30.06853,
         "inventoryDays": 68.556434,
-        "fixedAssetsDays": 36.2216533909913
+        "fixedAssetsDays": 38.66443571445235
       },
       {
         "year": "2024",
@@ -119063,21 +119272,6 @@ const data: ServiceData = {
         "receivablesDays": 26.96562,
         "inventoryDays": 40.597088,
         "fixedAssetsDays": 49.7003515837478
-      },
-      {
-        "year": "2015",
-        "totalAssets": 128841935000,
-        "avgTotalAssets": 124567010500,
-        "avgCurrentAssets": 89897389500,
-        "avgInventory": 12734483500,
-        "equity": 56031622000,
-        "avgEquity": 50881538000,
-        "totalAssetsDays": 321.815926,
-        "currentAssetsDays": 232.24778,
-        "wcDays": 30.671397622555002,
-        "receivablesDays": 25.657731,
-        "inventoryDays": 44.655057,
-        "fixedAssetsDays": 51.939140224025465
       }
     ],
     "primaryBusinessData": [
@@ -120443,33 +120637,50 @@ const data: ServiceData = {
           "totalDividendA": 3448324163.5
         }
       ],
-      "cash": 85247150000,
-      "interestBearingDebt": 67480997000,
-      "debtRatio": 61.165009,
-      "interestBearingDebtOverTotal": 0.11084413549706255,
+      "cash": 94092090000,
+      "interestBearingDebt": 58225042000,
+      "debtRatio": 60.018162,
+      "interestBearingDebtOverTotal": 0.09484735289439077,
       "roe": 19.7,
       "roic": 15.500306,
       "roa": 9.116261,
       "grossProfitMargin": 26.391005,
       "netProfitMargin": 9.753538,
-      "tradingFinancialAssets": 710717000,
-      "longTermEquityInvestment": 4775044000,
-      "minorityInterest": 13202918000
+      "tradingFinancialAssets": 2330518000,
+      "longTermEquityInvestment": 5082006000,
+      "minorityInterest": 13133425000
     },
     "dynamicData": {
       "code": "000333",
-      "price": 80.6,
-      "marketValue": 613060118889,
-      "PB": 2.74,
-      "PE_TTM": 13.95,
-      "totalSharesOutstanding": 7606204949
+      "price": 79.81,
+      "marketValue": 607100809317,
+      "PB": 2.61,
+      "PE_TTM": 13.74,
+      "totalSharesOutstanding": 7606826329
     },
     "recentYearData": {
-      "netProfit": 43945411000
+      "netProfit": 44197734000
     }
   },
   "000423": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 1814224387.34,
+        "netProfit": 454808577.52,
+        "netProfitMargin": 0.25069036702060676,
+        "netProfitExcludingNon": 448362577.66,
+        "coreProfit": 572252021.96,
+        "cashFlowFromOperating": 28865242.08,
+        "fcf": -15460162.120000005,
+        "capex": 44325404.2,
+        "fcfOverNetProfit": -0.03399267930323973,
+        "netProfitExcludingNonOvernetProfit": 0.9858270046375357,
+        "cashFlowFromOperatingOverNetProfit": 0.06346679351870989,
+        "operatingProfit": 440137915.59999996,
+        "financialProfit": 14670661.919999998,
+        "operatingProfitOverNetProfit": 0.9677432162779408
+      },
       {
         "year": "2025",
         "revenue": 6700474184.47,
@@ -120639,26 +120850,26 @@ const data: ServiceData = {
         "operatingProfit": 1745552550.12,
         "financialProfit": 106920968.15,
         "operatingProfitOverNetProfit": 0.9422820531060265
-      },
-      {
-        "year": "2015",
-        "revenue": 5449663157.77,
-        "netProfit": 1625027031.96,
-        "netProfitMargin": 0.2981885274217499,
-        "netProfitExcludingNon": 1497066297.7,
-        "coreProfit": 1751706913.88,
-        "cashFlowFromOperating": 977610166.76,
-        "fcf": 693358482.3299999,
-        "capex": 284251684.43,
-        "fcfOverNetProfit": 0.42667504521061217,
-        "netProfitExcludingNonOvernetProfit": 0.921256242669599,
-        "cashFlowFromOperatingOverNetProfit": 0.601596248882624,
-        "operatingProfit": 1473147864.0900002,
-        "financialProfit": 151879167.87,
-        "operatingProfitOverNetProfit": 0.9065374514497686
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 75.515638,
+        "netProfitMargin": 25.069036702060675,
+        "grossProfitMinusNetProfit": 50.446601297939324,
+        "devExpenses": 50731064.1,
+        "manageExpenses": 94305402.49,
+        "devAndManageExpenses": 145036466.59,
+        "sellingExpenses": 679610562.26,
+        "financialExpenses": -12368586.08,
+        "totalOperatingExpenses": 812278442.77,
+        "sellingExpensesRatio": 0.3746011612468947,
+        "devExpensesRatio": 0.027962949045339122,
+        "manageExpensesRatio": 0.05198111278190332,
+        "devAndManageExpensesRatio": 0.07994406182724245,
+        "totalOperatingExpensesRatio": 44.772766
+      },
       {
         "year": "2025",
         "grossProfitMargin": 73.469745,
@@ -120828,26 +121039,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.07801606192343245,
         "devAndManageExpensesRatio": 0.07801606192343245,
         "totalOperatingExpensesRatio": 33.15199
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 64.607905,
-        "netProfitMargin": 29.81885274217499,
-        "grossProfitMinusNetProfit": 34.78905225782501,
-        "devExpenses": 0,
-        "manageExpenses": 423183283.9,
-        "devAndManageExpenses": 423183283.9,
-        "sellingExpenses": 1276782710.27,
-        "financialExpenses": -17430458.27,
-        "totalOperatingExpenses": 1682535535.9,
-        "sellingExpensesRatio": 0.23428653722379034,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.07765310839379776,
-        "devAndManageExpensesRatio": 0.07765310839379776,
-        "totalOperatingExpensesRatio": 30.874119
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 10711024002.4,
+        "cash": 6146687592.49,
+        "inventory": 936488677.27,
+        "nonCurrentAssets": 2840910157.72,
+        "goodwill": 16015237.67,
+        "totalAssets": 13551934160.12,
+        "equity": 10792785381.62,
+        "interestFreeLiabilities": 825687720.72,
+        "interestBearingDebt": 64980343.16,
+        "interestExpense": 914280.15,
+        "interestFreeLiabilitiesOverTotal": 0.06092766618877144,
+        "interestBearingDebtOverTotal": 0.004794912843601404,
+        "debtRatio": 20.015798
+      },
       {
         "year": "2025",
         "currentAssets": 10551555638.04,
@@ -121007,25 +121217,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.05698820572333417,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 15.71361
-      },
-      {
-        "year": "2015",
-        "currentAssets": 6433020561.13,
-        "cash": 1658560849.71,
-        "inventory": 1725475690.42,
-        "nonCurrentAssets": 2175995876.63,
-        "goodwill": 914991.98,
-        "totalAssets": 8609016437.76,
-        "equity": 7013827104.69,
-        "interestFreeLiabilities": 557245383.16,
-        "interestBearingDebt": 80000000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.06472811234461888,
-        "interestBearingDebtOverTotal": 0.009292583023667148,
-        "debtRatio": 17.725603
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.36749716729778,
+        "wc": 666722323.1900003,
+        "receivables": 533973839.95000005,
+        "prepayments": 21947526.69,
+        "inventory": 936488677.27,
+        "accountsPayable": 304252613.13,
+        "customerAdvances": 26897134.08,
+        "contractLiabilities": 494537973.51,
+        "receivablesToRevenueRatio": 0.29432623862636303,
+        "prepaymentsToRevenueRatio": 0.012097470876895925,
+        "inventoryToRevenueRatio": 0.5161923099507396,
+        "accountsPayableToRevenueRatio": 0.16770395947333314,
+        "advancesToRevenueRatio": 0.014825693154437386,
+        "contractLiabilitiesToRevenueRatio": 0.27258919952844823,
+        "changeInWC": 421160249.1700003
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.03664846207290084,
@@ -121205,27 +121417,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.027614454920725683,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 1263906138.0100007
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.3483549760086146,
-        "wc": 1898417278.5799994,
-        "receivables": 429292298.13,
-        "prepayments": 300894673.19,
-        "inventory": 1725475690.42,
-        "accountsPayable": 168011452.51,
-        "customerAdvances": 389233930.65,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.0787740977197692,
-        "prepaymentsToRevenueRatio": 0.05521344429535824,
-        "inventoryToRevenueRatio": 0.3166206131400723,
-        "accountsPayableToRevenueRatio": 0.03082969490884097,
-        "advancesToRevenueRatio": 0.07142348423774403,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 770272033.1699994
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.2439792086297466,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 442633030.3,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.2948893096371643,
@@ -121315,18 +121518,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 1952748785.2699997,
         "depreciation": 106074264.13000001,
         "depreciationOverRevenue": 0.01679151376749066
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.2836133066768218,
-        "longTermOperatingAssetsPerYuanRevenue": 0.32258505647335545,
-        "fixedAssets": 1545596988.45,
-        "longTermOperatingAssets": 1757979897.5100002,
-        "depreciation": 98639850.48,
-        "depreciationOverRevenue": 0.018100173831727864
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 4.31,
+        "roa": 3.990058,
+        "roic": 4.300475,
+        "netProfitMargin": 25.067108,
+        "assetTurnover": 13.472000000000001,
+        "equityMultiplier": 1.250246
+      },
       {
         "year": "2025",
         "roe": 16.66,
@@ -121416,18 +121619,24 @@ const data: ServiceData = {
         "netProfitMargin": 29.36679,
         "assetTurnover": 68.0777,
         "equityMultiplier": 1.186431
-      },
-      {
-        "year": "2015",
-        "roe": 24.78,
-        "roa": 24.020877,
-        "roic": 25.011642,
-        "netProfitMargin": 30.053482,
-        "assetTurnover": 67.8285,
-        "equityMultiplier": 1.215444
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 13551934160.12,
+        "avgTotalAssets": 13466567086.265,
+        "avgCurrentAssets": 10631289820.220001,
+        "avgInventory": 886013266.875,
+        "equity": 10839406392,
+        "avgEquity": 10601321510.96,
+        "totalAssetsDays": 668.049137,
+        "currentAssetsDays": 527.396771,
+        "wcDays": 134.13646606368968,
+        "receivablesDays": 15.845835,
+        "inventoryDays": 179.515909,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 13381200012.41,
@@ -121577,21 +121786,6 @@ const data: ServiceData = {
         "receivablesDays": 19.773465,
         "inventoryDays": 408.683231,
         "fixedAssetsDays": 99.85333812503302
-      },
-      {
-        "year": "2015",
-        "totalAssets": 8609016437.76,
-        "avgTotalAssets": 8034470791.49,
-        "avgCurrentAssets": 5929837234.895,
-        "avgInventory": 1594887624.065,
-        "equity": 7083016299.48,
-        "avgEquity": 6555317743.455,
-        "totalAssetsDays": 530.75014,
-        "currentAssetsDays": 391.719881,
-        "wcDays": 127.14956624314432,
-        "receivablesDays": 14.011442,
-        "inventoryDays": 297.684801,
-        "fixedAssetsDays": 103.51885693703994
       }
     ],
     "primaryBusinessData": [
@@ -122765,33 +122959,50 @@ const data: ServiceData = {
           "totalDividendA": 817206589.66
         }
       ],
-      "cash": 5267456076.17,
-      "interestBearingDebt": 59420329.11,
-      "debtRatio": 22.553757,
-      "interestBearingDebtOverTotal": 0.004440582986196482,
+      "cash": 6146687592.49,
+      "interestBearingDebt": 64980343.16,
+      "debtRatio": 20.015798,
+      "interestBearingDebtOverTotal": 0.004794912843601404,
       "roe": 16.66,
       "roic": 16.821879,
       "roa": 15.610149,
       "grossProfitMargin": 73.469745,
       "netProfitMargin": 25.948495,
-      "tradingFinancialAssets": 3815103071.18,
-      "longTermEquityInvestment": 75580337.8,
-      "minorityInterest": 26932713.98
+      "tradingFinancialAssets": 2983417651.13,
+      "longTermEquityInvestment": 74802011.96,
+      "minorityInterest": 46621010.38
     },
     "dynamicData": {
       "code": "000423",
-      "price": 54.82,
-      "marketValue": 35302809492,
-      "PB": 3.27,
-      "PE_TTM": 19.96,
+      "price": 53.41,
+      "marketValue": 34394802170,
+      "PB": 3.19,
+      "PE_TTM": 19.44,
       "totalSharesOutstanding": 643976824
     },
     "recentYearData": {
-      "netProfit": 1738741090.72
+      "netProfit": 1769041377.46
     }
   },
   "000538": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 11602596895.18,
+        "netProfit": 2037306990.13,
+        "netProfitMargin": 0.17559060342571642,
+        "netProfitExcludingNon": 1965172511.31,
+        "coreProfit": 2104933474.9900002,
+        "cashFlowFromOperating": 829016119.34,
+        "fcf": 692194054.3900001,
+        "capex": 136822064.95,
+        "fcfOverNetProfit": 0.3397593282423438,
+        "netProfitExcludingNonOvernetProfit": 0.9645932207716044,
+        "cashFlowFromOperatingOverNetProfit": 0.4069176237829041,
+        "operatingProfit": 1777961676.7900002,
+        "financialProfit": 259345313.34,
+        "operatingProfitOverNetProfit": 0.8727018978502346
+      },
       {
         "year": "2025",
         "revenue": 41186999090.31,
@@ -122961,26 +123172,26 @@ const data: ServiceData = {
         "operatingProfit": 2726017699.54,
         "financialProfit": 193859113.34,
         "operatingProfitOverNetProfit": 0.9336070917496041
-      },
-      {
-        "year": "2015",
-        "revenue": 20738126205.08,
-        "netProfit": 2770841401.07,
-        "netProfitMargin": 0.1336109817091988,
-        "netProfitExcludingNon": 2615246846.74,
-        "coreProfit": 3024977085.8000026,
-        "cashFlowFromOperating": 2179500401.19,
-        "fcf": 2043695704.47,
-        "capex": 135804696.72,
-        "fcfOverNetProfit": 0.7375722420203472,
-        "netProfitExcludingNonOvernetProfit": 0.9438457378795064,
-        "cashFlowFromOperatingOverNetProfit": 0.786584320686256,
-        "operatingProfit": 2595847922.83,
-        "financialProfit": 174993478.24,
-        "operatingProfitOverNetProfit": 0.9368446428682551
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 30.633088,
+        "netProfitMargin": 17.55906034257164,
+        "grossProfitMinusNetProfit": 13.07402765742836,
+        "devExpenses": 76790122.07,
+        "manageExpenses": 130505111.34,
+        "devAndManageExpenses": 207295233.41,
+        "sellingExpenses": 1149720004.51,
+        "financialExpenses": 11389614.51,
+        "totalOperatingExpenses": 1368404852.43,
+        "sellingExpensesRatio": 0.09909160982638478,
+        "devExpensesRatio": 0.006618356456208564,
+        "manageExpensesRatio": 0.011247922557252247,
+        "devAndManageExpensesRatio": 0.01786627901346081,
+        "totalOperatingExpensesRatio": 11.793953
+      },
       {
         "year": "2025",
         "grossProfitMargin": 29.509496,
@@ -123150,26 +123361,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.02157650691347082,
         "devAndManageExpensesRatio": 0.02157650691347082,
         "totalOperatingExpensesRatio": 15.232554
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 30.534202,
-        "netProfitMargin": 13.36109817091988,
-        "grossProfitMinusNetProfit": 17.17310382908012,
-        "devExpenses": 0,
-        "manageExpenses": 493208556.35,
-        "devAndManageExpenses": 493208556.35,
-        "sellingExpenses": 2709561529.63,
-        "financialExpenses": 13112110.39,
-        "totalOperatingExpenses": 3215882196.37,
-        "sellingExpensesRatio": 0.1306560439856069,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.02378269625098452,
-        "devAndManageExpensesRatio": 0.02378269625098452,
-        "totalOperatingExpensesRatio": 15.507101
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 35920532583.79,
+        "cash": 9222540388.69,
+        "inventory": 6155429415.3,
+        "nonCurrentAssets": 20536695893.88,
+        "goodwill": 300805632.99,
+        "totalAssets": 56457228477.67,
+        "equity": 42096489419.57,
+        "interestFreeLiabilities": 9258047721.35,
+        "interestBearingDebt": 323324720.03999996,
+        "interestExpense": 5085418.24,
+        "interestFreeLiabilitiesOverTotal": 0.16398339009878513,
+        "interestBearingDebtOverTotal": 0.005726896781124875,
+        "debtRatio": 25.306918
+      },
       {
         "year": "2025",
         "currentAssets": 34034592773.13,
@@ -123329,25 +123539,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.2216605336285759,
         "interestBearingDebtOverTotal": 0.07386912513061902,
         "debtRatio": 35.560439
-      },
-      {
-        "year": "2015",
-        "currentAssets": 16903601748.68,
-        "cash": 2649769547.43,
-        "inventory": 5625005009.07,
-        "nonCurrentAssets": 2387338617.41,
-        "goodwill": 12843661.62,
-        "totalAssets": 19290940366.09,
-        "equity": 13433010080.46,
-        "interestFreeLiabilities": 3646398207.9300003,
-        "interestBearingDebt": 928075632.43,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.1890212783167228,
-        "interestBearingDebtOverTotal": 0.04810940342034284,
-        "debtRatio": 29.874826
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 1.112614844639893,
+        "wc": 12909221541.949999,
+        "receivables": 13846938305.26,
+        "prepayments": 289889068.24,
+        "inventory": 6155429415.3,
+        "accountsPayable": 5784017212.06,
+        "customerAdvances": 803512.88,
+        "contractLiabilities": 1598214521.91,
+        "receivablesToRevenueRatio": 1.1934344035525661,
+        "prepaymentsToRevenueRatio": 0.024984843553465773,
+        "inventoryToRevenueRatio": 0.5305216987980609,
+        "accountsPayableToRevenueRatio": 0.49851057175508884,
+        "advancesToRevenueRatio": 0.00006925284807005565,
+        "contractLiabilitiesToRevenueRatio": 0.13774627666104103,
+        "changeInWC": 845023383.6299992
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.29291277404957444,
@@ -123527,27 +123739,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.047741255922639864,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 346649807.8999996
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.372616375274402,
-        "wc": 7727365416.52,
-        "receivables": 4663805761.39,
-        "prepayments": 333296234.23,
-        "inventory": 5625005009.07,
-        "accountsPayable": 2469992541.83,
-        "customerAdvances": 424749046.34,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.2248904127243452,
-        "prepaymentsToRevenueRatio": 0.016071665826218953,
-        "inventoryToRevenueRatio": 0.2712397905887997,
-        "accountsPayableToRevenueRatio": 0.11910394012478098,
-        "advancesToRevenueRatio": 0.020481553740180906,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 715143824.5899992
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.12605027767512653,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 1462510560.3899999,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.10080968529962278,
@@ -123637,18 +123840,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 2224363091.05,
         "depreciation": 118991067.62,
         "depreciationOverRevenue": 0.005309575770224529
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.09194291847558195,
-        "longTermOperatingAssetsPerYuanRevenue": 0.10436339427087844,
-        "fixedAssets": 1906723847.0100002,
-        "longTermOperatingAssets": 2164301241.5800004,
-        "depreciation": 125430559.89,
-        "depreciationOverRevenue": 0.0060483072891742064
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 4.96,
+        "roa": 4.273555,
+        "roic": 4.953423,
+        "netProfitMargin": 17.501092,
+        "assetTurnover": 20.9573,
+        "equityMultiplier": 1.338812
+      },
       {
         "year": "2025",
         "roe": 13.02,
@@ -123738,18 +123941,24 @@ const data: ServiceData = {
         "netProfitMargin": 13.078108,
         "assetTurnover": 102.1508,
         "equityMultiplier": 1.551841
-      },
-      {
-        "year": "2015",
-        "roe": 22.43,
-        "roa": 18.489562,
-        "roic": 21.528206,
-        "netProfitMargin": 13.287512,
-        "assetTurnover": 116.4007,
-        "equityMultiplier": 1.426021
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 56457228477.67,
+        "avgTotalAssets": 55362904804.744995,
+        "avgCurrentAssets": 34977562678.46,
+        "avgInventory": 6193406620.995,
+        "equity": 42169643419.04,
+        "avgEquity": 41158572123.695,
+        "totalAssetsDays": 429.443638,
+        "currentAssetsDays": 271.316901,
+        "wcDays": 406.10441829356085,
+        "receivablesDays": 85.633161,
+        "inventoryDays": 69.257138,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 54268581131.82,
@@ -123899,21 +124108,6 @@ const data: ServiceData = {
         "receivablesDays": 16.624184,
         "inventoryDays": 143.641172,
         "fixedAssetsDays": 32.09061192727997
-      },
-      {
-        "year": "2015",
-        "totalAssets": 19290940366.09,
-        "avgTotalAssets": 17816140279.795,
-        "avgCurrentAssets": 15483973611.82,
-        "avgInventory": 5304157910.1,
-        "equity": 13527805322.34,
-        "avgEquity": 12411463254.435001,
-        "totalAssetsDays": 309.276278,
-        "currentAssetsDays": 268.791425,
-        "wcDays": 136.00497697515672,
-        "receivablesDays": 13.99696,
-        "inventoryDays": 132.549594,
-        "fixedAssetsDays": 33.559165243587415
       }
     ],
     "primaryBusinessData": [
@@ -125550,54 +125744,71 @@ const data: ServiceData = {
           "basicEps": 2.89,
           "totalSharesOutstanding": 1784262603,
           "dps": 2.602,
-          "dividendRatio": 0.3528026071071824,
-          "totalDividend": 1818163592.46,
-          "totalDividendA": 1818163592.46
+          "dividendRatio": 0.9008757445457948,
+          "totalDividend": 4642651293.01,
+          "totalDividendA": 4642651293.01
         }
       ],
-      "cash": 9107829167.98,
-      "interestBearingDebt": 1038860602.0700002,
-      "debtRatio": 26.020728,
-      "interestBearingDebtOverTotal": 0.019142947547247952,
+      "cash": 9222540388.69,
+      "interestBearingDebt": 323324720.03999996,
+      "debtRatio": 25.306918,
+      "interestBearingDebtOverTotal": 0.005726896781124875,
       "roe": 13.02,
       "roic": 12.75159,
       "roa": 11.321448,
       "grossProfitMargin": 29.509496,
       "netProfitMargin": 12.60092,
-      "tradingFinancialAssets": 4192113408.43,
-      "longTermEquityInvestment": 13227578051.91,
-      "minorityInterest": 103441983.91
+      "tradingFinancialAssets": 4795948348.48,
+      "longTermEquityInvestment": 13468526509.92,
+      "minorityInterest": 73153999.47
     },
     "dynamicData": {
       "code": "000538",
-      "price": 54.29,
-      "marketValue": 96867616717,
-      "PB": 2.42,
-      "PE_TTM": 18.8,
+      "price": 52.6,
+      "marketValue": 93852212918,
+      "PB": 2.39,
+      "PE_TTM": 17.86,
       "totalSharesOutstanding": 1784262603
     },
     "recentYearData": {
-      "netProfit": 5153486838.91
+      "netProfit": 5256154244.440001
     }
   },
   "000568": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 23127459902.13,
-        "netProfit": 10762394649.32,
-        "netProfitMargin": 0.46535134834797837,
-        "netProfitExcludingNon": 10741597380.5,
-        "coreProfit": 14245575980.68,
-        "cashFlowFromOperating": 9822590732.99,
-        "fcf": 8685426960.789999,
-        "capex": 1137163772.2,
-        "fcfOverNetProfit": 0.8070162118928402,
-        "netProfitExcludingNonOvernetProfit": 0.9980675983832916,
-        "cashFlowFromOperatingOverNetProfit": 0.9126770624054955,
-        "operatingProfit": 10683442936.85,
-        "financialProfit": 78951712.47,
-        "operatingProfitOverNetProfit": 0.9926641128631175
+        "year": "2026Q1",
+        "revenue": 8025174114.21,
+        "netProfit": 3708450417.95,
+        "netProfitMargin": 0.4621021756255142,
+        "netProfitExcludingNon": 3683573536.09,
+        "coreProfit": 4853294475.15,
+        "cashFlowFromOperating": 4543022746.04,
+        "fcf": 4433427829.17,
+        "capex": 109594916.87,
+        "fcfOverNetProfit": 1.1954933542352069,
+        "netProfitExcludingNonOvernetProfit": 0.9932918391629053,
+        "cashFlowFromOperatingOverNetProfit": 1.2250461066030227,
+        "operatingProfit": 3672671454.8799996,
+        "financialProfit": 35778963.07,
+        "operatingProfitOverNetProfit": 0.9903520449142803
+      },
+      {
+        "year": "2025",
+        "revenue": 25731010647.32,
+        "netProfit": 10830713936.14,
+        "netProfitMargin": 0.4209206581346647,
+        "netProfitExcludingNon": 10760038787.76,
+        "coreProfit": 14161946718.160002,
+        "cashFlowFromOperating": 7123218677.88,
+        "fcf": 5190455707.91,
+        "capex": 1932762969.97,
+        "fcfOverNetProfit": 0.47923486286443706,
+        "netProfitExcludingNonOvernetProfit": 0.9934745623606427,
+        "cashFlowFromOperatingOverNetProfit": 0.6576869004093253,
+        "operatingProfit": 10697004499.3,
+        "financialProfit": 133709436.83999999,
+        "operatingProfitOverNetProfit": 0.9876546054462912
       },
       {
         "year": "2024",
@@ -125751,42 +125962,42 @@ const data: ServiceData = {
         "operatingProfit": 1732139669.8,
         "financialProfit": 225053594.7,
         "operatingProfitOverNetProfit": 0.8850120737782663
-      },
-      {
-        "year": "2015",
-        "revenue": 6900197915.25,
-        "netProfit": 1472756220.64,
-        "netProfitMargin": 0.21343680844068091,
-        "netProfitExcludingNon": 1448048515.09,
-        "coreProfit": 1575712916.5900002,
-        "cashFlowFromOperating": 153583121.82,
-        "fcf": 72166867.22999999,
-        "capex": 81416254.59,
-        "fcfOverNetProfit": 0.04900123063044283,
-        "netProfitExcludingNonOvernetProfit": 0.9832234926570107,
-        "cashFlowFromOperatingOverNetProfit": 0.10428278602229159,
-        "operatingProfit": 1174507278.17,
-        "financialProfit": 298248942.47,
-        "operatingProfitOverNetProfit": 0.7974892665261375
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 87.11341,
-        "netProfitMargin": 46.53513483479784,
-        "grossProfitMinusNetProfit": 40.578275165202164,
-        "devExpenses": 127236495.49,
-        "manageExpenses": 681884971.89,
-        "devAndManageExpenses": 809121467.38,
-        "sellingExpenses": 2419363363.64,
-        "financialExpenses": -385104228,
-        "totalOperatingExpenses": 2843380603.02,
-        "sellingExpensesRatio": 0.10460999062924245,
-        "devExpensesRatio": 0.005501533502962931,
-        "manageExpensesRatio": 0.02948378139128022,
-        "devAndManageExpensesRatio": 0.034985314894243155,
-        "totalOperatingExpensesRatio": 12.294392
+        "year": "2026Q1",
+        "grossProfitMargin": 85.817777,
+        "netProfitMargin": 46.21021756255142,
+        "grossProfitMinusNetProfit": 39.607559437448586,
+        "devExpenses": 37311445,
+        "manageExpenses": 190528875.16,
+        "devAndManageExpenses": 227840320.16,
+        "sellingExpenses": 687685678.58,
+        "financialExpenses": -105205792.9,
+        "totalOperatingExpenses": 810320205.84,
+        "sellingExpensesRatio": 0.08569106025529466,
+        "devExpensesRatio": 0.004649300372677702,
+        "manageExpensesRatio": 0.02374140080308472,
+        "devAndManageExpensesRatio": 0.028390701175762423,
+        "totalOperatingExpensesRatio": 10.097228
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 86.624118,
+        "netProfitMargin": 42.092065813466476,
+        "grossProfitMinusNetProfit": 44.53205218653352,
+        "devExpenses": 215855671.81,
+        "manageExpenses": 962421600.8,
+        "devAndManageExpenses": 1178277272.61,
+        "sellingExpenses": 3237149369.15,
+        "financialExpenses": -511995793.73,
+        "totalOperatingExpenses": 3903430848.03,
+        "sellingExpensesRatio": 0.12580731528659034,
+        "devExpensesRatio": 0.008388930958391343,
+        "manageExpensesRatio": 0.03740317914408234,
+        "devAndManageExpensesRatio": 0.04579211010247368,
+        "totalOperatingExpensesRatio": 15.170141
       },
       {
         "year": "2024",
@@ -125940,41 +126151,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.0639446216395472,
         "devAndManageExpensesRatio": 0.0639446216395472,
         "totalOperatingExpensesRatio": 24.378364
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 49.396131,
-        "netProfitMargin": 21.343680844068093,
-        "grossProfitMinusNetProfit": 28.052450155931904,
-        "devExpenses": 0,
-        "manageExpenses": 442522121.2,
-        "devAndManageExpenses": 442522121.2,
-        "sellingExpenses": 873874602.76,
-        "financialExpenses": -58347994.3,
-        "totalOperatingExpenses": 1258048729.66,
-        "sellingExpensesRatio": 0.12664486055228444,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.06413180123746741,
-        "devAndManageExpensesRatio": 0.06413180123746741,
-        "totalOperatingExpensesRatio": 18.179833
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 47621953207.69,
-        "cash": 31744503028.23,
-        "inventory": 13747352903.12,
-        "nonCurrentAssets": 17874076325.14,
+        "year": "2026Q1",
+        "currentAssets": 47909671817.12,
+        "cash": 29886113437.36,
+        "inventory": 15116434668.42,
+        "nonCurrentAssets": 18257011094.64,
         "goodwill": 0,
-        "totalAssets": 65496029532.83,
-        "equity": 49679770305.29,
-        "interestFreeLiabilities": 5233927210.35,
-        "interestBearingDebt": 6812488662.5199995,
-        "interestExpense": 125045963.68,
-        "interestFreeLiabilitiesOverTotal": 0.07991212975324688,
-        "interestBearingDebtOverTotal": 0.10401376558414473,
-        "debtRatio": 23.926677
+        "totalAssets": 66166682911.76,
+        "equity": 51598622667.87,
+        "interestFreeLiabilities": 4049184108.84,
+        "interestBearingDebt": 6686714740.59,
+        "interestExpense": 32357136.81,
+        "interestFreeLiabilitiesOverTotal": 0.061196722136426254,
+        "interestBearingDebtOverTotal": 0.10105863625515903,
+        "debtRatio": 21.813703
+      },
+      {
+        "year": "2025",
+        "currentAssets": 46388315622.5,
+        "cash": 27341566698.37,
+        "inventory": 15396031707.35,
+        "nonCurrentAssets": 18406679228.77,
+        "goodwill": 0,
+        "totalAssets": 64794994851.27,
+        "equity": 49780293635.74,
+        "interestFreeLiabilities": 4782879599.99,
+        "interestBearingDebt": 6717058714.589999,
+        "interestExpense": 157503475.68,
+        "interestFreeLiabilitiesOverTotal": 0.07381557188126321,
+        "interestBearingDebtOverTotal": 0.10366632067813712,
+        "debtRatio": 22.997011
       },
       {
         "year": "2024",
@@ -126119,42 +126329,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.11441286042145392,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 18.644102
-      },
-      {
-        "year": "2015",
-        "currentAssets": 9385191430.55,
-        "cash": 3546111282.07,
-        "inventory": 2859998734.39,
-        "nonCurrentAssets": 3819205972.34,
-        "goodwill": 0,
-        "totalAssets": 13204397402.89,
-        "equity": 10272688921.43,
-        "interestFreeLiabilities": 1924578726.94,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.14575286309686306,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 21.388212
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.427659317476066,
-        "wc": 9890673716.7,
-        "receivables": 1214700120.9499998,
-        "prepayments": 162547902.98,
-        "inventory": 13747352903.12,
-        "accountsPayable": 1391991485.85,
-        "customerAdvances": 3889942.66,
-        "contractLiabilities": 3838045781.84,
-        "receivablesToRevenueRatio": 0.05252198581644186,
-        "prepaymentsToRevenueRatio": 0.007028350872420261,
-        "inventoryToRevenueRatio": 0.5944168949506596,
-        "accountsPayableToRevenueRatio": 0.06018782398674918,
-        "advancesToRevenueRatio": 0.0001681958449592531,
-        "contractLiabilitiesToRevenueRatio": 0.16595189433174728,
-        "changeInWC": 383667935.66000366
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 1.5164356297530603,
+        "wc": 12169659961.76,
+        "receivables": 859350787.0500001,
+        "prepayments": 243058615.13,
+        "inventory": 15116434668.42,
+        "accountsPayable": 1253354700.94,
+        "customerAdvances": 2170721.98,
+        "contractLiabilities": 2793658685.92,
+        "receivablesToRevenueRatio": 0.10708188692484147,
+        "prepaymentsToRevenueRatio": 0.030287020776237294,
+        "inventoryToRevenueRatio": 1.8836270033884575,
+        "accountsPayableToRevenueRatio": 0.1561778826356817,
+        "advancesToRevenueRatio": 0.0002704890821192714,
+        "contractLiabilitiesToRevenueRatio": 0.3481119096186748,
+        "changeInWC": -61659165.87000084
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.47535323409086333,
+        "wc": 12231319127.630001,
+        "receivables": 1472570544.6200001,
+        "prepayments": 145596475.65,
+        "inventory": 15396031707.35,
+        "accountsPayable": 1413421175.8,
+        "customerAdvances": 2014696.36,
+        "contractLiabilities": 3367443727.83,
+        "receivablesToRevenueRatio": 0.05722940947806786,
+        "prepaymentsToRevenueRatio": 0.00565840485807597,
+        "inventoryToRevenueRatio": 0.5983453941383979,
+        "accountsPayableToRevenueRatio": 0.0549306513907651,
+        "advancesToRevenueRatio": 0.00007829837652373129,
+        "contractLiabilitiesToRevenueRatio": 0.13087102461638966,
+        "changeInWC": 2724313346.590004
       },
       {
         "year": "2024",
@@ -126317,35 +126529,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.12624288522058805,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -146309870.29000044
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.47980559161251957,
-        "wc": 3310753542.9700003,
-        "receivables": 2280336490.32,
-        "prepayments": 94997045.2,
-        "inventory": 2859998734.39,
-        "accountsPayable": 326176558.16,
-        "customerAdvances": 1598402168.78,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.33047407021185154,
-        "prepaymentsToRevenueRatio": 0.013767292817797122,
-        "inventoryToRevenueRatio": 0.4144806814988842,
-        "accountsPayableToRevenueRatio": 0.0472706090703751,
-        "advancesToRevenueRatio": 0.23164584384563824,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 1446618541.8100004
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.14920222164398603,
+        "longTermOperatingAssetsPerYuanRevenue": 0.42507617523084856,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 3450668398.38,
+        "longTermOperatingAssets": 3411310318.0299997,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.41148650166730955,
+        "longTermOperatingAssetsPerYuanRevenue": 0.5449815975988705,
+        "fixedAssets": 10587963555.630001,
+        "longTermOperatingAssets": 14022927290.410002,
+        "depreciation": 793647119.8599999,
+        "depreciationOverRevenue": 0.0308439932942417
       },
       {
         "year": "2024",
@@ -126427,26 +126630,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 1599189019.47,
         "depreciation": 158120601.39000002,
         "depreciationOverRevenue": 0.01832921815086815
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.18990585827892495,
-        "longTermOperatingAssetsPerYuanRevenue": 0.22520571662381056,
-        "fixedAssets": 1310388007.3899999,
-        "longTermOperatingAssets": 1553964016.35,
-        "depreciation": 164263141.63,
-        "depreciationOverRevenue": 0.023805569586194775
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 22,
-        "roa": 21.986912,
-        "roic": 19.191373,
-        "netProfitMargin": 46.674778,
-        "assetTurnover": 34.5622,
-        "equityMultiplier": 1.314521
+        "year": "2026Q1",
+        "roe": 7.32,
+        "roa": 7.656804,
+        "roic": 6.518069,
+        "netProfitMargin": 46.479546,
+        "assetTurnover": 12.2557,
+        "equityMultiplier": 1.278996
+      },
+      {
+        "year": "2025",
+        "roe": 22.66,
+        "roa": 22.25116,
+        "roic": 19.368144,
+        "netProfitMargin": 42.205534,
+        "assetTurnover": 38.655499999999996,
+        "equityMultiplier": 1.29865
       },
       {
         "year": "2024",
@@ -126528,32 +126731,38 @@ const data: ServiceData = {
         "netProfitMargin": 23.479016,
         "assetTurnover": 61.7892,
         "equityMultiplier": 1.229167
-      },
-      {
-        "year": "2015",
-        "roe": 14.74,
-        "roa": 14.949358,
-        "roic": 14.764674,
-        "netProfitMargin": 22.473743,
-        "assetTurnover": 52.3681,
-        "equityMultiplier": 1.272073
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 65496029532.83,
-        "avgTotalAssets": 66915312548.705,
-        "avgCurrentAssets": 49239201202.79,
-        "avgInventory": 13570073689.54,
-        "equity": 49825005489.56,
-        "avgEquity": 48666506062.634995,
-        "totalAssetsDays": 781.198387,
-        "currentAssetsDays": 574.839795,
-        "wcDays": 156.09565087876408,
-        "receivablesDays": 0.128705,
-        "inventoryDays": 1229.362732,
+        "year": "2026Q1",
+        "totalAssets": 66166682911.76,
+        "avgTotalAssets": 65480838881.515,
+        "avgCurrentAssets": 47148993719.81,
+        "avgInventory": 15256233187.885,
+        "equity": 51733278718.19,
+        "avgEquity": 50813680549.325,
+        "totalAssetsDays": 734.348615,
+        "currentAssetsDays": 528.762289,
+        "wcDays": 553.499004859867,
+        "receivablesDays": 0.140465,
+        "inventoryDays": 1206.399268,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 64794994851.27,
+        "avgTotalAssets": 66564795207.925,
+        "avgCurrentAssets": 48622382410.195,
+        "avgInventory": 14394413091.654999,
+        "equity": 49894082380.46,
+        "avgEquity": 48701044508.085,
+        "totalAssetsDays": 931.301401,
+        "currentAssetsDays": 680.270895,
+        "wcDays": 173.5039304431651,
+        "receivablesDays": 0.119607,
+        "inventoryDays": 1505.626306,
+        "fixedAssetsDays": 150.19257310856798
       },
       {
         "year": "2024",
@@ -126689,24 +126898,81 @@ const data: ServiceData = {
         "receivablesDays": 0.34953,
         "inventoryDays": 308.600238,
         "fixedAssetsDays": 57.68423760709658
-      },
-      {
-        "year": "2015",
-        "totalAssets": 13204397402.89,
-        "avgTotalAssets": 13187608186.185,
-        "avgCurrentAssets": 9652389012.14,
-        "avgInventory": 2843495651.125,
-        "equity": 10361860912.69,
-        "avgEquity": 10077596436.625,
-        "totalAssetsDays": 687.440695,
-        "currentAssetsDays": 503.283598,
-        "wcDays": 175.12904093856963,
-        "receivablesDays": 0.441691,
-        "inventoryDays": 293.165174,
-        "fixedAssetsDays": 69.3156382718076
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "酒类销售",
+        "mainBusinessIncome": 25731010647.32,
+        "mbiRatio": 1,
+        "mainBusinessCost": 3441749582.69,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 22289261064.63,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.866241
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "中高档酒类",
+        "mainBusinessIncome": 22967954695.59,
+        "mbiRatio": 0.892618,
+        "mainBusinessCost": 2080399388.33,
+        "mbcRatio": 0.60446,
+        "mainBusinessProfit": 20887555307.26,
+        "mbpRatio": 0.937113,
+        "grossProfitRatio": 0.909422
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他酒类",
+        "mainBusinessIncome": 2637587357.62,
+        "mbiRatio": 0.102506,
+        "mainBusinessCost": 1317009724.41,
+        "mbcRatio": 0.382657,
+        "mainBusinessProfit": 1320577633.21,
+        "mbpRatio": 0.059247,
+        "grossProfitRatio": 0.500676
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他收入",
+        "mainBusinessIncome": 125468594.11,
+        "mbiRatio": 0.004876,
+        "mainBusinessCost": 44340469.95,
+        "mbcRatio": 0.012883,
+        "mainBusinessProfit": 81128124.16,
+        "mbpRatio": 0.00364,
+        "grossProfitRatio": 0.646601
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "境内",
+        "mainBusinessIncome": 25534165136.8,
+        "mbiRatio": 0.99235,
+        "mainBusinessCost": 3412604641.73,
+        "mbcRatio": 0.991532,
+        "mainBusinessProfit": 22121560495.07,
+        "mbpRatio": 0.992476,
+        "grossProfitRatio": 0.866351
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "境外",
+        "mainBusinessIncome": 196845510.52,
+        "mbiRatio": 0.00765,
+        "mainBusinessCost": 29144940.96,
+        "mbcRatio": 0.008468,
+        "mainBusinessProfit": 167700569.56,
+        "mbpRatio": 0.007524,
+        "grossProfitRatio": 0.85194
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -127558,141 +127824,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 607059455,
         "mbpRatio": 0.117092,
         "grossProfitRatio": 0.622495
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "酒类",
-        "mainBusinessIncome": 6571346480.83,
-        "mbiRatio": 0.952347,
-        "mainBusinessCost": 3459568104.76,
-        "mbcRatio": 0.990784,
-        "mainBusinessProfit": 3111778376.07,
-        "mbpRatio": 0.912971,
-        "grossProfitRatio": 0.473537
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 328810445.8,
-        "mbiRatio": 0.047653,
-        "mainBusinessCost": 32178263.8,
-        "mbcRatio": 0.009216,
-        "mainBusinessProfit": 296632182,
-        "mbpRatio": 0.087029,
-        "grossProfitRatio": 0.902137
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "低档酒类",
-        "mainBusinessIncome": 3410269402.16,
-        "mbiRatio": 0.494231,
-        "mainBusinessCost": 2499140183.76,
-        "mbcRatio": 0.715728,
-        "mainBusinessProfit": 911129218.4,
-        "mbpRatio": 0.267318,
-        "grossProfitRatio": 0.267172
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "中档酒类",
-        "mainBusinessIncome": 1619215888.05,
-        "mbiRatio": 0.234664,
-        "mainBusinessCost": 687693936.2,
-        "mbcRatio": 0.196948,
-        "mainBusinessProfit": 931521951.85,
-        "mbpRatio": 0.273301,
-        "grossProfitRatio": 0.575292
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "高档酒类",
-        "mainBusinessIncome": 1541861190.62,
-        "mbiRatio": 0.223453,
-        "mainBusinessCost": 272733984.8,
-        "mbcRatio": 0.078108,
-        "mainBusinessProfit": 1269127205.82,
-        "mbpRatio": 0.372352,
-        "grossProfitRatio": 0.823114
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 328810445.8,
-        "mbiRatio": 0.047653,
-        "mainBusinessCost": 32178263.8,
-        "mbcRatio": 0.009216,
-        "mainBusinessProfit": 296632182,
-        "mbpRatio": 0.087029,
-        "grossProfitRatio": 0.902137
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "西南地区",
-        "mainBusinessIncome": 3487724227.21,
-        "mbiRatio": 0.505456,
-        "mainBusinessCost": 1546437468.15,
-        "mbcRatio": 0.442884,
-        "mainBusinessProfit": 1941286759.06,
-        "mbpRatio": 0.569558,
-        "grossProfitRatio": 0.556606
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "其他地区",
-        "mainBusinessIncome": 1609597245.55,
-        "mbiRatio": 0.23327,
-        "mainBusinessCost": 1015929800.53,
-        "mbcRatio": 0.290952,
-        "mainBusinessProfit": 593667445.02,
-        "mbpRatio": 0.174177,
-        "grossProfitRatio": 0.36883
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华北地区",
-        "mainBusinessIncome": 986898259.79,
-        "mbiRatio": 0.143025,
-        "mainBusinessCost": 466436881.71,
-        "mbcRatio": 0.133583,
-        "mainBusinessProfit": 520461378.08,
-        "mbpRatio": 0.152699,
-        "grossProfitRatio": 0.527371
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华中地区",
-        "mainBusinessIncome": 815937194.08,
-        "mbiRatio": 0.118249,
-        "mainBusinessCost": 462942218.17,
-        "mbcRatio": 0.132582,
-        "mainBusinessProfit": 352994975.91,
-        "mbpRatio": 0.103566,
-        "grossProfitRatio": 0.432625
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 1472756220.64,
-          "profit_tb": 0.67398,
-          "basicEps": 1.05,
-          "totalSharesOutstanding": 1402252476,
-          "dps": 0.8,
-          "dividendRatio": 0.7617024223550795,
-          "totalDividend": 1121801980.8,
-          "totalDividendA": 1121801980.8
-        },
         {
           "year": "2016",
           "profit": 1957193264.5,
@@ -127791,51 +127926,79 @@ const data: ServiceData = {
           "dividendRatio": 0.6501156974807535,
           "totalDividend": 8759000000,
           "totalDividendA": 8759000000
+        },
+        {
+          "year": "2025",
+          "profit": 10830713936.14,
+          "profit_tb": -0.19612,
+          "basicEps": 7.36,
+          "totalSharesOutstanding": 1471941963,
+          "dps": 5.775,
+          "dividendRatio": 0.1845582108008657,
+          "totalDividend": 1998897185.75,
+          "totalDividendA": 1998897185.75
         }
       ],
-      "cash": 31744503028.23,
-      "interestBearingDebt": 6812488662.5199995,
-      "debtRatio": 23.926677,
-      "interestBearingDebtOverTotal": 0.10401376558414473,
-      "roe": 30.44,
-      "roic": 25.058457,
-      "roa": 28.123899,
-      "grossProfitMargin": 87.53659,
-      "netProfitMargin": 43.267313,
-      "tradingFinancialAssets": 709720591.06,
-      "longTermEquityInvestment": 2888775482.32,
-      "minorityInterest": 145235184.27
+      "cash": 29886113437.36,
+      "interestBearingDebt": 6686714740.59,
+      "debtRatio": 21.813703,
+      "interestBearingDebtOverTotal": 0.10105863625515903,
+      "roe": 22.66,
+      "roic": 19.368144,
+      "roa": 22.25116,
+      "grossProfitMargin": 86.624118,
+      "netProfitMargin": 42.205534,
+      "tradingFinancialAssets": 1507953548.02,
+      "longTermEquityInvestment": 2973833464.3,
+      "minorityInterest": 134656050.32
     },
     "dynamicData": {
       "code": "000568",
-      "price": 100.42,
-      "marketValue": 147812411924,
-      "PB": 2.98,
-      "PE_TTM": 11.69,
+      "price": 99.05,
+      "marketValue": 145795851435,
+      "PB": 2.83,
+      "PE_TTM": 14.66,
       "totalSharesOutstanding": 1471941963
     },
     "recentYearData": {
-      "netProfit": 12642339975.28
+      "netProfit": 9946383844.189999
     }
   },
   "000596": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 16424640732.91,
-        "netProfit": 3960203363.47,
-        "netProfitMargin": 0.24111354567013166,
-        "netProfitExcludingNon": 3907907549.27,
-        "coreProfit": 5008865724.759998,
-        "cashFlowFromOperating": 2627053477.01,
-        "fcf": 1263001224.7400002,
-        "capex": 1364052252.27,
-        "fcfOverNetProfit": 0.31892332509746074,
-        "netProfitExcludingNonOvernetProfit": 0.9867946644653679,
-        "cashFlowFromOperatingOverNetProfit": 0.6633632760485638,
-        "operatingProfit": 3980676084.85,
-        "financialProfit": -20472721.38,
-        "operatingProfitOverNetProfit": 1.0051696136538961
+        "year": "2026Q1",
+        "revenue": 7445774807.1,
+        "netProfit": 1606873496.41,
+        "netProfitMargin": 0.2158101121830529,
+        "netProfitExcludingNon": 1598294341.71,
+        "coreProfit": 2101474924.7700005,
+        "cashFlowFromOperating": 1911371366.34,
+        "fcf": 1605602889.1299999,
+        "capex": 305768477.21,
+        "fcfOverNetProfit": 0.9992092673861142,
+        "netProfitExcludingNonOvernetProfit": 0.9946609644634956,
+        "cashFlowFromOperatingOverNetProfit": 1.1894971014272713,
+        "operatingProfit": 1616912523.25,
+        "financialProfit": -10039026.84,
+        "operatingProfitOverNetProfit": 1.0062475526931203
+      },
+      {
+        "year": "2025",
+        "revenue": 18831982591.24,
+        "netProfit": 3549108530.34,
+        "netProfitMargin": 0.18846175718062338,
+        "netProfitExcludingNon": 3489463594.3,
+        "coreProfit": 4891969862.690001,
+        "cashFlowFromOperating": 1947212977,
+        "fcf": 284087304.21000004,
+        "capex": 1663125672.79,
+        "fcfOverNetProfit": 0.08004469341566876,
+        "netProfitExcludingNonOvernetProfit": 0.9831943893712695,
+        "cashFlowFromOperatingOverNetProfit": 0.548648473371272,
+        "operatingProfit": 3573405931.19,
+        "financialProfit": -24297400.85,
+        "operatingProfitOverNetProfit": 1.0068460574373228
       },
       {
         "year": "2024",
@@ -127989,42 +128152,42 @@ const data: ServiceData = {
         "operatingProfit": 731798200.56,
         "financialProfit": 97831862.82,
         "operatingProfitOverNetProfit": 0.8820777270034998
-      },
-      {
-        "year": "2015",
-        "revenue": 5253411479.4,
-        "netProfit": 715578369.68,
-        "netProfitMargin": 0.13621213043866254,
-        "netProfitExcludingNon": 682760794.86,
-        "coreProfit": 852046522.78,
-        "cashFlowFromOperating": 790109535.01,
-        "fcf": 552340477.21,
-        "capex": 237769057.8,
-        "fcfOverNetProfit": 0.7718797837014018,
-        "netProfitExcludingNonOvernetProfit": 0.9541383918093057,
-        "cashFlowFromOperatingOverNetProfit": 1.1041551400768719,
-        "operatingProfit": 646280135.9699999,
-        "financialProfit": 69298233.71,
-        "operatingProfitOverNetProfit": 0.9031577299618635
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 79.866859,
-        "netProfitMargin": 24.111354567013166,
-        "grossProfitMinusNetProfit": 55.75550443298684,
-        "devExpenses": 62205547.04,
-        "manageExpenses": 971999271.92,
-        "devAndManageExpenses": 1034204818.9599999,
-        "sellingExpenses": 4507564685.02,
-        "financialExpenses": -433059383.91,
-        "totalOperatingExpenses": 5108710120.070001,
-        "sellingExpensesRatio": 0.2744391648085311,
-        "devExpensesRatio": 0.003787330758191803,
-        "manageExpensesRatio": 0.05917933230481006,
-        "devAndManageExpensesRatio": 0.06296666306300186,
-        "totalOperatingExpensesRatio": 31.103938
+        "year": "2026Q1",
+        "grossProfitMargin": 77.845659,
+        "netProfitMargin": 21.581011218305292,
+        "grossProfitMinusNetProfit": 56.264647781694705,
+        "devExpenses": 17141256.73,
+        "manageExpenses": 385215352.89,
+        "devAndManageExpenses": 402356609.62,
+        "sellingExpenses": 1987978306.02,
+        "financialExpenses": -116456593.64,
+        "totalOperatingExpenses": 2273878322,
+        "sellingExpensesRatio": 0.26699414869817734,
+        "devExpensesRatio": 0.0023021454682801805,
+        "manageExpensesRatio": 0.05173610038846107,
+        "devAndManageExpensesRatio": 0.05403824585674125,
+        "totalOperatingExpensesRatio": 30.539176
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 79.256035,
+        "netProfitMargin": 18.846175718062337,
+        "grossProfitMinusNetProfit": 60.409859281937656,
+        "devExpenses": 88190543.64,
+        "manageExpenses": 1454681864.68,
+        "devAndManageExpenses": 1542872408.3200002,
+        "sellingExpenses": 5458012676.27,
+        "financialExpenses": -524281825.11,
+        "totalOperatingExpenses": 6476603259.4800005,
+        "sellingExpensesRatio": 0.289826769424101,
+        "devExpensesRatio": 0.00468301960309921,
+        "manageExpensesRatio": 0.07724528512237838,
+        "devAndManageExpensesRatio": 0.0819283047254776,
+        "totalOperatingExpensesRatio": 34.39151
       },
       {
         "year": "2024",
@@ -128178,41 +128341,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.09248800417342981,
         "devAndManageExpensesRatio": 0.09248800417342981,
         "totalOperatingExpensesRatio": 41.654099
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 71.265603,
-        "netProfitMargin": 13.621213043866254,
-        "grossProfitMinusNetProfit": 57.64438995613374,
-        "devExpenses": 0,
-        "manageExpenses": 543822606.51,
-        "devAndManageExpenses": 543822606.51,
-        "sellingExpenses": 1557800618.96,
-        "financialExpenses": -20334406.4,
-        "totalOperatingExpenses": 2081288819.07,
-        "sellingExpensesRatio": 0.2965312397607809,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.10351799181207691,
-        "devAndManageExpensesRatio": 0.10351799181207691,
-        "totalOperatingExpensesRatio": 39.617852
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 26219018464.21,
-        "cash": 14403385449.42,
-        "inventory": 9846548269.21,
-        "nonCurrentAssets": 12005182546.84,
-        "goodwill": 561364385.01,
-        "totalAssets": 38224201011.05,
-        "equity": 25461538228.14,
-        "interestFreeLiabilities": 4716456568.61,
-        "interestBearingDebt": 473390758.23,
-        "interestExpense": 7915316.24,
-        "interestFreeLiabilitiesOverTotal": 0.12338927809757352,
-        "interestBearingDebtOverTotal": 0.012384582168065471,
-        "debtRatio": 30.549301
+        "year": "2026Q1",
+        "currentAssets": 28823589650.08,
+        "cash": 14515715094.68,
+        "inventory": 10462631408.08,
+        "nonCurrentAssets": 11799060983.99,
+        "goodwill": 246753998.67,
+        "totalAssets": 40622650634.07,
+        "equity": 26124052021.95,
+        "interestFreeLiabilities": 5265621387.940001,
+        "interestBearingDebt": 593900394.87,
+        "interestExpense": 3428308.75,
+        "interestFreeLiabilitiesOverTotal": 0.12962279185996178,
+        "interestBearingDebtOverTotal": 0.014619932121610472,
+        "debtRatio": 32.970852
+      },
+      {
+        "year": "2025",
+        "currentAssets": 26430783979.78,
+        "cash": 14187463729.81,
+        "inventory": 10739794676.82,
+        "nonCurrentAssets": 11766249022,
+        "goodwill": 246753998.67,
+        "totalAssets": 38197033001.78,
+        "equity": 25050216942.36,
+        "interestFreeLiabilities": 5295011471.86,
+        "interestBearingDebt": 582422564.63,
+        "interestExpense": 10592597.93,
+        "interestFreeLiabilitiesOverTotal": 0.13862363266836064,
+        "interestBearingDebtOverTotal": 0.015247848297611463,
+        "debtRatio": 31.659615
       },
       {
         "year": "2024",
@@ -128357,42 +128519,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.11174892838781939,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 31.998724
-      },
-      {
-        "year": "2015",
-        "currentAssets": 4618706310.71,
-        "cash": 1087319158.77,
-        "inventory": 1396712050.87,
-        "nonCurrentAssets": 2564441330.42,
-        "goodwill": 0,
-        "totalAssets": 7183147641.13,
-        "equity": 4833721630.08,
-        "interestFreeLiabilities": 1080521187.57,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.1504244714925587,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 32.707472
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.44730135529962073,
-        "wc": 7346764060.139998,
-        "receivables": 838233765.88,
-        "prepayments": 197929705.08,
-        "inventory": 9846548269.21,
-        "accountsPayable": 2191908921.75,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 1.2478709168480513,
+        "wc": 9291365835.18,
+        "receivables": 3128973181.8599997,
+        "prepayments": 148110419.05,
+        "inventory": 10462631408.08,
+        "accountsPayable": 2143552239.81,
         "customerAdvances": 0,
-        "contractLiabilities": 1344038758.28,
-        "receivablesToRevenueRatio": 0.05103513553270202,
-        "prepaymentsToRevenueRatio": 0.01205077835787354,
-        "inventoryToRevenueRatio": 0.5994985479031211,
-        "accountsPayableToRevenueRatio": 0.13345247286645845,
+        "contractLiabilities": 2304796934,
+        "receivablesToRevenueRatio": 0.42023473217002655,
+        "prepaymentsToRevenueRatio": 0.019891874638589352,
+        "inventoryToRevenueRatio": 1.40517698683329,
+        "accountsPayableToRevenueRatio": 0.28788840588705317,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.08183063362761743,
-        "changeInWC": 1224657625.4700012
+        "contractLiabilitiesToRevenueRatio": 0.3095442709068015,
+        "changeInWC": 1309394136.8499994
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.4238519051118358,
+        "wc": 7981971698.330001,
+        "receivables": 949655453.2399999,
+        "prepayments": 115292227.12,
+        "inventory": 10739794676.82,
+        "accountsPayable": 2302888169.15,
+        "customerAdvances": 0,
+        "contractLiabilities": 1519882489.7,
+        "receivablesToRevenueRatio": 0.05042780008100407,
+        "prepaymentsToRevenueRatio": 0.006122150260144677,
+        "inventoryToRevenueRatio": 0.5702954866693529,
+        "accountsPayableToRevenueRatio": 0.12228601837287303,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.08070751352579296,
+        "changeInWC": 1859865263.6600037
       },
       {
         "year": "2024",
@@ -128555,35 +128719,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.10370213013194482,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 408204618.4000001
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.19696220486391014,
-        "wc": 1034723508.04,
-        "receivables": 544390978.15,
-        "prepayments": 80373083.59,
-        "inventory": 1396712050.87,
-        "accountsPayable": 378187452.07,
-        "customerAdvances": 608565152.5,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.10362618277374605,
-        "prepaymentsToRevenueRatio": 0.01529921726199516,
-        "inventoryToRevenueRatio": 0.26586762836813244,
-        "accountsPayableToRevenueRatio": 0.0719889263487111,
-        "advancesToRevenueRatio": 0.11584189719125242,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 43735400.49000013
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.1323912161824645,
+        "longTermOperatingAssetsPerYuanRevenue": 0.25109605641137817,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 2174478161.99,
+        "longTermOperatingAssets": 1869604690.9900002,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.493331204287093,
+        "longTermOperatingAssetsPerYuanRevenue": 0.5936785533866531,
+        "fixedAssets": 9290404650.85,
+        "longTermOperatingAssets": 11180144182.17,
+        "depreciation": 798982124.85,
+        "depreciationOverRevenue": 0.0424268725281033
       },
       {
         "year": "2024",
@@ -128665,26 +128820,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 3216064651,
         "depreciation": 246053628.54,
         "depreciationOverRevenue": 0.04089209804857815
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.334994872046649,
-        "longTermOperatingAssetsPerYuanRevenue": 0.4161208051667166,
-        "fixedAssets": 1759865906.35,
-        "longTermOperatingAssets": 2186053814.68,
-        "depreciation": 214429025.55,
-        "depreciationOverRevenue": 0.04081710073365323
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 15.48,
-        "roa": 13.902123,
-        "roic": 15.604734,
-        "netProfitMargin": 24.862014,
-        "assetTurnover": 41.7151,
-        "equityMultiplier": 1.43987
+        "year": "2026Q1",
+        "roe": 6.3,
+        "roa": 5.620937,
+        "roic": 6.15199,
+        "netProfitMargin": 22.258348,
+        "assetTurnover": 18.8931,
+        "equityMultiplier": 1.491888
+      },
+      {
+        "year": "2025",
+        "roe": 14.28,
+        "roa": 12.944046,
+        "roic": 14.082324,
+        "netProfitMargin": 19.331589,
+        "assetTurnover": 47.8458,
+        "equityMultiplier": 1.463263
       },
       {
         "year": "2024",
@@ -128766,32 +128921,38 @@ const data: ServiceData = {
         "netProfitMargin": 14.13159,
         "assetTurnover": 75.5953,
         "equityMultiplier": 1.47056
-      },
-      {
-        "year": "2015",
-        "roe": 15.91,
-        "roa": 14.213329,
-        "roic": 15.875683,
-        "netProfitMargin": 13.621213,
-        "assetTurnover": 77.2749,
-        "equityMultiplier": 1.486049
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 38224201011.05,
-        "avgTotalAssets": 39373307356.57,
-        "avgCurrentAssets": 27515475891.905,
-        "avgInventory": 9555384552.895,
-        "equity": 26546974449.82,
-        "avgEquity": 26120380586.575,
-        "totalAssetsDays": 647.246607,
-        "currentAssetsDays": 452.319086,
-        "wcDays": 163.26499468436157,
-        "receivablesDays": 1.101071,
-        "inventoryDays": 780.197457,
+        "year": "2026Q1",
+        "totalAssets": 40622650634.07,
+        "avgTotalAssets": 39409841817.925,
+        "avgCurrentAssets": 27627186814.93,
+        "avgInventory": 10601213042.45,
+        "equity": 27229016488.04,
+        "avgEquity": 26666507926.06,
+        "totalAssetsDays": 476.362212,
+        "currentAssetsDays": 333.940641,
+        "wcDays": 455.47288464953874,
+        "receivablesDays": 0.887973,
+        "inventoryDays": 578.401418,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 38197033001.78,
+        "avgTotalAssets": 39359723351.935,
+        "avgCurrentAssets": 27621358649.69,
+        "avgInventory": 10002007756.7,
+        "equity": 26103999364.08,
+        "avgEquity": 25898893043.705,
+        "totalAssetsDays": 752.416817,
+        "currentAssetsDays": 528.021362,
+        "wcDays": 154.70594536582007,
+        "receivablesDays": 1.183463,
+        "inventoryDays": 921.726093,
+        "fixedAssetsDays": 180.06588956478896
       },
       {
         "year": "2024",
@@ -128927,24 +129088,105 @@ const data: ServiceData = {
         "receivablesDays": 0.515586,
         "inventoryDays": 376.064231,
         "fixedAssetsDays": 117.89323036059601
-      },
-      {
-        "year": "2015",
-        "totalAssets": 7183147641.13,
-        "avgTotalAssets": 6798332903.58,
-        "avgCurrentAssets": 4312195747.55,
-        "avgInventory": 1311947412.48,
-        "equity": 4833721630.08,
-        "avgEquity": 4507386304.02,
-        "totalAssetsDays": 465.868675,
-        "currentAssetsDays": 295.501404,
-        "wcDays": 71.8912047753272,
-        "receivablesDays": 0.318171,
-        "inventoryDays": 312.878286,
-        "fixedAssetsDays": 122.27312829702689
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "制造业",
+        "mainBusinessIncome": 18831982591.24,
+        "mbiRatio": 1,
+        "mainBusinessCost": 3906499790.17,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 14925482801.07,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.79256
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "白酒业务",
+        "mainBusinessIncome": 18539724067.11,
+        "mbiRatio": 0.984481,
+        "mainBusinessCost": 3808689558.79,
+        "mbcRatio": 0.974962,
+        "mainBusinessProfit": 14731034508.32,
+        "mbpRatio": 0.986972,
+        "grossProfitRatio": 0.794566
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 203622344.69,
+        "mbiRatio": 0.010813,
+        "mainBusinessCost": 53583931.72,
+        "mbcRatio": 0.013717,
+        "mainBusinessProfit": 150038412.97,
+        "mbpRatio": 0.010052,
+        "grossProfitRatio": 0.736847
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "酒店业务",
+        "mainBusinessIncome": 88636179.44,
+        "mbiRatio": 0.004707,
+        "mainBusinessCost": 44226299.66,
+        "mbcRatio": 0.011321,
+        "mainBusinessProfit": 44409879.78,
+        "mbpRatio": 0.002975,
+        "grossProfitRatio": 0.501036
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华中",
+        "mainBusinessIncome": 16647874031.21,
+        "mbiRatio": 0.884021,
+        "mainBusinessCost": 3370253577.23,
+        "mbcRatio": 0.86273,
+        "mainBusinessProfit": 13277620453.98,
+        "mbpRatio": 0.889594,
+        "grossProfitRatio": 0.797557
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华南",
+        "mainBusinessIncome": 1113246819.5,
+        "mbiRatio": 0.059115,
+        "mainBusinessCost": 231817795.24,
+        "mbcRatio": 0.059342,
+        "mainBusinessProfit": 881429024.26,
+        "mbpRatio": 0.059055,
+        "grossProfitRatio": 0.791764
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华北",
+        "mainBusinessIncome": 1058108918.58,
+        "mbiRatio": 0.056187,
+        "mainBusinessCost": 299925598.86,
+        "mbcRatio": 0.076776,
+        "mainBusinessProfit": 758183319.72,
+        "mbpRatio": 0.050798,
+        "grossProfitRatio": 0.716546
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "国际",
+        "mainBusinessIncome": 12752821.95,
+        "mbiRatio": 0.000677,
+        "mainBusinessCost": 4502818.84,
+        "mbcRatio": 0.001153,
+        "mainBusinessProfit": 8250003.11,
+        "mbpRatio": 0.000553,
+        "grossProfitRatio": 0.646916
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -129808,117 +130050,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 1297095.66,
         "mbpRatio": 0.000289,
         "grossProfitRatio": 0.752571
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "制造业",
-        "mainBusinessIncome": 5253411479.4,
-        "mbiRatio": 1,
-        "mainBusinessCost": 1509536099.28,
-        "mbcRatio": 1,
-        "mainBusinessProfit": 3743875380.12,
-        "mbpRatio": 1,
-        "grossProfitRatio": 0.712656
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "白酒业务",
-        "mainBusinessIncome": 5118622287.57,
-        "mbiRatio": 0.974343,
-        "mainBusinessCost": 1456785874.42,
-        "mbcRatio": 0.965055,
-        "mainBusinessProfit": 3661836413.15,
-        "mbpRatio": 0.978087,
-        "grossProfitRatio": 0.715395
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "酒店业务",
-        "mainBusinessIncome": 83118805.82,
-        "mbiRatio": 0.015822,
-        "mainBusinessCost": 34151473.72,
-        "mbcRatio": 0.022624,
-        "mainBusinessProfit": 48967332.1,
-        "mbpRatio": 0.013079,
-        "grossProfitRatio": 0.589125
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他",
-        "mainBusinessIncome": 51670386.01,
-        "mbiRatio": 0.009836,
-        "mainBusinessCost": 18598751.14,
-        "mbcRatio": 0.012321,
-        "mainBusinessProfit": 33071634.87,
-        "mbpRatio": 0.008834,
-        "grossProfitRatio": 0.64005
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华中",
-        "mainBusinessIncome": 4435362515.78,
-        "mbiRatio": 0.844282,
-        "mainBusinessCost": 1223283285.57,
-        "mbcRatio": 0.81037,
-        "mainBusinessProfit": 3212079230.21,
-        "mbpRatio": 0.857956,
-        "grossProfitRatio": 0.724198
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华南",
-        "mainBusinessIncome": 518051081.7,
-        "mbiRatio": 0.098612,
-        "mainBusinessCost": 168847248.71,
-        "mbcRatio": 0.111854,
-        "mainBusinessProfit": 349203832.99,
-        "mbpRatio": 0.093273,
-        "grossProfitRatio": 0.674072
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华北",
-        "mainBusinessIncome": 297439265.75,
-        "mbiRatio": 0.056618,
-        "mainBusinessCost": 116582792.92,
-        "mbcRatio": 0.077231,
-        "mainBusinessProfit": 180856472.83,
-        "mbpRatio": 0.048307,
-        "grossProfitRatio": 0.608045
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "国际",
-        "mainBusinessIncome": 2558616.17,
-        "mbiRatio": 0.000487,
-        "mainBusinessCost": 822772.08,
-        "mbcRatio": 0.000545,
-        "mainBusinessProfit": 1735844.09,
-        "mbpRatio": 0.000464,
-        "grossProfitRatio": 0.678431
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 715578369.68,
-          "profit_tb": 0.19854,
-          "basicEps": 1.42,
-          "totalSharesOutstanding": 503600000,
-          "dps": 0.1,
-          "dividendRatio": 0.07037663816266627,
-          "totalDividend": 50360000,
-          "totalDividendA": 50360000
-        },
         {
           "year": "2016",
           "profit": 829630063.38,
@@ -130017,51 +130152,79 @@ const data: ServiceData = {
           "dividendRatio": 0.5748514899862913,
           "totalDividend": 3171600000,
           "totalDividendA": 3171600000
+        },
+        {
+          "year": "2025",
+          "profit": 3549108530.34,
+          "profit_tb": -0.35673,
+          "basicEps": 6.71,
+          "totalSharesOutstanding": 528600000,
+          "dps": 4.4,
+          "dividendRatio": 0.1489388096986036,
+          "totalDividend": 528600000,
+          "totalDividendA": 528600000
         }
       ],
-      "cash": 14403385449.42,
-      "interestBearingDebt": 473390758.23,
-      "debtRatio": 30.549301,
-      "interestBearingDebtOverTotal": 0.012384582168065471,
-      "roe": 23.89,
-      "roic": 23.652488,
-      "roa": 20.546199,
-      "grossProfitMargin": 79.904703,
-      "netProfitMargin": 24.203193,
-      "tradingFinancialAssets": 50405625.78,
-      "longTermEquityInvestment": 11709217.24,
-      "minorityInterest": 1085436221.68
+      "cash": 14515715094.68,
+      "interestBearingDebt": 593900394.87,
+      "debtRatio": 32.970852,
+      "interestBearingDebtOverTotal": 0.014619932121610472,
+      "roe": 14.28,
+      "roic": 14.082324,
+      "roa": 12.944046,
+      "grossProfitMargin": 79.256035,
+      "netProfitMargin": 19.331589,
+      "tradingFinancialAssets": 200460273.97,
+      "longTermEquityInvestment": 12480029.13,
+      "minorityInterest": 1104964466.09
     },
     "dynamicData": {
       "code": "000596",
-      "price": 106.03,
-      "marketValue": 56047458000,
-      "PB": 2.2,
-      "PE_TTM": 11.85,
+      "price": 108.22,
+      "marketValue": 57205092000,
+      "PB": 2.19,
+      "PE_TTM": 20.24,
       "totalSharesOutstanding": 528600000
     },
     "recentYearData": {
-      "netProfit": 4730960610.380001
+      "netProfit": 2826138086.76
     }
   },
   "000651": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 137180093143.85,
-        "netProfit": 21461336806.54,
-        "netProfitMargin": 0.156446437049982,
-        "netProfitExcludingNon": 20584848884.47,
-        "coreProfit": 25704507440.46001,
-        "cashFlowFromOperating": 45728383685.2,
-        "fcf": 44424391097.07,
-        "capex": 1303992588.13,
-        "fcfOverNetProfit": 2.0699731567295645,
-        "netProfitExcludingNonOvernetProfit": 0.9591596772386096,
-        "cashFlowFromOperatingOverNetProfit": 2.130733238912918,
-        "operatingProfit": 20694037960.030003,
-        "financialProfit": 767298846.5099999,
-        "operatingProfitOverNetProfit": 0.9642473880622303
+        "year": "2026Q1",
+        "revenue": 42966121178.08,
+        "netProfit": 6082159344.39,
+        "netProfitMargin": 0.14155709609395534,
+        "netProfitExcludingNon": 5702183701.81,
+        "coreProfit": 6993779122.919999,
+        "cashFlowFromOperating": 7798541802.42,
+        "fcf": 7356717640.87,
+        "capex": 441824161.55,
+        "fcfOverNetProfit": 1.2095568735231532,
+        "netProfitExcludingNonOvernetProfit": 0.9375261940596019,
+        "cashFlowFromOperatingOverNetProfit": 1.2821995217230109,
+        "operatingProfit": 5610617562.96,
+        "financialProfit": 471541781.43,
+        "operatingProfitOverNetProfit": 0.922471320672495
+      },
+      {
+        "year": "2025",
+        "revenue": 170447058533.56998,
+        "netProfit": 29003103411.66,
+        "netProfitMargin": 0.17015901395533772,
+        "netProfitExcludingNon": 27706292436.94,
+        "coreProfit": 35302282377.96997,
+        "cashFlowFromOperating": 46383114754.02,
+        "fcf": 44665803685.92,
+        "capex": 1717311068.1,
+        "fcfOverNetProfit": 1.5400353214602265,
+        "netProfitExcludingNonOvernetProfit": 0.9552871650901107,
+        "cashFlowFromOperatingOverNetProfit": 1.5992466080499779,
+        "operatingProfit": 27738713590.37,
+        "financialProfit": 1264389821.29,
+        "operatingProfitOverNetProfit": 0.9564050162720972
       },
       {
         "year": "2024",
@@ -130215,42 +130378,42 @@ const data: ServiceData = {
         "operatingProfit": 14688750843.96,
         "financialProfit": 774874924.0899999,
         "operatingProfitOverNetProfit": 0.9498904761591555
-      },
-      {
-        "year": "2015",
-        "revenue": 97745137194.16,
-        "netProfit": 12532442817.66,
-        "netProfitMargin": 0.12821551206957413,
-        "netProfitExcludingNon": 12313582570.49,
-        "coreProfit": 10420800919.430008,
-        "cashFlowFromOperating": 44378381827.68,
-        "fcf": 41493868752.97,
-        "capex": 2884513074.71,
-        "fcfOverNetProfit": 3.3109162640262935,
-        "netProfitExcludingNonOvernetProfit": 0.9825365054240188,
-        "cashFlowFromOperatingOverNetProfit": 3.5410799373562294,
-        "operatingProfit": 9977542700.51,
-        "financialProfit": 2554900117.1499996,
-        "operatingProfitOverNetProfit": 0.7961371015752986
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 28.438569,
-        "netProfitMargin": 15.6446437049982,
-        "grossProfitMinusNetProfit": 12.7939252950018,
-        "devExpenses": 5621838955.1,
-        "manageExpenses": 4304378951.12,
-        "devAndManageExpenses": 9926217906.220001,
-        "sellingExpenses": 7589438377.83,
-        "financialExpenses": -3296878904.09,
-        "totalOperatingExpenses": 14218777379.960003,
-        "sellingExpensesRatio": 0.055324633508387774,
-        "devExpensesRatio": 0.04098144873837357,
-        "manageExpensesRatio": 0.03137757711395002,
-        "devAndManageExpensesRatio": 0.0723590258523236,
-        "totalOperatingExpensesRatio": 10.365044
+        "year": "2026Q1",
+        "grossProfitMargin": 27.415781,
+        "netProfitMargin": 14.155709609395533,
+        "grossProfitMinusNetProfit": 13.260071390604466,
+        "devExpenses": 1439957795.18,
+        "manageExpenses": 1822801984.21,
+        "devAndManageExpenses": 3262759779.3900003,
+        "sellingExpenses": 2598736350.58,
+        "financialExpenses": -798927362.19,
+        "totalOperatingExpenses": 5062568767.780001,
+        "sellingExpensesRatio": 0.06048338270539058,
+        "devExpensesRatio": 0.03351379542062602,
+        "manageExpensesRatio": 0.04242416895523578,
+        "devAndManageExpensesRatio": 0.0759379643758618,
+        "totalOperatingExpensesRatio": 11.782699
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 29.807323,
+        "netProfitMargin": 17.015901395533774,
+        "grossProfitMinusNetProfit": 12.791421604466226,
+        "devExpenses": 6463100763.66,
+        "manageExpenses": 5180260235.38,
+        "devAndManageExpenses": 11643360999.04,
+        "sellingExpenses": 8410739569.54,
+        "financialExpenses": -4086088396.47,
+        "totalOperatingExpenses": 15968012172.110003,
+        "sellingExpensesRatio": 0.04934517287597242,
+        "devExpensesRatio": 0.03791852331899923,
+        "manageExpensesRatio": 0.030392194972139897,
+        "devAndManageExpensesRatio": 0.06831071829113913,
+        "totalOperatingExpensesRatio": 9.368311
       },
       {
         "year": "2024",
@@ -130404,41 +130567,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.05065363865235349,
         "devAndManageExpensesRatio": 0.05065363865235349,
         "totalOperatingExpensesRatio": 15.808189
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 32.459705,
-        "netProfitMargin": 12.821551206957412,
-        "grossProfitMinusNetProfit": 19.638153793042587,
-        "devExpenses": 0,
-        "manageExpenses": 5048746635.48,
-        "devAndManageExpenses": 5048746635.48,
-        "sellingExpenses": 15506341694.21,
-        "financialExpenses": -1928797250.18,
-        "totalOperatingExpenses": 18626291079.51,
-        "sellingExpensesRatio": 0.15864054355367418,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.05165215150756009,
-        "devAndManageExpensesRatio": 0.05165215150756009,
-        "totalOperatingExpensesRatio": 19.055977
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 259917655163.96997,
-        "cash": 116235166802.51,
-        "inventory": 25341875464.64,
-        "nonCurrentAssets": 139304276337.61,
-        "goodwill": 1367729072.13,
-        "totalAssets": 399221931501.58,
-        "equity": 144424252622.96,
-        "interestFreeLiabilities": 79315707357.39,
-        "interestBearingDebt": 89867639450.09001,
-        "interestExpense": 1566330200.64,
-        "interestFreeLiabilitiesOverTotal": 0.19867572670434838,
-        "interestBearingDebtOverTotal": 0.2251069702310038,
-        "debtRatio": 62.799651
+        "year": "2026Q1",
+        "currentAssets": 242450602285.24997,
+        "cash": 125969161545.86,
+        "inventory": 25692817342.96,
+        "nonCurrentAssets": 139163000962.38,
+        "goodwill": 1324117904.09,
+        "totalAssets": 381613603247.63,
+        "equity": 152024259599.56,
+        "interestFreeLiabilities": 73928974542.37,
+        "interestBearingDebt": 73672301573.83,
+        "interestExpense": 331706418.03,
+        "interestFreeLiabilitiesOverTotal": 0.19372730404056718,
+        "interestBearingDebtOverTotal": 0.19305470493415264,
+        "debtRatio": 59.154062
+      },
+      {
+        "year": "2025",
+        "currentAssets": 250943551897.43002,
+        "cash": 110553006650.89,
+        "inventory": 28183464259.53,
+        "nonCurrentAssets": 140428447922.06,
+        "goodwill": 1324117904.09,
+        "totalAssets": 391371999819.49,
+        "equity": 145929297804.02,
+        "interestFreeLiabilities": 72854865841.37,
+        "interestBearingDebt": 85412520748.09,
+        "interestExpense": 1964864912.15,
+        "interestFreeLiabilitiesOverTotal": 0.18615247354172598,
+        "interestBearingDebtOverTotal": 0.21823871096420866,
+        "debtRatio": 61.726623
       },
       {
         "year": "2024",
@@ -130583,42 +130745,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.2669819021799722,
         "interestBearingDebtOverTotal": 0.05867657785229034,
         "debtRatio": 69.883373
-      },
-      {
-        "year": "2015",
-        "currentAssets": 120949314644.95,
-        "cash": 88819798560.53,
-        "inventory": 9473942712.51,
-        "nonCurrentAssets": 40748701670.11,
-        "goodwill": 0,
-        "totalAssets": 161698016315.06,
-        "equity": 47521376091.77,
-        "interestFreeLiabilities": 39841502169.07,
-        "interestBearingDebt": 8680405693.4,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.2463945017818954,
-        "interestBearingDebtOverTotal": 0.05368282117009209,
-        "debtRatio": 69.964623
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": -0.05064204414852778,
-        "wc": -6947080333.290005,
-        "receivables": 27098697202.86,
-        "prepayments": 2250528974.14,
-        "inventory": 25341875464.64,
-        "accountsPayable": 48342997273.93,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.06818254221129368,
+        "wc": 2929539370.879999,
+        "receivables": 31762241602.75,
+        "prepayments": 1413728487.8,
+        "inventory": 25692817342.96,
+        "accountsPayable": 43973231538.84,
         "customerAdvances": 0,
-        "contractLiabilities": 13711485538.27,
-        "receivablesToRevenueRatio": 0.19754103224324043,
-        "prepaymentsToRevenueRatio": 0.01640565276318953,
-        "inventoryToRevenueRatio": 0.1847343509095446,
-        "accountsPayableToRevenueRatio": 0.35240533933182633,
+        "contractLiabilities": 12335349636.15,
+        "receivablesToRevenueRatio": 0.7392392129395688,
+        "prepaymentsToRevenueRatio": 0.03290333055526643,
+        "inventoryToRevenueRatio": 0.5979785151299086,
+        "accountsPayableToRevenueRatio": 1.0234396387932219,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.09995244371128864,
-        "changeInWC": -3830935719.629999
+        "contractLiabilitiesToRevenueRatio": 0.2870947923137897,
+        "changeInWC": 7961334456.290001
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": -0.02952116116699648,
+        "wc": -5031795085.410002,
+        "receivables": 22484215971.79,
+        "prepayments": 1211213034.38,
+        "inventory": 28183464259.53,
+        "accountsPayable": 42103940920.24,
+        "customerAdvances": 0,
+        "contractLiabilities": 15206576385.44,
+        "receivablesToRevenueRatio": 0.13191319442665347,
+        "prepaymentsToRevenueRatio": 0.007106095257968026,
+        "inventoryToRevenueRatio": 0.16535025304633927,
+        "accountsPayableToRevenueRatio": 0.24702063668612692,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.08921583344569732,
+        "changeInWC": -1915650471.7499962
       },
       {
         "year": "2024",
@@ -130781,35 +130945,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.09253599384975027,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 8397253817.640006
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.044329334712713296,
-        "wc": -4332976903.22,
-        "receivables": 17759017649.89,
-        "prepayments": 847929149.71,
-        "inventory": 9473942712.51,
-        "accountsPayable": 24794268372.47,
-        "customerAdvances": 7619598042.86,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.1816869683717734,
-        "prepaymentsToRevenueRatio": 0.008674898558131661,
-        "inventoryToRevenueRatio": 0.09692495181311221,
-        "accountsPayableToRevenueRatio": 0.2536624233614702,
-        "advancesToRevenueRatio": 0.07795373009426038,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -34452806501.54001
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.08824576546252849,
+        "longTermOperatingAssetsPerYuanRevenue": 0.27406061751805066,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 12105562325.7,
+        "longTermOperatingAssets": 11775321702.42,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.21443795601249008,
+        "longTermOperatingAssetsPerYuanRevenue": 0.28426406193731557,
+        "fixedAssets": 36550318840.28,
+        "longTermOperatingAssets": 48451973204.01999,
+        "depreciation": 5054584486.969999,
+        "depreciationOverRevenue": 0.029654864862185264
       },
       {
         "year": "2024",
@@ -130891,26 +131046,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 21606356885.440002,
         "depreciation": 1816675466.04,
         "depreciationOverRevenue": 0.016774076044398893
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.17876657632604967,
-        "longTermOperatingAssetsPerYuanRevenue": 0.2060244662239134,
-        "fixedAssets": 17473563528.72,
-        "longTermOperatingAssets": 20137889716.41,
-        "depreciation": 1317727100.01,
-        "depreciationOverRevenue": 0.013481254800353695
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 15.16,
-        "roa": 6.954059,
-        "roic": 10.331675,
-        "netProfitMargin": 15.728891,
-        "assetTurnover": 35.8821,
-        "equityMultiplier": 2.688146
+        "year": "2026Q1",
+        "roe": 4.07,
+        "roa": 1.889704,
+        "roic": 2.804219,
+        "netProfitMargin": 14.194456,
+        "assetTurnover": 11.1464,
+        "equityMultiplier": 2.448223
+      },
+      {
+        "year": "2025",
+        "roe": 20.3,
+        "roa": 9.64165,
+        "roic": 13.987236,
+        "netProfitMargin": 16.933554,
+        "assetTurnover": 45.0664,
+        "equityMultiplier": 2.612782
       },
       {
         "year": "2024",
@@ -130992,32 +131147,38 @@ const data: ServiceData = {
         "netProfitMargin": 14.334503,
         "assetTurnover": 64.0066,
         "equityMultiplier": 3.320425
-      },
-      {
-        "year": "2015",
-        "roe": 27.31,
-        "roa": 9.679389,
-        "roic": 23.603085,
-        "netProfitMargin": 12.914946,
-        "assetTurnover": 63.2622,
-        "equityMultiplier": 3.329407
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 399221931501.58,
-        "avgTotalAssets": 383626818012.22003,
-        "avgCurrentAssets": 242360281907.925,
-        "avgInventory": 26626392990.095,
-        "equity": 148511948520.35,
-        "avgEquity": 145012821734.16,
-        "totalAssetsDays": 752.463374,
-        "currentAssetsDays": 475.37666,
-        "wcDays": -18.48434611421264,
-        "receivablesDays": 31.345523,
-        "inventoryDays": 73.23286,
+        "year": "2026Q1",
+        "totalAssets": 381613603247.63,
+        "avgTotalAssets": 386492801533.56,
+        "avgCurrentAssets": 246697077091.34,
+        "avgInventory": 26938140801.245,
+        "equity": 155873653605.12,
+        "avgEquity": 152832467139.91,
+        "totalAssetsDays": 807.428796,
+        "currentAssetsDays": 515.37913,
+        "wcDays": 24.886627907122193,
+        "receivablesDays": 35.340516,
+        "inventoryDays": 77.739505,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 391371999819.49,
+        "avgTotalAssets": 379701852171.17505,
+        "avgCurrentAssets": 237873230274.65503,
+        "avgInventory": 28047187387.54,
+        "equity": 149791280674.7,
+        "avgEquity": 145652487811.33502,
+        "totalAssetsDays": 798.820334,
+        "currentAssetsDays": 500.439943,
+        "wcDays": -10.775223825953715,
+        "receivablesDays": 34.658458,
+        "inventoryDays": 84.393791,
+        "fixedAssetsDays": 78.26985394455888
       },
       {
         "year": "2024",
@@ -131153,24 +131314,129 @@ const data: ServiceData = {
         "receivablesDays": 9.70572,
         "inventoryDays": 45.685166,
         "fixedAssetsDays": 61.5060287951964
-      },
-      {
-        "year": "2015",
-        "totalAssets": 161698016315.06,
-        "avgTotalAssets": 158964482397.47,
-        "avgCurrentAssets": 120546396734.025,
-        "avgInventory": 9036520404.24,
-        "equity": 48566608577.92,
-        "avgEquity": 46849029794.05,
-        "totalAssetsDays": 569.060056,
-        "currentAssetsDays": 431.531234,
-        "wcDays": -16.180207170140353,
-        "receivablesDays": 10.203072,
-        "inventoryDays": 49.277154,
-        "fixedAssetsDays": 65.24980035900813
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "制造业",
+        "mainBusinessIncome": 153781972343.46,
+        "mbiRatio": 0.902227,
+        "mainBusinessCost": 103423626894.66,
+        "mbcRatio": 0.864447,
+        "mainBusinessProfit": 50358345448.8,
+        "mbpRatio": 0.991195,
+        "grossProfitRatio": 0.327466
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 16665086190.11,
+        "mbiRatio": 0.097773,
+        "mainBusinessCost": 16217726321.55,
+        "mbcRatio": 0.135553,
+        "mainBusinessProfit": 447359868.56,
+        "mbpRatio": 0.008805,
+        "grossProfitRatio": 0.026844
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "消费电器",
+        "mainBusinessIncome": 133055208627.13,
+        "mbiRatio": 0.780625,
+        "mainBusinessCost": 86112528829.42,
+        "mbcRatio": 0.719756,
+        "mainBusinessProfit": 46942679797.71,
+        "mbpRatio": 0.923965,
+        "grossProfitRatio": 0.352806
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "工业制品及绿色能源",
+        "mainBusinessIncome": 17380701260.95,
+        "mbiRatio": 0.101971,
+        "mainBusinessCost": 14680898286.93,
+        "mbcRatio": 0.122708,
+        "mainBusinessProfit": 2699802974.02,
+        "mbpRatio": 0.05314,
+        "grossProfitRatio": 0.155333
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 16665086190.11,
+        "mbiRatio": 0.097773,
+        "mainBusinessCost": 16217726321.55,
+        "mbcRatio": 0.135553,
+        "mainBusinessProfit": 447359868.56,
+        "mbpRatio": 0.008805,
+        "grossProfitRatio": 0.026844
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 2665271980.81,
+        "mbiRatio": 0.015637,
+        "mainBusinessCost": 2089869829.91,
+        "mbcRatio": 0.017468,
+        "mainBusinessProfit": 575402150.9,
+        "mbpRatio": 0.011326,
+        "grossProfitRatio": 0.215889
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "智能装备",
+        "mainBusinessIncome": 680790474.57,
+        "mbiRatio": 0.003994,
+        "mainBusinessCost": 540329948.4,
+        "mbcRatio": 0.004516,
+        "mainBusinessProfit": 140460526.17,
+        "mbpRatio": 0.002765,
+        "grossProfitRatio": 0.20632
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "内销-主营业务",
+        "mainBusinessIncome": 126407077425.42,
+        "mbiRatio": 0.741621,
+        "mainBusinessCost": 82766067955.42,
+        "mbcRatio": 0.691785,
+        "mainBusinessProfit": 43641009470,
+        "mbpRatio": 0.858979,
+        "grossProfitRatio": 0.345242
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "外销-主营业务",
+        "mainBusinessIncome": 27374894918.04,
+        "mbiRatio": 0.160606,
+        "mainBusinessCost": 20657558939.24,
+        "mbcRatio": 0.172662,
+        "mainBusinessProfit": 6717335978.8,
+        "mbpRatio": 0.132216,
+        "grossProfitRatio": 0.245383
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 16665086190.11,
+        "mbiRatio": 0.097773,
+        "mainBusinessCost": 16217726321.55,
+        "mbcRatio": 0.135553,
+        "mainBusinessProfit": 447359868.56,
+        "mbpRatio": 0.008805,
+        "grossProfitRatio": 0.026844
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -132310,129 +132576,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 925638248.22,
         "mbpRatio": 0.026135,
         "grossProfitRatio": 0.061241
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "家电制造",
-        "mainBusinessIncome": 87930981568.34,
-        "mbiRatio": 0.899594,
-        "mainBusinessCost": 57397354027.1,
-        "mbcRatio": 0.869428,
-        "mainBusinessProfit": 30533627541.24,
-        "mbpRatio": 0.962362,
-        "grossProfitRatio": 0.347245
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 9814155625.82,
-        "mbiRatio": 0.100406,
-        "mainBusinessCost": 8619999717.99,
-        "mbcRatio": 0.130572,
-        "mainBusinessProfit": 1194155907.83,
-        "mbpRatio": 0.037638,
-        "grossProfitRatio": 0.121677
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "空调",
-        "mainBusinessIncome": 83717936071.67,
-        "mbiRatio": 0.856492,
-        "mainBusinessCost": 53581503247.77,
-        "mbcRatio": 0.811628,
-        "mainBusinessProfit": 30136432823.9,
-        "mbpRatio": 0.949844,
-        "grossProfitRatio": 0.359976
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 9814155625.82,
-        "mbiRatio": 0.100406,
-        "mainBusinessCost": 8619999717.99,
-        "mbcRatio": 0.130572,
-        "mainBusinessProfit": 1194155907.83,
-        "mbpRatio": 0.037638,
-        "grossProfitRatio": 0.121677
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他",
-        "mainBusinessIncome": 2690368815.81,
-        "mbiRatio": 0.027524,
-        "mainBusinessCost": 2606390108.08,
-        "mbcRatio": 0.03948,
-        "mainBusinessProfit": 83978707.73,
-        "mbpRatio": 0.002647,
-        "grossProfitRatio": 0.031215
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "生活电器",
-        "mainBusinessIncome": 1522676680.86,
-        "mbiRatio": 0.015578,
-        "mainBusinessCost": 1209460671.25,
-        "mbcRatio": 0.01832,
-        "mainBusinessProfit": 313216009.61,
-        "mbpRatio": 0.009872,
-        "grossProfitRatio": 0.205701
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "内销",
-        "mainBusinessIncome": 74596089512.78,
-        "mbiRatio": 0.763169,
-        "mainBusinessCost": 46279216061.59,
-        "mbcRatio": 0.701016,
-        "mainBusinessProfit": 28316873451.19,
-        "mbpRatio": 0.892495,
-        "grossProfitRatio": 0.379603
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "外销",
-        "mainBusinessIncome": 13334892055.56,
-        "mbiRatio": 0.136425,
-        "mainBusinessCost": 11118137965.51,
-        "mbcRatio": 0.168412,
-        "mainBusinessProfit": 2216754090.05,
-        "mbpRatio": 0.069868,
-        "grossProfitRatio": 0.166237
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 9814155625.82,
-        "mbiRatio": 0.100406,
-        "mainBusinessCost": 8619999717.99,
-        "mbcRatio": 0.130572,
-        "mainBusinessProfit": 1194155907.83,
-        "mbpRatio": 0.037638,
-        "grossProfitRatio": 0.121677
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 12532442817.66,
-          "profit_tb": -0.11464,
-          "basicEps": 2.08,
-          "totalSharesOutstanding": 6015730878,
-          "dps": 1.5,
-          "dividendRatio": 0.7200189498797844,
-          "totalDividend": 9023596317,
-          "totalDividendA": 9023596317
-        },
         {
           "year": "2016",
           "profit": 15463625768.05,
@@ -132531,31 +132678,42 @@ const data: ServiceData = {
           "dividendRatio": 0.5206040046267371,
           "totalDividend": 16755416223,
           "totalDividendA": 16755416223
+        },
+        {
+          "year": "2025",
+          "profit": 29003103411.66,
+          "profit_tb": -0.09885,
+          "basicEps": 5.2,
+          "totalSharesOutstanding": 5601405741,
+          "dps": 3,
+          "dividendRatio": 0.19257038330438217,
+          "totalDividend": 5585138741,
+          "totalDividendA": 5585138741
         }
       ],
-      "cash": 116235166802.51,
-      "interestBearingDebt": 89867639450.09001,
-      "debtRatio": 62.799651,
-      "interestBearingDebtOverTotal": 0.2251069702310038,
-      "roe": 25.42,
-      "roic": 16.653255,
-      "roa": 10.672572,
-      "grossProfitMargin": 29.42824,
-      "netProfitMargin": 17.112732,
-      "tradingFinancialAssets": 29690090532.12,
-      "longTermEquityInvestment": 4758298527.49,
-      "minorityInterest": 4087695897.39
+      "cash": 125969161545.86,
+      "interestBearingDebt": 73672301573.83,
+      "debtRatio": 59.154062,
+      "interestBearingDebtOverTotal": 0.19305470493415264,
+      "roe": 20.3,
+      "roic": 13.987236,
+      "roa": 9.64165,
+      "grossProfitMargin": 29.807323,
+      "netProfitMargin": 16.933554,
+      "tradingFinancialAssets": 28449005278.98,
+      "longTermEquityInvestment": 3885472139.45,
+      "minorityInterest": 3849394005.56
     },
     "dynamicData": {
       "code": "000651",
-      "price": 37.5,
-      "marketValue": 210052715288,
-      "PB": 1.45,
-      "PE_TTM": 6.63,
+      "price": 39.89,
+      "marketValue": 223440075008,
+      "PB": 1.47,
+      "PE_TTM": 7.66,
       "totalSharesOutstanding": 5601405741
     },
     "recentYearData": {
-      "netProfit": 31685010177.64
+      "netProfit": 29180803312.59
     }
   },
   "000690": {
@@ -134642,6 +134800,23 @@ const data: ServiceData = {
   "000786": {
     "basicRevenueData": [
       {
+        "year": "2026Q1",
+        "revenue": 6163591626.19,
+        "netProfit": 803824624.41,
+        "netProfitMargin": 0.13041497119868095,
+        "netProfitExcludingNon": 775918665.94,
+        "coreProfit": 1055817684.6799998,
+        "cashFlowFromOperating": -605585966.53,
+        "fcf": -829839304.74,
+        "capex": 224253338.21,
+        "fcfOverNetProfit": -1.0323636270151522,
+        "netProfitExcludingNonOvernetProfit": 0.9652835237655445,
+        "cashFlowFromOperatingOverNetProfit": -0.753380710343994,
+        "operatingProfit": 794529914.4499999,
+        "financialProfit": 9294709.959999999,
+        "operatingProfitOverNetProfit": 0.9884368932255313
+      },
+      {
         "year": "2025",
         "revenue": 25280261918.22,
         "netProfit": 2906380291.66,
@@ -134810,26 +134985,26 @@ const data: ServiceData = {
         "operatingProfit": 1127024943.23,
         "financialProfit": 44043700.72,
         "operatingProfitOverNetProfit": 0.9623901630809265
-      },
-      {
-        "year": "2015",
-        "revenue": 7551178831.11,
-        "netProfit": 896876216.48,
-        "netProfitMargin": 0.11877300704162531,
-        "netProfitExcludingNon": 854611776.68,
-        "coreProfit": 1485104695.5699995,
-        "cashFlowFromOperating": 1909119848.65,
-        "fcf": 1072588963.07,
-        "capex": 836530885.58,
-        "fcfOverNetProfit": 1.1959163855181998,
-        "netProfitExcludingNonOvernetProfit": 0.9528759498541763,
-        "cashFlowFromOperatingOverNetProfit": 2.128632484137874,
-        "operatingProfit": 801225461.63,
-        "financialProfit": 95650754.85000001,
-        "operatingProfitOverNetProfit": 0.8933512193852082
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 29.582116,
+        "netProfitMargin": 13.041497119868096,
+        "grossProfitMinusNetProfit": 16.540618880131902,
+        "devExpenses": 203997900.59,
+        "manageExpenses": 294708031.91,
+        "devAndManageExpenses": 498705932.5,
+        "sellingExpenses": 388941083.79,
+        "financialExpenses": 6115911.48,
+        "totalOperatingExpenses": 893762927.77,
+        "sellingExpensesRatio": 0.06310299373782854,
+        "devExpensesRatio": 0.03309724474982787,
+        "manageExpensesRatio": 0.04781433452822258,
+        "devAndManageExpensesRatio": 0.08091157927805044,
+        "totalOperatingExpensesRatio": 14.500683
+      },
       {
         "year": "2025",
         "grossProfitMargin": 28.81493,
@@ -134999,26 +135174,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.08110112945747204,
         "devAndManageExpensesRatio": 0.08110112945747204,
         "totalOperatingExpensesRatio": 12.701462
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 31.256145,
-        "netProfitMargin": 11.877300704162531,
-        "grossProfitMinusNetProfit": 19.378844295837467,
-        "devExpenses": 0,
-        "manageExpenses": 553110841.23,
-        "devAndManageExpenses": 553110841.23,
-        "sellingExpenses": 281911160.74,
-        "financialExpenses": 130532844.52,
-        "totalOperatingExpenses": 965554846.49,
-        "sellingExpensesRatio": 0.03733339747941845,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.07324827733535406,
-        "devAndManageExpensesRatio": 0.07324827733535406,
-        "totalOperatingExpensesRatio": 12.786809
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 13561202295.7,
+        "cash": 2431397914.11,
+        "inventory": 2588755688.18,
+        "nonCurrentAssets": 23704293851.75,
+        "goodwill": 2389865950.34,
+        "totalAssets": 37265496147.45,
+        "equity": 27938168043.39,
+        "interestFreeLiabilities": 3526807381.92,
+        "interestBearingDebt": 748710213.46,
+        "interestExpense": 7689384.24,
+        "interestFreeLiabilitiesOverTotal": 0.09464002217937283,
+        "interestBearingDebtOverTotal": 0.020091245008453558,
+        "debtRatio": 21.666149
+      },
       {
         "year": "2025",
         "currentAssets": 12397274295.26,
@@ -135178,25 +135352,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.06015545190075128,
         "interestBearingDebtOverTotal": 0.15774737526125043,
         "debtRatio": 27.082248
-      },
-      {
-        "year": "2015",
-        "currentAssets": 4279822644.52,
-        "cash": 547801211.6,
-        "inventory": 1376757071.36,
-        "nonCurrentAssets": 9324545672.81,
-        "goodwill": 28889670.58,
-        "totalAssets": 13604368317.33,
-        "equity": 7801049824.13,
-        "interestFreeLiabilities": 1221364149.6499999,
-        "interestBearingDebt": 2321634065.7,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.08977735100674673,
-        "interestBearingDebtOverTotal": 0.17065357328958622,
-        "debtRatio": 31.923166
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.9415541145410569,
+        "wc": 5803355055.989998,
+        "receivables": 5971918968.059999,
+        "prepayments": 335373958.78,
+        "inventory": 2588755688.18,
+        "accountsPayable": 2770585938.13,
+        "customerAdvances": 739054.29,
+        "contractLiabilities": 473944952.01,
+        "receivablesToRevenueRatio": 0.9689024403700669,
+        "prepaymentsToRevenueRatio": 0.054412099165516925,
+        "inventoryToRevenueRatio": 0.4200076587131437,
+        "accountsPayableToRevenueRatio": 0.44950835586792875,
+        "advancesToRevenueRatio": 0.00011990643358973534,
+        "contractLiabilitiesToRevenueRatio": 0.0768942818982586,
+        "changeInWC": 2498830868.8599987
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.13071558347852247,
@@ -135376,27 +135552,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.010114815612088853,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -280623084.64000034
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.17154109539339163,
-        "wc": 1295337488.2,
-        "receivables": 236494113.2,
-        "prepayments": 342346863.82,
-        "inventory": 1376757071.36,
-        "accountsPayable": 590854195.57,
-        "customerAdvances": 69406364.61,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.03131883358736931,
-        "prepaymentsToRevenueRatio": 0.04533687672838177,
-        "inventoryToRevenueRatio": 0.1823234626212158,
-        "accountsPayableToRevenueRatio": 0.07824661669191939,
-        "advancesToRevenueRatio": 0.009191460851655857,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -413372883.76
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 1.001877602737473,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 6175164402.7,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.6508823890669788,
@@ -135486,18 +135653,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 9210886341.23,
         "depreciation": 406168670.48,
         "depreciationOverRevenue": 0.04979950086386913
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.9865428288942985,
-        "longTermOperatingAssetsPerYuanRevenue": 1.1848288550484296,
-        "fixedAssets": 7449561325.530001,
-        "longTermOperatingAssets": 8946854568.73,
-        "depreciation": 371565418.78,
-        "depreciationOverRevenue": 0.04920627985251688
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.92,
+        "roa": 2.503076,
+        "roic": 2.867577,
+        "netProfitMargin": 13.377305,
+        "assetTurnover": 16.8051,
+        "equityMultiplier": 1.276587
+      },
       {
         "year": "2025",
         "roe": 11.11,
@@ -135587,18 +135754,24 @@ const data: ServiceData = {
         "netProfitMargin": 17.966931,
         "assetTurnover": 58.3542,
         "equityMultiplier": 1.371408
-      },
-      {
-        "year": "2015",
-        "roe": 11.95,
-        "roa": 11.474319,
-        "roic": 10.522238,
-        "netProfitMargin": 16.100545,
-        "assetTurnover": 55.9824,
-        "equityMultiplier": 1.468928
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 37265496147.45,
+        "avgTotalAssets": 36676785045.494995,
+        "avgCurrentAssets": 12979238295.48,
+        "avgInventory": 2527652769.04,
+        "equity": 29191497904.57,
+        "avgEquity": 28742560829.495,
+        "totalAssetsDays": 535.549863,
+        "currentAssetsDays": 189.521226,
+        "wcDays": 343.66725180748574,
+        "receivablesDays": 55.617867,
+        "inventoryDays": 52.413492,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 36088073943.54,
@@ -135748,21 +135921,6 @@ const data: ServiceData = {
         "receivablesDays": 5.251501,
         "inventoryDays": 88.157685,
         "fixedAssetsDays": 344.5161829650517
-      },
-      {
-        "year": "2015",
-        "totalAssets": 13604368317.33,
-        "avgTotalAssets": 13488465685.025,
-        "avgCurrentAssets": 4654519604.05,
-        "avgInventory": 1503053749.5149999,
-        "equity": 9261423170.4,
-        "avgEquity": 8893287286.404999,
-        "totalAssetsDays": 643.058223,
-        "currentAssetsDays": 221.902711,
-        "wcDays": 62.61249981858795,
-        "receivablesDays": 10.039141,
-        "inventoryDays": 104.238553,
-        "fixedAssetsDays": 360.0881325464189
       }
     ],
     "primaryBusinessData": [
@@ -137032,33 +137190,50 @@ const data: ServiceData = {
           "totalDividendA": 0
         }
       ],
-      "cash": 1463103318.19,
-      "interestBearingDebt": 747256340.71,
-      "debtRatio": 21.59841,
-      "interestBearingDebtOverTotal": 0.020706462247863017,
+      "cash": 2431397914.11,
+      "interestBearingDebt": 748710213.46,
+      "debtRatio": 21.666149,
+      "interestBearingDebtOverTotal": 0.020091245008453558,
       "roe": 11.11,
       "roic": 10.688535,
       "roa": 9.318636,
       "grossProfitMargin": 28.81493,
       "netProfitMargin": 11.861653,
-      "tradingFinancialAssets": 4279944217.24,
-      "longTermEquityInvestment": 253722677.38,
-      "minorityInterest": 1128477866.59
+      "tradingFinancialAssets": 1551334001.17,
+      "longTermEquityInvestment": 234426664.07,
+      "minorityInterest": 1253329861.18
     },
     "dynamicData": {
       "code": "000786",
-      "price": 25.02,
-      "marketValue": 42589945771,
-      "PB": 1.57,
-      "PE_TTM": 14.65,
+      "price": 26.56,
+      "marketValue": 45211389276,
+      "PB": 1.62,
+      "PE_TTM": 15.76,
       "totalSharesOutstanding": 1702236042
     },
     "recentYearData": {
-      "netProfit": 2906380291.66
+      "netProfit": 2867985569.9999995
     }
   },
   "000792": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 6431955107.5,
+        "netProfit": 3026668895.57,
+        "netProfitMargin": 0.47056747831475754,
+        "netProfitExcludingNon": 2884110426.95,
+        "coreProfit": 3804903158.25,
+        "cashFlowFromOperating": 3085047416.7,
+        "fcf": 2908776782.1699996,
+        "capex": 176270634.53,
+        "fcfOverNetProfit": 0.9610488898959004,
+        "netProfitExcludingNonOvernetProfit": 0.952899219062694,
+        "cashFlowFromOperatingOverNetProfit": 1.0192880434379346,
+        "operatingProfit": 2806365468.69,
+        "financialProfit": 220303426.88,
+        "operatingProfitOverNetProfit": 0.9272125777608352
+      },
       {
         "year": "2025",
         "revenue": 15501243782.06,
@@ -137228,26 +137403,26 @@ const data: ServiceData = {
         "operatingProfit": 36001105.40999997,
         "financialProfit": 305263629.97,
         "operatingProfitOverNetProfit": 0.1054931895319115
-      },
-      {
-        "year": "2015",
-        "revenue": 10882222496.33,
-        "netProfit": 558966247.06,
-        "netProfitMargin": 0.05136508165023365,
-        "netProfitExcludingNon": 146877050.96,
-        "coreProfit": 2364935134.1800003,
-        "cashFlowFromOperating": 753060427.43,
-        "fcf": -4367170860.559999,
-        "capex": 5120231287.99,
-        "fcfOverNetProfit": -7.812941986264912,
-        "netProfitExcludingNonOvernetProfit": 0.2627655099615238,
-        "cashFlowFromOperatingOverNetProfit": 1.3472377471643038,
-        "operatingProfit": 537447440.2199999,
-        "financialProfit": 21518806.84,
-        "operatingProfitOverNetProfit": 0.9615024933022652
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 68.722459,
+        "netProfitMargin": 47.056747831475754,
+        "grossProfitMinusNetProfit": 21.665711168524247,
+        "devExpenses": 20128593.71,
+        "manageExpenses": 162537222.27,
+        "devAndManageExpenses": 182665815.98000002,
+        "sellingExpenses": 19281325.17,
+        "financialExpenses": -72979811.06,
+        "totalOperatingExpenses": 128967330.09000003,
+        "sellingExpensesRatio": 0.0029977393883730556,
+        "devExpensesRatio": 0.0031294673817808517,
+        "manageExpensesRatio": 0.02527026690227875,
+        "devAndManageExpensesRatio": 0.0283997342840596,
+        "totalOperatingExpensesRatio": 2.005103
+      },
       {
         "year": "2025",
         "grossProfitMargin": 57.855135,
@@ -137417,40 +137592,39 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.07112023321616973,
         "devAndManageExpensesRatio": 0.07112023321616973,
         "totalOperatingExpensesRatio": 28.89554
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 52.288064,
-        "netProfitMargin": 5.136508165023365,
-        "grossProfitMinusNetProfit": 47.151555834976634,
-        "devExpenses": 0,
-        "manageExpenses": 669421549.33,
-        "devAndManageExpenses": 669421549.33,
-        "sellingExpenses": 1879272411.99,
-        "financialExpenses": 1011891907.13,
-        "totalOperatingExpenses": 3560585868.4500003,
-        "sellingExpensesRatio": 0.17269196734617212,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.06151515001239505,
-        "devAndManageExpensesRatio": 0.06151515001239505,
-        "totalOperatingExpensesRatio": 32.719289
       }
     ],
     "balanceData": [
       {
-        "year": "2025",
-        "currentAssets": 36492693204.34,
-        "cash": 23272810303.63,
-        "inventory": 1207752468.01,
-        "nonCurrentAssets": 19288893994.44,
+        "year": "2026Q1",
+        "currentAssets": 37459512777.03,
+        "cash": 27840962258.53,
+        "inventory": 1260300029.85,
+        "nonCurrentAssets": 20943006933.22,
         "goodwill": 0,
-        "totalAssets": 55781587198.78,
-        "equity": 44959155289.94,
-        "interestFreeLiabilities": 3258077922.15,
+        "totalAssets": 58402519710.25,
+        "equity": 44694940955.99,
+        "interestFreeLiabilities": 3836795567.9199996,
+        "interestBearingDebt": 1343799829.5300002,
+        "interestExpense": 6192553.07,
+        "interestFreeLiabilitiesOverTotal": 0.06569571975584845,
+        "interestBearingDebtOverTotal": 0.023009278301637303,
+        "debtRatio": 15.848554
+      },
+      {
+        "year": "2025",
+        "currentAssets": 39605513573.47,
+        "cash": 24413658914.66,
+        "inventory": 1390497465.51,
+        "nonCurrentAssets": 21558397955.44,
+        "goodwill": 0,
+        "totalAssets": 61163911528.91,
+        "equity": 46274967430.36,
+        "interestFreeLiabilities": 3713801246.81,
         "interestBearingDebt": 2736968293.6600003,
         "interestExpense": 20083429.94,
-        "interestFreeLiabilitiesOverTotal": 0.05840776653664773,
-        "interestBearingDebtOverTotal": 0.049065801657932395,
+        "interestFreeLiabilitiesOverTotal": 0.06071883164396081,
+        "interestBearingDebtOverTotal": 0.04474809123949394,
         "debtRatio": 14.153183
       },
       {
@@ -137596,42 +137770,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.10093536602838957,
         "interestBearingDebtOverTotal": 0.5369207586300941,
         "debtRatio": 68.206343
-      },
-      {
-        "year": "2015",
-        "currentAssets": 16818478920.68,
-        "cash": 9030655247.76,
-        "inventory": 2870351351.76,
-        "nonCurrentAssets": 63894728536.63,
-        "goodwill": 21340512.9,
-        "totalAssets": 80713207457.31,
-        "equity": 22910904838.09,
-        "interestFreeLiabilities": 7048682869.86,
-        "interestBearingDebt": 41376009173.83,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.08732998095247443,
-        "interestBearingDebtOverTotal": 0.5126299706985895,
-        "debtRatio": 69.667362
       }
     ],
     "workingCapitalData": [
       {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.2181329784568928,
+        "wc": 1403021524.8999991,
+        "receivables": 3600500112.33,
+        "prepayments": 363624849.28,
+        "inventory": 1260300029.85,
+        "accountsPayable": 2769178055.78,
+        "customerAdvances": 8151909.64,
+        "contractLiabilities": 1044073501.14,
+        "receivablesToRevenueRatio": 0.5597831533574645,
+        "prepaymentsToRevenueRatio": 0.05653410871229405,
+        "inventoryToRevenueRatio": 0.19594353641872023,
+        "accountsPayableToRevenueRatio": 0.4305344190837079,
+        "advancesToRevenueRatio": 0.00126740773275834,
+        "contractLiabilitiesToRevenueRatio": 0.16232599321511978,
+        "changeInWC": 750994303.0399996
+      },
+      {
         "year": "2025",
-        "wcPerYuanRevenue": 0.022309408140540984,
-        "wc": 345823574.2199997,
-        "receivables": 2057094822.01,
-        "prepayments": 325136746.42,
-        "inventory": 1207752468.01,
-        "accountsPayable": 2645018710.87,
+        "wcPerYuanRevenue": 0.04206289708278815,
+        "wc": 652027221.8599995,
+        "receivables": 2619705350.61,
+        "prepayments": 341708192.62,
+        "inventory": 1390497465.51,
+        "accountsPayable": 3023239498.01,
         "customerAdvances": 7625875.44,
-        "contractLiabilities": 591515875.91,
-        "receivablesToRevenueRatio": 0.13270514617612364,
-        "prepaymentsToRevenueRatio": 0.020974881176714956,
-        "inventoryToRevenueRatio": 0.07791326199306432,
-        "accountsPayableToRevenueRatio": 0.17063267619409678,
+        "contractLiabilities": 669018413.43,
+        "receivablesToRevenueRatio": 0.16899968721489655,
+        "prepaymentsToRevenueRatio": 0.022043920953973253,
+        "inventoryToRevenueRatio": 0.08970231583089221,
+        "accountsPayableToRevenueRatio": 0.19503205939570317,
         "advancesToRevenueRatio": 0.0004919524876336457,
-        "contractLiabilitiesToRevenueRatio": 0.03815925252363149,
-        "changeInWC": -2863010259.3000007
+        "contractLiabilitiesToRevenueRatio": 0.043159015033637026,
+        "changeInWC": -2556806611.660001
       },
       {
         "year": "2024",
@@ -137794,33 +137970,24 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.12237929228470244,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -113684268.32999992
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": -0.20180572246437953,
-        "wc": -2196094772.8899994,
-        "receivables": 1384980075.37,
-        "prepayments": 235766605.84,
-        "inventory": 2870351351.76,
-        "accountsPayable": 6163991075.16,
-        "customerAdvances": 523201730.7,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.1272699649209599,
-        "prepaymentsToRevenueRatio": 0.021665299153689574,
-        "inventoryToRevenueRatio": 0.2637651778143682,
-        "accountsPayableToRevenueRatio": 0.5664275911688802,
-        "advancesToRevenueRatio": 0.048078573184517075,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -823547629.7299998
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.15483987364568216,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 995923116.14,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.8018207861071551,
-        "longTermOperatingAssetsPerYuanRevenue": 0.8550636274845146,
+        "longTermOperatingAssetsPerYuanRevenue": 0.8694144309527791,
         "fixedAssets": 12429219474.97,
-        "longTermOperatingAssets": 13254549738.81,
+        "longTermOperatingAssets": 13477005041.84,
         "depreciation": 1022622851.75,
         "depreciationOverRevenue": 0.06597037412788183
       },
@@ -137904,18 +138071,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 66615145011.06999,
         "depreciation": 1239259733.47,
         "depreciationOverRevenue": 0.11957189558045322
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 5.658099072402281,
-        "longTermOperatingAssetsPerYuanRevenue": 5.730641475342143,
-        "fixedAssets": 61572693012.16,
-        "longTermOperatingAssets": 62362115581.37,
-        "depreciation": 1295851781.8799999,
-        "depreciationOverRevenue": 0.11907969923579695
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 6.54,
+        "roa": 6.851819,
+        "roic": 6.570771,
+        "netProfitMargin": 54.255979,
+        "assetTurnover": 10.758700000000001,
+        "equityMultiplier": 1.188333
+      },
       {
         "year": "2025",
         "roe": 22.3,
@@ -138005,29 +138172,35 @@ const data: ServiceData = {
         "netProfitMargin": 2.022276,
         "assetTurnover": 12.6655,
         "equityMultiplier": 3.145281
-      },
-      {
-        "year": "2015",
-        "roe": 3.13,
-        "roa": 2.362519,
-        "roic": 2.572696,
-        "netProfitMargin": 5.001139,
-        "assetTurnover": 14.645,
-        "equityMultiplier": 3.296778
       }
     ],
     "turnoverRateData": [
       {
+        "year": "2026Q1",
+        "totalAssets": 58402519710.25,
+        "avgTotalAssets": 59783215619.58,
+        "avgCurrentAssets": 38532513175.25,
+        "avgInventory": 1325398747.6799998,
+        "equity": 49146564782.48,
+        "avgEquity": 49806652571.635,
+        "totalAssetsDays": 836.524713,
+        "currentAssetsDays": 539.171391,
+        "wcDays": 79.61853713676587,
+        "receivablesDays": 2.340029,
+        "inventoryDays": 59.294371,
+        "fixedAssetsDays": 0
+      },
+      {
         "year": "2025",
-        "totalAssets": 55781587198.78,
-        "avgTotalAssets": 50782219066.815,
-        "avgCurrentAssets": 32127047437.065,
-        "avgInventory": 1095990334.7,
-        "equity": 47886716556.05,
-        "avgEquity": 43740375150.05,
+        "totalAssets": 61163911528.91,
+        "avgTotalAssets": 53473381231.880005,
+        "avgCurrentAssets": 33683457621.63,
+        "avgInventory": 1187362833.45,
+        "equity": 50466740360.79,
+        "avgEquity": 45030387052.42,
         "totalAssetsDays": 1179.363354,
         "currentAssetsDays": 746.116714,
-        "wcDays": 8.14293397129746,
+        "wcDays": 15.352957435217675,
         "receivablesDays": 4.043861,
         "inventoryDays": 60.394587,
         "fixedAssetsDays": 292.6645869291116
@@ -138166,21 +138339,6 @@ const data: ServiceData = {
         "receivablesDays": 14.633664,
         "inventoryDays": 189.663912,
         "fixedAssetsDays": 2316.012706012103
-      },
-      {
-        "year": "2015",
-        "totalAssets": 80713207457.31,
-        "avgTotalAssets": 74306256809.82,
-        "avgCurrentAssets": 14078794461.875,
-        "avgInventory": 2760120551.26,
-        "equity": 24482444730.31,
-        "avgEquity": 21881148651.83,
-        "totalAssetsDays": 2458.160771,
-        "currentAssetsDays": 465.747323,
-        "wcDays": -73.65908869949853,
-        "receivablesDays": 12.048923,
-        "inventoryDays": 191.375312,
-        "fixedAssetsDays": 2065.2061614268323
       }
     ],
     "primaryBusinessData": [
@@ -139606,49 +139764,66 @@ const data: ServiceData = {
           "totalDividendA": 0
         }
       ],
-      "cash": 23272810303.63,
-      "interestBearingDebt": 2736968293.6600003,
-      "debtRatio": 14.153183,
-      "interestBearingDebtOverTotal": 0.049065801657932395,
+      "cash": 27840962258.53,
+      "interestBearingDebt": 1343799829.5300002,
+      "debtRatio": 15.848554,
+      "interestBearingDebtOverTotal": 0.023009278301637303,
       "roe": 22.3,
       "roic": 19.660699,
       "roa": 14.202855,
       "grossProfitMargin": 57.855135,
       "netProfitMargin": 57.715183,
-      "tradingFinancialAssets": 6630812.15,
-      "longTermEquityInvestment": 385837584.63,
-      "minorityInterest": 2927561266.11
+      "tradingFinancialAssets": 6310043.62,
+      "longTermEquityInvestment": 495688732.31,
+      "minorityInterest": 4451623826.49
     },
     "dynamicData": {
       "code": "000792",
-      "price": 36.89,
-      "marketValue": 195206111037,
-      "PB": 4.22,
-      "PE_TTM": 19.01,
+      "price": 38.92,
+      "marketValue": 205948003296,
+      "PB": 4.61,
+      "PE_TTM": 19.97,
       "totalSharesOutstanding": 5291572541
     },
     "recentYearData": {
-      "netProfit": 8475535262.69
+      "netProfit": 10314269161.23
     }
   },
   "000858": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 60945321083.57,
-        "netProfit": 21511276550.29,
-        "netProfitMargin": 0.35296026286895943,
-        "netProfitExcludingNon": 21494962886.91,
-        "coreProfit": 27618632830.659996,
-        "cashFlowFromOperating": 28247488416.94,
-        "fcf": 26758959595.92,
-        "capex": 1488528821.02,
-        "fcfOverNetProfit": 1.2439503315092313,
-        "netProfitExcludingNonOvernetProfit": 0.9992416227209081,
-        "cashFlowFromOperatingOverNetProfit": 1.313147936660188,
-        "operatingProfit": 21459883228.670002,
-        "financialProfit": 51393321.62,
-        "operatingProfitOverNetProfit": 0.9976108660264839
+        "year": "2026Q1",
+        "revenue": 22838024164.27,
+        "netProfit": 8062764940.78,
+        "netProfitMargin": 0.35304126498798283,
+        "netProfitExcludingNon": 8036134136.04,
+        "coreProfit": 10204608255.51,
+        "cashFlowFromOperating": -2535371232.04,
+        "fcf": -2881814876.19,
+        "capex": 346443644.15,
+        "fcfOverNetProfit": -0.3574226580281789,
+        "netProfitExcludingNonOvernetProfit": 0.9966970629882429,
+        "cashFlowFromOperatingOverNetProfit": -0.3144543156921955,
+        "operatingProfit": 8062764940.78,
+        "financialProfit": 0,
+        "operatingProfitOverNetProfit": 1
+      },
+      {
+        "year": "2025",
+        "revenue": 40528509770.23,
+        "netProfit": 8954257202.51,
+        "netProfitMargin": 0.22093724277736215,
+        "netProfitExcludingNon": 8815635943.27,
+        "coreProfit": 9663373024.970003,
+        "cashFlowFromOperating": 29706259919.13,
+        "fcf": 27738852602.77,
+        "capex": 1967407316.36,
+        "fcfOverNetProfit": 3.0978396058351354,
+        "netProfitExcludingNonOvernetProfit": 0.9845189549389822,
+        "cashFlowFromOperatingOverNetProfit": 3.317557140396071,
+        "operatingProfit": 8842688715.74,
+        "financialProfit": 111568486.77,
+        "operatingProfitOverNetProfit": 0.9875401739924641
       },
       {
         "year": "2024",
@@ -139802,42 +139977,42 @@ const data: ServiceData = {
         "operatingProfit": 6751104507.389999,
         "financialProfit": 33428752.97,
         "operatingProfitOverNetProfit": 0.9950727998983637
-      },
-      {
-        "year": "2015",
-        "revenue": 21659287359.66,
-        "netProfit": 6176119256.18,
-        "netProfitMargin": 0.2851487749168932,
-        "netProfitExcludingNon": 6164002847.37,
-        "coreProfit": 7505781393.239999,
-        "cashFlowFromOperating": 6691068449.78,
-        "fcf": 6295849928.92,
-        "capex": 395218520.86,
-        "fcfOverNetProfit": 1.0193860687874823,
-        "netProfitExcludingNonOvernetProfit": 0.9980381841238126,
-        "cashFlowFromOperatingOverNetProfit": 1.08337746928781,
-        "operatingProfit": 6141974692.240001,
-        "financialProfit": 34144563.94,
-        "operatingProfitOverNetProfit": 0.9944715180320015
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 74.925515,
-        "netProfitMargin": 35.296026286895945,
-        "grossProfitMinusNetProfit": 39.62948871310406,
-        "devExpenses": 318925867.64,
-        "manageExpenses": 2298633729.54,
-        "devAndManageExpenses": 2617559597.18,
-        "sellingExpenses": 6630015165.78,
-        "financialExpenses": -2033395809.3,
-        "totalOperatingExpenses": 7214178953.659999,
-        "sellingExpensesRatio": 0.10878628659103674,
-        "devExpensesRatio": 0.005232983631387872,
-        "manageExpensesRatio": 0.03771632815566016,
-        "devAndManageExpensesRatio": 0.04294931178704803,
-        "totalOperatingExpensesRatio": 11.837133
+        "year": "2026Q1",
+        "grossProfitMargin": 81.434385,
+        "netProfitMargin": 35.30412649879828,
+        "grossProfitMinusNetProfit": 46.13025850120172,
+        "devExpenses": 121059517.95,
+        "manageExpenses": 994431022.43,
+        "devAndManageExpenses": 1115490540.3799999,
+        "sellingExpenses": 3670356443.99,
+        "financialExpenses": -533627365.13,
+        "totalOperatingExpenses": 4252219619.24,
+        "sellingExpensesRatio": 0.16071252125795796,
+        "devExpensesRatio": 0.005300787716101866,
+        "manageExpensesRatio": 0.04354277827526706,
+        "devAndManageExpensesRatio": 0.04884356599136892,
+        "totalOperatingExpensesRatio": 18.619034
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 77.541841,
+        "netProfitMargin": 22.093724277736214,
+        "grossProfitMinusNetProfit": 55.44811672226379,
+        "devExpenses": 449183817.5,
+        "manageExpenses": 3096502911.23,
+        "devAndManageExpenses": 3545686728.73,
+        "sellingExpenses": 7628615140.51,
+        "financialExpenses": -2661630589.09,
+        "totalOperatingExpenses": 8512671280.15,
+        "sellingExpensesRatio": 0.18822836526088008,
+        "devExpensesRatio": 0.011083156524791483,
+        "manageExpensesRatio": 0.07640307844490546,
+        "devAndManageExpensesRatio": 0.08748623496969693,
+        "totalOperatingExpensesRatio": 21.004155
       },
       {
         "year": "2024",
@@ -139991,41 +140166,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.08734197984251013,
         "devAndManageExpensesRatio": 0.08734197984251013,
         "totalOperatingExpensesRatio": 24.741019
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 69.195831,
-        "netProfitMargin": 28.514877491689322,
-        "grossProfitMinusNetProfit": 40.68095350831068,
-        "devExpenses": 0,
-        "manageExpenses": 2128805680.22,
-        "devAndManageExpenses": 2128805680.22,
-        "sellingExpenses": 3568061356.21,
-        "financialExpenses": -732111447.74,
-        "totalOperatingExpenses": 4964755588.690001,
-        "sellingExpensesRatio": 0.1647358612017607,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.09828604445152979,
-        "devAndManageExpensesRatio": 0.09828604445152979,
-        "totalOperatingExpensesRatio": 22.922063
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 157724237825.82,
-        "cash": 136305976701.21,
-        "inventory": 17540752483.71,
-        "nonCurrentAssets": 23349185376.95,
+        "year": "2026Q1",
+        "currentAssets": 173162335933.24997,
+        "cash": 124259000313.65,
+        "inventory": 20139576875.04,
+        "nonCurrentAssets": 25475837279.17,
         "goodwill": 1621619.53,
-        "totalAssets": 181073423202.77,
-        "equity": 142495742798.41,
-        "interestFreeLiabilities": 18692440592.4,
-        "interestBearingDebt": 498225502.15000004,
-        "interestExpense": 21402505.61,
-        "interestFreeLiabilitiesOverTotal": 0.10323127636167675,
-        "interestBearingDebtOverTotal": 0.0027515109248919217,
-        "debtRatio": 19.259003
+        "totalAssets": 198638173212.42,
+        "equity": 127996671799.63,
+        "interestFreeLiabilities": 24046884074.03,
+        "interestBearingDebt": 441104912.38,
+        "interestExpense": 3241983.24,
+        "interestFreeLiabilitiesOverTotal": 0.12105872544606369,
+        "interestBearingDebtOverTotal": 0.0022206452327181367,
+        "debtRatio": 34.313308
+      },
+      {
+        "year": "2025",
+        "currentAssets": 164751563109.67,
+        "cash": 127014443016.86,
+        "inventory": 20065336751.2,
+        "nonCurrentAssets": 25232707705.8,
+        "goodwill": 1621619.53,
+        "totalAssets": 189984270815.47,
+        "equity": 119932271234.99,
+        "interestFreeLiabilities": 23360341579.809998,
+        "interestBearingDebt": 408530653.28,
+        "interestExpense": 28573949.37,
+        "interestFreeLiabilitiesOverTotal": 0.12295934542128324,
+        "interestBearingDebtOverTotal": 0.002150339349286458,
+        "debtRatio": 35.689053
       },
       {
         "year": "2024",
@@ -140170,42 +140344,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.14149620536751753,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 22.466716
-      },
-      {
-        "year": "2015",
-        "currentAssets": 44597411226.19,
-        "cash": 26374190180.51,
-        "inventory": 8700851179.53,
-        "nonCurrentAssets": 7949223714.32,
-        "goodwill": 1621619.53,
-        "totalAssets": 52546634940.51,
-        "equity": 43328917566.12,
-        "interestFreeLiabilities": 3258241602,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.06200666523534336,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 15.60799
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.05325867179826931,
-        "wc": 3245866853.2299976,
-        "receivables": 3442896803.1,
-        "prepayments": 218139264.18,
-        "inventory": 17540752483.71,
-        "accountsPayable": 8679053511.82,
-        "customerAdvances": 8948411.36,
-        "contractLiabilities": 9267919774.58,
-        "receivablesToRevenueRatio": 0.05649156886677157,
-        "prepaymentsToRevenueRatio": 0.0035792618744412076,
-        "inventoryToRevenueRatio": 0.28781130646038616,
-        "accountsPayableToRevenueRatio": 0.14240721613262203,
-        "advancesToRevenueRatio": 0.00014682688024121945,
-        "contractLiabilitiesToRevenueRatio": 0.15206942239046634,
-        "changeInWC": -13971041578.160006
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.8249556205880394,
+        "wc": 18840356397.44,
+        "receivables": 20903782101.079998,
+        "prepayments": 311612649.45,
+        "inventory": 20139576875.04,
+        "accountsPayable": 8367920076.56,
+        "customerAdvances": 8424935.55,
+        "contractLiabilities": 14138270216.02,
+        "receivablesToRevenueRatio": 0.9153060681047831,
+        "prepaymentsToRevenueRatio": 0.013644466229154655,
+        "inventoryToRevenueRatio": 0.8818441004431675,
+        "accountsPayableToRevenueRatio": 0.36640297848758646,
+        "advancesToRevenueRatio": 0.000368899493642746,
+        "contractLiabilitiesToRevenueRatio": 0.6190671362078366,
+        "changeInWC": 11144122658.939993
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.18989678579677835,
+        "wc": 7696233738.500006,
+        "receivables": 9444227632.69,
+        "prepayments": 194996398.52,
+        "inventory": 20065336751.2,
+        "accountsPayable": 8534820869.28,
+        "customerAdvances": 13915018.07,
+        "contractLiabilities": 13459591156.56,
+        "receivablesToRevenueRatio": 0.23302676773048306,
+        "prepaymentsToRevenueRatio": 0.004811338971639998,
+        "inventoryToRevenueRatio": 0.49509189617277477,
+        "accountsPayableToRevenueRatio": 0.21058807534910168,
+        "advancesToRevenueRatio": 0.00034333900133237075,
+        "contractLiabilitiesToRevenueRatio": 0.3321018027276855,
+        "changeInWC": -9520674692.889997
       },
       {
         "year": "2024",
@@ -140368,35 +140544,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.2566302771940296,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -4007240225.790001
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.6811439429428019,
-        "wc": 14753092393.490002,
-        "receivables": 8772292314.84,
-        "prepayments": 332130005.32,
-        "inventory": 8700851179.53,
-        "accountsPayable": 1058247050.29,
-        "customerAdvances": 1993934055.91,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.40501297061039154,
-        "prepaymentsToRevenueRatio": 0.015334299776574628,
-        "inventoryToRevenueRatio": 0.40171456405971906,
-        "accountsPayableToRevenueRatio": 0.04885881205218988,
-        "advancesToRevenueRatio": 0.09205907945169348,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 376231362.3100014
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.05442948401258446,
+        "longTermOperatingAssetsPerYuanRevenue": 0.13848387439829532,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 3317222379.56,
+        "longTermOperatingAssets": 3162698069.87,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.3626756339661137,
+        "longTermOperatingAssetsPerYuanRevenue": 0.4417326583809005,
+        "fixedAssets": 14698702974.619999,
+        "longTermOperatingAssets": 17902766361.019997,
+        "depreciation": 1274972631.93,
+        "depreciationOverRevenue": 0.03145866056162085
       },
       {
         "year": "2024",
@@ -140478,26 +140645,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 6260655411.499999,
         "depreciation": 573438789.6099999,
         "depreciationOverRevenue": 0.023363902944420294
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.2726027362413038,
-        "longTermOperatingAssetsPerYuanRevenue": 0.29577838988745775,
-        "fixedAssets": 5904380999.280001,
-        "longTermOperatingAssets": 6406349141.35,
-        "depreciation": 618621561.35,
-        "depreciationOverRevenue": 0.028561491940042802
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 15.37,
-        "roa": 15.952082,
-        "roic": 15.542468,
-        "netProfitMargin": 36.445544,
-        "assetTurnover": 33.0035,
-        "equityMultiplier": 1.238528
+        "year": "2026Q1",
+        "roe": 6.5,
+        "roa": 5.487953,
+        "roic": 6.484486,
+        "netProfitMargin": 36.447024,
+        "assetTurnover": 11.7533,
+        "equityMultiplier": 1.522378
+      },
+      {
+        "year": "2025",
+        "roe": 6.89,
+        "roa": 6.465493,
+        "roic": 7.061178,
+        "netProfitMargin": 22.989034,
+        "assetTurnover": 21.4302,
+        "equityMultiplier": 1.554945
       },
       {
         "year": "2024",
@@ -140579,32 +140746,38 @@ const data: ServiceData = {
         "netProfitMargin": 28.751732,
         "assetTurnover": 42.7886,
         "equityMultiplier": 1.289768
-      },
-      {
-        "year": "2015",
-        "roe": 14.93,
-        "roa": 16.779291,
-        "roic": 14.960414,
-        "netProfitMargin": 29.596931,
-        "assetTurnover": 43.7758,
-        "equityMultiplier": 1.184946
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 181073423202.77,
-        "avgTotalAssets": 184662820953.46997,
-        "avgCurrentAssets": 161753767835.84,
-        "avgInventory": 17887227325.165,
-        "equity": 146200486207.11002,
-        "avgEquity": 141297639969.90002,
-        "totalAssetsDays": 818.093346,
-        "currentAssetsDays": 716.601644,
-        "wcDays": 19.4394152063683,
-        "receivablesDays": 0.300431,
-        "inventoryDays": 316.034442,
+        "year": "2026Q1",
+        "totalAssets": 198638173212.42,
+        "avgTotalAssets": 194311222013.945,
+        "avgCurrentAssets": 168956949521.46,
+        "avgInventory": 20102456813.120003,
+        "equity": 130478844013.87,
+        "avgEquity": 126329763829.505,
+        "totalAssetsDays": 765.740935,
+        "currentAssetsDays": 665.824913,
+        "wcDays": 301.1088015146344,
+        "receivablesDays": 0.442626,
+        "inventoryDays": 426.701125,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 189984270815.47,
+        "avgTotalAssets": 189118244759.82,
+        "avgCurrentAssets": 165267430477.765,
+        "avgInventory": 19149519458.91,
+        "equity": 122180683645.14,
+        "avgEquity": 129287738688.91501,
+        "totalAssetsDays": 1679.868529,
+        "currentAssetsDays": 1468.010427,
+        "wcDays": 69.31232681582411,
+        "receivablesDays": 0.333507,
+        "inventoryDays": 757.400528,
+        "fixedAssetsDays": 132.3766063976315
       },
       {
         "year": "2024",
@@ -140740,24 +140913,93 @@ const data: ServiceData = {
         "receivablesDays": 1.574249,
         "inventoryDays": 441.942593,
         "fixedAssetsDays": 85.22251170719507
-      },
-      {
-        "year": "2015",
-        "totalAssets": 52546634940.51,
-        "avgTotalAssets": 49477752796.68,
-        "avgCurrentAssets": 41548746080.795,
-        "avgInventory": 8396169956.545,
-        "equity": 44345160962.55,
-        "avgEquity": 42339120704.315,
-        "totalAssetsDays": 822.371978,
-        "currentAssetsDays": 690.583597,
-        "wcDays": 248.6175391741227,
-        "receivablesDays": 1.910595,
-        "inventoryDays": 453.033247,
-        "fixedAssetsDays": 99.49999872807588
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "制造业",
+        "mainBusinessIncome": 40528509770.23,
+        "mbiRatio": 1,
+        "mainBusinessCost": 9101956953.59,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 31426552816.64,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.775418
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "酒类产品",
+        "mainBusinessIncome": 37103992232.59,
+        "mbiRatio": 0.915503,
+        "mainBusinessCost": 6027808125.55,
+        "mbcRatio": 0.662254,
+        "mainBusinessProfit": 31076184107.04,
+        "mbpRatio": 0.988851,
+        "grossProfitRatio": 0.837543
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "非酒类产品",
+        "mainBusinessIncome": 3424517537.64,
+        "mbiRatio": 0.084497,
+        "mainBusinessCost": 3074148828.04,
+        "mbcRatio": 0.337746,
+        "mainBusinessProfit": 350368709.6,
+        "mbpRatio": 0.011149,
+        "grossProfitRatio": 0.102312
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "南部片区",
+        "mainBusinessIncome": 17824948680.44,
+        "mbiRatio": 0.439813,
+        "mainBusinessCost": 3694433392.63,
+        "mbcRatio": 0.405894,
+        "mainBusinessProfit": 14130515287.81,
+        "mbpRatio": 0.449636,
+        "grossProfitRatio": 0.792738
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "东部片区",
+        "mainBusinessIncome": 12831595450.04,
+        "mbiRatio": 0.316607,
+        "mainBusinessCost": 1479292786.55,
+        "mbcRatio": 0.162525,
+        "mainBusinessProfit": 11352302663.49,
+        "mbpRatio": 0.361233,
+        "grossProfitRatio": 0.884715
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "北部片区",
+        "mainBusinessIncome": 6447448102.11,
+        "mbiRatio": 0.159084,
+        "mainBusinessCost": 854081946.37,
+        "mbcRatio": 0.093835,
+        "mainBusinessProfit": 5593366155.74,
+        "mbpRatio": 0.177982,
+        "grossProfitRatio": 0.867532
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "非酒类产品",
+        "mainBusinessIncome": 3424517537.64,
+        "mbiRatio": 0.084497,
+        "mainBusinessCost": 3074148828.04,
+        "mbcRatio": 0.337746,
+        "mainBusinessProfit": 350368709.6,
+        "mbpRatio": 0.011149,
+        "grossProfitRatio": 0.102312
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -141993,141 +142235,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 17229540208.21,
         "mbpRatio": 1,
         "grossProfitRatio": 0.701992
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "制造业",
-        "mainBusinessIncome": 21659287359.66,
-        "mbiRatio": 1,
-        "mainBusinessCost": 5450476227.4,
-        "mbcRatio": 0.816922,
-        "mainBusinessProfit": 16208811132.26,
-        "mbpRatio": 1.081501,
-        "grossProfitRatio": 0.748354
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 0,
-        "mbiRatio": 0,
-        "mainBusinessCost": 1221487042.27,
-        "mbcRatio": 0.183078,
-        "mainBusinessProfit": -1221487042.27,
-        "mbpRatio": -0.081501,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "酒类",
-        "mainBusinessIncome": 20345884513.17,
-        "mbiRatio": 0.939361,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "塑料制品",
-        "mainBusinessIncome": 1020936693.86,
-        "mbiRatio": 0.047136,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他产品",
-        "mainBusinessIncome": 204584517.68,
-        "mbiRatio": 0.009446,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "印刷",
-        "mainBusinessIncome": 53468064.61,
-        "mbiRatio": 0.002469,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "玻瓶",
-        "mainBusinessIncome": 34413570.34,
-        "mbiRatio": 0.001589,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其中:高价位酒",
-        "mainBusinessIncome": 15507118343.96,
-        "mbiRatio": 0.715957,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其中:中低价位酒",
-        "mainBusinessIncome": 4838766169.21,
-        "mbiRatio": 0.223404,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "国内",
-        "mainBusinessIncome": 21659287359.66,
-        "mbiRatio": 1,
-        "mainBusinessCost": 6671963269.67,
-        "mbcRatio": 1,
-        "mainBusinessProfit": 14987324089.99,
-        "mbpRatio": 1,
-        "grossProfitRatio": 0.691958
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 6176119256.18,
-          "profit_tb": 0.05848,
-          "basicEps": 1.627,
-          "totalSharesOutstanding": 3795966720,
-          "dps": 0.8,
-          "dividendRatio": 0.4916960392177205,
-          "totalDividend": 3036773376,
-          "totalDividendA": 3036773376
-        },
         {
           "year": "2016",
           "profit": 6784533260.36,
@@ -142226,51 +142337,79 @@ const data: ServiceData = {
           "dividendRatio": 0.7000821649693201,
           "totalDividend": 22299837988.73,
           "totalDividendA": 22299837988.73
+        },
+        {
+          "year": "2025",
+          "profit": 8954257202.51,
+          "profit_tb": -0.71889,
+          "basicEps": 2.3068,
+          "totalSharesOutstanding": 3881608005,
+          "dps": 5.156000000000001,
+          "dividendRatio": 1.1175450079862528,
+          "totalDividend": 10006785436.89,
+          "totalDividendA": 10006785436.89
         }
       ],
-      "cash": 136305976701.21,
-      "interestBearingDebt": 498225502.15000004,
-      "debtRatio": 19.259003,
-      "interestBearingDebtOverTotal": 0.0027515109248919217,
-      "roe": 23.35,
-      "roic": 24.182311,
-      "roa": 24.996105,
-      "grossProfitMargin": 77.054799,
-      "netProfitMargin": 37.222757,
+      "cash": 124259000313.65,
+      "interestBearingDebt": 441104912.38,
+      "debtRatio": 34.313308,
+      "interestBearingDebtOverTotal": 0.0022206452327181367,
+      "roe": 6.89,
+      "roic": 7.061178,
+      "roa": 6.465493,
+      "grossProfitMargin": 77.541841,
+      "netProfitMargin": 22.989034,
       "tradingFinancialAssets": 0,
-      "longTermEquityInvestment": 2173006025.05,
-      "minorityInterest": 3704743408.7
+      "longTermEquityInvestment": 2229514411.45,
+      "minorityInterest": 2482172214.24
     },
     "dynamicData": {
       "code": "000858",
-      "price": 100,
-      "marketValue": 388160800500,
-      "PB": 2.72,
-      "PE_TTM": 13.65,
+      "price": 92.6,
+      "marketValue": 359436901263,
+      "PB": 2.81,
+      "PE_TTM": 28.53,
       "totalSharesOutstanding": 3881608005
     },
     "recentYearData": {
-      "netProfit": 28433666527.72
+      "netProfit": 12600709094.880001
     }
   },
   "000915": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 1602594490.06,
-        "netProfit": 408065488.3,
-        "netProfitMargin": 0.2546280364939495,
-        "netProfitExcludingNon": 399686532.14,
-        "coreProfit": 916328708.2199999,
-        "cashFlowFromOperating": 954987097.75,
-        "fcf": 915787385.15,
-        "capex": 39199712.6,
-        "fcfOverNetProfit": 2.2442167039539864,
-        "netProfitExcludingNonOvernetProfit": 0.9794666385660137,
-        "cashFlowFromOperatingOverNetProfit": 2.3402790119019237,
-        "operatingProfit": 393881718.34000003,
-        "financialProfit": 14183769.96,
-        "operatingProfitOverNetProfit": 0.9652414370568569
+        "year": "2026Q1",
+        "revenue": 412268950.83,
+        "netProfit": 110576334.44,
+        "netProfitMargin": 0.2682140729186186,
+        "netProfitExcludingNon": 107063002.75,
+        "coreProfit": 248238903.26999992,
+        "cashFlowFromOperating": 19057989.24,
+        "fcf": -762722.1000000015,
+        "capex": 19820711.34,
+        "fcfOverNetProfit": -0.006897697449121569,
+        "netProfitExcludingNonOvernetProfit": 0.9682270921007391,
+        "cashFlowFromOperatingOverNetProfit": 0.17235142887053365,
+        "operatingProfit": 104043670.23,
+        "financialProfit": 6532664.21,
+        "operatingProfitOverNetProfit": 0.940921678738187
+      },
+      {
+        "year": "2025",
+        "revenue": 2228386030.26,
+        "netProfit": 535082160.59,
+        "netProfitMargin": 0.24012094552915883,
+        "netProfitExcludingNon": 505581804.15,
+        "coreProfit": 1275089647.7200003,
+        "cashFlowFromOperating": 1271522660.7,
+        "fcf": 1223201721.31,
+        "capex": 48320939.39,
+        "fcfOverNetProfit": 2.28600729271418,
+        "netProfitExcludingNonOvernetProfit": 0.9448676135876556,
+        "cashFlowFromOperatingOverNetProfit": 2.376312937246825,
+        "operatingProfit": 507296814.34999996,
+        "financialProfit": 27785346.24,
+        "operatingProfitOverNetProfit": 0.948072747913399
       },
       {
         "year": "2024",
@@ -142424,42 +142563,42 @@ const data: ServiceData = {
         "operatingProfit": 195507466.98,
         "financialProfit": 2877695.91,
         "operatingProfitOverNetProfit": 0.9854943995403749
-      },
-      {
-        "year": "2015",
-        "revenue": 1232966348.39,
-        "netProfit": 152456087.77,
-        "netProfitMargin": 0.12364983680947679,
-        "netProfitExcludingNon": 141896953.93,
-        "coreProfit": 323468851.4900002,
-        "cashFlowFromOperating": 290236595.22,
-        "fcf": 209509763.36,
-        "capex": 80726831.86,
-        "fcfOverNetProfit": 1.3742302221218805,
-        "netProfitExcludingNonOvernetProfit": 0.9307398346996163,
-        "cashFlowFromOperatingOverNetProfit": 1.9037389681536363,
-        "operatingProfit": 149510933.66,
-        "financialProfit": 2945154.11,
-        "operatingProfitOverNetProfit": 0.9806819514190659
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 84.44452,
-        "netProfitMargin": 25.46280364939495,
-        "grossProfitMinusNetProfit": 58.98171635060505,
-        "devExpenses": 68738075.33,
-        "manageExpenses": 52591475.1,
-        "devAndManageExpenses": 121329550.43,
-        "sellingExpenses": 342767729.08,
-        "financialExpenses": -15816404.58,
-        "totalOperatingExpenses": 448280874.93,
-        "sellingExpensesRatio": 0.21388300733965895,
-        "devExpensesRatio": 0.042891745701326166,
-        "manageExpensesRatio": 0.03281645820336685,
-        "devAndManageExpensesRatio": 0.07570820390469302,
-        "totalOperatingExpensesRatio": 27.972196
+        "year": "2026Q1",
+        "grossProfitMargin": 81.87221,
+        "netProfitMargin": 26.82140729186186,
+        "grossProfitMinusNetProfit": 55.050802708138136,
+        "devExpenses": 18831721,
+        "manageExpenses": 15485435.18,
+        "devAndManageExpenses": 34317156.18,
+        "sellingExpenses": 68007798.93,
+        "financialExpenses": -1577675.09,
+        "totalOperatingExpenses": 100747280.02000001,
+        "sellingExpensesRatio": 0.1649597884902159,
+        "devExpensesRatio": 0.04567824223019235,
+        "manageExpensesRatio": 0.03756148783172724,
+        "devAndManageExpensesRatio": 0.08323973006191959,
+        "totalOperatingExpensesRatio": 24.43727
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 85.110814,
+        "netProfitMargin": 24.012094552915883,
+        "grossProfitMinusNetProfit": 61.09871944708412,
+        "devExpenses": 91095893.28,
+        "manageExpenses": 86954861.23,
+        "devAndManageExpenses": 178050754.51,
+        "sellingExpenses": 492493254.81,
+        "financialExpenses": -23772632.93,
+        "totalOperatingExpenses": 646771376.39,
+        "sellingExpensesRatio": 0.22100894913281144,
+        "devExpensesRatio": 0.040879763220096677,
+        "manageExpensesRatio": 0.03902145321735589,
+        "devAndManageExpensesRatio": 0.07990121643745256,
+        "totalOperatingExpensesRatio": 29.024207
       },
       {
         "year": "2024",
@@ -142613,41 +142752,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.092771296275044,
         "devAndManageExpensesRatio": 0.092771296275044,
         "totalOperatingExpensesRatio": 32.72611
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 62.296604,
-        "netProfitMargin": 12.36498368094768,
-        "grossProfitMinusNetProfit": 49.93162031905232,
-        "devExpenses": 0,
-        "manageExpenses": 115398449.76,
-        "devAndManageExpenses": 115398449.76,
-        "sellingExpenses": 281049433.89,
-        "financialExpenses": 57915640.93,
-        "totalOperatingExpenses": 454363524.58,
-        "sellingExpensesRatio": 0.2279457458486135,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.09359416006015622,
-        "devAndManageExpensesRatio": 0.09359416006015622,
-        "totalOperatingExpensesRatio": 36.851251
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 3372578876.81,
-        "cash": 1840357317.28,
-        "inventory": 73425912.15,
-        "nonCurrentAssets": 1407405962.25,
+        "year": "2026Q1",
+        "currentAssets": 3588885397.21,
+        "cash": 2062838535.59,
+        "inventory": 98074484.35,
+        "nonCurrentAssets": 1365097230.01,
         "goodwill": 26133365.56,
-        "totalAssets": 4779984839.06,
-        "equity": 2851053959.18,
-        "interestFreeLiabilities": 234349150.89999998,
+        "totalAssets": 4953982627.22,
+        "equity": 2971481223.41,
+        "interestFreeLiabilities": 41861032.68,
         "interestBearingDebt": 0,
         "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.04902717451842075,
+        "interestFreeLiabilitiesOverTotal": 0.008449975672096963,
         "interestBearingDebtOverTotal": 0,
-        "debtRatio": 11.991774
+        "debtRatio": 7.9495
+      },
+      {
+        "year": "2025",
+        "currentAssets": 3627081874.94,
+        "cash": 2014493418.93,
+        "inventory": 78410036.18,
+        "nonCurrentAssets": 1371113174.74,
+        "goodwill": 26133365.56,
+        "totalAssets": 4998195049.68,
+        "equity": 2860904888.97,
+        "interestFreeLiabilities": 145619222.18,
+        "interestBearingDebt": 0,
+        "interestExpense": 0,
+        "interestFreeLiabilitiesOverTotal": 0.02913436165107702,
+        "interestBearingDebtOverTotal": 0,
+        "debtRatio": 12.953717
       },
       {
         "year": "2024",
@@ -142792,42 +142930,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.11281619827060506,
         "interestBearingDebtOverTotal": 0.01631610447379025,
         "debtRatio": 21.46854
-      },
-      {
-        "year": "2015",
-        "currentAssets": 1046071227.61,
-        "cash": 414619669.52,
-        "inventory": 118929451.96,
-        "nonCurrentAssets": 1034838194.58,
-        "goodwill": 28133365.56,
-        "totalAssets": 2080909422.19,
-        "equity": 1102046297.61,
-        "interestFreeLiabilities": 204312577.86,
-        "interestBearingDebt": 54240000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.09818427254992024,
-        "interestBearingDebtOverTotal": 0.026065526649841634,
-        "debtRatio": 19.287052
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.05460366950763933,
-        "wc": 87507539.89000002,
-        "receivables": 166985100.72,
-        "prepayments": 81445677.92,
-        "inventory": 73425912.15,
-        "accountsPayable": 26888928.65,
-        "customerAdvances": 3741130.58,
-        "contractLiabilities": 203719091.67,
-        "receivablesToRevenueRatio": 0.10419672709204697,
-        "prepaymentsToRevenueRatio": 0.05082113936192975,
-        "inventoryToRevenueRatio": 0.045816900410815084,
-        "accountsPayableToRevenueRatio": 0.016778373329483554,
-        "advancesToRevenueRatio": 0.002334421217097742,
-        "contractLiabilitiesToRevenueRatio": 0.12711830281057118,
-        "changeInWC": -252592281.07999995
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.5795065572340812,
+        "wc": 238912560.34999996,
+        "receivables": 138181682.73,
+        "prepayments": 44517425.95,
+        "inventory": 98074484.35,
+        "accountsPayable": 22667964.9,
+        "customerAdvances": 3440216.82,
+        "contractLiabilities": 15752850.96,
+        "receivablesToRevenueRatio": 0.3351736347154106,
+        "prepaymentsToRevenueRatio": 0.10798151512592774,
+        "inventoryToRevenueRatio": 0.23788957221384646,
+        "accountsPayableToRevenueRatio": 0.054983439461942854,
+        "advancesToRevenueRatio": 0.008344593530689098,
+        "contractLiabilitiesToRevenueRatio": 0.03821013182847166,
+        "changeInWC": 66654909.18999994
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.07730153071364462,
+        "wc": 172257651.16000003,
+        "receivables": 210925474.98,
+        "prepayments": 28541362.18,
+        "inventory": 78410036.18,
+        "accountsPayable": 36868645.68,
+        "customerAdvances": 1468814.25,
+        "contractLiabilities": 107281762.25,
+        "receivablesToRevenueRatio": 0.0946539208717755,
+        "prepaymentsToRevenueRatio": 0.012808087015637005,
+        "inventoryToRevenueRatio": 0.035186917847825225,
+        "accountsPayableToRevenueRatio": 0.01654499946568876,
+        "advancesToRevenueRatio": 0.0006591381520322239,
+        "contractLiabilitiesToRevenueRatio": 0.04814325740387214,
+        "changeInWC": -167842169.80999994
       },
       {
         "year": "2024",
@@ -142990,35 +143130,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.05249183812967393,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 24204853.400000036
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.3201710065124448,
-        "wc": 394760076.76,
-        "receivables": 446207439.22,
-        "prepayments": 30663683.44,
-        "inventory": 118929451.96,
-        "accountsPayable": 166142004.94,
-        "customerAdvances": 34898492.92,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.3618975001245208,
-        "prepaymentsToRevenueRatio": 0.02486984618845474,
-        "inventoryToRevenueRatio": 0.09645798696395676,
-        "accountsPayableToRevenueRatio": 0.13474982926902038,
-        "advancesToRevenueRatio": 0.028304497495467124,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -39462067.66999996
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.140134037894759,
+        "longTermOperatingAssetsPerYuanRevenue": 0.5255026426410061,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 224578037.00000003,
+        "longTermOperatingAssets": 216648423.14000002,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.37539310171604234,
+        "longTermOperatingAssetsPerYuanRevenue": 0.47383991455771307,
+        "fixedAssets": 836520743.72,
+        "longTermOperatingAssets": 1055898246.18,
+        "depreciation": 74883861.38000001,
+        "depreciationOverRevenue": 0.033604528283307726
       },
       {
         "year": "2024",
@@ -143100,26 +143231,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 920036882.8299999,
         "depreciation": 40628713.81,
         "depreciationOverRevenue": 0.026301582484654105
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.4535155217497704,
-        "longTermOperatingAssetsPerYuanRevenue": 0.6210411911402742,
-        "fixedAssets": 559169376.7900001,
-        "longTermOperatingAssets": 765722889.64,
-        "depreciation": 36483598.2,
-        "depreciationOverRevenue": 0.029590100530837733
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 13.79,
-        "roa": 18.188654,
-        "roic": 13.613365,
-        "netProfitMargin": 47.886002,
-        "assetTurnover": 33.006,
-        "equityMultiplier": 1.136257
+        "year": "2026Q1",
+        "roe": 3.79,
+        "roa": 4.91035,
+        "roic": 3.737703,
+        "netProfitMargin": 50.797611,
+        "assetTurnover": 8.2849,
+        "equityMultiplier": 1.08636
+      },
+      {
+        "year": "2025",
+        "roe": 18.29,
+        "roa": 24.312224,
+        "roic": 18.538828,
+        "netProfitMargin": 46.156603,
+        "assetTurnover": 44.885799999999996,
+        "equityMultiplier": 1.148814
       },
       {
         "year": "2024",
@@ -143201,32 +143332,38 @@ const data: ServiceData = {
         "netProfitMargin": 22.71969,
         "assetTurnover": 67.7047,
         "equityMultiplier": 1.273375
-      },
-      {
-        "year": "2015",
-        "roe": 14.75,
-        "roa": 15.452785,
-        "roic": 14.451374,
-        "netProfitMargin": 21.206811,
-        "assetTurnover": 61.104800000000004,
-        "equityMultiplier": 1.238958
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 4779984839.06,
-        "avgTotalAssets": 4855460715.395,
-        "avgCurrentAssets": 3441658063.425,
-        "avgInventory": 72022567.20500001,
-        "equity": 4206779831.58,
-        "avgEquity": 4309608335.014999,
-        "totalAssetsDays": 818.032509,
-        "currentAssetsDays": 579.839555,
-        "wcDays": 19.930339370288355,
-        "receivablesDays": 10.190203,
-        "inventoryDays": 78.005514,
+        "year": "2026Q1",
+        "totalAssets": 4953982627.22,
+        "avgTotalAssets": 4976088838.450001,
+        "avgCurrentAssets": 3607983636.075,
+        "avgInventory": 88242260.265,
+        "equity": 4560165739.37,
+        "avgEquity": 4455454350.045,
+        "totalAssetsDays": 1086.300568,
+        "currentAssetsDays": 787.6376,
+        "wcDays": 211.51989339043962,
+        "receivablesDays": 20.369891,
+        "inventoryDays": 106.265832,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 4998195049.68,
+        "avgTotalAssets": 4964565820.705,
+        "avgCurrentAssets": 3568909562.49,
+        "avgInventory": 74514629.22,
+        "equity": 4350742960.72,
+        "avgEquity": 4381589899.585,
+        "totalAssetsDays": 802.035047,
+        "currentAssetsDays": 576.564125,
+        "wcDays": 28.21505871048029,
+        "receivablesDays": 11.12781,
+        "inventoryDays": 80.850492,
+        "fixedAssetsDays": 137.01848212635545
       },
       {
         "year": "2024",
@@ -143362,24 +143499,105 @@ const data: ServiceData = {
         "receivablesDays": 48.595816,
         "inventoryDays": 77.043773,
         "fixedAssetsDays": 170.4568951848843
-      },
-      {
-        "year": "2015",
-        "totalAssets": 2080909422.19,
-        "avgTotalAssets": 2017787521.055,
-        "avgCurrentAssets": 1083026480.2450001,
-        "avgInventory": 109665938.625,
-        "equity": 1679563327.77,
-        "avgEquity": 1580903647.175,
-        "totalAssetsDays": 589.151122,
-        "currentAssetsDays": 316.220741,
-        "wcDays": 116.86241737704233,
-        "receivablesDays": 57.51261,
-        "inventoryDays": 84.926372,
-        "fixedAssetsDays": 165.53316543866617
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "医药",
+        "mainBusinessIncome": 2193713814.7,
+        "mbiRatio": 0.984441,
+        "mainBusinessCost": 319094344.41,
+        "mbcRatio": 0.96174,
+        "mainBusinessProfit": 1874619470.29,
+        "mbpRatio": 0.988412,
+        "grossProfitRatio": 0.854541
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他",
+        "mainBusinessIncome": 34672215.56,
+        "mbiRatio": 0.015559,
+        "mainBusinessCost": 12694193.32,
+        "mbcRatio": 0.03826,
+        "mainBusinessProfit": 21978022.24,
+        "mbpRatio": 0.011588,
+        "grossProfitRatio": 0.63388
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "医药健康产品",
+        "mainBusinessIncome": 2193713814.7,
+        "mbiRatio": 0.984441,
+        "mainBusinessCost": 319094344.41,
+        "mbcRatio": 0.96174,
+        "mainBusinessProfit": 1874619470.29,
+        "mbpRatio": 0.988412,
+        "grossProfitRatio": 0.854541
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 32444116.93,
+        "mbiRatio": 0.014559,
+        "mainBusinessCost": 10115008.28,
+        "mbcRatio": 0.030486,
+        "mainBusinessProfit": 22329108.65,
+        "mbpRatio": 0.011773,
+        "grossProfitRatio": 0.688233
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 2228098.63,
+        "mbiRatio": 0.001,
+        "mainBusinessCost": 2579185.04,
+        "mbcRatio": 0.007774,
+        "mainBusinessProfit": -351086.41,
+        "mbpRatio": -0.000185,
+        "grossProfitRatio": -0.157572
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其中:其他业务-租赁收入",
+        "mainBusinessIncome": 1360137.61,
+        "mbiRatio": 0.00061,
+        "mainBusinessCost": 2050327.48,
+        "mbcRatio": 0.00618,
+        "mainBusinessProfit": -690189.87,
+        "mbpRatio": -0.000364,
+        "grossProfitRatio": -0.507441
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其中:其他业务-销售材料",
+        "mainBusinessIncome": 834299.47,
+        "mbiRatio": 0.000374,
+        "mainBusinessCost": 528857.56,
+        "mbcRatio": 0.001594,
+        "mainBusinessProfit": 305441.91,
+        "mbpRatio": 0.000161,
+        "grossProfitRatio": 0.366106
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其中:其他业务-其他",
+        "mainBusinessIncome": 33661.55,
+        "mbiRatio": 0.000015,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 33661.55,
+        "mbpRatio": 0.000018,
+        "grossProfitRatio": 0
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -144603,201 +144821,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 22380927.41,
         "mbpRatio": 0.023967,
         "grossProfitRatio": 0.763606
-      },
-      {
-        "year": "2016",
-        "mainType": "产品",
-        "itemName": "医药产品",
-        "mainBusinessIncome": 880451390.26,
-        "mbiRatio": 0,
-        "mainBusinessCost": 112948715.7,
-        "mbcRatio": 0.184888,
-        "mainBusinessProfit": 767502674.56,
-        "mbpRatio": 0.821893,
-        "grossProfitRatio": 0.871715
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "环保设备及工程",
-        "mainBusinessIncome": 253223863.28,
-        "mbiRatio": 0,
-        "mainBusinessCost": 164862294.21,
-        "mbcRatio": 0.354732,
-        "mainBusinessProfit": 88361569.07,
-        "mbpRatio": 0.115022,
-        "grossProfitRatio": 0.348946
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "教育",
-        "mainBusinessIncome": 148021046.82,
-        "mbiRatio": 0,
-        "mainBusinessCost": 113756386.55,
-        "mbcRatio": 0.244768,
-        "mainBusinessProfit": 34264660.27,
-        "mbpRatio": 0.044603,
-        "grossProfitRatio": 0.231485
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "医药产品",
-        "mainBusinessIncome": 693239863.07,
-        "mbiRatio": 0,
-        "mainBusinessCost": 91324480.49,
-        "mbcRatio": 0.196502,
-        "mainBusinessProfit": 601915382.58,
-        "mbpRatio": 0.783525,
-        "grossProfitRatio": 0.868264
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "道路及建筑材料",
-        "mainBusinessIncome": 81403314.29,
-        "mbiRatio": 0,
-        "mainBusinessCost": 70419867.79,
-        "mbcRatio": 0.151522,
-        "mainBusinessProfit": 10983446.5,
-        "mbpRatio": 0.014297,
-        "grossProfitRatio": 0.134926
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "电子信息产品",
-        "mainBusinessIncome": 19797362.06,
-        "mbiRatio": 0,
-        "mainBusinessCost": 13560775.89,
-        "mbcRatio": 0.029179,
-        "mainBusinessProfit": 6236586.17,
-        "mbpRatio": 0.008118,
-        "grossProfitRatio": 0.315021
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "科技园区管理",
-        "mainBusinessIncome": 30605780.41,
-        "mbiRatio": 0,
-        "mainBusinessCost": 6551786.08,
-        "mbcRatio": 0.014097,
-        "mainBusinessProfit": 24053994.33,
-        "mbpRatio": 0.031312,
-        "grossProfitRatio": 0.78593
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "晶体材料",
-        "mainBusinessIncome": 6675118.46,
-        "mbiRatio": 0,
-        "mainBusinessCost": 4275740.45,
-        "mbcRatio": 0.0092,
-        "mainBusinessProfit": 2399378.01,
-        "mbpRatio": 0.003123,
-        "grossProfitRatio": 0.359451
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "道路及建筑材料",
-        "mainBusinessIncome": 81403314.29,
-        "mbiRatio": 0,
-        "mainBusinessCost": 70419867.79,
-        "mbcRatio": 0.151522,
-        "mainBusinessProfit": 10983446.5,
-        "mbpRatio": 0.014297,
-        "grossProfitRatio": 0.134926
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "电子信息产品",
-        "mainBusinessIncome": 19797362.06,
-        "mbiRatio": 0,
-        "mainBusinessCost": 13560775.89,
-        "mbcRatio": 0.029179,
-        "mainBusinessProfit": 6236586.17,
-        "mbpRatio": 0.008118,
-        "grossProfitRatio": 0.315021
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "环保设备及工程",
-        "mainBusinessIncome": 253223863.28,
-        "mbiRatio": 0,
-        "mainBusinessCost": 164862294.21,
-        "mbcRatio": 0.354732,
-        "mainBusinessProfit": 88361569.07,
-        "mbpRatio": 0.115022,
-        "grossProfitRatio": 0.348946
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "教育",
-        "mainBusinessIncome": 148021046.82,
-        "mbiRatio": 0,
-        "mainBusinessCost": 113756386.55,
-        "mbcRatio": 0.244768,
-        "mainBusinessProfit": 34264660.27,
-        "mbpRatio": 0.044603,
-        "grossProfitRatio": 0.231485
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "晶体材料",
-        "mainBusinessIncome": 6675118.46,
-        "mbiRatio": 0,
-        "mainBusinessCost": 4275740.45,
-        "mbcRatio": 0.0092,
-        "mainBusinessProfit": 2399378.01,
-        "mbpRatio": 0.003123,
-        "grossProfitRatio": 0.359451
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "科技园区管理",
-        "mainBusinessIncome": 30605780.41,
-        "mbiRatio": 0,
-        "mainBusinessCost": 6551786.08,
-        "mbcRatio": 0.014097,
-        "mainBusinessProfit": 24053994.33,
-        "mbpRatio": 0.031312,
-        "grossProfitRatio": 0.78593
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "医药产品",
-        "mainBusinessIncome": 693239863.07,
-        "mbiRatio": 0,
-        "mainBusinessCost": 91324480.49,
-        "mbcRatio": 0.196502,
-        "mainBusinessProfit": 601915382.58,
-        "mbpRatio": 0.783525,
-        "grossProfitRatio": 0.868264
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 152456087.77,
-          "profit_tb": -0.29866,
-          "basicEps": 0.85,
-          "totalSharesOutstanding": 180254989,
-          "dps": 0.1,
-          "dividendRatio": 0.11823403816575581,
-          "totalDividend": 18025498.9,
-          "totalDividendA": 18025498.9
-        },
         {
           "year": "2016",
           "profit": 198385162.89,
@@ -144896,35 +144923,63 @@ const data: ServiceData = {
           "dividendRatio": 1.1362187991275794,
           "totalDividend": 585828712.5,
           "totalDividendA": 585828712.5
+        },
+        {
+          "year": "2025",
+          "profit": 535082160.59,
+          "profit_tb": 0.0378,
+          "basicEps": 2.28,
+          "totalSharesOutstanding": 234331485,
+          "dps": 2.5,
+          "dividendRatio": 0.2189677607095124,
+          "totalDividend": 117165742.5,
+          "totalDividendA": 117165742.5
         }
       ],
-      "cash": 1840357317.28,
+      "cash": 2062838535.59,
       "interestBearingDebt": 0,
-      "debtRatio": 11.991774,
+      "debtRatio": 7.9495,
       "interestBearingDebtOverTotal": 0,
-      "roe": 17.56,
-      "roic": 17.496963,
-      "roa": 23.263905,
-      "grossProfitMargin": 83.8322,
-      "netProfitMargin": 47.132342,
-      "tradingFinancialAssets": 1205742945.21,
-      "longTermEquityInvestment": 97120890.3,
-      "minorityInterest": 1355725872.4
+      "roe": 18.29,
+      "roic": 18.538828,
+      "roa": 24.312224,
+      "grossProfitMargin": 85.110814,
+      "netProfitMargin": 46.156603,
+      "tradingFinancialAssets": 1199665437.74,
+      "longTermEquityInvestment": 105785677.07,
+      "minorityInterest": 1588684515.96
     },
     "dynamicData": {
       "code": "000915",
-      "price": 28.08,
-      "marketValue": 6580028099,
-      "PB": 2.21,
-      "PE_TTM": 14.2,
+      "price": 28.81,
+      "marketValue": 6751090083,
+      "PB": 2.27,
+      "PE_TTM": 14.57,
       "totalSharesOutstanding": 234331485
     },
     "recentYearData": {
-      "netProfit": 558237979.52
+      "netProfit": 463312507.64
     }
   },
   "001872": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 4407582949.96,
+        "netProfit": 1131939432.33,
+        "netProfitMargin": 0.2568163651554811,
+        "netProfitExcludingNon": 1090669980.44,
+        "coreProfit": 1156885687.17,
+        "cashFlowFromOperating": 1070694734.73,
+        "fcf": 638209524.1,
+        "capex": 432485210.63,
+        "fcfOverNetProfit": 0.5638194994111131,
+        "netProfitExcludingNonOvernetProfit": 0.9635409362804419,
+        "cashFlowFromOperatingOverNetProfit": 0.9458940153061609,
+        "operatingProfit": -182798996.5,
+        "financialProfit": 1314738428.83,
+        "operatingProfitOverNetProfit": -0.161491853078856
+      },
       {
         "year": "2025",
         "revenue": 17246382527.85,
@@ -145094,26 +145149,26 @@ const data: ServiceData = {
         "operatingProfit": 452711593.81000006,
         "financialProfit": 79664899.16,
         "operatingProfitOverNetProfit": 0.8503598483179287
-      },
-      {
-        "year": "2015",
-        "revenue": 1872608596.16,
-        "netProfit": 527751492.42,
-        "netProfitMargin": 0.28182690899861046,
-        "netProfitExcludingNon": 528043530.88,
-        "coreProfit": 686695198.7400001,
-        "cashFlowFromOperating": 977850737.45,
-        "fcf": 825028581.6300001,
-        "capex": 152822155.82,
-        "fcfOverNetProfit": 1.5632899072380422,
-        "netProfitExcludingNonOvernetProfit": 1.000553363589103,
-        "cashFlowFromOperatingOverNetProfit": 1.8528620979659836,
-        "operatingProfit": 426933759.56,
-        "financialProfit": 100817732.86,
-        "operatingProfitOverNetProfit": 0.808967413057041
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 47.529292,
+        "netProfitMargin": 25.681636515548114,
+        "grossProfitMinusNetProfit": 21.847655484451884,
+        "devExpenses": 50141771.44,
+        "manageExpenses": 363864513.72,
+        "devAndManageExpenses": 414006285.16,
+        "sellingExpenses": 0,
+        "financialExpenses": 322673220.89,
+        "totalOperatingExpenses": 736679506.05,
+        "sellingExpensesRatio": 0,
+        "devExpensesRatio": 0.011376251339853977,
+        "manageExpensesRatio": 0.08255420665952576,
+        "devAndManageExpensesRatio": 0.09393045799937974,
+        "totalOperatingExpensesRatio": 16.713911
+      },
       {
         "year": "2025",
         "grossProfitMargin": 44.010361,
@@ -145283,26 +145338,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.0791300525986231,
         "devAndManageExpensesRatio": 0.0791300525986231,
         "totalOperatingExpensesRatio": 10.054232
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 46.453524,
-        "netProfitMargin": 28.182690899861047,
-        "grossProfitMinusNetProfit": 18.270833100138955,
-        "devExpenses": 0,
-        "manageExpenses": 175644906.71,
-        "devAndManageExpenses": 175644906.71,
-        "sellingExpenses": 0,
-        "financialExpenses": 59500840.56,
-        "totalOperatingExpenses": 235145747.27,
-        "sellingExpensesRatio": 0,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.09379691360500007,
-        "devAndManageExpensesRatio": 0.09379691360500007,
-        "totalOperatingExpensesRatio": 12.557122
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 26094234112.58,
+        "cash": 14909569111.17,
+        "inventory": 293328363.02,
+        "nonCurrentAssets": 179016470455.43002,
+        "goodwill": 6241975686.74,
+        "totalAssets": 205110704568.00998,
+        "equity": 65605568538.55,
+        "interestFreeLiabilities": 1241533428.73,
+        "interestBearingDebt": 53947027384.34,
+        "interestExpense": 450799969.08,
+        "interestFreeLiabilitiesOverTotal": 0.006052991877458722,
+        "interestBearingDebtOverTotal": 0.2630141976156705,
+        "debtRatio": 34.940299
+      },
       {
         "year": "2025",
         "currentAssets": 26078187084.55,
@@ -145462,25 +145516,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.01924708571557268,
         "interestBearingDebtOverTotal": 0.07245382295466522,
         "debtRatio": 14.855168
-      },
-      {
-        "year": "2015",
-        "currentAssets": 923331501.79,
-        "cash": 683138123.66,
-        "inventory": 17300307.66,
-        "nonCurrentAssets": 5990441375.2,
-        "goodwill": 10858898.17,
-        "totalAssets": 6913772876.99,
-        "equity": 4439600537.05,
-        "interestFreeLiabilities": 131957969.5,
-        "interestBearingDebt": 644680816.13,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.019086245939489065,
-        "interestBearingDebtOverTotal": 0.09324587712095485,
-        "debtRatio": 24.363867
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.34284193633467824,
+        "wc": 1511104273.1199996,
+        "receivables": 2359373813.64,
+        "prepayments": 99935525.19,
+        "inventory": 293328363.02,
+        "accountsPayable": 710443348.32,
+        "customerAdvances": 17668105.68,
+        "contractLiabilities": 513421974.73,
+        "receivablesToRevenueRatio": 0.5352987885710493,
+        "prepaymentsToRevenueRatio": 0.02267354382766794,
+        "inventoryToRevenueRatio": 0.06655084347820658,
+        "accountsPayableToRevenueRatio": 0.16118660871179918,
+        "advancesToRevenueRatio": 0.004008570202895522,
+        "contractLiabilitiesToRevenueRatio": 0.11648606062755086,
+        "changeInWC": 757106064.5799997
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.04371920936593051,
@@ -145660,27 +145716,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.02087092953545351,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 15220290.469999999
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.04291589742501292,
-        "wc": 80364678.43,
-        "receivables": 192343564.86,
-        "prepayments": 2678775.41,
-        "inventory": 17300307.66,
-        "accountsPayable": 91453838.66,
-        "customerAdvances": 40504130.84,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.10271423791091351,
-        "prepaymentsToRevenueRatio": 0.0014305047063722437,
-        "inventoryToRevenueRatio": 0.009238613822170996,
-        "accountsPayableToRevenueRatio": 0.04883766893281204,
-        "advancesToRevenueRatio": 0.02162979008163179,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -37585739.18999997
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 7.57721112246636,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 33397186551.63,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 1.974809235028364,
@@ -145770,18 +145817,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 5606901147.85,
         "depreciation": 332458689.08000004,
         "depreciationOverRevenue": 0.13960151437057094
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 1.7584147186829713,
-        "longTermOperatingAssetsPerYuanRevenue": 2.353839375178958,
-        "fixedAssets": 3292822517.82,
-        "longTermOperatingAssets": 4407819847.940001,
-        "depreciation": 240567325.91,
-        "depreciationOverRevenue": 0.12846642186910337
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 1.74,
+        "roa": 1.497061,
+        "roic": 1.721131,
+        "netProfitMargin": 50.13062,
+        "assetTurnover": 2.1493,
+        "equityMultiplier": 1.537049
+      },
       {
         "year": "2025",
         "roe": 7.3513,
@@ -145871,18 +145918,24 @@ const data: ServiceData = {
         "netProfitMargin": 35.160736,
         "assetTurnover": 28.152300000000004,
         "equityMultiplier": 1.174469
-      },
-      {
-        "year": "2015",
-        "roe": 12.34,
-        "roa": 11.437749,
-        "roic": 11.603596,
-        "netProfitMargin": 34.856064,
-        "assetTurnover": 27.041999999999998,
-        "equityMultiplier": 1.322119
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 205110704568.00998,
+        "avgTotalAssets": 205062701031.34497,
+        "avgCurrentAssets": 26086210598.565002,
+        "avgInventory": 300272394.085,
+        "equity": 133444410472.2,
+        "avgEquity": 132372729335.525,
+        "totalAssetsDays": 4187.248045,
+        "currentAssetsDays": 532.663589,
+        "wcDays": 125.13730676215756,
+        "receivablesDays": 35.022051,
+        "inventoryDays": 11.685317,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 205014697494.68,
@@ -146032,21 +146085,6 @@ const data: ServiceData = {
         "receivablesDays": 34.292659,
         "inventoryDays": 5.49557,
         "fixedAssetsDays": 627.754028222017
-      },
-      {
-        "year": "2015",
-        "totalAssets": 6913772876.99,
-        "avgTotalAssets": 6924798538.335,
-        "avgCurrentAssets": 839290831.7149999,
-        "avgInventory": 18195238.134999998,
-        "equity": 5229310430.12,
-        "avgEquity": 5052455015.275,
-        "totalAssetsDays": 1331.259227,
-        "currentAssetsDays": 161.349627,
-        "wcDays": 15.664302560129716,
-        "receivablesDays": 37.743355,
-        "inventoryDays": 6.532543,
-        "fixedAssetsDays": 641.8213723192846
       }
     ],
     "primaryBusinessData": [
@@ -147172,49 +147210,66 @@ const data: ServiceData = {
           "totalDividendA": 0
         }
       ],
-      "cash": 15374846360.79,
-      "interestBearingDebt": 55658948004.520004,
-      "debtRatio": 35.955299,
-      "interestBearingDebtOverTotal": 0.27148759910720216,
+      "cash": 14909569111.17,
+      "interestBearingDebt": 53947027384.34,
+      "debtRatio": 34.940299,
+      "interestBearingDebtOverTotal": 0.2630141976156705,
       "roe": 7.3513,
       "roic": 5.455486,
       "roa": 6.044433,
       "grossProfitMargin": 44.010361,
       "netProfitMargin": 51.639767,
-      "tradingFinancialAssets": 7578824365.75,
-      "longTermEquityInvestment": 103073100064.87,
-      "minorityInterest": 66935218266.65
+      "tradingFinancialAssets": 7490315001.38,
+      "longTermEquityInvestment": 103694237073.27,
+      "minorityInterest": 67838841933.65
     },
     "dynamicData": {
       "code": "001872",
-      "price": 21.85,
-      "marketValue": 54229453492,
-      "PB": 0.84,
-      "PE_TTM": 11.76,
+      "price": 22.37,
+      "marketValue": 55520040028,
+      "PB": 0.85,
+      "PE_TTM": 11.93,
       "totalSharesOutstanding": 2481897185
     },
     "recentYearData": {
-      "netProfit": 4611352247.98
+      "netProfit": 4652565505.119999
     }
   },
   "002014": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 2706090709.19,
-        "netProfit": 309195150.47,
-        "netProfitMargin": 0.11425897491904467,
-        "netProfitExcludingNon": 291166509.21,
-        "coreProfit": 443629325.5000002,
-        "cashFlowFromOperating": 189285564.39,
-        "fcf": 131336163.33999999,
-        "capex": 57949401.05,
-        "fcfOverNetProfit": 0.4247678630805143,
-        "netProfitExcludingNonOvernetProfit": 0.941691707542647,
-        "cashFlowFromOperatingOverNetProfit": 0.6121880116886426,
-        "operatingProfit": 292379788.81,
-        "financialProfit": 16815361.66,
-        "operatingProfitOverNetProfit": 0.9456157005229888
+        "year": "2026Q1",
+        "revenue": 939840283.94,
+        "netProfit": 90747682.81,
+        "netProfitMargin": 0.09655649407744836,
+        "netProfitExcludingNon": 83899442.08,
+        "coreProfit": 138539101.9900001,
+        "cashFlowFromOperating": 48717853.07,
+        "fcf": -79988470.16,
+        "capex": 128706323.23,
+        "fcfOverNetProfit": -0.8814381555887575,
+        "netProfitExcludingNonOvernetProfit": 0.9245353653344704,
+        "cashFlowFromOperatingOverNetProfit": 0.5368495542966251,
+        "operatingProfit": 84726842.58,
+        "financialProfit": 6020840.23,
+        "operatingProfitOverNetProfit": 0.9336529590225908
+      },
+      {
+        "year": "2025",
+        "revenue": 3723366355.59,
+        "netProfit": 438133521.15,
+        "netProfitMargin": 0.11767134343152055,
+        "netProfitExcludingNon": 408858895.52,
+        "coreProfit": 637180713.5699999,
+        "cashFlowFromOperating": 343030281.22,
+        "fcf": 164776513.50000003,
+        "capex": 178253767.72,
+        "fcfOverNetProfit": 0.37608743806568257,
+        "netProfitExcludingNonOvernetProfit": 0.9331833237658675,
+        "cashFlowFromOperatingOverNetProfit": 0.7829354857843889,
+        "operatingProfit": 415385794.62,
+        "financialProfit": 22747726.529999997,
+        "operatingProfitOverNetProfit": 0.9480803786245517
       },
       {
         "year": "2024",
@@ -147368,42 +147423,42 @@ const data: ServiceData = {
         "operatingProfit": 202710560.33,
         "financialProfit": 0,
         "operatingProfitOverNetProfit": 1
-      },
-      {
-        "year": "2015",
-        "revenue": 1848907376.6,
-        "netProfit": 190020890.48,
-        "netProfitMargin": 0.10277469433294921,
-        "netProfitExcludingNon": 165944063.12,
-        "coreProfit": 215830294.42999995,
-        "cashFlowFromOperating": 257448396.44,
-        "fcf": 93129800.93,
-        "capex": 164318595.51,
-        "fcfOverNetProfit": 0.49010296023111244,
-        "netProfitExcludingNonOvernetProfit": 0.8732937873347452,
-        "cashFlowFromOperatingOverNetProfit": 1.354842595409776,
-        "operatingProfit": 186220459.42999998,
-        "financialProfit": 3800431.05,
-        "operatingProfitOverNetProfit": 0.9799999303213454
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 22.332412,
-        "netProfitMargin": 11.425897491904466,
-        "grossProfitMinusNetProfit": 10.906514508095535,
-        "devExpenses": 116958307.72,
-        "manageExpenses": 88027989.91,
-        "devAndManageExpenses": 204986297.63,
-        "sellingExpenses": 42335476.28,
-        "financialExpenses": 8735591.76,
-        "totalOperatingExpenses": 256057365.67,
-        "sellingExpensesRatio": 0.015644514848015594,
-        "devExpensesRatio": 0.043220394395060216,
-        "manageExpensesRatio": 0.03252957841030723,
-        "devAndManageExpensesRatio": 0.07574997280536744,
-        "totalOperatingExpensesRatio": 9.46226
+        "year": "2026Q1",
+        "grossProfitMargin": 20.862062,
+        "netProfitMargin": 9.655649407744836,
+        "grossProfitMinusNetProfit": 11.206412592255166,
+        "devExpenses": 38914885.58,
+        "manageExpenses": 30579793.28,
+        "devAndManageExpenses": 69494678.86,
+        "sellingExpenses": 16589157.03,
+        "financialExpenses": 5983844.08,
+        "totalOperatingExpenses": 92067679.97,
+        "sellingExpensesRatio": 0.01765103849396081,
+        "devExpensesRatio": 0.04140584974381067,
+        "manageExpensesRatio": 0.03253722340119679,
+        "devAndManageExpensesRatio": 0.07394307314500745,
+        "totalOperatingExpensesRatio": 9.796098
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 23.003516,
+        "netProfitMargin": 11.767134343152055,
+        "grossProfitMinusNetProfit": 11.236381656847946,
+        "devExpenses": 156060830.8,
+        "manageExpenses": 116830109.23,
+        "devAndManageExpenses": 272890940.03000003,
+        "sellingExpenses": 65492738.7,
+        "financialExpenses": 27595100.43,
+        "totalOperatingExpenses": 365978779.16,
+        "sellingExpensesRatio": 0.017589657435044988,
+        "devExpensesRatio": 0.041913906904621746,
+        "manageExpensesRatio": 0.03137754872136058,
+        "devAndManageExpensesRatio": 0.07329145562598233,
+        "totalOperatingExpensesRatio": 9.829244
       },
       {
         "year": "2024",
@@ -147557,41 +147612,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.05452215935727674,
         "devAndManageExpensesRatio": 0.05452215935727674,
         "totalOperatingExpensesRatio": 9.49508
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 21.237666,
-        "netProfitMargin": 10.277469433294922,
-        "grossProfitMinusNetProfit": 10.96019656670508,
-        "devExpenses": 0,
-        "manageExpenses": 96676758.77,
-        "devAndManageExpenses": 96676758.77,
-        "sellingExpenses": 86185448.3,
-        "financialExpenses": -10735297.88,
-        "totalOperatingExpenses": 172126909.19,
-        "sellingExpensesRatio": 0.046614259530127725,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.05228858946291902,
-        "devAndManageExpensesRatio": 0.05228858946291902,
-        "totalOperatingExpensesRatio": 8.7661
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 2851405589.63,
-        "cash": 528386926.04,
-        "inventory": 415589973.02,
-        "nonCurrentAssets": 1319375929.02,
+        "year": "2026Q1",
+        "currentAssets": 2841328484.26,
+        "cash": 654590507.13,
+        "inventory": 460663390.04,
+        "nonCurrentAssets": 1370779860.05,
         "goodwill": 0,
-        "totalAssets": 4170781518.65,
-        "equity": 2347224659.27,
-        "interestFreeLiabilities": 488007413.43,
-        "interestBearingDebt": 957604115.31,
-        "interestExpense": 12233808.8,
-        "interestFreeLiabilitiesOverTotal": 0.11700622802892788,
-        "interestBearingDebtOverTotal": 0.22959824460427683,
-        "debtRatio": 42.624718
+        "totalAssets": 4212108344.31,
+        "equity": 2567259475.66,
+        "interestFreeLiabilities": 486134024.40000004,
+        "interestBearingDebt": 936686226.54,
+        "interestExpense": 3595908.67,
+        "interestFreeLiabilitiesOverTotal": 0.11541346628861118,
+        "interestBearingDebtOverTotal": 0.22237942378793246,
+        "debtRatio": 37.933165
+      },
+      {
+        "year": "2025",
+        "currentAssets": 3018615522.1,
+        "cash": 793119112.81,
+        "inventory": 428271087.87,
+        "nonCurrentAssets": 1309829198.33,
+        "goodwill": 0,
+        "totalAssets": 4328444720.43,
+        "equity": 2476511792.85,
+        "interestFreeLiabilities": 529707672.09,
+        "interestBearingDebt": 1072998955.5600001,
+        "interestExpense": 10534155.9,
+        "interestFreeLiabilitiesOverTotal": 0.12237829204328553,
+        "interestBearingDebtOverTotal": 0.24789480399172228,
+        "debtRatio": 41.678692
       },
       {
         "year": "2024",
@@ -147736,42 +147790,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.1490334222937048,
         "interestBearingDebtOverTotal": 0.004743239162572096,
         "debtRatio": 22.889166
-      },
-      {
-        "year": "2015",
-        "currentAssets": 1316119797.2,
-        "cash": 589811759.61,
-        "inventory": 238183915.85,
-        "nonCurrentAssets": 832360343.34,
-        "goodwill": 0,
-        "totalAssets": 2148480140.54,
-        "equity": 1654343410.08,
-        "interestFreeLiabilities": 295067825.07,
-        "interestBearingDebt": 10000000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.1373379346182076,
-        "interestBearingDebtOverTotal": 0.004654453076529995,
-        "debtRatio": 21.443091
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.3881000060505588,
-        "wc": 1050233820.6099999,
-        "receivables": 889010239.22,
-        "prepayments": 30907312.9,
-        "inventory": 415589973.02,
-        "accountsPayable": 277456088.81,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 1.1041680537352343,
+        "wc": 1037741617.1399999,
+        "receivables": 815435573.86,
+        "prepayments": 48476718.9,
+        "inventory": 460663390.04,
+        "accountsPayable": 268923586.93,
         "customerAdvances": 0,
-        "contractLiabilities": 7817615.72,
-        "receivablesToRevenueRatio": 0.32852196572749137,
-        "prepaymentsToRevenueRatio": 0.011421388350005208,
-        "inventoryToRevenueRatio": 0.1535757732025163,
-        "accountsPayableToRevenueRatio": 0.10253022482496511,
+        "contractLiabilities": 17910478.73,
+        "receivablesToRevenueRatio": 0.867632073017268,
+        "prepaymentsToRevenueRatio": 0.05157974150328587,
+        "inventoryToRevenueRatio": 0.4901507180654208,
+        "accountsPayableToRevenueRatio": 0.28613754009630027,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.0028888964044889707,
-        "changeInWC": 239274983.93999982
+        "contractLiabilitiesToRevenueRatio": 0.019056938754439916,
+        "changeInWC": 109779486.3399998
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.24922665195349983,
+        "wc": 927962130.8000001,
+        "receivables": 798243234.1600001,
+        "prepayments": 29871054.66,
+        "inventory": 428271087.87,
+        "accountsPayable": 299921022.82,
+        "customerAdvances": 0,
+        "contractLiabilities": 28502223.07,
+        "receivablesToRevenueRatio": 0.21438750795005007,
+        "prepaymentsToRevenueRatio": 0.008022593483220822,
+        "inventoryToRevenueRatio": 0.11502254867480981,
+        "accountsPayableToRevenueRatio": 0.08055103746901501,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.007654960685565837,
+        "changeInWC": 117003294.13
       },
       {
         "year": "2024",
@@ -147934,35 +147990,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.002609471882463479,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 58656424.359999895
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.2881251065370432,
-        "wc": 532716634.86,
-        "receivables": 452245704.54,
-        "prepayments": 7191005.33,
-        "inventory": 238183915.85,
-        "accountsPayable": 160773786.36,
-        "customerAdvances": 4130204.5,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.24460160106648798,
-        "prepaymentsToRevenueRatio": 0.003889326972789579,
-        "inventoryToRevenueRatio": 0.12882414709600115,
-        "accountsPayableToRevenueRatio": 0.0869561062900029,
-        "advancesToRevenueRatio": 0.0022338623082326235,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 38318167.73000002
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.02920578708304153,
+        "longTermOperatingAssetsPerYuanRevenue": 0.09035002529793776,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 79033509.08,
+        "longTermOperatingAssets": 84914593.43,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.2797608262066764,
+        "longTermOperatingAssetsPerYuanRevenue": 0.3029518969403854,
+        "fixedAssets": 1041652047.9100001,
+        "longTermOperatingAssets": 1128000900.43,
+        "depreciation": 152823655.09,
+        "depreciationOverRevenue": 0.041044485149993724
       },
       {
         "year": "2024",
@@ -148044,26 +148091,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 811034656.17,
         "depreciation": 89858142.45,
         "depreciationOverRevenue": 0.04718959988869275
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.40109975636191103,
-        "longTermOperatingAssetsPerYuanRevenue": 0.4357122104685534,
-        "fixedAssets": 741596298.2900001,
-        "longTermOperatingAssets": 805591520.0100001,
-        "depreciation": 78499116.47999999,
-        "depreciationOverRevenue": 0.04245703028366618
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 12.51,
-        "roa": 8.921981,
-        "roic": 9.389052,
-        "netProfitMargin": 11.495433,
-        "assetTurnover": 63.783699999999996,
-        "equityMultiplier": 1.74291
+        "year": "2026Q1",
+        "roe": 3.6,
+        "roa": 2.606482,
+        "roic": 2.675102,
+        "netProfitMargin": 9.784295,
+        "assetTurnover": 22.0088,
+        "equityMultiplier": 1.611166
+      },
+      {
+        "year": "2025",
+        "roe": 17.34,
+        "roa": 11.715478,
+        "roic": 12.65355,
+        "netProfitMargin": 11.87463,
+        "assetTurnover": 86.16040000000001,
+        "equityMultiplier": 1.714639
       },
       {
         "year": "2024",
@@ -148145,32 +148192,38 @@ const data: ServiceData = {
         "netProfitMargin": 10.89833,
         "assetTurnover": 86.0573,
         "equityMultiplier": 1.296834
-      },
-      {
-        "year": "2015",
-        "roe": 12.01,
-        "roa": 10.533047,
-        "roic": 11.369568,
-        "netProfitMargin": 10.21823,
-        "assetTurnover": 88.2159,
-        "equityMultiplier": 1.272962
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 4170781518.65,
-        "avgTotalAssets": 4242601452.165,
-        "avgCurrentAssets": 2892851915.4,
-        "avgInventory": 390043127.105,
-        "equity": 2392997641.15,
-        "avgEquity": 2514780556.2200003,
-        "totalAssetsDays": 423.305245,
-        "currentAssetsDays": 288.634085,
-        "wcDays": 141.65650220845396,
-        "receivablesDays": 69.732969,
-        "inventoryDays": 50.106518,
+        "year": "2026Q1",
+        "totalAssets": 4212108344.31,
+        "avgTotalAssets": 4270276532.37,
+        "avgCurrentAssets": 2929972003.1800003,
+        "avgInventory": 444467238.95500004,
+        "equity": 2614322303.07,
+        "avgEquity": 2569363927.6400003,
+        "totalAssetsDays": 408.925744,
+        "currentAssetsDays": 280.576907,
+        "wcDays": 403.02133961336057,
+        "receivablesDays": 67.073955,
+        "inventoryDays": 53.782809,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 4328444720.43,
+        "avgTotalAssets": 4321433053.055,
+        "avgCurrentAssets": 2976456881.635,
+        "avgInventory": 396383684.53,
+        "equity": 2524405552.21,
+        "avgEquity": 2580484511.75,
+        "totalAssetsDays": 417.825094,
+        "currentAssetsDays": 287.783788,
+        "wcDays": 90.96772796302744,
+        "receivablesDays": 65.798516,
+        "inventoryDays": 49.775038,
+        "fixedAssetsDays": 102.11270156543688
       },
       {
         "year": "2024",
@@ -148306,24 +148359,141 @@ const data: ServiceData = {
         "receivablesDays": 68.833586,
         "inventoryDays": 63.758098,
         "fixedAssetsDays": 143.50393361654167
-      },
-      {
-        "year": "2015",
-        "totalAssets": 2148480140.54,
-        "avgTotalAssets": 2057265680.27,
-        "avgCurrentAssets": 1269457051.46,
-        "avgInventory": 254908688.495,
-        "equity": 1680597755.57,
-        "avgEquity": 1620583993.695,
-        "totalAssetsDays": 408.089288,
-        "currentAssetsDays": 251.165614,
-        "wcDays": 105.16566388602077,
-        "receivablesDays": 59.931374,
-        "inventoryDays": 64.309932,
-        "fixedAssetsDays": 146.40141107209755
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "橡胶和塑料制品业",
+        "mainBusinessIncome": 3442382892.04,
+        "mbiRatio": 0.924535,
+        "mainBusinessCost": 2668586448.35,
+        "mbcRatio": 0.930839,
+        "mainBusinessProfit": 773796443.69,
+        "mbpRatio": 0.903435,
+        "grossProfitRatio": 0.224785
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "涂料、油墨、颜料及类似产品制造",
+        "mainBusinessIncome": 172587852.78,
+        "mbiRatio": 0.046353,
+        "mainBusinessCost": 134808134.79,
+        "mbcRatio": 0.047023,
+        "mainBusinessProfit": 37779717.99,
+        "mbpRatio": 0.044109,
+        "grossProfitRatio": 0.218901
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 108395610.77,
+        "mbiRatio": 0.029112,
+        "mainBusinessCost": 63466584.62,
+        "mbcRatio": 0.022138,
+        "mainBusinessProfit": 44929026.15,
+        "mbpRatio": 0.052456,
+        "grossProfitRatio": 0.414491
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "彩印包装材料",
+        "mainBusinessIncome": 2550166640.05,
+        "mbiRatio": 0.684909,
+        "mainBusinessCost": 1902036744.42,
+        "mbcRatio": 0.663456,
+        "mainBusinessProfit": 648129895.63,
+        "mbpRatio": 0.756715,
+        "grossProfitRatio": 0.254152
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "塑料软包装薄膜",
+        "mainBusinessIncome": 830536502.84,
+        "mbiRatio": 0.223061,
+        "mainBusinessCost": 707367244.89,
+        "mbcRatio": 0.246739,
+        "mainBusinessProfit": 123169257.95,
+        "mbpRatio": 0.143804,
+        "grossProfitRatio": 0.148301
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "油墨业务",
+        "mainBusinessIncome": 172587852.78,
+        "mbiRatio": 0.046353,
+        "mainBusinessCost": 134808134.79,
+        "mbcRatio": 0.047023,
+        "mainBusinessProfit": 37779717.99,
+        "mbpRatio": 0.044109,
+        "grossProfitRatio": 0.218901
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 108395610.77,
+        "mbiRatio": 0.029112,
+        "mainBusinessCost": 63466584.62,
+        "mbcRatio": 0.022138,
+        "mainBusinessProfit": 44929026.15,
+        "mbpRatio": 0.052456,
+        "grossProfitRatio": 0.414491
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "镀铝包装材料",
+        "mainBusinessIncome": 61679749.15,
+        "mbiRatio": 0.016566,
+        "mainBusinessCost": 59182459.04,
+        "mbcRatio": 0.020644,
+        "mainBusinessProfit": 2497290.11,
+        "mbpRatio": 0.002916,
+        "grossProfitRatio": 0.040488
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "国内",
+        "mainBusinessIncome": 3054597207.42,
+        "mbiRatio": 0.820386,
+        "mainBusinessCost": 2375361559.05,
+        "mbcRatio": 0.828558,
+        "mainBusinessProfit": 679235648.37,
+        "mbpRatio": 0.793032,
+        "grossProfitRatio": 0.222365
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "国外",
+        "mainBusinessIncome": 560373537.4,
+        "mbiRatio": 0.150502,
+        "mainBusinessCost": 428033024.09,
+        "mbcRatio": 0.149304,
+        "mainBusinessProfit": 132340513.31,
+        "mbpRatio": 0.154512,
+        "grossProfitRatio": 0.236165
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 108395610.77,
+        "mbiRatio": 0.029112,
+        "mainBusinessCost": 63466584.62,
+        "mbcRatio": 0.022138,
+        "mainBusinessProfit": 44929026.15,
+        "mbpRatio": 0.052456,
+        "grossProfitRatio": 0.414491
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -149487,129 +149657,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 37762868.67,
         "mbpRatio": 0.085036,
         "grossProfitRatio": 0.837911
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "橡胶和塑料制品业",
-        "mainBusinessIncome": 1742502451.61,
-        "mbiRatio": 0.976811,
-        "mainBusinessCost": 1396041897.78,
-        "mbcRatio": 0.993613,
-        "mainBusinessProfit": 346460553.83,
-        "mbpRatio": 0.914501,
-        "grossProfitRatio": 0.198829
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 41365349.63,
-        "mbiRatio": 0.023189,
-        "mainBusinessCost": 8974015.24,
-        "mbcRatio": 0.006387,
-        "mainBusinessProfit": 32391334.39,
-        "mbpRatio": 0.085499,
-        "grossProfitRatio": 0.783055
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "彩印包装材料",
-        "mainBusinessIncome": 1591729368.82,
-        "mbiRatio": 0.892291,
-        "mainBusinessCost": 1250236093.51,
-        "mbcRatio": 0.889838,
-        "mainBusinessProfit": 341493275.31,
-        "mbpRatio": 0.90139,
-        "grossProfitRatio": 0.214542
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "塑料软包装薄膜",
-        "mainBusinessIncome": 114121442.71,
-        "mbiRatio": 0.063974,
-        "mainBusinessCost": 110400988.92,
-        "mbcRatio": 0.078576,
-        "mainBusinessProfit": 3720453.79,
-        "mbpRatio": 0.00982,
-        "grossProfitRatio": 0.032601
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 41365349.63,
-        "mbiRatio": 0.023189,
-        "mainBusinessCost": 8974015.24,
-        "mbcRatio": 0.006387,
-        "mainBusinessProfit": 32391334.39,
-        "mbpRatio": 0.085499,
-        "grossProfitRatio": 0.783055
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "镀铝包装材料",
-        "mainBusinessIncome": 36651640.08,
-        "mbiRatio": 0.020546,
-        "mainBusinessCost": 35404815.35,
-        "mbcRatio": 0.025199,
-        "mainBusinessProfit": 1246824.73,
-        "mbpRatio": 0.003291,
-        "grossProfitRatio": 0.034018
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "国内",
-        "mainBusinessIncome": 1536170419.38,
-        "mbiRatio": 0.861146,
-        "mainBusinessCost": 1232897209.46,
-        "mbcRatio": 0.877497,
-        "mainBusinessProfit": 303273209.92,
-        "mbpRatio": 0.800506,
-        "grossProfitRatio": 0.197422
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "国外",
-        "mainBusinessIncome": 206332032.23,
-        "mbiRatio": 0.115666,
-        "mainBusinessCost": 163144688.32,
-        "mbcRatio": 0.116116,
-        "mainBusinessProfit": 43187343.91,
-        "mbpRatio": 0.113995,
-        "grossProfitRatio": 0.20931
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 41365349.63,
-        "mbiRatio": 0.023189,
-        "mainBusinessCost": 8974015.24,
-        "mbcRatio": 0.006387,
-        "mainBusinessProfit": 32391334.39,
-        "mbpRatio": 0.085499,
-        "grossProfitRatio": 0.783055
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 190020890.48,
-          "profit_tb": 0.22998,
-          "basicEps": 0.57,
-          "totalSharesOutstanding": 325758450,
-          "dps": 0.4,
-          "dividendRatio": 0.6857318670112992,
-          "totalDividend": 130303380,
-          "totalDividendA": 130303380
-        },
         {
           "year": "2016",
           "profit": 202710560.33,
@@ -149708,51 +149759,79 @@ const data: ServiceData = {
           "dividendRatio": 0.8118495039985754,
           "totalDividend": 379744956.92,
           "totalDividendA": 379744956.92
+        },
+        {
+          "year": "2025",
+          "profit": 438133521.15,
+          "profit_tb": -0.06332,
+          "basicEps": 0.72,
+          "totalSharesOutstanding": 612491866,
+          "dps": 0.55,
+          "dividendRatio": 0.3914279875912206,
+          "totalDividend": 171497722.48,
+          "totalDividendA": 171497722.48
         }
       ],
-      "cash": 528386926.04,
-      "interestBearingDebt": 957604115.31,
-      "debtRatio": 42.624718,
-      "interestBearingDebtOverTotal": 0.22959824460427683,
-      "roe": 19.18,
-      "roic": 14.300626,
-      "roa": 13.196729,
-      "grossProfitMargin": 23.780962,
-      "netProfitMargin": 13.367435,
-      "tradingFinancialAssets": 969894021.64,
+      "cash": 654590507.13,
+      "interestBearingDebt": 936686226.54,
+      "debtRatio": 37.933165,
+      "interestBearingDebtOverTotal": 0.22237942378793246,
+      "roe": 17.34,
+      "roic": 12.65355,
+      "roa": 11.715478,
+      "grossProfitMargin": 23.003516,
+      "netProfitMargin": 11.87463,
+      "tradingFinancialAssets": 707724882.04,
       "longTermEquityInvestment": 0,
-      "minorityInterest": 45772981.88
+      "minorityInterest": 47062827.41
     },
     "dynamicData": {
       "code": "002014",
-      "price": 11.09,
-      "marketValue": 6792534794,
-      "PB": 2.65,
-      "PE_TTM": 15.44,
+      "price": 11.32,
+      "marketValue": 6933407923,
+      "PB": 2.7,
+      "PE_TTM": 15.76,
       "totalSharesOutstanding": 612491866
     },
     "recentYearData": {
-      "netProfit": 472105123.78000003
+      "netProfit": 439962470.84
     }
   },
   "002027": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 9606726617.75,
-        "netProfit": 4240475945.45,
-        "netProfitMargin": 0.4414069551656676,
-        "netProfitExcludingNon": 4004927625.14,
-        "coreProfit": 4338405251.61,
-        "cashFlowFromOperating": 5311219622.54,
-        "fcf": 5189150708.96,
-        "capex": 122068913.58,
-        "fcfOverNetProfit": 1.2237189352595954,
-        "netProfitExcludingNonOvernetProfit": 0.9444523861613361,
-        "cashFlowFromOperatingOverNetProfit": 1.252505542034474,
-        "operatingProfit": 3768526399.95,
-        "financialProfit": 471949545.5,
-        "operatingProfitOverNetProfit": 0.8887036380889276
+        "year": "2026Q1",
+        "revenue": 2915160677.12,
+        "netProfit": 1789555599.73,
+        "netProfitMargin": 0.6138788896871274,
+        "netProfitExcludingNon": 1066120782.16,
+        "coreProfit": 1274949143.81,
+        "cashFlowFromOperating": 2138751357.61,
+        "fcf": 1924551059.53,
+        "capex": 214200298.08,
+        "fcfOverNetProfit": 1.0754351861548015,
+        "netProfitExcludingNonOvernetProfit": 0.5957461072016156,
+        "cashFlowFromOperatingOverNetProfit": 1.195129873546642,
+        "operatingProfit": 1328589867.6,
+        "financialProfit": 460965732.13,
+        "operatingProfitOverNetProfit": 0.7424132940046408
+      },
+      {
+        "year": "2025",
+        "revenue": 12758696542.16,
+        "netProfit": 2946332500.88,
+        "netProfitMargin": 0.23092739067381227,
+        "netProfitExcludingNon": 2719391993.26,
+        "coreProfit": 5758302631.370001,
+        "cashFlowFromOperating": 7208813429.81,
+        "fcf": 7051812150.38,
+        "capex": 157001279.43,
+        "fcfOverNetProfit": 2.393420344877501,
+        "netProfitExcludingNonOvernetProfit": 0.9229752556603106,
+        "cashFlowFromOperatingOverNetProfit": 2.446707365057032,
+        "operatingProfit": 2904576615.31,
+        "financialProfit": 41755885.57000002,
+        "operatingProfitOverNetProfit": 0.9858278434095511
       },
       {
         "year": "2024",
@@ -149906,42 +149985,42 @@ const data: ServiceData = {
         "operatingProfit": 4451137750.469999,
         "financialProfit": 73972.14,
         "operatingProfitOverNetProfit": 0.9999833815723426
-      },
-      {
-        "year": "2015",
-        "revenue": 8627411561.61,
-        "netProfit": 3389142023.94,
-        "netProfitMargin": 0.3928341658141016,
-        "netProfitExcludingNon": 3069331836.65,
-        "coreProfit": 3611526594.7900014,
-        "cashFlowFromOperating": 2630453814.88,
-        "fcf": 2537634388.05,
-        "capex": 92819426.83,
-        "fcfOverNetProfit": 0.7487542186561744,
-        "netProfitExcludingNonOvernetProfit": 0.9056368293122726,
-        "cashFlowFromOperatingOverNetProfit": 0.7761415120107603,
-        "operatingProfit": 3389799431.81,
-        "financialProfit": -657407.87,
-        "operatingProfitOverNetProfit": 1.0001939747184851
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 70.400693,
-        "netProfitMargin": 44.14069551656676,
-        "grossProfitMinusNetProfit": 26.259997483433246,
-        "devExpenses": 41772965.9,
-        "manageExpenses": 411856939.39,
-        "devAndManageExpenses": 453629905.28999996,
-        "sellingExpenses": 1820135842.8,
-        "financialExpenses": -11434253.22,
-        "totalOperatingExpenses": 2262331494.8700004,
-        "sellingExpensesRatio": 0.1894647277082915,
-        "devExpensesRatio": 0.00434830380442154,
-        "manageExpensesRatio": 0.042871724758881645,
-        "devAndManageExpensesRatio": 0.04722002856330318,
-        "totalOperatingExpensesRatio": 23.549452
+        "year": "2026Q1",
+        "grossProfitMargin": 68.740819,
+        "netProfitMargin": 61.387888968712744,
+        "grossProfitMinusNetProfit": 7.352930031287258,
+        "devExpenses": 17330800.74,
+        "manageExpenses": 164340121.29,
+        "devAndManageExpenses": 181670922.03,
+        "sellingExpenses": 482052722.6,
+        "financialExpenses": 15130235.79,
+        "totalOperatingExpenses": 678853880.42,
+        "sellingExpensesRatio": 0.1653606013498503,
+        "devExpensesRatio": 0.005945058492323575,
+        "manageExpensesRatio": 0.05637429270360424,
+        "devAndManageExpensesRatio": 0.06231935119592781,
+        "totalOperatingExpensesRatio": 23.287014
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 70.484027,
+        "netProfitMargin": 23.092739067381228,
+        "grossProfitMinusNetProfit": 47.391287932618766,
+        "devExpenses": 53143884.48,
+        "manageExpenses": 554288552.49,
+        "devAndManageExpenses": 607432436.97,
+        "sellingExpenses": 2423506017.24,
+        "financialExpenses": -119221.27,
+        "totalOperatingExpenses": 3030819232.94,
+        "sellingExpensesRatio": 0.18994934233538163,
+        "devExpensesRatio": 0.0041653067227040525,
+        "manageExpensesRatio": 0.04344397961487695,
+        "devAndManageExpensesRatio": 0.047609286337581,
+        "totalOperatingExpensesRatio": 23.754928
       },
       {
         "year": "2024",
@@ -150095,41 +150174,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.045942588233657634,
         "devAndManageExpensesRatio": 0.045942588233657634,
         "totalOperatingExpensesRatio": 22.241357
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 70.5617,
-        "netProfitMargin": 39.28341658141016,
-        "grossProfitMinusNetProfit": 31.278283418589844,
-        "devExpenses": 0,
-        "manageExpenses": 436324004.6,
-        "devAndManageExpenses": 436324004.6,
-        "sellingExpenses": 1729332379.2,
-        "financialExpenses": -129330393.9,
-        "totalOperatingExpenses": 2036325989.9,
-        "sellingExpensesRatio": 0.20044625979072703,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.050574149788047855,
-        "devAndManageExpensesRatio": 0.050574149788047855,
-        "totalOperatingExpensesRatio": 23.602977
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 12390487957.96,
-        "cash": 6204323626.88,
-        "inventory": 8576618.93,
-        "nonCurrentAssets": 11398554779.88,
+        "year": "2026Q1",
+        "currentAssets": 13680006020.37,
+        "cash": 3870536933.96,
+        "inventory": 6823875.27,
+        "nonCurrentAssets": 7604941651.95,
         "goodwill": 171821374.96,
-        "totalAssets": 23789042737.84,
-        "equity": 16467371503.02,
-        "interestFreeLiabilities": 389649189.38,
-        "interestBearingDebt": 2898056845.1000004,
-        "interestExpense": 86124582.26,
-        "interestFreeLiabilitiesOverTotal": 0.016379355557683082,
-        "interestBearingDebtOverTotal": 0.12182318040440573,
-        "debtRatio": 29.260778
+        "totalAssets": 21284947672.32,
+        "equity": 15445483393.32,
+        "interestFreeLiabilities": 597018268.95,
+        "interestBearingDebt": 2841283636.49,
+        "interestExpense": 25790397.04,
+        "interestFreeLiabilitiesOverTotal": 0.028048848328924583,
+        "interestBearingDebtOverTotal": 0.13348793148244126,
+        "debtRatio": 25.302774
+      },
+      {
+        "year": "2025",
+        "currentAssets": 11818353072.46,
+        "cash": 3238508082.4,
+        "inventory": 5839302.66,
+        "nonCurrentAssets": 8396977422.43,
+        "goodwill": 171821374.96,
+        "totalAssets": 20215330494.89,
+        "equity": 14249204750.69,
+        "interestFreeLiabilities": 632563526.7099999,
+        "interestBearingDebt": 2798768049.95,
+        "interestExpense": 110278608.26,
+        "interestFreeLiabilitiesOverTotal": 0.03129127801644887,
+        "interestBearingDebtOverTotal": 0.13844780082410565,
+        "debtRatio": 27.706804
       },
       {
         "year": "2024",
@@ -150274,42 +150352,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.0516035608231285,
         "interestBearingDebtOverTotal": 0.05376162779022301,
         "debtRatio": 32.776432
-      },
-      {
-        "year": "2015",
-        "currentAssets": 11130099662.92,
-        "cash": 3176463258.75,
-        "inventory": 0,
-        "nonCurrentAssets": 1371568383.11,
-        "goodwill": 115066910.85,
-        "totalAssets": 12501668046.03,
-        "equity": 4598731084.44,
-        "interestFreeLiabilities": 584917325.99,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.0467871426305984,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 62.116569
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.3284031951810561,
-        "wc": 3154879716.5,
-        "receivables": 3217781715.58,
-        "prepayments": 69392633.76,
-        "inventory": 8576618.93,
-        "accountsPayable": 97341668.65,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.9993693251200766,
+        "wc": 2913322158.5099998,
+        "receivables": 3380089366.76,
+        "prepayments": 96494347.52,
+        "inventory": 6823875.27,
+        "accountsPayable": 84828874.76,
         "customerAdvances": 0,
-        "contractLiabilities": 292307520.73,
-        "receivablesToRevenueRatio": 0.3349508988456715,
-        "prepaymentsToRevenueRatio": 0.007223338033975668,
-        "inventoryToRevenueRatio": 0.0008927722492022717,
-        "accountsPayableToRevenueRatio": 0.010132657305990715,
+        "contractLiabilities": 512189394.19,
+        "receivablesToRevenueRatio": 1.1594864712909483,
+        "prepaymentsToRevenueRatio": 0.03310086757047317,
+        "inventoryToRevenueRatio": 0.002340823037151273,
+        "accountsPayableToRevenueRatio": 0.029099210697300478,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.030427379935004502,
-        "changeInWC": 1118638601.8799996
+        "contractLiabilitiesToRevenueRatio": 0.17569851233586609,
+        "changeInWC": -317863732.3100004
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.2532536047191677,
+        "wc": 3231185890.82,
+        "receivables": 3700366720.6800003,
+        "prepayments": 91213982.51,
+        "inventory": 5839302.66,
+        "accountsPayable": 86726077.65,
+        "customerAdvances": 0,
+        "contractLiabilities": 545837449.06,
+        "receivablesToRevenueRatio": 0.2900270187046507,
+        "prepaymentsToRevenueRatio": 0.00714916153139871,
+        "inventoryToRevenueRatio": 0.00045767235239936414,
+        "accountsPayableToRevenueRatio": 0.006797408917393814,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.0427815997705038,
+        "changeInWC": 1194944776.1999998
       },
       {
         "year": "2024",
@@ -150472,35 +150552,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.044724865360859366,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 62072460.31999922
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.26264721547689074,
-        "wc": 2265965623.4300003,
-        "receivables": 2198760688.69,
-        "prepayments": 604322260.73,
-        "inventory": 0,
-        "accountsPayable": 187048703.66,
-        "customerAdvances": 350068622.33,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.25485751699547754,
-        "prepaymentsToRevenueRatio": 0.07004676390066926,
-        "inventoryToRevenueRatio": 0,
-        "accountsPayableToRevenueRatio": 0.02168074425617108,
-        "advancesToRevenueRatio": 0.04057632116308499,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 49397559.96000004
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.3329343469242078,
+        "longTermOperatingAssetsPerYuanRevenue": 1.00917404125951,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 3198409252.56,
+        "longTermOperatingAssets": 2941904481.4500003,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.04454906731356227,
+        "longTermOperatingAssetsPerYuanRevenue": 0.27303971970950525,
+        "fixedAssets": 568388031.09,
+        "longTermOperatingAssets": 3483630927.73,
+        "depreciation": 2729195447.22,
+        "depreciationOverRevenue": 0.21390864170188637
       },
       {
         "year": "2024",
@@ -150582,26 +150653,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 443543012.69,
         "depreciation": 130369190.86,
         "depreciationOverRevenue": 0.012764856226904348
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.037521486107194635,
-        "longTermOperatingAssetsPerYuanRevenue": 0.05152712155730766,
-        "fixedAssets": 323713303.05,
-        "longTermOperatingAssets": 444545684.26,
-        "depreciation": 139350162.32999998,
-        "depreciationOverRevenue": 0.016152024432226717
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 23.74,
-        "roa": 21.869484,
-        "roic": 21.991566,
-        "netProfitMargin": 43.99615,
-        "assetTurnover": 41.241499999999995,
-        "equityMultiplier": 1.413642
+        "year": "2026Q1",
+        "roe": 12.13,
+        "roa": 9.137995,
+        "roic": 10.275134,
+        "netProfitMargin": 61.211406,
+        "assetTurnover": 14.0488,
+        "equityMultiplier": 1.338737
+      },
+      {
+        "year": "2025",
+        "roe": 18.28,
+        "roa": 18.59868,
+        "roic": 16.508676,
+        "netProfitMargin": 22.886465,
+        "assetTurnover": 59.323499999999996,
+        "equityMultiplier": 1.383256
       },
       {
         "year": "2024",
@@ -150683,32 +150754,38 @@ const data: ServiceData = {
         "netProfitMargin": 43.550328,
         "assetTurnover": 82.93,
         "equityMultiplier": 1.487573
-      },
-      {
-        "year": "2015",
-        "roe": 73.2,
-        "roa": 37.168901,
-        "roic": 66.725537,
-        "netProfitMargin": 39.244364,
-        "assetTurnover": 80.8152,
-        "equityMultiplier": 2.639676
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 23789042737.84,
-        "avgTotalAssets": 23293818852.16,
-        "avgCurrentAssets": 12018896193.2,
-        "avgInventory": 8424298.67,
-        "equity": 16828183519.54,
-        "avgEquity": 17074460734.715,
-        "totalAssetsDays": 654.679927,
-        "currentAssetsDays": 337.794766,
-        "wcDays": 119.86716624108547,
-        "receivablesDays": 76.096518,
-        "inventoryDays": 0.799908,
+        "year": "2026Q1",
+        "totalAssets": 21284947672.32,
+        "avgTotalAssets": 20750139083.605,
+        "avgCurrentAssets": 12749179546.415,
+        "avgInventory": 6331588.965,
+        "equity": 15899265271.92,
+        "avgEquity": 15256786872.880001,
+        "totalAssetsDays": 640.620783,
+        "currentAssetsDays": 393.606489,
+        "wcDays": 364.76980366882793,
+        "receivablesDays": 103.430521,
+        "inventoryDays": 0.625338,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 20215330494.89,
+        "avgTotalAssets": 21506962730.684998,
+        "avgCurrentAssets": 11732828750.45,
+        "avgInventory": 7055640.535,
+        "equity": 14614308473.84,
+        "avgEquity": 15967523211.865,
+        "totalAssetsDays": 606.841502,
+        "currentAssetsDays": 331.054064,
+        "wcDays": 92.4375657224962,
+        "receivablesDays": 83.300928,
+        "inventoryDays": 0.67449,
+        "fixedAssetsDays": 16.260409569450232
       },
       {
         "year": "2024",
@@ -150844,24 +150921,273 @@ const data: ServiceData = {
         "receivablesDays": 76.549974,
         "inventoryDays": 0,
         "fixedAssetsDays": 10.097069056460244
-      },
-      {
-        "year": "2015",
-        "totalAssets": 12501668046.03,
-        "avgTotalAssets": 10675472003.445,
-        "avgCurrentAssets": 9524665330.01,
-        "avgInventory": 5383903.4,
-        "equity": 4736060678.29,
-        "avgEquity": 5214698250.91,
-        "totalAssetsDays": 445.460367,
-        "currentAssetsDays": 397.440123,
-        "wcDays": 95.86623364906512,
-        "receivablesDays": 87.958503,
-        "inventoryDays": 0,
-        "fixedAssetsDays": 13.695342429126041
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "楼宇媒体及其他",
+        "mainBusinessIncome": 12119550226.15,
+        "mbiRatio": 0.949905,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "影院媒体",
+        "mainBusinessIncome": 639146316.01,
+        "mbiRatio": 0.050095,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:楼宇媒体及其他-日用消费品",
+        "mainBusinessIncome": 6035737490.81,
+        "mbiRatio": 0.473069,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:楼宇媒体及其他-互联网",
+        "mainBusinessIncome": 3208446595.6,
+        "mbiRatio": 0.251471,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:楼宇媒体及其他-娱乐及休闲",
+        "mainBusinessIncome": 685048086.85,
+        "mbiRatio": 0.053693,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:楼宇媒体及其他-交通",
+        "mainBusinessIncome": 633799884.4,
+        "mbiRatio": 0.049676,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:楼宇媒体及其他-商业及服务",
+        "mainBusinessIncome": 447713691.16,
+        "mbiRatio": 0.035091,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:楼宇媒体及其他-杂类",
+        "mainBusinessIncome": 391911519.54,
+        "mbiRatio": 0.030717,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:楼宇媒体及其他-通讯",
+        "mainBusinessIncome": 359230401.6,
+        "mbiRatio": 0.028156,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:楼宇媒体及其他-房产家居",
+        "mainBusinessIncome": 357662556.19,
+        "mbiRatio": 0.028033,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:影院媒体-日用消费品",
+        "mainBusinessIncome": 329054567.48,
+        "mbiRatio": 0.025791,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:影院媒体-交通",
+        "mainBusinessIncome": 99403936.94,
+        "mbiRatio": 0.007791,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:影院媒体-通讯",
+        "mainBusinessIncome": 83978187.59,
+        "mbiRatio": 0.006582,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:影院媒体-互联网",
+        "mainBusinessIncome": 33813301.97,
+        "mbiRatio": 0.00265,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:影院媒体-娱乐及休闲",
+        "mainBusinessIncome": 32119891.12,
+        "mbiRatio": 0.002517,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:影院媒体-房产家居",
+        "mainBusinessIncome": 30353915.08,
+        "mbiRatio": 0.002379,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:影院媒体-商业及服务",
+        "mainBusinessIncome": 22453374.76,
+        "mbiRatio": 0.00176,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其中:影院媒体-杂类",
+        "mainBusinessIncome": 7969141.07,
+        "mbiRatio": 0.000625,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "楼宇媒体",
+        "mainBusinessIncome": 12034145652.02,
+        "mbiRatio": 0.943211,
+        "mainBusinessCost": 3614561423.64,
+        "mbcRatio": 0.959825,
+        "mainBusinessProfit": 8419584228.38,
+        "mbpRatio": 0.936254,
+        "grossProfitRatio": 0.699641
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "影院媒体",
+        "mainBusinessIncome": 639146316.01,
+        "mbiRatio": 0.050095,
+        "mainBusinessCost": 135407059.47,
+        "mbcRatio": 0.035957,
+        "mainBusinessProfit": 503739256.54,
+        "mbpRatio": 0.056016,
+        "grossProfitRatio": 0.788144
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他媒体及其他",
+        "mainBusinessIncome": 85404574.13,
+        "mbiRatio": 0.006694,
+        "mainBusinessCost": 15884861.06,
+        "mbcRatio": 0.004218,
+        "mainBusinessProfit": 69519713.07,
+        "mbpRatio": 0.007731,
+        "grossProfitRatio": 0.814005
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华东",
+        "mainBusinessIncome": 4260052132.36,
+        "mbiRatio": 0.333894,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -151127,18 +151453,6 @@ const data: ServiceData = {
         "grossProfitRatio": 0
       },
       {
-        "year": "2024",
-        "mainType": "地区",
-        "itemName": "华南",
-        "mainBusinessIncome": 2318076278.61,
-        "mbiRatio": 0.189044,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
         "year": "2023",
         "mainType": "行业",
         "itemName": "日用消费品",
@@ -151276,18 +151590,6 @@ const data: ServiceData = {
         "itemName": "华东",
         "mainBusinessIncome": 4130013185.13,
         "mbiRatio": 0.346951,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2023",
-        "mainType": "地区",
-        "itemName": "华南",
-        "mainBusinessIncome": 2259585545.68,
-        "mbiRatio": 0.189822,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -151439,18 +151741,6 @@ const data: ServiceData = {
         "grossProfitRatio": 0
       },
       {
-        "year": "2022",
-        "mainType": "地区",
-        "itemName": "华南",
-        "mainBusinessIncome": 1775343947.73,
-        "mbiRatio": 0.188366,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
         "year": "2021",
         "mainType": "行业",
         "itemName": "日用消费品",
@@ -151588,18 +151878,6 @@ const data: ServiceData = {
         "itemName": "华东",
         "mainBusinessIncome": 5145053499,
         "mbiRatio": 0.346785,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2021",
-        "mainType": "地区",
-        "itemName": "华南",
-        "mainBusinessIncome": 2995964039.55,
-        "mbiRatio": 0.201933,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -151751,18 +152029,6 @@ const data: ServiceData = {
         "grossProfitRatio": 0
       },
       {
-        "year": "2020",
-        "mainType": "地区",
-        "itemName": "华南",
-        "mainBusinessIncome": 2406792040.34,
-        "mbiRatio": 0.198956,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
         "year": "2019",
         "mainType": "行业",
         "itemName": "日用消费品",
@@ -151900,18 +152166,6 @@ const data: ServiceData = {
         "itemName": "华东",
         "mainBusinessIncome": 4252010385.25,
         "mbiRatio": 0.350365,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2019",
-        "mainType": "地区",
-        "itemName": "华南",
-        "mainBusinessIncome": 2561653803.44,
-        "mbiRatio": 0.21108,
         "mainBusinessCost": 0,
         "mbcRatio": 0,
         "mainBusinessProfit": 0,
@@ -152385,177 +152639,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 0,
         "mbpRatio": 0,
         "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "日用消费品",
-        "mainBusinessIncome": 2132564307.03,
-        "mbiRatio": 0.247185,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "互联网",
-        "mainBusinessIncome": 2077380979.77,
-        "mbiRatio": 0.240788,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "汽车",
-        "mainBusinessIncome": 1397005208.91,
-        "mbiRatio": 0.161926,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "通讯",
-        "mainBusinessIncome": 765242642.7,
-        "mbiRatio": 0.088699,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "杂类",
-        "mainBusinessIncome": 761882095.63,
-        "mbiRatio": 0.088309,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "娱乐及休闲",
-        "mainBusinessIncome": 607669968.8,
-        "mbiRatio": 0.070435,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "商业及服务",
-        "mainBusinessIncome": 471000203.58,
-        "mbiRatio": 0.054593,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "房产家居",
-        "mainBusinessIncome": 414666155.19,
-        "mbiRatio": 0.048064,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "楼宇媒体",
-        "mainBusinessIncome": 6945208130.7,
-        "mbiRatio": 0.805016,
-        "mainBusinessCost": 1808363187.01,
-        "mbcRatio": 0.71202,
-        "mainBusinessProfit": 5136844943.69,
-        "mbpRatio": 0.843814,
-        "grossProfitRatio": 0.739624
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "影院媒体",
-        "mainBusinessIncome": 1353174988.14,
-        "mbiRatio": 0.156846,
-        "mainBusinessCost": 511601355.42,
-        "mbcRatio": 0.201437,
-        "mainBusinessProfit": 841573632.72,
-        "mbpRatio": 0.138243,
-        "grossProfitRatio": 0.621925
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他媒体",
-        "mainBusinessIncome": 329028442.77,
-        "mbiRatio": 0.038138,
-        "mainBusinessCost": 219798678.48,
-        "mbcRatio": 0.086543,
-        "mainBusinessProfit": 109229764.29,
-        "mbpRatio": 0.017943,
-        "grossProfitRatio": 0.331977
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华东",
-        "mainBusinessIncome": 3051552899.42,
-        "mbiRatio": 0.353704,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华北",
-        "mainBusinessIncome": 2042496461.7,
-        "mbiRatio": 0.236745,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 3389142023.94,
-          "profit_tb": 0.40347,
-          "basicEps": 3.78,
-          "totalSharesOutstanding": 314370473.3,
-          "dps": 0.25,
-          "dividendRatio": 0.3222361824277843,
-          "totalDividend": 1092104187.5,
-          "totalDividendA": 1092104187.5
-        },
         {
           "year": "2016",
           "profit": 4451211722.61,
@@ -152654,35 +152741,63 @@ const data: ServiceData = {
           "dividendRatio": 0.9244542286129739,
           "totalDividend": 4765925909.58,
           "totalDividendA": 4765925909.58
+        },
+        {
+          "year": "2025",
+          "profit": 2946332500.88,
+          "profit_tb": -0.4285,
+          "basicEps": 0.204,
+          "totalSharesOutstanding": 328300769.56,
+          "dps": 0.33999999999999997,
+          "dividendRatio": 0.7352632325961066,
+          "totalDividend": 2166329958.9,
+          "totalDividendA": 2166329958.9
         }
       ],
-      "cash": 6204323626.88,
-      "interestBearingDebt": 2898056845.1000004,
-      "debtRatio": 29.260778,
-      "interestBearingDebtOverTotal": 0.12182318040440573,
-      "roe": 29.91,
-      "roic": 25.867975,
-      "roa": 26.183652,
-      "grossProfitMargin": 66.262402,
-      "netProfitMargin": 41.360013,
-      "tradingFinancialAssets": 2002883757.99,
-      "longTermEquityInvestment": 3402727991.37,
-      "minorityInterest": 360812016.52
+      "cash": 3870536933.96,
+      "interestBearingDebt": 2841283636.49,
+      "debtRatio": 25.302774,
+      "interestBearingDebtOverTotal": 0.13348793148244126,
+      "roe": 18.28,
+      "roic": 16.508676,
+      "roa": 18.59868,
+      "grossProfitMargin": 70.484027,
+      "netProfitMargin": 22.886465,
+      "tradingFinancialAssets": 5449108208.41,
+      "longTermEquityInvestment": 83258978.25,
+      "minorityInterest": 453781878.6
     },
     "dynamicData": {
       "code": "002027",
-      "price": 6.09,
-      "marketValue": 87952996331,
-      "PB": 5.34,
-      "PE_TTM": 16.2,
+      "price": 6.35,
+      "marketValue": 91707968260,
+      "PB": 5.94,
+      "PE_TTM": 25.47,
       "totalSharesOutstanding": 14442199726
     },
     "recentYearData": {
-      "netProfit": 5427806261.85
+      "netProfit": 3600714994.9700003
     }
   },
   "002352": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 74142121000,
+        "netProfit": 2525728000,
+        "netProfitMargin": 0.03406603380013906,
+        "netProfitExcludingNon": 2317341000,
+        "coreProfit": 3682168000,
+        "cashFlowFromOperating": 3364929000,
+        "fcf": 501822000,
+        "capex": 2863107000,
+        "fcfOverNetProfit": 0.19868410216777105,
+        "netProfitExcludingNonOvernetProfit": 0.9174942828364733,
+        "cashFlowFromOperatingOverNetProfit": 1.332261035234198,
+        "operatingProfit": 2426776000,
+        "financialProfit": 98952000,
+        "operatingProfitOverNetProfit": 0.9608223846748344
+      },
       {
         "year": "2025",
         "revenue": 308226647000,
@@ -152852,26 +152967,26 @@ const data: ServiceData = {
         "operatingProfit": 3935317190.68,
         "financialProfit": 245108961.32,
         "operatingProfitOverNetProfit": 0.9413674701076264
-      },
-      {
-        "year": "2015",
-        "revenue": 48101154759.5,
-        "netProfit": 1101430807.3,
-        "netProfitMargin": 0.022898219654123104,
-        "netProfitExcludingNon": 23897015.6,
-        "coreProfit": 1353395276.86,
-        "cashFlowFromOperating": 2782081832.55,
-        "fcf": -2630641033.3,
-        "capex": 5412722865.85,
-        "fcfOverNetProfit": -2.388385194843642,
-        "netProfitExcludingNonOvernetProfit": 0.021696338473208423,
-        "cashFlowFromOperatingOverNetProfit": 2.525879804805783,
-        "operatingProfit": 676094344.01,
-        "financialProfit": 425336463.29,
-        "operatingProfitOverNetProfit": 0.613832788704493
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 13.737617,
+        "netProfitMargin": 3.406603380013906,
+        "grossProfitMinusNetProfit": 10.331013619986095,
+        "devExpenses": 536130000,
+        "manageExpenses": 4870588000,
+        "devAndManageExpenses": 5406718000,
+        "sellingExpenses": 911886000,
+        "financialExpenses": 420429000,
+        "totalOperatingExpenses": 6739033000,
+        "sellingExpensesRatio": 0.012299162577234606,
+        "devExpensesRatio": 0.007231112258037506,
+        "manageExpensesRatio": 0.0656925905855863,
+        "devAndManageExpensesRatio": 0.0729237028436238,
+        "totalOperatingExpensesRatio": 9.089344
+      },
       {
         "year": "2025",
         "grossProfitMargin": 13.317593,
@@ -153041,26 +153156,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.10576147845276065,
         "devAndManageExpensesRatio": 0.10576147845276065,
         "totalOperatingExpensesRatio": 13.303968
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 14.351285,
-        "netProfitMargin": 2.2898219654123104,
-        "grossProfitMinusNetProfit": 12.06146303458769,
-        "devExpenses": 0,
-        "manageExpenses": 5822190502.8,
-        "devAndManageExpenses": 5822190502.8,
-        "sellingExpenses": 1954003476.23,
-        "financialExpenses": 397235198.53,
-        "totalOperatingExpenses": 8173429177.56,
-        "sellingExpensesRatio": 0.04062279764383585,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.12104055571867772,
-        "devAndManageExpensesRatio": 0.12104055571867772,
-        "totalOperatingExpensesRatio": 9.486993
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 90087104000,
+        "cash": 16992297000,
+        "inventory": 3056513000,
+        "nonCurrentAssets": 123710127000,
+        "goodwill": 9367263000,
+        "totalAssets": 213797231000,
+        "equity": 100410330000,
+        "interestFreeLiabilities": 29204933000,
+        "interestBearingDebt": 47055004000,
+        "interestExpense": 393033000,
+        "interestFreeLiabilitiesOverTotal": 0.1366010816108278,
+        "interestBearingDebtOverTotal": 0.22009173729663506,
+        "debtRatio": 47.799894
+      },
       {
         "year": "2025",
         "currentAssets": 91327047000,
@@ -153220,25 +153334,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.1256494918889019,
         "interestBearingDebtOverTotal": 0.2621630206480462,
         "debtRatio": 53.423093
-      },
-      {
-        "year": "2015",
-        "currentAssets": 18582487593.87,
-        "cash": 3620373346.93,
-        "inventory": 256097919.05,
-        "nonCurrentAssets": 16134085718.43,
-        "goodwill": 57929676.62,
-        "totalAssets": 34716573312.3,
-        "equity": 13695736209.49,
-        "interestFreeLiabilities": 3485620446.86,
-        "interestBearingDebt": 11292326265.32,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.10040220316401598,
-        "interestBearingDebtOverTotal": 0.3252719144754749,
-        "debtRatio": 20.036936
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.13476496039275704,
+        "wc": 9991760000,
+        "receivables": 29836656000,
+        "prepayments": 3346879000,
+        "inventory": 3056513000,
+        "accountsPayable": 27123178000,
+        "customerAdvances": 40626000,
+        "contractLiabilities": 2038614000,
+        "receivablesToRevenueRatio": 0.4024251747532283,
+        "prepaymentsToRevenueRatio": 0.045141398099468995,
+        "inventoryToRevenueRatio": 0.04122505478363642,
+        "accountsPayableToRevenueRatio": 0.3658268422075489,
+        "advancesToRevenueRatio": 0.0005479476369444569,
+        "contractLiabilitiesToRevenueRatio": 0.027496030225517828,
+        "changeInWC": 1991622000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.025955374325568936,
@@ -153418,33 +153534,24 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.004981477070989343,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -1771137208.3499997
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.0556845746798001,
-        "wc": 2678492344.39,
-        "receivables": 4243263007.1,
-        "prepayments": 1474751865.1,
-        "inventory": 256097919.05,
-        "accountsPayable": 3095473088.69,
-        "customerAdvances": 200147358.17,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.08821540830601272,
-        "prepaymentsToRevenueRatio": 0.030659385881141154,
-        "inventoryToRevenueRatio": 0.005324153241859969,
-        "accountsPayableToRevenueRatio": 0.06435340490611907,
-        "advancesToRevenueRatio": 0.004160967843094677,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 2151281723.2999997
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.5785940221483548,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 42898188000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.1688681803036971,
-        "longTermOperatingAssetsPerYuanRevenue": 0.3108861901871839,
-        "fixedAssets": 52049673000,
-        "longTermOperatingAssets": 95823408000,
+        "fixedAssetsPerYuanRevenue": 0.17830480438636442,
+        "longTermOperatingAssetsPerYuanRevenue": 0.32032281426985126,
+        "fixedAssets": 54958292000,
+        "longTermOperatingAssets": 98732027000,
         "depreciation": 16372515000,
         "depreciationOverRevenue": 0.0531184281416136
       },
@@ -153528,18 +153635,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 18571616316.850002,
         "depreciation": 2362307841.45,
         "depreciationOverRevenue": 0.041095980540854726
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.19677048023760138,
-        "longTermOperatingAssetsPerYuanRevenue": 0.2720331964430789,
-        "fixedAssets": 9464887322.01,
-        "longTermOperatingAssets": 13085110881.830002,
-        "depreciation": 2084771624.37,
-        "depreciationOverRevenue": 0.043341404895446016
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 2.52,
+        "roa": 1.797093,
+        "roic": 1.99374,
+        "netProfitMargin": 3.575353,
+        "assetTurnover": 34.463300000000004,
+        "equityMultiplier": 1.915704
+      },
       {
         "year": "2025",
         "roe": 11.51,
@@ -153629,18 +153736,24 @@ const data: ServiceData = {
         "netProfitMargin": 7.238325,
         "assetTurnover": 145.7999,
         "equityMultiplier": 2.146986
-      },
-      {
-        "year": "2015",
-        "roe": 7.83,
-        "roa": 3.735216,
-        "roic": 3.683512,
-        "netProfitMargin": 3.759441,
-        "assetTurnover": 72.2925,
-        "equityMultiplier": 1.250577
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 213797231000,
+        "avgTotalAssets": 215133134000,
+        "avgCurrentAssets": 90707075500,
+        "avgInventory": 3047771500,
+        "equity": 111602381000,
+        "avgEquity": 110963566000,
+        "totalAssetsDays": 261.146859,
+        "currentAssetsDays": 110.107947,
+        "wcDays": 49.18921054335632,
+        "receivablesDays": 36.202025,
+        "inventoryDays": 4.288826,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 216469037000,
@@ -153654,7 +153767,7 @@ const data: ServiceData = {
         "wcDays": 9.473711628832662,
         "receivablesDays": 34.058788,
         "inventoryDays": 3.686131,
-        "fixedAssetsDays": 61.63688581084944
+        "fixedAssetsDays": 65.08125360102301
       },
       {
         "year": "2024",
@@ -153790,21 +153903,6 @@ const data: ServiceData = {
         "receivablesDays": 27.555662,
         "inventoryDays": 2.542611,
         "fixedAssetsDays": 79.51674125500425
-      },
-      {
-        "year": "2015",
-        "totalAssets": 34716573312.3,
-        "avgTotalAssets": 17840248407.25,
-        "avgCurrentAssets": 9621078764.689999,
-        "avgInventory": 205598428.10000002,
-        "equity": 13758862883.13,
-        "avgEquity": 7238379163.83,
-        "totalAssetsDays": 497.976754,
-        "currentAssetsDays": 337.655338,
-        "wcDays": 20.324869758127036,
-        "receivablesDays": 102.610417,
-        "inventoryDays": 96.16375,
-        "fixedAssetsDays": 71.8212252867245
       }
     ],
     "primaryBusinessData": [
@@ -156010,49 +156108,66 @@ const data: ServiceData = {
           "totalDividendA": 2207188863.14
         }
       ],
-      "cash": 20969400000,
-      "interestBearingDebt": 45881969000,
-      "debtRatio": 49.034396,
-      "interestBearingDebtOverTotal": 0.2119562669833469,
+      "cash": 16992297000,
+      "interestBearingDebt": 47055004000,
+      "debtRatio": 47.799894,
+      "interestBearingDebtOverTotal": 0.22009173729663506,
       "roe": 11.51,
       "roic": 8.772315,
       "roa": 7.748316,
       "grossProfitMargin": 13.317593,
       "netProfitMargin": 3.79098,
-      "tradingFinancialAssets": 16198976000,
-      "longTermEquityInvestment": 7033620000,
-      "minorityInterest": 11015263000
+      "tradingFinancialAssets": 25637522000,
+      "longTermEquityInvestment": 6936992000,
+      "minorityInterest": 11192051000
     },
     "dynamicData": {
       "code": "002352",
-      "price": 36.75,
-      "marketValue": 185199067531,
-      "PB": 1.87,
-      "PE_TTM": 16.66,
+      "price": 37.57,
+      "marketValue": 189331400466,
+      "PB": 1.89,
+      "PE_TTM": 16.6,
       "totalSharesOutstanding": 5039430409
     },
     "recentYearData": {
-      "netProfit": 11117216000
+      "netProfit": 11408747000
     }
   },
   "002508": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 7311736717.86,
-        "netProfit": 1157326146.45,
-        "netProfitMargin": 0.1582833451350976,
-        "netProfitExcludingNon": 1059747405.5,
-        "coreProfit": 1332080706.7499995,
-        "cashFlowFromOperating": 729194650.22,
-        "fcf": 539293394.32,
-        "capex": 189901255.9,
-        "fcfOverNetProfit": 0.46598220905510246,
-        "netProfitExcludingNonOvernetProfit": 0.9156860481815653,
-        "cashFlowFromOperatingOverNetProfit": 0.6300684145577656,
-        "operatingProfit": 1097174447.02,
-        "financialProfit": 60151699.43,
-        "operatingProfitOverNetProfit": 0.9480252825752616
+        "year": "2026Q1",
+        "revenue": 1962936648.19,
+        "netProfit": 306638947.4,
+        "netProfitMargin": 0.15621438811219304,
+        "netProfitExcludingNon": 258772432.94,
+        "coreProfit": 322839394.9299999,
+        "cashFlowFromOperating": -421237858.82,
+        "fcf": -490294458.88,
+        "capex": 69056600.06,
+        "fcfOverNetProfit": -1.598930804573979,
+        "netProfitExcludingNonOvernetProfit": 0.8438994300435041,
+        "cashFlowFromOperatingOverNetProfit": -1.3737258831328745,
+        "operatingProfit": 284819595.32,
+        "financialProfit": 21819352.08,
+        "operatingProfitOverNetProfit": 0.9288435071115171
+      },
+      {
+        "year": "2025",
+        "revenue": 10116069396.2,
+        "netProfit": 1255879806.22,
+        "netProfitMargin": 0.12414701372963678,
+        "netProfitExcludingNon": 1163695374.38,
+        "coreProfit": 1551845590.8800015,
+        "cashFlowFromOperating": 1597826676.68,
+        "fcf": 1347602870.22,
+        "capex": 250223806.46,
+        "fcfOverNetProfit": 1.0730349063228208,
+        "netProfitExcludingNonOvernetProfit": 0.926597727439013,
+        "cashFlowFromOperatingOverNetProfit": 1.2722767487513045,
+        "operatingProfit": 1166784010.13,
+        "financialProfit": 89095796.09,
+        "operatingProfitOverNetProfit": 0.9290570676837585
       },
       {
         "year": "2024",
@@ -156206,42 +156321,42 @@ const data: ServiceData = {
         "operatingProfit": 1208693492.0800002,
         "financialProfit": -1859613.41,
         "operatingProfitOverNetProfit": 1.0015409025574005
-      },
-      {
-        "year": "2015",
-        "revenue": 4542718028.2,
-        "netProfit": 830491187.41,
-        "netProfitMargin": 0.18281812391932076,
-        "netProfitExcludingNon": 817440760.87,
-        "coreProfit": 888431971.1799998,
-        "cashFlowFromOperating": 1123649774.55,
-        "fcf": 845574695.3899999,
-        "capex": 278075079.16,
-        "fcfOverNetProfit": 1.0181621529628024,
-        "netProfitExcludingNonOvernetProfit": 0.9842858940132773,
-        "cashFlowFromOperatingOverNetProfit": 1.3529942178607037,
-        "operatingProfit": 830491187.41,
-        "financialProfit": 0,
-        "operatingProfitOverNetProfit": 1
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 51.798298,
-        "netProfitMargin": 15.828334513509759,
-        "grossProfitMinusNetProfit": 35.969963486490244,
-        "devExpenses": 244651404.11,
-        "manageExpenses": 338478868.64,
-        "devAndManageExpenses": 583130272.75,
-        "sellingExpenses": 2067729843.68,
-        "financialExpenses": -106882217.33,
-        "totalOperatingExpenses": 2543977899.1000004,
-        "sellingExpensesRatio": 0.2827959927262238,
-        "devExpensesRatio": 0.033460094851665366,
-        "manageExpensesRatio": 0.04629254056881113,
-        "devAndManageExpensesRatio": 0.0797526354204765,
-        "totalOperatingExpensesRatio": 34.793073
+        "year": "2026Q1",
+        "grossProfitMargin": 54.102295,
+        "netProfitMargin": 15.621438811219305,
+        "grossProfitMinusNetProfit": 38.48085618878069,
+        "devExpenses": 60755346.55,
+        "manageExpenses": 104986934.55,
+        "devAndManageExpenses": 165742281.1,
+        "sellingExpenses": 624831408.45,
+        "financialExpenses": -30935571.55,
+        "totalOperatingExpenses": 759638118.0000001,
+        "sellingExpensesRatio": 0.3183146073645064,
+        "devExpensesRatio": 0.03095125184300867,
+        "manageExpensesRatio": 0.05348462704937888,
+        "devAndManageExpensesRatio": 0.08443587889238754,
+        "totalOperatingExpensesRatio": 38.699064
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 50.191745,
+        "netProfitMargin": 12.414701372963679,
+        "grossProfitMinusNetProfit": 37.77704362703632,
+        "devExpenses": 367949907.26,
+        "manageExpenses": 515134293.64,
+        "devAndManageExpenses": 883084200.9,
+        "sellingExpenses": 2923421261.24,
+        "financialExpenses": -138132869.12,
+        "totalOperatingExpenses": 3668372593.02,
+        "sellingExpensesRatio": 0.28898786146506206,
+        "devExpensesRatio": 0.036372813673877784,
+        "manageExpensesRatio": 0.05092237641563679,
+        "devAndManageExpensesRatio": 0.08729519008951457,
+        "totalOperatingExpensesRatio": 36.262825
       },
       {
         "year": "2024",
@@ -156395,41 +156510,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.07750943787253528,
         "devAndManageExpensesRatio": 0.07750943787253528,
         "totalOperatingExpensesRatio": 33.057307
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 58.174857,
-        "netProfitMargin": 18.281812391932075,
-        "grossProfitMinusNetProfit": 39.893044608067925,
-        "devExpenses": 0,
-        "manageExpenses": 354268839.92,
-        "devAndManageExpenses": 354268839.92,
-        "sellingExpenses": 1353472757.71,
-        "financialExpenses": -65957904.12,
-        "totalOperatingExpenses": 1641783693.5100002,
-        "sellingExpensesRatio": 0.29794337867945947,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.07798609504723651,
-        "devAndManageExpensesRatio": 0.07798609504723651,
-        "totalOperatingExpensesRatio": 36.140999
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 8427834653.44,
-        "cash": 678895535.01,
-        "inventory": 1265386540.25,
-        "nonCurrentAssets": 8322214748.16,
+        "year": "2026Q1",
+        "currentAssets": 8992395073.01,
+        "cash": 1488871187.68,
+        "inventory": 1295256052.45,
+        "nonCurrentAssets": 7671167102.69,
         "goodwill": 0,
-        "totalAssets": 16750049401.6,
-        "equity": 11413394766.77,
-        "interestFreeLiabilities": 4343775431.2,
-        "interestBearingDebt": 107926691.42999999,
-        "interestExpense": 2720934.39,
-        "interestFreeLiabilitiesOverTotal": 0.25932911163743033,
-        "interestBearingDebtOverTotal": 0.00644336555924967,
-        "debtRatio": 31.399609
+        "totalAssets": 16663562175.7,
+        "equity": 11806502571.19,
+        "interestFreeLiabilities": 4005792922.94,
+        "interestBearingDebt": 107277391.53,
+        "interestExpense": 780231.95,
+        "interestFreeLiabilitiesOverTotal": 0.24039235312972482,
+        "interestBearingDebtOverTotal": 0.006437842665263948,
+        "debtRatio": 28.705113
+      },
+      {
+        "year": "2025",
+        "currentAssets": 8753917471.17,
+        "cash": 1236257860.53,
+        "inventory": 1360022769.09,
+        "nonCurrentAssets": 8454145642.98,
+        "goodwill": 0,
+        "totalAssets": 17208063114.15,
+        "equity": 11497455691.08,
+        "interestFreeLiabilities": 4689760423.26,
+        "interestBearingDebt": 107573473.41999999,
+        "interestExpense": 4589922.1,
+        "interestFreeLiabilitiesOverTotal": 0.2725327302759403,
+        "interestBearingDebtOverTotal": 0.006251341171078313,
+        "debtRatio": 32.75307
       },
       {
         "year": "2024",
@@ -156574,42 +156688,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.272973919603152,
         "interestBearingDebtOverTotal": 0,
         "debtRatio": 35.695795
-      },
-      {
-        "year": "2015",
-        "currentAssets": 4010546065.67,
-        "cash": 2323218492.06,
-        "inventory": 721573044.03,
-        "nonCurrentAssets": 1016096376.91,
-        "goodwill": 0,
-        "totalAssets": 5026642442.58,
-        "equity": 3169577205.7,
-        "interestFreeLiabilities": 1488798621.1599998,
-        "interestBearingDebt": 0,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.2961815243806861,
-        "interestBearingDebtOverTotal": 0,
-        "debtRatio": 37.009912
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.08493662644102484,
-        "wc": 621034250.2399999,
-        "receivables": 2457244756.83,
-        "prepayments": 258103705.07,
-        "inventory": 1265386540.25,
-        "accountsPayable": 2523297316.51,
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.3283746707487265,
+        "wc": 644578675.5500001,
+        "receivables": 1997300918.59,
+        "prepayments": 225816214.8,
+        "inventory": 1295256052.45,
+        "accountsPayable": 2071769411.69,
         "customerAdvances": 0,
-        "contractLiabilities": 836403435.4,
-        "receivablesToRevenueRatio": 0.3360685500105352,
-        "prepaymentsToRevenueRatio": 0.0352999177937498,
-        "inventoryToRevenueRatio": 0.1730623775277775,
-        "accountsPayableToRevenueRatio": 0.3451023216339933,
+        "contractLiabilities": 802025098.6,
+        "receivablesToRevenueRatio": 1.0175065611168281,
+        "prepaymentsToRevenueRatio": 0.11503999123365616,
+        "inventoryToRevenueRatio": 0.6598562687411944,
+        "accountsPayableToRevenueRatio": 1.0554438491941924,
         "advancesToRevenueRatio": 0,
-        "contractLiabilitiesToRevenueRatio": 0.11439189725704438,
-        "changeInWC": 161963221.3899995
+        "contractLiabilitiesToRevenueRatio": 0.4085843011487597,
+        "changeInWC": 605760021.4800004
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.0038373257981584754,
+        "wc": 38818654.069999695,
+        "receivables": 2080209666.78,
+        "prepayments": 186281708.91,
+        "inventory": 1360022769.09,
+        "accountsPayable": 2655136329.4,
+        "customerAdvances": 0,
+        "contractLiabilities": 932559161.31,
+        "receivablesToRevenueRatio": 0.20563418313059514,
+        "prepaymentsToRevenueRatio": 0.018414435648293877,
+        "inventoryToRevenueRatio": 0.13444181883537482,
+        "accountsPayableToRevenueRatio": 0.26246719208918984,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.09218591972691552,
+        "changeInWC": -420252374.7800007
       },
       {
         "year": "2024",
@@ -156772,35 +156888,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.14501179234004064,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": -21987106.310000062
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.041219797043884676,
-        "wc": 187249915.14999998,
-        "receivables": 934120428.9,
-        "prepayments": 20355063.38,
-        "inventory": 721573044.03,
-        "accountsPayable": 964246727.78,
-        "customerAdvances": 524551893.38,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.2056302907425083,
-        "prepaymentsToRevenueRatio": 0.004480811543582743,
-        "inventoryToRevenueRatio": 0.15884169775686366,
-        "accountsPayableToRevenueRatio": 0.21226206905077746,
-        "advancesToRevenueRatio": 0.11547093394829255,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -278415252.34999996
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.02897641651708837,
+        "longTermOperatingAssetsPerYuanRevenue": 0.10391239934211907,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 211867928.6,
+        "longTermOperatingAssets": 203973456.86999997,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.21946054914015817,
+        "longTermOperatingAssetsPerYuanRevenue": 0.23999837856707404,
+        "fixedAssets": 2220078144.8300004,
+        "longTermOperatingAssets": 2427840252.56,
+        "depreciation": 187044970.61,
+        "depreciationOverRevenue": 0.01848988606980707
       },
       {
         "year": "2024",
@@ -156882,26 +156989,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 949323116.05,
         "depreciation": 80312167.56,
         "depreciationOverRevenue": 0.013859117002829192
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.1919534000298751,
-        "longTermOperatingAssetsPerYuanRevenue": 0.21311775266923444,
-        "fixedAssets": 871990170.89,
-        "longTermOperatingAssets": 968133857.18,
-        "depreciation": 46168242.760000005,
-        "depreciationOverRevenue": 0.010163131956110788
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 9.98,
-        "roa": 8.077141,
-        "roic": 10.173472,
-        "netProfitMargin": 15.653114,
-        "assetTurnover": 43.2732,
-        "equityMultiplier": 1.457717
+        "year": "2026Q1",
+        "roe": 2.63,
+        "roa": 2.146329,
+        "roic": 2.614241,
+        "netProfitMargin": 15.588456,
+        "assetTurnover": 11.590399999999999,
+        "equityMultiplier": 1.402625
+      },
+      {
+        "year": "2025",
+        "roe": 10.64,
+        "roa": 8.375685,
+        "roic": 11.01374,
+        "netProfitMargin": 12.246381,
+        "assetTurnover": 59.0696,
+        "equityMultiplier": 1.487056
       },
       {
         "year": "2024",
@@ -156983,32 +157090,38 @@ const data: ServiceData = {
         "netProfitMargin": 20.825464,
         "assetTurnover": 101.293,
         "equityMultiplier": 1.555108
-      },
-      {
-        "year": "2015",
-        "roe": 29.1,
-        "roa": 22.393813,
-        "roic": 29.388923,
-        "netProfitMargin": 18.225878,
-        "assetTurnover": 105.0038,
-        "equityMultiplier": 1.587551
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 16750049401.6,
-        "avgTotalAssets": 16896653841.965,
-        "avgCurrentAssets": 9396968783.765,
-        "avgInventory": 1239699650.77,
-        "equity": 11490599379.89,
-        "avgEquity": 11378343060.5,
-        "totalAssetsDays": 623.941576,
-        "currentAssetsDays": 347.001221,
-        "wcDays": 31.001868650974068,
-        "receivablesDays": 68.036969,
-        "inventoryDays": 94.97238,
+        "year": "2026Q1",
+        "totalAssets": 16663562175.7,
+        "avgTotalAssets": 16935812644.925001,
+        "avgCurrentAssets": 8873156272.09,
+        "avgInventory": 1327639410.77,
+        "equity": 11880267659.21,
+        "avgEquity": 11726080854.055,
+        "totalAssetsDays": 776.501442,
+        "currentAssetsDays": 406.831298,
+        "wcDays": 119.85675482328519,
+        "receivablesDays": 67.234978,
+        "inventoryDays": 132.624999,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 17208063114.15,
+        "avgTotalAssets": 17125660698.240002,
+        "avgCurrentAssets": 9560010192.630001,
+        "avgInventory": 1287017765.19,
+        "equity": 11571894048.9,
+        "avgEquity": 11418990395.005001,
+        "totalAssetsDays": 609.449936,
+        "currentAssetsDays": 340.211551,
+        "wcDays": 1.4006239163278436,
+        "receivablesDays": 61.663007,
+        "inventoryDays": 91.954697,
+        "fixedAssetsDays": 80.10310043615773
       },
       {
         "year": "2024",
@@ -157144,24 +157257,225 @@ const data: ServiceData = {
         "receivablesDays": 20.251766,
         "inventoryDays": 119.032484,
         "fixedAssetsDays": 53.676629800121376
-      },
-      {
-        "year": "2015",
-        "totalAssets": 5026642442.58,
-        "avgTotalAssets": 4326237485.440001,
-        "avgCurrentAssets": 3504443840.425,
-        "avgInventory": 637657732.575,
-        "equity": 3166286485.8,
-        "avgEquity": 2823844298.875,
-        "totalAssetsDays": 342.844412,
-        "currentAssetsDays": 277.719148,
-        "wcDays": 15.045225921017906,
-        "receivablesDays": 24.742659,
-        "inventoryDays": 120.819469,
-        "fixedAssetsDays": 70.06299101090441
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "家电厨卫",
+        "mainBusinessIncome": 9814261679.32,
+        "mbiRatio": 0.970166,
+        "mainBusinessCost": 4917039686.79,
+        "mbcRatio": 0.975867,
+        "mainBusinessProfit": 4897221992.53,
+        "mbpRatio": 0.964508,
+        "grossProfitRatio": 0.49899
+      },
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 301807716.88,
+        "mbiRatio": 0.029834,
+        "mainBusinessCost": 121597902.4,
+        "mbcRatio": 0.024133,
+        "mainBusinessProfit": 180209814.48,
+        "mbpRatio": 0.035492,
+        "grossProfitRatio": 0.597101
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "吸油烟机",
+        "mainBusinessIncome": 4984986144.96,
+        "mbiRatio": 0.492779,
+        "mainBusinessCost": 2395564945.09,
+        "mbcRatio": 0.475439,
+        "mainBusinessProfit": 2589421199.87,
+        "mbpRatio": 0.509986,
+        "grossProfitRatio": 0.519444
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "燃气灶",
+        "mainBusinessIncome": 2505732908.56,
+        "mbiRatio": 0.247698,
+        "mainBusinessCost": 1146175063.55,
+        "mbcRatio": 0.227477,
+        "mainBusinessProfit": 1359557845.01,
+        "mbpRatio": 0.267765,
+        "grossProfitRatio": 0.542579
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "洗碗机",
+        "mainBusinessIncome": 680157742.84,
+        "mbiRatio": 0.067235,
+        "mainBusinessCost": 366350871.19,
+        "mbcRatio": 0.072708,
+        "mainBusinessProfit": 313806871.65,
+        "mbpRatio": 0.061804,
+        "grossProfitRatio": 0.461374
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "一体机",
+        "mainBusinessIncome": 641825959.47,
+        "mbiRatio": 0.063446,
+        "mainBusinessCost": 325818944.57,
+        "mbcRatio": 0.064664,
+        "mainBusinessProfit": 316007014.9,
+        "mbpRatio": 0.062238,
+        "grossProfitRatio": 0.492356
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 301807716.88,
+        "mbiRatio": 0.029834,
+        "mainBusinessCost": 121597902.4,
+        "mbcRatio": 0.024133,
+        "mainBusinessProfit": 180209814.48,
+        "mbpRatio": 0.035492,
+        "grossProfitRatio": 0.597101
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "消毒柜",
+        "mainBusinessIncome": 240619806.23,
+        "mbiRatio": 0.023786,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "热水器",
+        "mainBusinessIncome": 221803633.69,
+        "mbiRatio": 0.021926,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "橱柜",
+        "mainBusinessIncome": 181233742.07,
+        "mbiRatio": 0.017915,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "集成灶",
+        "mainBusinessIncome": 138609484.13,
+        "mbiRatio": 0.013702,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他小家电",
+        "mainBusinessIncome": 134754503.15,
+        "mbiRatio": 0.013321,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "蒸箱",
+        "mainBusinessIncome": 30866532.92,
+        "mbiRatio": 0.003051,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "净水器",
+        "mainBusinessIncome": 28905220.58,
+        "mbiRatio": 0.002857,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "烤箱",
+        "mainBusinessIncome": 24766000.72,
+        "mbiRatio": 0.002448,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华东地区",
+        "mainBusinessIncome": 4654187730.95,
+        "mbiRatio": 0.460079,
+        "mainBusinessCost": 2166432872.38,
+        "mbcRatio": 0.429964,
+        "mainBusinessProfit": 2487754858.57,
+        "mbpRatio": 0.489963,
+        "grossProfitRatio": 0.53452
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华北地区",
+        "mainBusinessIncome": 1405294625.14,
+        "mbiRatio": 0.138917,
+        "mainBusinessCost": 703038689.05,
+        "mbcRatio": 0.13953,
+        "mainBusinessProfit": 702255936.09,
+        "mbpRatio": 0.138309,
+        "grossProfitRatio": 0.499721
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华南地区",
+        "mainBusinessIncome": 1137771493.64,
+        "mbiRatio": 0.112472,
+        "mainBusinessCost": 604221903.59,
+        "mbcRatio": 0.119918,
+        "mainBusinessProfit": 533549590.05,
+        "mbpRatio": 0.105083,
+        "grossProfitRatio": 0.468943
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -158759,18 +159073,6 @@ const data: ServiceData = {
         "grossProfitRatio": 0.515757
       },
       {
-        "year": "2017",
-        "mainType": "地区",
-        "itemName": "华中地区",
-        "mainBusinessIncome": 656900814.26,
-        "mbiRatio": 0.09361,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
         "year": "2016",
         "mainType": "行业",
         "itemName": "家电厨卫",
@@ -158925,201 +159227,10 @@ const data: ServiceData = {
         "mainBusinessProfit": 0,
         "mbpRatio": 0,
         "grossProfitRatio": 0
-      },
-      {
-        "year": "2016",
-        "mainType": "地区",
-        "itemName": "华中地区",
-        "mainBusinessIncome": 332793443.04,
-        "mbiRatio": 0.057429,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "家电厨卫",
-        "mainBusinessIncome": 4442625715.11,
-        "mbiRatio": 0.977966,
-        "mainBusinessCost": 1827656227,
-        "mbcRatio": 0.961925,
-        "mainBusinessProfit": 2614969488.11,
-        "mbpRatio": 0.989499,
-        "grossProfitRatio": 0.588609
-      },
-      {
-        "year": "2015",
-        "mainType": "行业",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 100092313.09,
-        "mbiRatio": 0.022034,
-        "mainBusinessCost": 72342042.95,
-        "mbcRatio": 0.038075,
-        "mainBusinessProfit": 27750270.14,
-        "mbpRatio": 0.010501,
-        "grossProfitRatio": 0.277247
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "油烟机",
-        "mainBusinessIncome": 2653717179,
-        "mbiRatio": 0.584169,
-        "mainBusinessCost": 1034520632,
-        "mbcRatio": 0.63737,
-        "mainBusinessProfit": 1619196547,
-        "mbpRatio": 0.671631,
-        "grossProfitRatio": 0.610162
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "燃气灶",
-        "mainBusinessIncome": 1280140684,
-        "mbiRatio": 0.281801,
-        "mainBusinessCost": 516244663.6,
-        "mbcRatio": 0.318059,
-        "mainBusinessProfit": 763896020.4,
-        "mbpRatio": 0.316858,
-        "grossProfitRatio": 0.596728
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "消毒柜",
-        "mainBusinessIncome": 324263207.41,
-        "mbiRatio": 0.071381,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他(补充)",
-        "mainBusinessIncome": 100092313.09,
-        "mbiRatio": 0.022034,
-        "mainBusinessCost": 72342042.95,
-        "mbcRatio": 0.04457,
-        "mainBusinessProfit": 27750270.14,
-        "mbpRatio": 0.011511,
-        "grossProfitRatio": 0.277247
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "烤箱",
-        "mainBusinessIncome": 64030301.64,
-        "mbiRatio": 0.014095,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "蒸汽炉",
-        "mainBusinessIncome": 54332600.21,
-        "mbiRatio": 0.01196,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "其他小家电",
-        "mainBusinessIncome": 47090006.6,
-        "mbiRatio": 0.010366,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "产品",
-        "itemName": "微波炉",
-        "mainBusinessIncome": 19051736.25,
-        "mbiRatio": 0.004194,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华东地区-主营产品",
-        "mainBusinessIncome": 2818965109.51,
-        "mbiRatio": 0.620546,
-        "mainBusinessCost": 1123345176,
-        "mbcRatio": 0.861089,
-        "mainBusinessProfit": 1695619933.51,
-        "mbpRatio": 0.849506,
-        "grossProfitRatio": 0.601504
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华北地区",
-        "mainBusinessIncome": 481604819.24,
-        "mbiRatio": 0.106017,
-        "mainBusinessCost": 181218653.1,
-        "mbcRatio": 0.138911,
-        "mainBusinessProfit": 300386166.14,
-        "mbpRatio": 0.150494,
-        "grossProfitRatio": 0.623719
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华南地区",
-        "mainBusinessIncome": 293345750.22,
-        "mbiRatio": 0.064575,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
-      },
-      {
-        "year": "2015",
-        "mainType": "地区",
-        "itemName": "华中地区",
-        "mainBusinessIncome": 241983724.5,
-        "mbiRatio": 0.053268,
-        "mainBusinessCost": 0,
-        "mbcRatio": 0,
-        "mainBusinessProfit": 0,
-        "mbpRatio": 0,
-        "grossProfitRatio": 0
       }
     ],
     "valuationData": {
       "historyData": [
-        {
-          "year": "2015",
-          "profit": 830491187.41,
-          "profit_tb": 0.44584,
-          "basicEps": 1.15,
-          "totalSharesOutstanding": 486075000,
-          "dps": 0.6,
-          "dividendRatio": 0.35162648854915923,
-          "totalDividend": 292022700,
-          "totalDividendA": 292022700
-        },
         {
           "year": "2016",
           "profit": 1206833878.67,
@@ -159218,35 +159329,63 @@ const data: ServiceData = {
           "dividendRatio": 0.5987908963326375,
           "totalDividend": 944533116,
           "totalDividendA": 944533116
+        },
+        {
+          "year": "2025",
+          "profit": 1255879806.22,
+          "profit_tb": -0.20383,
+          "basicEps": 1.33,
+          "totalSharesOutstanding": 944938916,
+          "dps": 1,
+          "dividendRatio": 0.3762059519231052,
+          "totalDividend": 472469458,
+          "totalDividendA": 472469458
         }
       ],
-      "cash": 678895535.01,
-      "interestBearingDebt": 107926691.42999999,
-      "debtRatio": 31.399609,
-      "interestBearingDebtOverTotal": 0.00644336555924967,
-      "roe": 14.44,
-      "roic": 14.442019,
-      "roa": 10.581464,
-      "grossProfitMargin": 49.656644,
-      "netProfitMargin": 13.872719,
-      "tradingFinancialAssets": 2770000000,
-      "longTermEquityInvestment": 5723843.38,
-      "minorityInterest": 77204613.12
+      "cash": 1488871187.68,
+      "interestBearingDebt": 107277391.53,
+      "debtRatio": 28.705113,
+      "interestBearingDebtOverTotal": 0.006437842665263948,
+      "roe": 10.64,
+      "roic": 11.01374,
+      "roa": 8.375685,
+      "grossProfitMargin": 50.191745,
+      "netProfitMargin": 12.246381,
+      "tradingFinancialAssets": 3130000000,
+      "longTermEquityInvestment": 4453277.97,
+      "minorityInterest": 73765088.02
     },
     "dynamicData": {
       "code": "002508",
-      "price": 18.61,
-      "marketValue": 17585313227,
-      "PB": 1.54,
-      "PE_TTM": 11.47,
+      "price": 18.51,
+      "marketValue": 17490819335,
+      "PB": 1.48,
+      "PE_TTM": 14.31,
       "totalSharesOutstanding": 944938916
     },
     "recentYearData": {
-      "netProfit": 1532546792.0800002
+      "netProfit": 1222499737.04
     }
   },
   "002555": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 3720385595.41,
+        "netProfit": 873307568.15,
+        "netProfitMargin": 0.23473576750416333,
+        "netProfitExcludingNon": 609855320.43,
+        "coreProfit": 869089387.61,
+        "cashFlowFromOperating": 367025644.44,
+        "fcf": 330253217.5,
+        "capex": 36772426.94,
+        "fcfOverNetProfit": 0.3781636957522341,
+        "netProfitExcludingNonOvernetProfit": 0.6983282209747789,
+        "cashFlowFromOperatingOverNetProfit": 0.4202707703741775,
+        "operatingProfit": 499690273.91999996,
+        "financialProfit": 373617294.23,
+        "operatingProfitOverNetProfit": 0.5721813163471552
+      },
       {
         "year": "2025",
         "revenue": 15965709257.73,
@@ -159416,26 +159555,26 @@ const data: ServiceData = {
         "operatingProfit": 1015493819.3100001,
         "financialProfit": 54668504.76,
         "operatingProfitOverNetProfit": 0.9489156892086362
-      },
-      {
-        "year": "2015",
-        "revenue": 4656787281.09,
-        "netProfit": 506016504.77,
-        "netProfitMargin": 0.1086621471469829,
-        "netProfitExcludingNon": 449076050.96,
-        "coreProfit": 829525364.7500002,
-        "cashFlowFromOperating": 1081238239.96,
-        "fcf": 923651227.35,
-        "capex": 157587012.61,
-        "fcfOverNetProfit": 1.8253381434066618,
-        "netProfitExcludingNonOvernetProfit": 0.8874731292887745,
-        "cashFlowFromOperatingOverNetProfit": 2.1367647690690563,
-        "operatingProfit": 500921918.22999996,
-        "financialProfit": 5094586.54,
-        "operatingProfitOverNetProfit": 0.9899319755542052
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 77.87713,
+        "netProfitMargin": 23.473576750416335,
+        "grossProfitMinusNetProfit": 54.40355324958366,
+        "devExpenses": 189275048.81,
+        "manageExpenses": 137454712.1,
+        "devAndManageExpenses": 326729760.90999997,
+        "sellingExpenses": 1879465328.69,
+        "financialExpenses": -23981198.59,
+        "totalOperatingExpenses": 2182213891.0099998,
+        "sellingExpensesRatio": 0.5051802509419393,
+        "devExpensesRatio": 0.050875116021177155,
+        "manageExpensesRatio": 0.036946361761421666,
+        "devAndManageExpensesRatio": 0.08782147778259881,
+        "totalOperatingExpensesRatio": 58.655583
+      },
       {
         "year": "2025",
         "grossProfitMargin": 75.858886,
@@ -159605,26 +159744,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.09812195935884832,
         "devAndManageExpensesRatio": 0.09812195935884832,
         "totalOperatingExpensesRatio": 40.344156
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 59.286946,
-        "netProfitMargin": 10.86621471469829,
-        "grossProfitMinusNetProfit": 48.42073128530171,
-        "devExpenses": 0,
-        "manageExpenses": 422275246.21,
-        "devAndManageExpenses": 422275246.21,
-        "sellingExpenses": 1458942674.14,
-        "financialExpenses": -13751130.32,
-        "totalOperatingExpenses": 1867466790.0300002,
-        "sellingExpensesRatio": 0.3132938195533187,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.09067952232320117,
-        "devAndManageExpensesRatio": 0.09067952232320117,
-        "totalOperatingExpensesRatio": 40.102041
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 10296360554.93,
+        "cash": 5141734422.19,
+        "inventory": 478581515.99,
+        "nonCurrentAssets": 12142267903.57,
+        "goodwill": 1578065048.53,
+        "totalAssets": 22438628458.5,
+        "equity": 14496286062.01,
+        "interestFreeLiabilities": 2997698710.37,
+        "interestBearingDebt": 3128785342.6400003,
+        "interestExpense": 7488816.5,
+        "interestFreeLiabilitiesOverTotal": 0.13359545196419698,
+        "interestBearingDebtOverTotal": 0.13943745930936263,
+        "debtRatio": 34.793584
+      },
       {
         "year": "2025",
         "currentAssets": 10770261947.73,
@@ -159784,25 +159922,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.12179473086861574,
         "interestBearingDebtOverTotal": 0.06210812916063187,
         "debtRatio": 25.947473
-      },
-      {
-        "year": "2015",
-        "currentAssets": 2120880077.46,
-        "cash": 1109789002.15,
-        "inventory": 67554971.78,
-        "nonCurrentAssets": 2502430678.17,
-        "goodwill": 1579976961.87,
-        "totalAssets": 4623310755.63,
-        "equity": 3563355144.71,
-        "interestFreeLiabilities": 664158109.12,
-        "interestBearingDebt": 31394706.96,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.14365422188227922,
-        "interestBearingDebtOverTotal": 0.006790524933191944,
-        "debtRatio": 19.734458
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 0.12020483019065015,
+        "wc": 447208318.7399999,
+        "receivables": 1283885444.18,
+        "prepayments": 957483428.49,
+        "inventory": 478581515.99,
+        "accountsPayable": 2027860992.36,
+        "customerAdvances": 1165506.32,
+        "contractLiabilities": 243715571.24,
+        "receivablesToRevenueRatio": 0.34509472506397854,
+        "prepaymentsToRevenueRatio": 0.257361341703744,
+        "inventoryToRevenueRatio": 0.12863761126815637,
+        "accountsPayableToRevenueRatio": 0.5450674238879593,
+        "advancesToRevenueRatio": 0.00031327567804744096,
+        "contractLiabilitiesToRevenueRatio": 0.06550814827922204,
+        "changeInWC": -65736195.49000019
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": 0.032127887709194725,
@@ -159982,33 +160122,24 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.011372171395788281,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 353412986.9999999
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.03434201917906099,
-        "wc": 159923478.12000006,
-        "receivables": 532662573.91,
-        "prepayments": 219864041.55,
-        "inventory": 67554971.78,
-        "accountsPayable": 602937608.04,
-        "customerAdvances": 57220501.08,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.11438413261284318,
-        "prepaymentsToRevenueRatio": 0.04721367506796168,
-        "inventoryToRevenueRatio": 0.014506776389448394,
-        "accountsPayableToRevenueRatio": 0.1294750160670582,
-        "advancesToRevenueRatio": 0.012287548824134086,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 49917803.420000106
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.832288699168765,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 3096434887.61,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
+      {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.05610571743039244,
-        "longTermOperatingAssetsPerYuanRevenue": 0.2502177451425039,
-        "fixedAssets": 895767572.19,
-        "longTermOperatingAssets": 3994903770.07,
+        "fixedAssetsPerYuanRevenue": 0.05761001600506251,
+        "longTermOperatingAssetsPerYuanRevenue": 0.25172204371717394,
+        "fixedAssets": 919784765.87,
+        "longTermOperatingAssets": 4018920963.7499995,
         "depreciation": 226124757.47,
         "depreciationOverRevenue": 0.014163151402780233
       },
@@ -160092,18 +160223,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 2037067152.1199996,
         "depreciation": 173504873.72,
         "depreciationOverRevenue": 0.03306181159312243
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.06709251494022918,
-        "longTermOperatingAssetsPerYuanRevenue": 0.4385331487381143,
-        "fixedAssets": 312435570.23,
-        "longTermOperatingAssets": 2042155589.3799999,
-        "depreciation": 121836631.9,
-        "depreciationOverRevenue": 0.026163237559668404
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 6.22,
+        "roa": 4.873448,
+        "roic": 5.012834,
+        "netProfitMargin": 23.410887,
+        "assetTurnover": 16.625899999999998,
+        "equityMultiplier": 1.533591
+      },
       {
         "year": "2025",
         "roe": 21.73,
@@ -160193,18 +160324,24 @@ const data: ServiceData = {
         "netProfitMargin": 23.183941,
         "assetTurnover": 95.33359999999999,
         "equityMultiplier": 1.350392
-      },
-      {
-        "year": "2015",
-        "roe": 17.58,
-        "roa": 23.269957,
-        "roic": 16.281203,
-        "netProfitMargin": 19.793412,
-        "assetTurnover": 115.86080000000001,
-        "equityMultiplier": 1.245864
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 22438628458.5,
+        "avgTotalAssets": 22376943163.32,
+        "avgCurrentAssets": 10533311251.33,
+        "avgInventory": 476765216.21500003,
+        "equity": 14631425359.81,
+        "avgEquity": 14150499107.045,
+        "totalAssetsDays": 541.321546,
+        "currentAssetsDays": 254.811763,
+        "wcDays": 43.874763019587306,
+        "receivablesDays": 29.095662,
+        "inventoryDays": 52.133592,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 22315257868.14,
@@ -160218,7 +160355,7 @@ const data: ServiceData = {
         "wcDays": 11.726679013856074,
         "receivablesDays": 26.316972,
         "inventoryDays": 44.361261,
-        "fixedAssetsDays": 20.47858686209324
+        "fixedAssetsDays": 21.027655841847817
       },
       {
         "year": "2024",
@@ -160354,21 +160491,6 @@ const data: ServiceData = {
         "receivablesDays": 43.984279,
         "inventoryDays": 12.891779,
         "fixedAssetsDays": 21.044245989414538
-      },
-      {
-        "year": "2015",
-        "totalAssets": 4623310755.63,
-        "avgTotalAssets": 4019294890.955,
-        "avgCurrentAssets": 1669609399.0900002,
-        "avgInventory": 63147064.605000004,
-        "equity": 3710925416.59,
-        "avgEquity": 3276001561.3900003,
-        "totalAssetsDays": 310.717684,
-        "currentAssetsDays": 129.071685,
-        "wcDays": 12.534837000357262,
-        "receivablesDays": 27.441245,
-        "inventoryDays": 11.990452,
-        "fixedAssetsDays": 24.488767953183647
       }
     ],
     "primaryBusinessData": [
@@ -161302,33 +161424,50 @@ const data: ServiceData = {
           "totalDividendA": 1385809824.42
         }
       ],
-      "cash": 4123545240.96,
-      "interestBearingDebt": 3973363462.14,
-      "debtRatio": 38.743379,
-      "interestBearingDebtOverTotal": 0.17805590621531026,
+      "cash": 5141734422.19,
+      "interestBearingDebt": 3128785342.6400003,
+      "debtRatio": 34.793584,
+      "interestBearingDebtOverTotal": 0.13943745930936263,
       "roe": 21.73,
       "roic": 17.856092,
       "roa": 16.425095,
       "grossProfitMargin": 75.858886,
       "netProfitMargin": 18.157324,
-      "tradingFinancialAssets": 3223557823.14,
-      "longTermEquityInvestment": 541108476.33,
-      "minorityInterest": 135364878.19
+      "tradingFinancialAssets": 1685077907.76,
+      "longTermEquityInvestment": 856385160.69,
+      "minorityInterest": 135139297.8
     },
     "dynamicData": {
       "code": "002555",
-      "price": 21.55,
-      "marketValue": 47673722026,
-      "PB": 3.29,
-      "PE_TTM": 14.79,
+      "price": 22.2,
+      "marketValue": 49111676518,
+      "PB": 3.39,
+      "PE_TTM": 15.23,
       "totalSharesOutstanding": 2212237681
     },
     "recentYearData": {
-      "netProfit": 2900228102.32
+      "netProfit": 3224355059.7800007
     }
   },
   "002594": {
     "basicRevenueData": [
+      {
+        "year": "2026Q1",
+        "revenue": 150225314000,
+        "netProfit": 4084551000,
+        "netProfitMargin": 0.027189498835063178,
+        "netProfitExcludingNon": 4147574000,
+        "coreProfit": 6209341000,
+        "cashFlowFromOperating": 2790305000,
+        "fcf": -19272285000,
+        "capex": 22062590000,
+        "fcfOverNetProfit": -4.718336238181381,
+        "netProfitExcludingNonOvernetProfit": 1.0154296029110665,
+        "cashFlowFromOperatingOverNetProfit": 0.683136285971212,
+        "operatingProfit": 4099942000,
+        "financialProfit": -15391000,
+        "operatingProfitOverNetProfit": 1.0037681008267494
+      },
       {
         "year": "2025",
         "revenue": 803964958000,
@@ -161498,26 +161637,26 @@ const data: ServiceData = {
         "operatingProfit": 5796388000,
         "financialProfit": -744234000,
         "operatingProfitOverNetProfit": 1.1473102363863017
-      },
-      {
-        "year": "2015",
-        "revenue": 80008968000,
-        "netProfit": 2823441000,
-        "netProfitMargin": 0.035289056596755505,
-        "netProfitExcludingNon": 1206641000,
-        "coreProfit": 869357000,
-        "cashFlowFromOperating": 3842094000,
-        "fcf": -8448067000,
-        "capex": 12290161000,
-        "fcfOverNetProfit": -2.9921174198433755,
-        "netProfitExcludingNonOvernetProfit": 0.4273654027125058,
-        "cashFlowFromOperatingOverNetProfit": 1.3607842345563446,
-        "operatingProfit": 1594864000,
-        "financialProfit": 1228577000,
-        "operatingProfitOverNetProfit": 0.5648653540130641
       }
     ],
     "costsExpensesData": [
+      {
+        "year": "2026Q1",
+        "grossProfitMargin": 18.806213,
+        "netProfitMargin": 2.7189498835063177,
+        "grossProfitMinusNetProfit": 16.08726311649368,
+        "devExpenses": 11343566000,
+        "manageExpenses": 5083054000,
+        "devAndManageExpenses": 16426620000,
+        "sellingExpenses": 5826606000,
+        "financialExpenses": 2099923000,
+        "totalOperatingExpenses": 24353149000,
+        "sellingExpensesRatio": 0.038785780138226235,
+        "devExpensesRatio": 0.07551034974039063,
+        "manageExpensesRatio": 0.03383620153391725,
+        "devAndManageExpensesRatio": 0.10934655127430787,
+        "totalOperatingExpensesRatio": 16.211082
+      },
       {
         "year": "2025",
         "grossProfitMargin": 17.744529,
@@ -161687,26 +161826,25 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.06613158595143286,
         "devAndManageExpensesRatio": 0.06613158595143286,
         "totalOperatingExpensesRatio": 11.84997
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 16.86737,
-        "netProfitMargin": 3.5289056596755506,
-        "grossProfitMinusNetProfit": 13.33846434032445,
-        "devExpenses": 0,
-        "manageExpenses": 5415060000,
-        "devAndManageExpenses": 5415060000,
-        "sellingExpenses": 2867992000,
-        "financialExpenses": 1445995000,
-        "totalOperatingExpenses": 9729047000,
-        "sellingExpensesRatio": 0.03584588167666405,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.06768066299767796,
-        "devAndManageExpensesRatio": 0.06768066299767796,
-        "totalOperatingExpensesRatio": 12.159945
       }
     ],
     "balanceData": [
+      {
+        "year": "2026Q1",
+        "currentAssets": 395764930000,
+        "cash": 75786508000,
+        "inventory": 160413531000,
+        "nonCurrentAssets": 506312035000,
+        "goodwill": 4427571000,
+        "totalAssets": 902076965000,
+        "equity": 249916729000,
+        "interestFreeLiabilities": 267356688000,
+        "interestBearingDebt": 144350307000,
+        "interestExpense": 964167000,
+        "interestFreeLiabilitiesOverTotal": 0.29637902127342314,
+        "interestBearingDebtOverTotal": 0.160019945748199,
+        "debtRatio": 70.942565
+      },
       {
         "year": "2025",
         "currentAssets": 371467558000,
@@ -161866,25 +162004,27 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.25569864938616377,
         "interestBearingDebtOverTotal": 0.2913540658064162,
         "debtRatio": 61.805289
-      },
-      {
-        "year": "2015",
-        "currentAssets": 54411666000,
-        "cash": 6596426000,
-        "inventory": 15750550000,
-        "nonCurrentAssets": 61074089000,
-        "goodwill": 65914000,
-        "totalAssets": 115485755000,
-        "equity": 32294404000,
-        "interestFreeLiabilities": 33916696000,
-        "interestBearingDebt": 37642761000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.29368726904889697,
-        "interestBearingDebtOverTotal": 0.32595155134068265,
-        "debtRatio": 68.802004
       }
     ],
     "workingCapitalData": [
+      {
+        "year": "2026Q1",
+        "wcPerYuanRevenue": -0.019007934974261394,
+        "wc": -2855473000,
+        "receivables": 48386527000,
+        "prepayments": 6169532000,
+        "inventory": 160413531000,
+        "accountsPayable": 164328815000,
+        "customerAdvances": 0,
+        "contractLiabilities": 54424433000,
+        "receivablesToRevenueRatio": 0.3220930328692806,
+        "prepaymentsToRevenueRatio": 0.04106852457635735,
+        "inventoryToRevenueRatio": 1.0678195753346869,
+        "accountsPayableToRevenueRatio": 1.0938823199930205,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.3622853668989502,
+        "changeInWC": 48258625000
+      },
       {
         "year": "2025",
         "wcPerYuanRevenue": -0.06357751975553143,
@@ -162064,27 +162204,18 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.01788723353302117,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 21086686000
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.2909148259480112,
-        "wc": 23275795000,
-        "receivables": 28317903000,
-        "prepayments": 226962000,
-        "inventory": 15750550000,
-        "accountsPayable": 18581611000,
-        "customerAdvances": 2438009000,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.35393411148610243,
-        "prepaymentsToRevenueRatio": 0.002836707005144723,
-        "inventoryToRevenueRatio": 0.19685980701563355,
-        "accountsPayableToRevenueRatio": 0.23224410293606088,
-        "advancesToRevenueRatio": 0.030471696622808582,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": 4824743000
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2026Q1",
+        "fixedAssetsPerYuanRevenue": 0,
+        "longTermOperatingAssetsPerYuanRevenue": 0.4447529662011557,
+        "fixedAssets": 0,
+        "longTermOperatingAssets": 66813154000,
+        "depreciation": 0,
+        "depreciationOverRevenue": 0
+      },
       {
         "year": "2025",
         "fixedAssetsPerYuanRevenue": 0.364484782681287,
@@ -162174,18 +162305,18 @@ const data: ServiceData = {
         "longTermOperatingAssets": 58713179000,
         "depreciation": 7027569000,
         "depreciationOverRevenue": 0.06791890599938841
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.5258873480282861,
-        "longTermOperatingAssetsPerYuanRevenue": 0.6750183304451571,
-        "fixedAssets": 42075704000,
-        "longTermOperatingAssets": 54007520000,
-        "depreciation": 5416617000,
-        "depreciationOverRevenue": 0.06770012331617625
       }
     ],
     "returnData": [
+      {
+        "year": "2026Q1",
+        "roe": 1.65,
+        "roa": 0.639549,
+        "roic": 1.396748,
+        "netProfitMargin": 2.669943,
+        "assetTurnover": 16.8243,
+        "equityMultiplier": 3.44146
+      },
       {
         "year": "2025",
         "roe": 15.31,
@@ -162275,18 +162406,24 @@ const data: ServiceData = {
         "netProfitMargin": 5.296232,
         "assetTurnover": 79.4223,
         "equityMultiplier": 2.618163
-      },
-      {
-        "year": "2015",
-        "roe": 10.22,
-        "roa": 5.071241,
-        "roic": 7.100658,
-        "netProfitMargin": 3.922305,
-        "assetTurnover": 76.38279999999999,
-        "equityMultiplier": 3.205334
       }
     ],
     "turnoverRateData": [
+      {
+        "year": "2026Q1",
+        "totalAssets": 902076965000,
+        "avgTotalAssets": 892903424000,
+        "avgCurrentAssets": 383616244000,
+        "avgInventory": 149417055500,
+        "equity": 262120423000,
+        "avgEquity": 260329804000,
+        "totalAssetsDays": 534.938526,
+        "currentAssetsDays": 229.824528,
+        "wcDays": -6.937896265605409,
+        "receivablesDays": 24.331521,
+        "inventoryDays": 110.249535,
+        "fixedAssetsDays": 0
+      },
       {
         "year": "2025",
         "totalAssets": 883729883000,
@@ -162436,21 +162573,6 @@ const data: ServiceData = {
         "receivablesDays": 110.096428,
         "inventoryDays": 72.36836,
         "fixedAssetsDays": 164.3565168944578
-      },
-      {
-        "year": "2015",
-        "totalAssets": 115485755000,
-        "avgTotalAssets": 104747305000,
-        "avgCurrentAssets": 47572381000,
-        "avgInventory": 12864433500,
-        "equity": 36029241000,
-        "avgEquity": 32461839000,
-        "totalAssetsDays": 471.310038,
-        "currentAssetsDays": 214.051719,
-        "wcDays": 106.1839114710241,
-        "receivablesDays": 79.350904,
-        "inventoryDays": 69.627849,
-        "fixedAssetsDays": 191.9488820303244
       }
     ],
     "primaryBusinessData": [
@@ -163768,49 +163890,66 @@ const data: ServiceData = {
           "totalDividendA": 0
         }
       ],
-      "cash": 75424747000,
-      "interestBearingDebt": 119120640000,
-      "debtRatio": 70.744546,
-      "interestBearingDebtOverTotal": 0.13479304286466004,
+      "cash": 75786508000,
+      "interestBearingDebt": 144350307000,
+      "debtRatio": 70.942565,
+      "interestBearingDebtOverTotal": 0.160019945748199,
       "roe": 15.31,
       "roic": 12.617792,
       "roa": 5.075288,
       "grossProfitMargin": 17.744529,
       "netProfitMargin": 4.199282,
-      "tradingFinancialAssets": 54532541000,
-      "longTermEquityInvestment": 21781418000,
-      "minorityInterest": 12264579000
+      "tradingFinancialAssets": 53754642000,
+      "longTermEquityInvestment": 21926912000,
+      "minorityInterest": 12203694000
     },
     "dynamicData": {
       "code": "002594",
-      "price": 102.05,
-      "marketValue": 930410011508,
-      "PB": 4.09,
-      "PE_TTM": 28.52,
+      "price": 100.46,
+      "marketValue": 915913667380,
+      "PB": 3.95,
+      "PE_TTM": 33.25,
       "totalSharesOutstanding": 9117197565
     },
     "recentYearData": {
-      "netProfit": 32619022000
+      "netProfit": 27548588000
     }
   },
   "002867": {
     "basicRevenueData": [
       {
-        "year": "2025Q3",
-        "revenue": 6772001305.51,
-        "netProfit": 881541201.03,
-        "netProfitMargin": 0.13017439915623452,
-        "netProfitExcludingNon": 852746834.49,
-        "coreProfit": 1095046987.1500006,
-        "cashFlowFromOperating": 580450183.37,
-        "fcf": 490321712.68,
-        "capex": 90128470.69,
-        "fcfOverNetProfit": 0.5562096384231435,
-        "netProfitExcludingNonOvernetProfit": 0.9673363349252918,
-        "cashFlowFromOperatingOverNetProfit": 0.6584492961778726,
-        "operatingProfit": 907177171.54,
-        "financialProfit": -25635970.510000005,
-        "operatingProfitOverNetProfit": 1.029080853487105
+        "year": "2026Q1",
+        "revenue": 1953961594.91,
+        "netProfit": 293413775.15,
+        "netProfitMargin": 0.1501635323408261,
+        "netProfitExcludingNon": 280896916.37,
+        "coreProfit": 465567969.90000015,
+        "cashFlowFromOperating": -176527710.78,
+        "fcf": -206969916.55,
+        "capex": 30442205.77,
+        "fcfOverNetProfit": -0.7053858205675319,
+        "netProfitExcludingNonOvernetProfit": 0.9573405891608154,
+        "cashFlowFromOperatingOverNetProfit": -0.6016340258386128,
+        "operatingProfit": 306183805.57,
+        "financialProfit": -12770030.420000002,
+        "operatingProfitOverNetProfit": 1.0435222593536098
+      },
+      {
+        "year": "2025",
+        "revenue": 8815068487.36,
+        "netProfit": 1103224980.77,
+        "netProfitMargin": 0.12515217350289715,
+        "netProfitExcludingNon": 1061858305.83,
+        "coreProfit": 1433702522.8900013,
+        "cashFlowFromOperating": 464011855.04,
+        "fcf": 354149052.18,
+        "capex": 109862802.86,
+        "fcfOverNetProfit": 0.3210125390134117,
+        "netProfitExcludingNonOvernetProfit": 0.9625038630732166,
+        "cashFlowFromOperatingOverNetProfit": 0.42059585590252063,
+        "operatingProfit": 1178374153.45,
+        "financialProfit": -75149172.68,
+        "operatingProfitOverNetProfit": 1.0681177221236864
       },
       {
         "year": "2024",
@@ -163964,42 +164103,42 @@ const data: ServiceData = {
         "operatingProfit": 439338385.22999996,
         "financialProfit": -12667118.7,
         "operatingProfitOverNetProfit": 1.0296882393863036
-      },
-      {
-        "year": "2015",
-        "revenue": 2729062608.31,
-        "netProfit": 353076099.88,
-        "netProfitMargin": 0.12937632826923162,
-        "netProfitExcludingNon": 334355820.06,
-        "coreProfit": 435140248.86999995,
-        "cashFlowFromOperating": 473977252.18,
-        "fcf": 295377745.13,
-        "capex": 178599507.05,
-        "fcfOverNetProfit": 0.8365837994426416,
-        "netProfitExcludingNonOvernetProfit": 0.9469794760212814,
-        "cashFlowFromOperatingOverNetProfit": 1.3424223626042395,
-        "operatingProfit": 328102312.42,
-        "financialProfit": 24973787.46,
-        "operatingProfitOverNetProfit": 0.9292679751801727
       }
     ],
     "costsExpensesData": [
       {
-        "year": "2025Q3",
-        "grossProfitMargin": 29.735986,
-        "netProfitMargin": 13.017439915623452,
-        "grossProfitMinusNetProfit": 16.71854608437655,
-        "devExpenses": 8258258.84,
-        "manageExpenses": 81275186.78,
-        "devAndManageExpenses": 89533445.62,
-        "sellingExpenses": 738541923.82,
-        "financialExpenses": 6301648.37,
-        "totalOperatingExpenses": 834377017.8100001,
-        "sellingExpensesRatio": 0.10905814847068762,
-        "devExpensesRatio": 0.001219470946244608,
-        "manageExpensesRatio": 0.012001649603031073,
-        "devAndManageExpensesRatio": 0.013221120549275682,
-        "totalOperatingExpensesRatio": 12.320981
+        "year": "2026Q1",
+        "grossProfitMargin": 39.428858,
+        "netProfitMargin": 15.01635323408261,
+        "grossProfitMinusNetProfit": 24.41250476591739,
+        "devExpenses": 3460572.86,
+        "manageExpenses": 30107940.73,
+        "devAndManageExpenses": 33568513.59,
+        "sellingExpenses": 236685143.55,
+        "financialExpenses": 8842875.31,
+        "totalOperatingExpenses": 279096532.45,
+        "sellingExpensesRatio": 0.1211309086967504,
+        "devExpensesRatio": 0.0017710546967835336,
+        "manageExpensesRatio": 0.015408665558437847,
+        "devAndManageExpensesRatio": 0.01717972025522138,
+        "totalOperatingExpensesRatio": 14.283624
+      },
+      {
+        "year": "2025",
+        "grossProfitMargin": 31.353547,
+        "netProfitMargin": 12.515217350289715,
+        "grossProfitMinusNetProfit": 18.838329649710282,
+        "devExpenses": 13008282.32,
+        "manageExpenses": 120017881.61,
+        "devAndManageExpenses": 133026163.93,
+        "sellingExpenses": 1075237696.47,
+        "financialExpenses": 13283309.07,
+        "totalOperatingExpenses": 1221547169.47,
+        "sellingExpensesRatio": 0.12197723682031424,
+        "devExpensesRatio": 0.0014756870396018685,
+        "manageExpensesRatio": 0.01361508214962761,
+        "devAndManageExpensesRatio": 0.01509076918922948,
+        "totalOperatingExpensesRatio": 13.857489
       },
       {
         "year": "2024",
@@ -164153,41 +164292,40 @@ const data: ServiceData = {
         "manageExpensesRatio": 0.020630542297672288,
         "devAndManageExpensesRatio": 0.020630542297672288,
         "totalOperatingExpensesRatio": 15.554457
-      },
-      {
-        "year": "2015",
-        "grossProfitMargin": 32.003121,
-        "netProfitMargin": 12.937632826923162,
-        "grossProfitMinusNetProfit": 19.065488173076837,
-        "devExpenses": 0,
-        "manageExpenses": 59133447.62,
-        "devAndManageExpenses": 59133447.62,
-        "sellingExpenses": 363057720.58,
-        "financialExpenses": 27530868.66,
-        "totalOperatingExpenses": 449722036.86,
-        "sellingExpensesRatio": 0.1330338554617577,
-        "devExpensesRatio": 0,
-        "manageExpensesRatio": 0.02166804361319471,
-        "devAndManageExpensesRatio": 0.02166804361319471,
-        "totalOperatingExpensesRatio": 16.478993
       }
     ],
     "balanceData": [
       {
-        "year": "2025Q3",
-        "currentAssets": 6384835079.07,
-        "cash": 1077065155.55,
-        "inventory": 4528252243.74,
-        "nonCurrentAssets": 1806809870.53,
+        "year": "2026Q1",
+        "currentAssets": 6723853140.76,
+        "cash": 716871152.79,
+        "inventory": 5364477667.38,
+        "nonCurrentAssets": 1795212776.61,
         "goodwill": 0,
-        "totalAssets": 8191644949.6,
-        "equity": 6260591341.91,
-        "interestFreeLiabilities": 180194098.51999998,
-        "interestBearingDebt": 431094604.2,
-        "interestExpense": 12760551.36,
-        "interestFreeLiabilitiesOverTotal": 0.021997303304606593,
-        "interestBearingDebtOverTotal": 0.05262613392698989,
-        "debtRatio": 23.651918
+        "totalAssets": 8519065917.37,
+        "equity": 6775014447.94,
+        "interestFreeLiabilities": 193453036.10999998,
+        "interestBearingDebt": 825992581.04,
+        "interestExpense": 4522565.98,
+        "interestFreeLiabilitiesOverTotal": 0.022708245010237306,
+        "interestBearingDebtOverTotal": 0.09695811595445429,
+        "debtRatio": 20.543641
+      },
+      {
+        "year": "2025",
+        "currentAssets": 6529629114.31,
+        "cash": 807602463.14,
+        "inventory": 5000206205.46,
+        "nonCurrentAssets": 1781889807.84,
+        "goodwill": 0,
+        "totalAssets": 8311518922.15,
+        "equity": 6482304533,
+        "interestFreeLiabilities": 172950021.18,
+        "interestBearingDebt": 682534784.45,
+        "interestExpense": 18617440.29,
+        "interestFreeLiabilitiesOverTotal": 0.020808473493225448,
+        "interestBearingDebtOverTotal": 0.08211913981583573,
+        "debtRatio": 22.080993
       },
       {
         "year": "2024",
@@ -164332,42 +164470,44 @@ const data: ServiceData = {
         "interestFreeLiabilitiesOverTotal": 0.13980919410321732,
         "interestBearingDebtOverTotal": 0.050590662741234256,
         "debtRatio": 32.039443
-      },
-      {
-        "year": "2015",
-        "currentAssets": 1964156364.67,
-        "cash": 348192384.27,
-        "inventory": 1411190853.55,
-        "nonCurrentAssets": 196814392.44,
-        "goodwill": 0,
-        "totalAssets": 2160970757.11,
-        "equity": 1425939011.95,
-        "interestFreeLiabilities": 213755714.17000002,
-        "interestBearingDebt": 230000000,
-        "interestExpense": 0,
-        "interestFreeLiabilitiesOverTotal": 0.09891652326469644,
-        "interestBearingDebtOverTotal": 0.10643364758327097,
-        "debtRatio": 34.01396
       }
     ],
     "workingCapitalData": [
       {
-        "year": "2025Q3",
-        "wcPerYuanRevenue": 0.7015581837520342,
-        "wc": 4750952936.26,
-        "receivables": 381975163.94,
-        "prepayments": 20919627.1,
-        "inventory": 4528252243.74,
-        "accountsPayable": 120678570.94,
-        "customerAdvances": 40311341.08,
-        "contractLiabilities": 19204186.5,
-        "receivablesToRevenueRatio": 0.056405063541439086,
-        "prepaymentsToRevenueRatio": 0.003089135125089073,
-        "inventoryToRevenueRatio": 0.6686726773155837,
-        "accountsPayableToRevenueRatio": 0.017820222633715466,
-        "advancesToRevenueRatio": 0.005952648155457517,
-        "contractLiabilitiesToRevenueRatio": 0.0028358214409047178,
-        "changeInWC": 409111481.15999985
+        "year": "2026Q1",
+        "wcPerYuanRevenue": 2.749705385359672,
+        "wc": 5372818720.31,
+        "receivables": 188842567.85,
+        "prepayments": 12951521.19,
+        "inventory": 5364477667.38,
+        "accountsPayable": 128987644.07,
+        "customerAdvances": 37528775.31,
+        "contractLiabilities": 26936616.73,
+        "receivablesToRevenueRatio": 0.09664599772171988,
+        "prepaymentsToRevenueRatio": 0.006628339688834339,
+        "inventoryToRevenueRatio": 2.745436594738746,
+        "accountsPayableToRevenueRatio": 0.06601339780986903,
+        "advancesToRevenueRatio": 0.019206506109312033,
+        "contractLiabilitiesToRevenueRatio": 0.013785642870447874,
+        "changeInWC": 267546300.7300005
+      },
+      {
+        "year": "2025",
+        "wcPerYuanRevenue": 0.5791528933553372,
+        "wc": 5105272419.58,
+        "receivables": 265515132.36,
+        "prepayments": 12501102.94,
+        "inventory": 5000206205.46,
+        "accountsPayable": 113994714.83,
+        "customerAdvances": 37631274.52,
+        "contractLiabilities": 21324031.83,
+        "receivablesToRevenueRatio": 0.030120597785567332,
+        "prepaymentsToRevenueRatio": 0.0014181515388026122,
+        "inventoryToRevenueRatio": 0.5672339599663732,
+        "accountsPayableToRevenueRatio": 0.012931801380041229,
+        "advancesToRevenueRatio": 0.004268971315873472,
+        "contractLiabilitiesToRevenueRatio": 0.002419043239491185,
+        "changeInWC": 763430964.4799995
       },
       {
         "year": "2024",
@@ -164530,35 +164670,26 @@ const data: ServiceData = {
         "advancesToRevenueRatio": 0.02375012822323392,
         "contractLiabilitiesToRevenueRatio": 0,
         "changeInWC": 75308465.38000011
-      },
-      {
-        "year": "2015",
-        "wcPerYuanRevenue": 0.4699395634291431,
-        "wc": 1282494490.72,
-        "receivables": 82135478.93,
-        "prepayments": 2923872.41,
-        "inventory": 1411190853.55,
-        "accountsPayable": 172126439.31,
-        "customerAdvances": 41629274.86,
-        "contractLiabilities": 0,
-        "receivablesToRevenueRatio": 0.030096590191774034,
-        "prepaymentsToRevenueRatio": 0.0010713834124203689,
-        "inventoryToRevenueRatio": 0.5170972806753944,
-        "accountsPayableToRevenueRatio": 0.06307163448206528,
-        "advancesToRevenueRatio": 0.015254056368380408,
-        "contractLiabilitiesToRevenueRatio": 0,
-        "changeInWC": -117885626.01999998
       }
     ],
     "fixedAssetInvestmentAnalysisData": [
       {
-        "year": "2025Q3",
+        "year": "2026Q1",
         "fixedAssetsPerYuanRevenue": 0,
-        "longTermOperatingAssetsPerYuanRevenue": 0.07670031393487495,
+        "longTermOperatingAssetsPerYuanRevenue": 0.26715276525895265,
         "fixedAssets": 0,
-        "longTermOperatingAssets": 519414626.09999996,
+        "longTermOperatingAssets": 522006243.29,
         "depreciation": 0,
         "depreciationOverRevenue": 0
+      },
+      {
+        "year": "2025",
+        "fixedAssetsPerYuanRevenue": 0.10181005964807636,
+        "longTermOperatingAssetsPerYuanRevenue": 0.16277148697000274,
+        "fixedAssets": 897462648.5,
+        "longTermOperatingAssets": 1434841805.43,
+        "depreciation": 148641956.95000002,
+        "depreciationOverRevenue": 0.016862257753656587
       },
       {
         "year": "2024",
@@ -164640,26 +164771,26 @@ const data: ServiceData = {
         "longTermOperatingAssets": 177930112.91000003,
         "depreciation": 29279730.490000002,
         "depreciationOverRevenue": 0.01009019130462522
-      },
-      {
-        "year": "2015",
-        "fixedAssetsPerYuanRevenue": 0.005195252332001272,
-        "longTermOperatingAssetsPerYuanRevenue": 0.06773629192203631,
-        "fixedAssets": 14178168.88,
-        "longTermOperatingAssets": 184856581.51,
-        "depreciation": 35341771.56,
-        "depreciationOverRevenue": 0.012950150521422357
       }
     ],
     "returnData": [
       {
-        "year": "2025Q3",
-        "roe": 13.6,
-        "roa": 13.666802,
-        "roic": 12.690789,
-        "netProfitMargin": 12.994595,
-        "assetTurnover": 84.5054,
-        "equityMultiplier": 1.30979
+        "year": "2026Q1",
+        "roe": 4.43,
+        "roa": 4.205032,
+        "roic": 3.888461,
+        "netProfitMargin": 15.015161,
+        "assetTurnover": 23.2191,
+        "equityMultiplier": 1.258552
+      },
+      {
+        "year": "2025",
+        "roe": 17.16,
+        "roa": 16.712305,
+        "roic": 15.379482,
+        "netProfitMargin": 12.501933,
+        "assetTurnover": 109.18350000000001,
+        "equityMultiplier": 1.283383
       },
       {
         "year": "2024",
@@ -164741,32 +164872,38 @@ const data: ServiceData = {
         "netProfitMargin": 14.703669,
         "assetTurnover": 128.0314,
         "equityMultiplier": 1.471441
-      },
-      {
-        "year": "2015",
-        "roe": 26.49,
-        "roa": 22.304559,
-        "roic": 20.668155,
-        "netProfitMargin": 12.937632,
-        "assetTurnover": 126.0283,
-        "equityMultiplier": 1.515472
       }
     ],
     "turnoverRateData": [
       {
-        "year": "2025Q3",
-        "totalAssets": 8191644949.6,
-        "avgTotalAssets": 8013689713.530001,
-        "avgCurrentAssets": 6272976923.58,
-        "avgInventory": 4399246538.66,
-        "equity": 6254163756.16,
-        "avgEquity": 6302629905.865,
-        "totalAssetsDays": 319.506173,
-        "currentAssetsDays": 250.103875,
-        "wcDays": 256.0687370694925,
-        "receivablesDays": 13.408643,
-        "inventoryDays": 249.627299,
+        "year": "2026Q1",
+        "totalAssets": 8519065917.37,
+        "avgTotalAssets": 8415292419.76,
+        "avgCurrentAssets": 6626741127.535,
+        "avgInventory": 5182341936.42,
+        "equity": 6768939598.28,
+        "avgEquity": 6622596283.01,
+        "totalAssetsDays": 387.610646,
+        "currentAssetsDays": 305.22949,
+        "wcDays": 1003.6424656562801,
+        "receivablesDays": 10.463919,
+        "inventoryDays": 394.082175,
         "fixedAssetsDays": 0
+      },
+      {
+        "year": "2025",
+        "totalAssets": 8311518922.15,
+        "avgTotalAssets": 8073626699.805,
+        "avgCurrentAssets": 6345373941.200001,
+        "avgInventory": 4635223519.52,
+        "equity": 6476252967.74,
+        "avgEquity": 6413674511.655,
+        "totalAssetsDays": 329.720139,
+        "currentAssetsDays": 259.139747,
+        "wcDays": 211.39080607469808,
+        "receivablesDays": 11.3565,
+        "inventoryDays": 275.758809,
+        "fixedAssetsDays": 37.160671771547875
       },
       {
         "year": "2024",
@@ -164902,24 +165039,225 @@ const data: ServiceData = {
         "receivablesDays": 9.227314,
         "inventoryDays": 286.264222,
         "fixedAssetsDays": 1.9481600931458238
-      },
-      {
-        "year": "2015",
-        "totalAssets": 2160970757.11,
-        "avgTotalAssets": 2165435535.5600004,
-        "avgCurrentAssets": 2039803040.065,
-        "avgInventory": 1480270644.9650002,
-        "equity": 1425939011.95,
-        "avgEquity": 1349650962.01,
-        "totalAssetsDays": 285.650021,
-        "currentAssetsDays": 269.077408,
-        "wcDays": 171.52794065163724,
-        "receivablesDays": 10.639609,
-        "inventoryDays": 287.171379,
-        "fixedAssetsDays": 1.8962671011804644
       }
     ],
     "primaryBusinessData": [
+      {
+        "year": "2025",
+        "mainType": "行业",
+        "itemName": "珠宝首饰",
+        "mainBusinessIncome": 8815068487.36,
+        "mbiRatio": 1,
+        "mainBusinessCost": 6051231760.69,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 2763836726.67,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.313535
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "素金首饰",
+        "mainBusinessIncome": 6342242047.31,
+        "mbiRatio": 0.719477,
+        "mainBusinessCost": 5208908436.11,
+        "mbcRatio": 0.860801,
+        "mainBusinessProfit": 1133333611.2,
+        "mbpRatio": 0.410058,
+        "grossProfitRatio": 0.178696
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "品牌使用费",
+        "mainBusinessIncome": 787981312.53,
+        "mbiRatio": 0.08939,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "镶嵌首饰",
+        "mainBusinessIncome": 761390740.66,
+        "mbiRatio": 0.086374,
+        "mainBusinessCost": 545981205.27,
+        "mbcRatio": 0.090226,
+        "mainBusinessProfit": 215409535.39,
+        "mbpRatio": 0.077939,
+        "grossProfitRatio": 0.282916
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他首饰",
+        "mainBusinessIncome": 551738015.81,
+        "mbiRatio": 0.06259,
+        "mainBusinessCost": 274721189.95,
+        "mbcRatio": 0.045399,
+        "mainBusinessProfit": 277016825.86,
+        "mbpRatio": 0.100229,
+        "grossProfitRatio": 0.50208
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "加盟管理服务",
+        "mainBusinessIncome": 194446197.94,
+        "mbiRatio": 0.022058,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 120368450.92,
+        "mbiRatio": 0.013655,
+        "mainBusinessCost": 20070900.51,
+        "mbcRatio": 0.003317,
+        "mainBusinessProfit": 100297550.41,
+        "mbpRatio": 0.036289,
+        "grossProfitRatio": 0.833254
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "供应链服务",
+        "mainBusinessIncome": 44906057.14,
+        "mbiRatio": 0.005094,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "小贷金融",
+        "mainBusinessIncome": 11334344.3,
+        "mbiRatio": 0.001286,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "产品",
+        "itemName": "工程管理服务",
+        "mainBusinessIncome": 661320.75,
+        "mbiRatio": 0.000075,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华南大区",
+        "mainBusinessIncome": 2995796446.87,
+        "mbiRatio": 0.339849,
+        "mainBusinessCost": 2110051692.32,
+        "mbcRatio": 0.348698,
+        "mainBusinessProfit": 885744754.55,
+        "mbpRatio": 0.320477,
+        "grossProfitRatio": 0.295663
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华东大区",
+        "mainBusinessIncome": 1579201732.03,
+        "mbiRatio": 0.179148,
+        "mainBusinessCost": 1103868535.03,
+        "mbcRatio": 0.18242,
+        "mainBusinessProfit": 475333197,
+        "mbpRatio": 0.171983,
+        "grossProfitRatio": 0.300996
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华北大区",
+        "mainBusinessIncome": 1318055812.53,
+        "mbiRatio": 0.149523,
+        "mainBusinessCost": 899589949.04,
+        "mbcRatio": 0.148662,
+        "mainBusinessProfit": 418465863.49,
+        "mbpRatio": 0.151408,
+        "grossProfitRatio": 0.317487
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "西南大区",
+        "mainBusinessIncome": 1189672618.1,
+        "mbiRatio": 0.134959,
+        "mainBusinessCost": 762840463.19,
+        "mbcRatio": 0.126064,
+        "mainBusinessProfit": 426832154.91,
+        "mbpRatio": 0.154435,
+        "grossProfitRatio": 0.358781
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "华中大区",
+        "mainBusinessIncome": 775551504.63,
+        "mbiRatio": 0.08798,
+        "mainBusinessCost": 517688557.63,
+        "mbcRatio": 0.085551,
+        "mainBusinessProfit": 257862947,
+        "mbpRatio": 0.093299,
+        "grossProfitRatio": 0.33249
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "西北大区",
+        "mainBusinessIncome": 527149652.11,
+        "mbiRatio": 0.059801,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "东北大区",
+        "mainBusinessIncome": 408436164.49,
+        "mbiRatio": 0.046334,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2025",
+        "mainType": "地区",
+        "itemName": "境外",
+        "mainBusinessIncome": 21204556.6,
+        "mbiRatio": 0.002405,
+        "mainBusinessCost": 12988023.67,
+        "mbcRatio": 0.002146,
+        "mainBusinessProfit": 8216532.93,
+        "mbpRatio": 0.002973,
+        "grossProfitRatio": 0.387489
+      },
       {
         "year": "2024",
         "mainType": "行业",
@@ -166772,17 +167110,6 @@ const data: ServiceData = {
     "valuationData": {
       "historyData": [
         {
-          "year": "2015",
-          "profit": 353076099.88,
-          "profit_tb": 0.08824,
-          "basicEps": 0.88,
-          "totalSharesOutstanding": 401000000,
-          "dps": 0,
-          "dividendRatio": 0,
-          "totalDividend": 0,
-          "totalDividendA": 0
-        },
-        {
           "year": "2016",
           "profit": 426671266.53,
           "profit_tb": 0.20844,
@@ -166880,31 +167207,42 @@ const data: ServiceData = {
           "dividendRatio": 1.0208831275125096,
           "totalDividend": 1031200198.35,
           "totalDividendA": 1031200198.35
+        },
+        {
+          "year": "2025",
+          "profit": 1103224980.77,
+          "profit_tb": 0.09219,
+          "basicEps": 1.02,
+          "totalSharesOutstanding": 1085473893,
+          "dps": 0.9,
+          "dividendRatio": 0.24597745517020234,
+          "totalDividend": 271368473.25,
+          "totalDividendA": 271368473.25
         }
       ],
-      "cash": 1077065155.55,
-      "interestBearingDebt": 431094604.2,
-      "debtRatio": 23.651918,
-      "interestBearingDebtOverTotal": 0.05262613392698989,
-      "roe": 15.72,
-      "roic": 14.859226,
-      "roa": 16.598325,
-      "grossProfitMargin": 20.799408,
-      "netProfitMargin": 7.212092,
-      "tradingFinancialAssets": 78438.36,
-      "longTermEquityInvestment": 154017795.67,
-      "minorityInterest": -6427585.75
+      "cash": 716871152.79,
+      "interestBearingDebt": 825992581.04,
+      "debtRatio": 20.543641,
+      "interestBearingDebtOverTotal": 0.09695811595445429,
+      "roe": 17.16,
+      "roic": 15.379482,
+      "roa": 16.712305,
+      "grossProfitMargin": 31.353547,
+      "netProfitMargin": 12.501933,
+      "tradingFinancialAssets": 58417.38,
+      "longTermEquityInvestment": 176599143.68,
+      "minorityInterest": -6074849.66
     },
     "dynamicData": {
       "code": "002867",
-      "price": 12.14,
-      "marketValue": 13177653061,
-      "PB": 2.1,
-      "PE_TTM": 12.71,
+      "price": 13.32,
+      "marketValue": 14458512255,
+      "PB": 2.13,
+      "PE_TTM": 12.63,
       "totalSharesOutstanding": 1085473893
     },
     "recentYearData": {
-      "netProfit": 1036838142.7199999
+      "netProfit": 1144518957.22
     }
   }
 };

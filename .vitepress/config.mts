@@ -587,6 +587,15 @@ export default defineConfig({
           ],
         },
         {
+          text: "肥料",
+          items: [
+            {
+              text: "云天化",
+              link: "/company/fertiliser/yuntianhua.md",
+            },
+          ],
+        },
+        {
           text: "其它",
           link: "",
           items: [
