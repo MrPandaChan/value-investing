@@ -140,6 +140,10 @@ export default defineConfig({
               text: "OODA循环，对信息进行及时的分析与调整",
               link: "/value-investing/ai-skill/ooda-investing.md",
             },
+            {
+              text: "行业深度研究",
+              link: "/value-investing/ai-skill/industry-deep-research.md",
+            },
           ],
         },
         {
