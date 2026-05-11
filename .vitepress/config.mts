@@ -144,6 +144,10 @@ export default defineConfig({
               text: "行业深度研究",
               link: "/value-investing/ai-skill/industry-deep-research.md",
             },
+            {
+              text: "查理·芒格投资思想",
+              link: "/value-investing/ai-skill/munger-investing.md",
+            },
           ],
         },
         {
