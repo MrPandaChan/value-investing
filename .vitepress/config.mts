@@ -51,18 +51,6 @@ export default defineConfig({
               link: "/value-investing/value-investing/investment-tools.md",
             },
             {
-              text: "AI工具",
-              link: "/value-investing/value-investing/ai-tools.md",
-            },
-            {
-              text: "AI SKILL",
-              link: "/value-investing/value-investing/ai-skill.md",
-            },
-            {
-              text: "AI融合增强系统",
-              link: "/value-investing/value-investing/ai-system.md",
-            },
-            {
               text: "投资回报率",
               link: "/value-investing/value-investing/return-on-investment.md",
             },
@@ -113,6 +101,44 @@ export default defineConfig({
             {
               text: "安全边际",
               link: "/value-investing/value-investing/safe-margin.md",
+            },
+          ],
+        },
+        {
+          text: "AI",
+          items: [
+            {
+              text: "AI工具",
+              link: "/value-investing/ai/ai-tools.md",
+            },
+            {
+              text: "AI融合增强系统",
+              link: "/value-investing/ai/ai-system.md",
+            },
+          ],
+        },
+        {
+          text: "AI SKILL",
+          items: [
+            {
+              text: "柏基尽调十问",
+              link: "/value-investing/ai-skill/bg-ten-questions.md",
+            },
+            {
+              text: "公司八维深度解剖",
+              link: "/value-investing/ai-skill/company-8d-analysis.md",
+            },
+            {
+              text: "四层穿透法",
+              link: "/value-investing/ai-skill/cycle-stress-test.md",
+            },
+            {
+              text: "柏基魔鬼代言人",
+              link: "/value-investing/ai-skill/devil-advocate-investing.md",
+            },
+            {
+              text: "OODA循环，对信息进行及时的分析与调整",
+              link: "/value-investing/ai-skill/ooda-investing.md",
             },
           ],
         },
