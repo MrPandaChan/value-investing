@@ -148,6 +148,10 @@ export default defineConfig({
               text: "查理·芒格投资思想",
               link: "/value-investing/ai-skill/munger-investing.md",
             },
+            {
+              text: "分析模板",
+              link: "/value-investing/ai-skill/analysis-template.md",
+            },
           ],
         },
         {
