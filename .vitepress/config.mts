@@ -152,6 +152,10 @@ export default defineConfig({
               text: "分析模板",
               link: "/value-investing/ai-skill/analysis-template.md",
             },
+            {
+              text: "财报识别 TODO",
+              link: "/value-investing/ai-skill/financial-detection.md",
+            },
           ],
         },
         {

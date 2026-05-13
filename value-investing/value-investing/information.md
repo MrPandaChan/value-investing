@@ -239,6 +239,8 @@
 
 [周期范式之经销商陷阱：为保全经销权而吞下的“库存毒药”——以白酒为例（2026.05.06 心智升级）](https://mp.weixin.qq.com/s/Z5nYNpK5HNYxItsRHTCDpA)
 
+[理解“离岸”两个字，港股投资从此打通“任督二脉”](https://mp.weixin.qq.com/s/N8uT0dMwFV8nAL8KCYc7mA)
+
 ### 周期股
 
 - [周期投资方法论（买点篇）20250718 喝口白粥](https://xueqiu.com/8417165820/343022484)
