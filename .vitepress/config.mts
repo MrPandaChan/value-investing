@@ -47,6 +47,10 @@ export default defineConfig({
               link: "/value-investing/value-investing/information.md",
             },
             {
+              text: "投资心得⭐",
+              link: "/value-investing/value-investing/investment-insights.md",
+            },
+            {
               text: "投资工具",
               link: "/value-investing/value-investing/investment-tools.md",
             },
@@ -61,10 +65,6 @@ export default defineConfig({
             {
               text: "宏观",
               link: "/value-investing/value-investing/macro-level.md",
-            },
-            {
-              text: "心得",
-              link: "/value-investing/value-investing/investment-insights.md",
             },
             {
               text: "能力圈",
@@ -101,6 +101,14 @@ export default defineConfig({
             {
               text: "安全边际",
               link: "/value-investing/value-investing/safe-margin.md",
+            },
+            {
+              text: "思维格栅",
+              link: "/value-investing/value-investing/lattice-of-thinking.md",
+            },
+            {
+              text: "人类误判心理学",
+              link: "/value-investing/value-investing/human-misjudgment.md",
             },
           ],
         },
@@ -562,6 +570,10 @@ export default defineConfig({
               text: "中国平安",
               link: "/company/insurance/pingan.md",
             },
+            {
+              text: "中国财险",
+              link: "/company/insurance/picc.md",
+            },
           ],
         },
         {
@@ -586,7 +598,7 @@ export default defineConfig({
         },
         {
           text: "物业",
-          link: "/company/property/baoli.md",
+          link: "/company/property/property.md",
           items: [
             {
               text: "保利物业",
