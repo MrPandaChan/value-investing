@@ -409,17 +409,6 @@ const otherStockData: StockItem[] = [
   },
   {
     type: StockType.A,
-    name: "分众传媒",
-    code: "002027",
-    level: StockLevel.ROTATION,
-    allocation: 0.05,
-    valuationConfig: {
-      type: ValuationType.REFERENCE,
-      price: 3.76,
-    },
-  },
-  {
-    type: StockType.A,
     name: "海天味业",
     code: "603288",
     level: StockLevel.MARGIN,

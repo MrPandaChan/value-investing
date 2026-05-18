@@ -15,6 +15,8 @@ import { chemicalsStockData } from "./stocks/chemicals";
 import { nonferrousMetalsStockData } from "./stocks/nonferrous-metals";
 import { otherStockData } from "./stocks/other";
 import { internetStockData } from "./stocks/internet";
+import { advertisementStockData } from "./stocks/advertisement";
+import { beverageStockData } from "./stocks/beverage";
 
 export const stockData: StockItem[] = [
   ...bankStockData,
@@ -33,6 +35,8 @@ export const stockData: StockItem[] = [
   ...otherStockData,
   ...pesticideStockData,
   ...portStockData,
+  ...advertisementStockData,
+  ...beverageStockData,
 ];
 
 (function validate() {
@@ -52,10 +56,7 @@ export const getStockItem = (code: string) => {
   const item = stockData.find((v) => v.code === code);
   if (!item) {
     console.error(`[getStockItem] 找不到股票代码: ${code}`);
-    console.error(
-      "当前股票代码列表:",
-      stockData.map((v) => v.code).join(", "),
-    );
+    console.error("当前股票代码列表:", stockData.map((v) => v.code).join(", "));
     throw new Error(`找不到股票代码: ${code}`);
   }
 
@@ -64,9 +65,7 @@ export const getStockItem = (code: string) => {
       `[getStockItem] 股票 ${code} (${item.name}) 缺少 valuationConfig 配置`,
     );
     console.error("股票完整数据:", JSON.stringify(item, null, 2));
-    throw new Error(
-      `股票 ${code} (${item.name}) 缺少 valuationConfig 配置`,
-    );
+    throw new Error(`股票 ${code} (${item.name}) 缺少 valuationConfig 配置`);
   }
 
   return item;

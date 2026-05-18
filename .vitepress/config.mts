@@ -421,6 +421,12 @@ export default defineConfig({
               items: [{ text: "伊利股份", link: "/company/dairy/yili.md" }],
             },
             {
+              text: "饮料",
+              items: [
+                { text: "东鹏饮料", link: "/company/beverage/eastroc.md" },
+              ],
+            },
+            {
               text: "汽车",
               link: "/company/car/car.md",
               items: [
@@ -646,6 +652,15 @@ export default defineConfig({
             {
               text: "云天化",
               link: "/company/fertiliser/yuntianhua.md",
+            },
+          ],
+        },
+        {
+          text: "广告传媒",
+          items: [
+            {
+              text: "分众传媒",
+              link: "/company/advertisement/fenzhong.md",
             },
           ],
         },
