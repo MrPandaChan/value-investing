@@ -285,6 +285,10 @@ export default defineConfig({
           text: "人物&案例",
           items: [
             {
+              text: "查理·芒格",
+              link: "/value-investing/figures-and-cases/munger.md",
+            },
+            {
               text: "沃伦·巴菲特",
               link: "/value-investing/figures-and-cases/buffett.md",
             },
@@ -421,8 +425,9 @@ export default defineConfig({
               items: [{ text: "伊利股份", link: "/company/dairy/yili.md" }],
             },
             {
-              text: "饮料",
+              text: "茶饮",
               items: [
+                { text: "茶饮", link: "/company/beverage/beverage.md" },
                 { text: "东鹏饮料", link: "/company/beverage/eastroc.md" },
               ],
             },
