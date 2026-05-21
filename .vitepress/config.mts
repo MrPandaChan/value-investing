@@ -164,6 +164,10 @@ export default defineConfig({
               text: "财报识别 TODO",
               link: "/value-investing/ai-skill/financial-detection.md",
             },
+            {
+              text: "播客",
+              link: "/value-investing/ai-skill/podcast.md",
+            },
           ],
         },
         {
