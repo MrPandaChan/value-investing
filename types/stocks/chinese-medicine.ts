@@ -1,4 +1,10 @@
-import { StockLevel, StockType, ValuationType, type StockItem } from "../index";
+import {
+  ProfitValuationGrowthType,
+  StockLevel,
+  StockType,
+  ValuationType,
+  type StockItem,
+} from "../index";
 
 const chineseMedicineStockData: StockItem[] = [
   {
@@ -19,30 +25,30 @@ const chineseMedicineStockData: StockItem[] = [
     level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
-      type: ValuationType.REFERENCE,
-      price: 37.23,
-      // type: ValuationType.PROFIT,
-      // specialOffer: {
-      //   type: ProfitValuationGrowthType.RATE,
-      //   data: [0.1, 0],
-      //   discount: 0.9,
-      // },
-      // conservative: {
-      //   type: ProfitValuationGrowthType.RATE,
-      //   data: [0.1, 0.05],
-      //   discount: 0.9,
-      // },
-      // neutral: {
-      //   type: ProfitValuationGrowthType.RATE,
-      //   data: [0.1, 0.07],
-      //   discount: 0.9,
-      // },
-      // optimistic: {
-      //   type: ProfitValuationGrowthType.RATE,
-      //   data: [0.1],
-      //   discount: 0.9,
-      // },
-      // backYearsNum: 10,
+      // type: ValuationType.REFERENCE,
+      // price: 37.23,
+      type: ValuationType.PROFIT,
+      specialOffer: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0],
+        discount: 0.9,
+      },
+      conservative: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.05],
+        discount: 0.9,
+      },
+      neutral: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1, 0.07],
+        discount: 0.9,
+      },
+      optimistic: {
+        type: ProfitValuationGrowthType.RATE,
+        data: [0.1],
+        discount: 0.9,
+      },
+      backYearsNum: 10,
     },
   },
   {
