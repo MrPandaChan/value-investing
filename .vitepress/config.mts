@@ -360,6 +360,10 @@ export default defineConfig({
           text: "投资模型",
           items: [
             {
+              text: "股票池",
+              link: "/company/stock-pool/stock-pool.md",
+            },
+            {
               text: "价值轮动模型",
               link: "/company/model/rotation-model.md",
             },
@@ -384,6 +388,10 @@ export default defineConfig({
             {
               text: "消费品行业概述",
               link: "/company/consumer/consumer.md",
+            },
+            {
+              text: "奢侈品",
+              link: "/company/consumer/luxury.md",
             },
             {
               text: "制造业概述",

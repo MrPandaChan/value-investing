@@ -10,6 +10,8 @@
 
 详情跳转[回报率-估值的逻辑](../value-investing/return-on-investment.md#估值的逻辑)
 
+[从估值地心引力看伟大企业的周期性低估（2026.05.27 第25号宇宙）](https://mp.weixin.qq.com/s/Cg3H-Ut62IOnryzkTrERrg)
+
 ## 价值投资的四种途径
 
 押注于价格和价值之间的收敛。
