@@ -26,7 +26,7 @@ export default defineConfig({
         text: "投资框架",
         link: "/value-investing/value-investing/information.md",
       },
-      { text: "行业与企业", link: "/company/model/rotation-model.md" },
+      { text: "行业与企业", link: "/company/stock-pool/stock-pool.md" },
     ],
     sidebar: {
       "/value-investing/": [

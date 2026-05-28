@@ -119,15 +119,16 @@ interface DynamicDataResponse {
 }
 
 // f12  # 代码
-// f14  # 名称
 // f2   # 股价
 // f9   # 动态市盈率
+// f14  # 名称
+// f18  # 昨日收盘价
 // f23  # 市净率
 // f20  # 总市值
 // f37  # 净资产收益率(加权)
 // f38  # 总股本
 // f100 # 行业
-// f115 # 市盈率TTM
+// f115 # 市盈率TTM(如果是港股，这个是昨日收盘价计算的PETTM，如果是A股，这个是实时的PETTM)
 // secids=AAPL,TSLA
 // secids=116.00700,1.06855  // 腾讯控股（00700.HK）、亚盛医药（06855.HK）
 //（部分接口可能简化为 1.00700 或 116.00700）
@@ -153,6 +154,8 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
     const price = v.f2 > 0 ? v.f2 : v.f18;
     return {
       code: v.f12,
+      name: v.f14,
+      prevClose: v.f18,
       price: isHKCode(v.f12) ? price / 1000 : price / 100,
       marketValue: v.f20,
       PB: v.f23 / 100,
