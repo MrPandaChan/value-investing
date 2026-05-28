@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, reactive, ref } from "vue";
+import { computed, onMounted, reactive, ref, watch } from "vue";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import { formatNum, formatPercent, isHKCode } from "../../../fetch-data/helper";
 import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
@@ -12,6 +12,7 @@ interface RowData {
   dividend: number;
   quantity: number;
   url?: string;
+  remark?: string;
   exList: { dps: number; exDate: string }[];
 }
 
@@ -26,11 +27,14 @@ interface MergedRowData extends RowData {
   isFirstRow: boolean;
   isLastRow: boolean;
   decline: number;
+  totalMarketCap?: number;
+  rowKey: string;
 }
 
 interface PlanEntry {
   value: number;
   quantity: number; // 计划买入股数
+  remark?: string;
 }
 
 enum PlanType {
@@ -103,6 +107,111 @@ const groupMetaMap = ref<Record<string, GroupMeta>>({});
 const customPrice = reactive<Record<string, number>>({});
 const customDividend = reactive<Record<string, number>>({});
 const customPE = reactive<Record<string, number>>({});
+const customRemark = reactive<Record<string, string>>({});
+const exchangeRate = ref(1.1555); // 港币兑人民币汇率
+
+const STORAGE_KEY = "stock-pool-data";
+
+// 按股票 code 去重存储，避免 name/url/exList 重复
+interface StockStorage {
+  name: string;
+  url?: string;
+  rows: { price: number; pe: number; dividend: number; quantity: number }[];
+  exList: { dps: number; exDate: string }[];
+  meta: GroupMeta;
+}
+
+interface StorageData {
+  stocks: Record<string, StockStorage>;
+  customPrice: Record<string, number>;
+  customDividend: Record<string, number>;
+  customPE: Record<string, number>;
+  customRemark: Record<string, string>;
+}
+
+function saveToStorage() {
+  const stocks: Record<string, StockStorage> = {};
+  const codes = [...new Set(tableData.value.map((r) => r.code))];
+  for (const code of codes) {
+    const rows = tableData.value.filter((r) => r.code === code);
+    const first = rows[0];
+    stocks[code] = {
+      name: first.name,
+      url: first.url,
+      rows: rows.map((r) => ({
+        price: r.price,
+        pe: r.pe,
+        dividend: r.dividend,
+        quantity: r.quantity,
+      })),
+      exList: first.exList,
+      meta: groupMetaMap.value[code],
+    };
+  }
+  const data: StorageData = {
+    stocks,
+    customPrice: { ...customPrice },
+    customDividend: { ...customDividend },
+    customPE: { ...customPE },
+    customRemark: { ...customRemark },
+  };
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadFromStorage(): boolean {
+  const raw = localStorage.getItem(STORAGE_KEY);
+  if (!raw) return false;
+  try {
+    const data: StorageData = JSON.parse(raw);
+    const codes = Object.keys(data.stocks || {});
+    if (!codes.length) return false;
+
+    tableData.value = [];
+    groupMetaMap.value = {};
+    for (const code of codes) {
+      const s = data.stocks[code];
+      if (!s) continue;
+      groupMetaMap.value[code] = s.meta;
+      for (const r of s.rows) {
+        tableData.value.push({
+          name: s.name,
+          code,
+          price: r.price,
+          pe: r.pe,
+          dividend: r.dividend,
+          quantity: r.quantity,
+          url: s.url,
+          exList: s.exList,
+        });
+      }
+    }
+
+    Object.keys(customPrice).forEach((k) => delete customPrice[k]);
+    Object.keys(customDividend).forEach((k) => delete customDividend[k]);
+    Object.keys(customPE).forEach((k) => delete customPE[k]);
+    Object.keys(customRemark).forEach((k) => delete customRemark[k]);
+    Object.assign(customPrice, data.customPrice || {});
+    Object.assign(customDividend, data.customDividend || {});
+    Object.assign(customPE, data.customPE || {});
+    Object.assign(customRemark, data.customRemark || {});
+    return true;
+  } catch {
+    // ignore
+  }
+  return false;
+}
+
+onMounted(() => {
+  loadFromStorage();
+});
+
+watch(
+  [customPrice, customDividend, customPE, customRemark],
+  () => {
+    if (tableData.value.length) saveToStorage();
+  },
+  { deep: true },
+);
 
 async function init() {
   tableData.value = [];
@@ -113,9 +222,8 @@ async function init() {
   ]);
   exListMap.value = exListMapResult;
   const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
-  let exchangeRate = 1.1555;
   if (exchangeTarget) {
-    exchangeRate = exchangeTarget.price / 100;
+    exchangeRate.value = exchangeTarget.price / 100;
   }
 
   for (let i = 0; i < stockCodes.length; i += 1) {
@@ -155,7 +263,10 @@ async function init() {
         exList,
       });
       if (item.type === PlanType.PRICE) {
-        for (const v of item.price) {
+        for (let pi = 0; pi < item.price.length; pi++) {
+          const v = item.price[pi];
+          const rowKey = `${code}-${pi + 1}`;
+          if (v.remark) customRemark[rowKey] = v.remark;
           tableData.value.push({
             name,
             code,
@@ -168,8 +279,11 @@ async function init() {
           });
         }
       } else if (item.type === PlanType.DIVIDEND) {
-        for (const v of item.dividend) {
+        for (let pi = 0; pi < item.dividend.length; pi++) {
+          const v = item.dividend[pi];
           const targetPrice = dps / v.value;
+          const rowKey = `${code}-${pi + 1}`;
+          if (v.remark) customRemark[rowKey] = v.remark;
           tableData.value.push({
             name,
             code,
@@ -199,6 +313,77 @@ async function init() {
       customPE[item.code] = lastRow.pe;
     }
   }
+  saveToStorage();
+}
+
+async function refresh() {
+  if (!tableData.value.length) {
+    return init();
+  }
+  const stockCodes = planList.map((v) => v.code);
+  const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
+
+  const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
+  if (exchangeTarget) {
+    exchangeRate.value = exchangeTarget.price / 100;
+  }
+
+  for (let i = 0; i < stockCodes.length; i++) {
+    const item = planList[i];
+    const dynamicData = dynamicDataList.find((v) => v.code === item.code);
+    if (!dynamicData) continue;
+
+    const { price, prevClose: originPrevClose, PE_TTM } = dynamicData;
+    const code = item.code;
+    const prevClose = isHKCode(code)
+      ? originPrevClose / 1000
+      : originPrevClose / 100;
+    const pricePE = isHKCode(code)
+      ? PE_TTM * (1 + (price - prevClose) / prevClose)
+      : PE_TTM;
+    const meta = groupMetaMap.value[code];
+    const dps = meta?.dps || 0;
+
+    groupMetaMap.value[code] = {
+      ...(meta || { planType: item.type, dps: 0 }),
+      pricePE,
+      realPrice: price,
+    };
+
+    // 更新 tableData 中该 code 的行
+    const rows = tableData.value.filter((r) => r.code === code);
+    rows.forEach((row, index) => {
+      if (index === 0) {
+        // 实时行
+        row.price = price;
+        row.pe = pricePE;
+        row.dividend = dps / price;
+      } else {
+        // 计划行
+        if (item.type === PlanType.PRICE) {
+          const planPrice = item.price[index - 1].value;
+          row.price = planPrice;
+          row.pe = pricePE * (planPrice / price);
+          row.dividend = dps / planPrice;
+        } else {
+          const planDiv = item.dividend[index - 1].value;
+          const targetPrice = dps / planDiv;
+          row.price = targetPrice;
+          row.pe = pricePE * (targetPrice / price);
+          row.dividend = planDiv;
+        }
+      }
+    });
+
+    // 更新 custom 行
+    if (rows.length > 1) {
+      const lastRow = rows[rows.length - 1];
+      customPrice[code] = lastRow.price;
+      customDividend[code] = lastRow.dividend;
+      customPE[code] = lastRow.pe;
+    }
+  }
+  saveToStorage();
 }
 
 function formatPrice(price: number, code: string): string {
@@ -250,7 +435,8 @@ const mergedTableData = computed(() => {
     const meta = groupMetaMap.value[code];
     const realPrice = meta ? meta.realPrice : group[0].price; // 第一行为实时股价
 
-    group.forEach((row, index) => {
+    // 先计算每行的实际 price（处理 custom 行）
+    const resolvedRows = group.map((row, index) => {
       const isLast = index === group.length - 1 && index > 0;
       let price = row.price;
       let dividend = row.dividend;
@@ -265,13 +451,20 @@ const mergedTableData = computed(() => {
         if (cpe !== undefined) pe = cpe;
       }
 
-      const decline = index === 0 ? 0 : ((realPrice - price) / realPrice) * 100;
+      return { ...row, price, dividend, pe };
+    });
+
+    // 计划市值合计：所有计划行（index > 0）的 quantity * price 之和
+    const totalMarketCap = resolvedRows
+      .slice(1)
+      .reduce((sum, r) => sum + (r.quantity && r.price ? r.quantity * r.price : 0), 0);
+
+    resolvedRows.forEach((row, index) => {
+      const isLast = index === group.length - 1 && index > 0;
+      const decline = index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
 
       result.push({
         ...row,
-        price,
-        dividend,
-        pe,
         nameRowSpan: index === 0 ? group.length : 0,
         codeRowSpan: index === 0 ? group.length : 0,
         exDateRowSpan: index === 0 ? group.length : 0,
@@ -281,6 +474,8 @@ const mergedTableData = computed(() => {
         isFirstRow: index === 0,
         isLastRow: isLast,
         decline,
+        totalMarketCap: index === 0 ? totalMarketCap : undefined,
+        rowKey: `${code}-${index}`,
       });
     });
   }
@@ -290,7 +485,10 @@ const mergedTableData = computed(() => {
 </script>
 
 <template>
-  <el-button type="primary" @click="init">手动刷新（避免高频调用）</el-button>
+  <el-button type="primary" @click="refresh">刷新实时数据</el-button>
+  <el-button type="primary" @click="init"
+    >初始化所有数据（避免高频调用）</el-button
+  >
 
   <table v-if="mergedTableData.length" class="stock-pool-table">
     <thead>
@@ -305,6 +503,8 @@ const mergedTableData = computed(() => {
         <th class="bold">除权除息时间</th>
         <th class="bold">每股分红</th>
         <th class="bold">年分红</th>
+        <th class="bold">计划市值</th>
+        <th class="bold">备注</th>
       </tr>
     </thead>
     <tbody>
@@ -380,6 +580,36 @@ const mergedTableData = computed(() => {
           class="bold"
         >
           {{ row.annualDps ? row.annualDps.toFixed(2) : "-" }}
+        </td>
+        <td class="bold">
+          <template v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0">
+            <template v-if="isHKCode(row.code)">
+              <div>HK${{ row.totalMarketCap.toFixed(2) }}</div>
+              <div>￥{{ (row.totalMarketCap * exchangeRate).toFixed(2) }}</div>
+            </template>
+            <template v-else>
+              ￥{{ row.totalMarketCap.toFixed(2) }}
+            </template>
+          </template>
+          <template v-else-if="row.quantity && row.price">
+            <template v-if="isHKCode(row.code)">
+              <div>HK${{ (row.quantity * row.price).toFixed(2) }}</div>
+              <div>￥{{ (row.quantity * row.price * exchangeRate).toFixed(2) }}</div>
+            </template>
+            <template v-else>
+              ￥{{ (row.quantity * row.price).toFixed(2) }}
+            </template>
+          </template>
+          <span v-else>-</span>
+        </td>
+        <td class="bold remark-cell">
+          <el-input
+            v-model="customRemark[row.rowKey]"
+            size="small"
+            class="remark-input"
+            placeholder=""
+            @change="saveToStorage()"
+          />
         </td>
       </tr>
     </tbody>
@@ -493,6 +723,25 @@ const mergedTableData = computed(() => {
       color: #ff0000;
       padding: 1px 4px;
     }
+  }
+
+  .remark-input {
+    width: 100px;
+
+    .el-input__wrapper {
+      padding: 0 4px;
+    }
+
+    .el-input__inner {
+      text-align: center;
+      font-size: 13px;
+      padding: 1px 4px;
+    }
+  }
+
+  .remark-cell {
+    white-space: normal;
+    min-width: 80px;
   }
 }
 </style>
