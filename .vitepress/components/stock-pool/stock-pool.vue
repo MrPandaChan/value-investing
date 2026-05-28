@@ -10,17 +10,27 @@ interface RowData {
   price: number;
   pe: number;
   dividend: number;
+  quantity: number;
+  url?: string;
   exList: { dps: number; exDate: string }[];
 }
 
 interface MergedRowData extends RowData {
   nameRowSpan: number;
   codeRowSpan: number;
+
   exDateRowSpan: number;
   dpsRowSpan: number;
+  annualDpsRowSpan: number;
+  annualDps: number;
   isFirstRow: boolean;
   isLastRow: boolean;
   decline: number;
+}
+
+interface PlanEntry {
+  value: number;
+  quantity: number; // 计划买入股数
 }
 
 enum PlanType {
@@ -30,16 +40,17 @@ enum PlanType {
 
 interface BasePlan {
   code: string;
+  url?: string;
 }
 
 interface PricePlan extends BasePlan {
   type: PlanType.PRICE;
-  price: number[];
+  price: PlanEntry[];
 }
 
 interface DividendPlan extends BasePlan {
   type: PlanType.DIVIDEND;
-  dividend: number[];
+  dividend: PlanEntry[];
 }
 
 type PlanItem = PricePlan | DividendPlan;
@@ -49,19 +60,33 @@ const planList: PlanItem[] = [
     // 腾讯控股
     type: PlanType.PRICE,
     code: "00700",
-    price: [420, 400, 380, 360],
+    url: "/value-investing/company/internet/tencent",
+    price: [
+      { value: 420, quantity: 100 },
+      { value: 400, quantity: 100 },
+      { value: 380, quantity: 100 },
+      { value: 360, quantity: 100 },
+    ],
   },
   {
     // 云南白药
     type: PlanType.DIVIDEND,
     code: "000538",
-    dividend: [0.05, 0.055, 0.06],
+    dividend: [
+      { value: 0.05, quantity: 200 },
+      { value: 0.055, quantity: 400 },
+      { value: 0.06, quantity: 600 },
+    ],
   },
   {
     // 分众传媒
     type: PlanType.DIVIDEND,
     code: "002027",
-    dividend: [0.065, 0.07, 0.075],
+    dividend: [
+      { value: 0.065, quantity: 1000 },
+      { value: 0.07, quantity: 2000 },
+      { value: 0.075, quantity: 3000 },
+    ],
   },
 ];
 
@@ -125,6 +150,8 @@ async function init() {
         price,
         pe: pricePE,
         dividend: dps / price,
+        quantity: 0,
+        url: item.url,
         exList,
       });
       if (item.type === PlanType.PRICE) {
@@ -132,21 +159,25 @@ async function init() {
           tableData.value.push({
             name,
             code,
-            price: v,
-            pe: pricePE * (v / price),
-            dividend: dps / v,
+            price: v.value,
+            pe: pricePE * (v.value / price),
+            dividend: dps / v.value,
+            quantity: v.quantity,
+            url: item.url,
             exList,
           });
         }
       } else if (item.type === PlanType.DIVIDEND) {
         for (const v of item.dividend) {
-          const targetPrice = dps / v;
+          const targetPrice = dps / v.value;
           tableData.value.push({
             name,
             code,
             price: targetPrice,
             pe: pricePE * (targetPrice / price),
-            dividend: v,
+            dividend: v.value,
+            quantity: v.quantity,
+            url: item.url,
             exList,
           });
         }
@@ -245,6 +276,8 @@ const mergedTableData = computed(() => {
         codeRowSpan: index === 0 ? group.length : 0,
         exDateRowSpan: index === 0 ? group.length : 0,
         dpsRowSpan: index === 0 ? group.length : 0,
+        annualDpsRowSpan: index === 0 ? group.length : 0,
+        annualDps: row.exList.reduce((pre, cur) => pre + cur.dps, 0),
         isFirstRow: index === 0,
         isLastRow: isLast,
         decline,
@@ -264,12 +297,14 @@ const mergedTableData = computed(() => {
       <tr>
         <th class="bold light-blue">股票名称</th>
         <th class="bold light-blue">代码</th>
-        <th class="bold blue">当前股价</th>
+        <th class="bold blue">股价</th>
         <th class="bold red">股息率</th>
         <th class="bold red">PE_TTM</th>
         <th class="bold bg-green">还能跌</th>
+        <th class="bold">计划股数</th>
         <th class="bold">除权除息时间</th>
         <th class="bold">每股分红</th>
+        <th class="bold">年分红</th>
       </tr>
     </thead>
     <tbody>
@@ -279,7 +314,10 @@ const mergedTableData = computed(() => {
         :class="{ 'real-time-row': row.isFirstRow }"
       >
         <td v-if="row.nameRowSpan > 0" :rowspan="row.nameRowSpan" class="bold">
-          {{ row.name }}
+          <a v-if="row.url" :href="row.url" class="stock-link">{{
+            row.name
+          }}</a>
+          <span v-else>{{ row.name }}</span>
         </td>
         <td v-if="row.codeRowSpan > 0" :rowspan="row.codeRowSpan" class="bold">
           {{ row.code }}
@@ -323,6 +361,9 @@ const mergedTableData = computed(() => {
         <td class="bold bg-green">
           {{ row.decline === 0 ? "-" : formatPercent(row.decline) }}
         </td>
+        <td class="bold">
+          {{ row.quantity || "-" }}
+        </td>
         <td
           v-if="row.exDateRowSpan > 0"
           :rowspan="row.exDateRowSpan"
@@ -332,6 +373,13 @@ const mergedTableData = computed(() => {
         </td>
         <td v-if="row.dpsRowSpan > 0" :rowspan="row.dpsRowSpan" class="bold">
           <div v-for="(ex, i) in row.exList" :key="i">{{ ex.dps }}</div>
+        </td>
+        <td
+          v-if="row.annualDpsRowSpan > 0"
+          :rowspan="row.annualDpsRowSpan"
+          class="bold"
+        >
+          {{ row.annualDps ? row.annualDps.toFixed(2) : "-" }}
         </td>
       </tr>
     </tbody>
@@ -391,6 +439,12 @@ const mergedTableData = computed(() => {
 
   .bg-green {
     background-color: #00b050;
+  }
+
+  .stock-link {
+    color: #00a3f5;
+    text-decoration: underline;
+    cursor: pointer;
   }
 
   .plan-price-input {

@@ -2,6 +2,16 @@ import axios from "axios";
 import { isHKCode, toSECUCODE, v } from "../../../fetch-data/helper";
 import { FINANCE_URL_V1 } from "../../../fetch-data/fetch-stock-data";
 
+export interface DividendMainResponse {
+  EX_DIVIDEND_DATE: string; // 除权除息日 "2020-07-16 00:00:00"
+  IMPL_PLAN_NEWPROFILE: string; // '10派2.031195元(实施方案)'
+}
+
+export interface HKDividendMainResponse {
+  EX_DIVIDEND_DATE: string; // 除净日 '2025/06/12'
+  PLAN_EXPLAIN: string; // 分红方案 '每股派港币0.66元'
+}
+
 export interface ExItem {
   dps: number;
   exDate: string;
@@ -64,7 +74,7 @@ async function fetchADividend(
   const res = await axios.get(FINANCE_URL_V1, {
     params: {
       reportName: "RPT_F10_DIVIDEND_MAIN",
-      columns: "ALL",
+      columns: "EX_DIVIDEND_DATE,IMPL_PLAN_NEWPROFILE",
       quoteColumns: "",
       filter: `(SECUCODE="${SECUCODE}")(IS_UNASSIGN="0")`,
       pageNumber: 1,
@@ -80,17 +90,17 @@ async function fetchADividend(
   if (!res.data.success) return [];
 
   return res.data.result.data
-    .filter((item: any) => {
+    .filter((item: DividendMainResponse) => {
       // 除权除息日为空表示还未确定，不能忽略
       if (!item.EX_DIVIDEND_DATE) return true;
       const exDate = new Date(item.EX_DIVIDEND_DATE);
       return exDate >= oneYearAgo;
     })
-    .map((item: any) => ({
+    .map((item: DividendMainResponse) => ({
       dps: getADps(item.IMPL_PLAN_NEWPROFILE || ""),
       exDate: formatExDate(item.EX_DIVIDEND_DATE),
     }))
-    .filter((item) => item.dps > 0);
+    .filter((item: ExItem) => item.dps > 0);
 }
 
 /**
@@ -105,8 +115,7 @@ async function fetchHKDividend(
   const res = await axios.get(FINANCE_URL_V1, {
     params: {
       reportName: "RPT_HKF10_MAIN_DIVBASIC",
-      columns:
-        "SECURITY_CODE,UPDATE_DATE,REPORT_TYPE,EX_DIVIDEND_DATE,DIVIDEND_DATE,TRANSFER_END_DATE,YEAR,PLAN_EXPLAIN,IS_BFP",
+      columns: "EX_DIVIDEND_DATE,PLAN_EXPLAIN",
       quoteColumns: "",
       filter: `(SECUCODE="${SECUCODE}")(IS_BFP="0")`,
       pageNumber: 1,
@@ -122,18 +131,18 @@ async function fetchHKDividend(
   if (!res.data.success) return [];
 
   return res.data.result.data
-    .filter((item: any) => {
+    .filter((item: HKDividendMainResponse) => {
       // 除权除息日为空表示还未确定，不能忽略
       if (!item.EX_DIVIDEND_DATE) return true;
       // 港股日期格式: "2025/06/12"
       const exDate = new Date(item.EX_DIVIDEND_DATE);
       return exDate >= oneYearAgo;
     })
-    .map((item: any) => ({
+    .map((item: HKDividendMainResponse) => ({
       dps: getHKDps(item.PLAN_EXPLAIN || ""),
       exDate: formatExDate(item.EX_DIVIDEND_DATE),
     }))
-    .filter((item) => item.dps > 0);
+    .filter((item: ExItem) => item.dps > 0);
 }
 
 /**
