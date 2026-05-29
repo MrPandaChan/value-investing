@@ -241,9 +241,13 @@ async function init() {
       const exList = item.dividendPerYear
         ? rawExList.slice(0, item.dividendPerYear)
         : rawExList;
-      const dps = exList.reduce((pre, cur) => pre + cur.dps, 0);
+      const dps = Math.round(
+        exList.reduce((pre, cur) => pre + cur.dps, 0) * 100,
+      ) / 100;
       const effectiveDps =
-        item.dividendAdjust != null ? dps * item.dividendAdjust : dps;
+        item.dividendAdjust != null
+          ? Math.round(dps * item.dividendAdjust * 100) / 100
+          : dps;
       groupMetaMap.value[code] = {
         planType: item.type,
         dps,
@@ -257,7 +261,7 @@ async function init() {
         code,
         price,
         pe: pricePE,
-        dividend: dps / price,
+        dividend: effectiveDps / price,
         quantity: 0,
         url: item.url,
         exList,
@@ -270,7 +274,7 @@ async function init() {
             code,
             price: v.value,
             pe: pricePE * (v.value / price),
-            dividend: dps / v.value,
+            dividend: effectiveDps / v.value,
             quantity: v.quantity,
             url: item.url,
             exList,
@@ -341,9 +345,19 @@ async function refresh() {
       : PE_TTM;
     const meta = groupMetaMap.value[code];
     const dps = meta?.dps || 0;
+    const effectiveDps =
+      item.dividendAdjust != null
+        ? Math.round(dps * item.dividendAdjust * 100) / 100
+        : dps;
+
 
     groupMetaMap.value[code] = {
-      ...(meta || { planType: item.type, dps: 0, effectiveDps: 0, dividendAdjust: undefined }),
+      ...(meta || {
+        planType: item.type,
+        dps: 0,
+        effectiveDps: 0,
+        dividendAdjust: undefined,
+      }),
       pricePE,
       realPrice: price,
     };
@@ -355,17 +369,15 @@ async function refresh() {
         // 实时行
         row.price = price;
         row.pe = pricePE;
-        row.dividend = dps / price;
+        row.dividend = effectiveDps / price;
       } else {
         // 计划行
         if (item.type === PlanType.PRICE) {
           const planPrice = item.price[index - 1].value;
           row.price = planPrice;
           row.pe = pricePE * (planPrice / price);
-          row.dividend = dps / planPrice;
+          row.dividend = effectiveDps / planPrice;
         } else {
-          const effectiveDps =
-            item.dividendAdjust != null ? dps * item.dividendAdjust : dps;
           const planDiv = item.dividend[index - 1].value;
           const targetPrice = effectiveDps / planDiv;
           row.price = targetPrice;
@@ -508,7 +520,7 @@ const mergedTableData = computed(() => {
         <th class="bold blue">股价</th>
         <th class="bold red">股息率</th>
         <th class="bold red">PE_TTM</th>
-        <th class="bold bg-green">还能跌</th>
+        <th class="bold bg-green">还要跌</th>
         <th class="bold">除权除息时间</th>
         <th class="bold">每股分红</th>
         <th class="bold bg-pink red">年分红</th>
@@ -603,7 +615,8 @@ const mergedTableData = computed(() => {
         </td>
         <td v-if="row.dpsRowSpan > 0" :rowspan="row.dpsRowSpan" class="bold">
           <div v-for="(ex, i) in row.exList" :key="i">
-            {{ isHKCode(row.code) ? 'HK$' : '￥' }}{{ Number(ex.dps.toFixed(4)) }}
+            {{ isHKCode(row.code) ? "HK$" : "￥"
+            }}{{ Number(ex.dps.toFixed(4)) }}
           </div>
         </td>
         <td
@@ -612,10 +625,12 @@ const mergedTableData = computed(() => {
           class="bold bg-pink red"
         >
           <div>
-            {{ isHKCode(row.code) ? 'HK$' : '￥' }}{{ row.annualDps ? row.annualDps.toFixed(2) : "-" }}
+            {{ isHKCode(row.code) ? "HK$" : "￥"
+            }}{{ row.annualDps ? row.annualDps.toFixed(2) : "-" }}
           </div>
           <div v-if="row.adjustedAnnualDps !== undefined">
-            {{ isHKCode(row.code) ? 'HK$' : '￥' }}{{ row.adjustedAnnualDps.toFixed(2) }}
+            {{ isHKCode(row.code) ? "HK$" : "￥"
+            }}{{ row.adjustedAnnualDps.toFixed(2) }}
           </div>
         </td>
         <td class="bold">

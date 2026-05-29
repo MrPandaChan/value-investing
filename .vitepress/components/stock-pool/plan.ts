@@ -70,7 +70,19 @@ const planList: PlanItem[] = [
     dividendAdjust: 0.8,
     dividend: [
       {
-        value: 0.045,
+        value: 0.047,
+        quantity: 2000,
+      },
+    ],
+  },
+  // 青岛港A
+  {
+    type: PlanType.DIVIDEND,
+    code: "601298",
+    dividendPerYear: 2,
+    dividend: [
+      {
+        value: 0.047,
         quantity: 2000,
       },
     ],
