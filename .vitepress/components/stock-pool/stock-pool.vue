@@ -107,7 +107,6 @@ const groupMetaMap = ref<Record<string, GroupMeta>>({});
 const customPrice = reactive<Record<string, number>>({});
 const customDividend = reactive<Record<string, number>>({});
 const customPE = reactive<Record<string, number>>({});
-const customRemark = reactive<Record<string, string>>({});
 const exchangeRate = ref(1.1555); // 港币兑人民币汇率
 
 const STORAGE_KEY = "stock-pool-data";
@@ -116,7 +115,13 @@ const STORAGE_KEY = "stock-pool-data";
 interface StockStorage {
   name: string;
   url?: string;
-  rows: { price: number; pe: number; dividend: number; quantity: number }[];
+  rows: {
+    price: number;
+    pe: number;
+    dividend: number;
+    quantity: number;
+    remark?: string;
+  }[];
   exList: { dps: number; exDate: string }[];
   meta: GroupMeta;
 }
@@ -126,7 +131,6 @@ interface StorageData {
   customPrice: Record<string, number>;
   customDividend: Record<string, number>;
   customPE: Record<string, number>;
-  customRemark: Record<string, string>;
 }
 
 function saveToStorage() {
@@ -143,6 +147,7 @@ function saveToStorage() {
         pe: r.pe,
         dividend: r.dividend,
         quantity: r.quantity,
+        remark: r.remark,
       })),
       exList: first.exList,
       meta: groupMetaMap.value[code],
@@ -153,7 +158,6 @@ function saveToStorage() {
     customPrice: { ...customPrice },
     customDividend: { ...customDividend },
     customPE: { ...customPE },
-    customRemark: { ...customRemark },
   };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
@@ -182,6 +186,7 @@ function loadFromStorage(): boolean {
           quantity: r.quantity,
           url: s.url,
           exList: s.exList,
+          remark: r.remark,
         });
       }
     }
@@ -189,11 +194,9 @@ function loadFromStorage(): boolean {
     Object.keys(customPrice).forEach((k) => delete customPrice[k]);
     Object.keys(customDividend).forEach((k) => delete customDividend[k]);
     Object.keys(customPE).forEach((k) => delete customPE[k]);
-    Object.keys(customRemark).forEach((k) => delete customRemark[k]);
     Object.assign(customPrice, data.customPrice || {});
     Object.assign(customDividend, data.customDividend || {});
     Object.assign(customPE, data.customPE || {});
-    Object.assign(customRemark, data.customRemark || {});
     return true;
   } catch {
     // ignore
@@ -206,7 +209,7 @@ onMounted(() => {
 });
 
 watch(
-  [customPrice, customDividend, customPE, customRemark],
+  [customPrice, customDividend, customPE],
   () => {
     if (tableData.value.length) saveToStorage();
   },
@@ -265,8 +268,6 @@ async function init() {
       if (item.type === PlanType.PRICE) {
         for (let pi = 0; pi < item.price.length; pi++) {
           const v = item.price[pi];
-          const rowKey = `${code}-${pi + 1}`;
-          if (v.remark) customRemark[rowKey] = v.remark;
           tableData.value.push({
             name,
             code,
@@ -276,14 +277,13 @@ async function init() {
             quantity: v.quantity,
             url: item.url,
             exList,
+            remark: v.remark,
           });
         }
       } else if (item.type === PlanType.DIVIDEND) {
         for (let pi = 0; pi < item.dividend.length; pi++) {
           const v = item.dividend[pi];
           const targetPrice = dps / v.value;
-          const rowKey = `${code}-${pi + 1}`;
-          if (v.remark) customRemark[rowKey] = v.remark;
           tableData.value.push({
             name,
             code,
@@ -293,6 +293,7 @@ async function init() {
             quantity: v.quantity,
             url: item.url,
             exList,
+            remark: v.remark,
           });
         }
       }
@@ -457,11 +458,15 @@ const mergedTableData = computed(() => {
     // 计划市值合计：所有计划行（index > 0）的 quantity * price 之和
     const totalMarketCap = resolvedRows
       .slice(1)
-      .reduce((sum, r) => sum + (r.quantity && r.price ? r.quantity * r.price : 0), 0);
+      .reduce(
+        (sum, r) => sum + (r.quantity && r.price ? r.quantity * r.price : 0),
+        0,
+      );
 
     resolvedRows.forEach((row, index) => {
       const isLast = index === group.length - 1 && index > 0;
-      const decline = index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
+      const decline =
+        index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
 
       result.push({
         ...row,
@@ -499,10 +504,10 @@ const mergedTableData = computed(() => {
         <th class="bold red">股息率</th>
         <th class="bold red">PE_TTM</th>
         <th class="bold bg-green">还能跌</th>
-        <th class="bold">计划股数</th>
         <th class="bold">除权除息时间</th>
         <th class="bold">每股分红</th>
-        <th class="bold">年分红</th>
+        <th class="bold bg-pink red">年分红</th>
+        <th class="bold">计划股数</th>
         <th class="bold">计划市值</th>
         <th class="bold">备注</th>
       </tr>
@@ -522,7 +527,13 @@ const mergedTableData = computed(() => {
         <td v-if="row.codeRowSpan > 0" :rowspan="row.codeRowSpan" class="bold">
           {{ row.code }}
         </td>
-        <td class="bold" :class="{ blue: !row.isFirstRow }">
+        <td
+          class="bold"
+          :class="[
+            row.isFirstRow ? 'red' : 'blue',
+            { 'bg-pink': row.decline > 0 && row.decline < 5 },
+          ]"
+        >
           <el-input-number
             v-if="row.isLastRow"
             v-model="customPrice[row.code]"
@@ -534,7 +545,13 @@ const mergedTableData = computed(() => {
           />
           <span v-else>{{ formatPrice(row.price, row.code) }}</span>
         </td>
-        <td class="bold" :class="{ red: !row.isFirstRow }">
+        <td
+          class="bold"
+          :class="{
+            red: !row.isFirstRow,
+            'bg-pink': row.decline > 0 && row.decline < 5,
+          }"
+        >
           <el-input-number
             v-if="row.isLastRow"
             v-model="customDividend[row.code]"
@@ -546,7 +563,13 @@ const mergedTableData = computed(() => {
           />
           <span v-else>{{ formatPercent(row.dividend * 100) }}</span>
         </td>
-        <td class="bold" :class="{ red: !row.isFirstRow }">
+        <td
+          class="bold"
+          :class="{
+            red: !row.isFirstRow,
+            'bg-pink': row.decline > 0 && row.decline < 5,
+          }"
+        >
           <el-input-number
             v-if="row.isLastRow"
             v-model="customPE[row.code]"
@@ -558,11 +581,13 @@ const mergedTableData = computed(() => {
           />
           <span v-else>{{ formatNum(row.pe, 2).toFixed(2) }}</span>
         </td>
-        <td class="bold bg-green">
+        <td
+          class="bold"
+          :class="
+            row.decline > 0 && row.decline < 5 ? 'bg-light-red' : 'bg-green'
+          "
+        >
           {{ row.decline === 0 ? "-" : formatPercent(row.decline) }}
-        </td>
-        <td class="bold">
-          {{ row.quantity || "-" }}
         </td>
         <td
           v-if="row.exDateRowSpan > 0"
@@ -577,24 +602,29 @@ const mergedTableData = computed(() => {
         <td
           v-if="row.annualDpsRowSpan > 0"
           :rowspan="row.annualDpsRowSpan"
-          class="bold"
+          class="bold bg-pink red"
         >
           {{ row.annualDps ? row.annualDps.toFixed(2) : "-" }}
         </td>
         <td class="bold">
-          <template v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0">
+          {{ row.quantity || "-" }}
+        </td>
+        <td class="bold">
+          <template
+            v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0"
+          >
             <template v-if="isHKCode(row.code)">
               <div>HK${{ row.totalMarketCap.toFixed(2) }}</div>
-              <div>￥{{ (row.totalMarketCap * exchangeRate).toFixed(2) }}</div>
+              <div>￥{{ (row.totalMarketCap / exchangeRate).toFixed(2) }}</div>
             </template>
-            <template v-else>
-              ￥{{ row.totalMarketCap.toFixed(2) }}
-            </template>
+            <template v-else> ￥{{ row.totalMarketCap.toFixed(2) }} </template>
           </template>
           <template v-else-if="row.quantity && row.price">
             <template v-if="isHKCode(row.code)">
               <div>HK${{ (row.quantity * row.price).toFixed(2) }}</div>
-              <div>￥{{ (row.quantity * row.price * exchangeRate).toFixed(2) }}</div>
+              <div>
+                ￥{{ ((row.quantity * row.price) / exchangeRate).toFixed(2) }}
+              </div>
             </template>
             <template v-else>
               ￥{{ (row.quantity * row.price).toFixed(2) }}
@@ -603,13 +633,7 @@ const mergedTableData = computed(() => {
           <span v-else>-</span>
         </td>
         <td class="bold remark-cell">
-          <el-input
-            v-model="customRemark[row.rowKey]"
-            size="small"
-            class="remark-input"
-            placeholder=""
-            @change="saveToStorage()"
-          />
+          {{ row.remark || "-" }}
         </td>
       </tr>
     </tbody>
@@ -628,7 +652,7 @@ const mergedTableData = computed(() => {
   td {
     line-height: 22px;
     white-space: nowrap;
-    padding: 4px 8px;
+    padding: 4px 6px;
     color: #000;
     font-weight: normal;
     border: 1px solid #000;
@@ -671,6 +695,14 @@ const mergedTableData = computed(() => {
     background-color: #00b050;
   }
 
+  .bg-pink {
+    background-color: #ffe9e8;
+  }
+
+  .bg-light-red {
+    background-color: #ff9c99;
+  }
+
   .stock-link {
     color: #00a3f5;
     text-decoration: underline;
@@ -694,22 +726,6 @@ const mergedTableData = computed(() => {
   }
 
   .plan-dividend-input {
-    width: 90px;
-
-    .el-input__wrapper {
-      padding: 0 4px;
-    }
-
-    .el-input__inner {
-      text-align: center;
-      font-weight: bold;
-      font-size: 14px;
-      color: #ff0000;
-      padding: 1px 4px;
-    }
-  }
-
-  .plan-pe-input {
     width: 70px;
 
     .el-input__wrapper {
@@ -725,8 +741,8 @@ const mergedTableData = computed(() => {
     }
   }
 
-  .remark-input {
-    width: 100px;
+  .plan-pe-input {
+    width: 60px;
 
     .el-input__wrapper {
       padding: 0 4px;
@@ -734,7 +750,9 @@ const mergedTableData = computed(() => {
 
     .el-input__inner {
       text-align: center;
-      font-size: 13px;
+      font-weight: bold;
+      font-size: 14px;
+      color: #ff0000;
       padding: 1px 4px;
     }
   }
