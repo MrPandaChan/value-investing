@@ -24,6 +24,7 @@ interface MergedRowData extends RowData {
   exDateRowSpan: number;
   dpsRowSpan: number;
   annualDpsRowSpan: number;
+  remarkRowSpan: number;
   annualDps: number;
   adjustedAnnualDps?: number;
   isFirstRow: boolean;
@@ -55,29 +56,22 @@ const STORAGE_KEY = "stock-pool-data";
 // 基于 planList 结构自动生成指纹，planList 变更时自动失效旧缓存
 function computeFingerprint(): string {
   const entries = planList.map((item) => {
+    const base = {
+      code: item.code,
+      type: item.type === PlanType.PRICE ? "PRICE" : "DIVIDEND",
+      dpy: item.dividendPerYear,
+      adj: item.dividendAdjust,
+      remark: item.remark,
+    };
     if (item.type === PlanType.PRICE) {
       return {
-        code: item.code,
-        type: "PRICE",
-        dpy: item.dividendPerYear,
-        adj: item.dividendAdjust,
-        entries: item.price.map((e) => ({
-          v: e.value,
-          q: e.quantity,
-          r: e.remark,
-        })),
+        ...base,
+        entries: item.price.map((e) => ({ v: e.value, q: e.quantity })),
       };
     }
     return {
-      code: item.code,
-      type: "DIVIDEND",
-      dpy: item.dividendPerYear,
-      adj: item.dividendAdjust,
-      entries: item.dividend.map((e) => ({
-        v: e.value,
-        q: e.quantity,
-        r: e.remark,
-      })),
+      ...base,
+      entries: item.dividend.map((e) => ({ v: e.value, q: e.quantity })),
     };
   });
   return JSON.stringify(entries);
@@ -87,12 +81,12 @@ function computeFingerprint(): string {
 interface StockStorage {
   name: string;
   url?: string;
+  remark?: string;
   rows: {
     price: number;
     pe: number;
     dividend: number;
     quantity: number;
-    remark?: string;
   }[];
   exList: { dps: number; exDate: string }[];
   meta: GroupMeta;
@@ -115,12 +109,12 @@ function saveToStorage() {
     stocks[code] = {
       name: first.name,
       url: first.url,
+      remark: first.remark,
       rows: rows.map((r) => ({
         price: r.price,
         pe: r.pe,
         dividend: r.dividend,
         quantity: r.quantity,
-        remark: r.remark,
       })),
       exList: first.exList,
       meta: groupMetaMap.value[code],
@@ -162,7 +156,7 @@ function loadFromStorage(): boolean {
           quantity: r.quantity,
           url: s.url,
           exList: s.exList,
-          remark: r.remark,
+          remark: s.remark,
         });
       }
     }
@@ -265,6 +259,7 @@ async function init() {
         quantity: 0,
         url: item.url,
         exList,
+        remark: item.remark,
       });
       if (item.type === PlanType.PRICE) {
         for (let pi = 0; pi < item.price.length; pi++) {
@@ -278,7 +273,7 @@ async function init() {
             quantity: v.quantity,
             url: item.url,
             exList,
-            remark: v.remark,
+            remark: item.remark,
           });
         }
       } else if (item.type === PlanType.DIVIDEND) {
@@ -294,7 +289,7 @@ async function init() {
             quantity: v.quantity,
             url: item.url,
             exList,
-            remark: v.remark,
+            remark: item.remark,
           });
         }
       }
@@ -491,6 +486,7 @@ const mergedTableData = computed(() => {
         exDateRowSpan: index === 0 ? group.length : 0,
         dpsRowSpan: index === 0 ? group.length : 0,
         annualDpsRowSpan: index === 0 ? group.length : 0,
+        remarkRowSpan: index === 0 ? group.length : 0,
         annualDps,
         adjustedAnnualDps,
         isFirstRow: index === 0,
@@ -521,7 +517,7 @@ const mergedTableData = computed(() => {
         <th class="bold red">股息率</th>
         <th class="bold red">PE_TTM</th>
         <th class="bold bg-green">还要跌</th>
-        <th class="bold">除权除息时间</th>
+        <th class="bold">除权除息</th>
         <th class="bold">每股分红</th>
         <th class="bold bg-pink red">年分红</th>
         <th class="bold">计划股数</th>
@@ -641,26 +637,30 @@ const mergedTableData = computed(() => {
             v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0"
           >
             <template v-if="isHKCode(row.code)">
-              <div>HK${{ row.totalMarketCap.toFixed(2) }}</div>
-              <div>￥{{ (row.totalMarketCap / exchangeRate).toFixed(2) }}</div>
+              <div>HK${{ row.totalMarketCap.toFixed(0) }}</div>
+              <div>￥{{ (row.totalMarketCap / exchangeRate).toFixed(0) }}</div>
             </template>
-            <template v-else> ￥{{ row.totalMarketCap.toFixed(2) }} </template>
+            <template v-else> ￥{{ row.totalMarketCap.toFixed(0) }} </template>
           </template>
           <template v-else-if="row.quantity && row.price">
             <template v-if="isHKCode(row.code)">
-              <div>HK${{ (row.quantity * row.price).toFixed(2) }}</div>
+              <div>HK${{ (row.quantity * row.price).toFixed(0) }}</div>
               <div>
-                ￥{{ ((row.quantity * row.price) / exchangeRate).toFixed(2) }}
+                ￥{{ ((row.quantity * row.price) / exchangeRate).toFixed(0) }}
               </div>
             </template>
             <template v-else>
-              ￥{{ (row.quantity * row.price).toFixed(2) }}
+              ￥{{ (row.quantity * row.price).toFixed(0) }}
             </template>
           </template>
           <span v-else>-</span>
         </td>
-        <td class="bold remark-cell">
-          {{ row.remark || "-" }}
+        <td
+          v-if="row.remarkRowSpan > 0"
+          :rowspan="row.remarkRowSpan"
+          class="remark-cell"
+        >
+          {{ row.remark }}
         </td>
       </tr>
     </tbody>
@@ -786,7 +786,8 @@ const mergedTableData = computed(() => {
 
   .remark-cell {
     white-space: normal;
-    min-width: 80px;
+    max-width: 100px;
+    text-align: left;
   }
 }
 </style>
