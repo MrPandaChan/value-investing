@@ -76,9 +76,9 @@ const useCurrentValue = async () => {
   }
 };
 
-const aCash = 321000;
-const bCash = 916.89;
-const cash = 240532.79;
+const aCash = 0;
+const bCash = 0;
+const cash = 0;
 
 let total = ref(0);
 
