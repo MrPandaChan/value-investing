@@ -66,21 +66,16 @@ const planList: PlanItem[] = [
     code: "00700",
     url: "/value-investing/company/internet/tencent",
     price: [
-      { value: 420, quantity: 100 },
-      { value: 400, quantity: 100 },
+      { value: 400, quantity: 200 },
       { value: 380, quantity: 100 },
       { value: 360, quantity: 100 },
     ],
   },
   {
     // 云南白药
-    type: PlanType.DIVIDEND,
+    type: PlanType.PRICE,
     code: "000538",
-    dividend: [
-      { value: 0.05, quantity: 200 },
-      { value: 0.055, quantity: 400 },
-      { value: 0.06, quantity: 600 },
-    ],
+    price: [{ value: 46.5, quantity: 400 }],
   },
   {
     // 分众传媒
@@ -111,6 +106,33 @@ const exchangeRate = ref(1.1555); // 港币兑人民币汇率
 
 const STORAGE_KEY = "stock-pool-data";
 
+// 基于 planList 结构自动生成指纹，planList 变更时自动失效旧缓存
+function computeFingerprint(): string {
+  const entries = planList.map((item) => {
+    if (item.type === PlanType.PRICE) {
+      return {
+        code: item.code,
+        type: "PRICE",
+        entries: item.price.map((e) => ({
+          v: e.value,
+          q: e.quantity,
+          r: e.remark,
+        })),
+      };
+    }
+    return {
+      code: item.code,
+      type: "DIVIDEND",
+      entries: item.dividend.map((e) => ({
+        v: e.value,
+        q: e.quantity,
+        r: e.remark,
+      })),
+    };
+  });
+  return JSON.stringify(entries);
+}
+
 // 按股票 code 去重存储，避免 name/url/exList 重复
 interface StockStorage {
   name: string;
@@ -127,6 +149,7 @@ interface StockStorage {
 }
 
 interface StorageData {
+  version: string;
   stocks: Record<string, StockStorage>;
   customPrice: Record<string, number>;
   customDividend: Record<string, number>;
@@ -154,6 +177,7 @@ function saveToStorage() {
     };
   }
   const data: StorageData = {
+    version: computeFingerprint(),
     stocks,
     customPrice: { ...customPrice },
     customDividend: { ...customDividend },
@@ -167,6 +191,8 @@ function loadFromStorage(): boolean {
   if (!raw) return false;
   try {
     const data: StorageData = JSON.parse(raw);
+    // 指纹不匹配则丢弃旧缓存，用最新 planList 重新初始化
+    if (data.version !== computeFingerprint()) return false;
     const codes = Object.keys(data.stocks || {});
     if (!codes.length) return false;
 
