@@ -21,6 +21,7 @@ interface RowData {
   quantity: number;
   url?: string;
   remark?: string;
+  maxPositionRatio?: number;
   exList: { dps: number; exDate: string }[];
 }
 
@@ -31,6 +32,7 @@ interface MergedRowData extends RowData {
   dpsRowSpan: number;
   annualDpsRowSpan: number;
   remarkRowSpan: number;
+  maxPositionRatioRowSpan: number;
   annualDps: number;
   adjustedAnnualDps?: number;
   isFirstRow: boolean;
@@ -68,6 +70,7 @@ function computeFingerprint(): string {
       dpy: item.dividendPerYear,
       adj: item.dividendAdjust,
       remark: item.remark,
+      mpr: item.maxPositionRatio,
     };
     if (item.type === PlanType.PRICE) {
       return {
@@ -88,6 +91,7 @@ interface StockStorage {
   name: string;
   url?: string;
   remark?: string;
+  maxPositionRatio?: number;
   rows: {
     price: number;
     pe: number;
@@ -116,6 +120,7 @@ function saveToStorage() {
       name: first.name,
       url: first.url,
       remark: first.remark,
+      maxPositionRatio: first.maxPositionRatio,
       rows: rows.map((r) => ({
         price: r.price,
         pe: r.pe,
@@ -163,6 +168,7 @@ function loadFromStorage(): boolean {
           url: s.url,
           exList: s.exList,
           remark: s.remark,
+          maxPositionRatio: s.maxPositionRatio,
         });
       }
     }
@@ -276,6 +282,7 @@ async function init() {
         url: item.url,
         exList,
         remark: item.remark,
+        maxPositionRatio: item.maxPositionRatio,
       });
       if (item.type === PlanType.PRICE) {
         for (let pi = 0; pi < item.price.length; pi++) {
@@ -290,6 +297,7 @@ async function init() {
             url: item.url,
             exList,
             remark: item.remark,
+            maxPositionRatio: item.maxPositionRatio,
           });
         }
       } else if (item.type === PlanType.DIVIDEND) {
@@ -306,6 +314,7 @@ async function init() {
             url: item.url,
             exList,
             remark: item.remark,
+            maxPositionRatio: item.maxPositionRatio,
           });
         }
       }
@@ -501,6 +510,7 @@ const mergedTableData = computed(() => {
         dpsRowSpan: index === 0 ? group.length : 0,
         annualDpsRowSpan: index === 0 ? group.length : 0,
         remarkRowSpan: index === 0 ? group.length : 0,
+        maxPositionRatioRowSpan: index === 0 ? group.length : 0,
         annualDps,
         adjustedAnnualDps,
         isFirstRow: index === 0,
@@ -525,7 +535,7 @@ const mergedTableData = computed(() => {
   <table v-if="mergedTableData.length" class="stock-pool-table">
     <thead>
       <tr>
-        <th class="bold light-blue">股票名称 / 代码</th>
+        <th class="bold light-blue">名称</th>
         <th class="bold blue">股价</th>
         <th class="bold red">股息率</th>
         <th class="bold red">PE_TTM</th>
@@ -642,7 +652,12 @@ const mergedTableData = computed(() => {
           </div>
         </td>
         <td class="bold">
-          {{ row.quantity || "-" }}
+          <template v-if="row.isFirstRow && row.maxPositionRatio !== undefined">
+            <span class="normal red"
+              >{{ (row.maxPositionRatio * 100).toFixed(0) }}%</span
+            >
+          </template>
+          <template v-else>{{ row.quantity || "-" }}</template>
         </td>
         <td class="bold">
           <template
@@ -718,6 +733,10 @@ const mergedTableData = computed(() => {
   // 消除表头底部与表体顶部边框叠加：表体第一行去掉上边框
   tbody tr:first-child td {
     border-top-width: 0;
+  }
+
+  .normal {
+    font-weight: normal;
   }
 
   .bold {
