@@ -449,10 +449,13 @@ function onPEChange(code: string) {
   }
 }
 
-// 按 code 分组，为 name 和 code 列计算 rowspan
+// 按 code 分组，为 name 和 code 列计算 rowspan，并按最小跌幅排序
 const mergedTableData = computed(() => {
   const result: MergedRowData[] = [];
   const data = tableData.value;
+
+  // 第一步：收集所有公司分组
+  const groups: { code: string; rows: MergedRowData[] }[] = [];
 
   let i = 0;
   while (i < data.length) {
@@ -464,7 +467,7 @@ const mergedTableData = computed(() => {
     }
 
     const meta = groupMetaMap.value[code];
-    const realPrice = meta ? meta.realPrice : group[0].price; // 第一行为实时股价
+    const realPrice = meta ? meta.realPrice : group[0].price;
 
     // 先计算每行的实际 price（处理 custom 行）
     const resolvedRows = group.map((row, index) => {
@@ -485,7 +488,7 @@ const mergedTableData = computed(() => {
       return { ...row, price, dividend, pe };
     });
 
-    // 计划市值合计：所有计划行（index > 0）的 quantity * price 之和
+    // 计划市值合计
     const totalMarketCap = resolvedRows
       .slice(1)
       .reduce(
@@ -493,7 +496,7 @@ const mergedTableData = computed(() => {
         0,
       );
 
-    resolvedRows.forEach((row, index) => {
+    const mergedRows: MergedRowData[] = resolvedRows.map((row, index) => {
       const isLast = index === group.length - 1 && index > 0;
       const decline =
         index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
@@ -503,7 +506,7 @@ const mergedTableData = computed(() => {
           ? annualDps * meta.dividendAdjust
           : undefined;
 
-      result.push({
+      return {
         ...row,
         nameRowSpan: index === 0 ? group.length : 0,
         exDateRowSpan: index === 0 ? group.length : 0,
@@ -518,8 +521,26 @@ const mergedTableData = computed(() => {
         decline,
         totalMarketCap: index === 0 ? totalMarketCap : undefined,
         rowKey: `${code}-${index}`,
-      });
+      };
     });
+
+    groups.push({ code, rows: mergedRows });
+  }
+
+  // 第二步：按最小跌幅（计划行中 decline 最小值）升序排列
+  groups.sort((a, b) => {
+    const aMinDecline = a.rows
+      .filter((r) => !r.isFirstRow)
+      .reduce((min, r) => Math.min(min, r.decline), Infinity);
+    const bMinDecline = b.rows
+      .filter((r) => !r.isFirstRow)
+      .reduce((min, r) => Math.min(min, r.decline), Infinity);
+    return aMinDecline - bMinDecline;
+  });
+
+  // 第三步：展平
+  for (const g of groups) {
+    result.push(...g.rows);
   }
 
   return result;
