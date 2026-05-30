@@ -139,6 +139,43 @@ export function isHKCode(code: string) {
 }
 
 /**
+ * 深B（港币交易）：200xxx 或 28xxxx
+ */
+export function isBSZCode(code: string): boolean {
+  return /^(200|28)\d{3,4}$/.test(code.trim());
+}
+
+/**
+ * 沪B（美元交易）：900xxx
+ */
+export function isBSHCode(code: string): boolean {
+  return /^900\d{3,4}$/.test(code.trim());
+}
+
+/**
+ * 是否B股
+ */
+export function isBCode(code: string): boolean {
+  return isBSZCode(code) || isBSHCode(code);
+}
+
+/**
+ * 获取货币前缀
+ */
+export function getCurrencyPrefix(code: string): string {
+  if (isHKCode(code) || isBSZCode(code)) return "HK$";
+  if (isBSHCode(code)) return "US$";
+  return "￥";
+}
+
+/**
+ * 是否可转换为人民币（港币交易的股票）
+ */
+export function canConvertToCNY(code: string): boolean {
+  return isHKCode(code) || isBSZCode(code);
+}
+
+/**
  * 折旧和摊销
  *
  * @param cashFlow

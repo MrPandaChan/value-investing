@@ -1,7 +1,14 @@
 <script lang="ts" setup>
 import { computed, onMounted, reactive, ref, watch } from "vue";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
-import { formatNum, formatPercent, isHKCode } from "../../../fetch-data/helper";
+import {
+  formatNum,
+  formatPercent,
+  canConvertToCNY,
+  getCurrencyPrefix,
+  isBCode,
+  isHKCode,
+} from "../../../fetch-data/helper";
 import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
 import { PlanType, planList } from "./plan";
 
@@ -19,7 +26,6 @@ interface RowData {
 
 interface MergedRowData extends RowData {
   nameRowSpan: number;
-  codeRowSpan: number;
 
   exDateRowSpan: number;
   dpsRowSpan: number;
@@ -212,6 +218,17 @@ async function init() {
       }
     }
   }
+  // B股分红数据为人民币，转为港币后再计算股息率
+  for (const item of planList) {
+    if (isBCode(item.code)) {
+      const exList = exListMap.value[item.code];
+      if (exList) {
+        for (const ex of exList) {
+          ex.dps = ex.dps * exchangeRate.value;
+        }
+      }
+    }
+  }
 
   for (let i = 0; i < stockCodes.length; i += 1) {
     const item = planList[i];
@@ -235,9 +252,8 @@ async function init() {
       const exList = item.dividendPerYear
         ? rawExList.slice(0, item.dividendPerYear)
         : rawExList;
-      const dps = Math.round(
-        exList.reduce((pre, cur) => pre + cur.dps, 0) * 100,
-      ) / 100;
+      const dps =
+        Math.round(exList.reduce((pre, cur) => pre + cur.dps, 0) * 100) / 100;
       const effectiveDps =
         item.dividendAdjust != null
           ? Math.round(dps * item.dividendAdjust * 100) / 100
@@ -345,7 +361,6 @@ async function refresh() {
         ? Math.round(dps * item.dividendAdjust * 100) / 100
         : dps;
 
-
     groupMetaMap.value[code] = {
       ...(meta || {
         planType: item.type,
@@ -394,7 +409,7 @@ async function refresh() {
 }
 
 function formatPrice(price: number, code: string): string {
-  const prefix = isHKCode(code) ? "HK$" : "￥";
+  const prefix = getCurrencyPrefix(code);
   return `${prefix}${formatNum(price, 2).toFixed(2)}`;
 }
 
@@ -482,7 +497,6 @@ const mergedTableData = computed(() => {
       result.push({
         ...row,
         nameRowSpan: index === 0 ? group.length : 0,
-        codeRowSpan: index === 0 ? group.length : 0,
         exDateRowSpan: index === 0 ? group.length : 0,
         dpsRowSpan: index === 0 ? group.length : 0,
         annualDpsRowSpan: index === 0 ? group.length : 0,
@@ -511,8 +525,7 @@ const mergedTableData = computed(() => {
   <table v-if="mergedTableData.length" class="stock-pool-table">
     <thead>
       <tr>
-        <th class="bold light-blue">股票名称</th>
-        <th class="bold light-blue">代码</th>
+        <th class="bold light-blue">股票名称 / 代码</th>
         <th class="bold blue">股价</th>
         <th class="bold red">股息率</th>
         <th class="bold red">PE_TTM</th>
@@ -532,19 +545,19 @@ const mergedTableData = computed(() => {
         :class="{ 'real-time-row': row.isFirstRow }"
       >
         <td v-if="row.nameRowSpan > 0" :rowspan="row.nameRowSpan" class="bold">
-          <a v-if="row.url" :href="row.url" class="stock-link">{{
-            row.name
-          }}</a>
-          <span v-else>{{ row.name }}</span>
-        </td>
-        <td v-if="row.codeRowSpan > 0" :rowspan="row.codeRowSpan" class="bold">
-          {{ row.code }}
+          <div>
+            <a v-if="row.url" :href="row.url" class="stock-link">{{
+              row.name
+            }}</a>
+            <span v-else>{{ row.name }}</span>
+          </div>
+          <div class="stock-code">{{ row.code }}</div>
         </td>
         <td
           class="bold"
           :class="[
             row.isFirstRow ? 'red' : 'blue',
-            { 'bg-pink': row.decline < 5&& !row.isFirstRow },
+            { 'bg-pink': row.decline < 5 && !row.isFirstRow },
           ]"
         >
           <el-input-number
@@ -611,8 +624,7 @@ const mergedTableData = computed(() => {
         </td>
         <td v-if="row.dpsRowSpan > 0" :rowspan="row.dpsRowSpan" class="bold">
           <div v-for="(ex, i) in row.exList" :key="i">
-            {{ isHKCode(row.code) ? "HK$" : "￥"
-            }}{{ Number(ex.dps.toFixed(4)) }}
+            {{ getCurrencyPrefix(row.code) }}{{ Number(ex.dps.toFixed(4)) }}
           </div>
         </td>
         <td
@@ -621,11 +633,11 @@ const mergedTableData = computed(() => {
           class="bold bg-pink red"
         >
           <div>
-            {{ isHKCode(row.code) ? "HK$" : "￥"
+            {{ getCurrencyPrefix(row.code)
             }}{{ row.annualDps ? row.annualDps.toFixed(2) : "-" }}
           </div>
           <div v-if="row.adjustedAnnualDps !== undefined">
-            {{ isHKCode(row.code) ? "HK$" : "￥"
+            {{ getCurrencyPrefix(row.code)
             }}{{ row.adjustedAnnualDps.toFixed(2) }}
           </div>
         </td>
@@ -636,21 +648,31 @@ const mergedTableData = computed(() => {
           <template
             v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0"
           >
-            <template v-if="isHKCode(row.code)">
-              <div>HK${{ row.totalMarketCap.toFixed(0) }}</div>
+            <template v-if="canConvertToCNY(row.code)">
+              <div>
+                {{ getCurrencyPrefix(row.code)
+                }}{{ row.totalMarketCap.toFixed(0) }}
+              </div>
               <div>￥{{ (row.totalMarketCap / exchangeRate).toFixed(0) }}</div>
             </template>
-            <template v-else> ￥{{ row.totalMarketCap.toFixed(0) }} </template>
+            <template v-else>
+              {{ getCurrencyPrefix(row.code)
+              }}{{ row.totalMarketCap.toFixed(0) }}
+            </template>
           </template>
           <template v-else-if="row.quantity && row.price">
-            <template v-if="isHKCode(row.code)">
-              <div>HK${{ (row.quantity * row.price).toFixed(0) }}</div>
+            <template v-if="canConvertToCNY(row.code)">
+              <div>
+                {{ getCurrencyPrefix(row.code)
+                }}{{ (row.quantity * row.price).toFixed(0) }}
+              </div>
               <div>
                 ￥{{ ((row.quantity * row.price) / exchangeRate).toFixed(0) }}
               </div>
             </template>
             <template v-else>
-              ￥{{ (row.quantity * row.price).toFixed(0) }}
+              {{ getCurrencyPrefix(row.code)
+              }}{{ (row.quantity * row.price).toFixed(0) }}
             </template>
           </template>
           <span v-else>-</span>
@@ -736,6 +758,12 @@ const mergedTableData = computed(() => {
     cursor: pointer;
   }
 
+  .stock-code {
+    font-size: 12px;
+    color: #888;
+    font-weight: normal;
+  }
+
   .plan-price-input {
     width: 80px;
 
@@ -786,7 +814,7 @@ const mergedTableData = computed(() => {
 
   .remark-cell {
     white-space: normal;
-    max-width: 100px;
+    max-width: 140px;
     text-align: left;
   }
 }

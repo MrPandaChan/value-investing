@@ -344,6 +344,48 @@ const planList: PlanItem[] = [
       },
     ],
   },
+  // 贵州茅台
+  {
+    type: PlanType.DIVIDEND,
+    code: "600519",
+    remark: "预估6月下旬分红",
+    dividendPerYear: 2,
+    dividend: [
+      {
+        value: 0.045,
+        quantity: 100,
+      },
+    ],
+  },
+  // 泸州老窖
+  {
+    type: PlanType.DIVIDEND,
+    code: "000568",
+    remark: "预估8月分红",
+    dividendPerYear: 2,
+    dividend: [
+      {
+        value: 0.065,
+        quantity: 100,
+      },
+      {
+        value: 0.07,
+        quantity: 200,
+      },
+    ],
+  },
+  // 山西汾酒
+  {
+    type: PlanType.DIVIDEND,
+    code: "600809",
+    dividendPerYear: 1,
+    dividend: [
+      {
+        value: 0.06,
+        quantity: 100,
+      },
+    ],
+  },
   // 古井贡B
   {
     type: PlanType.PRICE,
@@ -354,6 +396,61 @@ const planList: PlanItem[] = [
       {
         value: 50,
         quantity: 1000,
+      },
+    ],
+  },
+  // 宇通客车
+  {
+    type: PlanType.DIVIDEND,
+    code: "600066",
+    dividendPerYear: 2,
+    remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
+    dividend: [
+      {
+        value: 0.085,
+        quantity: 200,
+      },
+    ],
+  },
+  // 伊利股份
+  {
+    type: PlanType.DIVIDEND,
+    code: "600887",
+    dividendPerYear: 2,
+    dividend: [
+      {
+        value: 0.055,
+        quantity: 400,
+      },
+    ],
+  },
+  // 中国神华A
+  {
+    type: PlanType.DIVIDEND,
+    code: "601088",
+    remark: "预估7月上旬分红",
+    dividendPerYear: 2,
+    dividend: [
+      {
+        value: 0.055,
+        quantity: 200,
+      },
+    ],
+  },
+  // 中国神华H
+  {
+    type: PlanType.DIVIDEND,
+    code: "01088",
+    dividendPerYear: 2,
+    dividendAdjust: 0.8,
+    dividend: [
+      {
+        value: 0.055,
+        quantity: 300,
+      },
+      {
+        value: 0.06,
+        quantity: 500,
       },
     ],
   },

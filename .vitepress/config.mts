@@ -367,10 +367,11 @@ export default defineConfig({
               text: "价值轮动模型",
               link: "/company/model/rotation-model.md",
             },
-            {
-              text: "企业价值评估模型",
-              link: "/company/model/value-evaluation.md",
-            },
+            // TODO: 暂时隐藏，后续整理到SKILL里
+            // {
+            //   text: "企业价值评估模型",
+            //   link: "/company/model/value-evaluation.md",
+            // },
           ],
         },
         {
