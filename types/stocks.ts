@@ -17,6 +17,7 @@ import { otherStockData } from "./stocks/other";
 import { internetStockData } from "./stocks/internet";
 import { advertisementStockData } from "./stocks/advertisement";
 import { beverageStockData } from "./stocks/beverage";
+import { propertyStockData } from "./stocks/property";
 
 export const stockData: StockItem[] = [
   ...bankStockData,
@@ -37,6 +38,7 @@ export const stockData: StockItem[] = [
   ...portStockData,
   ...advertisementStockData,
   ...beverageStockData,
+  ...propertyStockData,
 ];
 
 (function validate() {

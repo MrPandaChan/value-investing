@@ -23,8 +23,9 @@ export interface ExItem {
  * e.g., '10派2.031195元(实施方案)' -> 0.2031195
  */
 function getADps(str: string): number {
-  const val = str.replace(/^.*?派(.*?)元.*?/, "$1");
-  const result = parseFloat(val);
+  const match = str.match(/派.*?(\d+\.?\d*)\s*元/);
+  if (!match) return 0;
+  const result = parseFloat(match[1]);
   return isNaN(result) ? 0 : result / 10;
 }
 
@@ -105,10 +106,17 @@ async function fetchADividend(
       const exDate = new Date(item.EX_DIVIDEND_DATE);
       return exDate >= oneYearAgo;
     })
-    .map((item: DividendMainResponse) => ({
-      dps: getADps(item.IMPL_PLAN_NEWPROFILE || ""),
-      exDate: formatExDate(item.EX_DIVIDEND_DATE),
-    }))
+    .map((item: DividendMainResponse) => {
+      const str = item.IMPL_PLAN_NEWPROFILE || "";
+      const dps = getADps(str);
+      if (dps === 0 && str) {
+        console.warn(`[A股分红解析为0] ${code}: ${str}`);
+      }
+      return {
+        dps,
+        exDate: formatExDate(item.EX_DIVIDEND_DATE),
+      };
+    })
     .filter((item: ExItem) => item.dps > 0);
 }
 
@@ -148,7 +156,11 @@ async function fetchHKDividend(
       return exDate >= oneYearAgo;
     })
     .map((item: HKDividendMainResponse) => {
-      const { dps, isRmb } = getHKDps(item.PLAN_EXPLAIN || "");
+      const str = item.PLAN_EXPLAIN || "";
+      const { dps, isRmb } = getHKDps(str);
+      if (dps === 0 && str) {
+        console.warn(`[港股分红解析为0] ${code}: ${str}`);
+      }
       return {
         dps,
         isRmb: isRmb || undefined,

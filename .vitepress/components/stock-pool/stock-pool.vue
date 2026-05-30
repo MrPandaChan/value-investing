@@ -544,7 +544,7 @@ const mergedTableData = computed(() => {
           class="bold"
           :class="[
             row.isFirstRow ? 'red' : 'blue',
-            { 'bg-pink': row.decline > 0 && row.decline < 5 },
+            { 'bg-pink': row.decline < 5&& !row.isFirstRow },
           ]"
         >
           <el-input-number
@@ -562,7 +562,7 @@ const mergedTableData = computed(() => {
           class="bold"
           :class="{
             red: !row.isFirstRow,
-            'bg-pink': row.decline > 0 && row.decline < 5,
+            'bg-pink': row.decline < 5 && !row.isFirstRow,
           }"
         >
           <el-input-number
@@ -580,7 +580,7 @@ const mergedTableData = computed(() => {
           class="bold"
           :class="{
             red: !row.isFirstRow,
-            'bg-pink': row.decline > 0 && row.decline < 5,
+            'bg-pink': row.decline < 5 && !row.isFirstRow,
           }"
         >
           <el-input-number
@@ -597,7 +597,7 @@ const mergedTableData = computed(() => {
         <td
           class="bold"
           :class="
-            row.decline > 0 && row.decline < 5 ? 'bg-light-red' : 'bg-green'
+            row.decline < 5 && !row.isFirstRow ? 'bg-light-red' : 'bg-green'
           "
         >
           {{ row.decline === 0 ? "-" : formatPercent(row.decline) }}

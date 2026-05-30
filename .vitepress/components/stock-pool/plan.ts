@@ -122,7 +122,7 @@ const planList: PlanItem[] = [
     type: PlanType.PRICE,
     code: "600036",
     dividendPerYear: 2,
-    remark: "预计07-15左右分红，分完后计划减1块",
+    remark: "预估07-15左右分红，分完后计划减1块",
     price: [
       {
         value: 36.5,
@@ -139,7 +139,7 @@ const planList: PlanItem[] = [
     type: PlanType.PRICE,
     code: "000333",
     dividendPerYear: 2,
-    remark: "预计6月15左右分红",
+    remark: "预估6月15左右分红",
     price: [
       {
         value: 75,
@@ -156,7 +156,7 @@ const planList: PlanItem[] = [
     type: PlanType.PRICE,
     code: "600690",
     dividendPerYear: 2,
-    remark: "预计7月/8月分红",
+    remark: "预估7月/8月分红",
     price: [
       {
         value: 19.5,
@@ -169,7 +169,7 @@ const planList: PlanItem[] = [
     type: PlanType.PRICE,
     code: "000651",
     dividendPerYear: 2,
-    remark: "预计8月分红",
+    remark: "预估8月分红",
     price: [
       {
         value: 37,
@@ -194,7 +194,7 @@ const planList: PlanItem[] = [
     type: PlanType.DIVIDEND,
     code: "601728",
     dividendPerYear: 2,
-    remark: "预计9月初分红",
+    remark: "预估9月初分红",
     dividend: [
       {
         value: 0.05,
@@ -208,7 +208,7 @@ const planList: PlanItem[] = [
     code: "00788",
     dividendPerYear: 2,
     dividendAdjust: 0.8 * 1.3,
-    remark: "0.8 × 1.3 预计今年30%增长",
+    remark: "0.8 × 1.3 预估今年30%增长",
     dividend: [
       {
         value: 0.055,
@@ -225,7 +225,7 @@ const planList: PlanItem[] = [
     type: PlanType.DIVIDEND,
     code: "600900",
     dividendPerYear: 2,
-    remark: "预计7月中分红",
+    remark: "预估7月中分红",
     dividend: [
       {
         value: 0.04,
@@ -238,11 +238,122 @@ const planList: PlanItem[] = [
     type: PlanType.DIVIDEND,
     code: "600886",
     dividendPerYear: 1,
-    remark: "预计8月分红",
+    remark: "预估8月分红",
     dividend: [
       {
         value: 0.04,
         quantity: 2000,
+      },
+    ],
+  },
+  // 中国海油
+  {
+    type: PlanType.DIVIDEND,
+    code: "600938",
+    dividendPerYear: 2,
+    remark: "预估7月中分红",
+    dividend: [
+      {
+        value: 0.055,
+        quantity: 1000,
+      },
+    ],
+  },
+  // 中国海洋石油
+  {
+    type: PlanType.DIVIDEND,
+    code: "00883",
+    dividendPerYear: 2,
+    dividendAdjust: 0.72,
+    dividend: [
+      {
+        value: 0.055,
+        quantity: 2000,
+      },
+    ],
+  },
+  // 紫金矿业
+  {
+    type: PlanType.PRICE,
+    code: "601899",
+    dividendPerYear: 2,
+    price: [
+      {
+        value: 29.5,
+        quantity: 100,
+      },
+    ],
+  },
+  // 保利物业
+  {
+    type: PlanType.PRICE,
+    code: "06049",
+    dividendAdjust: 0.8,
+    dividendPerYear: 1,
+    price: [
+      {
+        value: 29,
+        quantity: 200,
+      },
+    ],
+  },
+  // 赛轮轮胎
+  {
+    type: PlanType.PRICE,
+    code: "601058",
+    dividendPerYear: 2,
+    remark: "预估6月中分红",
+    price: [
+      {
+        value: 12,
+        quantity: 500,
+      },
+      {
+        value: 11.5,
+        quantity: 600,
+      },
+      {
+        value: 11,
+        quantity: 700,
+      },
+    ],
+  },
+  // 申洲国际
+  {
+    type: PlanType.DIVIDEND,
+    code: "02313",
+    dividendPerYear: 2,
+    dividendAdjust: 0.72,
+    dividend: [
+      {
+        value: 0.045,
+        quantity: 200,
+      },
+    ],
+  },
+  // 泡泡玛特
+  {
+    type: PlanType.PRICE,
+    code: "09992",
+    dividendPerYear: 1,
+    dividendAdjust: 0.72,
+    price: [
+      {
+        value: 150,
+        quantity: 200,
+      },
+    ],
+  },
+  // 古井贡B
+  {
+    type: PlanType.PRICE,
+    code: "200596",
+    remark: "预估6月中分红",
+    dividendPerYear: 2,
+    price: [
+      {
+        value: 50,
+        quantity: 1000,
       },
     ],
   },
