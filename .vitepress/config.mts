@@ -565,7 +565,7 @@ export default defineConfig({
             { text: "中国移动", link: "/company/operator/mobile.md" },
             { text: "中国电信", link: "/company/operator/telecom.md" },
             { text: "中国联通", link: "/company/operator/unicom.md" },
-            { text: "中国铁塔", link: "/company/tower/tower.md" },
+            { text: "中国铁塔", link: "/company/operator/tower.md" },
           ],
         },
         {

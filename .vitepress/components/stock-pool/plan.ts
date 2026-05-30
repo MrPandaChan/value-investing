@@ -584,6 +584,7 @@ const planList: PlanItem[] = [
     code: "600415",
     maxPositionRatio: 0.05,
     dividendPerYear: 1,
+    url: "/value-investing/company/other/small-commodity-market",
     remark: "预估6月中旬分红",
     dividend: [
       {
@@ -606,6 +607,8 @@ const planList: PlanItem[] = [
    * 东鹏特饮
    * 陕西煤业
    * 中远海控
+   * 新奥能源
+   * 中国财险
    */
 ];
 
