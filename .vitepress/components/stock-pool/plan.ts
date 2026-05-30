@@ -50,6 +50,7 @@ const planList: PlanItem[] = [
     // 福耀玻璃
     type: PlanType.PRICE,
     code: "600660",
+    url: "/value-investing/company/car/fuyao",
     price: [
       { value: 50, quantity: 300 },
       { value: 48, quantity: 400 },
@@ -60,12 +61,14 @@ const planList: PlanItem[] = [
     // 云南白药
     type: PlanType.PRICE,
     code: "000538",
+    url: "/value-investing/company/chinese-medicine/yunnan",
     price: [{ value: 46.5, quantity: 400 }],
   },
   {
     // 分众传媒
     type: PlanType.DIVIDEND,
     code: "002027",
+    url: "/value-investing/company/advertisement/fenzhong",
     dividend: [
       { value: 0.065, quantity: 1000 },
       { value: 0.07, quantity: 2000 },
@@ -76,6 +79,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "06198",
+    url: "/value-investing/company/port/qingdao",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
     dividend: [
@@ -89,6 +93,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "601298",
+    url: "/value-investing/company/port/qingdao",
     dividendPerYear: 2,
     dividend: [
       {
@@ -101,6 +106,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "002014",
+    url: "/value-investing/company/packaging/yongxin",
     remark: "2025年分红率有降低，分红比过去两年低",
     price: [
       {
@@ -138,6 +144,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "000333",
+    url: "/value-investing/company/home-appliance/midea",
     dividendPerYear: 2,
     remark: "预估6月15左右分红",
     price: [
@@ -155,6 +162,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "600690",
+    url: "/value-investing/company/home-appliance/haier",
     dividendPerYear: 2,
     remark: "预估7月/8月分红",
     price: [
@@ -168,6 +176,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "000651",
+    url: "/value-investing/company/home-appliance/gree",
     dividendPerYear: 2,
     remark: "预估8月分红",
     price: [
@@ -181,6 +190,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "600941",
+    url: "/value-investing/company/operator/mobile",
     dividendPerYear: 2,
     price: [
       {
@@ -193,6 +203,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "601728",
+    url: "/value-investing/company/operator/telecom",
     dividendPerYear: 2,
     remark: "预估9月初分红",
     dividend: [
@@ -206,6 +217,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "00788",
+    url: "/value-investing/company/tower/tower",
     dividendPerYear: 2,
     dividendAdjust: 0.8 * 1.3,
     remark: "0.8 × 1.3 预估今年30%增长",
@@ -224,6 +236,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "600900",
+    url: "/value-investing/company/electricity/yangtze",
     dividendPerYear: 2,
     remark: "预估7月中分红",
     dividend: [
@@ -237,6 +250,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "600886",
+    url: "/value-investing/company/electricity/guotou",
     dividendPerYear: 1,
     remark: "预估8月分红",
     dividend: [
@@ -250,6 +264,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "600938",
+    url: "/value-investing/company/oil/cnooc",
     dividendPerYear: 2,
     remark: "预估7月中分红",
     dividend: [
@@ -263,6 +278,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "00883",
+    url: "/value-investing/company/oil/cnooc",
     dividendPerYear: 2,
     dividendAdjust: 0.72,
     dividend: [
@@ -276,6 +292,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "601899",
+    url: "/value-investing/company/nonferrous-metals‌/zijin",
     dividendPerYear: 2,
     price: [
       {
@@ -288,6 +305,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "06049",
+    url: "/value-investing/company/property/baoli",
     dividendAdjust: 0.8,
     dividendPerYear: 1,
     price: [
@@ -301,6 +319,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "601058",
+    url: "/value-investing/company/car/sailun",
     dividendPerYear: 2,
     remark: "预估6月中分红",
     price: [
@@ -322,6 +341,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "02313",
+    url: "/value-investing/company/fashion/shenzhou",
     dividendPerYear: 2,
     dividendAdjust: 0.72,
     dividend: [
@@ -335,6 +355,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "09992",
+    url: "/value-investing/company/toys/popmart",
     dividendPerYear: 1,
     dividendAdjust: 0.72,
     price: [
@@ -348,6 +369,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "600519",
+    url: "/value-investing/company/chinese-sprites/moutai",
     remark: "预估6月下旬分红",
     dividendPerYear: 2,
     dividend: [
@@ -361,6 +383,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "000568",
+    url: "/value-investing/company/chinese-sprites/luzhoulaojiao",
     remark: "预估8月分红",
     dividendPerYear: 2,
     dividend: [
@@ -378,6 +401,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "600809",
+    url: "/value-investing/company/chinese-sprites/shanxifenjiu",
     dividendPerYear: 1,
     dividend: [
       {
@@ -390,6 +414,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.PRICE,
     code: "200596",
+    url: "/value-investing/company/chinese-sprites/gujinggong",
     remark: "预估6月中分红",
     dividendPerYear: 2,
     price: [
@@ -403,6 +428,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "600066",
+    url: "/value-investing/company/car/yutong",
     dividendPerYear: 2,
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
     dividend: [
@@ -416,6 +442,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "600887",
+    url: "/value-investing/company/dairy/yili",
     dividendPerYear: 2,
     dividend: [
       {
@@ -428,6 +455,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "601088",
+    url: "/value-investing/company/coal/shenhua",
     remark: "预估7月上旬分红",
     dividendPerYear: 2,
     dividend: [
@@ -441,6 +469,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "01088",
+    url: "/value-investing/company/coal/shenhua",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
     dividend: [
@@ -451,6 +480,23 @@ const planList: PlanItem[] = [
       {
         value: 0.06,
         quantity: 500,
+      },
+    ],
+  },
+  // 中国平安
+  {
+    type: PlanType.DIVIDEND,
+    code: "601318",
+    url: "/value-investing/company/insurance/pingan",
+    dividendPerYear: 2,
+    dividend: [
+      {
+        value: 0.055,
+        quantity: 200,
+      },
+      {
+        value: 0.06,
+        quantity: 400,
       },
     ],
   },

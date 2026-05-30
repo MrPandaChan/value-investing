@@ -753,6 +753,7 @@ const mergedTableData = computed(() => {
   }
 
   .stock-link {
+    font-weight: bold;
     color: #00a3f5;
     text-decoration: underline;
     cursor: pointer;
