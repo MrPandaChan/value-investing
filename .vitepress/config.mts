@@ -553,7 +553,16 @@ export default defineConfig({
           text: "石油",
           link: "/company/oil/oil.md",
           items: [
-            { text: "中国海油", link: "/company/oil/cnooc.md" },
+            {
+              text: "中国海油",
+              link: "/company/oil/cnooc/cnooc.md",
+              items: [
+                {
+                  text: "中海油深度分析",
+                  link: "/company/oil/cnooc/中海油深度分析.md",
+                },
+              ],
+            },
             { text: "中国石油", link: "/company/oil/cnpc.md" },
             { text: "中国石化", link: "/company/oil/sinopec.md" },
           ],
