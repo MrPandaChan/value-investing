@@ -535,6 +535,24 @@ const planList: PlanItem[] = [
       },
     ],
   },
+  // 安踏体育
+  {
+    type: PlanType.PRICE,
+    code: "02020",
+    maxPositionRatio: 0.05,
+    dividendAdjust: 0.72,
+    dividendPerYear: 2,
+    price: [
+      {
+        value: 70,
+        quantity: 200,
+      },
+      {
+        value: 65,
+        quantity: 400,
+      },
+    ],
+  },
 ];
 
 export { planList };

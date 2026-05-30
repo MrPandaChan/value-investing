@@ -58,6 +58,7 @@ const customPrice = reactive<Record<string, number>>({});
 const customDividend = reactive<Record<string, number>>({});
 const customPE = reactive<Record<string, number>>({});
 const exchangeRate = ref(1.1555); // 港币兑人民币汇率
+const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
 
 const STORAGE_KEY = "stock-pool-data";
 
@@ -527,8 +528,18 @@ const mergedTableData = computed(() => {
     groups.push({ code, rows: mergedRows });
   }
 
+  // 按市场类型筛选
+  let filteredGroups = groups;
+  if (marketFilter.value.length) {
+    filteredGroups = groups.filter((g) => {
+      if (isHKCode(g.code)) return marketFilter.value.includes("hk");
+      if (isBCode(g.code)) return marketFilter.value.includes("b");
+      return marketFilter.value.includes("a");
+    });
+  }
+
   // 第二步：按最小跌幅（计划行中 decline 最小值）升序排列
-  groups.sort((a, b) => {
+  filteredGroups.sort((a, b) => {
     const aMinDecline = a.rows
       .filter((r) => !r.isFirstRow)
       .reduce((min, r) => Math.min(min, r.decline), Infinity);
@@ -539,7 +550,7 @@ const mergedTableData = computed(() => {
   });
 
   // 第三步：展平
-  for (const g of groups) {
+  for (const g of filteredGroups) {
     result.push(...g.rows);
   }
 
@@ -548,10 +559,24 @@ const mergedTableData = computed(() => {
 </script>
 
 <template>
-  <el-button type="primary" @click="refresh">刷新实时数据</el-button>
-  <el-button type="primary" @click="init"
-    >初始化所有数据（避免高频调用）</el-button
-  >
+  <div class="toolbar">
+    <el-select
+      v-model="marketFilter"
+      multiple
+      placeholder="全部市场"
+      collapse-tags
+      collapse-tags-tooltip
+      style="width: 160px; margin-right: 12px"
+    >
+      <el-option label="A股" value="a" />
+      <el-option label="B股" value="b" />
+      <el-option label="港股" value="hk" />
+    </el-select>
+    <el-button type="primary" @click="refresh">刷新实时数据</el-button>
+    <el-button type="primary" @click="init"
+      >初始化/获取分红数据（避免高频调用）</el-button
+    >
+  </div>
 
   <table v-if="mergedTableData.length" class="stock-pool-table">
     <thead>
@@ -726,6 +751,13 @@ const mergedTableData = computed(() => {
 </template>
 
 <style lang="scss">
+.toolbar {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
 .stock-pool-table {
   border-collapse: collapse;
   border-spacing: 0;
