@@ -66,9 +66,34 @@ const planList: PlanItem[] = [
     type: PlanType.PRICE,
     code: "000538",
     maxPositionRatio: 0.05,
-
     url: "/value-investing/company/chinese-medicine/yunnan",
     price: [{ value: 46.5, quantity: 400 }],
+  },
+  {
+    // 东阿阿胶
+    type: PlanType.DIVIDEND,
+    code: "000423",
+    dividendPerYear: 2,
+    maxPositionRatio: 0.05,
+    url: "/value-investing/company/chinese-medicine/donge",
+    dividend: [
+      { value: 0.058, quantity: 100 },
+      { value: 0.061, quantity: 200 },
+    ],
+  },
+  {
+    // 羚锐制药
+    type: PlanType.PRICE,
+    code: "600285",
+    dividendPerYear: 1,
+    maxPositionRatio: 0.03,
+    remark: "预估6月中分红",
+    url: "/value-investing/company/chinese-medicine/lingrui",
+    price: [
+      { value: 21, quantity: 300 },
+      { value: 20, quantity: 400 },
+      { value: 19, quantity: 500 },
+    ],
   },
   {
     // 分众传媒
@@ -416,11 +441,11 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     dividend: [
       {
-        value: 0.065,
+        value: 0.068,
         quantity: 100,
       },
       {
-        value: 0.07,
+        value: 0.072,
         quantity: 200,
       },
     ],
@@ -553,6 +578,35 @@ const planList: PlanItem[] = [
       },
     ],
   },
+  // 小商品城
+  {
+    type: PlanType.DIVIDEND,
+    code: "600415",
+    maxPositionRatio: 0.05,
+    dividendPerYear: 1,
+    remark: "预估6月中旬分红",
+    dividend: [
+      {
+        value: 0.04,
+        quantity: 400,
+      },
+      {
+        value: 0.043,
+        quantity: 600,
+      },
+      {
+        value: 0.046,
+        quantity: 800,
+      },
+    ],
+  },
+  /**
+   * TODO:
+   * 古茗
+   * 东鹏特饮
+   * 陕西煤业
+   * 中远海控
+   */
 ];
 
 export { planList };
