@@ -245,8 +245,6 @@
 
 [周期范式之经销商陷阱：为保全经销权而吞下的“库存毒药”——以白酒为例（2026.05.06 心智升级）](https://mp.weixin.qq.com/s/Z5nYNpK5HNYxItsRHTCDpA)
 
-[理解“离岸”两个字，港股投资从此打通“任督二脉”（2026.05.10 思想钢印）](https://mp.weixin.qq.com/s/N8uT0dMwFV8nAL8KCYc7mA)
-
 [【万字】价值投资的基本范式和主要方式（2026.03.23 兔子书斋）](https://mp.weixin.qq.com/s/Zjinpvt3E7kMWG628bvpww)
 
 [市场极致分化：何为应对之道？（2026.05.18 泽元投资）](https://mp.weixin.qq.com/s/TQXbFgXvIZv3TKM9N2a87g?scene=1&click_id=23)
