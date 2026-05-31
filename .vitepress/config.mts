@@ -339,6 +339,10 @@ export default defineConfig({
               text: "风和投资随笔",
               link: "/value-investing/notes/fenghe.md",
             },
+            {
+              text: "财报背后的生意真相与投资陷阱",
+              link: "/value-investing/notes/财报背后的生意真相与投资陷阱.md",
+            },
           ],
         },
       ],
@@ -561,6 +565,18 @@ export default defineConfig({
                   text: "中海油深度分析",
                   link: "/company/oil/cnooc/中海油深度分析.md",
                 },
+                {
+                  text: "海底的印钞机",
+                  link: "/company/oil/cnooc/海底的印钞机.md",
+                },
+                {
+                  text: "海葵一号",
+                  link: "/company/oil/cnooc/海葵一号.md",
+                },
+                {
+                  text: "原油变局：旧秩序崩塌与新平衡",
+                  link: "/company/oil/cnooc/原油变局：旧秩序崩塌与新平衡.md",
+                },
               ],
             },
             { text: "中国石油", link: "/company/oil/cnpc.md" },
@@ -659,7 +675,13 @@ export default defineConfig({
             },
             {
               text: "紫金矿业",
-              link: "/company/nonferrous-metals‌/zijin.md",
+              link: "/company/nonferrous-metals‌/zijin/zijin.md",
+              items: [
+                {
+                  text: "资源股的非共识买入法",
+                  link: "/company/nonferrous-metals‌/zijin/资源股的非共识买入法.md",
+                },
+              ],
             },
           ],
         },
