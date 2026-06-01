@@ -265,12 +265,8 @@ const planList: PlanItem[] = [
     remark: "0.8 × 1.3 预估今年30%增长",
     dividend: [
       {
-        value: 0.055,
+        value: 0.058,
         quantity: 1000,
-      },
-      {
-        value: 0.06,
-        quantity: 2000,
       },
     ],
   },
@@ -587,10 +583,10 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/other/small-commodity-market",
     remark: "预估6月中旬分红",
     dividend: [
-      {
-        value: 0.04,
-        quantity: 400,
-      },
+      // {
+      //   value: 0.04,
+      //   quantity: 400,
+      // },
       {
         value: 0.043,
         quantity: 600,

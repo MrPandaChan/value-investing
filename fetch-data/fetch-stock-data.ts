@@ -107,6 +107,7 @@ async function getLlb(paperCode: string) {
 
 interface DynamicDataResponse {
   f2: number;
+  f3: number;
   f9: number;
   f12: string;
   f18: number;
@@ -119,6 +120,7 @@ interface DynamicDataResponse {
 }
 
 // f12  # 代码
+// f3   # 涨跌幅
 // f2   # 股价
 // f9   # 动态市盈率
 // f14  # 名称
@@ -142,7 +144,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
     "https://push2.eastmoney.com/api/qt/ulist.np/get",
     {
       params: {
-        fields: "f12,f14,f2,f9,f23,f18,f20,f38,f115",
+        fields: "f3,f12,f14,f2,f9,f23,f18,f20,f38,f115",
         secids,
         v: v(),
       },
@@ -152,9 +154,11 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
   return res.data.data.diff.map((v: DynamicDataResponse) => {
     // 股票停牌的时候 f2 会返回 0，因此取 f18 替代
     const price = v.f2 > 0 ? v.f2 : v.f18;
+    const change = v.f3 / 100;
     return {
       code: v.f12,
       name: v.f14,
+      change,
       prevClose: v.f18,
       price: isHKCode(v.f12) ? price / 1000 : price / 100,
       marketValue: v.f20,

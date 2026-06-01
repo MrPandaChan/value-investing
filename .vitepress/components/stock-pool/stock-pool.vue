@@ -22,6 +22,7 @@ interface RowData {
   url?: string;
   remark?: string;
   maxPositionRatio?: number;
+  change?: number; // 涨跌幅，仅实时行
   exList: { dps: number; exDate: string }[];
 }
 
@@ -59,8 +60,10 @@ const customDividend = reactive<Record<string, number>>({});
 const customPE = reactive<Record<string, number>>({});
 const exchangeRate = ref(1.1555); // 港币兑人民币汇率
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
+const changeSortOrder = ref<"asc" | "desc" | null>(null); // null=默认, "desc"=按涨幅, "asc"=按跌幅
 
 const STORAGE_KEY = "stock-pool-data";
+const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
 
 // 基于 planList 结构自动生成指纹，planList 变更时自动失效旧缓存
 function computeFingerprint(): string {
@@ -93,6 +96,7 @@ interface StockStorage {
   url?: string;
   remark?: string;
   maxPositionRatio?: number;
+  change?: number;
   rows: {
     price: number;
     pe: number;
@@ -122,6 +126,7 @@ function saveToStorage() {
       url: first.url,
       remark: first.remark,
       maxPositionRatio: first.maxPositionRatio,
+      change: first.change,
       rows: rows.map((r) => ({
         price: r.price,
         pe: r.pe,
@@ -170,6 +175,7 @@ function loadFromStorage(): boolean {
           exList: s.exList,
           remark: s.remark,
           maxPositionRatio: s.maxPositionRatio,
+          change: s.change,
         });
       }
     }
@@ -189,12 +195,30 @@ function loadFromStorage(): boolean {
 
 onMounted(() => {
   loadFromStorage();
+  // 加载持久化的市场筛选
+  const savedFilter = localStorage.getItem(MARKET_FILTER_STORAGE_KEY);
+  if (savedFilter) {
+    try {
+      const arr: string[] = JSON.parse(savedFilter);
+      if (Array.isArray(arr)) marketFilter.value = arr;
+    } catch {
+      // ignore
+    }
+  }
 });
 
 watch(
   [customPrice, customDividend, customPE],
   () => {
     if (tableData.value.length) saveToStorage();
+  },
+  { deep: true },
+);
+
+watch(
+  marketFilter,
+  (val) => {
+    localStorage.setItem(MARKET_FILTER_STORAGE_KEY, JSON.stringify(val));
   },
   { deep: true },
 );
@@ -247,6 +271,7 @@ async function init() {
         price,
         prevClose: originPrevClose,
         PE_TTM,
+        change,
       } = dynamicData;
       const prevClose = isHKCode(code)
         ? originPrevClose / 1000
@@ -282,6 +307,7 @@ async function init() {
         quantity: 0,
         url: item.url,
         exList,
+        change,
         remark: item.remark,
         maxPositionRatio: item.maxPositionRatio,
       });
@@ -356,7 +382,7 @@ async function refresh() {
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (!dynamicData) continue;
 
-    const { price, prevClose: originPrevClose, PE_TTM } = dynamicData;
+    const { price, prevClose: originPrevClose, PE_TTM, change } = dynamicData;
     const code = item.code;
     const prevClose = isHKCode(code)
       ? originPrevClose / 1000
@@ -390,6 +416,7 @@ async function refresh() {
         row.price = price;
         row.pe = pricePE;
         row.dividend = effectiveDps / price;
+        row.change = change;
       } else {
         // 计划行
         if (item.type === PlanType.PRICE) {
@@ -447,6 +474,16 @@ function onPEChange(code: string) {
   if (meta && pe > 0) {
     customPrice[code] = meta.realPrice * (pe / meta.pricePE);
     customDividend[code] = meta.effectiveDps / customPrice[code];
+  }
+}
+
+function toggleChangeSort() {
+  if (!changeSortOrder.value) {
+    changeSortOrder.value = "desc";
+  } else if (changeSortOrder.value === "desc") {
+    changeSortOrder.value = "asc";
+  } else {
+    changeSortOrder.value = null;
   }
 }
 
@@ -538,16 +575,26 @@ const mergedTableData = computed(() => {
     });
   }
 
-  // 第二步：按最小跌幅（计划行中 decline 最小值）升序排列
-  filteredGroups.sort((a, b) => {
-    const aMinDecline = a.rows
-      .filter((r) => !r.isFirstRow)
-      .reduce((min, r) => Math.min(min, r.decline), Infinity);
-    const bMinDecline = b.rows
-      .filter((r) => !r.isFirstRow)
-      .reduce((min, r) => Math.min(min, r.decline), Infinity);
-    return aMinDecline - bMinDecline;
-  });
+  // 第二步：排序
+  if (changeSortOrder.value) {
+    // 按涨跌幅排序
+    filteredGroups.sort((a, b) => {
+      const aChange = a.rows[0]?.change ?? 0;
+      const bChange = b.rows[0]?.change ?? 0;
+      return changeSortOrder.value === "desc" ? bChange - aChange : aChange - bChange;
+    });
+  } else {
+    // 默认按最小跌幅（计划行中 decline 最小值）升序排列
+    filteredGroups.sort((a, b) => {
+      const aMinDecline = a.rows
+        .filter((r) => !r.isFirstRow)
+        .reduce((min, r) => Math.min(min, r.decline), Infinity);
+      const bMinDecline = b.rows
+        .filter((r) => !r.isFirstRow)
+        .reduce((min, r) => Math.min(min, r.decline), Infinity);
+      return aMinDecline - bMinDecline;
+    });
+  }
 
   // 第三步：展平
   for (const g of filteredGroups) {
@@ -572,6 +619,14 @@ const mergedTableData = computed(() => {
       <el-option label="B股" value="b" />
       <el-option label="港股" value="hk" />
     </el-select>
+    <el-button
+      :type="changeSortOrder ? 'primary' : 'default'"
+      @click="toggleChangeSort"
+    >
+      <template v-if="!changeSortOrder">涨跌幅排序</template>
+      <template v-else-if="changeSortOrder === 'desc'">按涨幅排序</template>
+      <template v-else>按跌幅排序</template>
+    </el-button>
     <el-button type="primary" @click="refresh">刷新实时数据</el-button>
     <el-button type="primary" @click="init"
       >初始化/获取分红数据（避免高频调用）</el-button
@@ -608,6 +663,13 @@ const mergedTableData = computed(() => {
             <span v-else>{{ row.name }}</span>
           </div>
           <div class="stock-code">{{ row.code }}</div>
+          <div
+            v-if="row.change !== undefined"
+            class="stock-change"
+            :class="row.change >= 0 ? 'red' : 'green'"
+          >
+            {{ row.change >= 0 ? "+" : "" }}{{ row.change.toFixed(2) }}%
+          </div>
         </td>
         <td
           class="bold"
@@ -835,6 +897,16 @@ const mergedTableData = computed(() => {
     font-size: 12px;
     color: #888;
     font-weight: normal;
+  }
+
+  .stock-change {
+    font-size: 12px;
+    font-weight: normal;
+    font-weight: bold;
+  }
+
+  .green {
+    color: #00b050;
   }
 
   .plan-price-input {

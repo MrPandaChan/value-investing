@@ -91,6 +91,7 @@ export interface EastMoneyDividendResponse {
 
 export interface DynamicData {
   name: string;
+  change: number;
   prevClose: number;
   code: string;
   price: number;
