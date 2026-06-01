@@ -109,6 +109,9 @@ export default function formatDate(
 export function toEastMoneySecId(stockCode: string) {
   const code = stockCode.trim();
 
+  // 如果已经包含 .，说明已经是 secId 格式（如指数代码 1.00001、100.HSI 等），直接返回
+  if (code.includes(".")) return code;
+
   // 判断市场类型
   if (/^(6|9|688|689)\d+$/.test(code)) {
     // 沪市A股（6/9开头，科创板688/689开头）

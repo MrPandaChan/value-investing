@@ -62,6 +62,38 @@ const exchangeRate = ref(1.1555); // 港币兑人民币汇率
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
 const changeSortOrder = ref<"asc" | "desc" | null>(null); // null=默认, "desc"=按涨幅, "asc"=按跌幅
 
+interface IndexData {
+  code: string;
+  label: string;
+  price: number;
+  change: number;
+}
+
+const INDEX_CODES: { code: string; label: string }[] = [
+  { code: "1.000985", label: "中证全指" },
+  { code: "1.000001", label: "上证指数" },
+  { code: "0.399001", label: "深证成指" },
+  { code: "100.HSI", label: "恒生指数" },
+  { code: "124.HSTECH", label: "恒生科技指数" },
+];
+const indexList = ref<IndexData[]>([]);
+
+async function fetchIndices() {
+  const indexCodeList = INDEX_CODES.map((v) => v.code);
+  const dynamicDataList = await getDynamicData(indexCodeList);
+  indexList.value = INDEX_CODES.map((item) => {
+    // API 返回的 f12 是点后面的部分，如 "100.HSI" → "HSI"、"1.00001" → "00001"
+    const shortCode = item.code.split(".").pop()!;
+    const d = dynamicDataList.find((v) => v.code === shortCode);
+    return {
+      code: item.code,
+      label: item.label,
+      price: d ? d.price : 0,
+      change: d ? d.change : 0,
+    };
+  });
+}
+
 const STORAGE_KEY = "stock-pool-data";
 const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
 
@@ -195,6 +227,7 @@ function loadFromStorage(): boolean {
 
 onMounted(() => {
   loadFromStorage();
+  fetchIndices(); // 指数数据始终实时获取
   // 加载持久化的市场筛选
   const savedFilter = localStorage.getItem(MARKET_FILTER_STORAGE_KEY);
   if (savedFilter) {
@@ -362,6 +395,10 @@ async function init() {
       customPE[item.code] = lastRow.pe;
     }
   }
+
+  // 提取指数数据
+  fetchIndices();
+
   saveToStorage();
 }
 
@@ -442,6 +479,10 @@ async function refresh() {
       customPE[code] = lastRow.pe;
     }
   }
+
+  // 更新指数数据
+  fetchIndices();
+
   saveToStorage();
 }
 
@@ -581,7 +622,9 @@ const mergedTableData = computed(() => {
     filteredGroups.sort((a, b) => {
       const aChange = a.rows[0]?.change ?? 0;
       const bChange = b.rows[0]?.change ?? 0;
-      return changeSortOrder.value === "desc" ? bChange - aChange : aChange - bChange;
+      return changeSortOrder.value === "desc"
+        ? bChange - aChange
+        : aChange - bChange;
     });
   } else {
     // 默认按最小跌幅（计划行中 decline 最小值）升序排列
@@ -631,6 +674,15 @@ const mergedTableData = computed(() => {
     <el-button type="primary" @click="init"
       >初始化/获取分红数据（避免高频调用）</el-button
     >
+  </div>
+
+  <div v-if="indexList.length" class="index-bar">
+    <span v-for="idx in indexList" :key="idx.code" class="index-item">
+      {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span
+      >（<span :class="idx.change >= 0 ? 'red' : 'green'"
+        >{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2) }}%</span
+      >）
+    </span>
   </div>
 
   <table v-if="mergedTableData.length" class="stock-pool-table">
@@ -813,11 +865,36 @@ const mergedTableData = computed(() => {
 </template>
 
 <style lang="scss">
+.red {
+  color: #ff0000;
+}
+
+.green {
+  color: #00b050;
+}
+
+.blue {
+  color: #2972f4;
+}
+
 .toolbar {
   display: flex;
   align-items: center;
   gap: 8px;
   margin-bottom: 8px;
+}
+
+.index-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 16px;
+  margin-bottom: 8px;
+  font-size: 13px;
+  font-weight: bold;
+
+  .index-item {
+    white-space: nowrap;
+  }
 }
 
 .stock-pool-table {
@@ -862,12 +939,16 @@ const mergedTableData = computed(() => {
     color: #00a3f5;
   }
 
-  .blue {
-    color: #2972f4;
-  }
-
   .red {
     color: #ff0000;
+  }
+
+  .green {
+    color: #00b050;
+  }
+
+  .blue {
+    color: #2972f4;
   }
 
   .orange {
@@ -903,10 +984,6 @@ const mergedTableData = computed(() => {
     font-size: 12px;
     font-weight: normal;
     font-weight: bold;
-  }
-
-  .green {
-    color: #00b050;
   }
 
   .plan-price-input {
