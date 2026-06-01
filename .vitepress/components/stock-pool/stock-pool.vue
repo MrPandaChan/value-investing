@@ -83,6 +83,7 @@ const INDEX_CODES: { code: string; label: string }[] = [
   { code: "1.000922", label: "中证红利" },
   { code: "0.399006", label: "创业板指" },
   { code: "1.000688", label: "科创50" },
+  { code: "2.932000", label: "中证2000" },
 ];
 const indexList = ref<IndexData[]>([]);
 
