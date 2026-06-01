@@ -80,6 +80,7 @@ const INDEX_CODES: { code: string; label: string }[] = [
   { code: "1.000300", label: "沪深300" },
   { code: "1.000905", label: "中证500" },
   { code: "1.000852", label: "中证1000" },
+  { code: "1.000922", label: "中证红利" },
   { code: "0.399006", label: "创业板" },
   { code: "1.000688", label: "科创50" },
 ];
