@@ -627,15 +627,35 @@ export default defineConfig({
         },
         {
           text: "服饰",
-          link: "/company/fashion/shenzhou.md",
+          link: "/company/fashion/shenzhou/shenzhou.md",
           items: [
             {
               text: "申洲国际",
-              link: "/company/fashion/shenzhou.md",
+              link: "/company/fashion/shenzhou/shenzhou.md",
+              items: [
+                {
+                  text: "ai-template",
+                  link: "/company/fashion/shenzhou/ai-template.md",
+                },
+                {
+                  text: "2026-06-01",
+                  link: "/company/fashion/shenzhou/2026-06-01.md",
+                },
+              ],
             },
             {
               text: "安踏体育",
               link: "/company/fashion/anta/anta.md",
+              items: [
+                {
+                  text: "ai-template",
+                  link: "/company/fashion/anta/ai-template.md",
+                },
+                {
+                  text: "2026-06-01",
+                  link: "/company/fashion/anta/2026-06-01.md",
+                },
+              ],
             },
           ],
         },

@@ -387,7 +387,7 @@ const planList: PlanItem[] = [
     type: PlanType.DIVIDEND,
     code: "02313",
     maxPositionRatio: 0.05,
-    url: "/value-investing/company/fashion/shenzhou",
+    url: "/value-investing/company/fashion/shenzhou/shenzhou",
     dividendPerYear: 2,
     dividendAdjust: 0.72,
     dividend: [
