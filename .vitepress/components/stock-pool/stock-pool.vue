@@ -75,6 +75,13 @@ const INDEX_CODES: { code: string; label: string }[] = [
   { code: "0.399001", label: "深证成指" },
   { code: "100.HSI", label: "恒生指数" },
   { code: "124.HSTECH", label: "恒生科技指数" },
+  { code: "1.000016", label: "上证50" },
+  { code: "0.399850", label: "深证50" },
+  { code: "1.000300", label: "沪深300" },
+  { code: "1.000905", label: "中证500" },
+  { code: "1.000852", label: "中证1000" },
+  { code: "0.399006", label: "创业板" },
+  { code: "1.000688", label: "科创50" },
 ];
 const indexList = ref<IndexData[]>([]);
 
@@ -227,6 +234,7 @@ function loadFromStorage(): boolean {
 
 onMounted(() => {
   loadFromStorage();
+  refresh();
   fetchIndices(); // 指数数据始终实时获取
   // 加载持久化的市场筛选
   const savedFilter = localStorage.getItem(MARKET_FILTER_STORAGE_KEY);
