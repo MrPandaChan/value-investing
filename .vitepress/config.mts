@@ -633,6 +633,10 @@ export default defineConfig({
               text: "申洲国际",
               link: "/company/fashion/shenzhou.md",
             },
+            {
+              text: "安踏体育",
+              link: "/company/fashion/anta/anta.md",
+            },
           ],
         },
         {

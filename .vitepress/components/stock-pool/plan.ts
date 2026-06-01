@@ -305,7 +305,7 @@ const planList: PlanItem[] = [
     type: PlanType.DIVIDEND,
     code: "600938",
     maxPositionRatio: 0.2,
-    url: "/value-investing/company/oil/cnooc",
+    url: "/value-investing/company/oil/cnooc/cnooc",
     dividendPerYear: 2,
     remark: "预估7月中分红",
     dividend: [
@@ -320,7 +320,7 @@ const planList: PlanItem[] = [
     type: PlanType.DIVIDEND,
     code: "00883",
     maxPositionRatio: 0.2,
-    url: "/value-investing/company/oil/cnooc",
+    url: "/value-investing/company/oil/cnooc/cnooc",
     dividendPerYear: 2,
     dividendAdjust: 0.72,
     dividend: [
@@ -335,7 +335,7 @@ const planList: PlanItem[] = [
     type: PlanType.PRICE,
     code: "601899",
     maxPositionRatio: 0.1,
-    url: "/value-investing/company/nonferrous-metals‌/zijin",
+    url: "/value-investing/company/nonferrous-metals‌/zijin/zijin",
     dividendPerYear: 2,
     price: [
       {
@@ -563,6 +563,7 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     dividendAdjust: 0.72,
     dividendPerYear: 2,
+    url: "/value-investing/company/fashion/anta/anta",
     price: [
       {
         value: 70,
