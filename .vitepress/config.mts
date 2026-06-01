@@ -343,6 +343,10 @@ export default defineConfig({
               text: "财报背后的生意真相与投资陷阱",
               link: "/value-investing/notes/财报背后的生意真相与投资陷阱.md",
             },
+            {
+              text: "动量与Carry：产业视角下的投资策略",
+              link: "/value-investing/notes/动量与Carry.md",
+            },
           ],
         },
       ],
