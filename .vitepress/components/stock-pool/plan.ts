@@ -44,10 +44,9 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.2,
     url: "/value-investing/company/internet/tencent",
     price: [
-      { value: 420, quantity: 100 },
+      { value: 420, quantity: 200 },
       { value: 400, quantity: 100 },
       { value: 380, quantity: 100 },
-      { value: 360, quantity: 100 },
     ],
   },
   {
@@ -57,9 +56,9 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/car/fuyao",
     maxPositionRatio: 0.1,
     price: [
-      { value: 50, quantity: 300 },
+      { value: 50, quantity: 400 },
       { value: 48, quantity: 400 },
-      { value: 46, quantity: 400 },
+      { value: 46, quantity: 300 },
     ],
   },
   {
@@ -78,7 +77,7 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/company/chinese-medicine/donge",
     dividend: [
-      { value: 0.058, quantity: 100 },
+      { value: 0.058, quantity: 200 },
       { value: 0.061, quantity: 200 },
     ],
   },
@@ -91,9 +90,9 @@ const planList: PlanItem[] = [
     remark: "预估6月中分红",
     url: "/value-investing/company/chinese-medicine/lingrui",
     price: [
-      { value: 21, quantity: 300 },
+      { value: 21, quantity: 500 },
       { value: 20, quantity: 400 },
-      { value: 19, quantity: 500 },
+      { value: 19, quantity: 300 },
     ],
   },
   {
@@ -103,7 +102,7 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/company/advertisement/fenzhong",
     dividend: [
-      { value: 0.065, quantity: 1000 },
+      { value: 0.065, quantity: 2000 },
       { value: 0.07, quantity: 2000 },
       { value: 0.075, quantity: 3000 },
     ],
@@ -119,7 +118,7 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.047,
-        quantity: 2000,
+        quantity: 6000,
       },
     ],
   },
@@ -147,15 +146,11 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 10.2,
-        quantity: 900,
+        quantity: 1400,
       },
       {
         value: 9.7,
-        quantity: 1200,
-      },
-      {
-        value: 9.2,
-        quantity: 1500,
+        quantity: 2000,
       },
     ],
   },
@@ -356,7 +351,7 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 27.5,
-        quantity: 200,
+        quantity: 400,
       },
     ],
   },
@@ -408,7 +403,7 @@ const planList: PlanItem[] = [
     dividendAdjust: 0.72,
     price: [
       {
-        value: 150,
+        value: 160,
         quantity: 200,
       },
     ],
