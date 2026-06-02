@@ -56,9 +56,9 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/car/fuyao",
     maxPositionRatio: 0.1,
     price: [
-      { value: 50, quantity: 400 },
+      { value: 50, quantity: 300 },
       { value: 48, quantity: 400 },
-      { value: 46, quantity: 300 },
+      { value: 46, quantity: 400 },
     ],
   },
   {
@@ -91,8 +91,8 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/chinese-medicine/lingrui",
     price: [
       { value: 21, quantity: 500 },
-      { value: 20, quantity: 400 },
-      { value: 19, quantity: 300 },
+      { value: 20, quantity: 700 },
+      { value: 19, quantity: 900 },
     ],
   },
   {
@@ -149,8 +149,12 @@ const planList: PlanItem[] = [
         quantity: 1400,
       },
       {
-        value: 9.7,
-        quantity: 2000,
+        value: 9.8,
+        quantity: 1400,
+      },
+      {
+        value: 9.4,
+        quantity: 1600,
       },
     ],
   },
@@ -164,11 +168,11 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 36.5,
-        quantity: 600,
+        quantity: 1000,
       },
       {
         value: 35.5,
-        quantity: 800,
+        quantity: 1000,
       },
     ],
   },
@@ -231,7 +235,7 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 92,
-        quantity: 200,
+        quantity: 100,
       },
     ],
   },
@@ -277,7 +281,7 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.04,
-        quantity: 1200,
+        quantity: 2000,
       },
     ],
   },
@@ -292,7 +296,7 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.04,
-        quantity: 2000,
+        quantity: 3000,
       },
     ],
   },
@@ -307,7 +311,7 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.055,
-        quantity: 1000,
+        quantity: 1400,
       },
     ],
   },
@@ -322,7 +326,7 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.055,
-        quantity: 2000,
+        quantity: 2200,
       },
     ],
   },
@@ -352,6 +356,10 @@ const planList: PlanItem[] = [
       {
         value: 27.5,
         quantity: 400,
+      },
+      {
+        value: 26,
+        quantity: 800,
       },
     ],
   },
@@ -580,17 +588,13 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/other/small-commodity-market",
     remark: "预估6月中旬分红",
     dividend: [
-      // {
-      //   value: 0.04,
-      //   quantity: 400,
-      // },
       {
         value: 0.043,
-        quantity: 600,
+        quantity: 1000,
       },
       {
         value: 0.046,
-        quantity: 800,
+        quantity: 1200,
       },
     ],
   },
