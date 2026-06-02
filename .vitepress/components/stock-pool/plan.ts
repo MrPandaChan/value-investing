@@ -44,7 +44,8 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.2,
     url: "/value-investing/company/internet/tencent",
     price: [
-      { value: 400, quantity: 200 },
+      { value: 420, quantity: 100 },
+      { value: 400, quantity: 100 },
       { value: 380, quantity: 100 },
       { value: 360, quantity: 100 },
     ],
