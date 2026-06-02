@@ -237,6 +237,10 @@ const planList: PlanItem[] = [
         value: 92,
         quantity: 100,
       },
+      {
+        value: 90,
+        quantity: 200,
+      },
     ],
   },
   // 中国电信
