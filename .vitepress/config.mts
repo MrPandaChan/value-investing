@@ -133,6 +133,10 @@ export default defineConfig({
               link: "/value-investing/ai-skill/bg-ten-questions.md",
             },
             {
+              text: "商业模式定性分析",
+              link: "/value-investing/ai-skill/bussiness-model.md",
+            },
+            {
               text: "公司八维深度解剖",
               link: "/value-investing/ai-skill/company-8d-analysis.md",
             },
@@ -638,7 +642,7 @@ export default defineConfig({
               link: "/company/fashion/shenzhou/shenzhou.md",
               items: [
                 {
-                  text: "ai-template",
+                  text: "AI分析",
                   link: "/company/fashion/shenzhou/ai-template.md",
                 },
                 {
@@ -652,7 +656,7 @@ export default defineConfig({
               link: "/company/fashion/anta/anta.md",
               items: [
                 {
-                  text: "ai-template",
+                  text: "AI分析",
                   link: "/company/fashion/anta/ai-template.md",
                 },
                 {
