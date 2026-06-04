@@ -145,15 +145,11 @@ const planList: PlanItem[] = [
     remark: "2025年分红率有降低，分红比过去两年低",
     price: [
       {
-        value: 10.2,
+        value: 9.7,
         quantity: 1400,
       },
       {
-        value: 9.8,
-        quantity: 1400,
-      },
-      {
-        value: 9.4,
+        value: 9.2,
         quantity: 1600,
       },
     ],
