@@ -40,7 +40,7 @@ const planList: PlanItem[] = [
     // 腾讯控股
     type: PlanType.PRICE,
     code: "00700",
-    dividendAdjust: 0.72,
+    dividendAdjust: 0.8,
     maxPositionRatio: 0.2,
     url: "/value-investing/company/internet/tencent",
     price: [
@@ -393,7 +393,7 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/company/fashion/shenzhou/shenzhou",
     dividendPerYear: 2,
-    dividendAdjust: 0.72,
+    dividendAdjust: 0.8,
     dividend: [
       {
         value: 0.045,
@@ -408,7 +408,7 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/company/toys/popmart",
     dividendPerYear: 1,
-    dividendAdjust: 0.72,
+    dividendAdjust: 0.8,
     price: [
       {
         value: 160,
@@ -565,7 +565,7 @@ const planList: PlanItem[] = [
     type: PlanType.PRICE,
     code: "02020",
     maxPositionRatio: 0.05,
-    dividendAdjust: 0.72,
+    dividendAdjust: 0.8,
     dividendPerYear: 2,
     url: "/value-investing/company/fashion/anta/anta",
     price: [
