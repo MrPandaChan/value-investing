@@ -134,7 +134,7 @@ export default defineConfig({
             },
             {
               text: "商业模式定性分析",
-              link: "/value-investing/ai-skill/bussiness-model.md",
+              link: "/value-investing/ai-skill/business-model.md",
             },
             {
               text: "公司八维深度解剖",
