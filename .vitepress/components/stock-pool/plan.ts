@@ -370,18 +370,18 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/company/car/sailun",
     dividendPerYear: 2,
-    remark: "预估6月中分红",
+    remark: "刚分红完，减去0.18",
     price: [
       {
-        value: 12,
+        value: 11.82,
         quantity: 500,
       },
       {
-        value: 11.5,
+        value: 11.32,
         quantity: 600,
       },
       {
-        value: 11,
+        value: 10.82,
         quantity: 700,
       },
     ],
@@ -496,14 +496,14 @@ const planList: PlanItem[] = [
   },
   // 伊利股份
   {
-    type: PlanType.DIVIDEND,
+    type: PlanType.PRICE,
     code: "600887",
     maxPositionRatio: 0.05,
     url: "/value-investing/company/dairy/yili",
     dividendPerYear: 2,
-    dividend: [
+    price: [
       {
-        value: 0.055,
+        value: 0.24,
         quantity: 400,
       },
     ],
