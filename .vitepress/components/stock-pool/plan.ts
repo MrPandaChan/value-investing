@@ -71,14 +71,14 @@ const planList: PlanItem[] = [
   },
   {
     // 东阿阿胶
-    type: PlanType.DIVIDEND,
+    type: PlanType.PRICE,
     code: "000423",
     dividendPerYear: 2,
     maxPositionRatio: 0.05,
     url: "/value-investing/company/chinese-medicine/donge",
-    dividend: [
-      { value: 0.058, quantity: 200 },
-      { value: 0.061, quantity: 200 },
+    price: [
+      { value: 48, quantity: 400 },
+      { value: 45, quantity: 600 },
     ],
   },
   {
