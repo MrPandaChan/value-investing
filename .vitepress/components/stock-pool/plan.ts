@@ -503,7 +503,7 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     price: [
       {
-        value: 0.24,
+        value: 24,
         quantity: 400,
       },
     ],
