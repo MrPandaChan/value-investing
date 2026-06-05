@@ -500,6 +500,7 @@ const planList: PlanItem[] = [
     code: "600887",
     maxPositionRatio: 0.05,
     url: "/value-investing/company/dairy/yili",
+    remark: "护城河一般，不成长，纯吃息",
     dividendPerYear: 2,
     price: [
       {
