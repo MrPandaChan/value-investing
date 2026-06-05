@@ -90,9 +90,9 @@ const planList: PlanItem[] = [
     remark: "预估6月中分红",
     url: "/value-investing/company/chinese-medicine/lingrui",
     price: [
-      { value: 21, quantity: 500 },
-      { value: 20, quantity: 700 },
-      { value: 19, quantity: 900 },
+      { value: 21.1, quantity: 500 },
+      { value: 20.1, quantity: 700 },
+      { value: 19.1, quantity: 900 },
     ],
   },
   {
