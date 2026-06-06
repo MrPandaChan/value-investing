@@ -266,6 +266,7 @@
 
 - [关于读书的一些思考和推荐（2020-08-22 静逸投资）](https://mp.weixin.qq.com/s/6fX4orxh-_5A0WOSPcp60A)
 - [给跑步入场的新股民最真诚的建议](https://xueqiu.com/8349814043/123142976)
+- [2025年年度读书总结（2026.01.02 StefanTheReflektor）](https://mp.weixin.qq.com/s/tUJsClc82__nCndhNxffZg?scene=1&click_id=1)
 
 ## 读过的书
 
@@ -385,3 +386,7 @@
 - 《竞争优势：透视企业护城河》
 - 《财报真相：识别数字背后的投资风险》
 - 《制造消费者：消费主义全球史》
+
+#### 六月
+
+- 《沃尔特·施洛斯资料集》
