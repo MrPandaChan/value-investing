@@ -56,9 +56,9 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/car/fuyao",
     maxPositionRatio: 0.1,
     price: [
-      { value: 50, quantity: 300 },
-      { value: 48, quantity: 400 },
-      { value: 46, quantity: 400 },
+      { value: 51, quantity: 100 },
+      { value: 49, quantity: 100 },
+      { value: 47, quantity: 100 },
     ],
   },
   {
@@ -67,7 +67,7 @@ const planList: PlanItem[] = [
     code: "000538",
     maxPositionRatio: 0.05,
     url: "/value-investing/company/chinese-medicine/yunnan",
-    price: [{ value: 46.5, quantity: 400 }],
+    price: [{ value: 46.5, quantity: 100 }],
   },
   {
     // 东阿阿胶
@@ -77,8 +77,8 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/company/chinese-medicine/donge",
     price: [
-      { value: 48, quantity: 400 },
-      { value: 45, quantity: 600 },
+      { value: 48, quantity: 100 },
+      { value: 45, quantity: 200 },
     ],
   },
   {
@@ -90,9 +90,9 @@ const planList: PlanItem[] = [
     remark: "预估6月中分红",
     url: "/value-investing/company/chinese-medicine/lingrui",
     price: [
-      { value: 21.1, quantity: 500 },
-      { value: 20.1, quantity: 700 },
-      { value: 19.1, quantity: 900 },
+      { value: 21.1, quantity: 200 },
+      { value: 20.1, quantity: 300 },
+      { value: 19.1, quantity: 400 },
     ],
   },
   {
@@ -102,9 +102,9 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/company/advertisement/fenzhong",
     dividend: [
-      { value: 0.065, quantity: 2000 },
-      { value: 0.07, quantity: 2000 },
-      { value: 0.075, quantity: 3000 },
+      { value: 0.065, quantity: 700 },
+      { value: 0.07, quantity: 900 },
+      { value: 0.075, quantity: 1100 },
     ],
   },
   // 青岛港H
@@ -130,10 +130,9 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/port/qingdao",
     dividendPerYear: 2,
     dividend: [
-      {
-        value: 0.047,
-        quantity: 2000,
-      },
+      { value: 0.041, quantity: 500 },
+      { value: 0.044, quantity: 1200 },
+      { value: 0.047, quantity: 1400 },
     ],
   },
   // 永新股份
@@ -146,11 +145,11 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 9.7,
-        quantity: 1400,
+        quantity: 500,
       },
       {
         value: 9.2,
-        quantity: 1600,
+        quantity: 500,
       },
     ],
   },
@@ -164,11 +163,7 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 36.5,
-        quantity: 1000,
-      },
-      {
-        value: 35.5,
-        quantity: 1000,
+        quantity: 300,
       },
     ],
   },
@@ -183,11 +178,11 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 75,
-        quantity: 400,
+        quantity: 100,
       },
       {
         value: 71,
-        quantity: 600,
+        quantity: 200,
       },
     ],
   },
@@ -202,7 +197,7 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 19.5,
-        quantity: 1000,
+        quantity: 500,
       },
     ],
   },
@@ -216,7 +211,7 @@ const planList: PlanItem[] = [
     remark: "预估8月分红",
     price: [
       {
-        value: 37,
+        value: 37.3,
         quantity: 200,
       },
     ],
@@ -232,10 +227,6 @@ const planList: PlanItem[] = [
       {
         value: 92,
         quantity: 100,
-      },
-      {
-        value: 90,
-        quantity: 200,
       },
     ],
   },
@@ -280,23 +271,31 @@ const planList: PlanItem[] = [
     remark: "预估7月中分红",
     dividend: [
       {
+        value: 0.039,
+        quantity: 400,
+      },
+      {
         value: 0.04,
-        quantity: 2000,
+        quantity: 500,
       },
     ],
   },
   // 国投电力
   {
-    type: PlanType.DIVIDEND,
+    type: PlanType.PRICE,
     code: "600886",
     maxPositionRatio: 0.08,
     url: "/value-investing/company/electricity/guotou",
     dividendPerYear: 1,
     remark: "预估8月分红",
-    dividend: [
+    price: [
       {
-        value: 0.04,
-        quantity: 3000,
+        value: 13.2,
+        quantity: 500,
+      },
+      {
+        value: 12.75,
+        quantity: 600,
       },
     ],
   },
@@ -311,7 +310,7 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.055,
-        quantity: 1400,
+        quantity: 500,
       },
     ],
   },
@@ -339,8 +338,12 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     price: [
       {
-        value: 29.5,
-        quantity: 100,
+        value: 28,
+        quantity: 200,
+      },
+      {
+        value: 26.5,
+        quantity: 300,
       },
     ],
   },
@@ -475,7 +478,7 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 50,
-        quantity: 1000,
+        quantity: 100,
       },
     ],
   },
@@ -505,7 +508,7 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 24,
-        quantity: 400,
+        quantity: 200,
       },
     ],
   },
@@ -553,11 +556,11 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.055,
-        quantity: 200,
+        quantity: 100,
       },
       {
         value: 0.06,
-        quantity: 400,
+        quantity: 200,
       },
     ],
   },
@@ -591,11 +594,11 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.043,
-        quantity: 800,
+        quantity: 400,
       },
       {
         value: 0.046,
-        quantity: 1000,
+        quantity: 500,
       },
     ],
   },
