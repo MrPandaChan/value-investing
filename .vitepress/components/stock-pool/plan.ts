@@ -531,7 +531,7 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.1,
     url: "/value-investing/company/coal/shenhua",
     dividendPerYear: 2,
-    dividendAdjust: 0.8,
+    dividendAdjust: 0.72,
     dividend: [
       {
         value: 0.055,
@@ -540,6 +540,28 @@ const planList: PlanItem[] = [
       {
         value: 0.06,
         quantity: 500,
+      },
+    ],
+  },
+  // 陕西煤业
+  {
+    type: PlanType.DIVIDEND,
+    code: "601225",
+    maxPositionRatio: 0.05,
+    url: "/value-investing/company/coal/shanxi",
+    dividendPerYear: 2,
+    dividend: [
+      {
+        value: 0.055,
+        quantity: 500,
+      },
+      {
+        value: 0.06,
+        quantity: 800,
+      },
+      {
+        value: 0.65,
+        quantity: 1200,
       },
     ],
   },
