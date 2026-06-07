@@ -45,8 +45,8 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/internet/tencent",
     price: [
       { value: 420, quantity: 100 },
-      { value: 400, quantity: 100 },
-      { value: 380, quantity: 100 },
+      { value: 400, quantity: 200 },
+      { value: 380, quantity: 200 },
     ],
   },
   {
@@ -374,15 +374,15 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 11.82,
-        quantity: 500,
-      },
-      {
-        value: 11.32,
         quantity: 600,
       },
       {
+        value: 11.32,
+        quantity: 800,
+      },
+      {
         value: 10.82,
-        quantity: 700,
+        quantity: 1000,
       },
     ],
   },
