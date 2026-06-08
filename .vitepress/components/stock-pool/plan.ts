@@ -379,15 +379,15 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 11.82,
-        quantity: 600,
+        quantity: 300,
       },
       {
         value: 11.32,
-        quantity: 800,
+        quantity: 400,
       },
       {
         value: 10.82,
-        quantity: 1000,
+        quantity: 500,
       },
     ],
   },
@@ -647,6 +647,22 @@ const planList: PlanItem[] = [
       {
         value: 0.06,
         quantity: 2000,
+      },
+    ],
+  },
+  // 中概互联ETF
+  {
+    type: PlanType.PRICE,
+    code: "513050",
+    maxPositionRatio: 0.05,
+    price: [
+      {
+        value: 1.085,
+        quantity: 4600,
+      },
+      {
+        value: 0.998,
+        quantity: 6000,
       },
     ],
   },

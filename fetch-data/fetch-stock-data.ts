@@ -10,7 +10,7 @@ import type {
   SinaFinanceData,
   SinaResponse,
 } from "./types";
-import { isHKCode, stocksToSecIds, toSECUCODE, v } from "./helper";
+import { isHKCode, isSHETFCode, stocksToSecIds, toSECUCODE, v } from "./helper";
 import { StockType, type StockItem } from "../types";
 import { stockData } from "../types/stocks";
 
@@ -160,7 +160,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
       name: v.f14,
       change,
       prevClose: v.f18,
-      price: isHKCode(v.f12) ? price / 1000 : price / 100,
+      price: (isHKCode(v.f12) || isSHETFCode(v.f12)) ? price / 1000 : price / 100,
       marketValue: v.f20,
       PB: v.f23 / 100,
       PE_TTM: v.f115 / 100,

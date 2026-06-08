@@ -163,6 +163,13 @@ export function isBCode(code: string): boolean {
 }
 
 /**
+ * 沪市ETF（5开头6位代码，如 510050、513050）
+ */
+export function isSHETFCode(code: string): boolean {
+  return /^5\d{5}$/.test(code.trim());
+}
+
+/**
  * 获取货币前缀
  */
 export function getCurrencyPrefix(code: string): string {

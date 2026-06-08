@@ -8,6 +8,7 @@ import {
   getCurrencyPrefix,
   isBCode,
   isHKCode,
+  isSHETFCode,
 } from "../../../fetch-data/helper";
 import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
 import { PlanType, planList } from "./plan";
@@ -255,7 +256,7 @@ watch(
   () => {
     if (tableData.value.length) saveToStorage();
   },
-  { deep: true },
+  { deep: true }
 );
 
 watch(
@@ -263,7 +264,7 @@ watch(
   (val) => {
     localStorage.setItem(MARKET_FILTER_STORAGE_KEY, JSON.stringify(val));
   },
-  { deep: true },
+  { deep: true }
 );
 
 async function init() {
@@ -316,9 +317,11 @@ async function init() {
         PE_TTM,
         change,
       } = dynamicData;
-      const prevClose = isHKCode(code)
-        ? originPrevClose / 1000
-        : originPrevClose / 100;
+      const isETF = isSHETFCode(code);
+      const prevClose =
+        isHKCode(code) || isETF
+          ? originPrevClose / 1000
+          : originPrevClose / 100;
       // 港股 PE_TTM 是以收盘价来算的
       const pricePE = isHKCode(code)
         ? PE_TTM * (1 + (price - prevClose) / prevClose)
@@ -431,9 +434,9 @@ async function refresh() {
 
     const { price, prevClose: originPrevClose, PE_TTM, change } = dynamicData;
     const code = item.code;
-    const prevClose = isHKCode(code)
-      ? originPrevClose / 1000
-      : originPrevClose / 100;
+    const isETF = isSHETFCode(code);
+    const prevClose =
+      isHKCode(code) || isETF ? originPrevClose / 1000 : originPrevClose / 100;
     const pricePE = isHKCode(code)
       ? PE_TTM * (1 + (price - prevClose) / prevClose)
       : PE_TTM;
@@ -582,7 +585,7 @@ const mergedTableData = computed(() => {
       .slice(1)
       .reduce(
         (sum, r) => sum + (r.quantity && r.price ? r.quantity * r.price : 0),
-        0,
+        0
       );
 
     const mergedRows: MergedRowData[] = resolvedRows.map((row, index) => {
