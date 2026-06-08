@@ -78,7 +78,8 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/chinese-medicine/donge",
     price: [
       { value: 48, quantity: 100 },
-      { value: 45, quantity: 200 },
+      { value: 46.5, quantity: 100 },
+      { value: 45, quantity: 100 },
     ],
   },
   {
@@ -92,7 +93,7 @@ const planList: PlanItem[] = [
     price: [
       { value: 21.1, quantity: 200 },
       { value: 20.1, quantity: 300 },
-      { value: 19.1, quantity: 400 },
+      { value: 19.1, quantity: 300 },
     ],
   },
   {
@@ -290,12 +291,12 @@ const planList: PlanItem[] = [
     remark: "预估8月分红",
     price: [
       {
-        value: 13.2,
-        quantity: 500,
+        value: 13.25,
+        quantity: 600,
       },
       {
         value: 12.75,
-        quantity: 600,
+        quantity: 700,
       },
     ],
   },
@@ -338,12 +339,12 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     price: [
       {
-        value: 28,
-        quantity: 200,
+        value: 27.5,
+        quantity: 300,
       },
       {
         value: 26.5,
-        quantity: 300,
+        quantity: 400,
       },
     ],
   },
@@ -484,16 +485,24 @@ const planList: PlanItem[] = [
   },
   // 宇通客车
   {
-    type: PlanType.DIVIDEND,
+    type: PlanType.PRICE,
     code: "600066",
     maxPositionRatio: 0.05,
     url: "/value-investing/company/car/yutong",
     dividendPerYear: 2,
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
-    dividend: [
+    price: [
       {
-        value: 0.085,
+        value: 30,
+        quantity: 100,
+      },
+      {
+        value: 28,
         quantity: 200,
+      },
+      {
+        value: 26,
+        quantity: 300,
       },
     ],
   },
@@ -615,12 +624,12 @@ const planList: PlanItem[] = [
     remark: "预估6月中旬分红",
     dividend: [
       {
-        value: 0.043,
+        value: 0.046,
         quantity: 400,
       },
       {
-        value: 0.046,
-        quantity: 500,
+        value: 0.049,
+        quantity: 400,
       },
     ],
   },
