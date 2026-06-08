@@ -1,0 +1,427 @@
+[
+  {
+    "name": "中药",
+    "route": "/industry/中药/中药/",
+    "companies": [
+      {
+        "name": "东阿阿胶",
+        "route": "/industry/中药/东阿阿胶/"
+      },
+      {
+        "name": "云南白药",
+        "route": "/industry/中药/云南白药/"
+      },
+      {
+        "name": "羚锐制药",
+        "route": "/industry/中药/羚锐制药/"
+      }
+    ]
+  },
+  {
+    "name": "乳制品",
+    "route": "/industry/乳制品/乳制品/",
+    "companies": [
+      {
+        "name": "伊利股份",
+        "route": "/industry/乳制品/伊利股份/"
+      }
+    ]
+  },
+  {
+    "name": "互联网",
+    "route": "/industry/互联网/互联网/",
+    "companies": [
+      {
+        "name": "腾讯控股",
+        "route": "/industry/互联网/腾讯控股/"
+      }
+    ]
+  },
+  {
+    "name": "传媒",
+    "route": "/industry/传媒/传媒/",
+    "companies": [
+      {
+        "name": "分众传媒",
+        "route": "/industry/传媒/分众传媒/"
+      }
+    ]
+  },
+  {
+    "name": "保险",
+    "route": "/industry/保险/保险/",
+    "companies": [
+      {
+        "name": "中国平安",
+        "route": "/industry/保险/中国平安/"
+      },
+      {
+        "name": "中国财险",
+        "route": "/industry/保险/中国财险/"
+      }
+    ]
+  },
+  {
+    "name": "农业化工",
+    "route": "/industry/农业化工/农业化工/",
+    "companies": [
+      {
+        "name": "国光股份",
+        "route": "/industry/农业化工/国光股份/"
+      },
+      {
+        "name": "广信股份",
+        "route": "/industry/农业化工/广信股份/"
+      },
+      {
+        "name": "盐湖股份",
+        "route": "/industry/农业化工/盐湖股份/"
+      }
+    ]
+  },
+  {
+    "name": "塑料包装",
+    "route": "/industry/塑料包装/塑料包装/",
+    "companies": [
+      {
+        "name": "永新股份",
+        "route": "/industry/塑料包装/永新股份/"
+      }
+    ]
+  },
+  {
+    "name": "家电",
+    "route": "/industry/家电/家电/",
+    "companies": [
+      {
+        "name": "格力",
+        "route": "/industry/家电/格力/"
+      },
+      {
+        "name": "海尔",
+        "route": "/industry/家电/海尔/"
+      },
+      {
+        "name": "美的",
+        "route": "/industry/家电/美的/"
+      }
+    ]
+  },
+  {
+    "name": "摩托车",
+    "route": "/industry/摩托车/摩托车/",
+    "companies": [
+      {
+        "name": "九号公司",
+        "route": "/industry/摩托车/九号公司/"
+      },
+      {
+        "name": "爱玛科技",
+        "route": "/industry/摩托车/爱玛科技/"
+      }
+    ]
+  },
+  {
+    "name": "有色金属",
+    "route": "/industry/有色金属/有色金属/",
+    "companies": [
+      {
+        "name": "紫金矿业",
+        "route": "/industry/有色金属/紫金矿业/"
+      },
+      {
+        "name": "藏格矿业",
+        "route": "/industry/有色金属/藏格矿业/"
+      }
+    ]
+  },
+  {
+    "name": "材料",
+    "route": "/industry/材料/材料/",
+    "companies": [
+      {
+        "name": "万华化学",
+        "route": "/industry/材料/万华化学/"
+      }
+    ]
+  },
+  {
+    "name": "汽车",
+    "route": "/industry/汽车/汽车/",
+    "companies": [
+      {
+        "name": "宇通客车",
+        "route": "/industry/汽车/宇通客车/"
+      },
+      {
+        "name": "比亚迪",
+        "route": "/industry/汽车/比亚迪/"
+      },
+      {
+        "name": "福耀玻璃",
+        "route": "/industry/汽车/福耀玻璃/"
+      },
+      {
+        "name": "赛轮轮胎",
+        "route": "/industry/汽车/赛轮轮胎/"
+      }
+    ]
+  },
+  {
+    "name": "消费电子",
+    "route": "/industry/消费电子/消费电子/",
+    "companies": [
+      {
+        "name": "安克创新",
+        "route": "/industry/消费电子/安克创新/"
+      }
+    ]
+  },
+  {
+    "name": "港口",
+    "route": "/industry/港口/港口/",
+    "companies": [
+      {
+        "name": "上港集团",
+        "route": "/industry/港口/上港集团/"
+      },
+      {
+        "name": "唐山港",
+        "route": "/industry/港口/唐山港/"
+      },
+      {
+        "name": "青岛港",
+        "route": "/industry/港口/青岛港/"
+      }
+    ]
+  },
+  {
+    "name": "潮玩",
+    "route": "/industry/潮玩/潮玩/",
+    "companies": [
+      {
+        "name": "泡泡玛特",
+        "route": "/industry/潮玩/泡泡玛特/"
+      }
+    ]
+  },
+  {
+    "name": "煤炭",
+    "route": "/industry/煤炭/煤炭/",
+    "companies": [
+      {
+        "name": "中国神华",
+        "route": "/industry/煤炭/中国神华/"
+      },
+      {
+        "name": "中煤能源",
+        "route": "/industry/煤炭/中煤能源/"
+      },
+      {
+        "name": "兖矿能源",
+        "route": "/industry/煤炭/兖矿能源/"
+      },
+      {
+        "name": "陕西煤业",
+        "route": "/industry/煤炭/陕西煤业/"
+      }
+    ]
+  },
+  {
+    "name": "燃气",
+    "route": "/industry/燃气/燃气/",
+    "companies": [
+      {
+        "name": "华润燃气",
+        "route": "/industry/燃气/华润燃气/"
+      }
+    ]
+  },
+  {
+    "name": "物业",
+    "route": "/industry/物业/物业/",
+    "companies": [
+      {
+        "name": "保利物业",
+        "route": "/industry/物业/保利物业/"
+      }
+    ]
+  },
+  {
+    "name": "物流",
+    "route": "/industry/物流/物流/",
+    "companies": [
+      {
+        "name": "顺丰控股",
+        "route": "/industry/物流/顺丰控股/"
+      }
+    ]
+  },
+  {
+    "name": "电信服务",
+    "route": "/industry/电信服务/电信服务/",
+    "companies": [
+      {
+        "name": "中国电信",
+        "route": "/industry/电信服务/中国电信/"
+      },
+      {
+        "name": "中国移动",
+        "route": "/industry/电信服务/中国移动/"
+      },
+      {
+        "name": "中国联通",
+        "route": "/industry/电信服务/中国联通/"
+      },
+      {
+        "name": "中国铁塔",
+        "route": "/industry/电信服务/中国铁塔/"
+      }
+    ]
+  },
+  {
+    "name": "电力",
+    "route": "/industry/电力/电力/",
+    "companies": [
+      {
+        "name": "华能水电",
+        "route": "/industry/电力/华能水电/"
+      },
+      {
+        "name": "国投电力",
+        "route": "/industry/电力/国投电力/"
+      },
+      {
+        "name": "国电南瑞",
+        "route": "/industry/电力/国电南瑞/"
+      },
+      {
+        "name": "长江电力",
+        "route": "/industry/电力/长江电力/"
+      }
+    ]
+  },
+  {
+    "name": "白酒",
+    "route": "/industry/白酒/白酒/",
+    "companies": [
+      {
+        "name": "五粮液",
+        "route": "/industry/白酒/五粮液/"
+      },
+      {
+        "name": "古井贡",
+        "route": "/industry/白酒/古井贡/"
+      },
+      {
+        "name": "山西汾酒",
+        "route": "/industry/白酒/山西汾酒/"
+      },
+      {
+        "name": "泸州老窖",
+        "route": "/industry/白酒/泸州老窖/"
+      },
+      {
+        "name": "贵州茅台",
+        "route": "/industry/白酒/贵州茅台/"
+      }
+    ]
+  },
+  {
+    "name": "石油石化",
+    "route": "/industry/石油石化/石油石化/",
+    "companies": [
+      {
+        "name": "中国海油",
+        "route": "/industry/石油石化/中国海油/"
+      },
+      {
+        "name": "中国石化",
+        "route": "/industry/石油石化/中国石化/"
+      },
+      {
+        "name": "中国石油",
+        "route": "/industry/石油石化/中国石油/"
+      }
+    ]
+  },
+  {
+    "name": "纺织服装",
+    "route": "/industry/纺织服装/纺织服装/",
+    "companies": [
+      {
+        "name": "安踏体育",
+        "route": "/industry/纺织服装/安踏体育/"
+      },
+      {
+        "name": "申洲国际",
+        "route": "/industry/纺织服装/申洲国际/"
+      }
+    ]
+  },
+  {
+    "name": "肥料",
+    "route": "/industry/肥料/肥料/",
+    "companies": [
+      {
+        "name": "云天化",
+        "route": "/industry/肥料/云天化/"
+      }
+    ]
+  },
+  {
+    "name": "航运",
+    "route": "/industry/航运/航运/",
+    "companies": [
+      {
+        "name": "中远海控",
+        "route": "/industry/航运/中远海控/"
+      }
+    ]
+  },
+  {
+    "name": "茶饮",
+    "route": "/industry/茶饮/茶饮/",
+    "companies": [
+      {
+        "name": "东鹏饮料",
+        "route": "/industry/茶饮/东鹏饮料/"
+      }
+    ]
+  },
+  {
+    "name": "金融",
+    "route": "/industry/金融/金融/",
+    "companies": [
+      {
+        "name": "港交所",
+        "route": "/industry/金融/港交所/"
+      }
+    ]
+  },
+  {
+    "name": "银行",
+    "route": "/industry/银行/银行/",
+    "companies": []
+  },
+  {
+    "name": "零售",
+    "route": "/industry/零售/零售/",
+    "companies": [
+      {
+        "name": "小商品城",
+        "route": "/industry/零售/小商品城/"
+      }
+    ]
+  },
+  {
+    "name": "饰品",
+    "route": "/industry/饰品/饰品/",
+    "companies": [
+      {
+        "name": "老凤祥",
+        "route": "/industry/饰品/老凤祥/"
+      }
+    ]
+  }
+]

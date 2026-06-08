@@ -1,7 +1,7 @@
 {
   "scripts": {
-    "docs:dev": "cross-env NODE_ENV=development vitepress dev",
-    "docs:build": "cross-env NODE_ENV=production vitepress build",
+    "docs:dev": "tsx .vitepress/generate-industry-tree.ts && cross-env NODE_ENV=development vitepress dev",
+    "docs:build": "tsx .vitepress/generate-industry-tree.ts && cross-env NODE_ENV=production vitepress build",
     "docs:preview": "vitepress preview",
     "fetch-data": "tsx fetch-data/start-fetch.ts",
     "handle-data": "tsx fetch-data/handle-stock-data.ts",

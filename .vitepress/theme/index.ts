@@ -21,6 +21,7 @@ import ValuationEvaluation from "../components/value-evaluation/value-evaluation
 import RotationModel from "../components/rotation-model/rotation-model.vue";
 import Step from "../components/step/step.vue";
 import StockPool from "../components/stock-pool/stock-pool.vue";
+import IndustryOverview from "../components/industry-overview/industry-overview.vue";
 import "./custom.scss";
 import "./shared.scss";
 
@@ -68,5 +69,8 @@ export default define<Theme>({
     app.component("StockPool", StockPool);
 
     app.component("Step", Step);
+
+    // 行业总览
+    app.component("IndustryOverview", IndustryOverview);
   },
 });
