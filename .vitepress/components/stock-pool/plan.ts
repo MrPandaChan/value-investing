@@ -104,8 +104,8 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/company/advertisement/fenzhong",
     dividend: [
-      { value: 0.065, quantity: 2000 },
-      { value: 0.07, quantity: 2000 },
+      { value: 0.065, quantity: 1600 },
+      { value: 0.07, quantity: 2200 },
       { value: 0.075, quantity: 3000 },
     ],
   },
