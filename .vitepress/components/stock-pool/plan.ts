@@ -77,8 +77,9 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/company/chinese-medicine/donge",
     price: [
-      { value: 48, quantity: 400 },
-      { value: 45, quantity: 600 },
+      { value: 48, quantity: 200 },
+      { value: 46.5, quantity: 300 },
+      { value: 45, quantity: 500 },
     ],
   },
   {
@@ -339,8 +340,12 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     price: [
       {
-        value: 29.5,
-        quantity: 100,
+        value: 27.5,
+        quantity: 200,
+      },
+      {
+        value: 26.5,
+        quantity: 400,
       },
     ],
   },
@@ -609,11 +614,31 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     dividendPerYear: 1,
     url: "/value-investing/company/other/small-commodity-market",
-    remark: "预估6月中旬分红",
+    remark:
+      "预估6月中旬分红，25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
     dividend: [
       {
         value: 0.046,
         quantity: 800,
+      },
+      {
+        value: 0.049,
+        quantity: 1000,
+      },
+    ],
+  },
+  // 中国通信服务
+  {
+    type: PlanType.DIVIDEND,
+    code: "00552",
+    maxPositionRatio: 0.05,
+    dividendAdjust: 0.8,
+    dividendPerYear: 1,
+    url: "/value-investing/company/other/small-commodity-market",
+    dividend: [
+      {
+        value: 0.06,
+        quantity: 2000,
       },
     ],
   },
