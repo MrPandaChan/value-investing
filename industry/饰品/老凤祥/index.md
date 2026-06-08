@@ -61,5 +61,3 @@
 <ReturnTable code="600612" />
 
 <TurnoverRateTable code="600612" />
-
-## 零散思考
