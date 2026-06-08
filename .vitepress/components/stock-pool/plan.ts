@@ -75,6 +75,7 @@ const planList: PlanItem[] = [
     code: "000423",
     dividendPerYear: 2,
     maxPositionRatio: 0.05,
+    remark: "几乎100%分红率",
     url: "/value-investing/company/chinese-medicine/donge",
     price: [
       { value: 48, quantity: 200 },
