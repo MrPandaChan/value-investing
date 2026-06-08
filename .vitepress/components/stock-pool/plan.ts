@@ -45,8 +45,8 @@ const planList: PlanItem[] = [
     url: "/value-investing/company/internet/tencent",
     price: [
       { value: 420, quantity: 100 },
-      { value: 400, quantity: 100 },
-      { value: 380, quantity: 100 },
+      { value: 400, quantity: 200 },
+      { value: 380, quantity: 200 },
     ],
   },
   {
@@ -75,6 +75,7 @@ const planList: PlanItem[] = [
     code: "000423",
     dividendPerYear: 2,
     maxPositionRatio: 0.05,
+    remark: "几乎100%分红率",
     url: "/value-investing/company/chinese-medicine/donge",
     price: [
       { value: 48, quantity: 100 },
@@ -378,15 +379,15 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 11.82,
-        quantity: 500,
-      },
-      {
-        value: 11.32,
         quantity: 600,
       },
       {
+        value: 11.32,
+        quantity: 800,
+      },
+      {
         value: 10.82,
-        quantity: 700,
+        quantity: 1000,
       },
     ],
   },
@@ -621,7 +622,8 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     dividendPerYear: 1,
     url: "/value-investing/company/other/small-commodity-market",
-    remark: "预估6月中旬分红",
+    remark:
+      "预估6月中旬分红，25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
     dividend: [
       {
         value: 0.046,
@@ -630,6 +632,21 @@ const planList: PlanItem[] = [
       {
         value: 0.049,
         quantity: 400,
+      },
+    ],
+  },
+  // 中国通信服务
+  {
+    type: PlanType.DIVIDEND,
+    code: "00552",
+    maxPositionRatio: 0.05,
+    dividendAdjust: 0.8,
+    dividendPerYear: 1,
+    url: "/value-investing/company/other/small-commodity-market",
+    dividend: [
+      {
+        value: 0.06,
+        quantity: 2000,
       },
     ],
   },
