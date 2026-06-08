@@ -24,7 +24,7 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
           class="hero-btn"
         >
           <span class="hero-btn-icon">→</span>
-          查看股票池
+          查看投资计划
         </a>
       </nav>
     </section>
@@ -39,7 +39,6 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
       >
         <div class="card-top">
           <h3 class="card-name">{{ ind.name }}</h3>
-          <span class="card-count">{{ ind.companies.length }}</span>
         </div>
 
         <div v-if="ind.companies.length" class="card-companies">
@@ -55,9 +54,8 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
 
 <style scoped>
 .root {
-  max-width: 1800px;
   margin: 0 auto;
-  padding: 48px 24px 80px;
+  padding: 48px 48px 80px;
 }
 
 .hero {
@@ -131,8 +129,8 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
   transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
 }
 .card:hover {
-  border-color: var(--vp-c-brand-1);
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+  border-color: #3b82f6;
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
   transform: translateY(-2px);
 }
 .card-top {
@@ -146,16 +144,6 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
   font-weight: 600;
   color: var(--vp-c-brand-1);
   margin: 0;
-}
-.card-count {
-  font-size: 12px;
-  font-weight: 600;
-  color: var(--vp-c-text-2);
-  background: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-border);
-  border-radius: 20px;
-  padding: 2px 10px;
-  flex-shrink: 0;
 }
 .card-companies {
   display: flex;
@@ -171,8 +159,9 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
   border: 1px solid transparent;
   transition: all 0.15s;
 }
-.card:hover .card-tag {
-  border-color: var(--vp-c-border);
+.card-tag:hover {
+  border-color: #3b82f6;
+  color: var(--vp-c-text-1);
 }
 .card-note {
   font-size: 13px;

@@ -10,8 +10,8 @@
  *     石油石化/
  *       石油石化/index.md      ← 行业总览
  *       中国海油/index.md      ← 公司
- *       中国海油/notes/        ← 笔记（扁平铺开）
- *       中国海油/tracking/     ← 跟踪（扁平铺开）
+ *       中国海油/notes/        ← 笔记（collapsed 分组）
+ *       中国海油/tracking/     ← 跟踪（collapsed 分组）
  */
 
 import { readdirSync, existsSync } from "node:fs";
@@ -22,6 +22,7 @@ type SidebarItem = {
   text: string;
   link?: string;
   items?: SidebarItem[];
+  collapsed?: boolean;
 };
 
 type SidebarConfig = Record<string, SidebarItem[]>;
@@ -36,9 +37,31 @@ const MODULE_LABELS: Record<string, string> = {
   moat: "护城河",
   financials: "财务分析",
   "8d-analysis": "八维分析",
+  insights: "insights",
   valuation: "估值",
   risk: "风险",
 };
+
+/** 公司侧边栏排序权重（数字越小越靠前） */
+const ITEM_ORDER: Record<string, number> = {
+  "公司总览": 0,
+  "商业模式": 1,
+  "财务分析": 2,
+  "八维分析": 3,
+  "insights": 4,
+  "估值": 5,
+  "企业跟踪": 6,
+  "笔记": 7,
+};
+
+function getSortKey(item: SidebarItem): number {
+  // 笔记：以 "笔记：" 开头
+  if (item.text?.startsWith("笔记：")) return ITEM_ORDER["笔记"] ?? 7;
+  // 按文本精确匹配
+  if (item.text && item.text in ITEM_ORDER) return ITEM_ORDER[item.text];
+  // 兜底排最后
+  return 99;
+}
 
 function getModuleName(filename: string): string {
   return filename.replace(/\.md$/, "");
@@ -57,7 +80,7 @@ function getDisplayName(name: string): string {
 function buildCompanyGroup(
   industryName: string,
   companyName: string,
-  companyDir: string
+  companyDir: string,
 ): SidebarItem {
   const prefix = `/industry/${industryName}/${companyName}`;
   const items: SidebarItem[] = [{ text: "公司总览", link: `${prefix}/index` }];
@@ -68,14 +91,29 @@ function buildCompanyGroup(
     const fullPath = join(companyDir, entry.name);
 
     if (entry.isDirectory()) {
-      if (entry.name === "tracking" || entry.name === "notes") {
+      if (entry.name === "tracking") {
+        // tracking 作为可折叠分组
         const subFiles = readdirSync(fullPath).filter((f) => f.endsWith(".md"));
-        const label = entry.name === "tracking" ? "跟踪" : "笔记";
-
-        for (const f of subFiles) {
+        if (subFiles.length > 0) {
           items.push({
-            text: `${label}：${getDisplayName(getModuleName(f))}`,
-            link: `${prefix}/${entry.name}/${getModuleName(f)}`,
+            text: "企业跟踪",
+            collapsed: true,
+            items: subFiles.map((f) => ({
+              text: getDisplayName(getModuleName(f)),
+              link: `${prefix}/tracking/${getModuleName(f)}`,
+            })),
+          });
+        }
+      } else if (entry.name === "notes") {
+        const subFiles = readdirSync(fullPath).filter((f) => f.endsWith(".md"));
+        if (subFiles.length > 0) {
+          items.push({
+            text: "笔记",
+            collapsed: true,
+            items: subFiles.map((f) => ({
+              text: getDisplayName(getModuleName(f)),
+              link: `${prefix}/notes/${getModuleName(f)}`,
+            })),
           });
         }
       }
@@ -91,6 +129,9 @@ function buildCompanyGroup(
     }
   }
 
+  // 按指定顺序排序
+  items.sort((a, b) => getSortKey(a) - getSortKey(b));
+
   return { text: companyName, items };
 }
 
@@ -99,7 +140,7 @@ function buildCompanyGroup(
  */
 function buildIndustryOverviewGroup(
   industryDir: string,
-  industryName: string
+  industryName: string,
 ): SidebarItem | null {
   const selfDir = join(industryDir, industryName);
   if (!existsSync(join(selfDir, "index.md"))) return null;
@@ -128,7 +169,7 @@ function buildIndustryOverviewGroup(
  */
 function scanIndustry(
   industryDir: string,
-  industryName: string
+  industryName: string,
 ): SidebarItem[] | null {
   const groups: SidebarItem[] = [];
 

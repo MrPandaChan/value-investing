@@ -31,7 +31,7 @@ export default defineConfig({
         link: "/value-investing/value-investing/information",
       },
       { text: "行业与企业", link: "/industry-overview" },
-      { text: "股票池", link: "/value-investing/frameworks/stock-pool" },
+      { text: "投资计划", link: "/value-investing/frameworks/stock-pool" },
     ],
     sidebar: {
       "/value-investing/": [
@@ -41,6 +41,15 @@ export default defineConfig({
             {
               text: "TODO",
               link: "/value-investing/todo/todo",
+            },
+          ],
+        },
+        {
+          text: "投资计划",
+          items: [
+            {
+              text: "股票池",
+              link: "/value-investing/frameworks/stock-pool",
             },
           ],
         },
