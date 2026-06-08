@@ -612,10 +612,6 @@ const planList: PlanItem[] = [
     remark: "预估6月中旬分红",
     dividend: [
       {
-        value: 0.043,
-        quantity: 600,
-      },
-      {
         value: 0.046,
         quantity: 800,
       },
