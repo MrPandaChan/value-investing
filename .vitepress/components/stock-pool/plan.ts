@@ -75,7 +75,7 @@ const planList: PlanItem[] = [
     code: "000423",
     dividendPerYear: 2,
     maxPositionRatio: 0.05,
-    remark: "几乎100%分红率",
+    remark: "几乎100%分红率，一般6月/9月分红",
     url: "/value-investing/industry/中药/东阿阿胶/",
     price: [
       { value: 48, quantity: 200 },
