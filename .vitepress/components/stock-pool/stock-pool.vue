@@ -58,6 +58,10 @@ const groupMetaMap = ref<Record<string, GroupMeta>>({});
 const customPrice = reactive<Record<string, number>>({});
 const customDividend = reactive<Record<string, number>>({});
 const customPE = reactive<Record<string, number>>({});
+// 编辑缓冲：input 绑定到这些 buffer，仅 blur 时同步到 custom*
+const editPrice = reactive<Record<string, number>>({});
+const editDividend = reactive<Record<string, number>>({});
+const editPE = reactive<Record<string, number>>({});
 const exchangeRate = ref(1.1555); // 港币兑人民币汇率
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
 const changeSortOrder = ref<"asc" | "desc" | null>(null); // null=默认, "desc"=按涨幅, "asc"=按跌幅
@@ -227,6 +231,7 @@ function loadFromStorage(): boolean {
     Object.assign(customPrice, data.customPrice || {});
     Object.assign(customDividend, data.customDividend || {});
     Object.assign(customPE, data.customPE || {});
+    syncAllEdits();
     return true;
   } catch {
     // ignore
@@ -409,6 +414,7 @@ async function init() {
   // 提取指数数据
   fetchIndices();
 
+  syncAllEdits();
   saveToStorage();
 }
 
@@ -493,12 +499,27 @@ async function refresh() {
   // 更新指数数据
   fetchIndices();
 
+  syncAllEdits();
   saveToStorage();
 }
 
 function formatPrice(price: number, code: string): string {
   const prefix = getCurrencyPrefix(code);
   return `${prefix}${formatNum(price, 2).toFixed(2)}`;
+}
+
+// 将 custom* 的值同步到编辑缓冲区
+function syncEditFromCustom(code: string) {
+  if (customPrice[code] !== undefined) editPrice[code] = customPrice[code];
+  if (customDividend[code] !== undefined) editDividend[code] = customDividend[code];
+  if (customPE[code] !== undefined) editPE[code] = customPE[code];
+}
+
+// 同步所有 code 的编辑缓冲区
+function syncAllEdits() {
+  for (const code of Object.keys(customPrice)) {
+    syncEditFromCustom(code);
+  }
 }
 
 function onPriceChange(code: string) {
@@ -510,6 +531,12 @@ function onPriceChange(code: string) {
   }
 }
 
+function onPriceBlur(code: string) {
+  customPrice[code] = editPrice[code];
+  onPriceChange(code);
+  syncEditFromCustom(code);
+}
+
 function onDividendChange(code: string) {
   const meta = groupMetaMap.value[code];
   const dividend = customDividend[code];
@@ -519,6 +546,12 @@ function onDividendChange(code: string) {
   }
 }
 
+function onDividendBlur(code: string) {
+  customDividend[code] = editDividend[code];
+  onDividendChange(code);
+  syncEditFromCustom(code);
+}
+
 function onPEChange(code: string) {
   const meta = groupMetaMap.value[code];
   const pe = customPE[code];
@@ -526,6 +559,12 @@ function onPEChange(code: string) {
     customPrice[code] = meta.realPrice * (pe / meta.pricePE);
     customDividend[code] = meta.effectiveDps / customPrice[code];
   }
+}
+
+function onPEBlur(code: string) {
+  customPE[code] = editPE[code];
+  onPEChange(code);
+  syncEditFromCustom(code);
 }
 
 function toggleChangeSort() {
@@ -742,12 +781,12 @@ const mergedTableData = computed(() => {
         >
           <el-input-number
             v-if="row.isLastRow"
-            v-model="customPrice[row.code]"
+            v-model="editPrice[row.code]"
             :precision="2"
             :controls="false"
             size="small"
             class="plan-price-input"
-            @change="onPriceChange(row.code)"
+            @blur="onPriceBlur(row.code)"
           />
           <span v-else>{{ formatPrice(row.price, row.code) }}</span>
         </td>
@@ -760,12 +799,12 @@ const mergedTableData = computed(() => {
         >
           <el-input-number
             v-if="row.isLastRow"
-            v-model="customDividend[row.code]"
+            v-model="editDividend[row.code]"
             :precision="4"
             :controls="false"
             size="small"
             class="plan-dividend-input"
-            @change="onDividendChange(row.code)"
+            @blur="onDividendBlur(row.code)"
           />
           <span v-else>{{ formatPercent(row.dividend * 100) }}</span>
         </td>
@@ -778,12 +817,12 @@ const mergedTableData = computed(() => {
         >
           <el-input-number
             v-if="row.isLastRow"
-            v-model="customPE[row.code]"
+            v-model="editPE[row.code]"
             :precision="2"
             :controls="false"
             size="small"
             class="plan-pe-input"
-            @change="onPEChange(row.code)"
+            @blur="onPEBlur(row.code)"
           />
           <span v-else>{{ formatNum(row.pe, 2).toFixed(2) }}</span>
         </td>
