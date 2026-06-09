@@ -12,7 +12,7 @@ hero:
       link: /industry-overview
     - theme: alt
       text: 待办清单
-      link: /value-investing/getting-started/todo
+      link: /value-investing/入门与计划/TODO
 
 features:
   - title: 投研步骤

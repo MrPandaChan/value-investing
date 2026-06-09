@@ -126,7 +126,10 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
   border-radius: 10px;
   padding: 20px 22px 18px;
   text-decoration: none;
-  transition: border-color 0.2s, box-shadow 0.2s, transform 0.2s;
+  transition:
+    border-color 0.2s,
+    box-shadow 0.2s,
+    transform 0.2s;
 }
 .card:hover {
   border-color: #3b82f6;
