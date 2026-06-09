@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import { generateSidebar } from "./generate-sidebar.js";
+import { generateSidebar, getIndustryTree } from "./generate-sidebar.js";
 import { generateValueSidebar } from "./generate-value-sidebar.js";
 
 const isDev = process.env.NODE_ENV !== "production";
@@ -10,6 +10,21 @@ const valueSidebar = generateValueSidebar();
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
+  vite: {
+    plugins: [
+      {
+        name: "virtual-industry-tree",
+        resolveId(id) {
+          if (id === "virtual:industry-tree") return "\0virtual:industry-tree";
+        },
+        load(id) {
+          if (id === "\0virtual:industry-tree") {
+            return `export default ${JSON.stringify(getIndustryTree())}`;
+          }
+        },
+      },
+    ],
+  },
   // 自定义CSS变量，调整内容区域宽度
   appearance: true,
   lastUpdated: true,

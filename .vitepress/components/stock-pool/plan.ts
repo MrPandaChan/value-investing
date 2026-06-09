@@ -341,12 +341,8 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     price: [
       {
-        value: 27.5,
-        quantity: 200,
-      },
-      {
         value: 26.5,
-        quantity: 400,
+        quantity: 500,
       },
     ],
   },
@@ -618,10 +614,6 @@ const planList: PlanItem[] = [
     remark:
       "预估6月中旬分红，25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
     dividend: [
-      {
-        value: 0.046,
-        quantity: 800,
-      },
       {
         value: 0.049,
         quantity: 1000,

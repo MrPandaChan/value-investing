@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { withBase } from "vitepress";
-import tree from "./industry-tree.json";
+import tree from "virtual:industry-tree";
 
 const industries = tree as {
   name: string;
