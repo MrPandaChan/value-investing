@@ -8,7 +8,7 @@
 
 [估值的逻辑（2026.01.26 微疯侠与暴食君）](https://mp.weixin.qq.com/s/48KjJHCgZRWiDg7x5cY1sg)
 
-详情跳转[回报率-估值的逻辑](../value-investing/return-on-investment.md#估值的逻辑)
+详情跳转[回报率-估值的逻辑](../trading-risk/return-on-investment.md#估值的逻辑)
 
 [从估值地心引力看伟大企业的周期性低估（2026.05.27 第25号宇宙）](https://mp.weixin.qq.com/s/Cg3H-Ut62IOnryzkTrERrg)
 

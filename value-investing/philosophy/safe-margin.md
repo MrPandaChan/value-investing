@@ -4,4 +4,4 @@
 
 ## 仓位的动态演化
 
-[仓位的动态演化](./portfolio.md#仓位的动态演化)
+[仓位的动态演化](../trading-risk/portfolio.md#仓位的动态演化)
