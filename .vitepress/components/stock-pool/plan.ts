@@ -92,9 +92,9 @@ const planList: PlanItem[] = [
     remark: "预估6月中分红",
     url: "/value-investing/industry/中药/羚锐制药/",
     price: [
-      { value: 21.1, quantity: 500 },
-      { value: 20.1, quantity: 700 },
-      { value: 19.1, quantity: 900 },
+      { value: 21.1, quantity: 400 },
+      { value: 20.1, quantity: 600 },
+      { value: 19.1, quantity: 800 },
     ],
   },
   {
@@ -491,8 +491,8 @@ const planList: PlanItem[] = [
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
     dividend: [
       {
-        value: 0.085,
-        quantity: 200,
+        value: 0.09,
+        quantity: 100,
       },
     ],
   },
