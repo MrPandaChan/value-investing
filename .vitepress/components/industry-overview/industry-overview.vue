@@ -31,23 +31,27 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
 
     <!-- Grid -->
     <section class="grid">
-      <a
+      <div
         v-for="ind in industries"
         :key="ind.name"
-        :href="withBase(ind.route)"
         class="card"
       >
         <div class="card-top">
-          <h3 class="card-name">{{ ind.name }}</h3>
+          <a :href="withBase(ind.route)" class="card-name">{{ ind.name }}</a>
         </div>
 
         <div v-if="ind.companies.length" class="card-companies">
-          <span v-for="c in ind.companies" :key="c.route" class="card-tag">
+          <a
+            v-for="c in ind.companies"
+            :key="c.route"
+            :href="withBase(c.route)"
+            class="card-tag"
+          >
             {{ c.name }}
-          </span>
+          </a>
         </div>
         <div v-else class="card-note">行业研究笔记</div>
-      </a>
+      </div>
     </section>
   </div>
 </template>
@@ -120,12 +124,10 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
 }
 
 .card {
-  display: block;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-border);
   border-radius: 10px;
   padding: 20px 22px 18px;
-  text-decoration: none;
   transition:
     border-color 0.2s,
     box-shadow 0.2s,
@@ -147,6 +149,11 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
   font-weight: 600;
   color: var(--vp-c-brand-1);
   margin: 0;
+  text-decoration: none;
+  transition: opacity 0.2s;
+}
+.card-name:hover {
+  opacity: 0.8;
 }
 .card-companies {
   display: flex;
@@ -160,11 +167,13 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
   border-radius: 5px;
   padding: 3px 9px;
   border: 1px solid transparent;
+  text-decoration: none;
   transition: all 0.15s;
 }
 .card-tag:hover {
   border-color: #3b82f6;
   color: var(--vp-c-text-1);
+  cursor: pointer;
 }
 .card-note {
   font-size: 13px;
