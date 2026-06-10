@@ -93,8 +93,8 @@ const planList: PlanItem[] = [
     url: "/value-investing/industry/中药/羚锐制药/",
     price: [
       { value: 21.1, quantity: 200 },
-      { value: 20.1, quantity: 300 },
-      { value: 19.1, quantity: 300 },
+      { value: 20.1, quantity: 200 },
+      { value: 19.1, quantity: 200 },
     ],
   },
   {
@@ -340,11 +340,7 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     price: [
       {
-        value: 26.5,
-        quantity: 200,
-      },
-      {
-        value: 25.5,
+        value: 26.61,
         quantity: 200,
       },
     ],

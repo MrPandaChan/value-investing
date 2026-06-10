@@ -38,20 +38,20 @@ const MODULE_LABELS: Record<string, string> = {
   financials: "财务分析",
   "8d-analysis": "八维分析",
   insights: "insights",
-  valuation: "估值",
+  valuation: "估值和结论",
   risk: "风险",
 };
 
 /** 公司侧边栏排序权重（数字越小越靠前） */
 const ITEM_ORDER: Record<string, number> = {
-  "公司总览": 0,
-  "商业模式": 1,
-  "财务分析": 2,
-  "八维分析": 3,
-  "insights": 4,
-  "估值": 5,
-  "企业跟踪": 6,
-  "笔记": 7,
+  公司总览: 0,
+  商业模式: 1,
+  财务分析: 2,
+  八维分析: 3,
+  insights: 4,
+  估值: 5,
+  企业跟踪: 6,
+  笔记: 7,
 };
 
 function getSortKey(item: SidebarItem): number {
