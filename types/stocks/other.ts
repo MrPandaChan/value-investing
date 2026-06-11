@@ -533,6 +533,17 @@ const otherStockData: StockItem[] = [
       price: 13.98,
     },
   },
+  {
+    type: StockType.A,
+    name: "中创智领",
+    code: "601717",
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.08,
+    },
+  },
 ];
 
 export { otherStockData };
