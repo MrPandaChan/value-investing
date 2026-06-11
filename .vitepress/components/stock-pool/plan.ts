@@ -92,9 +92,8 @@ const planList: PlanItem[] = [
     remark: "预估6月中分红",
     url: "/value-investing/industry/中药/羚锐制药/",
     price: [
-      { value: 21.1, quantity: 200 },
       { value: 20.1, quantity: 200 },
-      { value: 19.1, quantity: 200 },
+      { value: 19.1, quantity: 300 },
     ],
   },
   {
@@ -259,7 +258,11 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.058,
-        quantity: 1000,
+        quantity: 2000,
+      },
+      {
+        value: 0.063,
+        quantity: 3000,
       },
     ],
   },
@@ -585,7 +588,7 @@ const planList: PlanItem[] = [
         quantity: 800,
       },
       {
-        value: 0.65,
+        value: 0.065,
         quantity: 1200,
       },
     ],
@@ -599,11 +602,11 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     dividend: [
       {
-        value: 0.055,
+        value: 0.054,
         quantity: 100,
       },
       {
-        value: 0.06,
+        value: 0.058,
         quantity: 200,
       },
     ],
@@ -664,10 +667,6 @@ const planList: PlanItem[] = [
     code: "513050",
     maxPositionRatio: 0.05,
     price: [
-      {
-        value: 1.085,
-        quantity: 4600,
-      },
       {
         value: 0.998,
         quantity: 6000,
