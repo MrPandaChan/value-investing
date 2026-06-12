@@ -346,10 +346,14 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 26.61,
-        quantity: 700,
+        quantity: 500,
       },
       {
         value: 25.61,
+        quantity: 800,
+      },
+      {
+        value: 24.61,
         quantity: 1000,
       },
     ],
