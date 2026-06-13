@@ -34,6 +34,7 @@ const INDUSTRY_DIR = join(ROOT, "industry");
 const MODULE_LABELS: Record<string, string> = {
   index: "公司总览",
   "business-model": "商业模式",
+  "ai-report": "AI分析报告",
   moat: "护城河",
   financials: "财务分析",
   "8d-analysis": "八维分析",
@@ -48,10 +49,11 @@ const ITEM_ORDER: Record<string, number> = {
   商业模式: 1,
   财务分析: 2,
   八维分析: 3,
-  insights: 4,
-  估值: 5,
-  企业跟踪: 6,
-  笔记: 7,
+  AI分析报告: 4,
+  insights: 5,
+  估值和结论: 6,
+  企业跟踪: 7,
+  笔记: 8,
 };
 
 function getSortKey(item: SidebarItem): number {
