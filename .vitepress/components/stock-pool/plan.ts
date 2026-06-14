@@ -358,14 +358,6 @@ const planList: PlanItem[] = [
         value: 24.61,
         quantity: 200,
       },
-      {
-        value: 23.61,
-        quantity: 200,
-      },
-      {
-        value: 22.61,
-        quantity: 200,
-      },
     ],
   },
   // 保利物业
