@@ -505,10 +505,6 @@ const planList: PlanItem[] = [
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
     price: [
       {
-        value: 28,
-        quantity: 200,
-      },
-      {
         value: 26,
         quantity: 300,
       },
