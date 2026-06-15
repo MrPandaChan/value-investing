@@ -79,14 +79,14 @@ const INDEX_CODES: { code: string; label: string }[] = [
   { code: "0.399001", label: "深证成指" },
   { code: "100.HSI", label: "恒生指数" },
   { code: "124.HSTECH", label: "恒生科技指数" },
+  { code: "1.000922", label: "中证红利" },
+  { code: "0.399006", label: "创业板指" },
+  { code: "1.000688", label: "科创50" },
   { code: "1.000016", label: "上证50" },
   { code: "0.399850", label: "深证50" },
   { code: "1.000300", label: "沪深300" },
   { code: "1.000905", label: "中证500" },
   { code: "1.000852", label: "中证1000" },
-  { code: "1.000922", label: "中证红利" },
-  { code: "0.399006", label: "创业板指" },
-  { code: "1.000688", label: "科创50" },
   { code: "2.932000", label: "中证2000" },
 ];
 const indexList = ref<IndexData[]>([]);
@@ -511,7 +511,8 @@ function formatPrice(price: number, code: string): string {
 // 将 custom* 的值同步到编辑缓冲区
 function syncEditFromCustom(code: string) {
   if (customPrice[code] !== undefined) editPrice[code] = customPrice[code];
-  if (customDividend[code] !== undefined) editDividend[code] = customDividend[code];
+  if (customDividend[code] !== undefined)
+    editDividend[code] = customDividend[code];
   if (customPE[code] !== undefined) editPE[code] = customPE[code];
 }
 
