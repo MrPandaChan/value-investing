@@ -36,6 +36,17 @@ const nonferrousMetalsStockData: StockItem[] = [
       price: 8.6,
     },
   },
+  {
+    type: StockType.A,
+    name: "藏格矿业",
+    code: "000408",
+    level: StockLevel.CORE,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.05,
+    },
+  },
 ];
 
 export { nonferrousMetalsStockData };
