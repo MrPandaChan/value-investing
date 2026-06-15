@@ -74,23 +74,44 @@ interface IndexData {
   change: number;
 }
 
-const INDEX_CODES: { code: string; label: string }[] = [
+// 第一组：其他市场/主题指数
+const INDEX_CODES_GROUP1: { code: string; label: string }[] = [
   { code: "1.000985", label: "中证全指" },
   { code: "1.000001", label: "上证指数" },
   { code: "0.399001", label: "深证成指" },
   { code: "100.HSI", label: "恒生指数" },
   { code: "124.HSTECH", label: "恒生科技指数" },
+  { code: "1.000922", label: "中证红利" },
+  { code: "0.399006", label: "创业板指" },
+  { code: "1.000688", label: "科创50" },
+];
+
+// 第二组：宽基指数（上证50 → 中证2000）
+const INDEX_CODES_GROUP2: { code: string; label: string }[] = [
   { code: "1.000016", label: "上证50" },
   { code: "0.399850", label: "深证50" },
   { code: "1.000300", label: "沪深300" },
   { code: "1.000905", label: "中证500" },
   { code: "1.000852", label: "中证1000" },
-  { code: "1.000922", label: "中证红利" },
-  { code: "0.399006", label: "创业板指" },
-  { code: "1.000688", label: "科创50" },
   { code: "2.932000", label: "中证2000" },
 ];
+
+// 合并数组：供 fetchIndices 统一获取数据
+const INDEX_CODES: { code: string; label: string }[] = [
+  ...INDEX_CODES_GROUP1,
+  ...INDEX_CODES_GROUP2,
+];
 const indexList = ref<IndexData[]>([]);
+
+// 从 indexList 中按组拆分，用 label 匹配（因 fetchIndices 按 INDEX_CODES 顺序填充）
+const group1Labels = new Set(INDEX_CODES_GROUP1.map((v) => v.label));
+const group2Labels = new Set(INDEX_CODES_GROUP2.map((v) => v.label));
+const indexListGroup1 = computed(() =>
+  indexList.value.filter((v) => group1Labels.has(v.label))
+);
+const indexListGroup2 = computed(() =>
+  indexList.value.filter((v) => group2Labels.has(v.label))
+);
 
 async function fetchIndices() {
   const indexCodeList = INDEX_CODES.map((v) => v.code);
@@ -514,7 +535,8 @@ function formatPrice(price: number, code: string): string {
 // 将 custom* 的值同步到编辑缓冲区
 function syncEditFromCustom(code: string) {
   if (customPrice[code] !== undefined) editPrice[code] = customPrice[code];
-  if (customDividend[code] !== undefined) editDividend[code] = customDividend[code];
+  if (customDividend[code] !== undefined)
+    editDividend[code] = customDividend[code];
   if (customPE[code] !== undefined) editPE[code] = customPE[code];
 }
 
@@ -729,12 +751,22 @@ const mergedTableData = computed(() => {
   </div>
 
   <div v-if="indexList.length" class="index-bar">
-    <span v-for="idx in indexList" :key="idx.code" class="index-item">
-      {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span
-      >（<span :class="idx.change >= 0 ? 'red' : 'green'"
-        >{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2) }}%</span
-      >）
-    </span>
+    <div v-if="indexListGroup1.length" class="index-group">
+      <span v-for="idx in indexListGroup1" :key="idx.code" class="index-item">
+        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span
+        >（<span :class="idx.change >= 0 ? 'red' : 'green'"
+          >{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2) }}%</span
+        >）
+      </span>
+    </div>
+    <div v-if="indexListGroup2.length" class="index-group">
+      <span v-for="idx in indexListGroup2" :key="idx.code" class="index-item">
+        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span
+        >（<span :class="idx.change >= 0 ? 'red' : 'green'"
+          >{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2) }}%</span
+        >）
+      </span>
+    </div>
   </div>
 
   <table v-if="mergedTableData.length" class="stock-pool-table">
@@ -938,11 +970,21 @@ const mergedTableData = computed(() => {
 
 .index-bar {
   display: flex;
-  flex-wrap: wrap;
-  gap: 8px 16px;
+  flex-direction: column;
+  gap: 4px;
   margin-bottom: 8px;
   font-size: 13px;
   font-weight: bold;
+
+  .index-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 16px;
+
+    + .index-group {
+      margin-top: 4px;
+    }
+  }
 
   .index-item {
     white-space: nowrap;
