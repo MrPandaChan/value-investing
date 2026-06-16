@@ -56,7 +56,6 @@ const planList: PlanItem[] = [
     url: "/value-investing/industry/汽车/福耀玻璃/",
     maxPositionRatio: 0.1,
     price: [
-      { value: 51, quantity: 100 },
       { value: 49, quantity: 100 },
       { value: 47, quantity: 100 },
     ],
@@ -78,7 +77,6 @@ const planList: PlanItem[] = [
     remark: "几乎100%分红率，一般6月/9月分红",
     url: "/value-investing/industry/中药/东阿阿胶/",
     price: [
-      { value: 48, quantity: 100 },
       { value: 46.5, quantity: 100 },
       { value: 45, quantity: 100 },
     ],
@@ -130,7 +128,6 @@ const planList: PlanItem[] = [
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
     dividend: [
-      { value: 0.041, quantity: 500 },
       { value: 0.044, quantity: 1200 },
       { value: 0.047, quantity: 1400 },
     ],
@@ -203,15 +200,15 @@ const planList: PlanItem[] = [
   },
   // 格力电器
   {
-    type: PlanType.PRICE,
+    type: PlanType.DIVIDEND,
     code: "000651",
     maxPositionRatio: 0.05,
     url: "/value-investing/industry/家电/格力/",
     dividendPerYear: 2,
     remark: "预估8月分红",
-    price: [
+    dividend: [
       {
-        value: 37.3,
+        value: 0.085,
         quantity: 200,
       },
     ],
@@ -511,15 +508,15 @@ const planList: PlanItem[] = [
   },
   // 伊利股份
   {
-    type: PlanType.PRICE,
+    type: PlanType.DIVIDEND,
     code: "600887",
     maxPositionRatio: 0.05,
     url: "/value-investing/industry/乳制品/伊利股份/",
     remark: "护城河一般，不成长，纯吃息",
     dividendPerYear: 2,
-    price: [
+    dividend: [
       {
-        value: 24,
+        value: 0.057,
         quantity: 200,
       },
     ],
