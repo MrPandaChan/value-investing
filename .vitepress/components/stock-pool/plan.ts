@@ -103,9 +103,8 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/industry/传媒/分众传媒/",
     dividend: [
-      { value: 0.065, quantity: 700 },
       { value: 0.07, quantity: 900 },
-      { value: 0.075, quantity: 1100 },
+      { value: 0.075, quantity: 1000 },
     ],
   },
   // 青岛港H
@@ -505,8 +504,8 @@ const planList: PlanItem[] = [
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
     price: [
       {
-        value: 26,
-        quantity: 300,
+        value: 25,
+        quantity: 200,
       },
     ],
   },
