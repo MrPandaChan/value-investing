@@ -78,7 +78,7 @@ const planList: PlanItem[] = [
     remark: "几乎100%分红率，一般6月/9月分红",
     url: "/value-investing/industry/中药/东阿阿胶/",
     price: [
-      { value: 48, quantity: 200 },
+      { value: 48.1, quantity: 200 },
       { value: 46.5, quantity: 300 },
       { value: 45, quantity: 500 },
     ],
@@ -503,22 +503,26 @@ const planList: PlanItem[] = [
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
     dividend: [
       {
-        value: 0.09,
+        value: 0.095,
         quantity: 100,
+      },
+      {
+        value: 0.1,
+        quantity: 200,
       },
     ],
   },
   // 伊利股份
   {
-    type: PlanType.PRICE,
+    type: PlanType.DIVIDEND,
     code: "600887",
     maxPositionRatio: 0.05,
     url: "/value-investing/industry/乳制品/伊利股份/",
     remark: "护城河一般，不成长，纯吃息",
     dividendPerYear: 2,
-    price: [
+    dividend: [
       {
-        value: 24,
+        value: 0.057,
         quantity: 400,
       },
     ],
