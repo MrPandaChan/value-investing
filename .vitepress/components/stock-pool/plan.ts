@@ -78,9 +78,8 @@ const planList: PlanItem[] = [
     remark: "几乎100%分红率，一般6月/9月分红",
     url: "/value-investing/industry/中药/东阿阿胶/",
     price: [
-      { value: 48.1, quantity: 200 },
-      { value: 46.5, quantity: 300 },
-      { value: 45, quantity: 500 },
+      { value: 46, quantity: 300 },
+      { value: 44, quantity: 500 },
     ],
   },
   {
@@ -104,7 +103,6 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     url: "/value-investing/industry/传媒/分众传媒/",
     dividend: [
-      { value: 0.065, quantity: 1600 },
       { value: 0.07, quantity: 2200 },
       { value: 0.075, quantity: 3000 },
     ],
@@ -218,7 +216,7 @@ const planList: PlanItem[] = [
     remark: "预估8月分红",
     price: [
       {
-        value: 37,
+        value: 36,
         quantity: 200,
       },
     ],
@@ -232,11 +230,11 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     price: [
       {
-        value: 92,
+        value: 91,
         quantity: 100,
       },
       {
-        value: 90,
+        value: 88,
         quantity: 200,
       },
     ],
@@ -268,11 +266,11 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.058,
-        quantity: 2000,
+        quantity: 1000,
       },
       {
-        value: 0.063,
-        quantity: 3000,
+        value: 0.062,
+        quantity: 1500,
       },
     ],
   },
@@ -522,7 +520,7 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     dividend: [
       {
-        value: 0.057,
+        value: 0.058,
         quantity: 400,
       },
     ],
