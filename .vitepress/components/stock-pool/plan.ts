@@ -258,7 +258,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "00788",
-    maxPositionRatio: 0.05,
+    maxPositionRatio: 0.03,
     url: "/value-investing/industry/电信服务/中国铁塔/",
     dividendPerYear: 2,
     dividendAdjust: 0.8 * 1.3,
