@@ -609,12 +609,16 @@ const planList: PlanItem[] = [
     url: "/value-investing/industry/纺织服装/安踏体育/",
     price: [
       {
-        value: 70,
+        value: 68,
         quantity: 200,
       },
       {
-        value: 65,
+        value: 64,
         quantity: 400,
+      },
+      {
+        value: 61,
+        quantity: 600,
       },
     ],
   },
