@@ -389,11 +389,11 @@ const planList: PlanItem[] = [
         quantity: 600,
       },
       {
-        value: 11.32,
+        value: 11.22,
         quantity: 800,
       },
       {
-        value: 10.82,
+        value: 10.62,
         quantity: 1000,
       },
     ],
