@@ -222,7 +222,7 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     price: [
       {
-        value: 92,
+        value: 91,
         quantity: 100,
       },
     ],
@@ -295,8 +295,8 @@ const planList: PlanItem[] = [
     remark: "预估8月分红",
     price: [
       {
-        value: 13.25,
-        quantity: 600,
+        value: 13.1,
+        quantity: 500,
       },
       {
         value: 12.75,
@@ -385,16 +385,12 @@ const planList: PlanItem[] = [
     remark: "刚分红完，减去0.18",
     price: [
       {
-        value: 11.82,
+        value: 11.32,
         quantity: 300,
       },
       {
-        value: 11.32,
-        quantity: 400,
-      },
-      {
         value: 10.82,
-        quantity: 500,
+        quantity: 300,
       },
     ],
   },
