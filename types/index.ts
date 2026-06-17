@@ -211,6 +211,7 @@ export interface ReturnData {
   roe: number; // ROE
   roa: number; // ROA
   roic: number; // ROIC
+  roce: number; // ROCE
   netProfitMargin: number; // 销售净利率
   assetTurnover: number; // 资产周转率
   equityMultiplier: number; // 权益乘数

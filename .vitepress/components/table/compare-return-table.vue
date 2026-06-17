@@ -63,6 +63,11 @@ const columns: TableColumn[] = [
     formatter: (value: number) => (isNaN(value) ? "-" : value.toFixed(2) + "%"),
   },
   {
+    key: "roce",
+    title: "ROCE",
+    formatter: (value: number) => (isNaN(value) ? "-" : value.toFixed(2) + "%"),
+  },
+  {
     key: "netProfitMargin",
     title: "销售净利率",
     formatter: (value: number) => (isNaN(value) ? "-" : value.toFixed(2) + "%"),
