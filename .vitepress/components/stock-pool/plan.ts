@@ -86,10 +86,7 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.03,
     remark: "预估6月中分红",
     url: "/value-investing/industry/中药/羚锐制药/",
-    price: [
-      { value: 20.1, quantity: 200 },
-      { value: 19.1, quantity: 300 },
-    ],
+    price: [{ value: 19.1, quantity: 200 }],
   },
   {
     // 分众传媒
@@ -182,16 +179,16 @@ const planList: PlanItem[] = [
   },
   // 海尔智家
   {
-    type: PlanType.PRICE,
+    type: PlanType.DIVIDEND,
     code: "600690",
     maxPositionRatio: 0.08,
     url: "/value-investing/industry/家电/海尔/",
     dividendPerYear: 2,
     remark: "预估7月/8月分红",
-    price: [
+    dividend: [
       {
-        value: 19.5,
-        quantity: 500,
+        value: 0.06,
+        quantity: 400,
       },
     ],
   },
@@ -295,10 +292,6 @@ const planList: PlanItem[] = [
     dividendPerYear: 1,
     remark: "预估8月分红",
     price: [
-      {
-        value: 13.1,
-        quantity: 500,
-      },
       {
         value: 12.75,
         quantity: 700,
