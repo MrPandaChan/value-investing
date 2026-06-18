@@ -629,7 +629,7 @@ const planList: PlanItem[] = [
       "预估6月中旬分红，25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
     dividend: [
       {
-        value: 0.05,
+        value: 0.052,
         quantity: 400,
       },
     ],
