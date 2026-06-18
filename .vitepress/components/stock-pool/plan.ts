@@ -1,6 +1,7 @@
 export enum PlanType {
-  PRICE,
-  DIVIDEND,
+  EMPTY, // 没有计划
+  PRICE, // 按价格
+  DIVIDEND, // 按股息率
 }
 
 interface PlanEntry {
@@ -33,7 +34,11 @@ interface DividendPlan extends BasePlan {
   dividend: PlanEntry[];
 }
 
-type PlanItem = PricePlan | DividendPlan;
+interface EmptyPlan extends BasePlan {
+  type: PlanType.EMPTY;
+}
+
+type PlanItem = PricePlan | DividendPlan | EmptyPlan;
 
 const planList: PlanItem[] = [
   {

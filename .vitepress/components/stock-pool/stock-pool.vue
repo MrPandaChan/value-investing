@@ -135,26 +135,28 @@ const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
 
 // 基于 planList 结构自动生成指纹，planList 变更时自动失效旧缓存
 function computeFingerprint(): string {
-  const entries = planList.map((item) => {
-    const base = {
-      code: item.code,
-      type: item.type === PlanType.PRICE ? "PRICE" : "DIVIDEND",
-      dpy: item.dividendPerYear,
-      adj: item.dividendAdjust,
-      remark: item.remark,
-      mpr: item.maxPositionRatio,
-    };
-    if (item.type === PlanType.PRICE) {
+  const entries = planList
+    .filter((v) => v.type !== PlanType.EMPTY)
+    .map((item) => {
+      const base = {
+        code: item.code,
+        type: item.type === PlanType.PRICE ? "PRICE" : "DIVIDEND",
+        dpy: item.dividendPerYear,
+        adj: item.dividendAdjust,
+        remark: item.remark,
+        mpr: item.maxPositionRatio,
+      };
+      if (item.type === PlanType.PRICE) {
+        return {
+          ...base,
+          entries: item.price.map((e) => ({ v: e.value, q: e.quantity })),
+        };
+      }
       return {
         ...base,
-        entries: item.price.map((e) => ({ v: e.value, q: e.quantity })),
+        entries: item.dividend.map((e) => ({ v: e.value, q: e.quantity })),
       };
-    }
-    return {
-      ...base,
-      entries: item.dividend.map((e) => ({ v: e.value, q: e.quantity })),
-    };
-  });
+    });
   return JSON.stringify(entries);
 }
 
@@ -445,7 +447,9 @@ async function refresh() {
   if (!tableData.value.length) {
     return init();
   }
-  const stockCodes = planList.map((v) => v.code);
+  const stockCodes = planList
+    .filter((v) => v.type !== PlanType.EMPTY)
+    .map((v) => v.code);
   const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
 
   const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
@@ -486,7 +490,7 @@ async function refresh() {
 
     // 更新 tableData 中该 code 的行
     const rows = tableData.value.filter((r) => r.code === code);
-    rows.forEach((row, index) => {
+    rows.forEach((row: RowData, index) => {
       if (index === 0) {
         // 实时行
         row.price = price;
@@ -500,7 +504,7 @@ async function refresh() {
           row.price = planPrice;
           row.pe = pricePE * (planPrice / price);
           row.dividend = effectiveDps / planPrice;
-        } else {
+        } else if (item.type === PlanType.DIVIDEND) {
           const planDiv = item.dividend[index - 1].value;
           const targetPrice = effectiveDps / planDiv;
           row.price = targetPrice;
