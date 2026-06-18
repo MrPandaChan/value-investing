@@ -84,6 +84,17 @@ const chineseMedicineStockData: StockItem[] = [
       // backYearsNum: 10,
     },
   },
+  {
+    type: StockType.A,
+    name: "片仔癀",
+    code: "600436",
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.05,
+    },
+  },
 ];
 
 export { chineseMedicineStockData };
