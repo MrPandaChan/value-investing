@@ -76,10 +76,7 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     remark: "几乎100%分红率，一般6月/9月分红",
     url: "/value-investing/industry/中药/东阿阿胶/",
-    price: [
-      { value: 46, quantity: 100 },
-      { value: 44, quantity: 200 },
-    ],
+    price: [{ value: 44, quantity: 200 }],
   },
   {
     // 羚锐制药
@@ -585,10 +582,6 @@ const planList: PlanItem[] = [
     url: "/value-investing/industry/保险/中国平安/",
     dividendPerYear: 2,
     dividend: [
-      {
-        value: 0.054,
-        quantity: 100,
-      },
       {
         value: 0.058,
         quantity: 200,
