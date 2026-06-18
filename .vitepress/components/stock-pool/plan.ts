@@ -56,9 +56,8 @@ const planList: PlanItem[] = [
     url: "/value-investing/industry/汽车/福耀玻璃/",
     maxPositionRatio: 0.1,
     price: [
-      { value: 50, quantity: 300 },
-      { value: 48, quantity: 400 },
-      { value: 46, quantity: 400 },
+      { value: 47.5, quantity: 400 },
+      { value: 45, quantity: 400 },
     ],
   },
   {
@@ -79,7 +78,7 @@ const planList: PlanItem[] = [
     url: "/value-investing/industry/中药/东阿阿胶/",
     price: [
       { value: 46, quantity: 300 },
-      { value: 44, quantity: 500 },
+      { value: 44, quantity: 400 },
     ],
   },
   {
@@ -91,9 +90,8 @@ const planList: PlanItem[] = [
     remark: "预估6月中分红",
     url: "/value-investing/industry/中药/羚锐制药/",
     price: [
-      { value: 20.2, quantity: 400 },
-      { value: 19.2, quantity: 600 },
-      { value: 18.2, quantity: 800 },
+      { value: 19.1, quantity: 400 },
+      { value: 18.1, quantity: 500 },
     ],
   },
   {
@@ -164,11 +162,11 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 36.5,
-        quantity: 1000,
+        quantity: 600,
       },
       {
         value: 35.5,
-        quantity: 1000,
+        quantity: 800,
       },
     ],
   },
@@ -202,6 +200,10 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 19.5,
+        quantity: 800,
+      },
+      {
+        value: 18.5,
         quantity: 1000,
       },
     ],
@@ -264,10 +266,6 @@ const planList: PlanItem[] = [
     dividendAdjust: 0.8 * 1.3,
     remark: "0.8 × 1.3 预估今年30%增长",
     dividend: [
-      {
-        value: 0.058,
-        quantity: 1000,
-      },
       {
         value: 0.062,
         quantity: 1500,
@@ -385,10 +383,6 @@ const planList: PlanItem[] = [
     remark: "刚分红完，减去0.18",
     price: [
       {
-        value: 11.82,
-        quantity: 600,
-      },
-      {
         value: 11.22,
         quantity: 800,
       },
@@ -423,7 +417,7 @@ const planList: PlanItem[] = [
     dividendAdjust: 0.8,
     price: [
       {
-        value: 160,
+        value: 150,
         quantity: 200,
       },
     ],
@@ -500,10 +494,6 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
     dividend: [
-      {
-        value: 0.095,
-        quantity: 100,
-      },
       {
         value: 0.1,
         quantity: 200,
@@ -590,10 +580,6 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     dividend: [
       {
-        value: 0.054,
-        quantity: 200,
-      },
-      {
         value: 0.058,
         quantity: 400,
       },
@@ -629,11 +615,10 @@ const planList: PlanItem[] = [
     maxPositionRatio: 0.05,
     dividendPerYear: 1,
     url: "/value-investing/industry/零售/小商品城/",
-    remark:
-      "预估6月中旬分红，25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
+    remark: "25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
     dividend: [
       {
-        value: 0.049,
+        value: 0.052,
         quantity: 1000,
       },
     ],

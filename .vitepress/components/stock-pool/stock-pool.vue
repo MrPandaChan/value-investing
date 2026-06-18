@@ -83,6 +83,8 @@ const INDEX_CODES_GROUP1: { code: string; label: string }[] = [
   { code: "1.000922", label: "中证红利" },
   { code: "0.399006", label: "创业板指" },
   { code: "1.000688", label: "科创50" },
+  { code: "0.399371", label: "国证价值" },
+  { code: "0.399370", label: "国证成长" },
 ];
 
 // 第二组：宽基指数（上证50 → 中证2000）
@@ -106,10 +108,10 @@ const indexList = ref<IndexData[]>([]);
 const group1Labels = new Set(INDEX_CODES_GROUP1.map((v) => v.label));
 const group2Labels = new Set(INDEX_CODES_GROUP2.map((v) => v.label));
 const indexListGroup1 = computed(() =>
-  indexList.value.filter((v) => group1Labels.has(v.label))
+  indexList.value.filter((v) => group1Labels.has(v.label)),
 );
 const indexListGroup2 = computed(() =>
-  indexList.value.filter((v) => group2Labels.has(v.label))
+  indexList.value.filter((v) => group2Labels.has(v.label)),
 );
 
 async function fetchIndices() {
@@ -281,7 +283,7 @@ watch(
   () => {
     if (tableData.value.length) saveToStorage();
   },
-  { deep: true }
+  { deep: true },
 );
 
 watch(
@@ -289,7 +291,7 @@ watch(
   (val) => {
     localStorage.setItem(MARKET_FILTER_STORAGE_KEY, JSON.stringify(val));
   },
-  { deep: true }
+  { deep: true },
 );
 
 async function init() {
@@ -643,7 +645,7 @@ const mergedTableData = computed(() => {
       .slice(1)
       .reduce(
         (sum, r) => sum + (r.quantity && r.price ? r.quantity * r.price : 0),
-        0
+        0,
       );
 
     const mergedRows: MergedRowData[] = resolvedRows.map((row, index) => {
