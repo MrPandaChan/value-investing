@@ -77,8 +77,8 @@ const planList: PlanItem[] = [
     remark: "几乎100%分红率，一般6月/9月分红",
     url: "/value-investing/industry/中药/东阿阿胶/",
     price: [
-      { value: 46.5, quantity: 100 },
-      { value: 45, quantity: 100 },
+      { value: 46, quantity: 100 },
+      { value: 44, quantity: 200 },
     ],
   },
   {
@@ -200,15 +200,15 @@ const planList: PlanItem[] = [
   },
   // 格力电器
   {
-    type: PlanType.DIVIDEND,
+    type: PlanType.PRICE,
     code: "000651",
     maxPositionRatio: 0.05,
     url: "/value-investing/industry/家电/格力/",
     dividendPerYear: 2,
     remark: "预估8月分红",
-    dividend: [
+    price: [
       {
-        value: 0.085,
+        value: 36,
         quantity: 200,
       },
     ],
@@ -223,6 +223,10 @@ const planList: PlanItem[] = [
     price: [
       {
         value: 91,
+        quantity: 100,
+      },
+      {
+        value: 88,
         quantity: 100,
       },
     ],
@@ -246,7 +250,7 @@ const planList: PlanItem[] = [
   {
     type: PlanType.DIVIDEND,
     code: "00788",
-    maxPositionRatio: 0.05,
+    maxPositionRatio: 0.03,
     url: "/value-investing/industry/电信服务/中国铁塔/",
     dividendPerYear: 2,
     dividendAdjust: 0.8 * 1.3,
@@ -254,11 +258,11 @@ const planList: PlanItem[] = [
     dividend: [
       {
         value: 0.058,
-        quantity: 2000,
+        quantity: 1000,
       },
       {
-        value: 0.063,
-        quantity: 3000,
+        value: 0.062,
+        quantity: 1500,
       },
     ],
   },
@@ -385,11 +389,11 @@ const planList: PlanItem[] = [
     remark: "刚分红完，减去0.18",
     price: [
       {
-        value: 11.32,
+        value: 11.22,
         quantity: 300,
       },
       {
-        value: 10.82,
+        value: 10.62,
         quantity: 300,
       },
     ],
@@ -512,7 +516,7 @@ const planList: PlanItem[] = [
     dividendPerYear: 2,
     dividend: [
       {
-        value: 0.057,
+        value: 0.058,
         quantity: 200,
       },
     ],
@@ -601,12 +605,16 @@ const planList: PlanItem[] = [
     url: "/value-investing/industry/纺织服装/安踏体育/",
     price: [
       {
-        value: 70,
+        value: 68,
         quantity: 200,
       },
       {
-        value: 65,
+        value: 64,
         quantity: 400,
+      },
+      {
+        value: 61,
+        quantity: 600,
       },
     ],
   },
@@ -621,7 +629,7 @@ const planList: PlanItem[] = [
       "预估6月中旬分红，25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
     dividend: [
       {
-        value: 0.049,
+        value: 0.05,
         quantity: 400,
       },
     ],

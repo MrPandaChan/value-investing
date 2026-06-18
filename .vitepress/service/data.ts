@@ -864,6 +864,7 @@ const data: ServiceData = {
         "roe": 17.54,
         "roa": 14.819986,
         "roic": 16.50554,
+        "roce": 20.68143421393786,
         "netProfitMargin": 32.399789,
         "assetTurnover": 38.2771,
         "equityMultiplier": 1.484476
@@ -873,6 +874,7 @@ const data: ServiceData = {
         "roe": 43.84,
         "roa": 36.83731,
         "roic": 39.441433,
+        "roce": 48.622468471396324,
         "netProfitMargin": 30.281834,
         "assetTurnover": 103.1348,
         "equityMultiplier": 1.432234
@@ -882,6 +884,7 @@ const data: ServiceData = {
         "roe": 31.23,
         "roa": 25.206312,
         "roic": 27.816908,
+        "roce": 31.555989117133826,
         "netProfitMargin": 22.511688,
         "assetTurnover": 97.6496,
         "equityMultiplier": 1.422485
@@ -891,6 +894,7 @@ const data: ServiceData = {
         "roe": 16.58,
         "roa": 13.862718,
         "roic": 15.197102,
+        "roce": 17.047290594216754,
         "netProfitMargin": 20.597624,
         "assetTurnover": 58.6263,
         "equityMultiplier": 1.35414
@@ -900,6 +904,7 @@ const data: ServiceData = {
         "roe": 10.28,
         "roa": 8.543725,
         "roic": 9.198114,
+        "roce": 9.857331622120348,
         "netProfitMargin": 12.795224,
         "assetTurnover": 58.220400000000005,
         "equityMultiplier": 1.37186
@@ -909,6 +914,7 @@ const data: ServiceData = {
         "roe": 9.98,
         "roa": 6.91112,
         "roic": 7.735541,
+        "roce": 8.367256920810517,
         "netProfitMargin": 11.519818,
         "assetTurnover": 50.995999999999995,
         "equityMultiplier": 1.427615
@@ -918,6 +924,7 @@ const data: ServiceData = {
         "roe": 11.73,
         "roa": 8.700956,
         "roic": 9.71085,
+        "roce": 10.985505207695635,
         "netProfitMargin": 12.432272,
         "assetTurnover": 58.486000000000004,
         "equityMultiplier": 1.703353
@@ -927,6 +934,7 @@ const data: ServiceData = {
         "roe": 8.29,
         "roa": 6.750613,
         "roic": 7.570592,
+        "roce": 8.45355352130718,
         "netProfitMargin": 10.792813,
         "assetTurnover": 51.236599999999996,
         "equityMultiplier": 1.514703
@@ -936,6 +944,7 @@ const data: ServiceData = {
         "roe": 14.32,
         "roa": 9.379412,
         "roic": 11.614439,
+        "roce": 12.704279600804036,
         "netProfitMargin": 12.084522,
         "assetTurnover": 64.89920000000001,
         "equityMultiplier": 1.691663
@@ -945,6 +954,7 @@ const data: ServiceData = {
         "roe": 7.96,
         "roa": 5.313296,
         "roic": 6.408706,
+        "roce": 8.022298354928187,
         "netProfitMargin": 6.851917,
         "assetTurnover": 55.840599999999995,
         "equityMultiplier": 1.94965
@@ -954,6 +964,7 @@ const data: ServiceData = {
         "roe": 1.82,
         "roa": 1.71357,
         "roic": 1.781702,
+        "roce": 1.2715036767163295,
         "netProfitMargin": 7.638734,
         "assetTurnover": 20.6712,
         "equityMultiplier": 1.137412
@@ -2264,10 +2275,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300308",
-      "price": 1245,
-      "marketValue": 1388467128045,
-      "PB": 40.08,
-      "PE_TTM": 92.88,
+      "price": 1263.5,
+      "marketValue": 1409098968904,
+      "PB": 40.67,
+      "PE_TTM": 94.26,
       "totalSharesOutstanding": 1115234641
     },
     "recentYearData": {
@@ -3138,6 +3149,7 @@ const data: ServiceData = {
         "roe": 5.98,
         "roa": 2.708893,
         "roic": 4.549504,
+        "roce": 5.436877576315652,
         "netProfitMargin": 17.607891,
         "assetTurnover": 12.7779,
         "equityMultiplier": 2.654092
@@ -3147,6 +3159,7 @@ const data: ServiceData = {
         "roe": 24.91,
         "roa": 10.475312,
         "roic": 17.771035,
+        "roce": 20.567486837630078,
         "netProfitMargin": 18.122722,
         "assetTurnover": 48.107299999999995,
         "equityMultiplier": 2.627381
@@ -3156,6 +3169,7 @@ const data: ServiceData = {
         "roe": 24.13,
         "roa": 8.918732,
         "roic": 15.401603,
+        "roce": 18.019899450494982,
         "netProfitMargin": 14.918486,
         "assetTurnover": 48.145500000000006,
         "equityMultiplier": 2.876724
@@ -3165,6 +3179,7 @@ const data: ServiceData = {
         "roe": 24.04,
         "roa": 8.703388,
         "roic": 16.113305,
+        "roce": 18.393003673982893,
         "netProfitMargin": 11.663518,
         "assetTurnover": 60.831599999999995,
         "equityMultiplier": 3.261587
@@ -3174,6 +3189,7 @@ const data: ServiceData = {
         "roe": 24.67,
         "roa": 8.541582,
         "roic": 16.204203,
+        "roce": 18.41369923183208,
         "netProfitMargin": 10.181909,
         "assetTurnover": 72.3282,
         "equityMultiplier": 3.396954
@@ -3183,6 +3199,7 @@ const data: ServiceData = {
         "roe": 21.52,
         "roa": 9.066937,
         "roic": 14.665305,
+        "roce": 17.22912573850577,
         "netProfitMargin": 13.701523,
         "assetTurnover": 56.153299999999994,
         "equityMultiplier": 3.32174
@@ -3192,6 +3209,7 @@ const data: ServiceData = {
         "roe": 11.27,
         "roa": 5.90997,
         "roic": 8.733691,
+        "roce": 10.18694099783548,
         "netProfitMargin": 12.130326,
         "assetTurnover": 39.0118,
         "equityMultiplier": 2.263444
@@ -3201,6 +3219,7 @@ const data: ServiceData = {
         "roe": 12.78,
         "roa": 6.905008,
         "roic": 10.924483,
+        "roce": 13.051469930677687,
         "netProfitMargin": 10.947566,
         "assetTurnover": 52.258700000000005,
         "equityMultiplier": 2.402395
@@ -3210,6 +3229,7 @@ const data: ServiceData = {
         "roe": 11.75,
         "roa": 7.263393,
         "roic": 10.463379,
+        "roce": 12.145217544500655,
         "netProfitMargin": 12.61647,
         "assetTurnover": 47.9353,
         "equityMultiplier": 2.098958
@@ -3219,6 +3239,7 @@ const data: ServiceData = {
         "roe": 18.99,
         "roa": 12.708788,
         "roic": 16.48933,
+        "roce": 20.220567667944437,
         "netProfitMargin": 20.973574,
         "assetTurnover": 51.10940000000001,
         "equityMultiplier": 1.876107
@@ -3228,6 +3249,7 @@ const data: ServiceData = {
         "roe": 69.55,
         "roa": 18.849508,
         "roic": 26.603396,
+        "roce": 30.653399538179205,
         "netProfitMargin": 19.614488,
         "assetTurnover": 79.863,
         "equityMultiplier": 1.810404
@@ -4478,10 +4500,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300750",
-      "price": 398.1,
-      "marketValue": 1841860276377,
-      "PB": 5.64,
-      "PE_TTM": 23.32,
+      "price": 400.4,
+      "marketValue": 1852501518868,
+      "PB": 5.67,
+      "PE_TTM": 23.46,
       "totalSharesOutstanding": 4626627170
     },
     "recentYearData": {
@@ -5352,6 +5374,7 @@ const data: ServiceData = {
         "roe": 4.35,
         "roa": 2.851198,
         "roic": 3.534576,
+        "roce": 4.2297847319899375,
         "netProfitMargin": 6.19012,
         "assetTurnover": 37.7595,
         "equityMultiplier": 1.783145
@@ -5361,6 +5384,7 @@ const data: ServiceData = {
         "roe": 26.1,
         "roa": 16.222939,
         "roic": 21.554607,
+        "roce": 24.711215973349248,
         "netProfitMargin": 8.576913,
         "assetTurnover": 166.4243,
         "equityMultiplier": 1.873367
@@ -5370,6 +5394,7 @@ const data: ServiceData = {
         "roe": 24.87,
         "roa": 16.174782,
         "roic": 21.790334,
+        "roce": 24.254944592133697,
         "netProfitMargin": 8.948267,
         "assetTurnover": 168.2078,
         "equityMultiplier": 1.8157
@@ -5379,6 +5404,7 @@ const data: ServiceData = {
         "roe": 21.88,
         "roa": 16.035669,
         "roic": 19.456254,
+        "roce": 21.57190290187708,
         "netProfitMargin": 9.675667,
         "assetTurnover": 152.8391,
         "equityMultiplier": 1.565522
@@ -5388,6 +5414,7 @@ const data: ServiceData = {
         "roe": 17.81,
         "roa": 13.759994,
         "roic": 16.296303,
+        "roce": 18.07147716282167,
         "netProfitMargin": 8.314508,
         "assetTurnover": 153.1801,
         "equityMultiplier": 1.459081
@@ -5397,6 +5424,7 @@ const data: ServiceData = {
         "roe": 17.32,
         "roa": 14.173974,
         "roic": 16.701027,
+        "roce": 18.446885292446265,
         "netProfitMargin": 8.147054,
         "assetTurnover": 162.6992,
         "equityMultiplier": 1.379694
@@ -5406,6 +5434,7 @@ const data: ServiceData = {
         "roe": 26.34,
         "roa": 19.845546,
         "roic": 22.899121,
+        "roce": 26.618593333938374,
         "netProfitMargin": 9.568104,
         "assetTurnover": 187.14249999999998,
         "equityMultiplier": 1.277963
@@ -5415,6 +5444,7 @@ const data: ServiceData = {
         "roe": 44.2,
         "roa": 31.585734,
         "roic": 43.552303,
+        "roce": 48.06209585137316,
         "netProfitMargin": 10.845422,
         "assetTurnover": 262.8685,
         "equityMultiplier": 1.517023
@@ -5424,6 +5454,7 @@ const data: ServiceData = {
         "roe": 36.66,
         "roa": 28.151727,
         "roic": 36.113967,
+        "roce": 41.81445728787128,
         "netProfitMargin": 8.156808,
         "assetTurnover": 294.3259,
         "equityMultiplier": 1.504294
@@ -5433,6 +5464,7 @@ const data: ServiceData = {
         "roe": 39.72,
         "roa": 33.269579,
         "roic": 43.363495,
+        "roce": 52.29601381725589,
         "netProfitMargin": 8.418436,
         "assetTurnover": 332.238,
         "equityMultiplier": 1.46035
@@ -5442,6 +5474,7 @@ const data: ServiceData = {
         "roe": 82.83,
         "roa": 45.531224,
         "roic": 83.079789,
+        "roce": 100.83823198634367,
         "netProfitMargin": 9.062764,
         "assetTurnover": 405.0681,
         "equityMultiplier": 1.818671
@@ -6656,11 +6689,11 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300866",
-      "price": 116.5,
-      "marketValue": 62476195940,
-      "PB": 6.09,
-      "PE_TTM": 24.78,
-      "totalSharesOutstanding": 536276360
+      "price": 113.37,
+      "marketValue": 60797651160,
+      "PB": 5.93,
+      "PE_TTM": 24.12,
+      "totalSharesOutstanding": 536276362
     },
     "recentYearData": {
       "netProfit": 2520964864.82
@@ -7530,6 +7563,7 @@ const data: ServiceData = {
         "roe": 2.8021,
         "roa": 2.458527,
         "roic": 2.217223,
+        "roce": 2.6755395068402574,
         "netProfitMargin": 43.312459,
         "assetTurnover": 4.5677,
         "equityMultiplier": 1.410144
@@ -7539,6 +7573,7 @@ const data: ServiceData = {
         "roe": 9.879,
         "roa": 8.897921,
         "roic": 7.861845,
+        "roce": 9.3847846682037,
         "netProfitMargin": 37.750898,
         "assetTurnover": 18.262900000000002,
         "equityMultiplier": 1.422005
@@ -7548,6 +7583,7 @@ const data: ServiceData = {
         "roe": 11.669,
         "roa": 9.602624,
         "roic": 9.10213,
+        "roce": 10.104647436348472,
         "netProfitMargin": 42.143396,
         "assetTurnover": 18.3417,
         "equityMultiplier": 1.438554
@@ -7557,6 +7593,7 @@ const data: ServiceData = {
         "roe": 11.2484,
         "roa": 9.035759,
         "roic": 8.760848,
+        "roce": 9.994831035241384,
         "netProfitMargin": 37.302801,
         "assetTurnover": 19.4882,
         "equityMultiplier": 1.494829
@@ -7566,6 +7603,7 @@ const data: ServiceData = {
         "roe": 16.253,
         "roa": 12.027489,
         "roic": 12.198266,
+        "roce": 14.009774311628858,
         "netProfitMargin": 48.042396,
         "assetTurnover": 21.1463,
         "equityMultiplier": 1.500422
@@ -7575,6 +7613,7 @@ const data: ServiceData = {
         "roe": 15.8111,
         "roa": 11.622793,
         "roic": 11.409464,
+        "roce": 13.534213312120432,
         "netProfitMargin": 45.148171,
         "assetTurnover": 20.9901,
         "equityMultiplier": 1.584216
@@ -7584,6 +7623,7 @@ const data: ServiceData = {
         "roe": 9.7973,
         "roa": 7.838082,
         "roic": 7.407696,
+        "roce": 9.067081839107887,
         "netProfitMargin": 35.159237,
         "assetTurnover": 17.5238,
         "equityMultiplier": 1.624561
@@ -7593,6 +7633,7 @@ const data: ServiceData = {
         "roe": 11.4632,
         "roa": 9.067291,
         "roic": 8.166115,
+        "roce": 10.290458108052395,
         "netProfitMargin": 27.494173,
         "assetTurnover": 25.1979,
         "equityMultiplier": 1.566021
@@ -7602,6 +7643,7 @@ const data: ServiceData = {
         "roe": 14.214,
         "roa": 11.100218,
         "roic": 9.650881,
+        "roce": 12.625842248286654,
         "netProfitMargin": 30.155766,
         "assetTurnover": 26.640200000000004,
         "equityMultiplier": 1.753084
@@ -7611,6 +7653,7 @@ const data: ServiceData = {
         "roe": 17.918,
         "roa": 12.991018,
         "roic": 11.337395,
+        "roce": 12.477219886389628,
         "netProfitMargin": 34.32672,
         "assetTurnover": 29.008499999999998,
         "equityMultiplier": 1.832875
@@ -7620,6 +7663,7 @@ const data: ServiceData = {
         "roe": 11.3763,
         "roa": 10.023347,
         "roic": 8.493829,
+        "roce": 9.629530557347946,
         "netProfitMargin": 25.791177,
         "assetTurnover": 29.130699999999997,
         "equityMultiplier": 1.711423
@@ -9710,10 +9754,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600018",
-      "price": 5.05,
-      "marketValue": 117563800545,
-      "PB": 0.81,
-      "PE_TTM": 8.6,
+      "price": 4.95,
+      "marketValue": 115235804495,
+      "PB": 0.79,
+      "PE_TTM": 8.43,
       "totalSharesOutstanding": 23279960504
     },
     "recentYearData": {
@@ -10584,6 +10628,7 @@ const data: ServiceData = {
         "roe": 2.1,
         "roa": 1.165852,
         "roic": 1.158213,
+        "roce": 1.285486958925885,
         "netProfitMargin": 30.735768,
         "assetTurnover": 2.5292,
         "equityMultiplier": 2.502448
@@ -10593,6 +10638,7 @@ const data: ServiceData = {
         "roe": 12.93,
         "roa": 6.100764,
         "roic": 6.124233,
+        "roce": 6.709963672639242,
         "netProfitMargin": 34.657559,
         "assetTurnover": 12.052499999999998,
         "equityMultiplier": 2.572973
@@ -10602,6 +10648,7 @@ const data: ServiceData = {
         "roe": 11.85,
         "roa": 6.37737,
         "roic": 6.431015,
+        "roce": 6.931238167904834,
         "netProfitMargin": 35.816541,
         "assetTurnover": 12.1419,
         "equityMultiplier": 2.710764
@@ -10611,6 +10658,7 @@ const data: ServiceData = {
         "roe": 10.5,
         "roa": 6.474314,
         "roic": 6.578523,
+        "roce": 6.993122690506555,
         "netProfitMargin": 35.135077,
         "assetTurnover": 12.450600000000001,
         "equityMultiplier": 2.760605
@@ -10620,6 +10668,7 @@ const data: ServiceData = {
         "roe": 10.54,
         "roa": 6.747568,
         "roic": 7.092713,
+        "roce": 7.451523245974857,
         "netProfitMargin": 33.766795,
         "assetTurnover": 13.119900000000001,
         "equityMultiplier": 2.418357
@@ -10629,6 +10678,7 @@ const data: ServiceData = {
         "roe": 9.29,
         "roa": 6.458357,
         "roic": 6.909687,
+        "roce": 7.457748440862459,
         "netProfitMargin": 31.089991,
         "assetTurnover": 12.4208,
         "equityMultiplier": 2.425823
@@ -10638,6 +10688,7 @@ const data: ServiceData = {
         "roe": 8.47,
         "roa": 5.716314,
         "roic": 6.312691,
+        "roce": 6.360526867047733,
         "netProfitMargin": 27.440725,
         "assetTurnover": 11.5952,
         "equityMultiplier": 2.59214
@@ -10647,6 +10698,7 @@ const data: ServiceData = {
         "roe": 11.64,
         "roa": 6.413628,
         "roic": 6.894848,
+        "roce": 7.5494002143601415,
         "netProfitMargin": 28.539658,
         "assetTurnover": 12.3879,
         "equityMultiplier": 2.950691
@@ -10656,6 +10708,7 @@ const data: ServiceData = {
         "roe": 13.87,
         "roa": 6.550679,
         "roic": 6.776156,
+        "roce": 7.850291176716741,
         "netProfitMargin": 38.993009,
         "assetTurnover": 9.2265,
         "equityMultiplier": 3.677666
@@ -10665,6 +10718,7 @@ const data: ServiceData = {
         "roe": 6.31,
         "roa": 3.818166,
         "roic": 4.155157,
+        "roce": 5.013276032816395,
         "netProfitMargin": 18.454303,
         "assetTurnover": 7.785200000000001,
         "equityMultiplier": 4.096891
@@ -10674,6 +10728,7 @@ const data: ServiceData = {
         "roe": 1.49,
         "roa": 2.854329,
         "roic": 3.075168,
+        "roce": 0.9002748908390628,
         "netProfitMargin": 6.342721,
         "assetTurnover": 7.2506,
         "equityMultiplier": 4.592654
@@ -12236,10 +12291,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600025",
-      "price": 9.64,
-      "marketValue": 179603748637,
-      "PB": 2.53,
-      "PE_TTM": 21.03,
+      "price": 9.4,
+      "marketValue": 175132286016,
+      "PB": 2.47,
+      "PE_TTM": 20.51,
       "totalSharesOutstanding": 18631094257
     },
     "recentYearData": {
@@ -13110,6 +13165,7 @@ const data: ServiceData = {
         "roe": 2.04,
         "roa": 1.311563,
         "roic": 1.567643,
+        "roce": 2.1096937049020754,
         "netProfitMargin": 2.775454,
         "assetTurnover": 32.0385,
         "equityMultiplier": 2.267217
@@ -13119,6 +13175,7 @@ const data: ServiceData = {
         "roe": 3.86,
         "roa": 2.944589,
         "roic": 3.83712,
+        "roce": 4.482130995582943,
         "netProfitMargin": 1.266353,
         "assetTurnover": 131.289,
         "equityMultiplier": 2.177892
@@ -13128,6 +13185,7 @@ const data: ServiceData = {
         "roe": 6.19,
         "roa": 4.334923,
         "roic": 5.413628,
+        "roce": 7.164301971803444,
         "netProfitMargin": 1.871713,
         "assetTurnover": 149.5611,
         "equityMultiplier": 2.135394
@@ -13137,6 +13195,7 @@ const data: ServiceData = {
         "roe": 7.59,
         "roa": 5.238329,
         "roic": 6.558581,
+        "roce": 8.847360597494177,
         "netProfitMargin": 2.180613,
         "assetTurnover": 161.5073,
         "equityMultiplier": 2.11408
@@ -13146,6 +13205,7 @@ const data: ServiceData = {
         "roe": 8.57,
         "roa": 5.79922,
         "roic": 7.425526,
+        "roce": 10.305182090873126,
         "netProfitMargin": 2.283127,
         "assetTurnover": 172.916,
         "equityMultiplier": 2.079318
@@ -13155,6 +13215,7 @@ const data: ServiceData = {
         "roe": 9.35,
         "roa": 6.800488,
         "roic": 8.058482,
+        "roce": 12.25406078276477,
         "netProfitMargin": 3.102283,
         "assetTurnover": 151.0898,
         "equityMultiplier": 2.062413
@@ -13164,6 +13225,7 @@ const data: ServiceData = {
         "roe": 4.46,
         "roa": 3.538545,
         "roic": 4.414943,
+        "roce": 6.42758678449748,
         "netProfitMargin": 1.982446,
         "assetTurnover": 120.5454,
         "equityMultiplier": 1.961593
@@ -13173,6 +13235,7 @@ const data: ServiceData = {
         "roe": 7.9,
         "roa": 6.309473,
         "roic": 7.503941,
+        "roce": 8.788322278134693,
         "netProfitMargin": 2.431466,
         "assetTurnover": 177.22480000000002,
         "equityMultiplier": 2.001438
@@ -13182,6 +13245,7 @@ const data: ServiceData = {
         "roe": 8.67,
         "roa": 6.674483,
         "roic": 7.741947,
+        "roce": 9.910034845383377,
         "netProfitMargin": 2.777033,
         "assetTurnover": 181.3895,
         "equityMultiplier": 1.856574
@@ -13191,6 +13255,7 @@ const data: ServiceData = {
         "roe": 7.14,
         "roa": 5.960868,
         "roic": 6.262667,
+        "roce": 8.468308719100753,
         "netProfitMargin": 2.978315,
         "assetTurnover": 152.56019999999998,
         "equityMultiplier": 1.868118
@@ -13200,6 +13265,7 @@ const data: ServiceData = {
         "roe": 6.68,
         "roa": 5.977099,
         "roic": 5.937832,
+        "roce": 7.607166694353874,
         "netProfitMargin": 3.064356,
         "assetTurnover": 131.0924,
         "equityMultiplier": 1.800076
@@ -15158,10 +15224,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600028",
-      "price": 4.99,
-      "marketValue": 603418315968,
-      "PB": 0.74,
-      "PE_TTM": 16.97,
+      "price": 4.85,
+      "marketValue": 586488743977,
+      "PB": 0.72,
+      "PE_TTM": 16.5,
       "totalSharesOutstanding": 120925514222
     },
     "recentYearData": {
@@ -16032,6 +16098,7 @@ const data: ServiceData = {
         "roe": 3.37,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 43.763515,
         "assetTurnover": 0.6547,
         "equityMultiplier": 10.448658
@@ -16041,6 +16108,7 @@ const data: ServiceData = {
         "roe": 13.44,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 44.773828,
         "assetTurnover": 2.6764,
         "equityMultiplier": 10.204179
@@ -16050,6 +16118,7 @@ const data: ServiceData = {
         "roe": 14.49,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 44.315353,
         "assetTurnover": 2.9118,
         "equityMultiplier": 9.85187
@@ -16059,6 +16128,7 @@ const data: ServiceData = {
         "roe": 16.22,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 43.643751,
         "assetTurnover": 3.2042,
         "equityMultiplier": 10.157675
@@ -16068,6 +16138,7 @@ const data: ServiceData = {
         "roe": 17.06,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 40.400483,
         "assetTurnover": 3.5566,
         "equityMultiplier": 10.625139
@@ -16077,6 +16148,7 @@ const data: ServiceData = {
         "roe": 16.96,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 36.477858,
         "assetTurnover": 3.762,
         "equityMultiplier": 10.684098
@@ -16086,6 +16158,7 @@ const data: ServiceData = {
         "roe": 15.73,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 33.722915,
         "assetTurnover": 3.6818999999999997,
         "equityMultiplier": 11.448486
@@ -16095,6 +16168,7 @@ const data: ServiceData = {
         "roe": 16.84,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 34.639214,
         "assetTurnover": 3.8085,
         "equityMultiplier": 12.007699
@@ -16104,6 +16178,7 @@ const data: ServiceData = {
         "roe": 16.57,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 32.515539,
         "assetTurnover": 3.8112,
         "equityMultiplier": 12.409247
@@ -16113,6 +16188,7 @@ const data: ServiceData = {
         "roe": 16.54,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 31.977799,
         "assetTurnover": 3.6094,
         "equityMultiplier": 13.028014
@@ -16122,6 +16198,7 @@ const data: ServiceData = {
         "roe": 16.27,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 29.84332,
         "assetTurnover": 3.6615,
         "equityMultiplier": 14.731955
@@ -17864,10 +17941,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600036",
-      "price": 38.95,
-      "marketValue": 982312986159,
-      "PB": 0.87,
-      "PE_TTM": 6.52,
+      "price": 38.23,
+      "marketValue": 964154697326,
+      "PB": 0.85,
+      "PE_TTM": 6.4,
       "totalSharesOutstanding": 25219845601
     },
     "recentYearData": {
@@ -18738,6 +18815,7 @@ const data: ServiceData = {
         "roe": 1.24,
         "roa": 0.941472,
         "roic": 1.169628,
+        "roce": 1.5396580391424572,
         "netProfitMargin": 4.723749,
         "assetTurnover": 15.3325,
         "equityMultiplier": 1.757743
@@ -18747,6 +18825,7 @@ const data: ServiceData = {
         "roe": 5.39,
         "roa": 3.947233,
         "roic": 5.06284,
+        "roce": 6.730261959240819,
         "netProfitMargin": 5.299994,
         "assetTurnover": 58.3711,
         "equityMultiplier": 1.782349
@@ -18756,6 +18835,7 @@ const data: ServiceData = {
         "roe": 5.49,
         "roa": 4.004954,
         "roic": 5.190443,
+        "roce": 6.41320578429758,
         "netProfitMargin": 5.28777,
         "assetTurnover": 58.3356,
         "equityMultiplier": 1.824452
@@ -18765,6 +18845,7 @@ const data: ServiceData = {
         "roe": 5.08,
         "roa": 3.75603,
         "roic": 4.867515,
+        "roce": 6.707077514444644,
         "netProfitMargin": 5.022229,
         "assetTurnover": 56.99229999999999,
         "equityMultiplier": 1.851857
@@ -18774,6 +18855,7 @@ const data: ServiceData = {
         "roe": 4.67,
         "roa": 3.446026,
         "roic": 4.310021,
+        "roce": 5.963897855009178,
         "netProfitMargin": 4.691248,
         "assetTurnover": 57.342800000000004,
         "equityMultiplier": 1.856419
@@ -18783,6 +18865,7 @@ const data: ServiceData = {
         "roe": 4.17,
         "roa": 3.238188,
         "roic": 4.176789,
+        "roce": 5.371276148654517,
         "netProfitMargin": 4.397129,
         "assetTurnover": 55.7689,
         "equityMultiplier": 1.764622
@@ -18792,6 +18875,7 @@ const data: ServiceData = {
         "roe": 3.73,
         "roa": 3.037479,
         "roic": 3.751632,
+        "roce": 4.885016036922573,
         "netProfitMargin": 4.122236,
         "assetTurnover": 52.993100000000005,
         "equityMultiplier": 1.757228
@@ -18801,6 +18885,7 @@ const data: ServiceData = {
         "roe": 3.45,
         "roa": 2.87756,
         "roic": 3.7506,
+        "roce": 4.370226436585451,
         "netProfitMargin": 3.877301,
         "assetTurnover": 52.5346,
         "equityMultiplier": 1.744166
@@ -18810,6 +18895,7 @@ const data: ServiceData = {
         "roe": 2.86,
         "roa": 2.441272,
         "roic": 2.977308,
+        "roce": 3.710473249579006,
         "netProfitMargin": 3.197458,
         "assetTurnover": 52.157399999999996,
         "equityMultiplier": 1.709351
@@ -18819,6 +18905,7 @@ const data: ServiceData = {
         "roe": 0.49,
         "roa": 1.283736,
         "roic": 2.724411,
+        "roce": 1.826793763995171,
         "netProfitMargin": 0.612729,
         "assetTurnover": 46.2081,
         "equityMultiplier": 1.868348
@@ -18828,6 +18915,7 @@ const data: ServiceData = {
         "roe": 0.2,
         "roa": 1.016442,
         "roic": 2.746415,
+        "roce": -0.17187162725951216,
         "netProfitMargin": 0.175026,
         "assetTurnover": 44.540400000000005,
         "equityMultiplier": 2.671968
@@ -20210,10 +20298,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600050",
-      "price": 4.4,
-      "marketValue": 137563471439,
-      "PB": 0.81,
-      "PE_TTM": 15.89,
+      "price": 4.32,
+      "marketValue": 135062317413,
+      "PB": 0.79,
+      "PE_TTM": 15.6,
       "totalSharesOutstanding": 31264425327
     },
     "recentYearData": {
@@ -21084,6 +21172,7 @@ const data: ServiceData = {
         "roe": 4.14,
         "roa": 2.14265,
         "roic": 4.098013,
+        "roce": 4.257634012261853,
         "netProfitMargin": 11.295594,
         "assetTurnover": 17.6823,
         "equityMultiplier": 2.054494
@@ -21093,6 +21182,7 @@ const data: ServiceData = {
         "roe": 38.03,
         "roa": 20.014063,
         "roic": 37.964568,
+        "roce": 43.82477459402884,
         "netProfitMargin": 13.578797,
         "assetTurnover": 127.1889,
         "equityMultiplier": 2.082151
@@ -21102,6 +21192,7 @@ const data: ServiceData = {
         "roe": 30.94,
         "roa": 14.994922,
         "roic": 29.986543,
+        "roce": 33.696284305281274,
         "netProfitMargin": 11.16119,
         "assetTurnover": 118.13629999999999,
         "equityMultiplier": 2.354081
@@ -21111,6 +21202,7 @@ const data: ServiceData = {
         "roe": 12.97,
         "roa": 6.835502,
         "roic": 12.759642,
+        "roce": 14.218470561988006,
         "netProfitMargin": 6.802396,
         "assetTurnover": 88.873,
         "equityMultiplier": 2.19519
@@ -21120,6 +21212,7 @@ const data: ServiceData = {
         "roe": 5.15,
         "roa": 2.277845,
         "roic": 5.103026,
+        "roce": 4.714413017125714,
         "netProfitMargin": 3.522216,
         "assetTurnover": 70.1342,
         "equityMultiplier": 2.05518
@@ -21129,6 +21222,7 @@ const data: ServiceData = {
         "roe": 4.06,
         "roa": 1.669172,
         "roic": 4.025891,
+        "roce": 3.485881606354302,
         "netProfitMargin": 2.692283,
         "assetTurnover": 70.9659,
         "equityMultiplier": 2.096437
@@ -21138,6 +21232,7 @@ const data: ServiceData = {
         "roe": 3.11,
         "roa": 0.993641,
         "roic": 3.227736,
+        "roce": 1.831498891231314,
         "netProfitMargin": 2.386888,
         "assetTurnover": 61.998200000000004,
         "equityMultiplier": 2.157138
@@ -21147,6 +21242,7 @@ const data: ServiceData = {
         "roe": 11.35,
         "roa": 6.188255,
         "roic": 13.201257,
+        "roce": 11.970729296249777,
         "netProfitMargin": 6.432933,
         "assetTurnover": 83.02929999999999,
         "equityMultiplier": 2.072901
@@ -21156,6 +21252,7 @@ const data: ServiceData = {
         "roe": 14.3,
         "roa": 8.338109,
         "roic": 18.046042,
+        "roce": 16.252402589652075,
         "netProfitMargin": 7.334441,
         "assetTurnover": 87.01729999999999,
         "equityMultiplier": 2.196147
@@ -21165,6 +21262,7 @@ const data: ServiceData = {
         "roe": 22.15,
         "roa": 11.468198,
         "roic": 24.796497,
+        "roce": 26.14418694151826,
         "netProfitMargin": 9.5354,
         "assetTurnover": 93.1641,
         "equityMultiplier": 2.317425
@@ -21174,6 +21272,7 @@ const data: ServiceData = {
         "roe": 31.24,
         "roa": 15.268286,
         "roic": 32.105193,
+        "roce": 33.125107190712,
         "netProfitMargin": 11.442925,
         "assetTurnover": 109.8141,
         "equityMultiplier": 2.569888
@@ -22532,10 +22631,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600066",
-      "price": 28.26,
-      "marketValue": 62565922442,
-      "PB": 5.3,
-      "PE_TTM": 11.46,
+      "price": 27.4,
+      "marketValue": 60661934710,
+      "PB": 5.14,
+      "PE_TTM": 11.11,
       "totalSharesOutstanding": 2213939223
     },
     "recentYearData": {
@@ -23406,6 +23505,7 @@ const data: ServiceData = {
         "roe": 5.63,
         "roa": 3.699845,
         "roic": 4.025406,
+        "roce": 4.9135099328378775,
         "netProfitMargin": 12.540604,
         "assetTurnover": 23.234099999999998,
         "equityMultiplier": 1.875018
@@ -23415,6 +23515,7 @@ const data: ServiceData = {
         "roe": 21.87,
         "roa": 13.479747,
         "roic": 14.809087,
+        "roce": 17.80011452552131,
         "netProfitMargin": 11.355404,
         "assetTurnover": 95.0519,
         "equityMultiplier": 1.892931
@@ -23424,6 +23525,7 @@ const data: ServiceData = {
         "roe": 25.95,
         "roa": 14.455755,
         "roic": 15.056132,
+        "roce": 18.854909043647634,
         "netProfitMargin": 9.819714,
         "assetTurnover": 118.283,
         "equityMultiplier": 2.094664
@@ -23433,6 +23535,7 @@ const data: ServiceData = {
         "roe": 25.89,
         "roa": 13.822699,
         "roic": 13.398613,
+        "roce": 18.424812027665467,
         "netProfitMargin": 7.954428,
         "assetTurnover": 130.5565,
         "equityMultiplier": 2.388442
@@ -23442,6 +23545,7 @@ const data: ServiceData = {
         "roe": 45.3,
         "roa": 18.023989,
         "roic": 17.47178,
+        "roce": 23.217055252404613,
         "netProfitMargin": 9.355148,
         "assetTurnover": 141.6129,
         "equityMultiplier": 2.741638
@@ -23451,6 +23555,7 @@ const data: ServiceData = {
         "roe": 43.76,
         "roa": 11.617383,
         "roic": 11.889524,
+        "roce": 15.508656913392485,
         "netProfitMargin": 6.651213,
         "assetTurnover": 119.1908,
         "equityMultiplier": 4.218388
@@ -23460,6 +23565,7 @@ const data: ServiceData = {
         "roe": 6.03,
         "roa": 4.100868,
         "roic": 4.671272,
+        "roce": 6.0858228504975385,
         "netProfitMargin": 0.757507,
         "assetTurnover": 92.2445,
         "equityMultiplier": 6.201805
@@ -23469,6 +23575,7 @@ const data: ServiceData = {
         "roe": 3.64,
         "roa": 4.651375,
         "roic": 6.778893,
+        "roce": 7.36398758589043,
         "netProfitMargin": 0.329011,
         "assetTurnover": 84.45859999999999,
         "equityMultiplier": 9.197936
@@ -23478,6 +23585,7 @@ const data: ServiceData = {
         "roe": 3.17,
         "roa": 4.853954,
         "roic": 7.324747,
+        "roce": 8.414261044995103,
         "netProfitMargin": 0.474635,
         "assetTurnover": 80.6515,
         "equityMultiplier": 10.830496
@@ -23487,6 +23595,7 @@ const data: ServiceData = {
         "roe": 4.95,
         "roa": 4.228945,
         "roic": 6.620975,
+        "roce": 7.397293017792843,
         "netProfitMargin": 0.463223,
         "assetTurnover": 84.84620000000001,
         "equityMultiplier": 12.634216
@@ -23496,6 +23605,7 @@ const data: ServiceData = {
         "roe": -57.86,
         "roa": -2.089234,
         "roic": -3.339204,
+        "roce": -9.284086216894694,
         "netProfitMargin": -6.719827,
         "assetTurnover": 78.0907,
         "equityMultiplier": 13.297795
@@ -25166,10 +25276,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600096",
-      "price": 31.22,
-      "marketValue": 56913770622,
-      "PB": 2.38,
-      "PE_TTM": 10.76,
+      "price": 29.9,
+      "marketValue": 54507422857,
+      "PB": 2.28,
+      "PE_TTM": 10.3,
       "totalSharesOutstanding": 1822990731
     },
     "recentYearData": {
@@ -26040,6 +26150,7 @@ const data: ServiceData = {
         "roe": 3.84,
         "roa": 1.473462,
         "roic": 2.292377,
+        "roce": 2.191305082211837,
         "netProfitMargin": 15.15993,
         "assetTurnover": 7.5034,
         "equityMultiplier": 2.638601
@@ -26049,6 +26160,7 @@ const data: ServiceData = {
         "roe": 9.95,
         "roa": 5.208015,
         "roic": 6.138027,
+        "roce": 7.823988966079876,
         "netProfitMargin": 9.815373,
         "assetTurnover": 33.5163,
         "equityMultiplier": 2.647297
@@ -26058,6 +26170,7 @@ const data: ServiceData = {
         "roe": 17.72,
         "roa": 8.815784,
         "roic": 10.784272,
+        "roce": 13.440347506613204,
         "netProfitMargin": 15.045733,
         "assetTurnover": 39.024,
         "equityMultiplier": 2.69569
@@ -26067,6 +26180,7 @@ const data: ServiceData = {
         "roe": 21.88,
         "roa": 11.343189,
         "roic": 14.759081,
+        "roce": 18.5223798389218,
         "netProfitMargin": 18.097997,
         "assetTurnover": 41.004200000000004,
         "equityMultiplier": 2.99389
@@ -26076,6 +26190,7 @@ const data: ServiceData = {
         "roe": 39.48,
         "roa": 20.579291,
         "roic": 22.376324,
+        "roce": 32.928795019098395,
         "netProfitMargin": 19.637748,
         "assetTurnover": 68.7193,
         "equityMultiplier": 2.309364
@@ -26085,6 +26200,7 @@ const data: ServiceData = {
         "roe": 27.78,
         "roa": 10.72306,
         "roic": 13.845413,
+        "roce": 16.094831699358455,
         "netProfitMargin": 12.215723,
         "assetTurnover": 55.510999999999996,
         "equityMultiplier": 2.992063
@@ -26094,6 +26210,7 @@ const data: ServiceData = {
         "roe": 9.46,
         "roa": 5.053533,
         "roic": 7.519285,
+        "roce": 10.164519115276132,
         "netProfitMargin": 3.180437,
         "assetTurnover": 86.8417,
         "equityMultiplier": 3.245203
@@ -26103,6 +26220,7 @@ const data: ServiceData = {
         "roe": 15.91,
         "roa": 8.162512,
         "roic": 9.855158,
+        "roce": 12.129767115276062,
         "netProfitMargin": 5.536912,
         "assetTurnover": 97.51950000000001,
         "equityMultiplier": 2.488159
@@ -26112,6 +26230,7 @@ const data: ServiceData = {
         "roe": 13.48,
         "roa": 9.361845,
         "roic": 10.493715,
+        "roce": 13.352321304081851,
         "netProfitMargin": 6.537044,
         "assetTurnover": 81.8018,
         "equityMultiplier": 2.397545
@@ -26121,6 +26240,7 @@ const data: ServiceData = {
         "roe": 14,
         "roa": 7.80371,
         "roic": 10.349027,
+        "roce": 10.275995143774958,
         "netProfitMargin": 5.198689,
         "assetTurnover": 86.929,
         "equityMultiplier": 2.521788
@@ -26130,6 +26250,7 @@ const data: ServiceData = {
         "roe": 5.17,
         "roa": 3.960278,
         "roic": 5.052092,
+        "roce": 2.2976393777309365,
         "netProfitMargin": 2.248093,
         "assetTurnover": 71.64580000000001,
         "equityMultiplier": 2.852485
@@ -28076,10 +28197,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600188",
-      "price": 21.08,
-      "marketValue": 211576840582,
-      "PB": 2.77,
-      "PE_TTM": 22.15,
+      "price": 19.8,
+      "marketValue": 198729669996,
+      "PB": 2.6,
+      "PE_TTM": 20.8,
       "totalSharesOutstanding": 10036852020
     },
     "recentYearData": {
@@ -28950,6 +29071,7 @@ const data: ServiceData = {
         "roe": 6.99,
         "roa": 4.935284,
         "roic": 6.394063,
+        "roce": 7.341387059834786,
         "netProfitMargin": 21.973849,
         "assetTurnover": 19.413,
         "equityMultiplier": 1.618767
@@ -28959,6 +29081,7 @@ const data: ServiceData = {
         "roe": 23.9,
         "roa": 16.585375,
         "roic": 22.085314,
+        "roce": 25.661916886891724,
         "netProfitMargin": 19.786412,
         "assetTurnover": 72.3481,
         "equityMultiplier": 1.640176
@@ -28968,6 +29091,7 @@ const data: ServiceData = {
         "roe": 24.8,
         "roa": 16.892955,
         "roic": 23.843124,
+        "roce": 26.733406348469785,
         "netProfitMargin": 20.640374,
         "assetTurnover": 71.5275,
         "equityMultiplier": 1.62869
@@ -28977,6 +29101,7 @@ const data: ServiceData = {
         "roe": 21.28,
         "roa": 14.322636,
         "roic": 20.310948,
+        "roce": 23.45661158844559,
         "netProfitMargin": 17.155983,
         "assetTurnover": 72.6475,
         "equityMultiplier": 1.705049
@@ -28986,6 +29111,7 @@ const data: ServiceData = {
         "roe": 19.28,
         "roa": 12.726539,
         "roic": 18.397592,
+        "roce": 20.43807579041953,
         "netProfitMargin": 15.501417,
         "assetTurnover": 73.7787,
         "equityMultiplier": 1.698042
@@ -28995,6 +29121,7 @@ const data: ServiceData = {
         "roe": 15.92,
         "roa": 11.44292,
         "roic": 15.293833,
+        "roce": 18.353598174075817,
         "netProfitMargin": 13.458256,
         "assetTurnover": 74.2951,
         "equityMultiplier": 1.65885
@@ -29004,6 +29131,7 @@ const data: ServiceData = {
         "roe": 14.34,
         "roa": 10.78624,
         "roic": 13.964095,
+        "roce": 15.675894033809099,
         "netProfitMargin": 13.912571,
         "assetTurnover": 68.8437,
         "equityMultiplier": 1.489029
@@ -29013,6 +29141,7 @@ const data: ServiceData = {
         "roe": 13.49,
         "roa": 10.932549,
         "roic": 13.156151,
+        "roce": 15.113087768155886,
         "netProfitMargin": 13.590076,
         "assetTurnover": 67.1378,
         "equityMultiplier": 1.493293
@@ -29022,6 +29151,7 @@ const data: ServiceData = {
         "roe": 11.32,
         "roa": 9.337616,
         "roic": 10.946177,
+        "roce": 12.990544700464202,
         "netProfitMargin": 11.970392,
         "assetTurnover": 63.9845,
         "equityMultiplier": 1.484838
@@ -29031,6 +29161,7 @@ const data: ServiceData = {
         "roe": 10.18,
         "roa": 8.796094,
         "roic": 9.641747,
+        "roce": 11.580674076575335,
         "netProfitMargin": 12.167958,
         "assetTurnover": 58.7851,
         "equityMultiplier": 1.500678
@@ -29040,6 +29171,7 @@ const data: ServiceData = {
         "roe": 16.74,
         "roa": 14.478354,
         "roic": 16.046126,
+        "roce": 17.813312408095687,
         "netProfitMargin": 24.159039,
         "assetTurnover": 49.5098,
         "equityMultiplier": 1.41159
@@ -30710,10 +30842,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600285",
-      "price": 20.98,
-      "marketValue": 11898082896,
-      "PB": 3.93,
-      "PE_TTM": 15.08,
+      "price": 20.32,
+      "marketValue": 11523786676,
+      "PB": 3.81,
+      "PE_TTM": 14.61,
       "totalSharesOutstanding": 567115486
     },
     "recentYearData": {
@@ -31584,6 +31716,7 @@ const data: ServiceData = {
         "roe": 3.38,
         "roa": 1.860728,
         "roic": 1.97774,
+        "roce": 2.631749232014538,
         "netProfitMargin": 8.06937,
         "assetTurnover": 16.1185,
         "equityMultiplier": 2.802415
@@ -31593,6 +31726,7 @@ const data: ServiceData = {
         "roe": 12.44,
         "roa": 6.231554,
         "roic": 7.351068,
+        "roce": 9.336875444681416,
         "netProfitMargin": 6.908241,
         "assetTurnover": 65.9485,
         "equityMultiplier": 2.688857
@@ -31602,6 +31736,7 @@ const data: ServiceData = {
         "roe": 14.29,
         "roa": 7.226255,
         "roic": 8.145578,
+        "roce": 10.70887711716755,
         "netProfitMargin": 8.12401,
         "assetTurnover": 66.6463,
         "equityMultiplier": 2.834134
@@ -31611,6 +31746,7 @@ const data: ServiceData = {
         "roe": 20.42,
         "roa": 10.067258,
         "roic": 11.770797,
+        "roce": 14.031886031754418,
         "netProfitMargin": 10.435508,
         "assetTurnover": 77.2713,
         "equityMultiplier": 2.678974
@@ -31620,6 +31756,7 @@ const data: ServiceData = {
         "roe": 22.75,
         "roa": 11.037877,
         "roic": 12.548664,
+        "roce": 15.085209595855453,
         "netProfitMargin": 10.293151,
         "assetTurnover": 84.6551,
         "equityMultiplier": 2.469272
@@ -31629,6 +31766,7 @@ const data: ServiceData = {
         "roe": 42.53,
         "roa": 19.246753,
         "roic": 21.780785,
+        "roce": 25.390515420161087,
         "netProfitMargin": 17.204758,
         "assetTurnover": 89.82090000000001,
         "equityMultiplier": 2.654408
@@ -31638,6 +31776,7 @@ const data: ServiceData = {
         "roe": 22.2,
         "roa": 11.222418,
         "roic": 13.067484,
+        "roce": 14.842075430106547,
         "netProfitMargin": 14.182892,
         "assetTurnover": 63.6836,
         "equityMultiplier": 2.589557
@@ -31647,6 +31786,7 @@ const data: ServiceData = {
         "roe": 25.44,
         "roa": 14.640906,
         "roic": 16.98134,
+        "roce": 18.923461883588892,
         "netProfitMargin": 15.56681,
         "assetTurnover": 73.9967,
         "equityMultiplier": 2.204929
@@ -31656,6 +31796,7 @@ const data: ServiceData = {
         "roe": 50.83,
         "roa": 23.643254,
         "roic": 21.725415,
+        "roce": 34.140991137841375,
         "netProfitMargin": 21.163624,
         "assetTurnover": 84.939,
         "equityMultiplier": 1.959537
@@ -31665,6 +31806,7 @@ const data: ServiceData = {
         "roe": 50.66,
         "roa": 30.195079,
         "roic": 27.978601,
+        "roce": 38.4400198078232,
         "netProfitMargin": 25.053698,
         "assetTurnover": 91.12599999999999,
         "equityMultiplier": 2.140452
@@ -31674,6 +31816,7 @@ const data: ServiceData = {
         "roe": 28.11,
         "roa": 13.416746,
         "roic": 12.562595,
+        "roce": 14.014982107953285,
         "netProfitMargin": 15.109934,
         "assetTurnover": 61.0734,
         "equityMultiplier": 2.768909
@@ -33368,10 +33511,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600309",
-      "price": 73.5,
-      "marketValue": 230089664511,
-      "PB": 2.14,
-      "PE_TTM": 17.48,
+      "price": 70.11,
+      "marketValue": 219477365699,
+      "PB": 2.04,
+      "PE_TTM": 16.67,
       "totalSharesOutstanding": 3130471626
     },
     "recentYearData": {
@@ -34242,6 +34385,7 @@ const data: ServiceData = {
         "roe": 1.36,
         "roa": 0.903113,
         "roic": 1.346405,
+        "roce": 1.527778790018847,
         "netProfitMargin": 7.789957,
         "assetTurnover": 9.8372,
         "equityMultiplier": 1.6721
@@ -34251,6 +34395,7 @@ const data: ServiceData = {
         "roe": 16.26,
         "roa": 10.267164,
         "roic": 15.996003,
+        "roce": 17.781815288642523,
         "netProfitMargin": 13.374922,
         "assetTurnover": 69.1116,
         "equityMultiplier": 1.746132
@@ -34260,6 +34405,7 @@ const data: ServiceData = {
         "roe": 15.85,
         "roa": 10.235328,
         "roic": 15.573903,
+        "roce": 17.500250506464848,
         "netProfitMargin": 14.188424,
         "assetTurnover": 64.1799,
         "equityMultiplier": 1.757916
@@ -34269,6 +34415,7 @@ const data: ServiceData = {
         "roe": 16.06,
         "roa": 10.612448,
         "roic": 15.70278,
+        "roce": 17.5691268717507,
         "netProfitMargin": 14.833324,
         "assetTurnover": 63.3622,
         "equityMultiplier": 1.708804
@@ -34278,6 +34425,7 @@ const data: ServiceData = {
         "roe": 16.09,
         "roa": 10.618271,
         "roic": 15.538688,
+        "roce": 17.8356009501975,
         "netProfitMargin": 14.744585,
         "assetTurnover": 62.69,
         "equityMultiplier": 1.690218
@@ -34287,6 +34435,7 @@ const data: ServiceData = {
         "roe": 15.7,
         "roa": 10.008499,
         "roic": 15.007361,
+        "roce": 17.151729452511212,
         "netProfitMargin": 14.2482,
         "assetTurnover": 61.1572,
         "equityMultiplier": 1.793995
@@ -34296,6 +34445,7 @@ const data: ServiceData = {
         "roe": 15.06,
         "roa": 9.731634,
         "roic": 14.320275,
+        "roce": 16.319051037828768,
         "netProfitMargin": 13.535914,
         "assetTurnover": 62.4092,
         "equityMultiplier": 1.812547
@@ -34305,6 +34455,7 @@ const data: ServiceData = {
         "roe": 14.82,
         "roa": 9.756888,
         "roic": 14.383824,
+        "roce": 16.425638899532707,
         "netProfitMargin": 14.373154,
         "assetTurnover": 59.07829999999999,
         "equityMultiplier": 1.758665
@@ -34314,6 +34465,7 @@ const data: ServiceData = {
         "roe": 16.9,
         "roa": 10.297198,
         "roic": 17.232714,
+        "roce": 19.39188757159757,
         "netProfitMargin": 15.591542,
         "assetTurnover": 58.0574,
         "equityMultiplier": 1.781393
@@ -34323,6 +34475,7 @@ const data: ServiceData = {
         "roe": 16.38,
         "roa": 9.688497,
         "roic": 17.519997,
+        "roce": 20.483308867982455,
         "netProfitMargin": 15.30218,
         "assetTurnover": 54.0836,
         "equityMultiplier": 2.174588
@@ -34332,6 +34485,7 @@ const data: ServiceData = {
         "roe": 16.12,
         "roa": 9.769447,
         "roic": 16.976109,
+        "roce": 23.783432531916187,
         "netProfitMargin": 12.713217,
         "assetTurnover": 67.414,
         "equityMultiplier": 1.95876
@@ -35966,10 +36120,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600406",
-      "price": 23.46,
-      "marketValue": 188424999420,
-      "PB": 3.52,
-      "PE_TTM": 22.65,
+      "price": 23.16,
+      "marketValue": 186015472573,
+      "PB": 3.48,
+      "PE_TTM": 22.36,
       "totalSharesOutstanding": 8031756156
     },
     "recentYearData": {
@@ -36840,6 +36994,7 @@ const data: ServiceData = {
         "roe": 4.23,
         "roa": 2.850526,
         "roic": 3.751391,
+        "roce": 4.705950861358961,
         "netProfitMargin": 21.626127,
         "assetTurnover": 10.374600000000001,
         "equityMultiplier": 1.842667
@@ -36849,6 +37004,7 @@ const data: ServiceData = {
         "roe": 17.53,
         "roa": 13.125051,
         "roic": 16.594462,
+        "roce": 21.113738644065965,
         "netProfitMargin": 21.155529,
         "assetTurnover": 47.6877,
         "equityMultiplier": 1.928265
@@ -36858,6 +37014,7 @@ const data: ServiceData = {
         "roe": 16.1,
         "roa": 11.054431,
         "roic": 13.06614,
+        "roce": 16.962387740528328,
         "netProfitMargin": 19.5601,
         "assetTurnover": 41.7506,
         "equityMultiplier": 1.903926
@@ -36867,6 +37024,7 @@ const data: ServiceData = {
         "roe": 16.06,
         "roa": 9.947925,
         "roic": 12.872306,
+        "roce": 14.934812361344049,
         "netProfitMargin": 23.729884,
         "assetTurnover": 33.0738,
         "equityMultiplier": 2.045813
@@ -36876,6 +37034,7 @@ const data: ServiceData = {
         "roe": 7.3,
         "roa": 4.527069,
         "roic": 6.797913,
+        "roce": 7.077342295870364,
         "netProfitMargin": 14.483536,
         "assetTurnover": 24.141299999999998,
         "equityMultiplier": 2.101354
@@ -36885,6 +37044,7 @@ const data: ServiceData = {
         "roe": 9.38,
         "roa": 6.651952,
         "roic": 8.292728,
+        "roce": 9.978143566158543,
         "netProfitMargin": 22.028557,
         "assetTurnover": 20.1919,
         "equityMultiplier": 2.119812
@@ -36894,6 +37054,7 @@ const data: ServiceData = {
         "roe": 6.88,
         "roa": 6.020682,
         "roic": 6.176657,
+        "roce": 8.729951923440478,
         "netProfitMargin": 24.742719,
         "assetTurnover": 12.403699999999999,
         "equityMultiplier": 2.117918
@@ -36903,6 +37064,7 @@ const data: ServiceData = {
         "roe": 10.04,
         "roa": 7.095188,
         "roic": 8.074642,
+        "roce": 9.97908581346826,
         "netProfitMargin": 30.890381,
         "assetTurnover": 13.892399999999999,
         "equityMultiplier": 2.393955
@@ -36912,6 +37074,7 @@ const data: ServiceData = {
         "roe": 9.4,
         "roa": 6.81179,
         "roic": 7.732513,
+        "roce": 9.390512296645074,
         "netProfitMargin": 28.988396,
         "assetTurnover": 14.1655,
         "equityMultiplier": 2.272965
@@ -36921,6 +37084,7 @@ const data: ServiceData = {
         "roe": 13.68,
         "roa": 9.108305,
         "roic": 10.913199,
+        "roce": 15.690991820947673,
         "netProfitMargin": 14.063241,
         "assetTurnover": 39.2818,
         "equityMultiplier": 2.06652
@@ -36930,6 +37094,7 @@ const data: ServiceData = {
         "roe": 10.81,
         "roa": 5.239191,
         "roic": 8.511384,
+        "roce": 11.15104854779363,
         "netProfitMargin": 14.257124,
         "assetTurnover": 24.7958,
         "equityMultiplier": 2.573349
@@ -38528,10 +38693,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600415",
-      "price": 11.37,
-      "marketValue": 62348068400,
-      "PB": 2.95,
-      "PE_TTM": 14.2,
+      "price": 11.01,
+      "marketValue": 60373987078,
+      "PB": 2.86,
+      "PE_TTM": 13.75,
       "totalSharesOutstanding": 5483559226
     },
     "recentYearData": {
@@ -39402,6 +39567,7 @@ const data: ServiceData = {
         "roe": 10.57,
         "roa": 12.042771,
         "roic": 9.898213,
+        "roce": 14.033217760457042,
         "netProfitMargin": 52.224488,
         "assetTurnover": 17.5399,
         "equityMultiplier": 1.13795
@@ -39411,6 +39577,7 @@ const data: ServiceData = {
         "roe": 32.53,
         "roa": 38.084908,
         "roic": 31.700377,
+        "roce": 46.29369030396559,
         "netProfitMargin": 50.527886,
         "assetTurnover": 57.08689999999999,
         "equityMultiplier": 1.196392
@@ -39420,6 +39587,7 @@ const data: ServiceData = {
         "roe": 36.02,
         "roa": 41.862768,
         "roic": 35.588809,
+        "roce": 51.39270083529046,
         "netProfitMargin": 52.273359,
         "assetTurnover": 60.9274,
         "equityMultiplier": 1.23525
@@ -39429,6 +39597,7 @@ const data: ServiceData = {
         "roe": 34.19,
         "roa": 39.330456,
         "roic": 34.066772,
+        "roce": 48.38186791111238,
         "netProfitMargin": 52.488038,
         "assetTurnover": 57.1169,
         "equityMultiplier": 1.219279
@@ -39438,6 +39607,7 @@ const data: ServiceData = {
         "roe": 30.26,
         "roa": 34.428982,
         "roic": 29.691963,
+        "roce": 43.71525550207694,
         "netProfitMargin": 52.679467,
         "assetTurnover": 50.06699999999999,
         "equityMultiplier": 1.241017
@@ -39447,6 +39617,7 @@ const data: ServiceData = {
         "roe": 29.9,
         "roa": 31.817024,
         "roic": 27.099388,
+        "roce": 40.99122554318797,
         "netProfitMargin": 52.472406,
         "assetTurnover": 46.7232,
         "equityMultiplier": 1.295549
@@ -39456,6 +39627,7 @@ const data: ServiceData = {
         "roe": 31.41,
         "roa": 33.395845,
         "roic": 28.948453,
+        "roce": 43.046325546937524,
         "netProfitMargin": 52.176295,
         "assetTurnover": 49.4368,
         "equityMultiplier": 1.272328
@@ -39465,6 +39637,7 @@ const data: ServiceData = {
         "roe": 33.09,
         "roa": 34.286631,
         "roic": 30.369139,
+        "roce": 45.541793238558725,
         "netProfitMargin": 51.469296,
         "assetTurnover": 51.82679999999999,
         "equityMultiplier": 1.290153
@@ -39474,6 +39647,7 @@ const data: ServiceData = {
         "roe": 34.46,
         "roa": 34.522962,
         "roic": 31.122567,
+        "roce": 48.112674926196675,
         "netProfitMargin": 51.371804,
         "assetTurnover": 52.4351,
         "equityMultiplier": 1.361457
@@ -39483,6 +39657,7 @@ const data: ServiceData = {
         "roe": 32.95,
         "roa": 31.300173,
         "roic": 29.183323,
+        "roce": 45.301655355844666,
         "netProfitMargin": 49.823924,
         "assetTurnover": 49.3347,
         "equityMultiplier": 1.401902
@@ -39492,6 +39667,7 @@ const data: ServiceData = {
         "roe": 24.44,
         "roa": 24.087424,
         "roic": 21.822319,
+        "roce": 34.14502489978947,
         "netProfitMargin": 46.139044,
         "assetTurnover": 40.309,
         "equityMultiplier": 1.487967
@@ -40754,10 +40930,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600519",
-      "price": 1271.1,
-      "marketValue": 1588978723031,
-      "PB": 5.87,
-      "PE_TTM": 19.21,
+      "price": 1240,
+      "marketValue": 1550101185240,
+      "PB": 5.72,
+      "PE_TTM": 18.74,
       "totalSharesOutstanding": 1250081601
     },
     "recentYearData": {
@@ -41628,6 +41804,7 @@ const data: ServiceData = {
         "roe": 4.06,
         "roa": 4.283544,
         "roic": 3.236474,
+        "roce": 4.702012567644846,
         "netProfitMargin": 5.022629,
         "assetTurnover": 60.78170000000001,
         "equityMultiplier": 1.513692
@@ -41637,6 +41814,7 @@ const data: ServiceData = {
         "roe": 13.64,
         "roa": 14.776555,
         "roic": 11.183465,
+        "roce": 17.0244878439702,
         "netProfitMargin": 4.275983,
         "assetTurnover": 243.10330000000002,
         "equityMultiplier": 1.335039
@@ -41646,6 +41824,7 @@ const data: ServiceData = {
         "roe": 16.2,
         "roa": 15.642918,
         "roic": 11.299571,
+        "roce": 18.373768036699158,
         "netProfitMargin": 4.479207,
         "assetTurnover": 241.33800000000002,
         "equityMultiplier": 1.541143
@@ -41655,6 +41834,7 @@ const data: ServiceData = {
         "roe": 20.53,
         "roa": 16.84431,
         "roic": 11.718218,
+        "roce": 20.633629552179315,
         "netProfitMargin": 4.165139,
         "assetTurnover": 283.82,
         "equityMultiplier": 1.771655
@@ -41664,6 +41844,7 @@ const data: ServiceData = {
         "roe": 17.6,
         "roa": 13.876538,
         "roic": 10.005384,
+        "roce": 16.51602776652527,
         "netProfitMargin": 3.599183,
         "assetTurnover": 261.0212,
         "equityMultiplier": 2.170421
@@ -41673,6 +41854,7 @@ const data: ServiceData = {
         "roe": 21.74,
         "roa": 17.016495,
         "roic": 12.584526,
+        "roce": 18.887543643008136,
         "netProfitMargin": 4.169726,
         "assetTurnover": 280.5611,
         "equityMultiplier": 2.051347
@@ -41682,6 +41864,7 @@ const data: ServiceData = {
         "roe": 21.03,
         "roa": 17.029692,
         "roic": 12.287023,
+        "roce": 18.425067570451535,
         "netProfitMargin": 4.006711,
         "assetTurnover": 281.5214,
         "equityMultiplier": 2.078008
@@ -41691,6 +41874,7 @@ const data: ServiceData = {
         "roe": 21.16,
         "roa": 17.160672,
         "roic": 12.262375,
+        "roce": 18.771094836532118,
         "netProfitMargin": 3.687955,
         "assetTurnover": 303.8436,
         "equityMultiplier": 2.059827
@@ -41700,6 +41884,7 @@ const data: ServiceData = {
         "roe": 20.26,
         "roa": 16.429236,
         "roic": 12.007765,
+        "roce": 19.660040046405502,
         "netProfitMargin": 3.571554,
         "assetTurnover": 302.8989,
         "equityMultiplier": 2.097078
@@ -41709,6 +41894,7 @@ const data: ServiceData = {
         "roe": 21.13,
         "roa": 15.681055,
         "roic": 11.888935,
+        "roce": 19.635572800498203,
         "netProfitMargin": 3.693274,
         "assetTurnover": 289.7386,
         "equityMultiplier": 1.999518
@@ -41718,6 +41904,7 @@ const data: ServiceData = {
         "roe": 21.83,
         "roa": 15.514595,
         "roic": 13.036344,
+        "roce": 17.958858237853757,
         "netProfitMargin": 3.905192,
         "assetTurnover": 272.9812,
         "equityMultiplier": 2.333391
@@ -43472,10 +43659,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600612",
-      "price": 35.74,
-      "marketValue": 18696228885,
-      "PB": 1.36,
-      "PE_TTM": 11.07,
+      "price": 34.72,
+      "marketValue": 18162648766,
+      "PB": 1.32,
+      "PE_TTM": 10.75,
       "totalSharesOutstanding": 523117764
     },
     "recentYearData": {
@@ -44346,6 +44533,7 @@ const data: ServiceData = {
         "roe": -1.23,
         "roa": -1.085392,
         "roic": -1.228019,
+        "roce": -1.1652742370340203,
         "netProfitMargin": -88.672542,
         "assetTurnover": 1.294,
         "equityMultiplier": 1.063609
@@ -44355,6 +44543,7 @@ const data: ServiceData = {
         "roe": -13.09,
         "roa": -12.275097,
         "roic": -13.056452,
+        "roce": -13.30025761895239,
         "netProfitMargin": -84.588136,
         "assetTurnover": 14.276800000000001,
         "equityMultiplier": 1.084758
@@ -44364,6 +44553,7 @@ const data: ServiceData = {
         "roe": -18.09,
         "roa": -17.088548,
         "roic": -18.001779,
+        "roce": -18.074977254630785,
         "netProfitMargin": -144.433791,
         "assetTurnover": 11.8171,
         "equityMultiplier": 1.084479
@@ -44373,6 +44563,7 @@ const data: ServiceData = {
         "roe": -6.55,
         "roa": -6.235266,
         "roic": -6.502844,
+        "roce": -6.5321633277857725,
         "netProfitMargin": -43.991966,
         "assetTurnover": 14.1769,
         "equityMultiplier": 1.039685
@@ -44382,6 +44573,7 @@ const data: ServiceData = {
         "roe": 5.11,
         "roa": 5.124027,
         "roic": 5.093695,
+        "roce": 5.486154218703142,
         "netProfitMargin": 28.519804,
         "assetTurnover": 16.7434,
         "equityMultiplier": 1.058792
@@ -44391,6 +44583,7 @@ const data: ServiceData = {
         "roe": -15.24,
         "roa": -14.214957,
         "roic": -15.213531,
+        "roce": -16.98537763971826,
         "netProfitMargin": -96.265779,
         "assetTurnover": 14.7716,
         "equityMultiplier": 1.07249
@@ -44400,6 +44593,7 @@ const data: ServiceData = {
         "roe": 5.14,
         "roa": 5.092464,
         "roic": 5.156758,
+        "roce": 5.506339614483285,
         "netProfitMargin": 22.572142,
         "assetTurnover": 20.589299999999998,
         "equityMultiplier": 1.071024
@@ -44409,6 +44603,7 @@ const data: ServiceData = {
         "roe": 3.91,
         "roa": 5.420045,
         "roic": 3.983112,
+        "roce": 5.678918560174581,
         "netProfitMargin": 10.096617,
         "assetTurnover": 35.5406,
         "equityMultiplier": 1.13305
@@ -44418,6 +44613,7 @@ const data: ServiceData = {
         "roe": 19.41,
         "roa": 15.359282,
         "roic": 17.797689,
+        "roce": 24.109199727212943,
         "netProfitMargin": 32.746635,
         "assetTurnover": 30.718899999999998,
         "equityMultiplier": 1.108687
@@ -44427,6 +44623,7 @@ const data: ServiceData = {
         "roe": 1.91,
         "roa": 4.839694,
         "roic": 2.972677,
+        "roce": 10.3617927646714,
         "netProfitMargin": 2.965571,
         "assetTurnover": 91.2116,
         "equityMultiplier": 2.282764
@@ -44436,6 +44633,7 @@ const data: ServiceData = {
         "roe": -11.19,
         "roa": -3.176212,
         "roic": -9.55814,
+        "roce": -0.26527030360319026,
         "netProfitMargin": -4.860949,
         "assetTurnover": 108.53829999999999,
         "equityMultiplier": 1.357059
@@ -45794,10 +45992,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600636",
-      "price": 1.8,
-      "marketValue": 789546244,
-      "PB": 0.45,
-      "PE_TTM": -3,
+      "price": 1.88,
+      "marketValue": 824637188,
+      "PB": 0.47,
+      "PE_TTM": -3.13,
       "totalSharesOutstanding": 438636802
     },
     "recentYearData": {
@@ -46668,6 +46866,7 @@ const data: ServiceData = {
         "roe": 4.46,
         "roa": 2.935338,
         "roic": 3.135054,
+        "roce": 3.6966910062390994,
         "netProfitMargin": 16.445938,
         "assetTurnover": 14.5229,
         "equityMultiplier": 1.873835
@@ -46677,6 +46876,7 @@ const data: ServiceData = {
         "roe": 25.56,
         "roa": 17.226815,
         "roic": 18.308457,
+        "roce": 22.04358449514796,
         "netProfitMargin": 20.347932,
         "assetTurnover": 68.6898,
         "equityMultiplier": 1.865734
@@ -46686,6 +46886,7 @@ const data: ServiceData = {
         "roe": 22.72,
         "roa": 15.480432,
         "roic": 16.093608,
+        "roce": 19.532387781299512,
         "netProfitMargin": 19.117761,
         "assetTurnover": 65.4824,
         "equityMultiplier": 1.772542
@@ -46695,6 +46896,7 @@ const data: ServiceData = {
         "roe": 18.97,
         "roa": 13.04372,
         "roic": 13.635824,
+        "roce": 16.51083184025128,
         "netProfitMargin": 16.975087,
         "assetTurnover": 61.753499999999995,
         "equityMultiplier": 1.802866
@@ -46704,6 +46906,7 @@ const data: ServiceData = {
         "roe": 17.65,
         "roa": 12.280651,
         "roic": 13.00808,
+        "roce": 15.574131276758518,
         "netProfitMargin": 16.914613,
         "assetTurnover": 58.8132,
         "equityMultiplier": 1.75131
@@ -46713,6 +46916,7 @@ const data: ServiceData = {
         "roe": 12.96,
         "roa": 9.945575,
         "roic": 10.106011,
+        "roce": 12.11036175604408,
         "netProfitMargin": 13.315986,
         "assetTurnover": 56.7323,
         "equityMultiplier": 1.703229
@@ -46722,6 +46926,7 @@ const data: ServiceData = {
         "roe": 12.06,
         "roa": 8.969195,
         "roic": 9.14693,
+        "roce": 11.425991689981505,
         "netProfitMargin": 13.053217,
         "assetTurnover": 51.5381,
         "equityMultiplier": 1.77962
@@ -46731,6 +46936,7 @@ const data: ServiceData = {
         "roe": 14.11,
         "roa": 9.956542,
         "roic": 10.856017,
+        "roce": 12.723231825405247,
         "netProfitMargin": 13.732936,
         "assetTurnover": 57.569,
         "equityMultiplier": 1.816937
@@ -46740,6 +46946,7 @@ const data: ServiceData = {
         "roe": 20.81,
         "roa": 16.130025,
         "roic": 16.289087,
+        "roce": 19.339999106598743,
         "netProfitMargin": 20.307419,
         "assetTurnover": 61.1078,
         "equityMultiplier": 1.708303
@@ -46749,6 +46956,7 @@ const data: ServiceData = {
         "roe": 17.16,
         "roa": 12.545408,
         "roic": 12.913454,
+        "roce": 14.937867432060123,
         "netProfitMargin": 16.82148,
         "assetTurnover": 60.7947,
         "equityMultiplier": 1.66817
@@ -46758,6 +46966,7 @@ const data: ServiceData = {
         "roe": 18.62,
         "roa": 14.90996,
         "roic": 14.419334,
+        "roce": 16.688969072405047,
         "netProfitMargin": 18.907725,
         "assetTurnover": 60.78059999999999,
         "equityMultiplier": 1.655668
@@ -48020,10 +48229,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600660",
-      "price": 52.41,
-      "marketValue": 136776658512,
-      "PB": 3.8,
-      "PE_TTM": 15.21,
+      "price": 50.5,
+      "marketValue": 131792048366,
+      "PB": 3.66,
+      "PE_TTM": 14.65,
       "totalSharesOutstanding": 2609743532
     },
     "recentYearData": {
@@ -48894,6 +49103,7 @@ const data: ServiceData = {
         "roe": 3.86,
         "roa": 2.068768,
         "roic": 3.503061,
+        "roce": 3.5773632824605577,
         "netProfitMargin": 6.52328,
         "assetTurnover": 24.7117,
         "equityMultiplier": 2.229888
@@ -48903,6 +49113,7 @@ const data: ServiceData = {
         "roe": 16.98,
         "roa": 8.919633,
         "roic": 13.884181,
+        "roce": 16.22307147880199,
         "netProfitMargin": 6.668863,
         "assetTurnover": 103.09649999999999,
         "equityMultiplier": 2.348008
@@ -48912,6 +49123,7 @@ const data: ServiceData = {
         "roe": 17.61,
         "roa": 9.238244,
         "roic": 14.68579,
+        "roce": 17.107724573906076,
         "netProfitMargin": 6.845069,
         "assetTurnover": 103.77019999999999,
         "equityMultiplier": 2.450514
@@ -48921,6 +49133,7 @@ const data: ServiceData = {
         "roe": 17.24,
         "roa": 8.918004,
         "roic": 14.139482,
+        "roce": 17.006859332294276,
         "netProfitMargin": 6.400264,
         "assetTurnover": 106.8365,
         "equityMultiplier": 2.392367
@@ -48930,6 +49143,7 @@ const data: ServiceData = {
         "roe": 16.8,
         "roa": 8.278021,
         "roic": 13.539981,
+        "roce": 16.390549254304727,
         "netProfitMargin": 6.04984,
         "assetTurnover": 107.3732,
         "equityMultiplier": 2.490058
@@ -48939,6 +49153,7 @@ const data: ServiceData = {
         "roe": 17.26,
         "roa": 7.900309,
         "roic": 13.36509,
+        "roce": 16.01935535054349,
         "netProfitMargin": 5.808266,
         "assetTurnover": 108.1135,
         "equityMultiplier": 2.681938
@@ -48948,6 +49163,7 @@ const data: ServiceData = {
         "roe": 17.68,
         "roa": 7.613737,
         "roic": 10.974026,
+        "roce": 14.70897586144332,
         "netProfitMargin": 5.39877,
         "assetTurnover": 107.3003,
         "equityMultiplier": 2.987174
@@ -48957,6 +49173,7 @@ const data: ServiceData = {
         "roe": 19.12,
         "roa": 9.212718,
         "roic": 12.538306,
+        "roce": 16.81291224547661,
         "netProfitMargin": 6.143788,
         "assetTurnover": 112.93169999999999,
         "equityMultiplier": 2.884361
@@ -48966,6 +49183,7 @@ const data: ServiceData = {
         "roe": 20.88,
         "roa": 8.086129,
         "roic": 12.567152,
+        "roce": 14.560423352824461,
         "netProfitMargin": 5.329905,
         "assetTurnover": 113.20589999999999,
         "equityMultiplier": 3.023738
@@ -48975,6 +49193,7 @@ const data: ServiceData = {
         "roe": 22.89,
         "roa": 8.312089,
         "roic": 12.419278,
+        "roce": 14.253158862598722,
         "netProfitMargin": 5.683764,
         "assetTurnover": 112.5742,
         "equityMultiplier": 3.239852
@@ -48984,6 +49203,7 @@ const data: ServiceData = {
         "roe": 20.38,
         "roa": 8.659802,
         "roic": 13.047784,
+        "roce": 13.354774554366458,
         "netProfitMargin": 5.619861,
         "assetTurnover": 114.9195,
         "equityMultiplier": 3.492655
@@ -50510,10 +50730,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600690",
-      "price": 20.97,
-      "marketValue": 196648893761,
-      "PB": 1.57,
-      "PE_TTM": 10.51,
+      "price": 20.49,
+      "marketValue": 192147631529,
+      "PB": 1.53,
+      "PE_TTM": 10.27,
       "totalSharesOutstanding": 9377629650
     },
     "recentYearData": {
@@ -51384,6 +51604,7 @@ const data: ServiceData = {
         "roe": 12.57,
         "roa": 12.014561,
         "roic": 12.683678,
+        "roce": 16.88222720337971,
         "netProfitMargin": 36.215315,
         "assetTurnover": 24.726200000000002,
         "equityMultiplier": 1.413564
@@ -51393,6 +51614,7 @@ const data: ServiceData = {
         "roe": 33.48,
         "roa": 30.346454,
         "roic": 32.635531,
+        "roce": 43.94505829788231,
         "netProfitMargin": 31.755703,
         "assetTurnover": 70.513,
         "equityMultiplier": 1.403369
@@ -51402,6 +51624,7 @@ const data: ServiceData = {
         "roe": 39.68,
         "roa": 33.942731,
         "roic": 38.355059,
+        "roce": 51.63940862419655,
         "netProfitMargin": 34.025984,
         "assetTurnover": 73.7997,
         "equityMultiplier": 1.519556
@@ -51411,6 +51634,7 @@ const data: ServiceData = {
         "roe": 43.06,
         "roa": 35.265457,
         "roic": 41.86737,
+        "roce": 56.63121161686012,
         "netProfitMargin": 32.756127,
         "assetTurnover": 79.0441,
         "equityMultiplier": 1.55953
@@ -51420,6 +51644,7 @@ const data: ServiceData = {
         "roe": 44.74,
         "roa": 32.6434,
         "roic": 44.259178,
+        "roce": 58.21965672412928,
         "netProfitMargin": 31.117024,
         "assetTurnover": 78.6718,
         "equityMultiplier": 1.687081
@@ -51429,6 +51654,7 @@ const data: ServiceData = {
         "roe": 42.04,
         "roa": 28.518282,
         "roic": 42.467947,
+        "roce": 54.78647009027631,
         "netProfitMargin": 26.987496,
         "assetTurnover": 80.3126,
         "equityMultiplier": 1.921795
@@ -51438,6 +51664,7 @@ const data: ServiceData = {
         "roe": 35.09,
         "roa": 23.25365,
         "roic": 35.436032,
+        "roce": 47.24241638931333,
         "netProfitMargin": 22.272375,
         "assetTurnover": 76.6598,
         "equityMultiplier": 1.965092
@@ -51447,6 +51674,7 @@ const data: ServiceData = {
         "roe": 27.39,
         "roa": 19.999104,
         "roic": 27.886242,
+        "roce": 39.99593857148246,
         "netProfitMargin": 17.285844,
         "assetTurnover": 83.5086,
         "equityMultiplier": 2.107361
@@ -51456,6 +51684,7 @@ const data: ServiceData = {
         "roe": 24.77,
         "roa": 20.414096,
         "roic": 25.38439,
+        "roce": 36.28295248698913,
         "netProfitMargin": 16.626524,
         "assetTurnover": 87.95779999999999,
         "equityMultiplier": 1.825002
@@ -51465,6 +51694,7 @@ const data: ServiceData = {
         "roe": 18.74,
         "roa": 16.913782,
         "roic": 18.889127,
+        "roce": 26.765474123409522,
         "netProfitMargin": 16.632087,
         "assetTurnover": 73.824,
         "equityMultiplier": 1.67452
@@ -51474,6 +51704,7 @@ const data: ServiceData = {
         "roe": 13.24,
         "roa": 13.031861,
         "roic": 13.181068,
+        "roce": 19.923507073456975,
         "netProfitMargin": 14.56484,
         "assetTurnover": 62.37859999999999,
         "equityMultiplier": 1.533299
@@ -52808,10 +53039,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600809",
-      "price": 119.28,
-      "marketValue": 145517332400,
-      "PB": 3.23,
-      "PE_TTM": 13.25,
+      "price": 115.71,
+      "marketValue": 141162060128,
+      "PB": 3.14,
+      "PE_TTM": 12.85,
       "totalSharesOutstanding": 1219964222
     },
     "recentYearData": {
@@ -53682,6 +53913,7 @@ const data: ServiceData = {
         "roe": 0.72,
         "roa": 0.640439,
         "roic": 0.635765,
+        "roce": 0.7404250556196817,
         "netProfitMargin": 1.970067,
         "assetTurnover": 23.072799999999997,
         "equityMultiplier": 1.581795
@@ -53691,6 +53923,7 @@ const data: ServiceData = {
         "roe": 21.48,
         "roa": 15.211377,
         "roic": 17.171816,
+        "roce": 15.26158240623246,
         "netProfitMargin": 13.552496,
         "assetTurnover": 97.3691,
         "equityMultiplier": 1.58531
@@ -53700,6 +53933,7 @@ const data: ServiceData = {
         "roe": 19.04,
         "roa": 14.605796,
         "roic": 15.365537,
+        "roce": 19.463475974546064,
         "netProfitMargin": 10.931412,
         "assetTurnover": 106.75330000000001,
         "equityMultiplier": 1.633595
@@ -53709,6 +53943,7 @@ const data: ServiceData = {
         "roe": 23.48,
         "roa": 16.111193,
         "roic": 17.919824,
+        "roce": 21.36866142624507,
         "netProfitMargin": 11.458499,
         "assetTurnover": 116.5229,
         "equityMultiplier": 1.635045
@@ -53718,6 +53953,7 @@ const data: ServiceData = {
         "roe": 35.95,
         "roa": 23.321781,
         "roic": 26.018343,
+        "roce": 30.332049840964913,
         "netProfitMargin": 15.772231,
         "assetTurnover": 122.88250000000001,
         "equityMultiplier": 1.811925
@@ -53727,6 +53963,7 @@ const data: ServiceData = {
         "roe": 26.77,
         "roa": 15.045397,
         "roic": 16.061081,
+        "roce": 19.57179079453521,
         "netProfitMargin": 10.404865,
         "assetTurnover": 114.429,
         "equityMultiplier": 1.969696
@@ -53736,6 +53973,7 @@ const data: ServiceData = {
         "roe": 10.99,
         "roa": 7.234067,
         "roic": 7.808783,
+        "roce": 9.020239690189483,
         "netProfitMargin": 5.897132,
         "assetTurnover": 89.00580000000001,
         "equityMultiplier": 2.038663
@@ -53745,6 +53983,7 @@ const data: ServiceData = {
         "roe": 10.68,
         "roa": 7.487297,
         "roic": 8.075679,
+        "roce": 9.131680047906709,
         "netProfitMargin": 6.895621,
         "assetTurnover": 75.8338,
         "equityMultiplier": 2.095983
@@ -53754,6 +53993,7 @@ const data: ServiceData = {
         "roe": 11.06,
         "roa": 8.247591,
         "roic": 8.254808,
+        "roce": 9.502640241152449,
         "netProfitMargin": 8.065044,
         "assetTurnover": 69.9425,
         "equityMultiplier": 2.034116
@@ -53763,6 +54003,7 @@ const data: ServiceData = {
         "roe": 13.14,
         "roa": 9.837481,
         "roic": 9.891548,
+        "roce": 11.512031010451224,
         "netProfitMargin": 10.743977,
         "assetTurnover": 65.3201,
         "equityMultiplier": 1.82705
@@ -53772,6 +54013,7 @@ const data: ServiceData = {
         "roe": 11.98,
         "roa": 8.182931,
         "roic": 9.673896,
+        "roce": 7.655056921742426,
         "netProfitMargin": 9.620402,
         "assetTurnover": 63.112199999999994,
         "equityMultiplier": 1.826753
@@ -55394,10 +55636,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600873",
-      "price": 8.87,
-      "marketValue": 24873623436,
-      "PB": 1.52,
-      "PE_TTM": 10.45,
+      "price": 8.52,
+      "marketValue": 23892138858,
+      "PB": 1.46,
+      "PE_TTM": 10.04,
       "totalSharesOutstanding": 2804241650
     },
     "recentYearData": {
@@ -56268,6 +56510,7 @@ const data: ServiceData = {
         "roe": 3.06,
         "roa": 1.733922,
         "roic": 1.332312,
+        "roce": 1.9413151169246599,
         "netProfitMargin": 31.019408,
         "assetTurnover": 3.972,
         "equityMultiplier": 2.474296
@@ -56277,6 +56520,7 @@ const data: ServiceData = {
         "roe": 11.35,
         "roa": 6.690652,
         "roic": 5.198413,
+        "roce": 7.495433910357489,
         "netProfitMargin": 25.390823,
         "assetTurnover": 17.3784,
         "equityMultiplier": 2.533193
@@ -56286,6 +56530,7 @@ const data: ServiceData = {
         "roe": 11.8,
         "roa": 6.995599,
         "roic": 5.293994,
+        "roce": 7.863231724190169,
         "netProfitMargin": 20.797154,
         "assetTurnover": 20.1496,
         "equityMultiplier": 2.718682
@@ -56295,6 +56540,7 @@ const data: ServiceData = {
         "roe": 12.78,
         "roa": 7.029716,
         "roic": 5.782967,
+        "roce": 7.738545292508264,
         "netProfitMargin": 21.442179,
         "assetTurnover": 21.1744,
         "equityMultiplier": 2.71612
@@ -56304,6 +56550,7 @@ const data: ServiceData = {
         "roe": 8.25,
         "roa": 5.811834,
         "roic": 4.995688,
+        "roce": 6.410230680702737,
         "netProfitMargin": 15.211022,
         "assetTurnover": 20.2094,
         "equityMultiplier": 2.758408
@@ -56313,6 +56560,7 @@ const data: ServiceData = {
         "roe": 5.39,
         "roa": 4.654902,
         "roic": 3.884711,
+        "roce": 5.000965478307534,
         "netProfitMargin": 11.848593,
         "assetTurnover": 18.5769,
         "equityMultiplier": 2.740961
@@ -56322,6 +56570,7 @@ const data: ServiceData = {
         "roe": 13.78,
         "roa": 7.022943,
         "roic": 5.69097,
+        "roce": 7.537231330018143,
         "netProfitMargin": 24.862893,
         "assetTurnover": 17.335800000000003,
         "equityMultiplier": 2.771791
@@ -56331,6 +56580,7 @@ const data: ServiceData = {
         "roe": 11.66,
         "roa": 6.820686,
         "roic": 5.690886,
+        "roce": 7.346817618866678,
         "netProfitMargin": 20.57589,
         "assetTurnover": 19.0528,
         "equityMultiplier": 3.020686
@@ -56340,6 +56590,7 @@ const data: ServiceData = {
         "roe": 12.44,
         "roa": 6.878977,
         "roic": 5.658961,
+        "roce": 7.412713233469153,
         "netProfitMargin": 20.425681,
         "assetTurnover": 19.119600000000002,
         "equityMultiplier": 3.144748
@@ -56349,6 +56600,7 @@ const data: ServiceData = {
         "roe": 10.91,
         "roa": 6.034091,
         "roic": 5.147073,
+        "roce": 6.712798095381159,
         "netProfitMargin": 20.728177,
         "assetTurnover": 15.3775,
         "equityMultiplier": 3.431006
@@ -56358,6 +56610,7 @@ const data: ServiceData = {
         "roe": 14.17,
         "roa": 7.195411,
         "roic": 6.017291,
+        "roce": 4.937521086499659,
         "netProfitMargin": 26.851363,
         "assetTurnover": 15.1334,
         "equityMultiplier": 3.584255
@@ -58220,10 +58473,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600886",
-      "price": 13.79,
-      "marketValue": 110381975873,
-      "PB": 1.6,
-      "PE_TTM": 14.85,
+      "price": 13.32,
+      "marketValue": 106619863570,
+      "PB": 1.54,
+      "PE_TTM": 14.34,
       "totalSharesOutstanding": 8004494262
     },
     "recentYearData": {
@@ -59094,6 +59347,7 @@ const data: ServiceData = {
         "roe": 9.44,
         "roa": 4.299854,
         "roic": 4.983334,
+        "roce": 5.7089163782331465,
         "netProfitMargin": 15.656436,
         "assetTurnover": 22.5518,
         "equityMultiplier": 2.469036
@@ -59103,6 +59357,7 @@ const data: ServiceData = {
         "roe": 20.87,
         "roa": 9.391426,
         "roic": 12.364337,
+        "roce": 13.769263333718143,
         "netProfitMargin": 9.957009,
         "assetTurnover": 75.8174,
         "equityMultiplier": 2.598008
@@ -59112,6 +59367,7 @@ const data: ServiceData = {
         "roe": 15.81,
         "roa": 7.824928,
         "roic": 9.557387,
+        "roce": 10.81025505299812,
         "netProfitMargin": 7.334662,
         "assetTurnover": 75.8369,
         "equityMultiplier": 2.696445
@@ -59121,6 +59377,7 @@ const data: ServiceData = {
         "roe": 20.2,
         "roa": 9.847648,
         "roic": 12.469385,
+        "roce": 13.430681239368683,
         "netProfitMargin": 8.177843,
         "assetTurnover": 89.3035,
         "equityMultiplier": 2.645137
@@ -59130,6 +59387,7 @@ const data: ServiceData = {
         "roe": 19.23,
         "roa": 10.331725,
         "roic": 13.428317,
+        "roce": 14.834037830565066,
         "netProfitMargin": 7.594423,
         "assetTurnover": 105.759,
         "equityMultiplier": 2.418873
@@ -59139,6 +59397,7 @@ const data: ServiceData = {
         "roe": 25.59,
         "roa": 12.617932,
         "roic": 16.759947,
+        "roce": 19.355614407709005,
         "netProfitMargin": 7.927827,
         "assetTurnover": 127.7696,
         "equityMultiplier": 2.089776
@@ -59148,6 +59407,7 @@ const data: ServiceData = {
         "roe": 25.18,
         "roa": 13.135481,
         "roic": 19.786589,
+        "roce": 23.64788281813852,
         "netProfitMargin": 7.354586,
         "assetTurnover": 147.2252,
         "equityMultiplier": 2.330432
@@ -59157,6 +59417,7 @@ const data: ServiceData = {
         "roe": 26.38,
         "roa": 15.668972,
         "roic": 22.958884,
+        "roce": 27.279420284659185,
         "netProfitMargin": 7.722245,
         "assetTurnover": 166.9754,
         "equityMultiplier": 2.30117
@@ -59166,6 +59427,7 @@ const data: ServiceData = {
         "roe": 24.33,
         "roa": 15.910656,
         "roic": 20.975444,
+        "roce": 24.944798273322295,
         "netProfitMargin": 8.169525,
         "assetTurnover": 164.18550000000002,
         "equityMultiplier": 1.697964
@@ -59175,6 +59437,7 @@ const data: ServiceData = {
         "roe": 25.22,
         "roa": 16.44914,
         "roic": 22.069544,
+        "roce": 25.927346885035146,
         "netProfitMargin": 8.886812,
         "assetTurnover": 153.695,
         "equityMultiplier": 1.953277
@@ -59184,6 +59447,7 @@ const data: ServiceData = {
         "roe": 26.58,
         "roa": 16.917035,
         "roic": 23.085653,
+        "roce": 22.219888010098096,
         "netProfitMargin": 9.399513,
         "assetTurnover": 153.6487,
         "equityMultiplier": 1.689725
@@ -60662,10 +60926,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600887",
-      "price": 25.41,
-      "marketValue": 160727414548,
-      "PB": 2.98,
-      "PE_TTM": 13.3,
+      "price": 24.67,
+      "marketValue": 156046647655,
+      "PB": 2.9,
+      "PE_TTM": 12.91,
       "totalSharesOutstanding": 6325360667
     },
     "recentYearData": {
@@ -61536,6 +61800,7 @@ const data: ServiceData = {
         "roe": 3.01,
         "roa": 1.842021,
         "roic": 1.732285,
+        "roce": 1.9914084295118266,
         "netProfitMargin": 38.005035,
         "assetTurnover": 3.2307,
         "equityMultiplier": 2.343405
@@ -61545,6 +61810,7 @@ const data: ServiceData = {
         "roe": 15.9,
         "roa": 9.104433,
         "roic": 8.65401,
+        "roce": 10.020491777739625,
         "netProfitMargin": 40.52468,
         "assetTurnover": 15.321000000000002,
         "equityMultiplier": 2.396326
@@ -61554,6 +61820,7 @@ const data: ServiceData = {
         "roe": 15.71,
         "roa": 8.812852,
         "roic": 8.556417,
+        "roce": 9.740316131854836,
         "netProfitMargin": 38.974399,
         "assetTurnover": 14.835999999999999,
         "equityMultiplier": 2.55038
@@ -61563,6 +61830,7 @@ const data: ServiceData = {
         "roe": 13.52,
         "roa": 7.8497,
         "roic": 9.341073,
+        "roce": 8.635842487691955,
         "netProfitMargin": 35.790349,
         "assetTurnover": 13.5799,
         "equityMultiplier": 2.694044
@@ -61572,6 +61840,7 @@ const data: ServiceData = {
         "roe": 9.32,
         "roa": 9.328045,
         "roic": 8.657373,
+        "roce": 9.710595687642796,
         "netProfitMargin": 41.584895,
         "assetTurnover": 15.876100000000001,
         "equityMultiplier": 1.671833
@@ -61581,6 +61850,7 @@ const data: ServiceData = {
         "roe": 14.92,
         "roa": 11.286789,
         "roic": 10.596459,
+        "roce": 13.249927774479495,
         "netProfitMargin": 47.596094,
         "assetTurnover": 16.878,
         "equityMultiplier": 1.726661
@@ -61590,6 +61860,7 @@ const data: ServiceData = {
         "roe": 16.71,
         "roa": 11.994866,
         "roic": 11.307916,
+        "roce": 14.62558328670857,
         "netProfitMargin": 45.871784,
         "assetTurnover": 18.4225,
         "equityMultiplier": 1.855227
@@ -61599,6 +61870,7 @@ const data: ServiceData = {
         "roe": 14.77,
         "roa": 10.753057,
         "roic": 10.105474,
+        "roce": 13.582395857390326,
         "netProfitMargin": 43.243793,
         "assetTurnover": 16.8499,
         "equityMultiplier": 1.976342
@@ -61608,6 +61880,7 @@ const data: ServiceData = {
         "roe": 16.31,
         "roa": 11.070637,
         "roic": 10.634721,
+        "roce": 14.46465284342354,
         "netProfitMargin": 44.213625,
         "assetTurnover": 17.2178,
         "equityMultiplier": 2.07098
@@ -61617,6 +61890,7 @@ const data: ServiceData = {
         "roe": 16.91,
         "roa": 10.963041,
         "roic": 10.505117,
+        "roce": 14.873131456668359,
         "netProfitMargin": 44.418769,
         "assetTurnover": 16.7633,
         "equityMultiplier": 2.209273
@@ -61626,6 +61900,7 @@ const data: ServiceData = {
         "roe": 16.88,
         "roa": 10.522124,
         "roic": 12.586777,
+        "roce": 10.280313960716494,
         "netProfitMargin": 42.783075,
         "assetTurnover": 16.2208,
         "equityMultiplier": 2.325553
@@ -62648,10 +62923,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600900",
-      "price": 27.57,
-      "marketValue": 674588762430,
-      "PB": 2.96,
-      "PE_TTM": 18.7,
+      "price": 27,
+      "marketValue": 660641878332,
+      "PB": 2.9,
+      "PE_TTM": 18.31,
       "totalSharesOutstanding": 24468217716
     },
     "recentYearData": {
@@ -63368,6 +63643,7 @@ const data: ServiceData = {
         "roe": 4.77,
         "roa": 4.703033,
         "roic": 4.462946,
+        "roce": 5.983545927311634,
         "netProfitMargin": 33.756321,
         "assetTurnover": 10.3175,
         "equityMultiplier": 1.3716
@@ -63377,6 +63653,7 @@ const data: ServiceData = {
         "roe": 15.64,
         "roa": 15.753373,
         "roic": 14.272671,
+        "roce": 20.204575754956046,
         "netProfitMargin": 30.673497,
         "assetTurnover": 36.9605,
         "equityMultiplier": 1.364357
@@ -63386,6 +63663,7 @@ const data: ServiceData = {
         "roe": 19.36,
         "roa": 18.794895,
         "roic": 17.430103,
+        "roce": 23.89888062523323,
         "netProfitMargin": 32.813324,
         "assetTurnover": 40.7886,
         "equityMultiplier": 1.409434
@@ -63395,6 +63673,7 @@ const data: ServiceData = {
         "roe": 19.55,
         "roa": 18.132365,
         "roic": 16.6321,
+        "roce": 23.275688672362758,
         "netProfitMargin": 29.785722,
         "assetTurnover": 43.0686,
         "equityMultiplier": 1.505665
@@ -63404,6 +63683,7 @@ const data: ServiceData = {
         "roe": 26,
         "roa": 22.513522,
         "roic": 20.784754,
+        "roce": 29.61280599032314,
         "netProfitMargin": 33.55446,
         "assetTurnover": 49.2224,
         "equityMultiplier": 1.552569
@@ -63413,6 +63693,7 @@ const data: ServiceData = {
         "roe": 15.36,
         "roa": 12.857289,
         "roic": 11.972217,
+        "roce": 16.739540640344114,
         "netProfitMargin": 28.567191,
         "assetTurnover": 32.644,
         "equityMultiplier": 1.631967
@@ -63422,6 +63703,7 @@ const data: ServiceData = {
         "roe": 5.66,
         "roa": 5.200934,
         "roic": 4.816019,
+        "roce": 6.543864963529451,
         "netProfitMargin": 16.061812,
         "assetTurnover": 21.0104,
         "equityMultiplier": 1.662192
@@ -63431,6 +63713,7 @@ const data: ServiceData = {
         "roe": 14.06,
         "roa": 12.287037,
         "roic": 10.956216,
+        "roce": 15.213364508311034,
         "netProfitMargin": 26.17746,
         "assetTurnover": 32.2964,
         "equityMultiplier": 1.690507
@@ -63440,6 +63723,7 @@ const data: ServiceData = {
         "roe": 13.13,
         "roa": 11.329018,
         "roic": 9.806977,
+        "roce": 13.66043945480444,
         "netProfitMargin": 23.132629,
         "assetTurnover": 33.1755,
         "equityMultiplier": 1.634584
@@ -64554,10 +64838,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600938",
-      "price": 31.82,
-      "marketValue": 1512403135771,
-      "PB": 1.81,
-      "PE_TTM": 12.13,
+      "price": 31.1,
+      "marketValue": 1478181568902,
+      "PB": 1.77,
+      "PE_TTM": 11.86,
       "totalSharesOutstanding": 47529953984
     },
     "recentYearData": {
@@ -65428,6 +65712,7 @@ const data: ServiceData = {
         "roe": 2.1,
         "roa": 1.810891,
         "roic": 2.002008,
+        "roce": 2.6047905825595072,
         "netProfitMargin": 11.015543,
         "assetTurnover": 12.5507,
         "equityMultiplier": 1.509021
@@ -65437,6 +65722,7 @@ const data: ServiceData = {
         "roe": 9.94,
         "roa": 8.782274,
         "roic": 9.825258,
+        "roce": 12.807972549873275,
         "netProfitMargin": 13.070434,
         "assetTurnover": 50.420500000000004,
         "equityMultiplier": 1.497535
@@ -65446,6 +65732,7 @@ const data: ServiceData = {
         "roe": 10.36,
         "roa": 9.015072,
         "roic": 9.924261,
+        "roce": 13.108211348253457,
         "netProfitMargin": 13.310093,
         "assetTurnover": 51.6482,
         "equityMultiplier": 1.52275
@@ -65455,6 +65742,7 @@ const data: ServiceData = {
         "roe": 10.23,
         "roa": 9.034696,
         "roic": 9.733649,
+        "roce": 13.00441711421763,
         "netProfitMargin": 13.071814,
         "assetTurnover": 52.328399999999995,
         "equityMultiplier": 1.493384
@@ -65464,6 +65752,7 @@ const data: ServiceData = {
         "roe": 10.1,
         "roa": 8.914743,
         "roic": 9.819578,
+        "roce": 13.100873346188472,
         "netProfitMargin": 13.400138,
         "assetTurnover": 50.577000000000005,
         "equityMultiplier": 1.500832
@@ -65473,6 +65762,7 @@ const data: ServiceData = {
         "roe": 10.1,
         "roa": 8.84077,
         "roic": 9.850681,
+        "roce": 13.204700908696648,
         "netProfitMargin": 13.686284,
         "assetTurnover": 48.491099999999996,
         "equityMultiplier": 1.537054
@@ -65482,6 +65772,7 @@ const data: ServiceData = {
         "roe": 9.83,
         "roa": 8.845156,
         "roic": 9.542127,
+        "roce": 13.051188971793612,
         "netProfitMargin": 14.078664,
         "assetTurnover": 46.740500000000004,
         "equityMultiplier": 1.514652
@@ -65491,6 +65782,7 @@ const data: ServiceData = {
         "roe": 10.15,
         "roa": 9.375385,
         "roic": 10.146021,
+        "roce": 13.797025859908867,
         "netProfitMargin": 14.274376,
         "assetTurnover": 48.208400000000005,
         "equityMultiplier": 1.486899
@@ -65500,6 +65792,7 @@ const data: ServiceData = {
         "roe": 11.74,
         "roa": 10.192988,
         "roic": 11.487801,
+        "roce": 17.85524949324672,
         "netProfitMargin": 15.86129,
         "assetTurnover": 49.1012,
         "equityMultiplier": 1.470452
@@ -65509,6 +65802,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": 0,
         "roic": 20.07499,
+        "roce": 24.08377963434755,
         "netProfitMargin": 514.620098,
         "assetTurnover": 58.197900000000004,
         "equityMultiplier": 1.464529
@@ -65518,6 +65812,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": 0,
         "roic": 0,
+        "roce": 27.787808157694162,
         "netProfitMargin": 0,
         "assetTurnover": 60.1537,
         "equityMultiplier": 1.492778
@@ -67752,10 +68047,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600941",
-      "price": 94.23,
-      "marketValue": 2042851260656,
-      "PB": 1.44,
-      "PE_TTM": 15.04,
+      "price": 93,
+      "marketValue": 2016185580399,
+      "PB": 1.42,
+      "PE_TTM": 14.85,
       "totalSharesOutstanding": 21679414843
     },
     "recentYearData": {
@@ -68626,6 +68921,7 @@ const data: ServiceData = {
         "roe": 2.17,
         "roa": 2.5726,
         "roic": 2.165762,
+        "roce": 2.8043259690613223,
         "netProfitMargin": 34.48897,
         "assetTurnover": 5.9016,
         "equityMultiplier": 1.090872
@@ -68635,6 +68931,7 @@ const data: ServiceData = {
         "roe": 9.5,
         "roa": 10.896736,
         "roic": 9.442458,
+        "roce": 11.848317594267728,
         "netProfitMargin": 38.350185,
         "assetTurnover": 22.6052,
         "equityMultiplier": 1.099061
@@ -68644,6 +68941,7 @@ const data: ServiceData = {
         "roe": 9.76,
         "roa": 11.03629,
         "roic": 9.71305,
+        "roce": 12.255477099815455,
         "netProfitMargin": 37.143476,
         "assetTurnover": 23.5418,
         "equityMultiplier": 1.109428
@@ -68653,6 +68951,7 @@ const data: ServiceData = {
         "roe": 9.88,
         "roa": 10.931734,
         "roic": 9.789494,
+        "roce": 12.278411079534193,
         "netProfitMargin": 34.861867,
         "assetTurnover": 24.7738,
         "equityMultiplier": 1.112287
@@ -68662,6 +68961,7 @@ const data: ServiceData = {
         "roe": 9.01,
         "roa": 9.70473,
         "roic": 9.04936,
+        "roce": 11.092887168830021,
         "netProfitMargin": 32.217025,
         "assetTurnover": 23.874699999999997,
         "equityMultiplier": 1.136212
@@ -68671,6 +68971,7 @@ const data: ServiceData = {
         "roe": 11.13,
         "roa": 10.862784,
         "roic": 11.41348,
+        "roce": 13.13959432664609,
         "netProfitMargin": 35.43529,
         "assetTurnover": 25.136599999999998,
         "equityMultiplier": 1.19881
@@ -68680,6 +68981,7 @@ const data: ServiceData = {
         "roe": 10.36,
         "roa": 9.936713,
         "roic": 10.23364,
+        "roce": 12.154277428801935,
         "netProfitMargin": 25.161683,
         "assetTurnover": 31.8255,
         "equityMultiplier": 1.251716
@@ -68689,6 +68991,7 @@ const data: ServiceData = {
         "roe": 10.84,
         "roa": 9.497901,
         "roic": 10.217072,
+        "roce": 11.556206632575286,
         "netProfitMargin": 15.745268,
         "assetTurnover": 46.7488,
         "equityMultiplier": 1.342086
@@ -68698,6 +69001,7 @@ const data: ServiceData = {
         "roe": 10.67,
         "roa": 8.734491,
         "roic": 10.06696,
+        "roce": 10.863097329387122,
         "netProfitMargin": 15.171116,
         "assetTurnover": 44.6994,
         "equityMultiplier": 1.367111
@@ -68707,6 +69011,7 @@ const data: ServiceData = {
         "roe": 10.33,
         "roa": 8.900267,
         "roic": 10.048221,
+        "roce": 11.324345668310656,
         "netProfitMargin": 20.234477,
         "assetTurnover": 35.4099,
         "equityMultiplier": 1.389228
@@ -68716,6 +69021,7 @@ const data: ServiceData = {
         "roe": 11.94,
         "roa": 9.495438,
         "roic": 10.522676,
+        "roce": 10.630589117402375,
         "netProfitMargin": 25.357911,
         "assetTurnover": 30.4645,
         "equityMultiplier": 1.365428
@@ -69690,10 +69996,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601000",
-      "price": 4.31,
-      "marketValue": 25540752326,
+      "price": 4.29,
+      "marketValue": 25422233754,
       "PB": 1.23,
-      "PE_TTM": 12.23,
+      "PE_TTM": 12.18,
       "totalSharesOutstanding": 5925928614
     },
     "recentYearData": {
@@ -70564,6 +70870,7 @@ const data: ServiceData = {
         "roe": 1.44,
         "roa": 1.385854,
         "roic": 1.33363,
+        "roce": 1.6666496782119826,
         "netProfitMargin": 16.015663,
         "assetTurnover": 6.6994,
         "equityMultiplier": 1.323836
@@ -70573,6 +70880,7 @@ const data: ServiceData = {
         "roe": 6.46,
         "roa": 6.469203,
         "roic": 5.555081,
+        "roce": 7.538351099689451,
         "netProfitMargin": 18.288946,
         "assetTurnover": 26.184800000000003,
         "equityMultiplier": 1.369646
@@ -70582,6 +70890,7 @@ const data: ServiceData = {
         "roe": 6.36,
         "roa": 6.402284,
         "roic": 5.436593,
+        "roce": 7.7942372494213,
         "netProfitMargin": 18.844259,
         "assetTurnover": 25.4856,
         "equityMultiplier": 1.31969
@@ -70591,6 +70900,7 @@ const data: ServiceData = {
         "roe": 6.36,
         "roa": 6.031868,
         "roic": 5.350495,
+        "roce": 7.371154439105553,
         "netProfitMargin": 19.893472,
         "assetTurnover": 23.4715,
         "equityMultiplier": 1.391899
@@ -70600,6 +70910,7 @@ const data: ServiceData = {
         "roe": 7.1,
         "roa": 6.465278,
         "roic": 5.347889,
+        "roce": 7.85171700990897,
         "netProfitMargin": 18.159023,
         "assetTurnover": 25.2198,
         "equityMultiplier": 1.424079
@@ -70609,6 +70920,7 @@ const data: ServiceData = {
         "roe": 8.04,
         "roa": 7.10234,
         "roic": 6.198999,
+        "roce": 8.912077933514794,
         "netProfitMargin": 20.668338,
         "assetTurnover": 25.162000000000003,
         "equityMultiplier": 1.612981
@@ -70618,6 +70930,7 @@ const data: ServiceData = {
         "roe": 7.01,
         "roa": 6.481655,
         "roic": 5.847033,
+        "roce": 8.056683456773296,
         "netProfitMargin": 17.816323,
         "assetTurnover": 25.9513,
         "equityMultiplier": 1.542503
@@ -70627,6 +70940,7 @@ const data: ServiceData = {
         "roe": 7.95,
         "roa": 7.322227,
         "roic": 6.316094,
+        "roce": 9.037103324053973,
         "netProfitMargin": 15.623958,
         "assetTurnover": 33.4529,
         "equityMultiplier": 1.615485
@@ -70636,6 +70950,7 @@ const data: ServiceData = {
         "roe": 7.75,
         "roa": 6.730858,
         "roic": 5.776317,
+        "roce": 8.368017429006084,
         "netProfitMargin": 14.655586,
         "assetTurnover": 32.216499999999996,
         "equityMultiplier": 1.752338
@@ -70645,6 +70960,7 @@ const data: ServiceData = {
         "roe": 7.51,
         "roa": 6.812963,
         "roic": 5.997798,
+        "roce": 8.100471939033644,
         "netProfitMargin": 15.71547,
         "assetTurnover": 30.215700000000002,
         "equityMultiplier": 1.574942
@@ -70654,6 +70970,7 @@ const data: ServiceData = {
         "roe": 6.82,
         "roa": 6.107879,
         "roic": 5.720937,
+        "roce": 6.384688379984888,
         "netProfitMargin": 15.248666,
         "assetTurnover": 28.857300000000002,
         "equityMultiplier": 1.586418
@@ -72924,10 +73241,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601018",
-      "price": 3.4,
-      "marketValue": 66144920557,
-      "PB": 0.82,
-      "PE_TTM": 12.81,
+      "price": 3.34,
+      "marketValue": 64977657253,
+      "PB": 0.81,
+      "PE_TTM": 12.58,
       "totalSharesOutstanding": 19454388399
     },
     "recentYearData": {
@@ -73798,6 +74115,7 @@ const data: ServiceData = {
         "roe": 4.8,
         "roa": 2.822786,
         "roic": 3.305998,
+        "roce": 3.6981402818439806,
         "netProfitMargin": 11.354359,
         "assetTurnover": 19.6451,
         "equityMultiplier": 2.05069
@@ -73807,6 +74125,7 @@ const data: ServiceData = {
         "roe": 17.04,
         "roa": 10.684249,
         "roic": 12.554653,
+        "roce": 14.143205682316253,
         "netProfitMargin": 9.830293,
         "assetTurnover": 84.5264,
         "equityMultiplier": 2.002403
@@ -73816,6 +74135,7 @@ const data: ServiceData = {
         "roe": 22.81,
         "roa": 13.640179,
         "roic": 16.561793,
+        "roce": 18.52791471039556,
         "netProfitMargin": 12.965999,
         "assetTurnover": 85.93990000000001,
         "equityMultiplier": 1.958269
@@ -73825,6 +74145,7 @@ const data: ServiceData = {
         "roe": 23.35,
         "roa": 12.3163,
         "roic": 15.471263,
+        "roce": 16.943784075794902,
         "netProfitMargin": 12.326189,
         "assetTurnover": 81.9815,
         "equityMultiplier": 2.184438
@@ -73834,6 +74155,7 @@ const data: ServiceData = {
         "roe": 11.79,
         "roa": 7.037495,
         "roic": 8.409998,
+        "roce": 9.489359185084185,
         "netProfitMargin": 6.518879,
         "assetTurnover": 78.4953,
         "equityMultiplier": 2.322254
@@ -73843,6 +74165,7 @@ const data: ServiceData = {
         "roe": 13.32,
         "roa": 6.864394,
         "roic": 9.339587,
+        "roce": 9.384383129550043,
         "netProfitMargin": 7.456526,
         "assetTurnover": 76.2174,
         "equityMultiplier": 2.349988
@@ -73852,6 +74175,7 @@ const data: ServiceData = {
         "roe": 19.43,
         "roa": 10.187543,
         "roic": 12.835463,
+        "roce": 14.425248142321525,
         "netProfitMargin": 9.871975,
         "assetTurnover": 79.1348,
         "equityMultiplier": 2.389986
@@ -73861,6 +74185,7 @@ const data: ServiceData = {
         "roe": 17.34,
         "roa": 9.533072,
         "roic": 12.15027,
+        "roce": 13.12994058576479,
         "netProfitMargin": 7.874189,
         "assetTurnover": 91.2262,
         "equityMultiplier": 2.412803
@@ -73870,6 +74195,7 @@ const data: ServiceData = {
         "roe": 10.65,
         "roa": 6.253676,
         "roic": 8.04553,
+        "roce": 7.879595471568288,
         "netProfitMargin": 4.800491,
         "assetTurnover": 90.1998,
         "equityMultiplier": 2.419959
@@ -73879,6 +74205,7 @@ const data: ServiceData = {
         "roe": 7.01,
         "roa": 4.264895,
         "roic": 5.52275,
+        "roce": 6.0334913415582125,
         "netProfitMargin": 2.29032,
         "assetTurnover": 98.7522,
         "equityMultiplier": 2.520569
@@ -73888,6 +74215,7 @@ const data: ServiceData = {
         "roe": 8.31,
         "roa": 4.964268,
         "roic": 5.975995,
+        "roce": 4.285344179163294,
         "netProfitMargin": 3.334395,
         "assetTurnover": 85.9514,
         "equityMultiplier": 2.836157
@@ -75234,10 +75562,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601058",
-      "price": 12.96,
-      "marketValue": 42613779357,
-      "PB": 1.95,
-      "PE_TTM": 12.04,
+      "price": 11.81,
+      "marketValue": 38832464059,
+      "PB": 1.78,
+      "PE_TTM": 10.97,
       "totalSharesOutstanding": 3288100259
     },
     "recentYearData": {
@@ -76108,6 +76436,7 @@ const data: ServiceData = {
         "roe": 2.4,
         "roa": 2.441886,
         "roic": 2.143255,
+        "roce": 2.878687114662453,
         "netProfitMargin": 18.909896,
         "assetTurnover": 9.978,
         "equityMultiplier": 1.409071
@@ -76117,6 +76446,7 @@ const data: ServiceData = {
         "roe": 12.76,
         "roa": 12.208988,
         "roic": 11.549581,
+        "roce": 14.548289221864351,
         "netProfitMargin": 21.288434,
         "assetTurnover": 45.5193,
         "equityMultiplier": 1.303893
@@ -76126,6 +76456,7 @@ const data: ServiceData = {
         "roe": 13.55,
         "roa": 13.739026,
         "roic": 13.298561,
+        "roce": 16.785955989417772,
         "netProfitMargin": 20.35168,
         "assetTurnover": 52.534499999999994,
         "equityMultiplier": 1.305814
@@ -76135,6 +76466,7 @@ const data: ServiceData = {
         "roe": 14.88,
         "roa": 14.382726,
         "roic": 13.845447,
+        "roce": 18.191998223758198,
         "netProfitMargin": 20.286585,
         "assetTurnover": 54.8052,
         "equityMultiplier": 1.317246
@@ -76144,6 +76476,7 @@ const data: ServiceData = {
         "roe": 18.08,
         "roa": 16.195153,
         "roic": 16.320094,
+        "roce": 19.796164263717124,
         "netProfitMargin": 23.700197,
         "assetTurnover": 56.0887,
         "equityMultiplier": 1.353745
@@ -76153,6 +76486,7 @@ const data: ServiceData = {
         "roe": 13.59,
         "roa": 13.719102,
         "roic": 12.198821,
+        "roce": 16.154395853858745,
         "netProfitMargin": 17.707686,
         "assetTurnover": 57.52310000000001,
         "equityMultiplier": 1.362092
@@ -76162,6 +76496,7 @@ const data: ServiceData = {
         "roe": 11,
         "roa": 11.625248,
         "roic": 10.027215,
+        "roce": 13.787542960911075,
         "netProfitMargin": 20.262536,
         "assetTurnover": 41.768499999999996,
         "equityMultiplier": 1.313591
@@ -76171,6 +76506,7 @@ const data: ServiceData = {
         "roe": 12.73,
         "roa": 12.182874,
         "roic": 11.727515,
+        "roce": 14.947275346074452,
         "netProfitMargin": 21.308879,
         "assetTurnover": 42.2215,
         "equityMultiplier": 1.34374
@@ -76180,6 +76516,7 @@ const data: ServiceData = {
         "roe": 13.94,
         "roa": 12.989328,
         "roic": 12.401575,
+        "roce": 16.656817529750818,
         "netProfitMargin": 20.462247,
         "assetTurnover": 45.757,
         "equityMultiplier": 1.451944
@@ -76189,6 +76526,7 @@ const data: ServiceData = {
         "roe": 14.67,
         "roa": 13.214575,
         "roic": 12.187337,
+        "roce": 15.744943549821599,
         "netProfitMargin": 21.728992,
         "assetTurnover": 43.686,
         "equityMultiplier": 1.513836
@@ -76198,6 +76536,7 @@ const data: ServiceData = {
         "roe": 7.51,
         "roa": 7.810388,
         "roic": 6.792087,
+        "roce": 8.252541122090157,
         "netProfitMargin": 16.128697,
         "assetTurnover": 32.5377,
         "equityMultiplier": 1.504759
@@ -78168,10 +78507,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601088",
-      "price": 43.39,
-      "marketValue": 941104554451,
-      "PB": 1.96,
-      "PE_TTM": 18.25,
+      "price": 41.88,
+      "marketValue": 908353508652,
+      "PB": 1.89,
+      "PE_TTM": 17.62,
       "totalSharesOutstanding": 21689434304
     },
     "recentYearData": {
@@ -79042,6 +79381,7 @@ const data: ServiceData = {
         "roe": 4.21,
         "roa": 3.500709,
         "roic": 3.401282,
+        "roce": 5.063294041209987,
         "netProfitMargin": 17.970705,
         "assetTurnover": 16.239600000000003,
         "equityMultiplier": 1.669455
@@ -79051,6 +79391,7 @@ const data: ServiceData = {
         "roe": 17.88,
         "roa": 14.121606,
         "roic": 14.248476,
+        "roce": 21.337393375684073,
         "netProfitMargin": 16.822187,
         "assetTurnover": 68.05980000000001,
         "equityMultiplier": 1.719479
@@ -79060,6 +79401,7 @@ const data: ServiceData = {
         "roe": 21.32,
         "roa": 19.243904,
         "roic": 20.69171,
+        "roce": 29.098192546038405,
         "netProfitMargin": 19.852445,
         "assetTurnover": 79.2838,
         "equityMultiplier": 1.77659
@@ -79069,6 +79411,7 @@ const data: ServiceData = {
         "roe": 20.64,
         "roa": 20.418854,
         "roic": 19.540492,
+        "roce": 29.582162230866455,
         "netProfitMargin": 21.002454,
         "assetTurnover": 81.907,
         "equityMultiplier": 1.562627
@@ -79078,6 +79421,7 @@ const data: ServiceData = {
         "roe": 33.3,
         "roa": 30.8751,
         "roic": 31.538116,
+        "roce": 45.111565481548574,
         "netProfitMargin": 31.819114,
         "assetTurnover": 79.9119,
         "equityMultiplier": 1.560791
@@ -79087,6 +79431,7 @@ const data: ServiceData = {
         "roe": 24.03,
         "roa": 24.601811,
         "roic": 23.112343,
+        "roce": 35.48138156742283,
         "netProfitMargin": 22.160857,
         "assetTurnover": 91.0305,
         "equityMultiplier": 1.617625
@@ -79096,6 +79441,7 @@ const data: ServiceData = {
         "roe": 23.15,
         "roa": 17.717692,
         "roic": 18.358407,
+        "roce": 25.083270270939483,
         "netProfitMargin": 20.82753,
         "assetTurnover": 68.5118,
         "equityMultiplier": 1.66068
@@ -79105,6 +79451,7 @@ const data: ServiceData = {
         "roe": 21.27,
         "roa": 16.317548,
         "roic": 16.300503,
+        "roce": 23.171702048746017,
         "netProfitMargin": 22.658926,
         "assetTurnover": 59.3847,
         "equityMultiplier": 1.663171
@@ -79114,6 +79461,7 @@ const data: ServiceData = {
         "roe": 22.91,
         "roa": 16.803166,
         "roic": 15.95406,
+        "roce": 24.05484762841509,
         "netProfitMargin": 27.836631,
         "assetTurnover": 50.6546,
         "equityMultiplier": 1.815509
@@ -79123,6 +79471,7 @@ const data: ServiceData = {
         "roe": 26.59,
         "roa": 18.652336,
         "roic": 16.50535,
+        "roce": 25.613482492522337,
         "netProfitMargin": 30.87885,
         "assetTurnover": 51.1581,
         "equityMultiplier": 1.799678
@@ -79132,6 +79481,7 @@ const data: ServiceData = {
         "roe": 8.35,
         "roa": 5.911026,
         "roic": 5.141813,
+        "roce": 7.485819669174852,
         "netProfitMargin": 13.219073,
         "assetTurnover": 34.9659,
         "equityMultiplier": 2.102127
@@ -81378,10 +81728,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601225",
-      "price": 25.26,
-      "marketValue": 244895700000,
-      "PB": 2.4,
-      "PE_TTM": 15.15,
+      "price": 23.35,
+      "marketValue": 226378250000,
+      "PB": 2.22,
+      "PE_TTM": 14,
       "totalSharesOutstanding": 9695000000
     },
     "recentYearData": {
@@ -82252,6 +82602,7 @@ const data: ServiceData = {
         "roe": 2.96,
         "roa": 2.913436,
         "roic": 2.892953,
+        "roce": 3.613672085442344,
         "netProfitMargin": 29.095206,
         "assetTurnover": 7.6298,
         "equityMultiplier": 1.324673
@@ -82261,6 +82612,7 @@ const data: ServiceData = {
         "roe": 11.95,
         "roa": 11.22561,
         "roic": 11.277444,
+        "roce": 14.010848261558154,
         "netProfitMargin": 30.43416,
         "assetTurnover": 29.083,
         "equityMultiplier": 1.32848
@@ -82270,6 +82622,7 @@ const data: ServiceData = {
         "roe": 12.65,
         "roa": 11.694225,
         "roic": 12.057008,
+        "roce": 14.938642405957278,
         "netProfitMargin": 30.263792,
         "assetTurnover": 30.7994,
         "equityMultiplier": 1.341033
@@ -82279,6 +82632,7 @@ const data: ServiceData = {
         "roe": 12.7,
         "roa": 11.810061,
         "roic": 12.117456,
+        "roce": 15.244939285810958,
         "netProfitMargin": 30.361664,
         "assetTurnover": 30.8747,
         "equityMultiplier": 1.352664
@@ -82288,6 +82642,7 @@ const data: ServiceData = {
         "roe": 12.43,
         "roa": 11.212254,
         "roic": 11.954768,
+        "roce": 15.705382651477489,
         "netProfitMargin": 27.238364,
         "assetTurnover": 32.1862,
         "equityMultiplier": 1.392446
@@ -82297,6 +82652,7 @@ const data: ServiceData = {
         "roe": 11.51,
         "roa": 10.087862,
         "roic": 11.351226,
+        "roce": 14.842325662518391,
         "netProfitMargin": 28.758107,
         "assetTurnover": 27.344,
         "equityMultiplier": 1.561844
@@ -82306,6 +82662,7 @@ const data: ServiceData = {
         "roe": 12.17,
         "roa": 10.427235,
         "roic": 11.720757,
+        "roce": 15.179968647060536,
         "netProfitMargin": 33.438395,
         "assetTurnover": 24.043400000000002,
         "equityMultiplier": 1.556239
@@ -82315,6 +82672,7 @@ const data: ServiceData = {
         "roe": 12.94,
         "roa": 10.535214,
         "roic": 12.379629,
+        "roce": 15.342662730187326,
         "netProfitMargin": 33.973811,
         "assetTurnover": 23.9565,
         "equityMultiplier": 1.571114
@@ -82324,6 +82682,7 @@ const data: ServiceData = {
         "roe": 14.23,
         "roa": 10.246197,
         "roic": 12.795089,
+        "roce": 15.847514980116786,
         "netProfitMargin": 32.734598,
         "assetTurnover": 24.2543,
         "equityMultiplier": 1.657599
@@ -82333,6 +82692,7 @@ const data: ServiceData = {
         "roe": 15.54,
         "roa": 9.746249,
         "roic": 14.129196,
+        "roce": 17.314670244960354,
         "netProfitMargin": 31.936632,
         "assetTurnover": 23.5039,
         "equityMultiplier": 1.91734
@@ -82342,6 +82702,7 @@ const data: ServiceData = {
         "roe": 16.25,
         "roa": 8.659602,
         "roic": 14.729636,
+        "roce": 17.466396880745616,
         "netProfitMargin": 26.474458,
         "assetTurnover": 24.8245,
         "equityMultiplier": 2.472625
@@ -84456,10 +84817,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601298",
-      "price": 8.84,
-      "marketValue": 57381324000,
-      "PB": 1.22,
-      "PE_TTM": 10.94,
+      "price": 8.58,
+      "marketValue": 55693638000,
+      "PB": 1.18,
+      "PE_TTM": 10.62,
       "totalSharesOutstanding": 6491100000
     },
     "recentYearData": {
@@ -85330,6 +85691,7 @@ const data: ServiceData = {
         "roe": 2.5,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 15.229962,
         "assetTurnover": 1.5562,
         "equityMultiplier": 9.879415
@@ -85339,6 +85701,7 @@ const data: ServiceData = {
         "roe": 14,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 15.069023,
         "assetTurnover": 7.823099999999999,
         "equityMultiplier": 9.815387
@@ -85348,6 +85711,7 @@ const data: ServiceData = {
         "roe": 13.8,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 14.260806,
         "assetTurnover": 8.3852,
         "equityMultiplier": 9.931561
@@ -85357,6 +85721,7 @@ const data: ServiceData = {
         "roe": 9.7,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 11.95834,
         "assetTurnover": 8.089,
         "equityMultiplier": 9.42535
@@ -85366,6 +85731,7 @@ const data: ServiceData = {
         "roe": 13.2,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 9.673608,
         "assetTurnover": 10.438,
         "equityMultiplier": 9.476037
@@ -85375,6 +85741,7 @@ const data: ServiceData = {
         "roe": 13,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 10.31832,
         "assetTurnover": 12.002500000000001,
         "equityMultiplier": 9.410605
@@ -85384,6 +85751,7 @@ const data: ServiceData = {
         "roe": 20,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 13.080278,
         "assetTurnover": 13.7268,
         "equityMultiplier": 9.64452
@@ -85393,6 +85761,7 @@ const data: ServiceData = {
         "roe": 24.4,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 14.061907,
         "assetTurnover": 15.2137,
         "equityMultiplier": 9.647135
@@ -85402,6 +85771,7 @@ const data: ServiceData = {
         "roe": 20.91,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 12.330881,
         "assetTurnover": 14.327200000000001,
         "equityMultiplier": 10.448377
@@ -85411,6 +85781,7 @@ const data: ServiceData = {
         "roe": 20.72,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 11.222361,
         "assetTurnover": 14.7619,
         "equityMultiplier": 11.044203
@@ -85420,6 +85791,7 @@ const data: ServiceData = {
         "roe": 17.36,
         "roa": 0,
         "roic": 0,
+        "roce": 0,
         "netProfitMargin": 10.157582,
         "assetTurnover": 13.777700000000001,
         "equityMultiplier": 11.464234
@@ -86994,10 +87366,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601318",
-      "price": 54.23,
-      "marketValue": 981977425389,
-      "PB": 1,
-      "PE_TTM": 7.4,
+      "price": 52.72,
+      "marketValue": 954634885976,
+      "PB": 0.97,
+      "PE_TTM": 7.19,
       "totalSharesOutstanding": 18107641995
     },
     "recentYearData": {
@@ -87868,6 +88240,7 @@ const data: ServiceData = {
         "roe": 7.11,
         "roa": 5.414359,
         "roic": 4.340319,
+        "roce": 6.906809207731103,
         "netProfitMargin": 17.19578,
         "assetTurnover": 25.413999999999998,
         "equityMultiplier": 1.762595
@@ -87877,6 +88250,7 @@ const data: ServiceData = {
         "roe": 17.64,
         "roa": 12.483585,
         "roic": 10.599152,
+        "roce": 16.310034722825513,
         "netProfitMargin": 8.926853,
         "assetTurnover": 108.8691,
         "equityMultiplier": 1.852155
@@ -87886,6 +88260,7 @@ const data: ServiceData = {
         "roe": 19.25,
         "roa": 11.726363,
         "roic": 11.315122,
+        "roce": 15.03514385424913,
         "netProfitMargin": 8.175718,
         "assetTurnover": 110.8322,
         "equityMultiplier": 1.926937
@@ -87895,6 +88270,7 @@ const data: ServiceData = {
         "roe": 11.93,
         "roa": 8.684715,
         "roic": 7.382037,
+        "roce": 11.314981440599716,
         "netProfitMargin": 5.59103,
         "assetTurnover": 106.13950000000001,
         "equityMultiplier": 2.141345
@@ -87904,6 +88280,7 @@ const data: ServiceData = {
         "roe": 6.9,
         "roa": 7.793357,
         "roic": 5.740986,
+        "roce": 10.490263926169495,
         "netProfitMargin": 3.726384,
         "assetTurnover": 133.111,
         "equityMultiplier": 2.419756
@@ -87913,6 +88290,7 @@ const data: ServiceData = {
         "roe": 9.86,
         "roa": 7.279593,
         "roic": 6.421717,
+        "roce": 12.101111134957348,
         "netProfitMargin": 2.887514,
         "assetTurnover": 139.2544,
         "equityMultiplier": 2.643138
@@ -87922,6 +88300,7 @@ const data: ServiceData = {
         "roe": 1.4,
         "roa": 3.265719,
         "roic": 3.67063,
+        "roce": 4.386448244705913,
         "netProfitMargin": 0.84574,
         "assetTurnover": 93.4552,
         "equityMultiplier": 2.738471
@@ -87931,6 +88310,7 @@ const data: ServiceData = {
         "roe": 1.59,
         "roa": 3.212407,
         "roic": 3.668295,
+        "roce": 4.370871589451777,
         "netProfitMargin": 0.782894,
         "assetTurnover": 94.0878,
         "equityMultiplier": 2.871268
@@ -87940,6 +88320,7 @@ const data: ServiceData = {
         "roe": 1.8,
         "roa": 3.551536,
         "roic": 3.960368,
+        "roce": 4.530389612896487,
         "netProfitMargin": 0.892047,
         "assetTurnover": 89.9642,
         "equityMultiplier": 2.968501
@@ -87949,6 +88330,7 @@ const data: ServiceData = {
         "roe": 3.62,
         "roa": 4.005255,
         "roic": 4.709272,
+        "roce": 5.296478763125585,
         "netProfitMargin": 1.312716,
         "assetTurnover": 92.1935,
         "equityMultiplier": 3.055026
@@ -87958,6 +88340,7 @@ const data: ServiceData = {
         "roe": 0.94,
         "roa": 3.349529,
         "roic": 3.77555,
+        "roce": 0.45026830427798514,
         "netProfitMargin": 0.871447,
         "assetTurnover": 75.4002,
         "equityMultiplier": 3.419419
@@ -89496,10 +89879,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601600",
-      "price": 10.67,
-      "marketValue": 183043544059,
-      "PB": 2.27,
-      "PE_TTM": 12.48,
+      "price": 9.81,
+      "marketValue": 168290268718,
+      "PB": 2.09,
+      "PE_TTM": 11.47,
       "totalSharesOutstanding": 17154971327
     },
     "recentYearData": {
@@ -90370,6 +90753,7 @@ const data: ServiceData = {
         "roe": 3.62,
         "roa": 2.248413,
         "roic": 2.925249,
+        "roce": 3.545407937974577,
         "netProfitMargin": 9.787014,
         "assetTurnover": 18.746399999999998,
         "equityMultiplier": 1.953012
@@ -90379,6 +90763,7 @@ const data: ServiceData = {
         "roe": 18.88,
         "roa": 10.649177,
         "roic": 14.735101,
+        "roce": 17.60115333463494,
         "netProfitMargin": 10.535889,
         "assetTurnover": 82.8443,
         "equityMultiplier": 2.061151
@@ -90388,6 +90773,7 @@ const data: ServiceData = {
         "roe": 18.34,
         "roa": 11.155921,
         "roic": 14.312188,
+        "roce": 18.748183945054368,
         "netProfitMargin": 11.396719,
         "assetTurnover": 75.81710000000001,
         "equityMultiplier": 2.135177
@@ -90397,6 +90783,7 @@ const data: ServiceData = {
         "roe": 17.15,
         "roa": 9.536104,
         "roic": 13.046637,
+        "roce": 16.017616707685747,
         "netProfitMargin": 9.531486,
         "assetTurnover": 77.931,
         "equityMultiplier": 2.247322
@@ -90406,6 +90793,7 @@ const data: ServiceData = {
         "roe": 15.74,
         "roa": 8.333877,
         "roic": 11.591286,
+        "roce": 14.01704515418443,
         "netProfitMargin": 8.207152,
         "assetTurnover": 79.1689,
         "equityMultiplier": 2.376891
@@ -90415,6 +90803,7 @@ const data: ServiceData = {
         "roe": 14.06,
         "roa": 8.177037,
         "roic": 10.539638,
+        "roce": 13.773710726287538,
         "netProfitMargin": 7.07052,
         "assetTurnover": 83.2646,
         "equityMultiplier": 2.341579
@@ -90424,6 +90813,7 @@ const data: ServiceData = {
         "roe": 9.79,
         "roa": 7.050544,
         "roic": 8.241677,
+        "roce": 11.868368842016014,
         "netProfitMargin": 5.201249,
         "assetTurnover": 83.6217,
         "equityMultiplier": 2.402367
@@ -90433,6 +90823,7 @@ const data: ServiceData = {
         "roe": 8.78,
         "roa": 6.173834,
         "roic": 7.790756,
+        "roce": 10.401592078356824,
         "netProfitMargin": 4.431786,
         "assetTurnover": 89.6162,
         "equityMultiplier": 2.260846
@@ -90442,6 +90833,7 @@ const data: ServiceData = {
         "roe": 7.48,
         "roa": 6.506677,
         "roic": 7.511868,
+        "roce": 9.810715651591623,
         "netProfitMargin": 3.609553,
         "assetTurnover": 111.0534,
         "equityMultiplier": 2.252965
@@ -90451,6 +90843,7 @@ const data: ServiceData = {
         "roe": 2.72,
         "roa": 2.994216,
         "roic": 2.872255,
+        "roce": 3.9429213868949957,
         "netProfitMargin": 4.506825,
         "assetTurnover": 48.8483,
         "equityMultiplier": 1.654779
@@ -90460,6 +90853,7 @@ const data: ServiceData = {
         "roe": 0.64,
         "roa": 0.314116,
         "roic": 0.646588,
+        "roce": 0.33582175571847067,
         "netProfitMargin": 1.010006,
         "assetTurnover": 30.488500000000002,
         "equityMultiplier": 1.203859
@@ -91962,10 +92356,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601717",
-      "price": 17.85,
-      "marketValue": 31869388751,
-      "PB": 1.4,
-      "PE_TTM": 7.78,
+      "price": 16.64,
+      "marketValue": 29709054835,
+      "PB": 1.3,
+      "PE_TTM": 7.25,
       "totalSharesOutstanding": 1785399930
     },
     "recentYearData": {
@@ -92836,6 +93230,7 @@ const data: ServiceData = {
         "roe": 1.58,
         "roa": 1.116077,
         "roic": 1.520738,
+        "roce": 1.9961424212716457,
         "netProfitMargin": 5.535076,
         "assetTurnover": 15.018799999999999,
         "equityMultiplier": 1.847286
@@ -92845,6 +93240,7 @@ const data: ServiceData = {
         "roe": 7.24,
         "roa": 5.149926,
         "roic": 6.884104,
+        "roce": 9.822823674749289,
         "netProfitMargin": 6.341137,
         "assetTurnover": 60.3159,
         "equityMultiplier": 1.859319
@@ -92854,6 +93250,7 @@ const data: ServiceData = {
         "roe": 7.34,
         "roa": 5.235232,
         "roic": 6.932302,
+        "roce": 9.448272953867777,
         "netProfitMargin": 6.298124,
         "assetTurnover": 61.507999999999996,
         "equityMultiplier": 1.898196
@@ -92863,6 +93260,7 @@ const data: ServiceData = {
         "roe": 6.93,
         "roa": 5.080561,
         "roic": 6.483966,
+        "roce": 9.69015905439318,
         "netProfitMargin": 5.9917,
         "assetTurnover": 61.7996,
         "equityMultiplier": 1.869132
@@ -92872,6 +93270,7 @@ const data: ServiceData = {
         "roe": 6.4,
         "roa": 4.607856,
         "roic": 5.626344,
+        "roce": 9.3583630367499,
         "netProfitMargin": 5.827018,
         "assetTurnover": 60.5075,
         "equityMultiplier": 1.850703
@@ -92881,6 +93280,7 @@ const data: ServiceData = {
         "roe": 6.7,
         "roa": 4.913119,
         "roic": 6.075584,
+        "roce": 9.537630113891456,
         "netProfitMargin": 6.024128,
         "assetTurnover": 58.7755,
         "equityMultiplier": 1.767821
@@ -92890,6 +93290,7 @@ const data: ServiceData = {
         "roe": 5.8,
         "roa": 4.350882,
         "roic": 5.402018,
+        "roce": 8.159884789405512,
         "netProfitMargin": 5.408281,
         "assetTurnover": 54.9891,
         "equityMultiplier": 1.952862
@@ -92899,6 +93300,7 @@ const data: ServiceData = {
         "roe": 5.93,
         "roa": 4.562224,
         "roic": 5.702167,
+        "roce": 8.234195460635837,
         "netProfitMargin": 5.566899,
         "assetTurnover": 54.473800000000004,
         "equityMultiplier": 1.980408
@@ -92908,6 +93310,7 @@ const data: ServiceData = {
         "roe": 6.1,
         "roa": 4.58596,
         "roic": 5.693138,
+        "roce": 8.001164998548834,
         "netProfitMargin": 5.484238,
         "assetTurnover": 56.610499999999995,
         "equityMultiplier": 1.927862
@@ -92917,6 +93320,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": 4.322948,
         "roic": 5.366784,
+        "roce": 6.819011638966425,
         "netProfitMargin": 5.153215,
         "assetTurnover": 55.459,
         "equityMultiplier": 2.023854
@@ -92926,6 +93330,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": 4.311902,
         "roic": 5.409318,
+        "roce": 6.478298071210281,
         "netProfitMargin": 5.174567,
         "assetTurnover": 54.6168,
         "equityMultiplier": 2.062503
@@ -93924,10 +94329,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601728",
-      "price": 6.05,
-      "marketValue": 553618189129,
-      "PB": 1.2,
-      "PE_TTM": 17.48,
+      "price": 5.72,
+      "marketValue": 523420833358,
+      "PB": 1.14,
+      "PE_TTM": 16.53,
       "totalSharesOutstanding": 91507138699
     },
     "recentYearData": {
@@ -94798,6 +95203,7 @@ const data: ServiceData = {
         "roe": 3,
         "roa": 2.480105,
         "roic": 2.607663,
+        "roce": 3.5556825370130776,
         "netProfitMargin": 7.262117,
         "assetTurnover": 24.9536,
         "equityMultiplier": 1.655192
@@ -94807,6 +95213,7 @@ const data: ServiceData = {
         "roe": 10.1,
         "roa": 8.733737,
         "roic": 9.158036,
+        "roce": 12.52444142663176,
         "netProfitMargin": 6.004777,
         "assetTurnover": 102.65029999999999,
         "equityMultiplier": 1.571515
@@ -94816,6 +95223,7 @@ const data: ServiceData = {
         "roe": 11.1,
         "roa": 9.514564,
         "roic": 9.911044,
+        "roce": 14.186761842325396,
         "netProfitMargin": 6.254192,
         "assetTurnover": 106.5983,
         "equityMultiplier": 1.610074
@@ -94825,6 +95233,7 @@ const data: ServiceData = {
         "roe": 11.4,
         "roa": 9.644214,
         "roic": 10.069028,
+        "roce": 14.604456178213457,
         "netProfitMargin": 5.987721,
         "assetTurnover": 111.0382,
         "equityMultiplier": 1.688135
@@ -94834,6 +95243,7 @@ const data: ServiceData = {
         "roe": 11.3,
         "roa": 9.073149,
         "roic": 9.61625,
+        "roce": 14.583968336005867,
         "netProfitMargin": 5.06232,
         "assetTurnover": 125.1541,
         "equityMultiplier": 1.738343
@@ -94843,6 +95253,7 @@ const data: ServiceData = {
         "roe": 7.4,
         "roa": 7.130249,
         "roic": 6.493201,
+        "roce": 11.546182241538386,
         "netProfitMargin": 4.386828,
         "assetTurnover": 104.76389999999999,
         "equityMultiplier": 1.775949
@@ -94852,6 +95263,7 @@ const data: ServiceData = {
         "roe": 1.6,
         "roa": 3.163672,
         "roic": 2.556862,
+        "roce": 5.016780565366463,
         "netProfitMargin": 1.731325,
         "assetTurnover": 74.0707,
         "equityMultiplier": 1.820489
@@ -94861,6 +95273,7 @@ const data: ServiceData = {
         "roe": 3.7,
         "roa": 5.164774,
         "roic": 4.385289,
+        "roce": 7.840199173477348,
         "netProfitMargin": 2.662497,
         "assetTurnover": 97.28,
         "equityMultiplier": 1.892033
@@ -94870,6 +95283,7 @@ const data: ServiceData = {
         "roe": 4.4,
         "roa": 5.686942,
         "roic": 4.568194,
+        "roce": 8.6688045358934,
         "netProfitMargin": 3.076579,
         "assetTurnover": 97.3066,
         "equityMultiplier": 1.724065
@@ -94879,6 +95293,7 @@ const data: ServiceData = {
         "roe": 1.9,
         "roa": 3.144239,
         "roic": 2.686797,
+        "roce": 4.291919241664758,
         "netProfitMargin": 1.824901,
         "assetTurnover": 83.9628,
         "equityMultiplier": 1.740657
@@ -94888,6 +95303,7 @@ const data: ServiceData = {
         "roe": 0.7,
         "roa": 2.861171,
         "roic": 1.82403,
+        "roce": 2.4873035655996576,
         "netProfitMargin": 1.819156,
         "assetTurnover": 67.49680000000001,
         "equityMultiplier": 1.74574
@@ -96654,10 +97070,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601857",
-      "price": 10.13,
-      "marketValue": 1854002505296,
-      "PB": 1.14,
-      "PE_TTM": 11.72,
+      "price": 9.75,
+      "marketValue": 1784454533726,
+      "PB": 1.1,
+      "PE_TTM": 11.28,
       "totalSharesOutstanding": 183020977818
     },
     "recentYearData": {
@@ -97528,6 +97944,7 @@ const data: ServiceData = {
         "roe": 2.37,
         "roa": 1.634839,
         "roic": 1.834883,
+        "roce": 2.2437541833081744,
         "netProfitMargin": 13.053763,
         "assetTurnover": 9.1832,
         "equityMultiplier": 1.828494
@@ -97537,6 +97954,7 @@ const data: ServiceData = {
         "roe": 11.43,
         "roa": 7.877756,
         "roic": 8.934044,
+        "roce": 10.890880954934476,
         "netProfitMargin": 14.750689,
         "assetTurnover": 40.6562,
         "equityMultiplier": 1.845588
@@ -97546,6 +97964,7 @@ const data: ServiceData = {
         "roe": 12.98,
         "roa": 9.650221,
         "roic": 9.977158,
+        "roce": 13.312511073974164,
         "netProfitMargin": 13.17539,
         "assetTurnover": 53.5535,
         "equityMultiplier": 1.862011
@@ -97555,6 +97974,7 @@ const data: ServiceData = {
         "roe": 14.21,
         "roa": 10.474022,
         "roic": 10.331749,
+        "roce": 14.349876959141513,
         "netProfitMargin": 13.343501,
         "assetTurnover": 55.966800000000006,
         "equityMultiplier": 1.911346
@@ -97564,6 +97984,7 @@ const data: ServiceData = {
         "roe": 14.89,
         "roa": 11.091928,
         "roic": 10.358025,
+        "roce": 15.139621714739118,
         "netProfitMargin": 11.505255,
         "assetTurnover": 66.5671,
         "equityMultiplier": 2.060537
@@ -97573,6 +97994,7 @@ const data: ServiceData = {
         "roe": 12.71,
         "roa": 9.813695,
         "roic": 8.508024,
+        "roce": 13.089716923215363,
         "netProfitMargin": 8.221563,
         "assetTurnover": 76.4457,
         "equityMultiplier": 2.259355
@@ -97582,6 +98004,7 @@ const data: ServiceData = {
         "roe": 5.9,
         "roa": 6.131288,
         "roic": 5.451174,
+        "roce": 7.880177282412959,
         "netProfitMargin": 6.332054,
         "assetTurnover": 50.86540000000001,
         "equityMultiplier": 2.274347
@@ -97591,6 +98014,7 @@ const data: ServiceData = {
         "roe": 5.93,
         "roa": 6.343316,
         "roic": 5.514947,
+        "roce": 8.039686699510442,
         "netProfitMargin": 6.645909,
         "assetTurnover": 48.1677,
         "equityMultiplier": 2.321592
@@ -97600,6 +98024,7 @@ const data: ServiceData = {
         "roe": 3.69,
         "roa": 5.091833,
         "roic": 4.214749,
+        "roce": 6.4734585143348955,
         "netProfitMargin": 5.980009,
         "assetTurnover": 40.3189,
         "equityMultiplier": 2.391162
@@ -97609,6 +98034,7 @@ const data: ServiceData = {
         "roe": 2.62,
         "roa": 4.045232,
         "roic": 3.453445,
+        "roce": 5.007986863990791,
         "netProfitMargin": 5.480638,
         "assetTurnover": 33.0625,
         "equityMultiplier": 2.345666
@@ -97618,6 +98044,7 @@ const data: ServiceData = {
         "roe": 2.4,
         "roa": 3.087405,
         "roic": 3.402433,
+        "roce": 1.6182299309019619,
         "netProfitMargin": 4.835276,
         "assetTurnover": 24.3096,
         "equityMultiplier": 2.371985
@@ -99900,10 +100327,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601898",
-      "price": 14.77,
-      "marketValue": 195830458418,
-      "PB": 1.19,
-      "PE_TTM": 11.03,
+      "price": 14.09,
+      "marketValue": 186814567306,
+      "PB": 1.14,
+      "PE_TTM": 10.52,
       "totalSharesOutstanding": 13258663400
     },
     "recentYearData": {
@@ -100774,6 +101201,7 @@ const data: ServiceData = {
         "roe": 10.35,
         "roa": 6.12651,
         "roic": 5.78605,
+        "roce": 7.589285535803579,
         "netProfitMargin": 25.54959,
         "assetTurnover": 18.5507,
         "equityMultiplier": 2.056396
@@ -100783,6 +101211,7 @@ const data: ServiceData = {
         "roe": 33.04,
         "roa": 18.591827,
         "roic": 17.457329,
+        "roce": 23.290482244123282,
         "netProfitMargin": 18.283017,
         "assetTurnover": 76.8375,
         "equityMultiplier": 2.064349
@@ -100792,6 +101221,7 @@ const data: ServiceData = {
         "roe": 25.89,
         "roa": 14.162744,
         "roic": 13.502376,
+        "roce": 17.591538480137284,
         "netProfitMargin": 12.973544,
         "assetTurnover": 82.1074,
         "equityMultiplier": 2.231525
@@ -100801,6 +101231,7 @@ const data: ServiceData = {
         "roe": 21.43,
         "roa": 11.078157,
         "roic": 11.093915,
+        "roce": 13.944789495740862,
         "netProfitMargin": 9.045434,
         "assetTurnover": 90.41,
         "equityMultiplier": 2.479031
@@ -100810,6 +101241,7 @@ const data: ServiceData = {
         "roe": 25.29,
         "roa": 12.896363,
         "roic": 12.7956,
+        "roce": 16.398722537558953,
         "netProfitMargin": 9.161876,
         "assetTurnover": 105.0558,
         "equityMultiplier": 2.459065
@@ -100819,6 +101251,7 @@ const data: ServiceData = {
         "roe": 23.97,
         "roa": 13.668676,
         "roic": 12.7806,
+        "roce": 17.028048682569448,
         "netProfitMargin": 8.706984,
         "assetTurnover": 115.16900000000001,
         "equityMultiplier": 2.245436
@@ -100828,6 +101261,7 @@ const data: ServiceData = {
         "roe": 12.19,
         "roa": 8.34037,
         "roic": 7.708489,
+        "roce": 10.57081655704531,
         "netProfitMargin": 4.931762,
         "assetTurnover": 112.0395,
         "equityMultiplier": 2.443993
@@ -100837,6 +101271,7 @@ const data: ServiceData = {
         "roe": 11.38,
         "roa": 7.521513,
         "roic": 7.073103,
+        "roce": 9.287052622735455,
         "netProfitMargin": 3.718574,
         "assetTurnover": 114.99109999999999,
         "equityMultiplier": 2.169443
@@ -100846,6 +101281,7 @@ const data: ServiceData = {
         "roe": 11.7,
         "roa": 7.622761,
         "roic": 7.313906,
+        "roce": 9.297655915700092,
         "netProfitMargin": 4.417859,
         "assetTurnover": 104.8438,
         "equityMultiplier": 2.387781
@@ -100855,6 +101291,7 @@ const data: ServiceData = {
         "roe": 11.1,
         "roa": 6.897329,
         "roic": 7.329191,
+        "roce": 9.304234173507938,
         "netProfitMargin": 3.434792,
         "assetTurnover": 105.9172,
         "equityMultiplier": 2.372702
@@ -100864,6 +101301,7 @@ const data: ServiceData = {
         "roe": 6.66,
         "roa": 4.169956,
         "roic": 5.05937,
+        "roce": 3.5404826301900107,
         "netProfitMargin": 2.139814,
         "assetTurnover": 91.08800000000001,
         "equityMultiplier": 2.867214
@@ -103050,10 +103488,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601899",
-      "price": 31.31,
-      "marketValue": 832555274815,
-      "PB": 4.22,
-      "PE_TTM": 13.5,
+      "price": 30,
+      "marketValue": 797721438660,
+      "PB": 4.04,
+      "PE_TTM": 12.93,
       "totalSharesOutstanding": 26590714622
     },
     "recentYearData": {
@@ -103924,6 +104362,7 @@ const data: ServiceData = {
         "roe": 2.51,
         "roa": 1.807283,
         "roic": 2.432878,
+        "roce": 2.668332700949643,
         "netProfitMargin": 13.286302,
         "assetTurnover": 10.6821,
         "equityMultiplier": 1.691915
@@ -103933,6 +104372,7 @@ const data: ServiceData = {
         "roe": 13.17,
         "roa": 9.174747,
         "roic": 10.934323,
+        "roce": 13.719948585235473,
         "netProfitMargin": 16.048915,
         "assetTurnover": 44.7405,
         "equityMultiplier": 1.706943
@@ -103942,6 +104382,7 @@ const data: ServiceData = {
         "roe": 22.6,
         "roa": 14.5718,
         "roic": 17.639336,
+        "roce": 22.412491374200886,
         "netProfitMargin": 23.687531,
         "assetTurnover": 48.7184,
         "equityMultiplier": 1.745156
@@ -103951,6 +104392,7 @@ const data: ServiceData = {
         "roe": 11.8,
         "roa": 7.526876,
         "roic": 9.551909,
+        "roce": 12.137223358192378,
         "netProfitMargin": 16.184681,
         "assetTurnover": 36.012899999999995,
         "equityMultiplier": 1.901284
@@ -103960,6 +104402,7 @@ const data: ServiceData = {
         "roe": 59.84,
         "roa": 36.882916,
         "roic": 40.997874,
+        "roce": 59.733635971098344,
         "netProfitMargin": 33.585349,
         "assetTurnover": 84.4568,
         "equityMultiplier": 2.018668
@@ -103969,6 +104412,7 @@ const data: ServiceData = {
         "roe": 100.52,
         "roa": 38.373347,
         "roic": 42.199286,
+        "roce": 59.84111580996269,
         "netProfitMargin": 31.122127,
         "assetTurnover": 97.34429999999999,
         "equityMultiplier": 2.312796
@@ -103978,6 +104422,7 @@ const data: ServiceData = {
         "roe": 25.05,
         "roa": 6.75151,
         "roic": 7.595262,
+        "roce": 9.674831425855883,
         "netProfitMargin": 7.700329,
         "assetTurnover": 64.1238,
         "equityMultiplier": 3.455352
@@ -103987,6 +104432,7 @@ const data: ServiceData = {
         "roe": 21.57,
         "roa": 7.33783,
         "roic": 7.393141,
+        "roce": 9.70648372315305,
         "netProfitMargin": 6.85157,
         "assetTurnover": 61.6095,
         "equityMultiplier": 3.793463
@@ -103996,6 +104442,7 @@ const data: ServiceData = {
         "roe": 5.52,
         "roa": 4.101395,
         "roic": 3.920234,
+        "roce": 4.633847333898093,
         "netProfitMargin": 2.504654,
         "assetTurnover": 66.8797,
         "equityMultiplier": 4.048484
@@ -104005,6 +104452,7 @@ const data: ServiceData = {
         "roe": 13.77,
         "roa": 6.088506,
         "roic": 5.823257,
+        "roce": 6.905173289104274,
         "netProfitMargin": 5.3399,
         "assetTurnover": 71.5574,
         "equityMultiplier": 3.047088
@@ -104014,6 +104462,7 @@ const data: ServiceData = {
         "roe": -44.19,
         "roa": -4.719517,
         "roic": -8.299185,
+        "roce": -6.741978998712692,
         "netProfitMargin": -12.789782,
         "assetTurnover": 50.802099999999996,
         "equityMultiplier": 3.186586
@@ -105756,10 +106205,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601919",
-      "price": 14.49,
-      "marketValue": 221885135943,
+      "price": 14.05,
+      "marketValue": 215147423050,
       "PB": 0.94,
-      "PE_TTM": 8.86,
+      "PE_TTM": 8.59,
       "totalSharesOutstanding": 15312983847
     },
     "recentYearData": {
@@ -106476,6 +106925,7 @@ const data: ServiceData = {
         "roe": 4.54,
         "roa": 1.864268,
         "roic": 4.589567,
+        "roce": 5.337926580847321,
         "netProfitMargin": 15.174347,
         "assetTurnover": 10.4612,
         "equityMultiplier": 2.898617
@@ -106485,6 +106935,7 @@ const data: ServiceData = {
         "roe": 23.48,
         "roa": 8.970731,
         "roic": 23.602359,
+        "roce": 27.746869048691224,
         "netProfitMargin": 14.031387,
         "assetTurnover": 55.195899999999995,
         "equityMultiplier": 2.824807
@@ -106494,6 +106945,7 @@ const data: ServiceData = {
         "roe": 16.9,
         "roa": 6.074727,
         "roic": 16.70747,
+        "roce": 18.765685704938633,
         "netProfitMargin": 10.796876,
         "assetTurnover": 49.8944,
         "equityMultiplier": 3.257383
@@ -106503,6 +106955,7 @@ const data: ServiceData = {
         "roe": 14.58,
         "roa": 5.84489,
         "roic": 16.821516,
+        "roce": 18.505538586531,
         "netProfitMargin": 8.866676,
         "assetTurnover": 59.0187,
         "equityMultiplier": 3.025109
@@ -106512,6 +106965,7 @@ const data: ServiceData = {
         "roe": 25.52,
         "roa": 6.009157,
         "roic": 21.00572,
+        "roce": 21.066146708382952,
         "netProfitMargin": 7.525879,
         "assetTurnover": 76.4041,
         "equityMultiplier": 4.667956
@@ -106521,6 +106975,7 @@ const data: ServiceData = {
         "roe": 38.31,
         "roa": 9.753916,
         "roic": 33.059494,
+        "roce": 35.05639768208074,
         "netProfitMargin": 11.07378,
         "assetTurnover": 80.6703,
         "equityMultiplier": 4.065132
@@ -106530,6 +106985,7 @@ const data: ServiceData = {
         "roe": 54.49,
         "roa": 12.256775,
         "roic": 44.548519,
+        "roce": 49.35845803639888,
         "netProfitMargin": 13.427298,
         "assetTurnover": 78.3278,
         "equityMultiplier": 4.596902
@@ -106539,6 +106995,7 @@ const data: ServiceData = {
         "roe": 42.9,
         "roa": 8.052473,
         "roic": 31.025233,
+        "roce": 34.31648017438136,
         "netProfitMargin": 9.853817,
         "assetTurnover": 66.3845,
         "equityMultiplier": 5.941855
@@ -106548,6 +107005,7 @@ const data: ServiceData = {
         "roe": 11.85,
         "roa": 1.917235,
         "roic": 8.656771,
+        "roce": 3.8610880014492888,
         "netProfitMargin": 2.563834,
         "assetTurnover": 57.17680000000001,
         "equityMultiplier": 7.660576
@@ -107626,10 +108084,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603173",
-      "price": 35.15,
-      "marketValue": 5624000000,
-      "PB": 2.89,
-      "PE_TTM": 14.13,
+      "price": 33.79,
+      "marketValue": 5406400000,
+      "PB": 2.78,
+      "PE_TTM": 13.58,
       "totalSharesOutstanding": 160000000
     },
     "recentYearData": {
@@ -108500,6 +108958,7 @@ const data: ServiceData = {
         "roe": 6.1,
         "roa": 5.405653,
         "roic": 5.813124,
+        "roce": 7.001021984577828,
         "netProfitMargin": 26.097525,
         "assetTurnover": 17.302400000000002,
         "equityMultiplier": 1.367247
@@ -108509,6 +108968,7 @@ const data: ServiceData = {
         "roe": 24.91,
         "roa": 22.864421,
         "roic": 24.197482,
+        "roce": 29.468375792657387,
         "netProfitMargin": 25.435058,
         "assetTurnover": 74.45389999999999,
         "equityMultiplier": 1.341948
@@ -108518,6 +108978,7 @@ const data: ServiceData = {
         "roe": 28.64,
         "roa": 25.328241,
         "roic": 27.128007,
+        "roce": 32.4480703142798,
         "netProfitMargin": 25.365648,
         "assetTurnover": 83.61699999999999,
         "equityMultiplier": 1.290964
@@ -108527,6 +108988,7 @@ const data: ServiceData = {
         "roe": 29.2,
         "roa": 25.070586,
         "roic": 27.146185,
+        "roce": 33.110893327074,
         "netProfitMargin": 24.621769,
         "assetTurnover": 86.20139999999999,
         "equityMultiplier": 1.366641
@@ -108536,6 +108998,7 @@ const data: ServiceData = {
         "roe": 27.88,
         "roa": 23.598145,
         "roic": 25.580491,
+        "roce": 30.555998309031228,
         "netProfitMargin": 22.621804,
         "assetTurnover": 87.66770000000001,
         "equityMultiplier": 1.34112
@@ -108545,6 +109008,7 @@ const data: ServiceData = {
         "roe": 28.28,
         "roa": 24.109989,
         "roic": 25.952511,
+        "roce": 33.975057026229535,
         "netProfitMargin": 22.449572,
         "assetTurnover": 88.7443,
         "equityMultiplier": 1.438663
@@ -108554,6 +109018,7 @@ const data: ServiceData = {
         "roe": 26.87,
         "roa": 27.846975,
         "roic": 30.270568,
+        "roce": 36.64475689961021,
         "netProfitMargin": 23.016619,
         "assetTurnover": 101.2498,
         "equityMultiplier": 1.361169
@@ -108563,6 +109028,7 @@ const data: ServiceData = {
         "roe": 52.36,
         "roa": 42.843106,
         "roic": 52.363127,
+        "roce": 62.93413073943572,
         "netProfitMargin": 22.94444,
         "assetTurnover": 159.6169,
         "equityMultiplier": 1.336003
@@ -108572,6 +109038,7 @@ const data: ServiceData = {
         "roe": 69.6,
         "roa": 42.94872,
         "roic": 65.323384,
+        "roce": 76.30207607840055,
         "netProfitMargin": 18.498208,
         "assetTurnover": 198.7771,
         "equityMultiplier": 1.590142
@@ -108581,6 +109048,7 @@ const data: ServiceData = {
         "roe": 59.75,
         "roa": 38.552599,
         "roic": 59.207604,
+        "roce": 70.44887013263433,
         "netProfitMargin": 17.754359,
         "assetTurnover": 183.8596,
         "equityMultiplier": 2.51901
@@ -108590,6 +109058,7 @@ const data: ServiceData = {
         "roe": 71.72,
         "roa": 50.595683,
         "roic": 68.287444,
+        "roce": 79.21253732819847,
         "netProfitMargin": 26.226684,
         "assetTurnover": 162.689,
         "equityMultiplier": 1.600666
@@ -110668,10 +111137,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603195",
-      "price": 40.05,
-      "marketValue": 72406776997,
-      "PB": 5.03,
-      "PE_TTM": 17.43,
+      "price": 39.31,
+      "marketValue": 71068923939,
+      "PB": 4.94,
+      "PE_TTM": 17.11,
       "totalSharesOutstanding": 1807909538
     },
     "recentYearData": {
@@ -111542,6 +112011,7 @@ const data: ServiceData = {
         "roe": 5.97,
         "roa": 5.742937,
         "roic": 5.822779,
+        "roce": 6.806299313674119,
         "netProfitMargin": 27.058144,
         "assetTurnover": 17.9569,
         "equityMultiplier": 1.137463
@@ -111551,6 +112021,7 @@ const data: ServiceData = {
         "roe": 19.59,
         "roa": 18.527904,
         "roic": 19.384127,
+        "roce": 23.5459385663327,
         "netProfitMargin": 24.401203,
         "assetTurnover": 62.0539,
         "equityMultiplier": 1.247235
@@ -111560,6 +112031,7 @@ const data: ServiceData = {
         "roe": 21.77,
         "roa": 19.013263,
         "roic": 21.119075,
+        "roce": 24.587620184305436,
         "netProfitMargin": 23.626877,
         "assetTurnover": 67.86149999999999,
         "equityMultiplier": 1.301143
@@ -111569,6 +112041,7 @@ const data: ServiceData = {
         "roe": 20.72,
         "roa": 18.627687,
         "roic": 20.246692,
+        "roce": 23.86364407559921,
         "netProfitMargin": 22.973716,
         "assetTurnover": 67.766,
         "equityMultiplier": 1.323444
@@ -111578,6 +112051,7 @@ const data: ServiceData = {
         "roe": 25.52,
         "roa": 21.896264,
         "roic": 24.722939,
+        "roce": 29.028221196873595,
         "netProfitMargin": 24.221987,
         "assetTurnover": 75.9965,
         "equityMultiplier": 1.266871
@@ -111587,6 +112061,7 @@ const data: ServiceData = {
         "roe": 31.63,
         "roa": 24.906115,
         "roic": 30.53967,
+        "roce": 35.68042507304255,
         "netProfitMargin": 26.681579,
         "assetTurnover": 79.5403,
         "equityMultiplier": 1.418635
@@ -111596,6 +112071,7 @@ const data: ServiceData = {
         "roe": 36.13,
         "roa": 28.174848,
         "roic": 34.862356,
+        "roce": 41.485902398228205,
         "netProfitMargin": 28.119802,
         "assetTurnover": 83.96719999999999,
         "equityMultiplier": 1.464522
@@ -111605,6 +112081,7 @@ const data: ServiceData = {
         "roe": 33.69,
         "roa": 28.412545,
         "roic": 35.114259,
+        "roce": 41.80562421812583,
         "netProfitMargin": 27.05598,
         "assetTurnover": 88.1866,
         "equityMultiplier": 1.491404
@@ -111614,6 +112091,7 @@ const data: ServiceData = {
         "roe": 32.66,
         "roa": 28.637225,
         "roic": 34.040828,
+        "roce": 40.83579524647079,
         "netProfitMargin": 25.63433,
         "assetTurnover": 93.3912,
         "equityMultiplier": 1.450463
@@ -111623,6 +112101,7 @@ const data: ServiceData = {
         "roe": 31.12,
         "roa": 28.295146,
         "roic": 32.453266,
+        "roce": 38.68719951082947,
         "netProfitMargin": 24.214231,
         "assetTurnover": 97.8825,
         "equityMultiplier": 1.388623
@@ -111632,6 +112111,7 @@ const data: ServiceData = {
         "roe": 31.65,
         "roa": 27.349043,
         "roic": 30.302689,
+        "roce": 36.25496352341846,
         "netProfitMargin": 22.820728,
         "assetTurnover": 99.82180000000001,
         "equityMultiplier": 1.344507
@@ -113506,10 +113986,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603288",
-      "price": 34.14,
-      "marketValue": 199781303588,
-      "PB": 5.35,
-      "PE_TTM": 27.44,
+      "price": 33.21,
+      "marketValue": 194339106390,
+      "PB": 5.2,
+      "PE_TTM": 26.69,
       "totalSharesOutstanding": 5851824944
     },
     "recentYearData": {
@@ -114380,6 +114860,7 @@ const data: ServiceData = {
         "roe": 4.38,
         "roa": 2.54046,
         "roic": 4.076458,
+        "roce": 4.371403699420117,
         "netProfitMargin": 8.257001,
         "assetTurnover": 27.637600000000003,
         "equityMultiplier": 1.920232
@@ -114389,6 +114870,7 @@ const data: ServiceData = {
         "roe": 22.19,
         "roa": 11.865369,
         "roic": 18.757789,
+        "roce": 19.96865968184645,
         "netProfitMargin": 9.233659,
         "assetTurnover": 117.31849999999999,
         "equityMultiplier": 1.927662
@@ -114398,6 +114880,7 @@ const data: ServiceData = {
         "roe": 11.76,
         "roa": 6.61389,
         "roic": 9.75867,
+        "roce": 10.629976980424225,
         "netProfitMargin": 4.870385,
         "assetTurnover": 116.4399,
         "equityMultiplier": 2.087899
@@ -114407,6 +114890,7 @@ const data: ServiceData = {
         "roe": 9.51,
         "roa": 5.419863,
         "roic": 8.522546,
+        "roce": 8.727391130359129,
         "netProfitMargin": 3.943688,
         "assetTurnover": 116.13409999999999,
         "equityMultiplier": 2.04455
@@ -114416,6 +114900,7 @@ const data: ServiceData = {
         "roe": 30.46,
         "roa": 15.672293,
         "roic": 25.319951,
+        "roce": 26.6955592993382,
         "netProfitMargin": 11.095868,
         "assetTurnover": 127.5491,
         "equityMultiplier": 2.069752
@@ -114425,6 +114910,7 @@ const data: ServiceData = {
         "roe": 50.9,
         "roa": 26.772683,
         "roic": 43.973493,
+        "roce": 48.67502122173392,
         "netProfitMargin": 15.386956,
         "assetTurnover": 155.0257,
         "equityMultiplier": 2.099288
@@ -114434,6 +114920,7 @@ const data: ServiceData = {
         "roe": 22.93,
         "roa": 14.087808,
         "roic": 22.047051,
+        "roce": 24.90875386801377,
         "netProfitMargin": 8.902494,
         "assetTurnover": 137.8587,
         "equityMultiplier": 1.979577
@@ -114443,6 +114930,7 @@ const data: ServiceData = {
         "roe": 4.92,
         "roa": 3.581496,
         "roic": 4.942064,
+        "roce": 5.714352276563817,
         "netProfitMargin": 2.282712,
         "assetTurnover": 124.4042,
         "equityMultiplier": 1.743027
@@ -114452,6 +114940,7 @@ const data: ServiceData = {
         "roe": 25.05,
         "roa": 16.345779,
         "roic": 25.50489,
+        "roce": 28.686333696605892,
         "netProfitMargin": 8.520917,
         "assetTurnover": 164.80939999999998,
         "equityMultiplier": 1.685323
@@ -114461,6 +114950,7 @@ const data: ServiceData = {
         "roe": 35.2,
         "roa": 18.832783,
         "roic": 34.974045,
+        "roce": 41.90599452181185,
         "netProfitMargin": 8.235849,
         "assetTurnover": 188.17340000000002,
         "equityMultiplier": 2.137475
@@ -114470,6 +114960,7 @@ const data: ServiceData = {
         "roe": 7.54,
         "roa": 4.341995,
         "roic": 6.909385,
+        "roce": 8.86613976356382,
         "netProfitMargin": 1.613193,
         "assetTurnover": 169.8183,
         "equityMultiplier": 2.404795
@@ -115588,11 +116079,11 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603486",
-      "price": 55.58,
-      "marketValue": 32176521721,
-      "PB": 3.47,
-      "PE_TTM": 19.06,
-      "totalSharesOutstanding": 578922665
+      "price": 53.32,
+      "marketValue": 30850858157,
+      "PB": 3.32,
+      "PE_TTM": 18.27,
+      "totalSharesOutstanding": 578598240
     },
     "recentYearData": {
       "netProfit": 1688408396.06
@@ -116462,6 +116953,7 @@ const data: ServiceData = {
         "roe": 1.94,
         "roa": 1.024699,
         "roic": 1.912706,
+        "roce": 2.10195069044717,
         "netProfitMargin": 4.022896,
         "assetTurnover": 20.1226,
         "equityMultiplier": 2.415588
@@ -116471,6 +116963,7 @@ const data: ServiceData = {
         "roe": 21.18,
         "roa": 9.992218,
         "roic": 19.163371,
+        "roce": 21.24911840410288,
         "netProfitMargin": 8.26333,
         "assetTurnover": 102.6492,
         "equityMultiplier": 2.535947
@@ -116480,6 +116973,7 @@ const data: ServiceData = {
         "roe": 23.75,
         "roa": 10.97666,
         "roic": 20.841694,
+        "roce": 22.989912026018207,
         "netProfitMargin": 9.314665,
         "assetTurnover": 100.0023,
         "equityMultiplier": 2.551324
@@ -116489,6 +116983,7 @@ const data: ServiceData = {
         "roe": 25.4,
         "roa": 11.667507,
         "roic": 23.417847,
+        "roce": 26.58085792995562,
         "netProfitMargin": 9.014717,
         "assetTurnover": 109.6654,
         "equityMultiplier": 2.556893
@@ -116498,6 +116993,7 @@ const data: ServiceData = {
         "roe": 31.15,
         "roa": 14.030745,
         "roic": 30.55656,
+        "roce": 36.64844638948945,
         "netProfitMargin": 9.001652,
         "assetTurnover": 130.55110000000002,
         "equityMultiplier": 2.742867
@@ -116507,6 +117003,7 @@ const data: ServiceData = {
         "roe": 17.46,
         "roa": 6.6226,
         "roic": 17.392169,
+        "roce": 19.408120790994026,
         "netProfitMargin": 4.336215,
         "assetTurnover": 134.1617,
         "equityMultiplier": 2.690275
@@ -116516,6 +117013,7 @@ const data: ServiceData = {
         "roe": 25.65,
         "roa": 9.085391,
         "roic": 26.137738,
+        "roce": 33.03611796374829,
         "netProfitMargin": 4.725767,
         "assetTurnover": 148.4027,
         "equityMultiplier": 3.609918
@@ -116525,6 +117023,7 @@ const data: ServiceData = {
         "roe": 29.43,
         "roa": 9.575383,
         "roic": 29.583826,
+        "roce": 37.38160644198129,
         "netProfitMargin": 4.986229,
         "assetTurnover": 149.64440000000002,
         "equityMultiplier": 3.830582
@@ -116534,6 +117033,7 @@ const data: ServiceData = {
         "roe": 33.24,
         "roa": 9.571832,
         "roic": 33.514257,
+        "roce": 42.55502729376178,
         "netProfitMargin": 4.786059,
         "assetTurnover": 154.3998,
         "equityMultiplier": 3.974954
@@ -116543,6 +117043,7 @@ const data: ServiceData = {
         "roe": 28.17,
         "roa": 5.162814,
         "roic": 16.392663,
+        "roce": 35.51515091664687,
         "netProfitMargin": 3.378336,
         "assetTurnover": 139.34,
         "equityMultiplier": 5.220888
@@ -116552,6 +117053,7 @@ const data: ServiceData = {
         "roe": 47.85,
         "roa": 13.547302,
         "roic": 50.717571,
+        "roce": 60.26762515069998,
         "netProfitMargin": 6.938519,
         "assetTurnover": 141.3043,
         "equityMultiplier": 5.545698
@@ -118834,10 +119336,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603529",
-      "price": 21.12,
-      "marketValue": 18329899780,
-      "PB": 1.95,
-      "PE_TTM": 11.27,
+      "price": 20.43,
+      "marketValue": 17731053622,
+      "PB": 1.88,
+      "PE_TTM": 10.91,
       "totalSharesOutstanding": 867892982
     },
     "recentYearData": {
@@ -119708,6 +120210,7 @@ const data: ServiceData = {
         "roe": 4.92,
         "roa": 3.070101,
         "roic": 2.851891,
+        "roce": 3.812782396646726,
         "netProfitMargin": 20.42938,
         "assetTurnover": 10.3223,
         "equityMultiplier": 2.28048
@@ -119717,6 +120220,7 @@ const data: ServiceData = {
         "roe": 18.7,
         "roa": 11.789898,
         "roic": 10.959061,
+        "roce": 15.144399967415747,
         "netProfitMargin": 18.873485,
         "assetTurnover": 42.7502,
         "equityMultiplier": 2.376428
@@ -119726,6 +120230,7 @@ const data: ServiceData = {
         "roe": 17.26,
         "roa": 11.402273,
         "roic": 10.784139,
+        "roce": 15.013329200861367,
         "netProfitMargin": 16.335411,
         "assetTurnover": 46.7502,
         "equityMultiplier": 2.236127
@@ -119735,6 +120240,7 @@ const data: ServiceData = {
         "roe": 17.2,
         "roa": 11.599589,
         "roic": 11.296655,
+        "roce": 16.15101202388742,
         "netProfitMargin": 13.840405,
         "assetTurnover": 56.9666,
         "equityMultiplier": 2.176066
@@ -119744,6 +120250,7 @@ const data: ServiceData = {
         "roe": 28.36,
         "roa": 20.540774,
         "roic": 19.83368,
+        "roce": 29.647980043800988,
         "netProfitMargin": 19.305748,
         "assetTurnover": 75.8781,
         "equityMultiplier": 2.156195
@@ -119753,6 +120260,7 @@ const data: ServiceData = {
         "roe": 35.86,
         "roa": 23.237076,
         "roic": 22.718556,
+        "roce": 35.2129480582269,
         "netProfitMargin": 19.577995,
         "assetTurnover": 85.1118,
         "equityMultiplier": 1.7794
@@ -119762,6 +120270,7 @@ const data: ServiceData = {
         "roe": 27.93,
         "roa": 14.625045,
         "roic": 16.895515,
+        "roce": 27.359738672680127,
         "netProfitMargin": 9.823348,
         "assetTurnover": 104.85759999999999,
         "equityMultiplier": 2.222281
@@ -119771,6 +120280,7 @@ const data: ServiceData = {
         "roe": 33.49,
         "roa": 16.015224,
         "roic": 23.604274,
+        "roce": 34.40630966667991,
         "netProfitMargin": 8.704947,
         "assetTurnover": 132.1469,
         "equityMultiplier": 2.796784
@@ -119780,6 +120290,7 @@ const data: ServiceData = {
         "roe": 27.55,
         "roa": 13.395857,
         "roic": 19.409183,
+        "roce": 28.705854905587806,
         "netProfitMargin": 6.839988,
         "assetTurnover": 141.6517,
         "equityMultiplier": 3.021255
@@ -119789,6 +120300,7 @@ const data: ServiceData = {
         "roe": 31.66,
         "roa": 16.425211,
         "roic": 21.042417,
+        "roce": 35.26902615585534,
         "netProfitMargin": 6.738501,
         "assetTurnover": 151.6719,
         "equityMultiplier": 2.736521
@@ -119798,6 +120310,7 @@ const data: ServiceData = {
         "roe": 74.3,
         "roa": 29.364457,
         "roic": 49.711688,
+        "roce": 59.3791685822522,
         "netProfitMargin": 11.171823,
         "assetTurnover": 183.6011,
         "equityMultiplier": 3.140248
@@ -121228,10 +121741,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603565",
-      "price": 10.33,
-      "marketValue": 21693651854,
+      "price": 10.3,
+      "marketValue": 21630649961,
       "PB": 2.07,
-      "PE_TTM": 10.95,
+      "PE_TTM": 10.92,
       "totalSharesOutstanding": 2100063103
     },
     "recentYearData": {
@@ -122102,6 +122615,7 @@ const data: ServiceData = {
         "roe": 1.55,
         "roa": 1.352915,
         "roic": 1.324812,
+        "roce": 1.4743664243249142,
         "netProfitMargin": 17.256051,
         "assetTurnover": 6.3968,
         "equityMultiplier": 1.406677
@@ -122111,6 +122625,7 @@ const data: ServiceData = {
         "roe": 6.66,
         "roa": 5.502976,
         "roic": 5.318715,
+        "roce": 6.536096499366639,
         "netProfitMargin": 18.596928,
         "assetTurnover": 24.5397,
         "equityMultiplier": 1.401578
@@ -122120,6 +122635,7 @@ const data: ServiceData = {
         "roe": 8.08,
         "roa": 6.142219,
         "roic": 6.383991,
+        "roce": 7.334842140146518,
         "netProfitMargin": 16.678667,
         "assetTurnover": 30.769000000000002,
         "equityMultiplier": 1.510687
@@ -122129,6 +122645,7 @@ const data: ServiceData = {
         "roe": 15.74,
         "roa": 11.38357,
         "roic": 13.196632,
+        "roce": 15.466610229211037,
         "netProfitMargin": 24.420682,
         "assetTurnover": 39.9587,
         "equityMultiplier": 1.613942
@@ -122138,6 +122655,7 @@ const data: ServiceData = {
         "roe": 30.7,
         "roa": 22.637679,
         "roic": 26.901862,
+        "roce": 31.306148783970837,
         "netProfitMargin": 26.235276,
         "assetTurnover": 75.5054,
         "equityMultiplier": 1.571372
@@ -122147,6 +122665,7 @@ const data: ServiceData = {
         "roe": 23.59,
         "roa": 19.287286,
         "roic": 22.849488,
+        "roce": 25.959565439826104,
         "netProfitMargin": 26.655948,
         "assetTurnover": 63.357699999999994,
         "equityMultiplier": 1.458954
@@ -122156,6 +122675,7 @@ const data: ServiceData = {
         "roe": 10.93,
         "roa": 9.606147,
         "roic": 10.887779,
+        "roce": 12.230914511349976,
         "netProfitMargin": 17.303331,
         "assetTurnover": 48.7282,
         "equityMultiplier": 1.305562
@@ -122165,6 +122685,7 @@ const data: ServiceData = {
         "roe": 10.43,
         "roa": 9.246214,
         "roic": 10.327968,
+        "roce": 11.664549595740334,
         "netProfitMargin": 16.257024,
         "assetTurnover": 49.7717,
         "equityMultiplier": 1.297577
@@ -122174,6 +122695,7 @@ const data: ServiceData = {
         "roe": 10.73,
         "roa": 9.281563,
         "roic": 10.714438,
+        "roce": 11.969715653053404,
         "netProfitMargin": 16.475853,
         "assetTurnover": 49.9814,
         "equityMultiplier": 1.271888
@@ -122183,6 +122705,7 @@ const data: ServiceData = {
         "roe": 13.17,
         "roa": 8.655985,
         "roic": 10.314408,
+        "roce": 11.719751932550054,
         "netProfitMargin": 14.373633,
         "assetTurnover": 52.880300000000005,
         "equityMultiplier": 1.33038
@@ -122192,6 +122715,7 @@ const data: ServiceData = {
         "roe": 7.82,
         "roa": 5.438085,
         "roic": 6.210968,
+        "roce": 8.277083912714076,
         "netProfitMargin": 12.057948,
         "assetTurnover": 46.783,
         "equityMultiplier": 1.406024
@@ -123418,10 +123942,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603599",
-      "price": 11.28,
-      "marketValue": 10267838212,
-      "PB": 1,
-      "PE_TTM": 15.72,
+      "price": 10.78,
+      "marketValue": 9812703539,
+      "PB": 0.96,
+      "PE_TTM": 15.02,
       "totalSharesOutstanding": 910269345
     },
     "recentYearData": {
@@ -124292,6 +124816,7 @@ const data: ServiceData = {
         "roe": 9.06,
         "roa": 6.101047,
         "roic": 6.704718,
+        "roce": 9.42889610335158,
         "netProfitMargin": 13.287879,
         "assetTurnover": 31.276300000000003,
         "equityMultiplier": 2.08465
@@ -124301,6 +124826,7 @@ const data: ServiceData = {
         "roe": 26.61,
         "roa": 18.969726,
         "roic": 18.117917,
+        "roce": 30.733422236917374,
         "netProfitMargin": 11.625209,
         "assetTurnover": 111.369,
         "equityMultiplier": 2.013618
@@ -124310,6 +124836,7 @@ const data: ServiceData = {
         "roe": 20.96,
         "roa": 16.99674,
         "roic": 16.447642,
+        "roce": 24.743909799611156,
         "netProfitMargin": 7.256977,
         "assetTurnover": 124.13860000000001,
         "equityMultiplier": 1.980823
@@ -124319,6 +124846,7 @@ const data: ServiceData = {
         "roe": 15,
         "roa": 10.264104,
         "roic": 11.582264,
+        "roce": 15.046483416028602,
         "netProfitMargin": 4.579733,
         "assetTurnover": 110.22030000000001,
         "equityMultiplier": 2.403686
@@ -124328,6 +124856,7 @@ const data: ServiceData = {
         "roe": 13.41,
         "roa": 8.331111,
         "roic": 9.145219,
+        "roce": 12.370740340859106,
         "netProfitMargin": 4.157272,
         "assetTurnover": 114.3858,
         "equityMultiplier": 2.659995
@@ -124337,6 +124866,7 @@ const data: ServiceData = {
         "roe": 12.93,
         "roa": 8.095536,
         "roic": 7.662576,
+        "roce": 11.286084302584408,
         "netProfitMargin": 3.121783,
         "assetTurnover": 133.7965,
         "equityMultiplier": 2.847861
@@ -124346,6 +124876,7 @@ const data: ServiceData = {
         "roe": 5.83,
         "roa": 3.849991,
         "roic": 4.608352,
+        "roce": 5.109985504467939,
         "netProfitMargin": 2.193855,
         "assetTurnover": 94.4248,
         "equityMultiplier": 2.586703
@@ -124355,6 +124886,7 @@ const data: ServiceData = {
         "roe": 4.54,
         "roa": 3.850612,
         "roic": 5.736894,
+        "roce": 4.708869341481805,
         "netProfitMargin": 2.571253,
         "assetTurnover": 62.9833,
         "equityMultiplier": 2.361063
@@ -124364,6 +124896,7 @@ const data: ServiceData = {
         "roe": 11.72,
         "roa": 8.480737,
         "roic": 8.282196,
+        "roce": 10.941460786719901,
         "netProfitMargin": 19.836185,
         "assetTurnover": 26.0863,
         "equityMultiplier": 2.040732
@@ -124373,6 +124906,7 @@ const data: ServiceData = {
         "roe": 9.89,
         "roa": 7.168367,
         "roic": 6.357978,
+        "roce": 9.312496580021037,
         "netProfitMargin": 14.890182,
         "assetTurnover": 25.9984,
         "equityMultiplier": 2.131106
@@ -124382,6 +124916,7 @@ const data: ServiceData = {
         "roe": 5.52,
         "roa": 3.116729,
         "roic": 4.050848,
+        "roce": 1.6134249313143632,
         "netProfitMargin": 14.666206,
         "assetTurnover": 11.677200000000001,
         "equityMultiplier": 2.567114
@@ -126964,10 +127499,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603993",
-      "price": 20.92,
-      "marketValue": 447568968882,
-      "PB": 5.41,
-      "PE_TTM": 18.53,
+      "price": 19.6,
+      "marketValue": 419328479450,
+      "PB": 5.07,
+      "PE_TTM": 17.36,
       "totalSharesOutstanding": 21394310176
     },
     "recentYearData": {
@@ -127761,6 +128296,7 @@ const data: ServiceData = {
         "roe": 8.42,
         "roa": 5.014664,
         "roic": 6.898341,
+        "roce": 7.345624528582714,
         "netProfitMargin": 21.345755,
         "assetTurnover": 18.5194,
         "equityMultiplier": 1.801209
@@ -127770,6 +128306,7 @@ const data: ServiceData = {
         "roe": 51.61,
         "roa": 22.953718,
         "roic": 29.20818,
+        "roce": 37.6069318862797,
         "netProfitMargin": 21.144722,
         "assetTurnover": 84.5203,
         "equityMultiplier": 2.835453
@@ -127779,6 +128316,7 @@ const data: ServiceData = {
         "roe": 46.93,
         "roa": 22.5226,
         "roic": 28.57244,
+        "roce": 35.65079455576768,
         "netProfitMargin": 21.001705,
         "assetTurnover": 84.7306,
         "equityMultiplier": 2.948197
@@ -127788,6 +128326,7 @@ const data: ServiceData = {
         "roe": 35.82,
         "roa": 20.010208,
         "roic": 23.502567,
+        "roce": 29.883991060120486,
         "netProfitMargin": 18.110717,
         "assetTurnover": 84.74629999999999,
         "equityMultiplier": 2.326156
@@ -127797,6 +128336,7 @@ const data: ServiceData = {
         "roe": 31.65,
         "roa": 19.213406,
         "roic": 22.295777,
+        "roce": 28.859855414017506,
         "netProfitMargin": 16.936561,
         "assetTurnover": 86.5242,
         "equityMultiplier": 2.343792
@@ -127806,6 +128346,7 @@ const data: ServiceData = {
         "roe": 36.48,
         "roa": 25.164338,
         "roic": 32.611132,
+        "roce": 42.187687479251174,
         "netProfitMargin": 17.096456,
         "assetTurnover": 114.84440000000001,
         "equityMultiplier": 1.838192
@@ -127815,6 +128356,7 @@ const data: ServiceData = {
         "roe": 45.82,
         "roa": 27.026457,
         "roic": 38.571055,
+        "roce": 49.66381400157726,
         "netProfitMargin": 16.377192,
         "assetTurnover": 128.75900000000001,
         "equityMultiplier": 2.279513
@@ -127824,6 +128366,7 @@ const data: ServiceData = {
         "roe": 43.14,
         "roa": 27.234738,
         "roic": 36.232894,
+        "roce": 46.93075973103063,
         "netProfitMargin": 13.556918,
         "assetTurnover": 154.499,
         "equityMultiplier": 2.043015
@@ -127833,6 +128376,7 @@ const data: ServiceData = {
         "roe": 22.05,
         "roa": 13.477553,
         "roic": 18.985315,
+        "roce": 24.020757934540086,
         "netProfitMargin": 7.105462,
         "assetTurnover": 146.0866,
         "equityMultiplier": 1.938946
@@ -127842,6 +128386,7 @@ const data: ServiceData = {
         "roe": 43.34,
         "roa": 19.658764,
         "roic": 29.505429,
+        "roce": 39.32219008175058,
         "netProfitMargin": 10.414519,
         "assetTurnover": 138.6537,
         "equityMultiplier": 2.354475
@@ -129654,10 +130199,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "605499",
-      "price": 128.26,
-      "marketValue": 94168403501,
-      "PB": 4.94,
-      "PE_TTM": 20.07,
+      "price": 124.35,
+      "marketValue": 91297684199,
+      "PB": 4.79,
+      "PE_TTM": 19.46,
       "totalSharesOutstanding": 734199310
     },
     "recentYearData": {
@@ -130528,6 +131073,7 @@ const data: ServiceData = {
         "roe": 2.79,
         "roa": 1.193996,
         "roic": 2.739616,
+        "roce": 3.2524052837324486,
         "netProfitMargin": 3.562344,
         "assetTurnover": 27.836,
         "equityMultiplier": 2.749561
@@ -130537,6 +131083,7 @@ const data: ServiceData = {
         "roe": 26.08,
         "roa": 11.631711,
         "roic": 25.765727,
+        "roce": 31.86300706246866,
         "netProfitMargin": 8.282358,
         "assetTurnover": 114.404,
         "equityMultiplier": 2.963742
@@ -130546,6 +131093,7 @@ const data: ServiceData = {
         "roe": 19.1,
         "roa": 9.970461,
         "roic": 18.486684,
+        "roce": 22.426327940120515,
         "netProfitMargin": 7.645048,
         "assetTurnover": 107.0269,
         "equityMultiplier": 2.514734
@@ -130555,6 +131103,7 @@ const data: ServiceData = {
         "roe": 11.5,
         "roa": 6.41273,
         "roic": 11.506153,
+        "roce": 10.814911797569524,
         "netProfitMargin": 5.832504,
         "assetTurnover": 100.9922,
         "equityMultiplier": 1.960644
@@ -130564,6 +131113,7 @@ const data: ServiceData = {
         "roe": 9.85,
         "roa": 6.655845,
         "roic": 9.700449,
+        "roce": 12.248385911165398,
         "netProfitMargin": 4.430949,
         "assetTurnover": 118.6537,
         "equityMultiplier": 1.899231
@@ -130573,6 +131123,7 @@ const data: ServiceData = {
         "roe": 10.31,
         "roa": 7.088199,
         "roic": 9.888767,
+        "roce": 12.368005396375716,
         "netProfitMargin": 4.460948,
         "assetTurnover": 128.5453,
         "equityMultiplier": 1.79561
@@ -130582,6 +131133,7 @@ const data: ServiceData = {
         "roe": 2.94,
         "roa": 3.315717,
         "roic": 2.722012,
+        "roce": 5.026391600717614,
         "netProfitMargin": 1.223992,
         "assetTurnover": 121.6739,
         "equityMultiplier": 1.773878
@@ -130591,6 +131143,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": -10.949087,
         "roic": -21.265509,
+        "roce": -17.167693723488505,
         "netProfitMargin": -9.918435,
         "assetTurnover": 130.9334,
         "equityMultiplier": 1.561266
@@ -130600,6 +131153,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": -59.601971,
         "roic": -106.325074,
+        "roce": 0,
         "netProfitMargin": -42.469611,
         "assetTurnover": 150.4195,
         "equityMultiplier": 0
@@ -130609,6 +131163,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": -37.525475,
         "roic": -51.06943,
+        "roce": -52.54146108308599,
         "netProfitMargin": -45.400479,
         "assetTurnover": 85.4015,
         "equityMultiplier": 0
@@ -130618,6 +131173,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": -10.648794,
         "roic": -16.221236,
+        "roce": -17.801794610043114,
         "netProfitMargin": -13.670502,
         "assetTurnover": 89.87650000000001,
         "equityMultiplier": 0
@@ -131868,10 +132424,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "689009",
-      "price": 36.24,
-      "marketValue": 26500228780,
-      "PB": 3.48,
-      "PE_TTM": 17.6,
+      "price": 35.08,
+      "marketValue": 25651987461,
+      "PB": 3.37,
+      "PE_TTM": 17.04,
       "totalSharesOutstanding": 731242516
     },
     "recentYearData": {
@@ -132742,6 +133298,7 @@ const data: ServiceData = {
         "roe": 5.56,
         "roa": 2.537321,
         "roic": 4.476516,
+        "roce": 5.108204108556896,
         "netProfitMargin": 9.809037,
         "assetTurnover": 21.523400000000002,
         "equityMultiplier": 2.501135
@@ -132751,6 +133308,7 @@ const data: ServiceData = {
         "roe": 19.7,
         "roa": 9.116261,
         "roic": 15.500306,
+        "roce": 17.97426500457322,
         "netProfitMargin": 9.753538,
         "assetTurnover": 75.5891,
         "equityMultiplier": 2.574997
@@ -132760,6 +133318,7 @@ const data: ServiceData = {
         "roe": 21.29,
         "roa": 9.013858,
         "roic": 15.097503,
+        "roce": 17.47565394224638,
         "netProfitMargin": 9.519158,
         "assetTurnover": 75.0344,
         "equityMultiplier": 2.654538
@@ -132769,6 +133328,7 @@ const data: ServiceData = {
         "roe": 22.23,
         "roa": 9.483948,
         "roic": 16.18591,
+        "roce": 18.543967089275434,
         "netProfitMargin": 9.070422,
         "assetTurnover": 82.2611,
         "equityMultiplier": 2.78852
@@ -132778,6 +133338,7 @@ const data: ServiceData = {
         "roe": 22.21,
         "roa": 8.173956,
         "roic": 14.105226,
+        "roce": 17.979232755909546,
         "netProfitMargin": 8.667842,
         "assetTurnover": 85.3073,
         "equityMultiplier": 2.781363
@@ -132787,6 +133348,7 @@ const data: ServiceData = {
         "roe": 24.09,
         "roa": 9.374251,
         "roic": 16.749087,
+        "roce": 17.153708515704643,
         "netProfitMargin": 8.503092,
         "assetTurnover": 91.76729999999999,
         "equityMultiplier": 2.877403
@@ -132796,6 +133358,7 @@ const data: ServiceData = {
         "roe": 24.95,
         "roa": 9.955378,
         "roic": 17.455217,
+        "roce": 19.334790452507534,
         "netProfitMargin": 9.677862,
         "assetTurnover": 86.273,
         "equityMultiplier": 2.900764
@@ -132805,6 +133368,7 @@ const data: ServiceData = {
         "roe": 26.43,
         "roa": 10.89347,
         "roic": 18.349241,
+        "roce": 21.188404240098215,
         "netProfitMargin": 9.085438,
         "assetTurnover": 98.7809,
         "equityMultiplier": 2.808989
@@ -132814,6 +133378,7 @@ const data: ServiceData = {
         "roe": 25.66,
         "roa": 10.346477,
         "roic": 17.617761,
+        "roce": 20.544078493278985,
         "netProfitMargin": 8.337832,
         "assetTurnover": 102.3116,
         "equityMultiplier": 2.852225
@@ -132823,6 +133388,7 @@ const data: ServiceData = {
         "roe": 25.88,
         "roa": 10.901155,
         "roic": 19.609746,
+        "roce": 22.325146403328745,
         "netProfitMargin": 7.731715,
         "assetTurnover": 115.555,
         "equityMultiplier": 2.991936
@@ -132832,6 +133398,7 @@ const data: ServiceData = {
         "roe": 26.88,
         "roa": 12.880959,
         "roic": 23.953715,
+        "roce": 24.87747441400276,
         "netProfitMargin": 9.973282,
         "assetTurnover": 106.7594,
         "equityMultiplier": 2.473309
@@ -134382,10 +134949,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000333",
-      "price": 80.93,
-      "marketValue": 616155610744,
-      "PB": 2.65,
-      "PE_TTM": 13.94,
+      "price": 78.75,
+      "marketValue": 599558313926,
+      "PB": 2.58,
+      "PE_TTM": 13.57,
       "totalSharesOutstanding": 7613438907
     },
     "recentYearData": {
@@ -135256,6 +135823,7 @@ const data: ServiceData = {
         "roe": 9.24,
         "roa": 8.87652,
         "roic": 9.187252,
+        "roce": 9.494122990493178,
         "netProfitMargin": 219.284413,
         "assetTurnover": 3.9063,
         "equityMultiplier": 1.075993
@@ -135265,6 +135833,7 @@ const data: ServiceData = {
         "roe": 24.71,
         "roa": 24.793489,
         "roic": 25.40812,
+        "roce": 27.93052258034284,
         "netProfitMargin": 107.283453,
         "assetTurnover": 21.8258,
         "equityMultiplier": 1.091075
@@ -135274,6 +135843,7 @@ const data: ServiceData = {
         "roe": 19.4,
         "roa": 18.66453,
         "roic": 19.23238,
+        "roce": 21.233822966741638,
         "netProfitMargin": 79.03511,
         "assetTurnover": 22.2849,
         "equityMultiplier": 1.089284
@@ -135283,6 +135853,7 @@ const data: ServiceData = {
         "roe": 27.62,
         "roa": 27.989884,
         "roic": 27.130784,
+        "roce": 32.268778367550745,
         "netProfitMargin": 65.299205,
         "assetTurnover": 37.824200000000005,
         "equityMultiplier": 1.079794
@@ -135292,6 +135863,7 @@ const data: ServiceData = {
         "roe": 50.09,
         "roa": 54.580237,
         "roic": 52.360158,
+        "roce": 61.454457582924384,
         "netProfitMargin": 69.013089,
         "assetTurnover": 67.8276,
         "equityMultiplier": 1.116528
@@ -135301,6 +135873,7 @@ const data: ServiceData = {
         "roe": 16.39,
         "roa": 17.562498,
         "roic": 16.425535,
+        "roce": 20.67663801646448,
         "netProfitMargin": 39.401042,
         "assetTurnover": 37.5356,
         "equityMultiplier": 1.123836
@@ -135310,6 +135883,7 @@ const data: ServiceData = {
         "roe": 2.93,
         "roa": 3.46838,
         "roic": 2.945707,
+        "roce": 4.30625091149727,
         "netProfitMargin": 12.024642,
         "assetTurnover": 20.779,
         "equityMultiplier": 1.096058
@@ -135319,6 +135893,7 @@ const data: ServiceData = {
         "roe": 4.05,
         "roa": 4.849974,
         "roic": 4.294508,
+        "roce": 5.625500191043253,
         "netProfitMargin": 15.271267,
         "assetTurnover": 21.764400000000002,
         "equityMultiplier": 1.21968
@@ -135328,6 +135903,7 @@ const data: ServiceData = {
         "roe": 12.24,
         "roa": 12.391375,
         "roic": 12.082535,
+        "roce": 14.323490657718976,
         "netProfitMargin": 31.716015,
         "assetTurnover": 31.2966,
         "equityMultiplier": 1.2623
@@ -135337,6 +135913,7 @@ const data: ServiceData = {
         "roe": 18.49,
         "roa": 19.809872,
         "roic": 18.842151,
+        "roce": 22.289102428109505,
         "netProfitMargin": 38.351014,
         "assetTurnover": 42.0139,
         "equityMultiplier": 1.185125
@@ -135346,6 +135923,7 @@ const data: ServiceData = {
         "roe": 21.56,
         "roa": 18.271793,
         "roic": 20.977382,
+        "roce": 20.035317847379446,
         "netProfitMargin": 35.316372,
         "assetTurnover": 41.1705,
         "equityMultiplier": 1.2292
@@ -136404,10 +136982,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000408",
-      "price": 81.86,
-      "marketValue": 128431361762,
-      "PB": 8.4,
-      "PE_TTM": 27.45,
+      "price": 76.5,
+      "marketValue": 120021978681,
+      "PB": 7.85,
+      "PE_TTM": 25.65,
       "totalSharesOutstanding": 1568914754
     },
     "recentYearData": {
@@ -137278,6 +137856,7 @@ const data: ServiceData = {
         "roe": 4.31,
         "roa": 3.990058,
         "roic": 4.300475,
+        "roce": 5.133935920706284,
         "netProfitMargin": 25.067108,
         "assetTurnover": 13.472000000000001,
         "equityMultiplier": 1.250246
@@ -137287,6 +137866,7 @@ const data: ServiceData = {
         "roe": 16.66,
         "roa": 15.610149,
         "roic": 16.821879,
+        "roce": 20.035952810434722,
         "netProfitMargin": 25.948495,
         "assetTurnover": 50.614000000000004,
         "equityMultiplier": 1.291218
@@ -137296,6 +137876,7 @@ const data: ServiceData = {
         "roe": 14.56,
         "roa": 14.121919,
         "roic": 14.816923,
+        "roce": 17.584657115531588,
         "netProfitMargin": 26.30009,
         "assetTurnover": 44.865500000000004,
         "equityMultiplier": 1.266673
@@ -137305,6 +137886,7 @@ const data: ServiceData = {
         "roe": 11.12,
         "roa": 10.538841,
         "roic": 10.912313,
+        "roce": 12.909603193867051,
         "netProfitMargin": 24.428075,
         "assetTurnover": 36.3584,
         "equityMultiplier": 1.238883
@@ -137314,6 +137896,7 @@ const data: ServiceData = {
         "roe": 7.68,
         "roa": 7.561498,
         "roic": 7.684786,
+        "roce": 9.025705808376719,
         "netProfitMargin": 19.279025,
         "assetTurnover": 33.321600000000004,
         "equityMultiplier": 1.22033
@@ -137323,6 +137906,7 @@ const data: ServiceData = {
         "roe": 4.46,
         "roa": 5.109138,
         "roic": 4.512365,
+        "roce": 5.804177693811622,
         "netProfitMargin": 11.403355,
         "assetTurnover": 34.0949,
         "equityMultiplier": 1.163341
@@ -137332,6 +137916,7 @@ const data: ServiceData = {
         "roe": 0.44,
         "roa": 1.591259,
         "roic": 0.587011,
+        "roce": 1.6825813621155348,
         "netProfitMargin": 1.201632,
         "assetTurnover": 30.102,
         "equityMultiplier": 1.119976
@@ -137341,6 +137926,7 @@ const data: ServiceData = {
         "roe": -4.22,
         "roa": -3.478283,
         "roic": -3.596368,
+        "roce": -4.325086400009816,
         "netProfitMargin": -15.05378,
         "assetTurnover": 23.183300000000003,
         "equityMultiplier": 1.162685
@@ -137350,6 +137936,7 @@ const data: ServiceData = {
         "roe": 19.72,
         "roa": 18.864207,
         "roic": 20.018087,
+        "roce": 23.322511711728836,
         "netProfitMargin": 28.434394,
         "assetTurnover": 55.9195,
         "equityMultiplier": 1.224287
@@ -137359,6 +137946,7 @@ const data: ServiceData = {
         "roe": 22.46,
         "roa": 21.798893,
         "roic": 22.738271,
+        "roce": 26.67291891224493,
         "netProfitMargin": 27.725182,
         "assetTurnover": 66.04379999999999,
         "equityMultiplier": 1.253712
@@ -137368,6 +137956,7 @@ const data: ServiceData = {
         "roe": 24.1,
         "roa": 23.722435,
         "roic": 24.0415,
+        "roce": 27.795008608036287,
         "netProfitMargin": 29.36679,
         "assetTurnover": 68.0777,
         "equityMultiplier": 1.186431
@@ -138726,10 +139315,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000423",
-      "price": 49.05,
-      "marketValue": 31587063217,
-      "PB": 3.2,
-      "PE_TTM": 17.86,
+      "price": 47.06,
+      "marketValue": 30305549337,
+      "PB": 3.07,
+      "PE_TTM": 17.13,
       "totalSharesOutstanding": 643976824
     },
     "recentYearData": {
@@ -139600,6 +140189,7 @@ const data: ServiceData = {
         "roe": 4.96,
         "roa": 4.273555,
         "roic": 4.953423,
+        "roce": 5.712830947896343,
         "netProfitMargin": 17.501092,
         "assetTurnover": 20.9573,
         "equityMultiplier": 1.338812
@@ -139609,6 +140199,7 @@ const data: ServiceData = {
         "roe": 13.02,
         "roa": 11.321448,
         "roic": 12.75159,
+        "roce": 15.181408516085614,
         "netProfitMargin": 12.60092,
         "assetTurnover": 76.8537,
         "equityMultiplier": 1.351729
@@ -139618,6 +140209,7 @@ const data: ServiceData = {
         "roe": 11.99,
         "roa": 10.774093,
         "roic": 11.649138,
+        "roce": 14.239512622645737,
         "netProfitMargin": 11.907767,
         "assetTurnover": 75.03999999999999,
         "equityMultiplier": 1.361448
@@ -139627,6 +140219,7 @@ const data: ServiceData = {
         "roe": 10.51,
         "roa": 9.089402,
         "roic": 9.879307,
+        "roce": 11.873258645683324,
         "netProfitMargin": 10.54059,
         "assetTurnover": 73.0333,
         "equityMultiplier": 1.347796
@@ -139636,6 +140229,7 @@ const data: ServiceData = {
         "roe": 7.87,
         "roa": 6.520859,
         "roic": 7.455193,
+        "roce": 8.510468646748558,
         "netProfitMargin": 7.784424,
         "assetTurnover": 69.0698,
         "equityMultiplier": 1.383989
@@ -139645,6 +140239,7 @@ const data: ServiceData = {
         "roe": 7.58,
         "roa": 6.572845,
         "roic": 6.915504,
+        "roce": 8.66749667284854,
         "netProfitMargin": 7.68775,
         "assetTurnover": 67.6647,
         "equityMultiplier": 1.360592
@@ -139654,6 +140249,7 @@ const data: ServiceData = {
         "roe": 14.46,
         "roa": 13.292249,
         "roic": 14.014299,
+        "roce": 17.39192663903897,
         "netProfitMargin": 16.831308,
         "assetTurnover": 62.44,
         "equityMultiplier": 1.440105
@@ -139663,6 +140259,7 @@ const data: ServiceData = {
         "roe": 10.31,
         "roa": 9.365763,
         "roic": 10.643024,
+        "roce": 11.713864381440056,
         "netProfitMargin": 14.067412,
         "assetTurnover": 57.2641,
         "equityMultiplier": 1.303364
@@ -139672,6 +140269,7 @@ const data: ServiceData = {
         "roe": 9.06,
         "roa": 13.844559,
         "roic": 16.900093,
+        "roce": 12.483986032846728,
         "netProfitMargin": 12.317357,
         "assetTurnover": 91.9702,
         "equityMultiplier": 1.524788
@@ -139681,6 +140279,7 @@ const data: ServiceData = {
         "roe": 18.55,
         "roa": 14.34228,
         "roic": 17.509494,
+        "roce": 19.94074254463292,
         "netProfitMargin": 12.883339,
         "assetTurnover": 93.0005,
         "equityMultiplier": 1.526906
@@ -139690,6 +140289,7 @@ const data: ServiceData = {
         "roe": 20.03,
         "roa": 16.055625,
         "roic": 19.087777,
+        "roce": 20.718269796912658,
         "netProfitMargin": 13.078108,
         "assetTurnover": 102.1508,
         "equityMultiplier": 1.551841
@@ -141516,10 +142116,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000538",
-      "price": 50.15,
-      "marketValue": 89480769540,
-      "PB": 2.28,
-      "PE_TTM": 17.02,
+      "price": 48.9,
+      "marketValue": 87250441287,
+      "PB": 2.22,
+      "PE_TTM": 16.6,
       "totalSharesOutstanding": 1784262603
     },
     "recentYearData": {
@@ -142390,6 +142990,7 @@ const data: ServiceData = {
         "roe": 7.32,
         "roa": 7.656804,
         "roic": 6.518069,
+        "roce": 8.70577941265402,
         "netProfitMargin": 46.479546,
         "assetTurnover": 12.2557,
         "equityMultiplier": 1.278996
@@ -142399,6 +143000,7 @@ const data: ServiceData = {
         "roe": 22.66,
         "roa": 22.249758,
         "roic": 19.366499,
+        "roce": 26.11655361775458,
         "netProfitMargin": 42.205534,
         "assetTurnover": 38.655499999999996,
         "equityMultiplier": 1.29865
@@ -142408,6 +143010,7 @@ const data: ServiceData = {
         "roe": 30.44,
         "roa": 28.123899,
         "roic": 25.058457,
+        "roce": 33.60550997378514,
         "netProfitMargin": 43.267313,
         "assetTurnover": 47.4002,
         "equityMultiplier": 1.43838
@@ -142417,6 +143020,7 @@ const data: ServiceData = {
         "roe": 35.07,
         "roa": 31.904378,
         "roic": 29.382709,
+        "roce": 39.126179844711935,
         "netProfitMargin": 43.953717,
         "assetTurnover": 52.7264,
         "equityMultiplier": 1.524003
@@ -142426,6 +143030,7 @@ const data: ServiceData = {
         "roe": 33.32,
         "roa": 29.777657,
         "roic": 29.166412,
+        "roce": 38.67151202462319,
         "netProfitMargin": 41.43755,
         "assetTurnover": 53.1168,
         "equityMultiplier": 1.496862
@@ -142435,6 +143040,7 @@ const data: ServiceData = {
         "roe": 31.15,
         "roa": 27.47622,
         "roic": 27.49296,
+        "roce": 36.280671141374675,
         "netProfitMargin": 38.451515,
         "assetTurnover": 52.77929999999999,
         "equityMultiplier": 1.535749
@@ -142444,6 +143050,7 @@ const data: ServiceData = {
         "roe": 28.27,
         "roa": 25.432505,
         "roic": 25.273313,
+        "roce": 33.069932967248164,
         "netProfitMargin": 35.78074,
         "assetTurnover": 52.09780000000001,
         "equityMultiplier": 1.510197
@@ -142453,6 +143060,7 @@ const data: ServiceData = {
         "roe": 25.5,
         "roa": 24.234571,
         "roic": 24.607805,
+        "roce": 31.957751571287424,
         "netProfitMargin": 29.34978,
         "assetTurnover": 61.3953,
         "equityMultiplier": 1.478924
@@ -142462,6 +143070,7 @@ const data: ServiceData = {
         "roe": 21.81,
         "roa": 22.300786,
         "roic": 22.095642,
+        "roce": 29.236414171355484,
         "netProfitMargin": 26.888859,
         "assetTurnover": 61.639500000000005,
         "equityMultiplier": 1.320056
@@ -142471,6 +143080,7 @@ const data: ServiceData = {
         "roe": 20.3,
         "roa": 20.569037,
         "roic": 19.802721,
+        "roce": 26.215536954926293,
         "netProfitMargin": 25.031817,
         "assetTurnover": 61.651599999999995,
         "equityMultiplier": 1.290164
@@ -142480,6 +143090,7 @@ const data: ServiceData = {
         "roe": 18.12,
         "roa": 18.950103,
         "roic": 18.256522,
+        "roce": 23.76611312748474,
         "netProfitMargin": 23.479016,
         "assetTurnover": 61.7892,
         "equityMultiplier": 1.229167
@@ -143706,10 +144317,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000568",
-      "price": 84.68,
-      "marketValue": 124640615887,
-      "PB": 2.42,
-      "PE_TTM": 12.53,
+      "price": 82.73,
+      "marketValue": 121770408034,
+      "PB": 2.36,
+      "PE_TTM": 12.24,
       "totalSharesOutstanding": 1471901463
     },
     "recentYearData": {
@@ -144580,6 +145191,7 @@ const data: ServiceData = {
         "roe": 6.3,
         "roa": 5.620937,
         "roic": 6.15199,
+        "roce": 8.117323390290485,
         "netProfitMargin": 22.258348,
         "assetTurnover": 18.8931,
         "equityMultiplier": 1.491888
@@ -144589,6 +145201,7 @@ const data: ServiceData = {
         "roe": 14.28,
         "roa": 12.944046,
         "roic": 14.082324,
+        "roce": 19.246875573705555,
         "netProfitMargin": 19.331589,
         "assetTurnover": 47.8458,
         "equityMultiplier": 1.463263
@@ -144598,6 +145211,7 @@ const data: ServiceData = {
         "roe": 23.89,
         "roa": 20.546199,
         "roic": 23.652488,
+        "roce": 31.999719300839292,
         "netProfitMargin": 24.203193,
         "assetTurnover": 62.093399999999995,
         "equityMultiplier": 1.577128
@@ -144607,6 +145221,7 @@ const data: ServiceData = {
         "roe": 22.92,
         "roa": 19.436015,
         "roic": 22.692221,
+        "roce": 29.859396181808513,
         "netProfitMargin": 23.33554,
         "assetTurnover": 62.1171,
         "equityMultiplier": 1.580283
@@ -144616,6 +145231,7 @@ const data: ServiceData = {
         "roe": 17.93,
         "roa": 16.21569,
         "roic": 17.744413,
+        "roce": 24.117954127949197,
         "netProfitMargin": 19.456642,
         "assetTurnover": 60.5465,
         "equityMultiplier": 1.540891
@@ -144625,6 +145241,7 @@ const data: ServiceData = {
         "roe": 21.25,
         "roa": 15.654983,
         "roic": 17.101971,
+        "roce": 22.166551242354355,
         "netProfitMargin": 17.89271,
         "assetTurnover": 65.361,
         "equityMultiplier": 1.473267
@@ -144634,6 +145251,7 @@ const data: ServiceData = {
         "roe": 19.53,
         "roa": 17.032963,
         "roic": 19.410349,
+        "roce": 24.339436985917267,
         "netProfitMargin": 17.954494,
         "assetTurnover": 70.8382,
         "equityMultiplier": 1.453425
@@ -144643,6 +145261,7 @@ const data: ServiceData = {
         "roe": 25.55,
         "roa": 22.034568,
         "roic": 25.760525,
+        "roce": 32.72379629308417,
         "netProfitMargin": 20.714337,
         "assetTurnover": 78.9725,
         "equityMultiplier": 1.470639
@@ -144652,6 +145271,7 @@ const data: ServiceData = {
         "roe": 24.03,
         "roa": 21.04184,
         "roic": 24.331584,
+        "roce": 31.769424674080327,
         "netProfitMargin": 20.04243,
         "assetTurnover": 76.6555,
         "equityMultiplier": 1.557947
@@ -144661,6 +145281,7 @@ const data: ServiceData = {
         "roe": 19.09,
         "roa": 17.070374,
         "roic": 19.059591,
+        "roce": 24.948584250747295,
         "netProfitMargin": 17.008846,
         "assetTurnover": 73.7815,
         "equityMultiplier": 1.48408
@@ -144670,6 +145291,7 @@ const data: ServiceData = {
         "roe": 15.88,
         "roa": 14.468806,
         "roic": 15.927863,
+        "roce": 20.747962324389245,
         "netProfitMargin": 14.13159,
         "assetTurnover": 75.5953,
         "equityMultiplier": 1.47056
@@ -145932,10 +146554,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000596",
-      "price": 87.1,
-      "marketValue": 46041060000,
-      "PB": 1.76,
-      "PE_TTM": 16.29,
+      "price": 84.05,
+      "marketValue": 44428830000,
+      "PB": 1.7,
+      "PE_TTM": 15.72,
       "totalSharesOutstanding": 528600000
     },
     "recentYearData": {
@@ -146806,6 +147428,7 @@ const data: ServiceData = {
         "roe": 4.07,
         "roa": 1.889704,
         "roic": 2.804219,
+        "roce": 3.1559761780199453,
         "netProfitMargin": 14.194456,
         "assetTurnover": 11.1464,
         "equityMultiplier": 2.448223
@@ -146815,6 +147438,7 @@ const data: ServiceData = {
         "roe": 20.3,
         "roa": 9.64165,
         "roic": 13.987236,
+        "roce": 16.327775162865514,
         "netProfitMargin": 16.933554,
         "assetTurnover": 45.0664,
         "equityMultiplier": 2.612782
@@ -146824,6 +147448,7 @@ const data: ServiceData = {
         "roe": 25.42,
         "roa": 10.672572,
         "roic": 16.653255,
+        "roce": 18.69885840605042,
         "netProfitMargin": 17.112732,
         "assetTurnover": 51.6347,
         "equityMultiplier": 2.600679
@@ -146833,6 +147458,7 @@ const data: ServiceData = {
         "roe": 26.53,
         "roa": 9.896794,
         "roic": 16.612665,
+        "roce": 18.253818158559206,
         "netProfitMargin": 13.589137,
         "assetTurnover": 56.7033,
         "equityMultiplier": 3.050689
@@ -146842,6 +147468,7 @@ const data: ServiceData = {
         "roe": 24.19,
         "roa": 8.911457,
         "roic": 16.887951,
+        "roce": 18.1685607794262,
         "netProfitMargin": 12.176062,
         "assetTurnover": 56.3724,
         "equityMultiplier": 3.484869
@@ -146851,6 +147478,7 @@ const data: ServiceData = {
         "roe": 21.34,
         "roa": 9.53847,
         "roic": 17.659288,
+        "roce": 19.962554909979005,
         "netProfitMargin": 12.1531,
         "assetTurnover": 63.3395,
         "equityMultiplier": 2.961286
@@ -146860,6 +147488,7 @@ const data: ServiceData = {
         "roe": 18.88,
         "roa": 9.748355,
         "roic": 17.366781,
+        "roce": 20.315351994241404,
         "netProfitMargin": 13.245747,
         "assetTurnover": 60.65469999999999,
         "equityMultiplier": 2.388918
@@ -146869,6 +147498,7 @@ const data: ServiceData = {
         "roe": 25.72,
         "roa": 11.591884,
         "roic": 21.630899,
+        "roce": 25.699388602161793,
         "netProfitMargin": 12.529328,
         "assetTurnover": 75.0842,
         "equityMultiplier": 2.525462
@@ -146878,6 +147508,7 @@ const data: ServiceData = {
         "roe": 33.36,
         "roa": 13.876005,
         "roic": 27.518121,
+        "roce": 32.01784742124366,
         "netProfitMargin": 13.314459,
         "assetTurnover": 85.80630000000001,
         "equityMultiplier": 2.709755
@@ -146887,6 +147518,7 @@ const data: ServiceData = {
         "roe": 37.44,
         "roa": 13.811811,
         "roic": 31.1047,
+        "roce": 35.651770303882756,
         "netProfitMargin": 15.179134,
         "assetTurnover": 75.5115,
         "equityMultiplier": 3.216408
@@ -146896,6 +147528,7 @@ const data: ServiceData = {
         "roe": 30.44,
         "roa": 10.952341,
         "roic": 25.897422,
+        "roce": 28.48427953796539,
         "netProfitMargin": 14.334503,
         "assetTurnover": 64.0066,
         "equityMultiplier": 3.320425
@@ -148458,10 +149091,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000651",
-      "price": 37.86,
-      "marketValue": 212069221354,
-      "PB": 1.39,
-      "PE_TTM": 7.27,
+      "price": 37.11,
+      "marketValue": 207868167049,
+      "PB": 1.37,
+      "PE_TTM": 7.12,
       "totalSharesOutstanding": 5601405741
     },
     "recentYearData": {
@@ -149332,6 +149965,7 @@ const data: ServiceData = {
         "roe": 2.92,
         "roa": 2.503076,
         "roic": 2.867577,
+        "roce": 3.0886569953025895,
         "netProfitMargin": 13.377305,
         "assetTurnover": 16.8051,
         "equityMultiplier": 1.276587
@@ -149341,6 +149975,7 @@ const data: ServiceData = {
         "roe": 11.11,
         "roa": 9.318636,
         "roic": 10.688535,
+        "roce": 11.585249096706876,
         "netProfitMargin": 11.861653,
         "assetTurnover": 70.98440000000001,
         "equityMultiplier": 1.275484
@@ -149350,6 +149985,7 @@ const data: ServiceData = {
         "roe": 15.01,
         "roa": 12.287178,
         "roic": 13.956299,
+        "roce": 14.87461602263365,
         "netProfitMargin": 14.430048,
         "assetTurnover": 78.48349999999999,
         "equityMultiplier": 1.315112
@@ -149359,6 +149995,7 @@ const data: ServiceData = {
         "roe": 16,
         "roa": 12.928403,
         "roic": 14.656013,
+        "roce": 15.897438046670716,
         "netProfitMargin": 15.850938,
         "assetTurnover": 75.1394,
         "equityMultiplier": 1.291965
@@ -149368,6 +150005,7 @@ const data: ServiceData = {
         "roe": 15.83,
         "roa": 12.299036,
         "roic": 14.317269,
+        "roce": 14.831023366189786,
         "netProfitMargin": 15.770304,
         "assetTurnover": 72.2538,
         "equityMultiplier": 1.333941
@@ -149377,6 +150015,7 @@ const data: ServiceData = {
         "roe": 19.95,
         "roa": 15.706656,
         "roic": 17.637899,
+        "roce": 18.42277181566374,
         "netProfitMargin": 16.845087,
         "assetTurnover": 85.1216,
         "equityMultiplier": 1.360949
@@ -149386,6 +150025,7 @@ const data: ServiceData = {
         "roe": 18.69,
         "roa": 15.481335,
         "roic": 17.082507,
+        "roce": 19.002618735469564,
         "netProfitMargin": 17.997285,
         "assetTurnover": 75.7236,
         "equityMultiplier": 1.312841
@@ -149395,6 +150035,7 @@ const data: ServiceData = {
         "roe": 3.15,
         "roa": 3.488256,
         "roic": 2.953242,
+        "roce": 16.76274370942315,
         "netProfitMargin": 3.42709,
         "assetTurnover": 67.6782,
         "equityMultiplier": 1.475922
@@ -149404,6 +150045,7 @@ const data: ServiceData = {
         "roe": 18.61,
         "roa": 16.787136,
         "roic": 16.797761,
+        "roce": 20.42827950811103,
         "netProfitMargin": 19.742833,
         "assetTurnover": 73.87049999999999,
         "equityMultiplier": 1.240262
@@ -149413,6 +150055,7 @@ const data: ServiceData = {
         "roe": 20.66,
         "roa": 18.300869,
         "roic": 18.271962,
+        "roce": 21.12729767078155,
         "netProfitMargin": 21.093025,
         "assetTurnover": 73.30489999999999,
         "equityMultiplier": 1.2893
@@ -149422,6 +150065,7 @@ const data: ServiceData = {
         "roe": 13.75,
         "roa": 11.921839,
         "roic": 10.289674,
+        "roce": 13.676765199340233,
         "netProfitMargin": 17.966931,
         "assetTurnover": 58.3542,
         "equityMultiplier": 1.371408
@@ -150876,10 +151520,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000786",
-      "price": 20.91,
-      "marketValue": 35593755638,
-      "PB": 1.33,
-      "PE_TTM": 12.41,
+      "price": 20.52,
+      "marketValue": 34929883582,
+      "PB": 1.3,
+      "PE_TTM": 12.18,
       "totalSharesOutstanding": 1702236042
     },
     "recentYearData": {
@@ -151750,6 +152394,7 @@ const data: ServiceData = {
         "roe": 6.54,
         "roa": 6.851819,
         "roic": 6.570771,
+        "roce": 8.029232437271691,
         "netProfitMargin": 54.255979,
         "assetTurnover": 10.758700000000001,
         "equityMultiplier": 1.188333
@@ -151759,6 +152404,7 @@ const data: ServiceData = {
         "roe": 22.3,
         "roa": 14.202855,
         "roic": 19.660699,
+        "roce": 15.733478969404747,
         "netProfitMargin": 57.715183,
         "assetTurnover": 30.5249,
         "equityMultiplier": 1.164865
@@ -151768,6 +152414,7 @@ const data: ServiceData = {
         "roe": 13.62,
         "roa": 12.782446,
         "roic": 12.431426,
+        "roce": 15.225266154917774,
         "netProfitMargin": 32.469406,
         "assetTurnover": 32.8324,
         "equityMultiplier": 1.156306
@@ -151777,6 +152424,7 @@ const data: ServiceData = {
         "roe": 27.91,
         "roa": 24.536446,
         "roic": 22.891679,
+        "roce": 28.12541389418855,
         "netProfitMargin": 43.403565,
         "assetTurnover": 48.744,
         "equityMultiplier": 1.337744
@@ -151786,6 +152434,7 @@ const data: ServiceData = {
         "roe": 89.47,
         "roa": 64.357928,
         "roic": 61.836053,
+        "roce": 78.24212164547805,
         "netProfitMargin": 63.998069,
         "assetTurnover": 91.4431,
         "equityMultiplier": 1.474359
@@ -151795,6 +152444,7 @@ const data: ServiceData = {
         "roe": 66.7,
         "roa": 24.8087,
         "roic": 29.2996,
+        "roce": 37.114783082441846,
         "netProfitMargin": 35.332176,
         "assetTurnover": 65.13550000000001,
         "equityMultiplier": 2.168815
@@ -151804,6 +152454,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": 15.400782,
         "roic": 22.9919,
+        "roce": 34.40196296405161,
         "netProfitMargin": 14.341324,
         "assetTurnover": 65.7402,
         "equityMultiplier": 3.819019
@@ -151813,6 +152464,7 @@ const data: ServiceData = {
         "roe": 0,
         "roa": -96.748796,
         "roic": -141.184455,
+        "roce": -134.21180521563318,
         "netProfitMargin": -261.425619,
         "assetTurnover": 36.6028,
         "equityMultiplier": 0
@@ -151822,6 +152474,7 @@ const data: ServiceData = {
         "roe": -17.27,
         "roa": -1.648731,
         "roic": -2.351751,
+        "roce": -2.052755278580372,
         "netProfitMargin": -20.126395,
         "assetTurnover": 22.7292,
         "equityMultiplier": 3.991837
@@ -151831,6 +152484,7 @@ const data: ServiceData = {
         "roe": -17.34,
         "roa": -3.381402,
         "roic": -4.338532,
+        "roce": -4.1256161401911,
         "netProfitMargin": -36.654947,
         "assetTurnover": 14.1498,
         "equityMultiplier": 3.706502
@@ -151840,6 +152494,7 @@ const data: ServiceData = {
         "roe": 1.44,
         "roa": 1.922224,
         "roic": 2.161026,
+        "roce": 0.35366890219515146,
         "netProfitMargin": 2.022276,
         "assetTurnover": 12.6655,
         "equityMultiplier": 3.145281
@@ -153450,10 +154105,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000792",
-      "price": 32.03,
-      "marketValue": 169489068488,
-      "PB": 3.79,
-      "PE_TTM": 16.43,
+      "price": 30.39,
+      "marketValue": 160810889521,
+      "PB": 3.6,
+      "PE_TTM": 15.59,
       "totalSharesOutstanding": 5291572541
     },
     "recentYearData": {
@@ -154324,6 +154979,7 @@ const data: ServiceData = {
         "roe": 10.64,
         "roa": 10.686308,
         "roic": 10.005435,
+        "roce": 12.382040373114043,
         "netProfitMargin": 25.304333,
         "assetTurnover": 35.5043,
         "equityMultiplier": 1.21563
@@ -154333,6 +154989,7 @@ const data: ServiceData = {
         "roe": 19.7,
         "roa": 20.260534,
         "roic": 18.643176,
+        "roce": 23.93511200859821,
         "netProfitMargin": 12.237707,
         "assetTurnover": 139.5097,
         "equityMultiplier": 1.247453
@@ -154342,6 +154999,7 @@ const data: ServiceData = {
         "roe": 16.45,
         "roa": 14.990462,
         "roic": 14.728421,
+        "roce": 17.687864100089392,
         "netProfitMargin": 9.364441,
         "assetTurnover": 134.0959,
         "equityMultiplier": 1.303415
@@ -154351,6 +155009,7 @@ const data: ServiceData = {
         "roe": 16.46,
         "roa": 14.54084,
         "roic": 13.912038,
+        "roce": 17.397192335754074,
         "netProfitMargin": 11.058433,
         "assetTurnover": 108.8928,
         "equityMultiplier": 1.344062
@@ -154360,6 +155019,7 @@ const data: ServiceData = {
         "roe": 22.53,
         "roa": 16.105221,
         "roic": 17.009073,
+        "roce": 19.756186939549803,
         "netProfitMargin": 10.87019,
         "assetTurnover": 126.2826,
         "equityMultiplier": 1.545287
@@ -154369,6 +155029,7 @@ const data: ServiceData = {
         "roe": 24.65,
         "roa": 13.44212,
         "roic": 13.962794,
+        "roce": 17.573368687327314,
         "netProfitMargin": 10.109082,
         "assetTurnover": 105.68360000000001,
         "equityMultiplier": 1.809493
@@ -154378,6 +155039,7 @@ const data: ServiceData = {
         "roe": 7.94,
         "roa": 5.035829,
         "roic": 5.457326,
+        "roce": 6.828193673703613,
         "netProfitMargin": 4.171989,
         "assetTurnover": 73.38409999999999,
         "equityMultiplier": 2.981284
@@ -154387,6 +155049,7 @@ const data: ServiceData = {
         "roe": 5.81,
         "roa": 4.000816,
         "roic": 4.943088,
+        "roce": 5.3774123366054,
         "netProfitMargin": 2.24516,
         "assetTurnover": 62.9918,
         "equityMultiplier": 3.147848
@@ -154396,6 +155059,7 @@ const data: ServiceData = {
         "roe": -16.19,
         "roa": -2.416235,
         "roic": -2.021626,
+        "roce": -3.3714055935423466,
         "netProfitMargin": -8.048524,
         "assetTurnover": 59.099999999999994,
         "equityMultiplier": 4.071349
@@ -154405,6 +155069,7 @@ const data: ServiceData = {
         "roe": 6.86,
         "roa": 4.734742,
         "roic": 5.878521,
+        "roce": 6.9487141915686,
         "netProfitMargin": 3.238101,
         "assetTurnover": 65.2548,
         "equityMultiplier": 3.281679
@@ -154414,6 +155079,7 @@ const data: ServiceData = {
         "roe": 1.76,
         "roa": 3.602946,
         "roic": 4.285884,
+        "roce": 1.308253466473314,
         "netProfitMargin": 1.330071,
         "assetTurnover": 50.7877,
         "equityMultiplier": 3.235819
@@ -155676,10 +156342,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000807",
-      "price": 26.9,
-      "marketValue": 93288054195,
-      "PB": 2.72,
-      "PE_TTM": 10.75,
+      "price": 24.88,
+      "marketValue": 86282780236,
+      "PB": 2.51,
+      "PE_TTM": 9.94,
       "totalSharesOutstanding": 3467957405
     },
     "recentYearData": {
@@ -156550,6 +157216,7 @@ const data: ServiceData = {
         "roe": 6.5,
         "roa": 5.487953,
         "roic": 6.484486,
+        "roce": 8.417743222491795,
         "netProfitMargin": 36.447024,
         "assetTurnover": 11.7533,
         "equityMultiplier": 1.522378
@@ -156559,6 +157226,7 @@ const data: ServiceData = {
         "roe": 6.89,
         "roa": 6.465493,
         "roic": 7.061178,
+        "roce": 9.46967829892145,
         "netProfitMargin": 22.989034,
         "assetTurnover": 21.4302,
         "equityMultiplier": 1.554945
@@ -156568,6 +157236,7 @@ const data: ServiceData = {
         "roe": 23.35,
         "roa": 24.996105,
         "roic": 24.182311,
+        "roce": 32.87212343217363,
         "netProfitMargin": 37.222757,
         "assetTurnover": 50.4262,
         "equityMultiplier": 1.3802
@@ -156577,6 +157246,7 @@ const data: ServiceData = {
         "roe": 25.06,
         "roa": 26.347193,
         "roic": 24.761233,
+        "roce": 33.68949641140533,
         "netProfitMargin": 37.852762,
         "assetTurnover": 52.332,
         "equityMultiplier": 1.249971
@@ -156586,6 +157256,7 @@ const data: ServiceData = {
         "roe": 25.28,
         "roa": 25.769646,
         "roic": 24.965889,
+        "roce": 34.02188284778208,
         "netProfitMargin": 37.814175,
         "assetTurnover": 51.3073,
         "equityMultiplier": 1.308786
@@ -156595,6 +157266,7 @@ const data: ServiceData = {
         "roe": 25.3,
         "roa": 26.066306,
         "roic": 25.280312,
+        "roce": 34.42724143172982,
         "netProfitMargin": 37.015255,
         "assetTurnover": 53.07039999999999,
         "equityMultiplier": 1.33759
@@ -156604,6 +157276,7 @@ const data: ServiceData = {
         "roe": 24.94,
         "roa": 25.129087,
         "roic": 24.94403,
+        "roce": 33.96483937728866,
         "netProfitMargin": 36.484567,
         "assetTurnover": 52.0414,
         "equityMultiplier": 1.297805
@@ -156613,6 +157286,7 @@ const data: ServiceData = {
         "roe": 25.26,
         "roa": 25.046347,
         "roic": 25.26117,
+        "roce": 34.3387263721677,
         "netProfitMargin": 36.370598,
         "assetTurnover": 52.073100000000004,
         "equityMultiplier": 1.398193
@@ -156622,6 +157296,7 @@ const data: ServiceData = {
         "roe": 22.8,
         "roa": 23.707997,
         "roic": 22.924242,
+        "roce": 31.251030912497384,
         "netProfitMargin": 35.070156,
         "assetTurnover": 50.988299999999995,
         "equityMultiplier": 1.322097
@@ -156631,6 +157306,7 @@ const data: ServiceData = {
         "roe": 19.38,
         "roa": 20.146727,
         "roic": 19.299479,
+        "roce": 26.000216083273475,
         "netProfitMargin": 33.411874,
         "assetTurnover": 45.360499999999995,
         "equityMultiplier": 1.297183
@@ -156640,6 +157316,7 @@ const data: ServiceData = {
         "roe": 15.01,
         "roa": 16.329102,
         "roic": 15.073351,
+        "roce": 19.947711384509937,
         "netProfitMargin": 28.751732,
         "assetTurnover": 42.7886,
         "equityMultiplier": 1.289768
@@ -158262,10 +158939,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000858",
-      "price": 79.63,
-      "marketValue": 309092445438,
-      "PB": 2.41,
-      "PE_TTM": 24.53,
+      "price": 77.33,
+      "marketValue": 300164747027,
+      "PB": 2.35,
+      "PE_TTM": 23.82,
       "totalSharesOutstanding": 3881608005
     },
     "recentYearData": {
@@ -159136,6 +159813,7 @@ const data: ServiceData = {
         "roe": 3.79,
         "roa": 4.91035,
         "roic": 3.737703,
+        "roce": 5.531100955787169,
         "netProfitMargin": 50.797611,
         "assetTurnover": 8.2849,
         "equityMultiplier": 1.08636
@@ -159145,6 +159823,7 @@ const data: ServiceData = {
         "roe": 18.29,
         "roa": 24.312224,
         "roic": 18.538828,
+        "roce": 27.551758030215005,
         "netProfitMargin": 46.156603,
         "assetTurnover": 44.885799999999996,
         "equityMultiplier": 1.148814
@@ -159154,6 +159833,7 @@ const data: ServiceData = {
         "roe": 17.56,
         "roa": 23.263905,
         "roic": 17.496963,
+        "roce": 26.470276963502894,
         "netProfitMargin": 47.132342,
         "assetTurnover": 42.1451,
         "equityMultiplier": 1.117508
@@ -159163,6 +159843,7 @@ const data: ServiceData = {
         "roe": 21.15,
         "roa": 26.810761,
         "roic": 21.008789,
+        "roce": 30.958779282598396,
         "netProfitMargin": 45.370827,
         "assetTurnover": 50.242,
         "equityMultiplier": 1.156039
@@ -159172,6 +159853,7 @@ const data: ServiceData = {
         "roe": 22.11,
         "roa": 26.882177,
         "roic": 21.795516,
+        "roce": 31.07660561001852,
         "netProfitMargin": 42.625216,
         "assetTurnover": 54.279999999999994,
         "equityMultiplier": 1.154876
@@ -159181,6 +159863,7 @@ const data: ServiceData = {
         "roe": 18.09,
         "roa": 21.522319,
         "roic": 18.119459,
+        "roce": 25.830051512049724,
         "netProfitMargin": 34.743481,
         "assetTurnover": 53.1332,
         "equityMultiplier": 1.157683
@@ -159190,6 +159873,7 @@ const data: ServiceData = {
         "roe": 15.79,
         "roa": 17.949,
         "roic": 15.715648,
+        "roce": 22.200651665049477,
         "netProfitMargin": 29.253527,
         "assetTurnover": 53.1887,
         "equityMultiplier": 1.258826
@@ -159199,6 +159883,7 @@ const data: ServiceData = {
         "roe": 12.26,
         "roa": 13.73439,
         "roic": 12.189024,
+        "roce": 16.7925350866227,
         "netProfitMargin": 19.946016,
         "assetTurnover": 59.480999999999995,
         "equityMultiplier": 1.228002
@@ -159208,6 +159893,7 @@ const data: ServiceData = {
         "roe": 8.42,
         "roa": 9.554592,
         "roic": 8.341857,
+        "roce": 11.782987940191706,
         "netProfitMargin": 15.695832,
         "assetTurnover": 53.790499999999994,
         "equityMultiplier": 1.238773
@@ -159217,6 +159903,7 @@ const data: ServiceData = {
         "roe": 17.5,
         "roa": 20.069616,
         "roic": 17.204694,
+        "roce": 25.019386439527697,
         "netProfitMargin": 25.510618,
         "assetTurnover": 67.2307,
         "equityMultiplier": 1.250768
@@ -159226,6 +159913,7 @@ const data: ServiceData = {
         "roe": 16.62,
         "roa": 17.90945,
         "roic": 16.176833,
+        "roce": 21.439709674869274,
         "netProfitMargin": 22.71969,
         "assetTurnover": 67.7047,
         "equityMultiplier": 1.273375
@@ -160848,10 +161536,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000915",
-      "price": 27.72,
-      "marketValue": 6495668764,
-      "PB": 2.19,
-      "PE_TTM": 14.02,
+      "price": 27.01,
+      "marketValue": 6329293410,
+      "PB": 2.13,
+      "PE_TTM": 13.66,
       "totalSharesOutstanding": 234331485
     },
     "recentYearData": {
@@ -161722,6 +162410,7 @@ const data: ServiceData = {
         "roe": 1.74,
         "roa": 1.497061,
         "roic": 1.321276,
+        "roce": 1.655746469370763,
         "netProfitMargin": 50.13062,
         "assetTurnover": 2.1493,
         "equityMultiplier": 1.537049
@@ -161731,6 +162420,7 @@ const data: ServiceData = {
         "roe": 7.3513,
         "roa": 6.044433,
         "roic": 5.455486,
+        "roce": 6.696186552034641,
         "netProfitMargin": 51.639767,
         "assetTurnover": 8.4846,
         "equityMultiplier": 1.561409
@@ -161740,6 +162430,7 @@ const data: ServiceData = {
         "roe": 7.51,
         "roa": 6.33703,
         "roic": 5.939863,
+        "roce": 6.83637001614191,
         "netProfitMargin": 55.040781,
         "assetTurnover": 8.0638,
         "equityMultiplier": 1.572411
@@ -161749,6 +162440,7 @@ const data: ServiceData = {
         "roe": 6.35,
         "roa": 5.572384,
         "roic": 5.097906,
+        "roce": 6.1505785169178075,
         "netProfitMargin": 47.58975,
         "assetTurnover": 7.9518,
         "equityMultiplier": 1.581248
@@ -161758,6 +162450,7 @@ const data: ServiceData = {
         "roe": 7.54,
         "roa": 6.195302,
         "roic": 5.585207,
+        "roce": 6.864642131218231,
         "netProfitMargin": 50.717407,
         "assetTurnover": 8.6908,
         "equityMultiplier": 1.540018
@@ -161767,6 +162460,7 @@ const data: ServiceData = {
         "roe": 6.99,
         "roa": 6.378619,
         "roic": 5.374103,
+        "roce": 7.240490616361959,
         "netProfitMargin": 50.085724,
         "assetTurnover": 8.8675,
         "equityMultiplier": 1.584936
@@ -161776,6 +162470,7 @@ const data: ServiceData = {
         "roe": 5.67,
         "roa": 5.381332,
         "roic": 4.933144,
+        "roce": 6.132284774769732,
         "netProfitMargin": 43.789316,
         "assetTurnover": 7.7595,
         "equityMultiplier": 1.594894
@@ -161785,6 +162480,7 @@ const data: ServiceData = {
         "roe": 8.71,
         "roa": 9.059792,
         "roic": 6.709525,
+        "roce": 9.791180178176438,
         "netProfitMargin": 67.362522,
         "assetTurnover": 8.5164,
         "equityMultiplier": 1.649611
@@ -161794,6 +162490,7 @@ const data: ServiceData = {
         "roe": 3.88,
         "roa": 4.423061,
         "roic": 5.688943,
+        "roce": 4.979335667284189,
         "netProfitMargin": 29.74129,
         "assetTurnover": 8.1773,
         "equityMultiplier": 1.591929
@@ -161803,6 +162500,7 @@ const data: ServiceData = {
         "roe": 10.24,
         "roa": 11.289925,
         "roic": 10.221252,
+        "roce": 13.742000269612056,
         "netProfitMargin": 29.063321,
         "assetTurnover": 31.154300000000003,
         "equityMultiplier": 1.214469
@@ -161812,6 +162510,7 @@ const data: ServiceData = {
         "roe": 11.57,
         "roa": 11.90237,
         "roic": 11.239437,
+        "roce": 13.61148352285152,
         "netProfitMargin": 35.160736,
         "assetTurnover": 28.152300000000004,
         "equityMultiplier": 1.174469
@@ -163122,10 +163821,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "001872",
-      "price": 20.69,
-      "marketValue": 51350452758,
-      "PB": 0.78,
-      "PE_TTM": 11.04,
+      "price": 19.96,
+      "marketValue": 49538667813,
+      "PB": 0.76,
+      "PE_TTM": 10.65,
       "totalSharesOutstanding": 2481897185
     },
     "recentYearData": {
@@ -163996,6 +164695,7 @@ const data: ServiceData = {
         "roe": 3.6,
         "roa": 2.606482,
         "roic": 2.675102,
+        "roce": 3.1127248795559357,
         "netProfitMargin": 9.784295,
         "assetTurnover": 22.0088,
         "equityMultiplier": 1.611166
@@ -164005,6 +164705,7 @@ const data: ServiceData = {
         "roe": 17.34,
         "roa": 11.715478,
         "roic": 12.65355,
+        "roce": 14.08524474481641,
         "netProfitMargin": 11.87463,
         "assetTurnover": 86.16040000000001,
         "equityMultiplier": 1.714639
@@ -164014,6 +164715,7 @@ const data: ServiceData = {
         "roe": 19.18,
         "roa": 13.196729,
         "roic": 14.300626,
+        "roce": 15.895009303193108,
         "netProfitMargin": 13.367435,
         "assetTurnover": 85.8,
         "equityMultiplier": 1.63638
@@ -164023,6 +164725,7 @@ const data: ServiceData = {
         "roe": 17.72,
         "roa": 12.826301,
         "roic": 14.300837,
+        "roce": 15.80748754151917,
         "netProfitMargin": 12.26002,
         "assetTurnover": 90.3882,
         "equityMultiplier": 1.558446
@@ -164032,6 +164735,7 @@ const data: ServiceData = {
         "roe": 17.01,
         "roa": 12.789378,
         "roic": 14.905397,
+        "roce": 16.305195646251995,
         "netProfitMargin": 11.161415,
         "assetTurnover": 100.39309999999999,
         "equityMultiplier": 1.5368
@@ -164041,6 +164745,7 @@ const data: ServiceData = {
         "roe": 15.9,
         "roa": 12.344226,
         "roic": 14.611366,
+        "roce": 16.144209641775937,
         "netProfitMargin": 10.620057,
         "assetTurnover": 101.39359999999999,
         "equityMultiplier": 1.385992
@@ -164050,6 +164755,7 @@ const data: ServiceData = {
         "roe": 16.19,
         "roa": 12.935433,
         "roic": 15.183248,
+        "roce": 17.081610099739134,
         "netProfitMargin": 11.284881,
         "assetTurnover": 99.53659999999999,
         "equityMultiplier": 1.454423
@@ -164059,6 +164765,7 @@ const data: ServiceData = {
         "roe": 15.17,
         "roa": 12.354037,
         "roic": 14.54518,
+        "roce": 16.28981063685341,
         "netProfitMargin": 10.554051,
         "assetTurnover": 102.2963,
         "equityMultiplier": 1.343333
@@ -164068,6 +164775,7 @@ const data: ServiceData = {
         "roe": 12.78,
         "roa": 10.878869,
         "roic": 12.394161,
+        "roce": 14.137854455134532,
         "netProfitMargin": 9.886692,
         "assetTurnover": 94.4589,
         "equityMultiplier": 1.354365
@@ -164077,6 +164785,7 @@ const data: ServiceData = {
         "roe": 12.16,
         "roa": 10.57923,
         "roic": 11.718665,
+        "roce": 13.665403246981414,
         "netProfitMargin": 10.520857,
         "assetTurnover": 85.8552,
         "equityMultiplier": 1.336736
@@ -164086,6 +164795,7 @@ const data: ServiceData = {
         "roe": 12.31,
         "roa": 11.051538,
         "roic": 12.034194,
+        "roce": 13.317575906823853,
         "netProfitMargin": 10.89833,
         "assetTurnover": 86.0573,
         "equityMultiplier": 1.296834
@@ -165684,10 +166394,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002014",
-      "price": 10.76,
-      "marketValue": 6590412478,
-      "PB": 2.74,
-      "PE_TTM": 14.98,
+      "price": 10.61,
+      "marketValue": 6498538698,
+      "PB": 2.71,
+      "PE_TTM": 14.77,
       "totalSharesOutstanding": 612491866
     },
     "recentYearData": {
@@ -166558,6 +167268,7 @@ const data: ServiceData = {
         "roe": 12.13,
         "roa": 9.137995,
         "roic": 10.275134,
+        "roce": 10.9442529404188,
         "netProfitMargin": 61.211406,
         "assetTurnover": 14.0488,
         "equityMultiplier": 1.338737
@@ -166567,6 +167278,7 @@ const data: ServiceData = {
         "roe": 18.28,
         "roa": 18.59868,
         "roic": 16.508676,
+        "roce": 22.143536972711075,
         "netProfitMargin": 22.886465,
         "assetTurnover": 59.323499999999996,
         "equityMultiplier": 1.383256
@@ -166576,6 +167288,7 @@ const data: ServiceData = {
         "roe": 29.91,
         "roa": 26.183652,
         "roic": 25.867975,
+        "roce": 31.02765064535046,
         "netProfitMargin": 41.360013,
         "assetTurnover": 52.0025,
         "equityMultiplier": 1.31626
@@ -166585,6 +167298,7 @@ const data: ServiceData = {
         "roe": 28.42,
         "roa": 24.386769,
         "roic": 24.980869,
+        "roce": 29.819731586635505,
         "netProfitMargin": 40.320292,
         "assetTurnover": 47.9991,
         "equityMultiplier": 1.350308
@@ -166594,6 +167308,7 @@ const data: ServiceData = {
         "roe": 14.82,
         "roa": 14.233977,
         "roic": 14.181537,
+        "roce": 18.08009797811743,
         "netProfitMargin": 30.124294,
         "assetTurnover": 37.1105,
         "equityMultiplier": 1.459224
@@ -166603,6 +167318,7 @@ const data: ServiceData = {
         "roe": 33.13,
         "roa": 33.218698,
         "roic": 32.226836,
+        "roce": 41.28524578149758,
         "netProfitMargin": 41.193403,
         "assetTurnover": 62.86429999999999,
         "equityMultiplier": 1.367853
@@ -166612,6 +167328,7 @@ const data: ServiceData = {
         "roe": 26.16,
         "roa": 25.256035,
         "roic": 25.487987,
+        "roce": 31.777926541801865,
         "netProfitMargin": 33.073164,
         "assetTurnover": 59.985699999999994,
         "equityMultiplier": 1.253221
@@ -166621,6 +167338,7 @@ const data: ServiceData = {
         "roe": 13.76,
         "roa": 12.751875,
         "roic": 12.944571,
+        "roce": 16.00576562250609,
         "netProfitMargin": 15.285819,
         "assetTurnover": 64.36699999999999,
         "equityMultiplier": 1.334186
@@ -166630,6 +167348,7 @@ const data: ServiceData = {
         "roe": 46.92,
         "roa": 40.433286,
         "roic": 44.541282,
+        "roce": 52.357368851357165,
         "netProfitMargin": 39.805605,
         "assetTurnover": 84.1695,
         "equityMultiplier": 1.321123
@@ -166639,6 +167358,7 @@ const data: ServiceData = {
         "roe": 67.65,
         "roa": 52.396602,
         "roic": 60.665735,
+        "roce": 71.88513939923227,
         "netProfitMargin": 49.722135,
         "assetTurnover": 86.7916,
         "equityMultiplier": 1.473269
@@ -166648,6 +167368,7 @@ const data: ServiceData = {
         "roe": 70.73,
         "roa": 43.213656,
         "roic": 67.315544,
+        "roce": 63.51639383533927,
         "netProfitMargin": 43.550328,
         "assetTurnover": 82.93,
         "equityMultiplier": 1.487573
@@ -168666,10 +169387,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002027",
-      "price": 5.35,
-      "marketValue": 77265768534,
-      "PB": 5,
-      "PE_TTM": 21.46,
+      "price": 5.11,
+      "marketValue": 73799640600,
+      "PB": 4.78,
+      "PE_TTM": 20.5,
       "totalSharesOutstanding": 14442199726
     },
     "recentYearData": {
@@ -169540,6 +170261,7 @@ const data: ServiceData = {
         "roe": 2.52,
         "roa": 1.797093,
         "roic": 1.99374,
+        "roce": 2.5653734498312004,
         "netProfitMargin": 3.575353,
         "assetTurnover": 34.463300000000004,
         "equityMultiplier": 1.915704
@@ -169549,6 +170271,7 @@ const data: ServiceData = {
         "roe": 11.51,
         "roa": 7.748316,
         "roic": 8.772315,
+        "roce": 11.087654518898853,
         "netProfitMargin": 3.79098,
         "assetTurnover": 143.26350000000002,
         "equityMultiplier": 1.962107
@@ -169558,6 +170281,7 @@ const data: ServiceData = {
         "roe": 11.16,
         "roa": 6.463541,
         "roic": 6.927552,
+        "roce": 10.268733589198147,
         "netProfitMargin": 3.59287,
         "assetTurnover": 130.6732,
         "equityMultiplier": 2.089448
@@ -169567,6 +170291,7 @@ const data: ServiceData = {
         "roe": 9.19,
         "roa": 4.99499,
         "roic": 5.717703,
+        "roce": 8.213290467157435,
         "netProfitMargin": 3.061656,
         "assetTurnover": 117.9054,
         "equityMultiplier": 2.144488
@@ -169576,6 +170301,7 @@ const data: ServiceData = {
         "roe": 7.34,
         "roa": 5.366627,
         "roic": 4.669193,
+        "roce": 8.948858739526177,
         "netProfitMargin": 2.618269,
         "assetTurnover": 125.3637,
         "equityMultiplier": 2.20624
@@ -169585,6 +170311,7 @@ const data: ServiceData = {
         "roe": 6.81,
         "roa": 5.416861,
         "roic": 5.36172,
+        "roce": 7.944160869022034,
         "netProfitMargin": 1.891633,
         "assetTurnover": 129.0641,
         "equityMultiplier": 2.14369
@@ -169594,6 +170321,7 @@ const data: ServiceData = {
         "roe": 15.2,
         "roa": 10.854837,
         "roic": 11.536037,
+        "roce": 15.30123666196862,
         "netProfitMargin": 4.501703,
         "assetTurnover": 151.19320000000002,
         "equityMultiplier": 1.958432
@@ -169603,6 +170331,7 @@ const data: ServiceData = {
         "roe": 14.86,
         "roa": 10.136253,
         "roic": 11.169301,
+        "roce": 13.72269991292552,
         "netProfitMargin": 5.01348,
         "assetTurnover": 136.5713,
         "equityMultiplier": 2.17763
@@ -169612,6 +170341,7 @@ const data: ServiceData = {
         "roe": 13.19,
         "roa": 9.802251,
         "roic": 10.832176,
+        "roce": 13.274273973793328,
         "netProfitMargin": 4.90888,
         "assetTurnover": 136.8983,
         "equityMultiplier": 1.940041
@@ -169621,6 +170351,7 @@ const data: ServiceData = {
         "roe": 18.15,
         "roa": 13.669334,
         "roic": 13.923534,
+        "roce": 18.44739980148866,
         "netProfitMargin": 6.683867,
         "assetTurnover": 139.6812,
         "equityMultiplier": 1.761549
@@ -169630,6 +170361,7 @@ const data: ServiceData = {
         "roe": 22.46,
         "roa": 14.06471,
         "roic": 19.811638,
+        "roce": 12.902652058387657,
         "netProfitMargin": 7.238325,
         "assetTurnover": 145.7999,
         "equityMultiplier": 2.146986
@@ -172020,10 +172752,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002352",
-      "price": 33.59,
-      "marketValue": 176861698340,
-      "PB": 1.8,
-      "PE_TTM": 15.5,
+      "price": 32.18,
+      "marketValue": 169437613950,
+      "PB": 1.72,
+      "PE_TTM": 14.85,
       "totalSharesOutstanding": 5265308078
     },
     "recentYearData": {
@@ -172894,6 +173626,7 @@ const data: ServiceData = {
         "roe": 2.63,
         "roa": 2.146329,
         "roic": 2.614241,
+        "roce": 3.0818967532072667,
         "netProfitMargin": 15.588456,
         "assetTurnover": 11.590399999999999,
         "equityMultiplier": 1.402625
@@ -172903,6 +173636,7 @@ const data: ServiceData = {
         "roe": 10.64,
         "roa": 8.375685,
         "roic": 11.01374,
+        "roce": 12.520108554718826,
         "netProfitMargin": 12.246381,
         "assetTurnover": 59.0696,
         "equityMultiplier": 1.487056
@@ -172912,6 +173646,7 @@ const data: ServiceData = {
         "roe": 14.44,
         "roa": 10.581464,
         "roic": 14.442019,
+        "roce": 16.253937857381324,
         "netProfitMargin": 13.872719,
         "assetTurnover": 66.3023,
         "equityMultiplier": 1.512793
@@ -172921,6 +173656,7 @@ const data: ServiceData = {
         "roe": 16.78,
         "roa": 12.538805,
         "roic": 17.039306,
+        "roce": 19.342632111939036,
         "netProfitMargin": 15.30685,
         "assetTurnover": 70.4093,
         "equityMultiplier": 1.578418
@@ -172930,6 +173666,7 @@ const data: ServiceData = {
         "roe": 17.21,
         "roa": 12.321082,
         "roic": 17.112821,
+        "roce": 19.07698260845883,
         "netProfitMargin": 15.171166,
         "assetTurnover": 70.9704,
         "equityMultiplier": 1.525607
@@ -172939,6 +173676,7 @@ const data: ServiceData = {
         "roe": 15.78,
         "roa": 11.701034,
         "roic": 16.020991,
+        "roce": 18.17359340798426,
         "netProfitMargin": 13.291589,
         "assetTurnover": 76.9826,
         "equityMultiplier": 1.586349
@@ -172948,6 +173686,7 @@ const data: ServiceData = {
         "roe": 22.39,
         "roa": 16.922286,
         "roic": 22.350529,
+        "roce": 25.809648758644283,
         "netProfitMargin": 20.758231,
         "assetTurnover": 70.3487,
         "equityMultiplier": 1.520369
@@ -172957,6 +173696,7 @@ const data: ServiceData = {
         "roe": 25.1,
         "roa": 18.620195,
         "roic": 24.637027,
+        "roce": 28.572519431126032,
         "netProfitMargin": 20.800571,
         "assetTurnover": 77.1917,
         "equityMultiplier": 1.527314
@@ -172966,6 +173706,7 @@ const data: ServiceData = {
         "roe": 26.4,
         "roa": 19.587239,
         "roic": 26.066788,
+        "roce": 29.882477898274868,
         "netProfitMargin": 19.984792,
         "assetTurnover": 85.432,
         "equityMultiplier": 1.542259
@@ -172975,6 +173716,7 @@ const data: ServiceData = {
         "roe": 31.66,
         "roa": 23.604743,
         "roic": 31.124893,
+        "roce": 36.02438567186153,
         "netProfitMargin": 20.822452,
         "assetTurnover": 97.8592,
         "equityMultiplier": 1.507685
@@ -172984,6 +173726,7 @@ const data: ServiceData = {
         "roe": 33.38,
         "roa": 24.546025,
         "roic": 33.072403,
+        "roce": 36.607759169031794,
         "netProfitMargin": 20.825464,
         "assetTurnover": 101.293,
         "equityMultiplier": 1.555108
@@ -175254,10 +175997,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002508",
-      "price": 16.3,
-      "marketValue": 15402504331,
-      "PB": 1.36,
-      "PE_TTM": 12.6,
+      "price": 15.61,
+      "marketValue": 14750496479,
+      "PB": 1.3,
+      "PE_TTM": 12.07,
       "totalSharesOutstanding": 944938916
     },
     "recentYearData": {
@@ -176128,6 +176871,7 @@ const data: ServiceData = {
         "roe": 6.22,
         "roa": 4.873448,
         "roic": 5.012834,
+        "roce": 6.160420162336887,
         "netProfitMargin": 23.410887,
         "assetTurnover": 16.625899999999998,
         "equityMultiplier": 1.533591
@@ -176137,6 +176881,7 @@ const data: ServiceData = {
         "roe": 21.73,
         "roa": 16.425095,
         "roic": 17.856092,
+        "roce": 20.796777449683884,
         "netProfitMargin": 18.157324,
         "assetTurnover": 76.2123,
         "equityMultiplier": 1.632476
@@ -176146,6 +176891,7 @@ const data: ServiceData = {
         "roe": 20.58,
         "roa": 16.286065,
         "roic": 18.022156,
+        "roce": 20.64731691224906,
         "netProfitMargin": 15.276116,
         "assetTurnover": 90.094,
         "equityMultiplier": 1.504439
@@ -176155,6 +176901,7 @@ const data: ServiceData = {
         "roe": 20.83,
         "roa": 17.187873,
         "roic": 19.282985,
+        "roce": 21.824600848462687,
         "netProfitMargin": 15.915559,
         "assetTurnover": 91.3441,
         "equityMultiplier": 1.493444
@@ -176164,6 +176911,7 @@ const data: ServiceData = {
         "roe": 25.41,
         "roa": 21.236975,
         "roic": 24.228551,
+        "roce": 26.920739172815296,
         "netProfitMargin": 17.735752,
         "assetTurnover": 104.06020000000001,
         "equityMultiplier": 1.388459
@@ -176173,6 +176921,7 @@ const data: ServiceData = {
         "roe": 30.24,
         "roa": 26.200313,
         "roic": 31.842544,
+        "roce": 35.92568456271696,
         "netProfitMargin": 17.574516,
         "assetTurnover": 129.72410000000002,
         "equityMultiplier": 1.329716
@@ -176182,6 +176931,7 @@ const data: ServiceData = {
         "roe": 34.84,
         "roa": 31.774017,
         "roic": 39.363293,
+        "roce": 45.3845849374891,
         "netProfitMargin": 21.082596,
         "assetTurnover": 139.0631,
         "equityMultiplier": 1.741722
@@ -176191,6 +176941,7 @@ const data: ServiceData = {
         "roe": 32.66,
         "roa": 29.409638,
         "roic": 30.725072,
+        "roce": 37.61613686247761,
         "netProfitMargin": 18.271837,
         "assetTurnover": 142.6796,
         "equityMultiplier": 1.39096
@@ -176200,6 +176951,7 @@ const data: ServiceData = {
         "roe": 16.59,
         "roa": 14.399164,
         "roic": 14.621411,
+        "roce": 10.997916144027943,
         "netProfitMargin": 15.085525,
         "assetTurnover": 86.9528,
         "equityMultiplier": 1.373269
@@ -176209,6 +176961,7 @@ const data: ServiceData = {
         "roe": 28.12,
         "roa": 25.079559,
         "roic": 26.097449,
+        "roce": 23.582382214285555,
         "netProfitMargin": 29.674434,
         "assetTurnover": 79.6177,
         "equityMultiplier": 1.25711
@@ -176218,6 +176971,7 @@ const data: ServiceData = {
         "roe": 26.56,
         "roa": 24.15002,
         "roic": 25.391262,
+        "roce": 26.3010074610293,
         "netProfitMargin": 23.183941,
         "assetTurnover": 95.33359999999999,
         "equityMultiplier": 1.350392
@@ -177336,10 +178090,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002555",
-      "price": 18.19,
-      "marketValue": 40240603417,
-      "PB": 3.06,
-      "PE_TTM": 12.48,
+      "price": 17.31,
+      "marketValue": 38293834258,
+      "PB": 2.91,
+      "PE_TTM": 11.88,
       "totalSharesOutstanding": 2212237681
     },
     "recentYearData": {
@@ -178210,6 +178964,7 @@ const data: ServiceData = {
         "roe": 1.65,
         "roa": 0.639549,
         "roic": 1.396748,
+        "roce": 1.4759418095880625,
         "netProfitMargin": 2.669943,
         "assetTurnover": 16.8243,
         "equityMultiplier": 3.44146
@@ -178219,6 +178974,7 @@ const data: ServiceData = {
         "roe": 15.31,
         "roa": 5.075288,
         "roic": 12.617792,
+        "roce": 14.285665195158145,
         "netProfitMargin": 4.199282,
         "assetTurnover": 96.4515,
         "equityMultiplier": 3.418166
@@ -178228,6 +178984,7 @@ const data: ServiceData = {
         "roe": 26.05,
         "roa": 7.078314,
         "roic": 21.35989,
+        "roce": 25.171494110742742,
         "netProfitMargin": 5.351667,
         "assetTurnover": 106.2411,
         "equityMultiplier": 3.942638
@@ -178237,6 +178994,7 @@ const data: ServiceData = {
         "roe": 24.4,
         "roa": 6.663706,
         "roic": 20.004246,
+        "roce": 24.266434975398745,
         "netProfitMargin": 5.20393,
         "assetTurnover": 102.6608,
         "equityMultiplier": 4.516403
@@ -178246,6 +179004,7 @@ const data: ServiceData = {
         "roe": 16.14,
         "roa": 5.672472,
         "roic": 13.622227,
+        "roce": 16.396168469421315,
         "netProfitMargin": 4.177021,
         "assetTurnover": 107.4059,
         "equityMultiplier": 4.068385
@@ -178255,6 +179014,7 @@ const data: ServiceData = {
         "roe": 3.73,
         "roa": 2.586826,
         "roic": 4.151883,
+        "roce": 5.146988652068993,
         "netProfitMargin": 1.835487,
         "assetTurnover": 87.0142,
         "equityMultiplier": 2.837377
@@ -178264,6 +179024,7 @@ const data: ServiceData = {
         "roe": 7.43,
         "roa": 5.045336,
         "roic": 6.341341,
+        "roce": 8.184331140856468,
         "netProfitMargin": 3.84039,
         "assetTurnover": 78.95830000000001,
         "equityMultiplier": 3.118776
@@ -178273,6 +179034,7 @@ const data: ServiceData = {
         "roe": 2.62,
         "roa": 3.033493,
         "roic": 4.352117,
+        "roce": 4.575918459787929,
         "netProfitMargin": 1.658745,
         "assetTurnover": 65.4712,
         "equityMultiplier": 3.125194
@@ -178282,6 +179044,7 @@ const data: ServiceData = {
         "roe": 4.96,
         "roa": 4.027359,
         "roic": 5.405783,
+        "roce": 6.228260748663747,
         "netProfitMargin": 2.734382,
         "assetTurnover": 69.796,
         "equityMultiplier": 3.205772
@@ -178291,6 +179054,7 @@ const data: ServiceData = {
         "roe": 7.76,
         "roa": 4.928307,
         "roic": 6.491503,
+        "roce": 7.241193830005523,
         "netProfitMargin": 4.642354,
         "assetTurnover": 65.54729999999999,
         "equityMultiplier": 2.970428
@@ -178300,6 +179064,7 @@ const data: ServiceData = {
         "roe": 12.91,
         "roa": 6.423188,
         "roic": 8.758247,
+        "roce": 6.827652346017084,
         "netProfitMargin": 5.296232,
         "assetTurnover": 79.4223,
         "equityMultiplier": 2.618163
@@ -179802,10 +180567,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002594",
-      "price": 90.82,
-      "marketValue": 828023882853,
-      "PB": 3.57,
-      "PE_TTM": 30.06,
+      "price": 86.5,
+      "marketValue": 788637589373,
+      "PB": 3.4,
+      "PE_TTM": 28.63,
       "totalSharesOutstanding": 9117197565
     },
     "recentYearData": {
@@ -180676,6 +181441,7 @@ const data: ServiceData = {
         "roe": 4.43,
         "roa": 4.205032,
         "roic": 3.888461,
+        "roce": 4.628796096879787,
         "netProfitMargin": 15.015161,
         "assetTurnover": 23.2191,
         "equityMultiplier": 1.258552
@@ -180685,6 +181451,7 @@ const data: ServiceData = {
         "roe": 17.16,
         "roa": 16.712305,
         "roic": 15.379482,
+        "roce": 20.18858337925755,
         "netProfitMargin": 12.501933,
         "assetTurnover": 109.18350000000001,
         "equityMultiplier": 1.283383
@@ -180694,6 +181461,7 @@ const data: ServiceData = {
         "roe": 15.72,
         "roa": 16.598325,
         "roic": 14.859226,
+        "roce": 20.142248734156514,
         "netProfitMargin": 7.212092,
         "assetTurnover": 175.3047,
         "equityMultiplier": 1.23376
@@ -180703,6 +181471,7 @@ const data: ServiceData = {
         "roe": 21.09,
         "roa": 22.079145,
         "roic": 19.469855,
+        "roce": 26.94464804870599,
         "netProfitMargin": 8.058712,
         "assetTurnover": 208.5836,
         "equityMultiplier": 1.254949
@@ -180712,6 +181481,7 @@ const data: ServiceData = {
         "roe": 18.28,
         "roa": 19.603204,
         "roic": 17.497776,
+        "roce": 23.747746018994846,
         "netProfitMargin": 9.778426,
         "assetTurnover": 152.0591,
         "equityMultiplier": 1.257627
@@ -180721,6 +181491,7 @@ const data: ServiceData = {
         "roe": 21.33,
         "roa": 23.359721,
         "roic": 21.39491,
+        "roce": 28.186667182936386,
         "netProfitMargin": 13.347443,
         "assetTurnover": 133.92759999999998,
         "equityMultiplier": 1.210252
@@ -180730,6 +181501,7 @@ const data: ServiceData = {
         "roe": 20.15,
         "roa": 21.161626,
         "roic": 19.582503,
+        "roce": 25.968646357726733,
         "netProfitMargin": 19.932673,
         "assetTurnover": 80.843,
         "equityMultiplier": 1.23479
@@ -180739,6 +181511,7 @@ const data: ServiceData = {
         "roe": 22.91,
         "roa": 22.103018,
         "roic": 21.199213,
+        "roce": 27.363963309729282,
         "netProfitMargin": 18.22529,
         "assetTurnover": 92.1181,
         "equityMultiplier": 1.248484
@@ -180748,6 +181521,7 @@ const data: ServiceData = {
         "roe": 22.18,
         "roa": 21.033656,
         "roic": 20.616048,
+        "roce": 26.38449311644347,
         "netProfitMargin": 16.552815,
         "assetTurnover": 94.8541,
         "equityMultiplier": 1.483496
@@ -180757,6 +181531,7 @@ const data: ServiceData = {
         "roe": 21.6,
         "roa": 23.461262,
         "roic": 22.812421,
+        "roce": 30.82766544846275,
         "netProfitMargin": 15.558619,
         "assetTurnover": 112.70519999999999,
         "equityMultiplier": 1.295507
@@ -180766,6 +181541,7 @@ const data: ServiceData = {
         "roe": 28.09,
         "roa": 25.278907,
         "roic": 24.360943,
+        "roce": 30.31153123988052,
         "netProfitMargin": 14.703669,
         "assetTurnover": 128.0314,
         "equityMultiplier": 1.471441
@@ -183132,10 +183908,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002867",
-      "price": 12.29,
-      "marketValue": 13340474145,
-      "PB": 1.97,
-      "PE_TTM": 11.66,
+      "price": 11.97,
+      "marketValue": 12993122499,
+      "PB": 1.92,
+      "PE_TTM": 11.35,
       "totalSharesOutstanding": 1085473893
     },
     "recentYearData": {
