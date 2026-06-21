@@ -10,7 +10,7 @@ import {
   isHKCode,
 } from "../../../fetch-data/helper";
 import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
-import { PlanType, planList } from "./plan";
+import { PlanType, stocks } from "../../my-data/stock-pool";
 
 interface RowData {
   name: string;
@@ -28,7 +28,6 @@ interface RowData {
 
 interface MergedRowData extends RowData {
   nameRowSpan: number;
-
   exDateRowSpan: number;
   dpsRowSpan: number;
   annualDpsRowSpan: number;
@@ -108,10 +107,10 @@ const indexList = ref<IndexData[]>([]);
 const group1Labels = new Set(INDEX_CODES_GROUP1.map((v) => v.label));
 const group2Labels = new Set(INDEX_CODES_GROUP2.map((v) => v.label));
 const indexListGroup1 = computed(() =>
-  indexList.value.filter((v) => group1Labels.has(v.label)),
+  indexList.value.filter((v: IndexData) => group1Labels.has(v.label)),
 );
 const indexListGroup2 = computed(() =>
-  indexList.value.filter((v) => group2Labels.has(v.label)),
+  indexList.value.filter((v: IndexData) => group2Labels.has(v.label)),
 );
 
 async function fetchIndices() {
@@ -133,30 +132,28 @@ async function fetchIndices() {
 const STORAGE_KEY = "stock-pool-data";
 const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
 
-// 基于 planList 结构自动生成指纹，planList 变更时自动失效旧缓存
+// 基于 stocks 结构自动生成指纹，数据变更时自动失效旧缓存
 function computeFingerprint(): string {
-  const entries = planList
-    .filter((v) => v.type !== PlanType.EMPTY)
-    .map((item) => {
-      const base = {
-        code: item.code,
-        type: item.type === PlanType.PRICE ? "PRICE" : "DIVIDEND",
-        dpy: item.dividendPerYear,
-        adj: item.dividendAdjust,
-        remark: item.remark,
-        mpr: item.maxPositionRatio,
-      };
-      if (item.type === PlanType.PRICE) {
-        return {
-          ...base,
-          entries: item.price.map((e) => ({ v: e.value, q: e.quantity })),
-        };
-      }
+  const entries = stocks.map((item) => {
+    const base = {
+      code: item.code,
+      type: item.plan.type === PlanType.PRICE ? "PRICE" : "DIVIDEND",
+      dpy: item.dividendPerYear,
+      adj: item.dividendAdjust,
+      remark: item.remark,
+      mpr: item.plan.maxPositionRatio,
+    };
+    if (item.plan.type === PlanType.PRICE) {
       return {
         ...base,
-        entries: item.dividend.map((e) => ({ v: e.value, q: e.quantity })),
+        entries: item.plan.price.map((e) => ({ v: e.value, q: e.quantity })),
       };
-    });
+    }
+    return {
+      ...base,
+      entries: item.plan.dividend.map((e) => ({ v: e.value, q: e.quantity })),
+    };
+  });
   return JSON.stringify(entries);
 }
 
@@ -187,9 +184,9 @@ interface StorageData {
 
 function saveToStorage() {
   const stocks: Record<string, StockStorage> = {};
-  const codes = [...new Set(tableData.value.map((r) => r.code))];
+  const codes: string[] = Array.from(new Set(tableData.value.map((r: RowData) => r.code)))
   for (const code of codes) {
-    const rows = tableData.value.filter((r) => r.code === code);
+    const rows = tableData.value.filter((r: RowData) => r.code === code);
     const first = rows[0];
     stocks[code] = {
       name: first.name,
@@ -197,7 +194,7 @@ function saveToStorage() {
       remark: first.remark,
       maxPositionRatio: first.maxPositionRatio,
       change: first.change,
-      rows: rows.map((r) => ({
+      rows: rows.map((r: RowData) => ({
         price: r.price,
         pe: r.pe,
         dividend: r.dividend,
@@ -222,7 +219,7 @@ function loadFromStorage(): boolean {
   if (!raw) return false;
   try {
     const data: StorageData = JSON.parse(raw);
-    // 指纹不匹配则丢弃旧缓存，用最新 planList 重新初始化
+    // 指纹不匹配则丢弃旧缓存，用最新数据重新初始化
     if (data.version !== computeFingerprint()) return false;
     const codes = Object.keys(data.stocks || {});
     if (!codes.length) return false;
@@ -298,7 +295,7 @@ watch(
 
 async function init() {
   tableData.value = [];
-  const stockCodes = planList.map((v) => v.code);
+  const stockCodes = stocks.map((v) => v.code);
   const [dynamicDataList, exListMapResult] = await Promise.all([
     getDynamicData([...stockCodes, "133.CNHHKD"]),
     fetchAllDividendData(stockCodes),
@@ -309,7 +306,7 @@ async function init() {
     exchangeRate.value = exchangeTarget.price / 100;
   }
   // 港股人民币分红按汇率转为港币（字符串中的港币计算值不准确）
-  for (const item of planList) {
+  for (const item of stocks) {
     if (isHKCode(item.code)) {
       const exList = exListMap.value[item.code];
       if (exList) {
@@ -323,7 +320,7 @@ async function init() {
     }
   }
   // B股分红数据为人民币，转为港币后再计算股息率
-  for (const item of planList) {
+  for (const item of stocks) {
     if (isBCode(item.code)) {
       const exList = exListMap.value[item.code];
       if (exList) {
@@ -335,7 +332,7 @@ async function init() {
   }
 
   for (let i = 0; i < stockCodes.length; i += 1) {
-    const item = planList[i];
+    const item = stocks[i];
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (dynamicData) {
       const {
@@ -358,13 +355,13 @@ async function init() {
         ? rawExList.slice(0, item.dividendPerYear)
         : rawExList;
       const dps =
-        Math.round(exList.reduce((pre, cur) => pre + cur.dps, 0) * 100) / 100;
+        Math.round(exList.reduce((pre: number, cur: { dps: number }) => pre + cur.dps, 0) * 100) / 100;
       const effectiveDps =
         item.dividendAdjust != null
           ? Math.round(dps * item.dividendAdjust * 100) / 100
           : dps;
       groupMetaMap.value[code] = {
-        planType: item.type,
+        planType: item.plan.type,
         dps,
         effectiveDps,
         pricePE,
@@ -382,11 +379,11 @@ async function init() {
         exList,
         change,
         remark: item.remark,
-        maxPositionRatio: item.maxPositionRatio,
+        maxPositionRatio: item.plan.maxPositionRatio,
       });
-      if (item.type === PlanType.PRICE) {
-        for (let pi = 0; pi < item.price.length; pi++) {
-          const v = item.price[pi];
+      if (item.plan.type === PlanType.PRICE) {
+        for (let pi = 0; pi < item.plan.price.length; pi++) {
+          const v = item.plan.price[pi];
           tableData.value.push({
             name,
             code,
@@ -397,12 +394,12 @@ async function init() {
             url: item.url,
             exList,
             remark: item.remark,
-            maxPositionRatio: item.maxPositionRatio,
+            maxPositionRatio: item.plan.maxPositionRatio,
           });
         }
-      } else if (item.type === PlanType.DIVIDEND) {
-        for (let pi = 0; pi < item.dividend.length; pi++) {
-          const v = item.dividend[pi];
+      } else if (item.plan.type === PlanType.DIVIDEND) {
+        for (let pi = 0; pi < item.plan.dividend.length; pi++) {
+          const v = item.plan.dividend[pi];
           const targetPrice = effectiveDps / v.value;
           tableData.value.push({
             name,
@@ -414,7 +411,7 @@ async function init() {
             url: item.url,
             exList,
             remark: item.remark,
-            maxPositionRatio: item.maxPositionRatio,
+            maxPositionRatio: item.plan.maxPositionRatio,
           });
         }
       }
@@ -426,8 +423,8 @@ async function init() {
   Object.keys(customPrice).forEach((k) => delete customPrice[k]);
   Object.keys(customDividend).forEach((k) => delete customDividend[k]);
   Object.keys(customPE).forEach((k) => delete customPE[k]);
-  for (const item of planList) {
-    const rows = tableData.value.filter((r) => r.code === item.code);
+  for (const item of stocks) {
+    const rows = tableData.value.filter((r: RowData) => r.code === item.code);
     if (rows.length > 1) {
       const lastRow = rows[rows.length - 1];
       customPrice[item.code] = lastRow.price;
@@ -447,9 +444,7 @@ async function refresh() {
   if (!tableData.value.length) {
     return init();
   }
-  const stockCodes = planList
-    .filter((v) => v.type !== PlanType.EMPTY)
-    .map((v) => v.code);
+  const stockCodes = stocks.map((v) => v.code);
   const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
 
   const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
@@ -458,7 +453,7 @@ async function refresh() {
   }
 
   for (let i = 0; i < stockCodes.length; i++) {
-    const item = planList[i];
+    const item = stocks[i];
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (!dynamicData) continue;
 
@@ -479,7 +474,7 @@ async function refresh() {
 
     groupMetaMap.value[code] = {
       ...(meta || {
-        planType: item.type,
+        planType: item.plan.type,
         dps: 0,
         effectiveDps: 0,
         dividendAdjust: undefined,
@@ -489,8 +484,8 @@ async function refresh() {
     };
 
     // 更新 tableData 中该 code 的行
-    const rows = tableData.value.filter((r) => r.code === code);
-    rows.forEach((row: RowData, index) => {
+    const rows = tableData.value.filter((r: RowData) => r.code === code);
+    rows.forEach((row: RowData, index: number) => {
       if (index === 0) {
         // 实时行
         row.price = price;
@@ -499,13 +494,13 @@ async function refresh() {
         row.change = change;
       } else {
         // 计划行
-        if (item.type === PlanType.PRICE) {
-          const planPrice = item.price[index - 1].value;
+        if (item.plan.type === PlanType.PRICE) {
+          const planPrice = item.plan.price[index - 1].value;
           row.price = planPrice;
           row.pe = pricePE * (planPrice / price);
           row.dividend = effectiveDps / planPrice;
-        } else if (item.type === PlanType.DIVIDEND) {
-          const planDiv = item.dividend[index - 1].value;
+        } else if (item.plan.type === PlanType.DIVIDEND) {
+          const planDiv = item.plan.dividend[index - 1].value;
           const targetPrice = effectiveDps / planDiv;
           row.price = targetPrice;
           row.pe = pricePE * (targetPrice / price);
@@ -656,7 +651,7 @@ const mergedTableData = computed(() => {
       const isLast = index === group.length - 1 && index > 0;
       const decline =
         index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
-      const annualDps = row.exList.reduce((pre, cur) => pre + cur.dps, 0);
+      const annualDps = row.exList.reduce((pre: number, cur: { dps: number }) => pre + cur.dps, 0);
       const adjustedAnnualDps =
         meta?.dividendAdjust != null
           ? annualDps * meta.dividendAdjust
@@ -727,47 +722,34 @@ const mergedTableData = computed(() => {
 
 <template>
   <div class="toolbar">
-    <el-select
-      v-model="marketFilter"
-      multiple
-      placeholder="全部市场"
-      collapse-tags
-      collapse-tags-tooltip
-      style="width: 160px; margin-right: 12px"
-    >
+    <el-select v-model="marketFilter" multiple placeholder="全部市场" collapse-tags collapse-tags-tooltip
+      style="width: 160px; margin-right: 12px">
       <el-option label="A股" value="a" />
       <el-option label="B股" value="b" />
       <el-option label="港股" value="hk" />
     </el-select>
-    <el-button
-      :type="changeSortOrder ? 'primary' : 'default'"
-      @click="toggleChangeSort"
-    >
+    <el-button :type="changeSortOrder ? 'primary' : 'default'" @click="toggleChangeSort">
       <template v-if="!changeSortOrder">涨跌幅排序</template>
       <template v-else-if="changeSortOrder === 'desc'">按涨幅排序</template>
       <template v-else>按跌幅排序</template>
     </el-button>
     <el-button type="primary" @click="refresh">刷新实时数据</el-button>
-    <el-button type="primary" @click="init"
-      >初始化/获取分红数据（避免高频调用）</el-button
-    >
+    <el-button type="primary" @click="init">初始化/获取分红数据（避免高频调用）</el-button>
   </div>
 
   <div v-if="indexList.length" class="index-bar">
     <div v-if="indexListGroup1.length" class="index-group">
       <span v-for="idx in indexListGroup1" :key="idx.code" class="index-item">
-        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span
-        >（<span :class="idx.change >= 0 ? 'red' : 'green'"
-          >{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2) }}%</span
-        >）
+        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span>（<span
+          :class="idx.change >= 0 ? 'red' : 'green'">{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2)
+          }}%</span>）
       </span>
     </div>
     <div v-if="indexListGroup2.length" class="index-group">
       <span v-for="idx in indexListGroup2" :key="idx.code" class="index-item">
-        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span
-        >（<span :class="idx.change >= 0 ? 'red' : 'green'"
-          >{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2) }}%</span
-        >）
+        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span>（<span
+          :class="idx.change >= 0 ? 'red' : 'green'">{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2)
+          }}%</span>）
       </span>
     </div>
   </div>
@@ -789,11 +771,7 @@ const mergedTableData = computed(() => {
       </tr>
     </thead>
     <tbody>
-      <tr
-        v-for="(row, idx) in mergedTableData"
-        :key="idx"
-        :class="{ 'real-time-row': row.isFirstRow }"
-      >
+      <tr v-for="(row, idx) in mergedTableData" :key="idx" :class="{ 'real-time-row': row.isFirstRow }">
         <td v-if="row.nameRowSpan > 0" :rowspan="row.nameRowSpan" class="bold">
           <div>
             <a v-if="row.url" :href="row.url" class="stock-link">{{
@@ -802,81 +780,39 @@ const mergedTableData = computed(() => {
             <span v-else>{{ row.name }}</span>
           </div>
           <div class="stock-code">{{ row.code }}</div>
-          <div
-            v-if="row.change !== undefined"
-            class="stock-change"
-            :class="row.change >= 0 ? 'red' : 'green'"
-          >
+          <div v-if="row.change !== undefined" class="stock-change" :class="row.change >= 0 ? 'red' : 'green'">
             {{ row.change >= 0 ? "+" : "" }}{{ row.change.toFixed(2) }}%
           </div>
         </td>
-        <td
-          class="bold"
-          :class="[
-            row.isFirstRow ? 'red' : 'blue',
-            { 'bg-pink': row.decline < 5 && !row.isFirstRow },
-          ]"
-        >
-          <el-input-number
-            v-if="row.isLastRow"
-            v-model="editPrice[row.code]"
-            :precision="2"
-            :controls="false"
-            size="small"
-            class="plan-price-input"
-            @blur="onPriceBlur(row.code)"
-          />
+        <td class="bold" :class="[
+          row.isFirstRow ? 'red' : 'blue',
+          { 'bg-pink': row.decline < 5 && !row.isFirstRow },
+        ]">
+          <el-input-number v-if="row.isLastRow" v-model="editPrice[row.code]" :precision="2" :controls="false"
+            size="small" class="plan-price-input" @blur="onPriceBlur(row.code)" />
           <span v-else>{{ formatPrice(row.price, row.code) }}</span>
         </td>
-        <td
-          class="bold"
-          :class="{
-            red: !row.isFirstRow,
-            'bg-pink': row.decline < 5 && !row.isFirstRow,
-          }"
-        >
-          <el-input-number
-            v-if="row.isLastRow"
-            v-model="editDividend[row.code]"
-            :precision="4"
-            :controls="false"
-            size="small"
-            class="plan-dividend-input"
-            @blur="onDividendBlur(row.code)"
-          />
+        <td class="bold" :class="{
+          red: !row.isFirstRow,
+          'bg-pink': row.decline < 5 && !row.isFirstRow,
+        }">
+          <el-input-number v-if="row.isLastRow" v-model="editDividend[row.code]" :precision="4" :controls="false"
+            size="small" class="plan-dividend-input" @blur="onDividendBlur(row.code)" />
           <span v-else>{{ formatPercent(row.dividend * 100) }}</span>
         </td>
-        <td
-          class="bold"
-          :class="{
-            red: !row.isFirstRow,
-            'bg-pink': row.decline < 5 && !row.isFirstRow,
-          }"
-        >
-          <el-input-number
-            v-if="row.isLastRow"
-            v-model="editPE[row.code]"
-            :precision="2"
-            :controls="false"
-            size="small"
-            class="plan-pe-input"
-            @blur="onPEBlur(row.code)"
-          />
+        <td class="bold" :class="{
+          red: !row.isFirstRow,
+          'bg-pink': row.decline < 5 && !row.isFirstRow,
+        }">
+          <el-input-number v-if="row.isLastRow" v-model="editPE[row.code]" :precision="2" :controls="false" size="small"
+            class="plan-pe-input" @blur="onPEBlur(row.code)" />
           <span v-else>{{ formatNum(row.pe, 2).toFixed(2) }}</span>
         </td>
-        <td
-          class="bold"
-          :class="
-            row.decline < 5 && !row.isFirstRow ? 'bg-light-red' : 'bg-green'
-          "
-        >
+        <td class="bold" :class="row.decline < 5 && !row.isFirstRow ? 'bg-light-red' : 'bg-green'
+          ">
           {{ row.decline === 0 ? "-" : formatPercent(row.decline) }}
         </td>
-        <td
-          v-if="row.exDateRowSpan > 0"
-          :rowspan="row.exDateRowSpan"
-          class="bold"
-        >
+        <td v-if="row.exDateRowSpan > 0" :rowspan="row.exDateRowSpan" class="bold">
           <div v-for="(ex, i) in row.exList" :key="i">{{ ex.exDate }}</div>
         </td>
         <td v-if="row.dpsRowSpan > 0" :rowspan="row.dpsRowSpan" class="bold">
@@ -884,11 +820,7 @@ const mergedTableData = computed(() => {
             {{ getCurrencyPrefix(row.code) }}{{ Number(ex.dps.toFixed(4)) }}
           </div>
         </td>
-        <td
-          v-if="row.annualDpsRowSpan > 0"
-          :rowspan="row.annualDpsRowSpan"
-          class="bold bg-pink red"
-        >
+        <td v-if="row.annualDpsRowSpan > 0" :rowspan="row.annualDpsRowSpan" class="bold bg-pink red">
           <div>
             {{ getCurrencyPrefix(row.code)
             }}{{ row.annualDps ? row.annualDps.toFixed(2) : "-" }}
@@ -900,16 +832,12 @@ const mergedTableData = computed(() => {
         </td>
         <td class="bold">
           <template v-if="row.isFirstRow && row.maxPositionRatio !== undefined">
-            <span class="normal red"
-              >{{ (row.maxPositionRatio * 100).toFixed(0) }}%</span
-            >
+            <span class="normal red">{{ (row.maxPositionRatio * 100).toFixed(0) }}%</span>
           </template>
           <template v-else>{{ row.quantity || "-" }}</template>
         </td>
         <td class="bold">
-          <template
-            v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0"
-          >
+          <template v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0">
             <template v-if="canConvertToCNY(row.code)">
               <div>
                 {{ getCurrencyPrefix(row.code)
@@ -939,11 +867,7 @@ const mergedTableData = computed(() => {
           </template>
           <span v-else>-</span>
         </td>
-        <td
-          v-if="row.remarkRowSpan > 0"
-          :rowspan="row.remarkRowSpan"
-          class="remark-cell"
-        >
+        <td v-if="row.remarkRowSpan > 0" :rowspan="row.remarkRowSpan" class="remark-cell">
           {{ row.remark }}
         </td>
       </tr>
@@ -984,7 +908,7 @@ const mergedTableData = computed(() => {
     flex-wrap: wrap;
     gap: 8px 16px;
 
-    + .index-group {
+    +.index-group {
       margin-top: 4px;
     }
   }
