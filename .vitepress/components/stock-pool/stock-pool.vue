@@ -19,6 +19,7 @@ interface RowData {
   pe: number;
   dividend: number;
   quantity: number;
+  sharesHeld?: number;
   url?: string;
   remark?: string;
   maxPositionRatio?: number;
@@ -31,6 +32,7 @@ interface MergedRowData extends RowData {
   exDateRowSpan: number;
   dpsRowSpan: number;
   annualDpsRowSpan: number;
+  sharesHeldRowSpan: number;
   remarkRowSpan: number;
   maxPositionRatioRowSpan: number;
   annualDps: number;
@@ -142,6 +144,7 @@ function computeFingerprint(): string {
       adj: item.dividendAdjust,
       remark: item.remark,
       mpr: item.plan.maxPositionRatio,
+      sh: item.sharesHeld,
     };
     if (item.plan.type === PlanType.PRICE) {
       return {
@@ -163,6 +166,7 @@ interface StockStorage {
   url?: string;
   remark?: string;
   maxPositionRatio?: number;
+  sharesHeld?: number;
   change?: number;
   rows: {
     price: number;
@@ -193,6 +197,7 @@ function saveToStorage() {
       url: first.url,
       remark: first.remark,
       maxPositionRatio: first.maxPositionRatio,
+      sharesHeld: first.sharesHeld,
       change: first.change,
       rows: rows.map((r: RowData) => ({
         price: r.price,
@@ -238,6 +243,7 @@ function loadFromStorage(): boolean {
           pe: r.pe,
           dividend: r.dividend,
           quantity: r.quantity,
+          sharesHeld: s.sharesHeld,
           url: s.url,
           exList: s.exList,
           remark: s.remark,
@@ -375,6 +381,7 @@ async function init() {
         pe: pricePE,
         dividend: effectiveDps / price,
         quantity: 0,
+        sharesHeld: item.sharesHeld,
         url: item.url,
         exList,
         change,
@@ -391,6 +398,7 @@ async function init() {
             pe: pricePE * (v.value / price),
             dividend: effectiveDps / v.value,
             quantity: v.quantity,
+            sharesHeld: item.sharesHeld,
             url: item.url,
             exList,
             remark: item.remark,
@@ -408,6 +416,7 @@ async function init() {
             pe: pricePE * (targetPrice / price),
             dividend: v.value,
             quantity: v.quantity,
+            sharesHeld: item.sharesHeld,
             url: item.url,
             exList,
             remark: item.remark,
@@ -528,6 +537,12 @@ async function refresh() {
 function formatPrice(price: number, code: string): string {
   const prefix = getCurrencyPrefix(code);
   return `${prefix}${formatNum(price, 2).toFixed(2)}`;
+}
+
+/** 将日期字符串的年份部分取后两位，如 "2025-07-16" → "25-07-16" */
+function formatShortExDate(dateStr: string): string {
+  if (!dateStr || dateStr === "-") return dateStr;
+  return dateStr.replace(/^\d{2}(\d{2})/, "$1");
 }
 
 // 将 custom* 的值同步到编辑缓冲区
@@ -663,6 +678,7 @@ const mergedTableData = computed(() => {
         exDateRowSpan: index === 0 ? group.length : 0,
         dpsRowSpan: index === 0 ? group.length : 0,
         annualDpsRowSpan: index === 0 ? group.length : 0,
+        sharesHeldRowSpan: index === 0 ? group.length : 0,
         remarkRowSpan: index === 0 ? group.length : 0,
         maxPositionRatioRowSpan: index === 0 ? group.length : 0,
         annualDps,
@@ -766,6 +782,7 @@ const mergedTableData = computed(() => {
         <th class="bold">每股分红</th>
         <th class="bold bg-pink red">年分红</th>
         <th class="bold">计划股数</th>
+        <th class="bold">持有股数</th>
         <th class="bold">计划市值</th>
         <th class="bold">备注</th>
       </tr>
@@ -813,7 +830,7 @@ const mergedTableData = computed(() => {
           {{ row.decline === 0 ? "-" : formatPercent(row.decline) }}
         </td>
         <td v-if="row.exDateRowSpan > 0" :rowspan="row.exDateRowSpan" class="bold">
-          <div v-for="(ex, i) in row.exList" :key="i">{{ ex.exDate }}</div>
+          <div v-for="(ex, i) in row.exList" :key="i">{{ formatShortExDate(ex.exDate) }}</div>
         </td>
         <td v-if="row.dpsRowSpan > 0" :rowspan="row.dpsRowSpan" class="bold">
           <div v-for="(ex, i) in row.exList" :key="i">
@@ -835,6 +852,9 @@ const mergedTableData = computed(() => {
             <span class="normal red">{{ (row.maxPositionRatio * 100).toFixed(0) }}%</span>
           </template>
           <template v-else>{{ row.quantity || "-" }}</template>
+        </td>
+        <td v-if="row.sharesHeldRowSpan > 0" :rowspan="row.sharesHeldRowSpan" class="bold">
+          {{ row.sharesHeld != null ? row.sharesHeld : "-" }}
         </td>
         <td class="bold">
           <template v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0">

@@ -121,10 +121,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      price: [
-        { value: 46, quantity: 300 },
-        { value: 44, quantity: 400 },
-      ],
+      price: [{ value: 44, quantity: 400 }],
     },
   },
   {
@@ -244,10 +241,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.08,
-      price: [
-        { value: 19.5, quantity: 800 },
-        { value: 18.5, quantity: 1000 },
-      ],
+      price: [{ value: 18.5, quantity: 1000 }],
     },
   },
   {
@@ -390,10 +384,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      price: [
-        { value: 27.5, quantity: 400 },
-        { value: 26, quantity: 800 },
-      ],
+      price: [{ value: 26, quantity: 800 }],
     },
   },
   {
@@ -403,7 +394,7 @@ const stocks: StockItem[] = [
     sharesHeld: 1000,
     url: "/value-investing/industry/汽车/赛轮轮胎/",
     dividendPerYear: 2,
-    remark: "刚分红完，减去0.18",
+    remark: "",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
