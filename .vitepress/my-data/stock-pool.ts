@@ -145,6 +145,7 @@ const stocks: StockItem[] = [
     // 分众传媒
     code: "002027",
     industry: Industry.MEDIA,
+    sharesHeld: 1600,
     url: "/value-investing/industry/传媒/分众传媒/",
     plan: {
       type: PlanType.DIVIDEND,
@@ -490,6 +491,7 @@ const stocks: StockItem[] = [
     // 宇通客车
     code: "600066",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
+    sharesHeld: 400,
     url: "/value-investing/industry/汽车/宇通客车/",
     dividendPerYear: 2,
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
@@ -623,7 +625,7 @@ const stocks: StockItem[] = [
     industry: Industry.SHIPPING,
     sharesHeld: 200,
     url: "/value-investing/industry/航运/中远海控/",
-    dividendPerYear: 1,
+    dividendPerYear: 2,
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
@@ -637,7 +639,7 @@ const stocks: StockItem[] = [
     sharesHeld: 1000,
     url: "/value-investing/industry/航运/中远海控/",
     dividendAdjust: 0.8,
-    dividendPerYear: 1,
+    dividendPerYear: 2,
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,

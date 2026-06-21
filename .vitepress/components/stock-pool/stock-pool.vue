@@ -526,6 +526,7 @@ const mergedTableData = computed(() => {
       </tr>
     </tbody>
   </table>
+
 </template>
 
 <style lang="scss">

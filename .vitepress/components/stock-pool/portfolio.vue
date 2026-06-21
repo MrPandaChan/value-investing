@@ -4,6 +4,7 @@ import {
   formatNum,
   formatPercent,
   canConvertToCNY,
+  isHKCode,
 } from "../../../fetch-data/helper";
 import { stocks } from "../../my-data/stock-pool";
 import { useStockPoolData } from "./use-stock-pool-data";
@@ -20,9 +21,14 @@ interface PortfolioRow {
   industry: string;
   industryRatio: number; // 行业比例
   expectedDividend: number; // 预计分红（人民币，调整前）
+  paidDividend: number; // 已分红（人民币）
+  unpaidDividend: number; // 未分红（人民币）
+  eps: number; // 每股净利润（人民币）
   dividendRate: number; // 股息率（扣税后）
   dividendTax: number; // 股息扣税（人民币，基于 dividendAdjust）
   netDividend: number; // 扣税后股息（人民币，调整后）
+  holdingNetProfit: number; // 持有净利润（人民币）
+  retainedNetProfit: number; // 公司留存部分（人民币）
   peTtm: number;
   rowspan: number;
 }
@@ -32,6 +38,20 @@ function formatTax(tax: number): string {
   if (tax === 0 || Math.abs(tax) < 0.005) return "-";
   const abs = formatNum(Math.abs(tax), 2).toFixed(2);
   return tax > 0 ? `-${abs}` : `+${abs}`;
+}
+
+/** 计算已分红的每股分红（派息日落在今年1月1日至今天的分红之和） */
+function getPaidDps(exList: { dps: number; payDate: string }[]): number {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const yearStart = new Date(today.getFullYear(), 0, 1);
+  return exList
+    .filter((ex) => {
+      if (!ex.payDate || ex.payDate === "-") return false;
+      const payDate = new Date(ex.payDate.replace(/\//g, "-"));
+      return payDate >= yearStart && payDate <= today;
+    })
+    .reduce((sum, ex) => sum + ex.dps, 0);
 }
 
 const portfolioData = computed<PortfolioRow[]>(() => {
@@ -46,7 +66,9 @@ const portfolioData = computed<PortfolioRow[]>(() => {
   const items = heldStocks.map((s) => {
     const meta = groupMetaMap.value[s.code]!;
     const nameRow = tableData.value.find((r) => r.code === s.code);
-    const name = nameRow?.name || s.code;
+    const rawName = nameRow?.name || s.code;
+    // 港股后面加上 H
+    const name = isHKCode(s.code) ? `${rawName}H` : rawName;
     const sharesHeld = s.sharesHeld!;
     const price = meta.realPrice;
 
@@ -61,6 +83,27 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     const expectedDividend = canConvertToCNY(s.code)
       ? rawExpectedDividend / exchangeRate.value
       : rawExpectedDividend;
+
+    // 已分红 = 已过派息日的分红 dps 之和 * sharesHeld（转为人民币）
+    // 使用与 meta.dps 相同的过滤后 exList，避免已分红超过预计分红
+    const exList = nameRow?.exList || [];
+    const paidDps = getPaidDps(exList);
+    const rawPaidDividend = paidDps * sharesHeld;
+    const paidDividend = canConvertToCNY(s.code)
+      ? rawPaidDividend / exchangeRate.value
+      : rawPaidDividend;
+    // 未分红 = 预计分红 - 已分红
+    const unpaidDividend = expectedDividend - paidDividend;
+
+    // 每股净利润 = 当前股价 / PE_TTM（转为人民币）
+    const rawEps = meta.pricePE > 0 ? price / meta.pricePE : 0;
+    const eps = canConvertToCNY(s.code)
+      ? rawEps / exchangeRate.value
+      : rawEps;
+    // 持有净利润 = 每股净利润 * 持有股数（人民币）
+    const holdingNetProfit = eps * sharesHeld;
+    // 公司留存部分 = 持有净利润 - 预计分红（人民币）
+    const retainedNetProfit = holdingNetProfit - expectedDividend;
 
     // 扣税后股息 = 调整后分红 effectiveDps * sharesHeld（转为人民币）
     const rawNetDividend = meta.effectiveDps * sharesHeld;
@@ -80,9 +123,14 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       holdingValue,
       shareholdingRatio: 0,
       expectedDividend,
+      paidDividend,
+      unpaidDividend,
+      eps,
       dividendRate,
       dividendTax,
       netDividend,
+      holdingNetProfit,
+      retainedNetProfit,
       peTtm: meta.pricePE,
       industry: s.industry,
     };
@@ -133,24 +181,44 @@ const totals = computed(() => {
     (s, r) => s + r.expectedDividend,
     0,
   );
+  const sumPaidDividend = rows.reduce((s, r) => s + r.paidDividend, 0);
+  const sumUnpaidDividend = rows.reduce((s, r) => s + r.unpaidDividend, 0);
   const sumDividendTax = rows.reduce((s, r) => s + r.dividendTax, 0);
   const sumNetDividend = rows.reduce((s, r) => s + r.netDividend, 0);
+  const sumHoldingNetProfit = rows.reduce((s, r) => s + r.holdingNetProfit, 0);
+  const sumRetainedNetProfit = rows.reduce(
+    (s, r) => s + r.retainedNetProfit,
+    0,
+  );
   const sumDividendRate =
     sumHoldingValue > 0 ? sumNetDividend / sumHoldingValue : 0;
   const sumDividendTaxRate =
     sumHoldingValue > 0 ? sumDividendTax / sumHoldingValue : 0;
+  const sumHoldingNetProfitMargin =
+    sumHoldingValue > 0 ? sumHoldingNetProfit / sumHoldingValue : 0;
+  const sumRetainedNetProfitRate =
+    sumHoldingValue > 0 ? sumRetainedNetProfit / sumHoldingValue : 0;
 
   // 透视盈余 = 持有净利润总额 - 股息扣税总额
-  // 持有净利润依赖每股净利润（暂无数据），故透视盈余暂不可计算
+  const perspectiveSurplus = sumHoldingNetProfit - sumDividendTax;
+  const perspectiveSurplusRate =
+    sumHoldingValue > 0 ? perspectiveSurplus / sumHoldingValue : 0;
+
   return {
     sumHoldingValue,
     sumExpectedDividend,
+    sumPaidDividend,
+    sumUnpaidDividend,
     sumDividendTax,
     sumNetDividend,
+    sumHoldingNetProfit,
+    sumRetainedNetProfit,
     sumDividendRate,
     sumDividendTaxRate,
-    perspectiveSurplus: null as number | null,
-    perspectiveSurplusRate: null as number | null,
+    sumHoldingNetProfitMargin,
+    sumRetainedNetProfitRate,
+    perspectiveSurplus,
+    perspectiveSurplusRate,
   };
 });
 
@@ -167,21 +235,23 @@ onMounted(() => {
     <table class="portfolio-table">
       <thead>
         <tr>
-          <th>序列号</th>
-          <th>持仓公司</th>
+          <th>序号</th>
+          <th class="bold">持仓公司</th>
           <th>持有股数</th>
           <th>持有市值</th>
-          <th>持股比例</th>
-          <th>行业</th>
-          <th>行业比例</th>
-          <th>预计分红</th>
-          <th>每股净利润</th>
-          <th>股息率</th>
+          <th class="bold">持股比例</th>
+          <th class="bold">行业</th>
+          <th class="bold">行业比例</th>
+          <th class="dps">预计分红</th>
+          <th>已分红</th>
+          <th>未分红</th>
+          <th class="eps">EPS</th>
+          <th>PE_TTM</th>
+          <th class="bold">股息率</th>
           <th>股息扣税</th>
           <th>扣税后股息</th>
-          <th>持有净利润</th>
-          <th>留存部分</th>
-          <th>PE_TTM</th>
+          <th class="holding-net-profit">持有净利润</th>
+          <th class="retained">留存部分</th>
         </tr>
       </thead>
       <tbody>
@@ -190,7 +260,7 @@ onMounted(() => {
           <td class="bold">{{ item.name }}</td>
           <td>{{ item.sharesHeld }}</td>
           <td>￥{{ formatNum(item.holdingValue, 2).toFixed(2) }}</td>
-          <td>{{ formatPercent(item.shareholdingRatio * 100) }}</td>
+          <td class="bold">{{ formatPercent(item.shareholdingRatio * 100) }}</td>
           <td v-if="item.rowspan > 0" :rowspan="item.rowspan" class="bold">
             {{ item.industry }}
           </td>
@@ -200,13 +270,19 @@ onMounted(() => {
           <td class="dps">
             {{ formatNum(item.expectedDividend, 2).toFixed(2) }}
           </td>
-          <td class="eps">-</td>
-          <td>{{ formatPercent(item.dividendRate * 100) }}</td>
+          <td>{{ formatNum(item.paidDividend, 2).toFixed(2) }}</td>
+          <td>{{ formatNum(item.unpaidDividend, 2).toFixed(2) }}</td>
+          <td class="eps">{{ formatNum(item.eps, 3).toFixed(3) }}</td>
+          <td>{{ formatNum(item.peTtm, 2).toFixed(2) }}</td>
+          <td class="bold">{{ formatPercent(item.dividendRate * 100) }}</td>
           <td>{{ formatTax(item.dividendTax) }}</td>
           <td>{{ formatNum(item.netDividend, 2).toFixed(2) }}</td>
-          <td class="holding-net-profit">-</td>
-          <td class="retained">-</td>
-          <td>{{ formatNum(item.peTtm, 2).toFixed(2) }}</td>
+          <td class="holding-net-profit">
+            {{ formatNum(item.holdingNetProfit, 2).toFixed(2) }}
+          </td>
+          <td class="retained">
+            {{ formatNum(item.retainedNetProfit, 2).toFixed(2) }}
+          </td>
         </tr>
         <!-- 合计行 -->
         <tr>
@@ -222,6 +298,13 @@ onMounted(() => {
           <td class="bold dps">
             {{ formatNum(totals.sumExpectedDividend, 2).toFixed(2) }}
           </td>
+          <td class="bold">
+            {{ formatNum(totals.sumPaidDividend, 2).toFixed(2) }}
+          </td>
+          <td class="bold">
+            {{ formatNum(totals.sumUnpaidDividend, 2).toFixed(2) }}
+          </td>
+          <td></td>
           <td></td>
           <td></td>
           <td class="bold">
@@ -230,12 +313,18 @@ onMounted(() => {
           <td class="bold sum-net-dividend">
             {{ formatNum(totals.sumNetDividend, 2).toFixed(2) }}
           </td>
-          <td class="bold sum-holding-net-profit">-</td>
-          <td class="bold retained">-</td>
-          <td></td>
+          <td class="bold sum-holding-net-profit">
+            {{ formatNum(totals.sumHoldingNetProfit, 2).toFixed(2) }}
+          </td>
+          <td class="bold retained">
+            {{ formatNum(totals.sumRetainedNetProfit, 2).toFixed(2) }}
+          </td>
         </tr>
         <!-- 比率行 -->
         <tr class="bold-tr">
+          <td></td>
+          <td></td>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
@@ -250,12 +339,18 @@ onMounted(() => {
           <td class="sum-dividend-rate">
             {{ formatPercent(totals.sumDividendRate * 100) }}
           </td>
-          <td class="sum-holding-net-profit-margin">-</td>
-          <td class="retained">-</td>
-          <td></td>
+          <td class="sum-holding-net-profit-margin">
+            {{ formatPercent(totals.sumHoldingNetProfitMargin * 100) }}
+          </td>
+          <td class="retained">
+            {{ formatPercent(totals.sumRetainedNetProfitRate * 100) }}
+          </td>
         </tr>
         <!-- 标签行 -->
         <tr class="bold-tr">
+          <td></td>
+          <td></td>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
@@ -270,7 +365,6 @@ onMounted(() => {
           <td class="sum-dividend-rate">组合股息率</td>
           <td class="sum-holding-net-profit-margin">总收益率</td>
           <td class="retained">公司留存率</td>
-          <td></td>
         </tr>
       </tbody>
     </table>
@@ -280,22 +374,12 @@ onMounted(() => {
         <tbody>
           <tr>
             <td>透视盈余</td>
-            <td>
-              {{
-                totals.perspectiveSurplus !== null
-                  ? formatNum(totals.perspectiveSurplus, 2)
-                  : "-"
-              }}
-            </td>
+            <td>{{ formatNum(totals.perspectiveSurplus, 2) }}</td>
           </tr>
           <tr>
             <td>透视盈余收益率</td>
             <td>
-              {{
-                totals.perspectiveSurplusRate !== null
-                  ? formatPercent(totals.perspectiveSurplusRate * 100)
-                  : "-"
-              }}
+              {{ formatPercent(totals.perspectiveSurplusRate * 100) }}
             </td>
           </tr>
         </tbody>
@@ -336,6 +420,8 @@ onMounted(() => {
 
     thead th {
       padding: 6px 8px;
+      font-weight: normal;
+      background-color: #fff;
       border-bottom-width: 1px;
     }
 
@@ -388,10 +474,14 @@ onMounted(() => {
   .surplus-table {
     margin-top: 8px;
 
+    tr {
+      border-top: 1px solid #000;
+    }
+
     td {
       font-weight: bold;
+      padding: 4px 6px;
       background-color: #f88920;
-      color: #fff;
     }
   }
 }

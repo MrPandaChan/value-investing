@@ -16,7 +16,7 @@ export interface RowData {
   remark?: string;
   maxPositionRatio?: number;
   change?: number; // 涨跌幅，仅实时行
-  exList: { dps: number; exDate: string }[];
+  exList: ExItem[];
 }
 
 export interface GroupMeta {
@@ -82,7 +82,7 @@ interface StockStorage {
     dividend: number;
     quantity: number;
   }[];
-  exList: { dps: number; exDate: string }[];
+  exList: ExItem[];
   meta: GroupMeta;
 }
 
