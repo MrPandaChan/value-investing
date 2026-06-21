@@ -89,6 +89,18 @@ export interface EastMoneyDividendResponse {
   TOTAL_DIVIDEND_A: number; // 分红总额（A股）
 }
 
+export interface EastMoneyHKDividendResponse {
+  DIVIDEND_DATE: string; // 发放日 '2025/07/11'
+  EX_DIVIDEND_DATE: string; // 除净日 '2025/06/12'
+  IS_BFP: string; // '0'
+  PLAN_EXPLAIN: string; // 分红方案 '每股派港币0.66元'
+  REPORT_TYPE: string; // 分类类型 '年度分配' '中期分配' '特别分配'
+  SECURITY_CODE: string; // '00883'
+  TRANSFER_END_DATE: string; // 截止过户日 '2025/06/16-2025/06/20'
+  UPDATE_DATE: string; // 最新公告日 '2025-06-05 00:00:00'
+  YEAR: string; // 财政年度 '2024'
+}
+
 export interface DynamicData {
   name: string;
   change: number;

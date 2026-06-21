@@ -648,6 +648,7 @@ const stocks: StockItem[] = [
     // 比亚迪
     code: "002594",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
+    sharesHeld: 100,
     url: "/value-investing/industry/汽车/比亚迪/",
     dividendAdjust: 0.8,
     dividendPerYear: 1,
