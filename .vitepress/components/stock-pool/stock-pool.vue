@@ -782,8 +782,8 @@ const mergedTableData = computed(() => {
         <th class="bold">每股分红</th>
         <th class="bold bg-pink red">年分红</th>
         <th class="bold">计划股数</th>
-        <th class="bold">持有股数</th>
         <th class="bold">计划市值</th>
+        <th class="bold">持有股数/市值</th>
         <th class="bold">备注</th>
       </tr>
     </thead>
@@ -793,7 +793,7 @@ const mergedTableData = computed(() => {
           <div>
             <a v-if="row.url" :href="row.url" class="stock-link">{{
               row.name
-            }}</a>
+              }}</a>
             <span v-else>{{ row.name }}</span>
           </div>
           <div class="stock-code">{{ row.code }}</div>
@@ -853,9 +853,6 @@ const mergedTableData = computed(() => {
           </template>
           <template v-else>{{ row.quantity || "-" }}</template>
         </td>
-        <td v-if="row.sharesHeldRowSpan > 0" :rowspan="row.sharesHeldRowSpan" class="bold">
-          {{ row.sharesHeld != null ? row.sharesHeld : "-" }}
-        </td>
         <td class="bold">
           <template v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0">
             <template v-if="canConvertToCNY(row.code)">
@@ -886,6 +883,18 @@ const mergedTableData = computed(() => {
             </template>
           </template>
           <span v-else>-</span>
+        </td>
+        <td v-if="row.sharesHeldRowSpan > 0" :rowspan="row.sharesHeldRowSpan" class="bold">
+          <div>{{ row.sharesHeld != null ? row.sharesHeld : "-" }}</div>
+          <template v-if="row.sharesHeld != null && row.price > 0">
+            <template v-if="canConvertToCNY(row.code)">
+              <div>{{ getCurrencyPrefix(row.code) }}{{ (row.sharesHeld * row.price).toFixed(0) }}</div>
+              <div>￥{{ ((row.sharesHeld * row.price) / exchangeRate).toFixed(0) }}</div>
+            </template>
+            <template v-else>
+              <div>{{ getCurrencyPrefix(row.code) }}{{ (row.sharesHeld * row.price).toFixed(0) }}</div>
+            </template>
+          </template>
         </td>
         <td v-if="row.remarkRowSpan > 0" :rowspan="row.remarkRowSpan" class="remark-cell">
           {{ row.remark }}
