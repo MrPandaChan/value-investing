@@ -621,12 +621,14 @@ const mergedTableData = computed(() => {
   <el-dialog
     v-model="portfolioDialogVisible"
     title="透视盈余"
-    width="95%"
-    top="5vh"
+    width="80%"
+    top="2vh"
     destroy-on-close
     class="portfolio-dialog"
   >
-    <StockPoolPortfolio />
+    <div class="dialog-content">
+      <StockPoolPortfolio />
+    </div>
   </el-dialog>
 </template>
 
@@ -818,8 +820,13 @@ const mergedTableData = computed(() => {
 }
 
 .portfolio-dialog {
+  .dialog-content {
+    display: flex;
+    justify-content: center;
+  }
+
   .el-dialog__body {
-    max-height: 80vh;
+    max-height: 88vh;
     overflow: auto;
   }
 }
