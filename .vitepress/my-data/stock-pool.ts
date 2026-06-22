@@ -158,7 +158,6 @@ const stocks: StockItem[] = [
     // 青岛港H
     code: "06198",
     industry: Industry.SEAPORTS_AND_SERVICES,
-    sharesHeld: 1000,
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
@@ -255,7 +254,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      price: [{ value: 36, quantity: 200 }],
+      price: [{ value: 36, quantity: 100 }],
     },
   },
   {
