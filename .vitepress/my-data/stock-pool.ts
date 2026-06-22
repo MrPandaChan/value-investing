@@ -271,7 +271,7 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.1,
       price: [
         { value: 90.5, quantity: 100 },
-        { value: 87, quantity: 200 },
+        { value: 88, quantity: 200 },
       ],
     },
   },
