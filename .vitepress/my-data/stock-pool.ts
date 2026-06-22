@@ -136,8 +136,8 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.03,
       price: [
-        { value: 19.1, quantity: 400 },
-        { value: 18.1, quantity: 500 },
+        { value: 19.2, quantity: 500 },
+        { value: 18.2, quantity: 600 },
       ],
     },
   },
@@ -210,7 +210,7 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.1,
       price: [
         { value: 36.5, quantity: 600 },
-        { value: 35.5, quantity: 800 },
+        { value: 35.5, quantity: 600 },
       ],
     },
   },
@@ -263,15 +263,15 @@ const stocks: StockItem[] = [
     // 中国移动
     code: "600941",
     industry: Industry.TELECOMMUNICATION_SERVICES,
-    sharesHeld: 500,
+    sharesHeld: 600,
     url: "/value-investing/industry/电信服务/中国移动/",
     dividendPerYear: 2,
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
-        { value: 91, quantity: 100 },
-        { value: 88, quantity: 200 },
+        { value: 90.5, quantity: 100 },
+        { value: 87, quantity: 200 },
       ],
     },
   },
@@ -328,7 +328,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.08,
-      dividend: [{ value: 0.04, quantity: 3000 }],
+      dividend: [{ value: 0.04, quantity: 1000 }],
     },
   },
   {
@@ -354,7 +354,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.2,
-      dividend: [{ value: 0.055, quantity: 2200 }],
+      dividend: [{ value: 0.05, quantity: 2000 }],
     },
   },
   {
@@ -416,7 +416,13 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.052, quantity: 200 }],
+      dividend: [
+        { value: 0.052, quantity: 100 },
+        {
+          value: 0.055,
+          quantity: 200,
+        },
+      ],
     },
   },
   {
@@ -470,7 +476,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.06, quantity: 100 }],
+      dividend: [{ value: 0.065, quantity: 100 }],
     },
   },
   {
@@ -512,8 +518,8 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
-        { value: 0.058, quantity: 300 },
-        { value: 0.062, quantity: 500 },
+        { value: 0.058, quantity: 400 },
+        { value: 0.062, quantity: 600 },
       ],
     },
   },

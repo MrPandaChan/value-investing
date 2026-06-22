@@ -9,10 +9,8 @@ import {
   isBCode,
   isHKCode,
 } from "../../../fetch-data/helper";
-import {
-  useStockPoolData,
-  type RowData,
-} from "./use-stock-pool-data";
+import { useStockPoolData, type RowData } from "./use-stock-pool-data";
+import StockPoolPortfolio from "./portfolio.vue";
 
 const {
   tableData,
@@ -25,6 +23,8 @@ const {
   refresh: refreshShared,
   loadFromStorage,
 } = useStockPoolData();
+
+const portfolioDialogVisible = ref(false);
 
 interface MergedRowData extends RowData {
   nameRowSpan: number;
@@ -290,7 +290,10 @@ const mergedTableData = computed(() => {
       const isLast = index === group.length - 1 && index > 0;
       const decline =
         index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
-      const annualDps = row.exList.reduce((pre: number, cur: { dps: number }) => pre + cur.dps, 0);
+      const annualDps = row.exList.reduce(
+        (pre: number, cur: { dps: number }) => pre + cur.dps,
+        0,
+      );
       const adjustedAnnualDps =
         meta?.dividendAdjust != null
           ? annualDps * meta.dividendAdjust
@@ -362,34 +365,50 @@ const mergedTableData = computed(() => {
 
 <template>
   <div class="toolbar">
-    <el-select v-model="marketFilter" multiple placeholder="全部市场" collapse-tags collapse-tags-tooltip
-      style="width: 160px; margin-right: 12px">
+    <el-select
+      v-model="marketFilter"
+      multiple
+      placeholder="全部市场"
+      collapse-tags
+      collapse-tags-tooltip
+      style="width: 160px; margin-right: 12px"
+    >
       <el-option label="A股" value="a" />
       <el-option label="B股" value="b" />
       <el-option label="港股" value="hk" />
     </el-select>
-    <el-button :type="changeSortOrder ? 'primary' : 'default'" @click="toggleChangeSort">
+    <el-button
+      :type="changeSortOrder ? 'primary' : 'default'"
+      @click="toggleChangeSort"
+    >
       <template v-if="!changeSortOrder">涨跌幅排序</template>
       <template v-else-if="changeSortOrder === 'desc'">按涨幅排序</template>
       <template v-else>按跌幅排序</template>
     </el-button>
     <el-button type="primary" @click="refresh">刷新实时数据</el-button>
-    <el-button type="primary" @click="init">初始化/获取分红数据（避免高频调用）</el-button>
+    <el-button type="primary" @click="init"
+      >初始化/获取分红数据（避免高频调用）</el-button
+    >
+    <el-button type="primary" @click="portfolioDialogVisible = true"
+      >透视盈余</el-button
+    >
   </div>
 
   <div v-if="indexList.length" class="index-bar">
     <div v-if="indexListGroup1.length" class="index-group">
       <span v-for="idx in indexListGroup1" :key="idx.code" class="index-item">
-        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span>（<span
-          :class="idx.change >= 0 ? 'red' : 'green'">{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2)
-          }}%</span>）
+        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span
+        >（<span :class="idx.change >= 0 ? 'red' : 'green'"
+          >{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2) }}%</span
+        >）
       </span>
     </div>
     <div v-if="indexListGroup2.length" class="index-group">
       <span v-for="idx in indexListGroup2" :key="idx.code" class="index-item">
-        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span>（<span
-          :class="idx.change >= 0 ? 'red' : 'green'">{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2)
-          }}%</span>）
+        {{ idx.label }}：<span class="blue">{{ Math.round(idx.price) }}</span
+        >（<span :class="idx.change >= 0 ? 'red' : 'green'"
+          >{{ idx.change >= 0 ? "+" : "" }}{{ idx.change.toFixed(2) }}%</span
+        >）
       </span>
     </div>
   </div>
@@ -412,56 +431,108 @@ const mergedTableData = computed(() => {
       </tr>
     </thead>
     <tbody>
-      <tr v-for="(row, idx) in mergedTableData" :key="idx" :class="{ 'real-time-row': row.isFirstRow }">
+      <tr
+        v-for="(row, idx) in mergedTableData"
+        :key="idx"
+        :class="{ 'real-time-row': row.isFirstRow }"
+      >
         <td v-if="row.nameRowSpan > 0" :rowspan="row.nameRowSpan" class="bold">
           <div>
             <a v-if="row.url" :href="row.url" class="stock-link">{{
               row.name
-              }}</a>
+            }}</a>
             <span v-else>{{ row.name }}</span>
           </div>
           <div class="stock-code">{{ row.code }}</div>
-          <div v-if="row.change !== undefined" class="stock-change" :class="row.change >= 0 ? 'red' : 'green'">
+          <div
+            v-if="row.change !== undefined"
+            class="stock-change"
+            :class="row.change >= 0 ? 'red' : 'green'"
+          >
             {{ row.change >= 0 ? "+" : "" }}{{ row.change.toFixed(2) }}%
           </div>
         </td>
-        <td class="bold" :class="[
-          row.isFirstRow ? 'red' : 'blue',
-          { 'bg-pink': row.decline < 5 && !row.isFirstRow },
-        ]">
-          <el-input-number v-if="row.isLastRow" v-model="editPrice[row.code]" :precision="2" :controls="false"
-            size="small" class="plan-price-input" @blur="onPriceBlur(row.code)" />
+        <td
+          class="bold"
+          :class="[
+            row.isFirstRow ? 'red' : 'blue',
+            { 'bg-pink': row.decline < 5 && !row.isFirstRow },
+          ]"
+        >
+          <el-input-number
+            v-if="row.isLastRow"
+            v-model="editPrice[row.code]"
+            :precision="2"
+            :controls="false"
+            size="small"
+            class="plan-price-input"
+            @blur="onPriceBlur(row.code)"
+          />
           <span v-else>{{ formatPrice(row.price, row.code) }}</span>
         </td>
-        <td class="bold" :class="{
-          red: !row.isFirstRow,
-          'bg-pink': row.decline < 5 && !row.isFirstRow,
-        }">
-          <el-input-number v-if="row.isLastRow" v-model="editDividend[row.code]" :precision="4" :controls="false"
-            size="small" class="plan-dividend-input" @blur="onDividendBlur(row.code)" />
+        <td
+          class="bold"
+          :class="{
+            red: !row.isFirstRow,
+            'bg-pink': row.decline < 5 && !row.isFirstRow,
+          }"
+        >
+          <el-input-number
+            v-if="row.isLastRow"
+            v-model="editDividend[row.code]"
+            :precision="4"
+            :controls="false"
+            size="small"
+            class="plan-dividend-input"
+            @blur="onDividendBlur(row.code)"
+          />
           <span v-else>{{ formatPercent(row.dividend * 100) }}</span>
         </td>
-        <td class="bold" :class="{
-          red: !row.isFirstRow,
-          'bg-pink': row.decline < 5 && !row.isFirstRow,
-        }">
-          <el-input-number v-if="row.isLastRow" v-model="editPE[row.code]" :precision="2" :controls="false" size="small"
-            class="plan-pe-input" @blur="onPEBlur(row.code)" />
+        <td
+          class="bold"
+          :class="{
+            red: !row.isFirstRow,
+            'bg-pink': row.decline < 5 && !row.isFirstRow,
+          }"
+        >
+          <el-input-number
+            v-if="row.isLastRow"
+            v-model="editPE[row.code]"
+            :precision="2"
+            :controls="false"
+            size="small"
+            class="plan-pe-input"
+            @blur="onPEBlur(row.code)"
+          />
           <span v-else>{{ formatNum(row.pe, 2).toFixed(2) }}</span>
         </td>
-        <td class="bold" :class="row.decline < 5 && !row.isFirstRow ? 'bg-light-red' : 'bg-green'
-          ">
+        <td
+          class="bold"
+          :class="
+            row.decline < 5 && !row.isFirstRow ? 'bg-light-red' : 'bg-green'
+          "
+        >
           {{ row.decline === 0 ? "-" : formatPercent(row.decline) }}
         </td>
-        <td v-if="row.exDateRowSpan > 0" :rowspan="row.exDateRowSpan" class="bold">
-          <div v-for="(ex, i) in row.exList" :key="i">{{ formatShortExDate(ex.exDate) }}</div>
+        <td
+          v-if="row.exDateRowSpan > 0"
+          :rowspan="row.exDateRowSpan"
+          class="bold"
+        >
+          <div v-for="(ex, i) in row.exList" :key="i">
+            {{ formatShortExDate(ex.exDate) }}
+          </div>
         </td>
         <td v-if="row.dpsRowSpan > 0" :rowspan="row.dpsRowSpan" class="bold">
           <div v-for="(ex, i) in row.exList" :key="i">
             {{ getCurrencyPrefix(row.code) }}{{ Number(ex.dps.toFixed(4)) }}
           </div>
         </td>
-        <td v-if="row.annualDpsRowSpan > 0" :rowspan="row.annualDpsRowSpan" class="bold bg-pink red">
+        <td
+          v-if="row.annualDpsRowSpan > 0"
+          :rowspan="row.annualDpsRowSpan"
+          class="bold bg-pink red"
+        >
           <div>
             {{ getCurrencyPrefix(row.code)
             }}{{ row.annualDps ? row.annualDps.toFixed(2) : "-" }}
@@ -473,12 +544,16 @@ const mergedTableData = computed(() => {
         </td>
         <td class="bold">
           <template v-if="row.isFirstRow && row.maxPositionRatio !== undefined">
-            <span class="normal red">{{ (row.maxPositionRatio * 100).toFixed(0) }}%</span>
+            <span class="normal red"
+              >{{ (row.maxPositionRatio * 100).toFixed(0) }}%</span
+            >
           </template>
           <template v-else>{{ row.quantity || "-" }}</template>
         </td>
         <td class="bold">
-          <template v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0">
+          <template
+            v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0"
+          >
             <template v-if="canConvertToCNY(row.code)">
               <div>
                 {{ getCurrencyPrefix(row.code)
@@ -508,25 +583,51 @@ const mergedTableData = computed(() => {
           </template>
           <span v-else>-</span>
         </td>
-        <td v-if="row.sharesHeldRowSpan > 0" :rowspan="row.sharesHeldRowSpan" class="bold">
+        <td
+          v-if="row.sharesHeldRowSpan > 0"
+          :rowspan="row.sharesHeldRowSpan"
+          class="bold"
+        >
           <div>{{ row.sharesHeld != null ? row.sharesHeld : "-" }}</div>
           <template v-if="row.sharesHeld != null && row.price > 0">
             <template v-if="canConvertToCNY(row.code)">
-              <div>{{ getCurrencyPrefix(row.code) }}{{ (row.sharesHeld * row.price).toFixed(0) }}</div>
-              <div>￥{{ ((row.sharesHeld * row.price) / exchangeRate).toFixed(0) }}</div>
+              <div>
+                {{ getCurrencyPrefix(row.code)
+                }}{{ (row.sharesHeld * row.price).toFixed(0) }}
+              </div>
+              <div>
+                ￥{{ ((row.sharesHeld * row.price) / exchangeRate).toFixed(0) }}
+              </div>
             </template>
             <template v-else>
-              <div>{{ getCurrencyPrefix(row.code) }}{{ (row.sharesHeld * row.price).toFixed(0) }}</div>
+              <div>
+                {{ getCurrencyPrefix(row.code)
+                }}{{ (row.sharesHeld * row.price).toFixed(0) }}
+              </div>
             </template>
           </template>
         </td>
-        <td v-if="row.remarkRowSpan > 0" :rowspan="row.remarkRowSpan" class="remark-cell">
+        <td
+          v-if="row.remarkRowSpan > 0"
+          :rowspan="row.remarkRowSpan"
+          class="remark-cell"
+        >
           {{ row.remark }}
         </td>
       </tr>
     </tbody>
   </table>
 
+  <el-dialog
+    v-model="portfolioDialogVisible"
+    title="透视盈余"
+    width="95%"
+    top="5vh"
+    destroy-on-close
+    class="portfolio-dialog"
+  >
+    <StockPoolPortfolio />
+  </el-dialog>
 </template>
 
 <style lang="scss">
@@ -562,7 +663,7 @@ const mergedTableData = computed(() => {
     flex-wrap: wrap;
     gap: 8px 16px;
 
-    +.index-group {
+    + .index-group {
       margin-top: 4px;
     }
   }
@@ -713,6 +814,13 @@ const mergedTableData = computed(() => {
     white-space: normal;
     max-width: 140px;
     text-align: left;
+  }
+}
+
+.portfolio-dialog {
+  .el-dialog__body {
+    max-height: 80vh;
+    overflow: auto;
   }
 }
 </style>
