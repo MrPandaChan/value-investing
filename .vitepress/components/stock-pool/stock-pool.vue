@@ -9,29 +9,32 @@ import {
   isBCode,
   isHKCode,
 } from "../../../fetch-data/helper";
-import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
-import { PlanType, planList } from "./plan";
+import { useStockPoolData, type RowData } from "./use-stock-pool-data";
+import StockPoolPortfolio from "./portfolio.vue";
 
-interface RowData {
-  name: string;
-  code: string;
-  price: number;
-  pe: number;
-  dividend: number;
-  quantity: number;
-  url?: string;
-  remark?: string;
-  maxPositionRatio?: number;
-  change?: number; // 涨跌幅，仅实时行
-  exList: { dps: number; exDate: string }[];
-}
+const {
+  tableData,
+  groupMetaMap,
+  customPrice,
+  customDividend,
+  customPE,
+  exchangeRate,
+  isLoading,
+  dividendUpdateTime,
+  dynamicUpdateTime,
+  init: initShared,
+  refresh: refreshShared,
+  loadFromStorage,
+} = useStockPoolData();
+
+const portfolioDialogVisible = ref(false);
 
 interface MergedRowData extends RowData {
   nameRowSpan: number;
-
   exDateRowSpan: number;
   dpsRowSpan: number;
   annualDpsRowSpan: number;
+  sharesHeldRowSpan: number;
   remarkRowSpan: number;
   maxPositionRatioRowSpan: number;
   annualDps: number;
@@ -43,26 +46,10 @@ interface MergedRowData extends RowData {
   rowKey: string;
 }
 
-const tableData = ref<RowData[]>([]);
-const exListMap = ref<Record<string, ExItem[]>>({});
-
-interface GroupMeta {
-  planType: PlanType;
-  dps: number;
-  effectiveDps: number; // 调整后年分红 = dps * dividendAdjust，用于计划行目标价反推
-  pricePE: number;
-  realPrice: number;
-  dividendAdjust?: number;
-}
-const groupMetaMap = ref<Record<string, GroupMeta>>({});
-const customPrice = reactive<Record<string, number>>({});
-const customDividend = reactive<Record<string, number>>({});
-const customPE = reactive<Record<string, number>>({});
 // 编辑缓冲：input 绑定到这些 buffer，仅 blur 时同步到 custom*
 const editPrice = reactive<Record<string, number>>({});
 const editDividend = reactive<Record<string, number>>({});
 const editPE = reactive<Record<string, number>>({});
-const exchangeRate = ref(1.1555); // 港币兑人民币汇率
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
 const changeSortOrder = ref<"asc" | "desc" | null>(null); // null=默认, "desc"=按涨幅, "asc"=按跌幅
 
@@ -83,6 +70,8 @@ const INDEX_CODES_GROUP1: { code: string; label: string }[] = [
   { code: "1.000922", label: "中证红利" },
   { code: "0.399006", label: "创业板指" },
   { code: "1.000688", label: "科创50" },
+  { code: "0.399371", label: "国证价值" },
+  { code: "0.399370", label: "国证成长" },
 ];
 
 // 第二组：宽基指数（上证50 → 中证2000）
@@ -106,10 +95,10 @@ const indexList = ref<IndexData[]>([]);
 const group1Labels = new Set(INDEX_CODES_GROUP1.map((v) => v.label));
 const group2Labels = new Set(INDEX_CODES_GROUP2.map((v) => v.label));
 const indexListGroup1 = computed(() =>
-  indexList.value.filter((v) => group1Labels.has(v.label))
+  indexList.value.filter((v: IndexData) => group1Labels.has(v.label)),
 );
 const indexListGroup2 = computed(() =>
-  indexList.value.filter((v) => group2Labels.has(v.label))
+  indexList.value.filter((v: IndexData) => group2Labels.has(v.label)),
 );
 
 async function fetchIndices() {
@@ -128,142 +117,11 @@ async function fetchIndices() {
   });
 }
 
-const STORAGE_KEY = "stock-pool-data";
 const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
-
-// 基于 planList 结构自动生成指纹，planList 变更时自动失效旧缓存
-function computeFingerprint(): string {
-  const entries = planList.map((item) => {
-    const base = {
-      code: item.code,
-      type: item.type === PlanType.PRICE ? "PRICE" : "DIVIDEND",
-      dpy: item.dividendPerYear,
-      adj: item.dividendAdjust,
-      remark: item.remark,
-      mpr: item.maxPositionRatio,
-    };
-    if (item.type === PlanType.PRICE) {
-      return {
-        ...base,
-        entries: item.price.map((e) => ({ v: e.value, q: e.quantity })),
-      };
-    }
-    return {
-      ...base,
-      entries: item.dividend.map((e) => ({ v: e.value, q: e.quantity })),
-    };
-  });
-  return JSON.stringify(entries);
-}
-
-// 按股票 code 去重存储，避免 name/url/exList 重复
-interface StockStorage {
-  name: string;
-  url?: string;
-  remark?: string;
-  maxPositionRatio?: number;
-  change?: number;
-  rows: {
-    price: number;
-    pe: number;
-    dividend: number;
-    quantity: number;
-  }[];
-  exList: { dps: number; exDate: string }[];
-  meta: GroupMeta;
-}
-
-interface StorageData {
-  version: string;
-  stocks: Record<string, StockStorage>;
-  customPrice: Record<string, number>;
-  customDividend: Record<string, number>;
-  customPE: Record<string, number>;
-}
-
-function saveToStorage() {
-  const stocks: Record<string, StockStorage> = {};
-  const codes = [...new Set(tableData.value.map((r) => r.code))];
-  for (const code of codes) {
-    const rows = tableData.value.filter((r) => r.code === code);
-    const first = rows[0];
-    stocks[code] = {
-      name: first.name,
-      url: first.url,
-      remark: first.remark,
-      maxPositionRatio: first.maxPositionRatio,
-      change: first.change,
-      rows: rows.map((r) => ({
-        price: r.price,
-        pe: r.pe,
-        dividend: r.dividend,
-        quantity: r.quantity,
-      })),
-      exList: first.exList,
-      meta: groupMetaMap.value[code],
-    };
-  }
-  const data: StorageData = {
-    version: computeFingerprint(),
-    stocks,
-    customPrice: { ...customPrice },
-    customDividend: { ...customDividend },
-    customPE: { ...customPE },
-  };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
-}
-
-function loadFromStorage(): boolean {
-  const raw = localStorage.getItem(STORAGE_KEY);
-  if (!raw) return false;
-  try {
-    const data: StorageData = JSON.parse(raw);
-    // 指纹不匹配则丢弃旧缓存，用最新 planList 重新初始化
-    if (data.version !== computeFingerprint()) return false;
-    const codes = Object.keys(data.stocks || {});
-    if (!codes.length) return false;
-
-    tableData.value = [];
-    groupMetaMap.value = {};
-    for (const code of codes) {
-      const s = data.stocks[code];
-      if (!s) continue;
-      groupMetaMap.value[code] = s.meta;
-      for (const r of s.rows) {
-        tableData.value.push({
-          name: s.name,
-          code,
-          price: r.price,
-          pe: r.pe,
-          dividend: r.dividend,
-          quantity: r.quantity,
-          url: s.url,
-          exList: s.exList,
-          remark: s.remark,
-          maxPositionRatio: s.maxPositionRatio,
-          change: s.change,
-        });
-      }
-    }
-
-    Object.keys(customPrice).forEach((k) => delete customPrice[k]);
-    Object.keys(customDividend).forEach((k) => delete customDividend[k]);
-    Object.keys(customPE).forEach((k) => delete customPE[k]);
-    Object.assign(customPrice, data.customPrice || {});
-    Object.assign(customDividend, data.customDividend || {});
-    Object.assign(customPE, data.customPE || {});
-    syncAllEdits();
-    return true;
-  } catch {
-    // ignore
-  }
-  return false;
-}
 
 onMounted(() => {
   loadFromStorage();
   refresh();
-  fetchIndices(); // 指数数据始终实时获取
   // 加载持久化的市场筛选
   const savedFilter = localStorage.getItem(MARKET_FILTER_STORAGE_KEY);
   if (savedFilter) {
@@ -276,12 +134,13 @@ onMounted(() => {
   }
 });
 
+// custom* 变化时同步编辑缓冲区（持久化由 composable 统一处理）
 watch(
   [customPrice, customDividend, customPE],
   () => {
-    if (tableData.value.length) saveToStorage();
+    syncAllEdits();
   },
-  { deep: true }
+  { deep: true },
 );
 
 watch(
@@ -289,244 +148,33 @@ watch(
   (val) => {
     localStorage.setItem(MARKET_FILTER_STORAGE_KEY, JSON.stringify(val));
   },
-  { deep: true }
+  { deep: true },
 );
 
-async function init() {
-  tableData.value = [];
-  const stockCodes = planList.map((v) => v.code);
-  const [dynamicDataList, exListMapResult] = await Promise.all([
-    getDynamicData([...stockCodes, "133.CNHHKD"]),
-    fetchAllDividendData(stockCodes),
-  ]);
-  exListMap.value = exListMapResult;
-  const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
-  if (exchangeTarget) {
-    exchangeRate.value = exchangeTarget.price / 100;
-  }
-  // 港股人民币分红按汇率转为港币（字符串中的港币计算值不准确）
-  for (const item of planList) {
-    if (isHKCode(item.code)) {
-      const exList = exListMap.value[item.code];
-      if (exList) {
-        for (const ex of exList) {
-          if (ex.isRmb) {
-            ex.dps = ex.dps * exchangeRate.value;
-            delete ex.isRmb;
-          }
-        }
-      }
-    }
-  }
-  // B股分红数据为人民币，转为港币后再计算股息率
-  for (const item of planList) {
-    if (isBCode(item.code)) {
-      const exList = exListMap.value[item.code];
-      if (exList) {
-        for (const ex of exList) {
-          ex.dps = ex.dps * exchangeRate.value;
-        }
-      }
-    }
-  }
-
-  for (let i = 0; i < stockCodes.length; i += 1) {
-    const item = planList[i];
-    const dynamicData = dynamicDataList.find((v) => v.code === item.code);
-    if (dynamicData) {
-      const {
-        name,
-        code,
-        price,
-        prevClose: originPrevClose,
-        PE_TTM,
-        change,
-      } = dynamicData;
-      const prevClose = isHKCode(code)
-        ? originPrevClose / 1000
-        : originPrevClose / 100;
-      // 港股 PE_TTM 是以收盘价来算的
-      const pricePE = isHKCode(code)
-        ? PE_TTM * (1 + (price - prevClose) / prevClose)
-        : PE_TTM;
-      const rawExList = exListMap.value[code] || [];
-      const exList = item.dividendPerYear
-        ? rawExList.slice(0, item.dividendPerYear)
-        : rawExList;
-      const dps =
-        Math.round(exList.reduce((pre, cur) => pre + cur.dps, 0) * 100) / 100;
-      const effectiveDps =
-        item.dividendAdjust != null
-          ? Math.round(dps * item.dividendAdjust * 100) / 100
-          : dps;
-      groupMetaMap.value[code] = {
-        planType: item.type,
-        dps,
-        effectiveDps,
-        pricePE,
-        realPrice: price,
-        dividendAdjust: item.dividendAdjust,
-      };
-      tableData.value.push({
-        name,
-        code,
-        price,
-        pe: pricePE,
-        dividend: effectiveDps / price,
-        quantity: 0,
-        url: item.url,
-        exList,
-        change,
-        remark: item.remark,
-        maxPositionRatio: item.maxPositionRatio,
-      });
-      if (item.type === PlanType.PRICE) {
-        for (let pi = 0; pi < item.price.length; pi++) {
-          const v = item.price[pi];
-          tableData.value.push({
-            name,
-            code,
-            price: v.value,
-            pe: pricePE * (v.value / price),
-            dividend: effectiveDps / v.value,
-            quantity: v.quantity,
-            url: item.url,
-            exList,
-            remark: item.remark,
-            maxPositionRatio: item.maxPositionRatio,
-          });
-        }
-      } else if (item.type === PlanType.DIVIDEND) {
-        for (let pi = 0; pi < item.dividend.length; pi++) {
-          const v = item.dividend[pi];
-          const targetPrice = effectiveDps / v.value;
-          tableData.value.push({
-            name,
-            code,
-            price: targetPrice,
-            pe: pricePE * (targetPrice / price),
-            dividend: v.value,
-            quantity: v.quantity,
-            url: item.url,
-            exList,
-            remark: item.remark,
-            maxPositionRatio: item.maxPositionRatio,
-          });
-        }
-      }
-    }
-  }
-
-  // 初始化 customPrice / customDividend / customPE 为每个公司最后一行的值
-  // 先清空
-  Object.keys(customPrice).forEach((k) => delete customPrice[k]);
-  Object.keys(customDividend).forEach((k) => delete customDividend[k]);
-  Object.keys(customPE).forEach((k) => delete customPE[k]);
-  for (const item of planList) {
-    const rows = tableData.value.filter((r) => r.code === item.code);
-    if (rows.length > 1) {
-      const lastRow = rows[rows.length - 1];
-      customPrice[item.code] = lastRow.price;
-      customDividend[item.code] = lastRow.dividend;
-      customPE[item.code] = lastRow.pe;
-    }
-  }
-
-  // 提取指数数据
-  fetchIndices();
-
-  syncAllEdits();
-  saveToStorage();
+async function refresh() {
+  await refreshShared();
+  fetchIndices(); // 指数数据始终实时获取
 }
 
-async function refresh() {
-  if (!tableData.value.length) {
-    return init();
-  }
-  const stockCodes = planList.map((v) => v.code);
-  const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
-
-  const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
-  if (exchangeTarget) {
-    exchangeRate.value = exchangeTarget.price / 100;
-  }
-
-  for (let i = 0; i < stockCodes.length; i++) {
-    const item = planList[i];
-    const dynamicData = dynamicDataList.find((v) => v.code === item.code);
-    if (!dynamicData) continue;
-
-    const { price, prevClose: originPrevClose, PE_TTM, change } = dynamicData;
-    const code = item.code;
-    const prevClose = isHKCode(code)
-      ? originPrevClose / 1000
-      : originPrevClose / 100;
-    const pricePE = isHKCode(code)
-      ? PE_TTM * (1 + (price - prevClose) / prevClose)
-      : PE_TTM;
-    const meta = groupMetaMap.value[code];
-    const dps = meta?.dps || 0;
-    const effectiveDps =
-      item.dividendAdjust != null
-        ? Math.round(dps * item.dividendAdjust * 100) / 100
-        : dps;
-
-    groupMetaMap.value[code] = {
-      ...(meta || {
-        planType: item.type,
-        dps: 0,
-        effectiveDps: 0,
-        dividendAdjust: undefined,
-      }),
-      pricePE,
-      realPrice: price,
-    };
-
-    // 更新 tableData 中该 code 的行
-    const rows = tableData.value.filter((r) => r.code === code);
-    rows.forEach((row, index) => {
-      if (index === 0) {
-        // 实时行
-        row.price = price;
-        row.pe = pricePE;
-        row.dividend = effectiveDps / price;
-        row.change = change;
-      } else {
-        // 计划行
-        if (item.type === PlanType.PRICE) {
-          const planPrice = item.price[index - 1].value;
-          row.price = planPrice;
-          row.pe = pricePE * (planPrice / price);
-          row.dividend = effectiveDps / planPrice;
-        } else {
-          const planDiv = item.dividend[index - 1].value;
-          const targetPrice = effectiveDps / planDiv;
-          row.price = targetPrice;
-          row.pe = pricePE * (targetPrice / price);
-          row.dividend = planDiv;
-        }
-      }
-    });
-
-    // 更新 custom 行
-    if (rows.length > 1) {
-      const lastRow = rows[rows.length - 1];
-      customPrice[code] = lastRow.price;
-      customDividend[code] = lastRow.dividend;
-      customPE[code] = lastRow.pe;
-    }
-  }
-
-  // 更新指数数据
+async function init() {
+  await initShared();
   fetchIndices();
-
-  syncAllEdits();
-  saveToStorage();
 }
 
 function formatPrice(price: number, code: string): string {
   const prefix = getCurrencyPrefix(code);
   return `${prefix}${formatNum(price, 2).toFixed(2)}`;
+}
+
+/** 港股名称后加 H 标识 */
+function displayName(name: string, code: string): string {
+  return isHKCode(code) ? `${name}H` : name;
+}
+
+/** 将日期字符串的年份部分取后两位，如 "2025-07-16" → "25-07-16" */
+function formatShortExDate(dateStr: string): string {
+  if (!dateStr || dateStr === "-") return dateStr;
+  return dateStr.replace(/^\d{2}(\d{2})/, "$1");
 }
 
 // 将 custom* 的值同步到编辑缓冲区
@@ -643,14 +291,17 @@ const mergedTableData = computed(() => {
       .slice(1)
       .reduce(
         (sum, r) => sum + (r.quantity && r.price ? r.quantity * r.price : 0),
-        0
+        0,
       );
 
     const mergedRows: MergedRowData[] = resolvedRows.map((row, index) => {
       const isLast = index === group.length - 1 && index > 0;
       const decline =
         index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
-      const annualDps = row.exList.reduce((pre, cur) => pre + cur.dps, 0);
+      const annualDps = row.exList.reduce(
+        (pre: number, cur: { dps: number }) => pre + cur.dps,
+        0,
+      );
       const adjustedAnnualDps =
         meta?.dividendAdjust != null
           ? annualDps * meta.dividendAdjust
@@ -662,6 +313,7 @@ const mergedTableData = computed(() => {
         exDateRowSpan: index === 0 ? group.length : 0,
         dpsRowSpan: index === 0 ? group.length : 0,
         annualDpsRowSpan: index === 0 ? group.length : 0,
+        sharesHeldRowSpan: index === 0 ? group.length : 0,
         remarkRowSpan: index === 0 ? group.length : 0,
         maxPositionRatioRowSpan: index === 0 ? group.length : 0,
         annualDps,
@@ -741,9 +393,12 @@ const mergedTableData = computed(() => {
       <template v-else-if="changeSortOrder === 'desc'">按涨幅排序</template>
       <template v-else>按跌幅排序</template>
     </el-button>
-    <el-button type="primary" @click="refresh">刷新实时数据</el-button>
-    <el-button type="primary" @click="init"
+    <el-button type="primary" :loading="isLoading" @click="refresh">刷新实时数据</el-button>
+    <el-button type="primary" :loading="isLoading" @click="init"
       >初始化/获取分红数据（避免高频调用）</el-button
+    >
+    <el-button type="primary" @click="portfolioDialogVisible = true"
+      >透视盈余</el-button
     >
   </div>
 
@@ -766,6 +421,16 @@ const mergedTableData = computed(() => {
     </div>
   </div>
 
+  <div v-if="dividendUpdateTime || dynamicUpdateTime" class="table-tip">
+    <span v-if="dynamicUpdateTime"
+      >行情数据更新时间：{{ dynamicUpdateTime }}</span
+    >
+    <span v-if="dividendUpdateTime && dynamicUpdateTime"> | </span>
+    <span v-if="dividendUpdateTime"
+      >分红数据更新时间：{{ dividendUpdateTime }}</span
+    >
+  </div>
+
   <table v-if="mergedTableData.length" class="stock-pool-table">
     <thead>
       <tr>
@@ -779,6 +444,7 @@ const mergedTableData = computed(() => {
         <th class="bold bg-pink red">年分红</th>
         <th class="bold">计划股数</th>
         <th class="bold">计划市值</th>
+        <th class="bold">持有股数/市值</th>
         <th class="bold">备注</th>
       </tr>
     </thead>
@@ -791,9 +457,9 @@ const mergedTableData = computed(() => {
         <td v-if="row.nameRowSpan > 0" :rowspan="row.nameRowSpan" class="bold">
           <div>
             <a v-if="row.url" :href="row.url" class="stock-link">{{
-              row.name
+              displayName(row.name, row.code)
             }}</a>
-            <span v-else>{{ row.name }}</span>
+            <span v-else>{{ displayName(row.name, row.code) }}</span>
           </div>
           <div class="stock-code">{{ row.code }}</div>
           <div
@@ -871,7 +537,9 @@ const mergedTableData = computed(() => {
           :rowspan="row.exDateRowSpan"
           class="bold"
         >
-          <div v-for="(ex, i) in row.exList" :key="i">{{ ex.exDate }}</div>
+          <div v-for="(ex, i) in row.exList" :key="i">
+            {{ formatShortExDate(ex.exDate) }}
+          </div>
         </td>
         <td v-if="row.dpsRowSpan > 0" :rowspan="row.dpsRowSpan" class="bold">
           <div v-for="(ex, i) in row.exList" :key="i">
@@ -934,6 +602,30 @@ const mergedTableData = computed(() => {
           <span v-else>-</span>
         </td>
         <td
+          v-if="row.sharesHeldRowSpan > 0"
+          :rowspan="row.sharesHeldRowSpan"
+          class="bold"
+        >
+          <div>{{ row.sharesHeld != null ? row.sharesHeld : "-" }}</div>
+          <template v-if="row.sharesHeld != null && row.price > 0">
+            <template v-if="canConvertToCNY(row.code)">
+              <div>
+                {{ getCurrencyPrefix(row.code)
+                }}{{ (row.sharesHeld * row.price).toFixed(0) }}
+              </div>
+              <div>
+                ￥{{ ((row.sharesHeld * row.price) / exchangeRate).toFixed(0) }}
+              </div>
+            </template>
+            <template v-else>
+              <div>
+                {{ getCurrencyPrefix(row.code)
+                }}{{ (row.sharesHeld * row.price).toFixed(0) }}
+              </div>
+            </template>
+          </template>
+        </td>
+        <td
           v-if="row.remarkRowSpan > 0"
           :rowspan="row.remarkRowSpan"
           class="remark-cell"
@@ -943,6 +635,19 @@ const mergedTableData = computed(() => {
       </tr>
     </tbody>
   </table>
+
+  <el-dialog
+    v-model="portfolioDialogVisible"
+    title="透视盈余"
+    width="80%"
+    top="2vh"
+    destroy-on-close
+    class="portfolio-dialog"
+  >
+    <div class="dialog-content">
+      <StockPoolPortfolio />
+    </div>
+  </el-dialog>
 </template>
 
 <style lang="scss">
@@ -988,13 +693,23 @@ const mergedTableData = computed(() => {
   }
 }
 
+.table-tip {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #000;
+}
+
+.vp-doc {
+  table.stock-pool-table {
+    margin-top: 0;
+  }
+}
+
 .stock-pool-table {
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 13px;
   color: #000;
-  margin-top: 16px;
-
   th,
   td {
     line-height: 22px;
@@ -1129,6 +844,28 @@ const mergedTableData = computed(() => {
     white-space: normal;
     max-width: 140px;
     text-align: left;
+  }
+
+  .dividend-time-bar {
+    background-color: #fff7e6;
+    color: #d46b08;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border-bottom: 2px solid #d46b08;
+  }
+}
+
+.portfolio-dialog {
+  .dialog-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .el-dialog__body {
+    max-height: 88vh;
+    overflow: auto;
   }
 }
 </style>

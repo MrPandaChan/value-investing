@@ -343,9 +343,11 @@ function generateFixedAssetInvestmentAnalysisData(data: StockData) {
 
 function generateReturnData(data: StockData) {
   const arr: ReturnData[] = [];
+  let prevCapitalEmployed = 0;
 
   const { report_date } = data.gjzb;
-  for (let i = 0; i < report_date.length; i += 1) {
+  // 从旧到新遍历，便于计算年度平均已动用资本 =（期初 + 期末）÷ 2
+  for (let i = report_date.length - 1; i >= 0; i -= 1) {
     const date = report_date[i];
     if (!date) continue;
 
@@ -359,15 +361,35 @@ function generateReturnData(data: StockData) {
       const assetTurnover = val("TATURNRT") * 100;
       const equityMultiplier = val("EMCONMS");
 
-      arr.push({
+      // EBIT = 营业利润 + 财务费用明细下的利息费用
+      const ebit = val("PERPROFIT") + val("INTERESTEXPENSE");
+      // 期末已动用资本 = 所有者权益合计 + 短期借款 + 一年内到期的非流动负债 + 长期借款 + 应付债券
+      const capitalEmployed =
+        val("RIGHAGGR") +
+        val("SHORTTERMBORR") +
+        val("DUENONCLIAB") +
+        val("LONGBORR") +
+        val("BDSPAYA");
+      // 年度平均已动用资本 =（期初 + 期末）÷ 2，期初取上一年的期末值
+      const avgCapitalEmployed =
+        prevCapitalEmployed > 0
+          ? (capitalEmployed + prevCapitalEmployed) / 2
+          : capitalEmployed;
+      const roce =
+        avgCapitalEmployed > 0 ? (ebit / avgCapitalEmployed) * 100 : 0;
+
+      arr.unshift({
         year: formatYear(date),
         roe, // ROE
         roa, // ROA
         roic, // ROIC
+        roce, // ROCE
         netProfitMargin, // 销售净利率
         assetTurnover, // 资产周转率
         equityMultiplier, // 权益乘数
       });
+
+      prevCapitalEmployed = capitalEmployed;
     }
   }
 

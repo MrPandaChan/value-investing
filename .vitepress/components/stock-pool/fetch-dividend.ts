@@ -5,16 +5,19 @@ import { FINANCE_URL_V1 } from "../../../fetch-data/fetch-stock-data";
 export interface DividendMainResponse {
   EX_DIVIDEND_DATE: string; // 除权除息日 "2020-07-16 00:00:00"
   IMPL_PLAN_NEWPROFILE: string; // '10派2.031195元(实施方案)'
+  PAY_CASH_DATE: string; // 派息日 '2020-07-16 00:00:00'
 }
 
 export interface HKDividendMainResponse {
   EX_DIVIDEND_DATE: string; // 除净日 '2025/06/12'
   PLAN_EXPLAIN: string; // 分红方案 '每股派港币0.66元'
+  DIVIDEND_DATE: string; // 发放日 '2025/07/11'
 }
 
 export interface ExItem {
   dps: number;
   exDate: string;
+  payDate: string; // 派息日
   isRmb?: boolean; // 港股人民币分红：dps 为人民币数值，需用汇率转为港币
 }
 
@@ -84,7 +87,7 @@ async function fetchADividend(
   const res = await axios.get(FINANCE_URL_V1, {
     params: {
       reportName: "RPT_F10_DIVIDEND_MAIN",
-      columns: "EX_DIVIDEND_DATE,IMPL_PLAN_NEWPROFILE",
+      columns: "EX_DIVIDEND_DATE,IMPL_PLAN_NEWPROFILE,PAY_CASH_DATE",
       quoteColumns: "",
       filter: `(SECUCODE="${SECUCODE}")(IS_UNASSIGN="0")`,
       pageNumber: 1,
@@ -115,6 +118,7 @@ async function fetchADividend(
       return {
         dps,
         exDate: formatExDate(item.EX_DIVIDEND_DATE),
+        payDate: formatExDate(item.PAY_CASH_DATE),
       };
     })
     .filter((item: ExItem) => item.dps > 0);
@@ -132,7 +136,7 @@ async function fetchHKDividend(
   const res = await axios.get(FINANCE_URL_V1, {
     params: {
       reportName: "RPT_HKF10_MAIN_DIVBASIC",
-      columns: "EX_DIVIDEND_DATE,PLAN_EXPLAIN",
+      columns: "EX_DIVIDEND_DATE,PLAN_EXPLAIN,DIVIDEND_DATE",
       quoteColumns: "",
       filter: `(SECUCODE="${SECUCODE}")(IS_BFP="0")`,
       pageNumber: 1,
@@ -165,6 +169,7 @@ async function fetchHKDividend(
         dps,
         isRmb: isRmb || undefined,
         exDate: formatExDate(item.EX_DIVIDEND_DATE),
+        payDate: formatExDate(item.DIVIDEND_DATE),
       };
     })
     .filter((item: ExItem) => item.dps > 0);
@@ -172,10 +177,55 @@ async function fetchHKDividend(
 
 /**
  * 批量获取多只股票的分红数据
+ * 带 localStorage 缓存：如果 codes 未变且同一天内，直接返回缓存数据
  */
+const CACHE_KEY = "dividend_cache";
+
+interface CacheData {
+  codesKey: string;
+  date: string; // "YYYY-MM-DD"
+  data: Record<string, ExItem[]>;
+}
+
+function readCache(): CacheData | null {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw) as CacheData;
+  } catch {
+    return null;
+  }
+}
+
+function writeCache(cache: CacheData): void {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify(cache));
+  } catch {
+    // localStorage 满或不可用，静默忽略
+  }
+}
+
+function getTodayStr(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+function getCodesKey(codes: string[]): string {
+  return [...codes].sort().join(",");
+}
+
 export async function fetchAllDividendData(
   codes: string[],
 ): Promise<Record<string, ExItem[]>> {
+  const today = getTodayStr();
+  const codesKey = getCodesKey(codes);
+
+  // 从 localStorage 读取缓存，codes 没变且同一天则直接返回
+  const cached = readCache();
+  if (cached && cached.codesKey === codesKey && cached.date === today) {
+    return cached.data;
+  }
+
   const results = await Promise.all(
     codes.map(async (code) => {
       const data = await fetchDividendData(code);
@@ -187,5 +237,9 @@ export async function fetchAllDividendData(
   for (const { code, data } of results) {
     map[code] = data;
   }
+
+  // 写入 localStorage 缓存
+  writeCache({ codesKey, date: today, data: map });
+
   return map;
 }

@@ -2,6 +2,7 @@ import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+import Layout from "./Layout.vue";
 import BasicRevenueTable from "../components/table/basic-revenue-table.vue";
 import CostsExpensesTable from "../components/table/costs-expenses-table.vue";
 import BalanceTable from "../components/table/balance-table.vue";
@@ -16,11 +17,11 @@ import CompareTurnoverRateTable from "../components/table/compare-turnover-rate-
 import ComparePrimaryBusinessTable from "../components/table/compare-primary-business-table.vue";
 import ProfitValuation from "../components/valuation/profit-valuation.vue";
 import ProfitValuationGroup from "../components/valuation/profit-valuation-group.vue";
-import Portfolio from "../components/portfolio/portfolio.vue";
 import ValuationEvaluation from "../components/value-evaluation/value-evaluation.vue";
 import RotationModel from "../components/rotation-model/rotation-model.vue";
 import Step from "../components/step/step.vue";
 import StockPool from "../components/stock-pool/stock-pool.vue";
+import StockPoolPortfolio from "../components/stock-pool/portfolio.vue";
 import IndustryOverview from "../components/industry-overview/industry-overview.vue";
 import "./custom.scss";
 import "./shared.scss";
@@ -29,6 +30,7 @@ const define = <T>(value: T): T => value;
 
 export default define<Theme>({
   extends: DefaultTheme,
+  Layout,
   enhanceApp: async ({ app }) => {
     // 注册 Element Plus
     app.use(ElementPlus);
@@ -56,9 +58,6 @@ export default define<Theme>({
     app.component("ProfitValuation", ProfitValuation);
     app.component("ProfitValuationGroup", ProfitValuationGroup);
 
-    // 持仓组合透视盈余
-    app.component("Portfolio", Portfolio);
-
     // 价值评估模型
     app.component("ValuationEvaluation", ValuationEvaluation);
 
@@ -67,6 +66,7 @@ export default define<Theme>({
 
     // 股票池
     app.component("StockPool", StockPool);
+    app.component("StockPoolPortfolio", StockPoolPortfolio);
 
     app.component("Step", Step);
 
