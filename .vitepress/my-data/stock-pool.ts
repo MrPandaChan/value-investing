@@ -128,7 +128,7 @@ const stocks: StockItem[] = [
     // 羚锐制药
     code: "600285",
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
-    sharesHeld: 800,
+    sharesHeld: 900,
     dividendPerYear: 1,
     remark: "预估6月中分红",
     url: "/value-investing/industry/中药/羚锐制药/",
@@ -137,7 +137,7 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.03,
       price: [
         { value: 19.2, quantity: 500 },
-        { value: 18.2, quantity: 600 },
+        { value: 18.2, quantity: 700 },
       ],
     },
   },
@@ -160,13 +160,14 @@ const stocks: StockItem[] = [
     // 青岛港H
     code: "06198",
     industry: Industry.SEAPORTS_AND_SERVICES,
+    sharesHeld: 1000,
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.047, quantity: 1000 }],
+      dividend: [{ value: 0.05, quantity: 3000 }],
     },
   },
   {
@@ -179,7 +180,13 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.047, quantity: 1500 }],
+      dividend: [
+        { value: 0.047, quantity: 1500 },
+        {
+          value: 0.05,
+          quantity: 3000,
+        },
+      ],
     },
   },
   {
