@@ -5,16 +5,19 @@ import { FINANCE_URL_V1 } from "../../../fetch-data/fetch-stock-data";
 export interface DividendMainResponse {
   EX_DIVIDEND_DATE: string; // 除权除息日 "2020-07-16 00:00:00"
   IMPL_PLAN_NEWPROFILE: string; // '10派2.031195元(实施方案)'
+  PAY_CASH_DATE: string; // 派息日 '2020-07-16 00:00:00'
 }
 
 export interface HKDividendMainResponse {
   EX_DIVIDEND_DATE: string; // 除净日 '2025/06/12'
   PLAN_EXPLAIN: string; // 分红方案 '每股派港币0.66元'
+  DIVIDEND_DATE: string; // 发放日 '2025/07/11'
 }
 
 export interface ExItem {
   dps: number;
   exDate: string;
+  payDate: string; // 派息日
   isRmb?: boolean; // 港股人民币分红：dps 为人民币数值，需用汇率转为港币
 }
 
@@ -84,7 +87,7 @@ async function fetchADividend(
   const res = await axios.get(FINANCE_URL_V1, {
     params: {
       reportName: "RPT_F10_DIVIDEND_MAIN",
-      columns: "EX_DIVIDEND_DATE,IMPL_PLAN_NEWPROFILE",
+      columns: "EX_DIVIDEND_DATE,IMPL_PLAN_NEWPROFILE,PAY_CASH_DATE",
       quoteColumns: "",
       filter: `(SECUCODE="${SECUCODE}")(IS_UNASSIGN="0")`,
       pageNumber: 1,
@@ -115,6 +118,7 @@ async function fetchADividend(
       return {
         dps,
         exDate: formatExDate(item.EX_DIVIDEND_DATE),
+        payDate: formatExDate(item.PAY_CASH_DATE),
       };
     })
     .filter((item: ExItem) => item.dps > 0);
@@ -132,7 +136,7 @@ async function fetchHKDividend(
   const res = await axios.get(FINANCE_URL_V1, {
     params: {
       reportName: "RPT_HKF10_MAIN_DIVBASIC",
-      columns: "EX_DIVIDEND_DATE,PLAN_EXPLAIN",
+      columns: "EX_DIVIDEND_DATE,PLAN_EXPLAIN,DIVIDEND_DATE",
       quoteColumns: "",
       filter: `(SECUCODE="${SECUCODE}")(IS_BFP="0")`,
       pageNumber: 1,
@@ -165,6 +169,7 @@ async function fetchHKDividend(
         dps,
         isRmb: isRmb || undefined,
         exDate: formatExDate(item.EX_DIVIDEND_DATE),
+        payDate: formatExDate(item.DIVIDEND_DATE),
       };
     })
     .filter((item: ExItem) => item.dps > 0);

@@ -17,10 +17,12 @@ import ComparePrimaryBusinessTable from "../components/table/compare-primary-bus
 import ProfitValuation from "../components/valuation/profit-valuation.vue";
 import ProfitValuationGroup from "../components/valuation/profit-valuation-group.vue";
 import Portfolio from "../components/portfolio/portfolio.vue";
+import PortfolioV2 from "../components/portfolio-v2/portfolio-v2.vue";
 import ValuationEvaluation from "../components/value-evaluation/value-evaluation.vue";
 import RotationModel from "../components/rotation-model/rotation-model.vue";
 import Step from "../components/step/step.vue";
 import StockPool from "../components/stock-pool/stock-pool.vue";
+import StockPoolPortfolio from "../components/stock-pool/portfolio.vue";
 import IndustryOverview from "../components/industry-overview/industry-overview.vue";
 import "./custom.scss";
 import "./shared.scss";
@@ -58,6 +60,7 @@ export default define<Theme>({
 
     // 持仓组合透视盈余
     app.component("Portfolio", Portfolio);
+    app.component("PortfolioV2", PortfolioV2);
 
     // 价值评估模型
     app.component("ValuationEvaluation", ValuationEvaluation);
@@ -67,6 +70,7 @@ export default define<Theme>({
 
     // 股票池
     app.component("StockPool", StockPool);
+    app.component("StockPoolPortfolio", StockPoolPortfolio);
 
     app.component("Step", Step);
 

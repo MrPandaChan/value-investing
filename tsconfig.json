@@ -41,5 +41,5 @@
     "skipLibCheck": true,
     "moduleResolution": "Bundler"
   },
-  "include": ["fetch-data"]
+  "include": ["fetch-data", ".vitepress", "env.d.ts"]
 }
