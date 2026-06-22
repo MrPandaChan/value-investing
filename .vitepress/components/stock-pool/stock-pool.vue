@@ -163,6 +163,11 @@ function formatPrice(price: number, code: string): string {
   return `${prefix}${formatNum(price, 2).toFixed(2)}`;
 }
 
+/** 港股名称后加 H 标识 */
+function displayName(name: string, code: string): string {
+  return isHKCode(code) ? `${name}H` : name;
+}
+
 /** 将日期字符串的年份部分取后两位，如 "2025-07-16" → "25-07-16" */
 function formatShortExDate(dateStr: string): string {
   if (!dateStr || dateStr === "-") return dateStr;
@@ -439,9 +444,9 @@ const mergedTableData = computed(() => {
         <td v-if="row.nameRowSpan > 0" :rowspan="row.nameRowSpan" class="bold">
           <div>
             <a v-if="row.url" :href="row.url" class="stock-link">{{
-              row.name
+              displayName(row.name, row.code)
             }}</a>
-            <span v-else>{{ row.name }}</span>
+            <span v-else>{{ displayName(row.name, row.code) }}</span>
           </div>
           <div class="stock-code">{{ row.code }}</div>
           <div
