@@ -211,6 +211,89 @@ export function generateSidebar(): SidebarConfig {
   return sidebar;
 }
 
+/** 获取所有公司文件映射（用于 company-menu 组件） */
+export type CompanyFileEntry = {
+  name: string;
+  label: string;
+  link: string;
+};
+
+export type CompanyFilesData = {
+  files: CompanyFileEntry[];
+  tracking: CompanyFileEntry[];
+  notes: CompanyFileEntry[];
+};
+
+export function getCompanyFilesMap(): Record<string, CompanyFilesData> {
+  const map: Record<string, CompanyFilesData> = {};
+
+  if (!existsSync(INDUSTRY_DIR)) return map;
+
+  for (const industryEntry of readdirSync(INDUSTRY_DIR, { withFileTypes: true })) {
+    if (!industryEntry.isDirectory() || industryEntry.name.startsWith(".")) continue;
+
+    const industryDir = join(INDUSTRY_DIR, industryEntry.name);
+
+    for (const companyEntry of readdirSync(industryDir, { withFileTypes: true })) {
+      if (!companyEntry.isDirectory()) continue;
+      // 跳过行业资料目录（与行业同名的目录）
+      if (companyEntry.name === industryEntry.name) continue;
+
+      const companyDir = join(industryDir, companyEntry.name);
+      if (!existsSync(join(companyDir, "index.md"))) continue;
+
+      const route = `/industry/${industryEntry.name}/${companyEntry.name}/`;
+      const prefix = `/industry/${industryEntry.name}/${companyEntry.name}`;
+      const data: CompanyFilesData = { files: [], tracking: [], notes: [] };
+
+      for (const entry of readdirSync(companyDir, { withFileTypes: true })) {
+        if (entry.isDirectory()) {
+          const subDir = join(companyDir, entry.name);
+          if (entry.name === "tracking") {
+            const subFiles = readdirSync(subDir).filter((f) => f.endsWith(".md"));
+            data.tracking = subFiles.map((f) => {
+              const name = getModuleName(f);
+              return {
+                name,
+                label: getDisplayName(name),
+                link: `${prefix}/tracking/${name}`,
+              };
+            });
+          } else if (entry.name === "notes") {
+            const subFiles = readdirSync(subDir).filter((f) => f.endsWith(".md"));
+            data.notes = subFiles.map((f) => {
+              const name = getModuleName(f);
+              return {
+                name,
+                label: getDisplayName(name),
+                link: `${prefix}/notes/${name}`,
+              };
+            });
+          }
+        } else if (entry.name.endsWith(".md") && entry.name !== "index.md") {
+          const modName = getModuleName(entry.name);
+          data.files.push({
+            name: modName,
+            label: getDisplayName(modName),
+            link: `${prefix}/${modName}`,
+          });
+        }
+      }
+
+      // 按 ITEM_ORDER 排序
+      data.files.sort((a, b) => {
+        const orderA = ITEM_ORDER[a.label] ?? 99;
+        const orderB = ITEM_ORDER[b.label] ?? 99;
+        return orderA - orderB;
+      });
+
+      map[route] = data;
+    }
+  }
+
+  return map;
+}
+
 /** 获取行业树（用于总览页） */
 export function getIndustryTree() {
   const tree: {

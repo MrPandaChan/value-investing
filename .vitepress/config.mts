@@ -1,5 +1,5 @@
 import { defineConfig } from "vitepress";
-import { generateSidebar, getIndustryTree } from "./generate-sidebar.js";
+import { generateSidebar, getIndustryTree, getCompanyFilesMap } from "./generate-sidebar.js";
 import { generateValueSidebar } from "./generate-value-sidebar.js";
 
 const isDev = process.env.NODE_ENV !== "production";
@@ -23,6 +23,17 @@ export default defineConfig({
         load(id) {
           if (id === "\0virtual:industry-tree") {
             return `export default ${JSON.stringify(getIndustryTree())}`;
+          }
+        },
+      },
+      {
+        name: "virtual-company-files",
+        resolveId(id) {
+          if (id === "virtual:company-files") return "\0virtual:company-files";
+        },
+        load(id) {
+          if (id === "\0virtual:company-files") {
+            return `export default ${JSON.stringify(getCompanyFilesMap())}`;
           }
         },
       },
