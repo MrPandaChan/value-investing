@@ -1,4 +1,4 @@
-import { reactive, ref, watch } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import { isHKCode, isBCode } from "../../../fetch-data/helper";
 import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
@@ -43,7 +43,8 @@ const dividendUpdateTime = ref(""); // 分红数据更新时间
 const dynamicUpdateTime = ref(""); // 动态数据（股价等）更新时间
 
 // 防止并发 init/refresh 调用
-let loadingPromise: Promise<void> | null = null;
+const loadingPromise = ref<Promise<void> | null>(null);
+const isLoading = computed(() => loadingPromise.value !== null);
 
 // 基于 stocks 结构自动生成指纹，数据变更时自动失效旧缓存
 function computeFingerprint(): string {
@@ -493,30 +494,28 @@ async function refreshData() {
 
 /** 初始化（手动点击）：强制重新获取分红数据 */
 async function init() {
-  if (loadingPromise) return loadingPromise;
-  loadingPromise = (async () => {
+  if (loadingPromise.value) return loadingPromise.value;
+  loadingPromise.value = (async () => {
     tableData.value = [];
     const stockCodes = stocks.map((v) => v.code);
     const dynamicDataList = await getDynamicData([
       ...stockCodes,
       "133.CNHHKD",
     ]);
-    // forceFetchDividend = false：先尝试从已加载的 exListMap 获取，没有则重新获取
-    // 但 init 是手动触发的，需要强制重新获取
     return buildTableData(dynamicDataList, false);
   })().finally(() => {
-    loadingPromise = null;
+    loadingPromise.value = null;
   });
-  return loadingPromise;
+  return loadingPromise.value;
 }
 
 /** 刷新实时数据（仅获取动态数据，不重新获取分红） */
 async function refresh() {
-  if (loadingPromise) return loadingPromise;
-  loadingPromise = refreshData().finally(() => {
-    loadingPromise = null;
+  if (loadingPromise.value) return loadingPromise.value;
+  loadingPromise.value = refreshData().finally(() => {
+    loadingPromise.value = null;
   });
-  return loadingPromise;
+  return loadingPromise.value;
 }
 
 // 持久化 watch（仅初始化一次）
@@ -543,6 +542,7 @@ export function useStockPoolData() {
     customDividend,
     customPE,
     exchangeRate,
+    isLoading,
     dividendUpdateTime,
     dynamicUpdateTime,
     init,
