@@ -2,6 +2,7 @@ import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+import Layout from "./Layout.vue";
 import BasicRevenueTable from "../components/table/basic-revenue-table.vue";
 import CostsExpensesTable from "../components/table/costs-expenses-table.vue";
 import BalanceTable from "../components/table/balance-table.vue";
@@ -29,6 +30,7 @@ const define = <T>(value: T): T => value;
 
 export default define<Theme>({
   extends: DefaultTheme,
+  Layout,
   enhanceApp: async ({ app }) => {
     // 注册 Element Plus
     app.use(ElementPlus);

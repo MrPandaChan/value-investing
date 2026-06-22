@@ -19,6 +19,8 @@ const {
   customDividend,
   customPE,
   exchangeRate,
+  dividendUpdateTime,
+  dynamicUpdateTime,
   init: initShared,
   refresh: refreshShared,
   loadFromStorage,
@@ -418,6 +420,16 @@ const mergedTableData = computed(() => {
     </div>
   </div>
 
+  <div v-if="dividendUpdateTime || dynamicUpdateTime" class="table-tip">
+    <span v-if="dynamicUpdateTime"
+      >行情数据更新时间：{{ dynamicUpdateTime }}</span
+    >
+    <span v-if="dividendUpdateTime && dynamicUpdateTime"> | </span>
+    <span v-if="dividendUpdateTime"
+      >分红数据更新时间：{{ dividendUpdateTime }}</span
+    >
+  </div>
+
   <table v-if="mergedTableData.length" class="stock-pool-table">
     <thead>
       <tr>
@@ -680,13 +692,23 @@ const mergedTableData = computed(() => {
   }
 }
 
+.table-tip {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #000;
+}
+
+.vp-doc {
+  table.stock-pool-table {
+    margin-top: 0;
+  }
+}
+
 .stock-pool-table {
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 13px;
   color: #000;
-  margin-top: 16px;
-
   th,
   td {
     line-height: 22px;
@@ -821,6 +843,16 @@ const mergedTableData = computed(() => {
     white-space: normal;
     max-width: 140px;
     text-align: left;
+  }
+
+  .dividend-time-bar {
+    background-color: #fff7e6;
+    color: #d46b08;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border-bottom: 2px solid #d46b08;
   }
 }
 
