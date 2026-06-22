@@ -128,7 +128,7 @@ const stocks: StockItem[] = [
     // 羚锐制药
     code: "600285",
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
-    sharesHeld: 300,
+    sharesHeld: 800,
     dividendPerYear: 1,
     remark: "预估6月中分红",
     url: "/value-investing/industry/中药/羚锐制药/",
@@ -166,7 +166,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.047, quantity: 6000 }],
+      dividend: [{ value: 0.047, quantity: 1000 }],
     },
   },
   {
@@ -179,7 +179,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.047, quantity: 2000 }],
+      dividend: [{ value: 0.047, quantity: 1500 }],
     },
   },
   {
@@ -314,7 +314,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.04, quantity: 2000 }],
+      dividend: [{ value: 0.039, quantity: 2000 }],
     },
   },
   {
@@ -415,7 +415,7 @@ const stocks: StockItem[] = [
     dividendAdjust: 0.8,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
+      maxPositionRatio: 0.03,
       dividend: [
         { value: 0.052, quantity: 100 },
         {
