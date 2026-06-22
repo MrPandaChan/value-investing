@@ -418,7 +418,7 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
       dividend: [
-        { value: 0.052, quantity: 100 },
+        { value: 0.052, quantity: 200 },
         {
           value: 0.055,
           quantity: 200,
