@@ -11,6 +11,7 @@ import {
   isSHETFCode,
 } from "../../../fetch-data/helper";
 import { useStockPoolData, type RowData } from "./use-stock-pool-data";
+import StockPoolPortfolio from "./portfolio.vue";
 
 const {
   tableData,
@@ -19,10 +20,15 @@ const {
   customDividend,
   customPE,
   exchangeRate,
+  isLoading,
+  dividendUpdateTime,
+  dynamicUpdateTime,
   init: initShared,
   refresh: refreshShared,
   loadFromStorage,
 } = useStockPoolData();
+
+const portfolioDialogVisible = ref(false);
 
 interface MergedRowData extends RowData {
   nameRowSpan: number;
@@ -159,6 +165,11 @@ async function init() {
 function formatPrice(price: number, code: string): string {
   const prefix = getCurrencyPrefix(code);
   return `${prefix}${formatNum(price, 2).toFixed(2)}`;
+}
+
+/** 港股名称后加 H 标识 */
+function displayName(name: string, code: string): string {
+  return isHKCode(code) ? `${name}H` : name;
 }
 
 /** 将日期字符串的年份部分取后两位，如 "2025-07-16" → "25-07-16" */
@@ -383,9 +394,14 @@ const mergedTableData = computed(() => {
       <template v-else-if="changeSortOrder === 'desc'">按涨幅排序</template>
       <template v-else>按跌幅排序</template>
     </el-button>
-    <el-button type="primary" @click="refresh">刷新实时数据</el-button>
-    <el-button type="primary" @click="init"
+    <el-button type="primary" :loading="isLoading" @click="refresh"
+      >刷新实时数据</el-button
+    >
+    <el-button type="primary" :loading="isLoading" @click="init"
       >初始化/获取分红数据（避免高频调用）</el-button
+    >
+    <el-button type="primary" @click="portfolioDialogVisible = true"
+      >透视盈余</el-button
     >
   </div>
 
@@ -406,6 +422,16 @@ const mergedTableData = computed(() => {
         >）
       </span>
     </div>
+  </div>
+
+  <div v-if="dividendUpdateTime || dynamicUpdateTime" class="table-tip">
+    <span v-if="dynamicUpdateTime"
+      >行情数据更新时间：{{ dynamicUpdateTime }}</span
+    >
+    <span v-if="dividendUpdateTime && dynamicUpdateTime"> | </span>
+    <span v-if="dividendUpdateTime"
+      >分红数据更新时间：{{ dividendUpdateTime }}</span
+    >
   </div>
 
   <table v-if="mergedTableData.length" class="stock-pool-table">
@@ -434,9 +460,9 @@ const mergedTableData = computed(() => {
         <td v-if="row.nameRowSpan > 0" :rowspan="row.nameRowSpan" class="bold">
           <div>
             <a v-if="row.url" :href="row.url" class="stock-link">{{
-              row.name
+              displayName(row.name, row.code)
             }}</a>
-            <span v-else>{{ row.name }}</span>
+            <span v-else>{{ displayName(row.name, row.code) }}</span>
           </div>
           <div class="stock-code">{{ row.code }}</div>
           <div
@@ -612,6 +638,19 @@ const mergedTableData = computed(() => {
       </tr>
     </tbody>
   </table>
+
+  <el-dialog
+    v-model="portfolioDialogVisible"
+    title="透视盈余"
+    width="80%"
+    top="2vh"
+    destroy-on-close
+    class="portfolio-dialog"
+  >
+    <div class="dialog-content">
+      <StockPoolPortfolio />
+    </div>
+  </el-dialog>
 </template>
 
 <style lang="scss">
@@ -657,13 +696,23 @@ const mergedTableData = computed(() => {
   }
 }
 
+.table-tip {
+  margin-top: 16px;
+  font-size: 13px;
+  color: #000;
+}
+
+.vp-doc {
+  table.stock-pool-table {
+    margin-top: 0;
+  }
+}
+
 .stock-pool-table {
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 13px;
   color: #000;
-  margin-top: 16px;
-
   th,
   td {
     line-height: 22px;
@@ -798,6 +847,28 @@ const mergedTableData = computed(() => {
     white-space: normal;
     max-width: 140px;
     text-align: left;
+  }
+
+  .dividend-time-bar {
+    background-color: #fff7e6;
+    color: #d46b08;
+    font-size: 12px;
+    font-weight: bold;
+    padding: 6px 8px;
+    text-align: center;
+    border-bottom: 2px solid #d46b08;
+  }
+}
+
+.portfolio-dialog {
+  .dialog-content {
+    display: flex;
+    justify-content: center;
+  }
+
+  .el-dialog__body {
+    max-height: 88vh;
+    overflow: auto;
   }
 }
 </style>

@@ -2,6 +2,7 @@ import type { Theme } from "vitepress";
 import DefaultTheme from "vitepress/theme";
 import ElementPlus from "element-plus";
 import "element-plus/dist/index.css";
+import Layout from "./Layout.vue";
 import BasicRevenueTable from "../components/table/basic-revenue-table.vue";
 import CostsExpensesTable from "../components/table/costs-expenses-table.vue";
 import BalanceTable from "../components/table/balance-table.vue";
@@ -16,8 +17,6 @@ import CompareTurnoverRateTable from "../components/table/compare-turnover-rate-
 import ComparePrimaryBusinessTable from "../components/table/compare-primary-business-table.vue";
 import ProfitValuation from "../components/valuation/profit-valuation.vue";
 import ProfitValuationGroup from "../components/valuation/profit-valuation-group.vue";
-import Portfolio from "../components/portfolio/portfolio.vue";
-import PortfolioV2 from "../components/portfolio-v2/portfolio-v2.vue";
 import ValuationEvaluation from "../components/value-evaluation/value-evaluation.vue";
 import RotationModel from "../components/rotation-model/rotation-model.vue";
 import Step from "../components/step/step.vue";
@@ -31,6 +30,7 @@ const define = <T>(value: T): T => value;
 
 export default define<Theme>({
   extends: DefaultTheme,
+  Layout,
   enhanceApp: async ({ app }) => {
     // 注册 Element Plus
     app.use(ElementPlus);
@@ -57,10 +57,6 @@ export default define<Theme>({
     // 估值
     app.component("ProfitValuation", ProfitValuation);
     app.component("ProfitValuationGroup", ProfitValuationGroup);
-
-    // 持仓组合透视盈余
-    app.component("Portfolio", Portfolio);
-    app.component("PortfolioV2", PortfolioV2);
 
     // 价值评估模型
     app.component("ValuationEvaluation", ValuationEvaluation);

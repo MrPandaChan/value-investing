@@ -106,7 +106,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      price: [{ value: 46.5, quantity: 100 }],
+      price: [{ value: 47, quantity: 100 }],
     },
   },
   {
@@ -158,13 +158,14 @@ const stocks: StockItem[] = [
     // 青岛港H
     code: "06198",
     industry: Industry.SEAPORTS_AND_SERVICES,
+    sharesHeld: 1000,
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.047, quantity: 6000 }],
+      dividend: [{ value: 0.05, quantity: 3000 }],
     },
   },
   {
@@ -206,7 +207,10 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 36.5, quantity: 300 }],
+      price: [
+        { value: 36.5, quantity: 200 },
+        { value: 35.5, quantity: 200 },
+      ],
     },
   },
   {
@@ -305,7 +309,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.04, quantity: 500 }],
+      dividend: [{ value: 0.039, quantity: 500 }],
     },
   },
   {
@@ -345,7 +349,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.2,
-      dividend: [{ value: 0.055, quantity: 2200 }],
+      dividend: [{ value: 0.05, quantity: 2000 }],
     },
   },
   {
@@ -375,7 +379,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      price: [{ value: 26, quantity: 800 }],
+      price: [{ value: 26, quantity: 400 }],
     },
   },
   {
@@ -404,8 +408,14 @@ const stocks: StockItem[] = [
     dividendAdjust: 0.8,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
-      dividend: [{ value: 0.052, quantity: 200 }],
+      maxPositionRatio: 0.03,
+      dividend: [
+        { value: 0.052, quantity: 200 },
+        {
+          value: 0.055,
+          quantity: 200,
+        },
+      ],
     },
   },
   {
@@ -459,7 +469,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.06, quantity: 100 }],
+      dividend: [{ value: 0.065, quantity: 100 }],
     },
   },
   {
@@ -501,8 +511,8 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
-        { value: 0.058, quantity: 100 },
-        { value: 0.062, quantity: 200 },
+        { value: 0.058, quantity: 200 },
+        { value: 0.062, quantity: 400 },
       ],
     },
   },
@@ -545,9 +555,9 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
-        { value: 0.055, quantity: 500 },
-        { value: 0.06, quantity: 800 },
-        { value: 0.065, quantity: 1200 },
+        { value: 0.05, quantity: 500 },
+        { value: 0.055, quantity: 800 },
+        { value: 0.06, quantity: 1200 },
       ],
     },
   },
@@ -561,7 +571,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.058, quantity: 200 }],
+      dividend: [{ value: 0.057, quantity: 100 }],
     },
   },
   {

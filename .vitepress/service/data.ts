@@ -2275,10 +2275,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300308",
-      "price": 1367.88,
-      "marketValue": 1525507160731,
-      "PB": 44.04,
-      "PE_TTM": 102.05,
+      "price": 1382.33,
+      "marketValue": 1541622301294,
+      "PB": 44.5,
+      "PE_TTM": 103.13,
       "totalSharesOutstanding": 1115234641
     },
     "recentYearData": {
@@ -4500,10 +4500,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300750",
-      "price": 391.55,
-      "marketValue": 1811555868414,
-      "PB": 5.54,
-      "PE_TTM": 22.94,
+      "price": 408.98,
+      "marketValue": 1892197979987,
+      "PB": 5.79,
+      "PE_TTM": 23.96,
       "totalSharesOutstanding": 4626627170
     },
     "recentYearData": {
@@ -6689,10 +6689,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300866",
-      "price": 117.11,
-      "marketValue": 62803324754,
-      "PB": 6.12,
-      "PE_TTM": 24.91,
+      "price": 115.47,
+      "marketValue": 61923831520,
+      "PB": 6.04,
+      "PE_TTM": 24.56,
       "totalSharesOutstanding": 536276362
     },
     "recentYearData": {
@@ -9754,10 +9754,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600018",
-      "price": 4.89,
-      "marketValue": 113839006865,
-      "PB": 0.78,
-      "PE_TTM": 8.33,
+      "price": 4.9,
+      "marketValue": 114071806470,
+      "PB": 0.79,
+      "PE_TTM": 8.35,
       "totalSharesOutstanding": 23279960504
     },
     "recentYearData": {
@@ -12291,10 +12291,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600025",
-      "price": 9.3,
-      "marketValue": 173269176590,
-      "PB": 2.44,
-      "PE_TTM": 20.29,
+      "price": 9.37,
+      "marketValue": 174573353188,
+      "PB": 2.6,
+      "PE_TTM": 20.44,
       "totalSharesOutstanding": 18631094257
     },
     "recentYearData": {
@@ -15224,10 +15224,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600028",
-      "price": 4.71,
-      "marketValue": 569559171986,
-      "PB": 0.69,
-      "PE_TTM": 16.02,
+      "price": 4.77,
+      "marketValue": 576814702839,
+      "PB": 0.7,
+      "PE_TTM": 16.22,
       "totalSharesOutstanding": 120925514222
     },
     "recentYearData": {
@@ -17941,10 +17941,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600036",
-      "price": 37.26,
-      "marketValue": 939691447093,
-      "PB": 0.83,
-      "PE_TTM": 6.23,
+      "price": 37.65,
+      "marketValue": 949527186878,
+      "PB": 0.84,
+      "PE_TTM": 6.3,
       "totalSharesOutstanding": 25219845601
     },
     "recentYearData": {
@@ -20298,10 +20298,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600050",
-      "price": 4.28,
-      "marketValue": 133811740400,
-      "PB": 0.79,
-      "PE_TTM": 15.46,
+      "price": 4.32,
+      "marketValue": 135062317413,
+      "PB": 0.8,
+      "PE_TTM": 15.6,
       "totalSharesOutstanding": 31264425327
     },
     "recentYearData": {
@@ -22631,10 +22631,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600066",
-      "price": 26.04,
-      "marketValue": 57650977367,
-      "PB": 4.89,
-      "PE_TTM": 10.56,
+      "price": 27.42,
+      "marketValue": 60706213495,
+      "PB": 5.15,
+      "PE_TTM": 11.12,
       "totalSharesOutstanding": 2213939223
     },
     "recentYearData": {
@@ -25276,10 +25276,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600096",
-      "price": 29.57,
-      "marketValue": 53905835916,
-      "PB": 2.26,
-      "PE_TTM": 10.19,
+      "price": 32.53,
+      "marketValue": 59301888479,
+      "PB": 2.48,
+      "PE_TTM": 11.21,
       "totalSharesOutstanding": 1822990731
     },
     "recentYearData": {
@@ -28197,10 +28197,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600188",
-      "price": 19.38,
-      "marketValue": 194514192148,
-      "PB": 2.54,
-      "PE_TTM": 20.36,
+      "price": 19.84,
+      "marketValue": 199131144077,
+      "PB": 2.6,
+      "PE_TTM": 20.84,
       "totalSharesOutstanding": 10036852020
     },
     "recentYearData": {
@@ -30842,10 +30842,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600285",
-      "price": 20.12,
-      "marketValue": 11410363578,
-      "PB": 3.77,
-      "PE_TTM": 14.46,
+      "price": 19.93,
+      "marketValue": 11302611636,
+      "PB": 3.74,
+      "PE_TTM": 14.32,
       "totalSharesOutstanding": 567115486
     },
     "recentYearData": {
@@ -33511,10 +33511,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600309",
-      "price": 69.05,
-      "marketValue": 216159065775,
-      "PB": 2.01,
-      "PE_TTM": 16.42,
+      "price": 74.3,
+      "marketValue": 232594041812,
+      "PB": 2.16,
+      "PE_TTM": 17.67,
       "totalSharesOutstanding": 3130471626
     },
     "recentYearData": {
@@ -36120,10 +36120,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600406",
-      "price": 23.06,
-      "marketValue": 185212296957,
-      "PB": 3.46,
-      "PE_TTM": 22.26,
+      "price": 23.95,
+      "marketValue": 192360559936,
+      "PB": 3.6,
+      "PE_TTM": 23.12,
       "totalSharesOutstanding": 8031756156
     },
     "recentYearData": {
@@ -38693,10 +38693,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600415",
-      "price": 10.54,
-      "marketValue": 57796714242,
-      "PB": 2.74,
-      "PE_TTM": 13.16,
+      "price": 10.63,
+      "marketValue": 58290234572,
+      "PB": 2.76,
+      "PE_TTM": 13.28,
       "totalSharesOutstanding": 5483559226
     },
     "recentYearData": {
@@ -41830,10 +41830,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600436",
-      "price": 112.89,
-      "marketValue": 68108479837,
-      "PB": 4.48,
-      "PE_TTM": 35.8,
+      "price": 114.29,
+      "marketValue": 68953123931,
+      "PB": 4.53,
+      "PE_TTM": 36.25,
       "totalSharesOutstanding": 603317210
     },
     "recentYearData": {
@@ -44067,10 +44067,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600519",
-      "price": 1215,
-      "marketValue": 1518849145215,
-      "PB": 6.44,
-      "PE_TTM": 18.36,
+      "price": 1241.41,
+      "marketValue": 1551863800297,
+      "PB": 6.58,
+      "PE_TTM": 18.76,
       "totalSharesOutstanding": 1250081601
     },
     "recentYearData": {
@@ -46796,10 +46796,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600612",
-      "price": 34.43,
-      "marketValue": 18010944615,
-      "PB": 1.31,
-      "PE_TTM": 10.66,
+      "price": 34.21,
+      "marketValue": 17895858706,
+      "PB": 1.3,
+      "PE_TTM": 10.6,
       "totalSharesOutstanding": 523117764
     },
     "recentYearData": {
@@ -49129,10 +49129,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600636",
-      "price": 1.84,
-      "marketValue": 807091716,
-      "PB": 0.46,
-      "PE_TTM": -3.06,
+      "price": 1.71,
+      "marketValue": 750068931,
+      "PB": 0.43,
+      "PE_TTM": -2.85,
       "totalSharesOutstanding": 438636802
     },
     "recentYearData": {
@@ -51366,10 +51366,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600660",
-      "price": 49.95,
-      "marketValue": 130356689423,
-      "PB": 3.62,
-      "PE_TTM": 14.49,
+      "price": 50.05,
+      "marketValue": 130617663777,
+      "PB": 3.63,
+      "PE_TTM": 14.52,
       "totalSharesOutstanding": 2609743532
     },
     "recentYearData": {
@@ -53867,10 +53867,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600690",
-      "price": 19.45,
-      "marketValue": 182394896693,
-      "PB": 1.46,
-      "PE_TTM": 9.74,
+      "price": 19.98,
+      "marketValue": 187365040407,
+      "PB": 1.5,
+      "PE_TTM": 10.01,
       "totalSharesOutstanding": 9377629650
     },
     "recentYearData": {
@@ -56176,10 +56176,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600809",
-      "price": 113.28,
-      "marketValue": 138197547068,
-      "PB": 3.07,
-      "PE_TTM": 12.58,
+      "price": 113.61,
+      "marketValue": 138600135261,
+      "PB": 3.08,
+      "PE_TTM": 12.62,
       "totalSharesOutstanding": 1219964222
     },
     "recentYearData": {
@@ -58773,10 +58773,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600873",
-      "price": 8.31,
-      "marketValue": 23303248112,
-      "PB": 1.42,
-      "PE_TTM": 9.79,
+      "price": 8.25,
+      "marketValue": 23134993613,
+      "PB": 1.41,
+      "PE_TTM": 9.72,
       "totalSharesOutstanding": 2804241650
     },
     "recentYearData": {
@@ -61610,10 +61610,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600886",
-      "price": 13.07,
-      "marketValue": 104618740004,
-      "PB": 1.52,
-      "PE_TTM": 14.07,
+      "price": 13.18,
+      "marketValue": 105499234373,
+      "PB": 1.53,
+      "PE_TTM": 14.19,
       "totalSharesOutstanding": 8004494262
     },
     "recentYearData": {
@@ -64063,10 +64063,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600887",
-      "price": 24.26,
-      "marketValue": 153453249781,
-      "PB": 2.85,
-      "PE_TTM": 12.7,
+      "price": 24.63,
+      "marketValue": 155793633228,
+      "PB": 2.89,
+      "PE_TTM": 12.89,
       "totalSharesOutstanding": 6325360667
     },
     "recentYearData": {
@@ -66060,10 +66060,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600900",
-      "price": 26.66,
-      "marketValue": 652322684309,
-      "PB": 2.86,
-      "PE_TTM": 18.08,
+      "price": 26.94,
+      "marketValue": 659173785269,
+      "PB": 2.89,
+      "PE_TTM": 18.27,
       "totalSharesOutstanding": 24468217716
     },
     "recentYearData": {
@@ -67975,10 +67975,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600938",
-      "price": 30.7,
-      "marketValue": 1459169587309,
-      "PB": 1.74,
-      "PE_TTM": 11.7,
+      "price": 30.54,
+      "marketValue": 1451564794671,
+      "PB": 1.73,
+      "PE_TTM": 11.64,
       "totalSharesOutstanding": 47529953984
     },
     "recentYearData": {
@@ -71184,10 +71184,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600941",
-      "price": 91.65,
-      "marketValue": 1986918370361,
+      "price": 91.93,
+      "marketValue": 1992988606517,
       "PB": 1.4,
-      "PE_TTM": 14.63,
+      "PE_TTM": 14.68,
       "totalSharesOutstanding": 21679414843
     },
     "recentYearData": {
@@ -73133,10 +73133,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601000",
-      "price": 4.17,
-      "marketValue": 24711122320,
-      "PB": 1.19,
-      "PE_TTM": 11.84,
+      "price": 4.09,
+      "marketValue": 24237048031,
+      "PB": 1.17,
+      "PE_TTM": 11.61,
       "totalSharesOutstanding": 5925928614
     },
     "recentYearData": {
@@ -76378,10 +76378,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601018",
-      "price": 3.26,
-      "marketValue": 63421306181,
-      "PB": 0.79,
-      "PE_TTM": 12.28,
+      "price": 3.28,
+      "marketValue": 63810393949,
+      "PB": 0.8,
+      "PE_TTM": 12.36,
       "totalSharesOutstanding": 19454388399
     },
     "recentYearData": {
@@ -78699,10 +78699,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601058",
-      "price": 11.5,
-      "marketValue": 37813152979,
-      "PB": 1.73,
-      "PE_TTM": 10.68,
+      "price": 12.23,
+      "marketValue": 40213466168,
+      "PB": 1.84,
+      "PE_TTM": 11.36,
       "totalSharesOutstanding": 3288100259
     },
     "recentYearData": {
@@ -81644,10 +81644,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601088",
-      "price": 41.26,
-      "marketValue": 894906059383,
-      "PB": 1.86,
-      "PE_TTM": 17.35,
+      "price": 41.51,
+      "marketValue": 900328417959,
+      "PB": 1.87,
+      "PE_TTM": 17.46,
       "totalSharesOutstanding": 21689434304
     },
     "recentYearData": {
@@ -84865,10 +84865,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601225",
-      "price": 22.97,
-      "marketValue": 222694150000,
-      "PB": 2.39,
-      "PE_TTM": 13.77,
+      "price": 23.3,
+      "marketValue": 225893500000,
+      "PB": 2.42,
+      "PE_TTM": 13.97,
       "totalSharesOutstanding": 9695000000
     },
     "recentYearData": {
@@ -87954,10 +87954,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601298",
-      "price": 8.36,
-      "marketValue": 54265596000,
+      "price": 8.32,
+      "marketValue": 54005952000,
       "PB": 1.15,
-      "PE_TTM": 10.35,
+      "PE_TTM": 10.3,
       "totalSharesOutstanding": 6491100000
     },
     "recentYearData": {
@@ -90503,10 +90503,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601318",
-      "price": 49.38,
-      "marketValue": 894155361713,
-      "PB": 0.91,
-      "PE_TTM": 6.73,
+      "price": 51.98,
+      "marketValue": 941235230900,
+      "PB": 0.95,
+      "PE_TTM": 7.09,
       "totalSharesOutstanding": 18107641995
     },
     "recentYearData": {
@@ -93016,10 +93016,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601600",
-      "price": 9.38,
-      "marketValue": 160913631047,
-      "PB": 2,
-      "PE_TTM": 10.97,
+      "price": 9.86,
+      "marketValue": 169148017284,
+      "PB": 2.1,
+      "PE_TTM": 11.53,
       "totalSharesOutstanding": 17154971327
     },
     "recentYearData": {
@@ -95493,10 +95493,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601717",
-      "price": 16.13,
-      "marketValue": 28798500871,
-      "PB": 1.26,
-      "PE_TTM": 7.03,
+      "price": 16.03,
+      "marketValue": 28619960878,
+      "PB": 1.25,
+      "PE_TTM": 6.99,
       "totalSharesOutstanding": 1785399930
     },
     "recentYearData": {
@@ -100207,10 +100207,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601857",
-      "price": 9.58,
-      "marketValue": 1753340967496,
-      "PB": 1.11,
-      "PE_TTM": 11.08,
+      "price": 9.68,
+      "marketValue": 1771643065278,
+      "PB": 1.12,
+      "PE_TTM": 11.2,
       "totalSharesOutstanding": 183020977818
     },
     "recentYearData": {
@@ -103464,10 +103464,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601898",
-      "price": 13.5,
-      "marketValue": 178991955900,
-      "PB": 1.09,
-      "PE_TTM": 10.08,
+      "price": 13.73,
+      "marketValue": 182041448482,
+      "PB": 1.11,
+      "PE_TTM": 10.25,
       "totalSharesOutstanding": 13258663400
     },
     "recentYearData": {
@@ -106625,10 +106625,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601899",
-      "price": 29.69,
-      "marketValue": 789478317127,
-      "PB": 4.17,
-      "PE_TTM": 12.8,
+      "price": 30.44,
+      "marketValue": 809421353094,
+      "PB": 4.27,
+      "PE_TTM": 13.12,
       "totalSharesOutstanding": 26590714622
     },
     "recentYearData": {
@@ -109342,10 +109342,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601919",
-      "price": 13.8,
-      "marketValue": 211319177089,
-      "PB": 0.92,
-      "PE_TTM": 8.44,
+      "price": 14.15,
+      "marketValue": 216678721435,
+      "PB": 0.95,
+      "PE_TTM": 8.65,
       "totalSharesOutstanding": 15312983847
     },
     "recentYearData": {
@@ -111221,10 +111221,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603173",
-      "price": 35.59,
-      "marketValue": 5694400000,
-      "PB": 2.92,
-      "PE_TTM": 14.31,
+      "price": 35.7,
+      "marketValue": 5712000000,
+      "PB": 2.93,
+      "PE_TTM": 14.35,
       "totalSharesOutstanding": 160000000
     },
     "recentYearData": {
@@ -114274,10 +114274,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603195",
-      "price": 39.35,
-      "marketValue": 71141240320,
-      "PB": 4.95,
-      "PE_TTM": 17.13,
+      "price": 39.47,
+      "marketValue": 71358189465,
+      "PB": 4.96,
+      "PE_TTM": 17.18,
       "totalSharesOutstanding": 1807909538
     },
     "recentYearData": {
@@ -117123,10 +117123,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603288",
-      "price": 32.44,
-      "marketValue": 189833201183,
-      "PB": 5.08,
-      "PE_TTM": 26.08,
+      "price": 33.04,
+      "marketValue": 193344296150,
+      "PB": 5.18,
+      "PE_TTM": 26.56,
       "totalSharesOutstanding": 5851824944
     },
     "recentYearData": {
@@ -119216,10 +119216,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603486",
-      "price": 53.08,
-      "marketValue": 30711994579,
-      "PB": 3.31,
-      "PE_TTM": 18.19,
+      "price": 53.8,
+      "marketValue": 31128585312,
+      "PB": 3.35,
+      "PE_TTM": 18.44,
       "totalSharesOutstanding": 578598240
     },
     "recentYearData": {
@@ -122473,10 +122473,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603529",
-      "price": 20.21,
-      "marketValue": 17540117166,
-      "PB": 1.86,
-      "PE_TTM": 10.79,
+      "price": 20.08,
+      "marketValue": 17427291079,
+      "PB": 1.85,
+      "PE_TTM": 10.72,
       "totalSharesOutstanding": 867892982
     },
     "recentYearData": {
@@ -124878,10 +124878,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603565",
-      "price": 10.39,
-      "marketValue": 21819655640,
+      "price": 10.4,
+      "marketValue": 21840656271,
       "PB": 2.09,
-      "PE_TTM": 11.01,
+      "PE_TTM": 11.02,
       "totalSharesOutstanding": 2100063103
     },
     "recentYearData": {
@@ -127079,10 +127079,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603599",
-      "price": 10.4,
-      "marketValue": 9466801188,
-      "PB": 0.93,
-      "PE_TTM": 14.49,
+      "price": 10.9,
+      "marketValue": 9921935861,
+      "PB": 0.97,
+      "PE_TTM": 15.19,
       "totalSharesOutstanding": 910269345
     },
     "recentYearData": {
@@ -130636,10 +130636,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603993",
-      "price": 20.04,
-      "marketValue": 428741975927,
-      "PB": 5.18,
-      "PE_TTM": 17.75,
+      "price": 21.65,
+      "marketValue": 463186815310,
+      "PB": 5.6,
+      "PE_TTM": 19.18,
       "totalSharesOutstanding": 21394310176
     },
     "recentYearData": {
@@ -133336,8 +133336,8 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "605499",
-      "price": 120.6,
-      "marketValue": 88544436786,
+      "price": 120.63,
+      "marketValue": 88566462765,
       "PB": 4.65,
       "PE_TTM": 18.87,
       "totalSharesOutstanding": 734199310
@@ -135561,10 +135561,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "689009",
-      "price": 33.94,
-      "marketValue": 24818370993,
-      "PB": 3.26,
-      "PE_TTM": 16.49,
+      "price": 34,
+      "marketValue": 24862245544,
+      "PB": 3.27,
+      "PE_TTM": 16.52,
       "totalSharesOutstanding": 731242516
     },
     "recentYearData": {
@@ -138086,10 +138086,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000333",
-      "price": 78,
-      "marketValue": 593848234746,
-      "PB": 2.56,
-      "PE_TTM": 13.44,
+      "price": 78.28,
+      "marketValue": 595979997640,
+      "PB": 2.89,
+      "PE_TTM": 13.48,
       "totalSharesOutstanding": 7613438907
     },
     "recentYearData": {
@@ -140119,10 +140119,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000408",
-      "price": 76.42,
-      "marketValue": 119896465501,
-      "PB": 7.84,
-      "PE_TTM": 25.63,
+      "price": 78.96,
+      "marketValue": 123881508976,
+      "PB": 8.1,
+      "PE_TTM": 26.48,
       "totalSharesOutstanding": 1568914754
     },
     "recentYearData": {
@@ -142452,10 +142452,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000423",
-      "price": 45.68,
-      "marketValue": 29416861320,
-      "PB": 2.98,
-      "PE_TTM": 16.63,
+      "price": 45.3,
+      "marketValue": 29172150127,
+      "PB": 2.96,
+      "PE_TTM": 16.49,
       "totalSharesOutstanding": 643976824
     },
     "recentYearData": {
@@ -145253,10 +145253,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000538",
-      "price": 48.43,
-      "marketValue": 86411837863,
-      "PB": 2.2,
-      "PE_TTM": 16.44,
+      "price": 48.66,
+      "marketValue": 86822218262,
+      "PB": 2.21,
+      "PE_TTM": 16.52,
       "totalSharesOutstanding": 1784262603
     },
     "recentYearData": {
@@ -147454,10 +147454,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000568",
-      "price": 80.93,
-      "marketValue": 119120985401,
-      "PB": 2.31,
-      "PE_TTM": 11.98,
+      "price": 81.27,
+      "marketValue": 119621431898,
+      "PB": 2.32,
+      "PE_TTM": 12.03,
       "totalSharesOutstanding": 1471901463
     },
     "recentYearData": {
@@ -149691,10 +149691,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000596",
-      "price": 81.71,
-      "marketValue": 43191906000,
-      "PB": 1.65,
-      "PE_TTM": 15.28,
+      "price": 82.54,
+      "marketValue": 43630644000,
+      "PB": 1.67,
+      "PE_TTM": 15.44,
       "totalSharesOutstanding": 528600000
     },
     "recentYearData": {
@@ -152228,10 +152228,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000651",
-      "price": 36.72,
-      "marketValue": 205683618810,
-      "PB": 1.35,
-      "PE_TTM": 7.05,
+      "price": 36.99,
+      "marketValue": 207195998360,
+      "PB": 1.36,
+      "PE_TTM": 7.1,
       "totalSharesOutstanding": 5601405741
     },
     "recentYearData": {
@@ -154657,10 +154657,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000786",
-      "price": 19.72,
-      "marketValue": 33568094748,
-      "PB": 1.25,
-      "PE_TTM": 11.7,
+      "price": 19.51,
+      "marketValue": 33210625179,
+      "PB": 1.24,
+      "PE_TTM": 11.58,
       "totalSharesOutstanding": 1702236042
     },
     "recentYearData": {
@@ -157242,10 +157242,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000792",
-      "price": 29.75,
-      "marketValue": 157424283095,
-      "PB": 3.52,
-      "PE_TTM": 15.26,
+      "price": 30.69,
+      "marketValue": 162398361283,
+      "PB": 3.63,
+      "PE_TTM": 15.75,
       "totalSharesOutstanding": 5291572541
     },
     "recentYearData": {
@@ -159479,10 +159479,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000807",
-      "price": 24.17,
-      "marketValue": 83820530479,
-      "PB": 2.44,
-      "PE_TTM": 9.66,
+      "price": 25.99,
+      "marketValue": 90132212956,
+      "PB": 2.62,
+      "PE_TTM": 10.38,
       "totalSharesOutstanding": 3467957405
     },
     "recentYearData": {
@@ -162076,10 +162076,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000858",
-      "price": 75.85,
-      "marketValue": 294419967179,
-      "PB": 2.3,
-      "PE_TTM": 23.37,
+      "price": 76.55,
+      "marketValue": 297137092783,
+      "PB": 2.32,
+      "PE_TTM": 23.58,
       "totalSharesOutstanding": 3881608005
     },
     "recentYearData": {
@@ -164673,10 +164673,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000915",
-      "price": 27.06,
-      "marketValue": 6341009984,
-      "PB": 2.13,
-      "PE_TTM": 13.69,
+      "price": 26.91,
+      "marketValue": 6305860261,
+      "PB": 2.52,
+      "PE_TTM": 13.61,
       "totalSharesOutstanding": 234331485
     },
     "recentYearData": {
@@ -166958,10 +166958,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "001872",
-      "price": 19.43,
-      "marketValue": 48223262305,
-      "PB": 0.74,
-      "PE_TTM": 10.36,
+      "price": 19.72,
+      "marketValue": 48943012488,
+      "PB": 0.75,
+      "PE_TTM": 10.52,
       "totalSharesOutstanding": 2481897185
     },
     "recentYearData": {
@@ -169531,10 +169531,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002014",
-      "price": 10.32,
-      "marketValue": 6320916057,
-      "PB": 2.63,
-      "PE_TTM": 14.37,
+      "price": 10.42,
+      "marketValue": 6382165244,
+      "PB": 2.66,
+      "PE_TTM": 14.51,
       "totalSharesOutstanding": 612491866
     },
     "recentYearData": {
@@ -172524,10 +172524,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002027",
-      "price": 5.02,
-      "marketValue": 72499842625,
-      "PB": 4.69,
-      "PE_TTM": 20.13,
+      "price": 5.06,
+      "marketValue": 73077530614,
+      "PB": 4.73,
+      "PE_TTM": 20.3,
       "totalSharesOutstanding": 14442199726
     },
     "recentYearData": {
@@ -175889,10 +175889,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002352",
-      "price": 31.55,
-      "marketValue": 166120469861,
-      "PB": 1.69,
-      "PE_TTM": 14.56,
+      "price": 31.86,
+      "marketValue": 167752715365,
+      "PB": 1.71,
+      "PE_TTM": 14.7,
       "totalSharesOutstanding": 5265308078
     },
     "recentYearData": {
@@ -179134,10 +179134,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002508",
-      "price": 15.52,
-      "marketValue": 14665451976,
+      "price": 15.46,
+      "marketValue": 14608755641,
       "PB": 1.29,
-      "PE_TTM": 12,
+      "PE_TTM": 11.95,
       "totalSharesOutstanding": 944938916
     },
     "recentYearData": {
@@ -181227,10 +181227,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002555",
-      "price": 17.47,
-      "marketValue": 38647792287,
-      "PB": 2.94,
-      "PE_TTM": 11.99,
+      "price": 18.26,
+      "marketValue": 40395460055,
+      "PB": 3.07,
+      "PE_TTM": 12.53,
       "totalSharesOutstanding": 2212237681
     },
     "recentYearData": {
@@ -183704,10 +183704,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002594",
-      "price": 88.13,
-      "marketValue": 803498621403,
-      "PB": 3.46,
-      "PE_TTM": 29.17,
+      "price": 87.59,
+      "marketValue": 798575334718,
+      "PB": 3.44,
+      "PE_TTM": 28.99,
       "totalSharesOutstanding": 9117197565
     },
     "recentYearData": {
@@ -187045,10 +187045,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002867",
-      "price": 11.83,
-      "marketValue": 12841156154,
-      "PB": 1.9,
-      "PE_TTM": 11.22,
+      "price": 11.74,
+      "marketValue": 12743463504,
+      "PB": 1.88,
+      "PE_TTM": 11.13,
       "totalSharesOutstanding": 1085473893
     },
     "recentYearData": {

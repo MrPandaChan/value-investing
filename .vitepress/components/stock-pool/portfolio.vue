@@ -97,9 +97,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
 
     // 每股净利润 = 当前股价 / PE_TTM（转为人民币）
     const rawEps = meta.pricePE > 0 ? price / meta.pricePE : 0;
-    const eps = canConvertToCNY(s.code)
-      ? rawEps / exchangeRate.value
-      : rawEps;
+    const eps = canConvertToCNY(s.code) ? rawEps / exchangeRate.value : rawEps;
     // 持有净利润 = 每股净利润 * 持有股数（人民币）
     const holdingNetProfit = eps * sharesHeld;
     // 公司留存部分 = 持有净利润 - 预计分红（人民币）
@@ -177,10 +175,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
 const totals = computed(() => {
   const rows = portfolioData.value;
   const sumHoldingValue = rows.reduce((s, r) => s + r.holdingValue, 0);
-  const sumExpectedDividend = rows.reduce(
-    (s, r) => s + r.expectedDividend,
-    0,
-  );
+  const sumExpectedDividend = rows.reduce((s, r) => s + r.expectedDividend, 0);
   const sumPaidDividend = rows.reduce((s, r) => s + r.paidDividend, 0);
   const sumUnpaidDividend = rows.reduce((s, r) => s + r.unpaidDividend, 0);
   const sumDividendTax = rows.reduce((s, r) => s + r.dividendTax, 0);
@@ -260,7 +255,9 @@ onMounted(() => {
           <td class="bold">{{ item.name }}</td>
           <td>{{ item.sharesHeld }}</td>
           <td>￥{{ formatNum(item.holdingValue, 2).toFixed(2) }}</td>
-          <td class="bold">{{ formatPercent(item.shareholdingRatio * 100) }}</td>
+          <td class="bold">
+            {{ formatPercent(item.shareholdingRatio * 100) }}
+          </td>
           <td v-if="item.rowspan > 0" :rowspan="item.rowspan" class="bold">
             {{ item.industry }}
           </td>
@@ -382,6 +379,10 @@ onMounted(() => {
               {{ formatPercent(totals.perspectiveSurplusRate * 100) }}
             </td>
           </tr>
+          <tr>
+            <td>PE_TTM</td>
+            <td>{{ (1 / totals.perspectiveSurplusRate).toFixed(2) }}</td>
+          </tr>
         </tbody>
       </table>
     </footer>
@@ -409,7 +410,7 @@ onMounted(() => {
     td {
       line-height: 22px;
       white-space: nowrap;
-      padding: 2px;
+      padding: 2px 4px;
       color: #000;
       font-weight: normal;
       border: 1px solid #000;

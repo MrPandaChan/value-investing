@@ -1,4 +1,4 @@
-import { reactive, ref, watch } from "vue";
+import { computed, reactive, ref, watch } from "vue";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import { isHKCode, isBCode } from "../../../fetch-data/helper";
 import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
@@ -29,6 +29,7 @@ export interface GroupMeta {
 }
 
 const STORAGE_KEY = "stock-pool-data";
+const DIVIDEND_STORAGE_KEY = "stock-pool-dividend";
 
 // 模块级共享状态（单例）：所有使用此 composable 的组件共享同一份数据
 const tableData = ref<RowData[]>([]);
@@ -38,9 +39,12 @@ const customPrice = reactive<Record<string, number>>({});
 const customDividend = reactive<Record<string, number>>({});
 const customPE = reactive<Record<string, number>>({});
 const exchangeRate = ref(1.1555); // 港币兑人民币汇率（1 CNY = exchangeRate HKD）
+const dividendUpdateTime = ref(""); // 分红数据更新时间
+const dynamicUpdateTime = ref(""); // 动态数据（股价等）更新时间
 
 // 防止并发 init/refresh 调用
-let loadingPromise: Promise<void> | null = null;
+const loadingPromise = ref<Promise<void> | null>(null);
+const isLoading = computed(() => loadingPromise.value !== null);
 
 // 基于 stocks 结构自动生成指纹，数据变更时自动失效旧缓存
 function computeFingerprint(): string {
@@ -68,6 +72,45 @@ function computeFingerprint(): string {
   return JSON.stringify(entries);
 }
 
+/** 分红数据指纹：仅基于公司 code，公司增删变化时才需重新获取分红 */
+function computeDividendFingerprint(): string {
+  return JSON.stringify([...stocks.map((s) => s.code)].sort());
+}
+
+// ========== 分红数据独立存储（code 变化才失效） ==========
+
+interface DividendStorageData {
+  version: string; // 分红指纹
+  timestamp: string; // 更新时间
+  data: Record<string, ExItem[]>;
+}
+
+function saveDividendToStorage() {
+  const data: DividendStorageData = {
+    version: computeDividendFingerprint(),
+    timestamp: dividendUpdateTime.value,
+    data: { ...exListMap.value },
+  };
+  localStorage.setItem(DIVIDEND_STORAGE_KEY, JSON.stringify(data));
+}
+
+function loadDividendFromStorage(): boolean {
+  const raw = localStorage.getItem(DIVIDEND_STORAGE_KEY);
+  if (!raw) return false;
+  try {
+    const data: DividendStorageData = JSON.parse(raw);
+    if (data.version !== computeDividendFingerprint()) return false;
+    exListMap.value = data.data || {};
+    if (data.timestamp) dividendUpdateTime.value = data.timestamp;
+    return true;
+  } catch {
+    // ignore
+  }
+  return false;
+}
+
+// ========== 表结构存储（所有字段变更时失效） ==========
+
 // 按股票 code 去重存储，避免 name/url/exList 重复
 interface StockStorage {
   name: string;
@@ -92,6 +135,7 @@ interface StorageData {
   customPrice: Record<string, number>;
   customDividend: Record<string, number>;
   customPE: Record<string, number>;
+  dynamicUpdateTime?: string;
 }
 
 function saveToStorage() {
@@ -125,6 +169,7 @@ function saveToStorage() {
     customPrice: { ...customPrice },
     customDividend: { ...customDividend },
     customPE: { ...customPE },
+    dynamicUpdateTime: dynamicUpdateTime.value,
   };
   localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
@@ -169,6 +214,11 @@ function loadFromStorage(): boolean {
     Object.assign(customPrice, data.customPrice || {});
     Object.assign(customDividend, data.customDividend || {});
     Object.assign(customPE, data.customPE || {});
+
+    if (data.dynamicUpdateTime) dynamicUpdateTime.value = data.dynamicUpdateTime;
+
+    // 尝试从分红独立存储加载更新时间（不影响表结构加载成败）
+    loadDividendFromStorage();
     return true;
   } catch {
     // ignore
@@ -176,18 +226,43 @@ function loadFromStorage(): boolean {
   return false;
 }
 
-async function initData() {
-  tableData.value = [];
+/**
+ * 统一构建 tableData 的处理函数，避免 initData / rebuildTable 重复代码
+ * @param dynamicDataList 动态行情数据
+ * @param useCachedDividend 是否使用缓存的 exListMap（不重新获取）
+ */
+async function buildTableData(
+  dynamicDataList: Awaited<ReturnType<typeof getDynamicData>>,
+  useCachedDividend: boolean,
+) {
   const stockCodes = stocks.map((v) => v.code);
-  const [dynamicDataList, exListMapResult] = await Promise.all([
-    getDynamicData([...stockCodes, "133.CNHHKD"]),
-    fetchAllDividendData(stockCodes),
-  ]);
-  exListMap.value = exListMapResult;
+
+  if (!useCachedDividend) {
+    // 重新获取分红数据
+    const exListMapResult = await fetchAllDividendData(stockCodes);
+    exListMap.value = exListMapResult;
+    dividendUpdateTime.value = new Date().toLocaleString();
+    saveDividendToStorage();
+  } else if (!Object.keys(exListMap.value).length) {
+    // 尝试从分红存储加载
+    loadDividendFromStorage();
+    if (!Object.keys(exListMap.value).length) {
+      // 分红存储也没有，需要重新获取
+      const exListMapResult = await fetchAllDividendData(stockCodes);
+      exListMap.value = exListMapResult;
+      dividendUpdateTime.value = new Date().toLocaleString();
+      saveDividendToStorage();
+    }
+  }
+
+  // 动态数据已获取，记录更新时间
+  dynamicUpdateTime.value = new Date().toLocaleString();
+
   const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
   if (exchangeTarget) {
     exchangeRate.value = exchangeTarget.price / 100;
   }
+
   // 港股人民币分红按汇率转为港币（字符串中的港币计算值不准确）
   for (const item of stocks) {
     if (isHKCode(item.code)) {
@@ -327,11 +402,21 @@ async function initData() {
 }
 
 async function refreshData() {
-  if (!tableData.value.length) {
-    return initData();
-  }
   const stockCodes = stocks.map((v) => v.code);
+
+  if (!tableData.value.length) {
+    // 表为空：先尝试从分红存储加载，避免不必要的 API 调用
+    tableData.value = [];
+    const dynamicDataList = await getDynamicData([
+      ...stockCodes,
+      "133.CNHHKD",
+    ]);
+    return buildTableData(dynamicDataList, true);
+  }
+
   const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
+
+  dynamicUpdateTime.value = new Date().toLocaleString();
 
   const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
   if (exchangeTarget) {
@@ -407,22 +492,30 @@ async function refreshData() {
   saveToStorage();
 }
 
-/** 初始化：获取动态数据 + 分红数据（避免高频调用） */
+/** 初始化（手动点击）：强制重新获取分红数据 */
 async function init() {
-  if (loadingPromise) return loadingPromise;
-  loadingPromise = initData().finally(() => {
-    loadingPromise = null;
+  if (loadingPromise.value) return loadingPromise.value;
+  loadingPromise.value = (async () => {
+    tableData.value = [];
+    const stockCodes = stocks.map((v) => v.code);
+    const dynamicDataList = await getDynamicData([
+      ...stockCodes,
+      "133.CNHHKD",
+    ]);
+    return buildTableData(dynamicDataList, false);
+  })().finally(() => {
+    loadingPromise.value = null;
   });
-  return loadingPromise;
+  return loadingPromise.value;
 }
 
 /** 刷新实时数据（仅获取动态数据，不重新获取分红） */
 async function refresh() {
-  if (loadingPromise) return loadingPromise;
-  loadingPromise = refreshData().finally(() => {
-    loadingPromise = null;
+  if (loadingPromise.value) return loadingPromise.value;
+  loadingPromise.value = refreshData().finally(() => {
+    loadingPromise.value = null;
   });
-  return loadingPromise;
+  return loadingPromise.value;
 }
 
 // 持久化 watch（仅初始化一次）
@@ -449,6 +542,9 @@ export function useStockPoolData() {
     customDividend,
     customPE,
     exchangeRate,
+    isLoading,
+    dividendUpdateTime,
+    dynamicUpdateTime,
     init,
     refresh,
     loadFromStorage,
