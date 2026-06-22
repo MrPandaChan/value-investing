@@ -177,10 +177,55 @@ async function fetchHKDividend(
 
 /**
  * 批量获取多只股票的分红数据
+ * 带 localStorage 缓存：如果 codes 未变且同一天内，直接返回缓存数据
  */
+const CACHE_KEY = "dividend_cache";
+
+interface CacheData {
+  codesKey: string;
+  date: string; // "YYYY-MM-DD"
+  data: Record<string, ExItem[]>;
+}
+
+function readCache(): CacheData | null {
+  try {
+    const raw = localStorage.getItem(CACHE_KEY);
+    if (!raw) return null;
+    return JSON.parse(raw) as CacheData;
+  } catch {
+    return null;
+  }
+}
+
+function writeCache(cache: CacheData): void {
+  try {
+    localStorage.setItem(CACHE_KEY, JSON.stringify(cache));
+  } catch {
+    // localStorage 满或不可用，静默忽略
+  }
+}
+
+function getTodayStr(): string {
+  const d = new Date();
+  return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
+}
+
+function getCodesKey(codes: string[]): string {
+  return [...codes].sort().join(",");
+}
+
 export async function fetchAllDividendData(
   codes: string[],
 ): Promise<Record<string, ExItem[]>> {
+  const today = getTodayStr();
+  const codesKey = getCodesKey(codes);
+
+  // 从 localStorage 读取缓存，codes 没变且同一天则直接返回
+  const cached = readCache();
+  if (cached && cached.codesKey === codesKey && cached.date === today) {
+    return cached.data;
+  }
+
   const results = await Promise.all(
     codes.map(async (code) => {
       const data = await fetchDividendData(code);
@@ -192,5 +237,9 @@ export async function fetchAllDividendData(
   for (const { code, data } of results) {
     map[code] = data;
   }
+
+  // 写入 localStorage 缓存
+  writeCache({ codesKey, date: today, data: map });
+
   return map;
 }
