@@ -70,14 +70,13 @@ const stocks: StockItem[] = [
     // 腾讯控股
     code: "00700",
     industry: Industry.INTERNET,
-    sharesHeld: 300,
+    sharesHeld: 400,
     dividendAdjust: 0.8,
     url: "/value-investing/industry/互联网/腾讯控股/",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.2,
       price: [
-        { value: 420, quantity: 100 },
         { value: 400, quantity: 200 },
         { value: 380, quantity: 200 },
       ],
