@@ -121,7 +121,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      price: [{ value: 44, quantity: 500 }],
+      price: [{ value: 44, quantity: 400 }],
     },
   },
   {
@@ -342,7 +342,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.2,
-      dividend: [{ value: 0.055, quantity: 1400 }],
+      dividend: [{ value: 0.05, quantity: 1400 }],
     },
   },
   {
@@ -410,7 +410,7 @@ const stocks: StockItem[] = [
     // 申洲国际
     code: "02313",
     industry: Industry.TEXTILES_AND_APPAREL,
-    sharesHeld: 200,
+    sharesHeld: 300,
     url: "/value-investing/industry/纺织服装/申洲国际/",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
@@ -418,7 +418,6 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
       dividend: [
-        { value: 0.052, quantity: 200 },
         {
           value: 0.055,
           quantity: 200,
@@ -586,6 +585,7 @@ const stocks: StockItem[] = [
     // 安踏体育
     code: "02020",
     industry: Industry.TEXTILES_AND_APPAREL,
+    sharesHeld: 200,
     url: "/value-investing/industry/纺织服装/安踏体育/",
     dividendAdjust: 0.8,
     dividendPerYear: 2,
@@ -593,9 +593,8 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [
-        { value: 68, quantity: 200 },
-        { value: 64, quantity: 400 },
-        { value: 61, quantity: 600 },
+        { value: 64, quantity: 200 },
+        { value: 60, quantity: 400 },
       ],
     },
   },
