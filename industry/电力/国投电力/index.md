@@ -1,5 +1,11 @@
 # 国投电力
 
+## 文章推荐
+
+[为什么是国投电力？（2025.02.02 兰爸爸得自留地）](https://mp.weixin.qq.com/s/3xs19xgHqLvUPoUPtbs9og)
+
+[对国投电力的摸底和思考（2025.02.01 心智升级）](https://mp.weixin.qq.com/s/NVFD0LHe7qrkEuh9dOFAQg)
+
 ## 杂谈
 
 25.1.7 雅砻江公司没的说，但是我是不想和国投那堆火电沾边。
