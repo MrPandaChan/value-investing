@@ -89,9 +89,12 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.2,
       price: [
-        { value: 403, quantity: 200 },
-        { value: 386, quantity: 200 },
-        { value: 370, quantity: 200 },
+        // { value: 403, quantity: 200 },
+        // { value: 386, quantity: 200 },
+        // { value: 370, quantity: 200 },
+        // 直接取中间的价格
+        { value: 394.6, quantity: 200 },
+        { value: 378, quantity: 200 },
       ],
     },
   },
@@ -327,11 +330,11 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     dividendAdjust: 0.8 * 1.3,
     remark:
-      "0.8 × 1.3 预估今年30%增长，后续几乎不增长，不易买多，优先买移动和电信",
+      "0.8 × 1.3 预估今年30%增长，后续几乎不增长，不宜买多，优先买移动和电信",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
-      dividend: [{ value: 0.062, quantity: 1500 }],
+      dividend: [{ value: 0.063, quantity: 1500 }],
     },
   },
   {
