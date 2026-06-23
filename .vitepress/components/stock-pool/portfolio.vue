@@ -6,7 +6,7 @@ import {
   canConvertToCNY,
   isHKCode,
 } from "../../../fetch-data/helper";
-import { stocks } from "../../my-data/stock-pool";
+import { cash, stocks } from "../../my-data/stock-pool";
 import { useStockPoolData } from "./use-stock-pool-data";
 
 const { tableData, groupMetaMap, exchangeRate, refresh } = useStockPoolData();
@@ -60,7 +60,37 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     (s) => s.sharesHeld && s.sharesHeld > 0 && groupMetaMap.value[s.code],
   );
 
-  if (!heldStocks.length) return [];
+  const cashVal = cash.value || 0;
+  const result: PortfolioRow[] = [];
+  let idx = 1;
+
+  // 无持仓股票时，若有现金则仅显示现金行
+  if (!heldStocks.length) {
+    if (cashVal > 0) {
+      result.push({
+        index: 1,
+        name: "现金",
+        code: "__cash__",
+        sharesHeld: 0,
+        holdingValue: cashVal,
+        shareholdingRatio: 1,
+        industry: "现金",
+        industryRatio: 1,
+        expectedDividend: 0,
+        paidDividend: 0,
+        unpaidDividend: 0,
+        eps: 0,
+        dividendRate: 0,
+        dividendTax: 0,
+        netDividend: 0,
+        holdingNetProfit: 0,
+        retainedNetProfit: 0,
+        peTtm: 0,
+        rowspan: 1,
+      });
+    }
+    return result;
+  }
 
   // 计算每只股票的指标
   const items = heldStocks.map((s) => {
@@ -134,12 +164,14 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     };
   });
 
-  // 组合总市值
-  const totalHoldingValue = items.reduce((sum, i) => sum + i.holdingValue, 0);
+  // 组合总市值（含现金）
+  const totalHoldingValue =
+    items.reduce((sum, i) => sum + i.holdingValue, 0) + cashVal;
 
-  // 持股比例
+  // 持股比例（基于含现金的总市值）
   items.forEach((i) => {
-    i.shareholdingRatio = i.holdingValue / totalHoldingValue;
+    i.shareholdingRatio =
+      totalHoldingValue > 0 ? i.holdingValue / totalHoldingValue : 0;
   });
 
   // 按持有金额降序排列
@@ -154,11 +186,10 @@ const portfolioData = computed<PortfolioRow[]>(() => {
   }
 
   // 构建结果，计算行业比例和 rowspan
-  const result: PortfolioRow[] = [];
-  let idx = 1;
   for (const [, arr] of industryMap) {
     const industryTotal = arr.reduce((sum, i) => sum + i.holdingValue, 0);
-    const industryRatio = industryTotal / totalHoldingValue;
+    const industryRatio =
+      totalHoldingValue > 0 ? industryTotal / totalHoldingValue : 0;
     arr.forEach((item, i) => {
       result.push({
         ...item,
@@ -166,6 +197,33 @@ const portfolioData = computed<PortfolioRow[]>(() => {
         industryRatio,
         rowspan: i === 0 ? arr.length : 0,
       });
+    });
+  }
+
+  // 现金行（放到最后，参与总市值和比例计算）
+  if (cashVal > 0) {
+    result.push({
+      index: idx++,
+      name: "现金",
+      code: "__cash__",
+      sharesHeld: 0,
+      holdingValue: cashVal,
+      shareholdingRatio:
+        totalHoldingValue > 0 ? cashVal / totalHoldingValue : 0,
+      industry: "现金",
+      industryRatio:
+        totalHoldingValue > 0 ? cashVal / totalHoldingValue : 0,
+      expectedDividend: 0,
+      paidDividend: 0,
+      unpaidDividend: 0,
+      eps: 0,
+      dividendRate: 0,
+      dividendTax: 0,
+      netDividend: 0,
+      holdingNetProfit: 0,
+      retainedNetProfit: 0,
+      peTtm: 0,
+      rowspan: 1,
     });
   }
 

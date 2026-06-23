@@ -1,3 +1,5 @@
+import { ref } from "vue";
+
 export enum Industry {
   INTERNET = "互联网",
   AUTOMOTIVE_AND_PARTS = "汽车与零配件",
@@ -695,12 +697,13 @@ const stocks: StockItem[] = [
    * TODO:
    * 古茗
    * 东鹏特饮
-   * 陕西煤业
-   * 中远海控
    * 新奥能源
    * 中国财险
    * 卫龙美味
    */
 ];
+
+/** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
+export const cash = ref(178000);
 
 export { stocks };
