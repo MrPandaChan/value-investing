@@ -149,8 +149,8 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
-        { value: 0.07, quantity: 900 },
-        { value: 0.075, quantity: 1000 },
+        { value: 0.07, quantity: 1000 },
+        { value: 0.075, quantity: 1200 },
       ],
     },
   },
@@ -280,7 +280,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.05, quantity: 2000 }],
+      dividend: [{ value: 0.05, quantity: 700 }],
     },
   },
   {
@@ -306,9 +306,12 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     remark: "预估7月中分红",
     plan: {
-      type: PlanType.DIVIDEND,
+      type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.039, quantity: 500 }],
+      price: [
+        { value: 26, quantity: 300 },
+        { value: 25, quantity: 400 },
+      ],
     },
   },
   {
@@ -391,7 +394,7 @@ const stocks: StockItem[] = [
     remark: "",
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.05,
+      maxPositionRatio: 0.03,
       price: [
         { value: 11.22, quantity: 300 },
         { value: 10.62, quantity: 400 },
@@ -554,9 +557,9 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
-        { value: 0.05, quantity: 500 },
-        { value: 0.055, quantity: 800 },
-        { value: 0.06, quantity: 1200 },
+        { value: 0.05, quantity: 200 },
+        { value: 0.055, quantity: 300 },
+        { value: 0.06, quantity: 400 },
       ],
     },
   },
@@ -626,7 +629,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
-      dividend: [{ value: 0.09, quantity: 500 }],
+      dividend: [{ value: 0.09, quantity: 200 }],
     },
   },
   {
