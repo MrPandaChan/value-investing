@@ -187,15 +187,16 @@ const stocks: StockItem[] = [
     // 永新股份
     code: "002014",
     industry: Industry.PAPER_AND_PACKAGING,
-    sharesHeld: 800,
     url: "/value-investing/industry/塑料包装/永新股份/",
     remark: "2025年分红率有降低，分红比过去两年低",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [
-        { value: 9.7, quantity: 500 },
-        { value: 9.2, quantity: 500 },
+        { value: 11, quantity: 300 },
+        { value: 10.5, quantity: 300 },
+        { value: 10, quantity: 400 },
+        { value: 9.5, quantity: 500 },
       ],
     },
   },
