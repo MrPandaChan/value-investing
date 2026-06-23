@@ -1,3 +1,5 @@
+import { ref } from "vue";
+
 export enum Industry {
   INTERNET = "互联网",
   AUTOMOTIVE_AND_PARTS = "汽车与零配件",
@@ -68,17 +70,27 @@ export interface StockItem {
 const stocks: StockItem[] = [
   {
     // 腾讯控股
+    /**
+     * 9.5% - 467
+     * 10% - 443
+     * 10.5% - 422
+     * 11% - 403
+     * 11.5% - 386
+     * 12% - 370
+     */
     code: "00700",
     industry: Industry.INTERNET,
     dividendAdjust: 0.8,
     url: "/value-investing/industry/互联网/腾讯控股/",
+    remark:
+      "预期收益率：9.5% - 467；10% - 443；10.5% - 422；11% - 403；11.5% - 386；12% - 370",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.2,
       price: [
-        { value: 420, quantity: 100 },
-        { value: 400, quantity: 200 },
-        { value: 380, quantity: 200 },
+        { value: 403, quantity: 200 },
+        { value: 386, quantity: 200 },
+        { value: 370, quantity: 200 },
       ],
     },
   },
@@ -188,15 +200,15 @@ const stocks: StockItem[] = [
     code: "002014",
     industry: Industry.PAPER_AND_PACKAGING,
     url: "/value-investing/industry/塑料包装/永新股份/",
-    remark: "2025年分红率有降低，分红比过去两年低",
+    remark:
+      "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2000股，5.2%股息率接回来",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [
-        { value: 11, quantity: 300 },
-        { value: 10.5, quantity: 300 },
-        { value: 10, quantity: 400 },
-        { value: 9.5, quantity: 500 },
+        { value: 10.5, quantity: 800 },
+        { value: 9.7, quantity: 400 },
+        { value: 9.2, quantity: 400 },
       ],
     },
   },
@@ -280,11 +292,26 @@ const stocks: StockItem[] = [
     industry: Industry.TELECOMMUNICATION_SERVICES,
     url: "/value-investing/industry/电信服务/中国电信/",
     dividendPerYear: 2,
-    remark: "预估9月初分红",
+    remark: "类债属性，几乎不增长，不宜买多，预计9月底分红",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.05, quantity: 700 }],
+      dividend: [{ value: 0.055, quantity: 700 }],
+    },
+  },
+  {
+    // 中国电信H
+    code: "00728",
+    industry: Industry.TELECOMMUNICATION_SERVICES,
+    sharesHeld: 2000,
+    url: "/value-investing/industry/电信服务/中国电信/",
+    dividendPerYear: 2,
+    dividendAdjust: 0.8,
+    remark: "类债属性，几乎不增长，不宜买多",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.062, quantity: 4000 }],
     },
   },
   {
@@ -294,7 +321,8 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/电信服务/中国铁塔/",
     dividendPerYear: 2,
     dividendAdjust: 0.8 * 1.3,
-    remark: "0.8 × 1.3 预估今年30%增长",
+    remark:
+      "0.8 × 1.3 预估今年30%增长，后续几乎不增长，不易买多，优先买移动和电信",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
@@ -342,7 +370,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.2,
-      dividend: [{ value: 0.055, quantity: 500 }],
+      dividend: [{ value: 0.05, quantity: 500 }],
     },
   },
   {
@@ -416,7 +444,6 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
       dividend: [
-        { value: 0.052, quantity: 200 },
         {
           value: 0.055,
           quantity: 200,
@@ -460,10 +487,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [
-        { value: 0.075, quantity: 100 },
-        { value: 0.08, quantity: 200 },
-      ],
+      dividend: [{ value: 0.08, quantity: 100 }],
     },
   },
   {
@@ -584,6 +608,7 @@ const stocks: StockItem[] = [
     // 安踏体育
     code: "02020",
     industry: Industry.TEXTILES_AND_APPAREL,
+    sharesHeld: 200,
     url: "/value-investing/industry/纺织服装/安踏体育/",
     dividendAdjust: 0.8,
     dividendPerYear: 2,
@@ -591,9 +616,8 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [
-        { value: 68, quantity: 200 },
-        { value: 64, quantity: 400 },
-        { value: 61, quantity: 600 },
+        { value: 64, quantity: 200 },
+        { value: 60, quantity: 400 },
       ],
     },
   },
@@ -666,12 +690,13 @@ const stocks: StockItem[] = [
    * TODO:
    * 古茗
    * 东鹏特饮
-   * 陕西煤业
-   * 中远海控
    * 新奥能源
    * 中国财险
    * 卫龙美味
    */
 ];
+
+/** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
+export const cash = ref(178000);
 
 export { stocks };
