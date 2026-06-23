@@ -68,17 +68,28 @@ export interface StockItem {
 const stocks: StockItem[] = [
   {
     // 腾讯控股
+    /**
+     * 9.5% - 467
+     * 10% - 443
+     * 10.5% - 422
+     * 11% - 403
+     * 11.5% - 386
+     * 12% - 370
+     */
     code: "00700",
     industry: Industry.INTERNET,
     sharesHeld: 400,
     dividendAdjust: 0.8,
     url: "/value-investing/industry/互联网/腾讯控股/",
+    remark:
+      "预期收益率：9.5% - 467；10% - 443；10.5% - 422；11% - 403；11.5% - 386；12% - 370",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.2,
       price: [
-        { value: 400, quantity: 200 },
-        { value: 380, quantity: 200 },
+        { value: 403, quantity: 200 },
+        { value: 386, quantity: 200 },
+        { value: 370, quantity: 200 },
       ],
     },
   },
@@ -283,11 +294,26 @@ const stocks: StockItem[] = [
     industry: Industry.TELECOMMUNICATION_SERVICES,
     url: "/value-investing/industry/电信服务/中国电信/",
     dividendPerYear: 2,
-    remark: "预估9月初分红",
+    remark: "类债属性，几乎不增长，不宜买多，预计9月底分红",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.05, quantity: 2000 }],
+      dividend: [{ value: 0.055, quantity: 2000 }],
+    },
+  },
+  {
+    // 中国电信H
+    code: "00728",
+    industry: Industry.TELECOMMUNICATION_SERVICES,
+    sharesHeld: 2000,
+    url: "/value-investing/industry/电信服务/中国电信/",
+    dividendPerYear: 2,
+    dividendAdjust: 0.8,
+    remark: "类债属性，几乎不增长，不宜买多",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.062, quantity: 4000 }],
     },
   },
   {
@@ -298,7 +324,8 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/电信服务/中国铁塔/",
     dividendPerYear: 2,
     dividendAdjust: 0.8 * 1.3,
-    remark: "0.8 × 1.3 预估今年30%增长",
+    remark:
+      "0.8 × 1.3 预估今年30%增长，后续几乎不增长，不易买多，优先买移动和电信",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
