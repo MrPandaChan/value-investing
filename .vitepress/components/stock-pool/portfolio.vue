@@ -456,13 +456,34 @@ onMounted(() => {
   </div>
 </template>
 
+<style lang="scss">
+/* 定义颜色变量（暗黑模式通过 html.dark 切换） */
+.portfolio-container {
+  --pf-text: #000;
+  --pf-bg: var(--vp-c-bg);
+  --pf-border: #000;
+  --pf-bg-dps: #ffcac8;
+  --pf-bg-eps: #9adeff;
+  --pf-bg-surplus: #f88920;
+}
+
+html.dark .portfolio-container {
+  --pf-text: var(--vp-c-text-1);
+  --pf-bg: var(--vp-c-bg);
+  --pf-border: var(--vp-c-divider);
+  --pf-bg-dps: #4a3030;
+  --pf-bg-eps: #2a455a;
+  --pf-bg-surplus: #a05510;
+}
+</style>
+
 <style lang="scss" scoped>
 .portfolio-container {
   .portfolio-table {
     border-collapse: collapse;
     border-spacing: 0;
     font-size: 13px;
-    color: #000;
+    color: var(--pf-text);
     margin-top: 16px;
 
     caption {
@@ -470,7 +491,7 @@ onMounted(() => {
       font-weight: bold;
       text-align: left;
       padding: 8px 0;
-      color: #000;
+      color: var(--pf-text);
     }
 
     th,
@@ -478,18 +499,18 @@ onMounted(() => {
       line-height: 22px;
       white-space: nowrap;
       padding: 2px 4px;
-      color: #000;
+      color: var(--pf-text);
       font-weight: normal;
-      border: 1px solid #000;
+      border: 1px solid var(--pf-border);
       text-align: center;
       vertical-align: top;
-      background-color: #fff;
+      background-color: var(--pf-bg);
     }
 
     thead th {
       padding: 6px 8px;
       font-weight: normal;
-      background-color: #fff;
+      background-color: var(--pf-bg);
       border-bottom-width: 1px;
     }
 
@@ -503,35 +524,35 @@ onMounted(() => {
     }
 
     .dps {
-      background-color: #ffcac8;
+      background-color: var(--pf-bg-dps);
     }
 
     .eps {
-      background-color: #9adeff;
+      background-color: var(--pf-bg-eps);
     }
 
     .holding-net-profit {
-      background-color: #9adeff;
+      background-color: var(--pf-bg-eps);
     }
 
     .retained {
-      background-color: #fff;
+      background-color: var(--pf-bg);
     }
 
     .sum-net-dividend {
-      background-color: #ffcac8;
+      background-color: var(--pf-bg-dps);
     }
 
     .sum-holding-net-profit {
-      background-color: #9adeff;
+      background-color: var(--pf-bg-eps);
     }
 
     .sum-dividend-rate {
-      background-color: #ffcac8;
+      background-color: var(--pf-bg-dps);
     }
 
     .sum-holding-net-profit-margin {
-      background-color: #9adeff;
+      background-color: var(--pf-bg-eps);
     }
 
     .bold-tr {
@@ -543,13 +564,13 @@ onMounted(() => {
     margin-top: 8px;
 
     tr {
-      border-top: 1px solid #000;
+      border-top: 1px solid var(--pf-border);
     }
 
     td {
       font-weight: bold;
       padding: 4px 6px;
-      background-color: #f88920;
+      background-color: var(--pf-bg-surplus);
     }
   }
 
