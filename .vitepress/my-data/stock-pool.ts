@@ -158,15 +158,12 @@ const stocks: StockItem[] = [
     // 分众传媒
     code: "002027",
     industry: Industry.MEDIA,
-    sharesHeld: 800,
+    sharesHeld: 1800,
     url: "/value-investing/industry/传媒/分众传媒/",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [
-        { value: 0.07, quantity: 1000 },
-        { value: 0.075, quantity: 1200 },
-      ],
+      dividend: [{ value: 0.075, quantity: 1200 }],
     },
   },
   {
