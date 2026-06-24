@@ -288,9 +288,9 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/电信服务/中国移动/",
     dividendPerYear: 2,
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      price: [{ value: 88, quantity: 200 }],
+      dividend: [{ value: 0.055, quantity: 100 }],
     },
   },
   {
