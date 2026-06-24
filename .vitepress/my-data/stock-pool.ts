@@ -101,15 +101,12 @@ const stocks: StockItem[] = [
     // 福耀玻璃
     code: "600660",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
-    sharesHeld: 400,
+    sharesHeld: 500,
     url: "/value-investing/industry/汽车/福耀玻璃/",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [
-        { value: 48.5, quantity: 100 },
-        { value: 46, quantity: 100 },
-      ],
+      price: [{ value: 46, quantity: 100 }],
     },
   },
   {
