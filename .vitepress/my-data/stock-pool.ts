@@ -233,7 +233,7 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
-        { value: 36.5, quantity: 600 },
+        { value: 36.5, quantity: 500 },
         { value: 35.5, quantity: 600 },
       ],
     },
@@ -710,6 +710,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(167000);
+export const cash = ref(170000);
 
 export { stocks };
