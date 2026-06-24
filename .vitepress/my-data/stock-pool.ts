@@ -176,7 +176,10 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.05, quantity: 3000 }],
+      dividend: [
+        { value: 0.05, quantity: 2000 },
+        { value: 0.054, quantity: 3000 },
+      ],
     },
   },
   {
@@ -201,7 +204,7 @@ const stocks: StockItem[] = [
     industry: Industry.PAPER_AND_PACKAGING,
     url: "/value-investing/industry/塑料包装/永新股份/",
     remark:
-      "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2000股，5.2%股息率接回来",
+      "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2200股，5.3%股息率接回来",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
@@ -281,9 +284,9 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/电信服务/中国移动/",
     dividendPerYear: 2,
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      price: [{ value: 88, quantity: 100 }],
+      dividend: [{ value: 0.055, quantity: 100 }],
     },
   },
   {
@@ -697,6 +700,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(178000);
+export const cash = ref(58822);
 
 export { stocks };

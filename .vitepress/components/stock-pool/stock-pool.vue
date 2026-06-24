@@ -654,16 +654,62 @@ const mergedTableData = computed(() => {
 </template>
 
 <style lang="scss">
+/* ===== 全局语义颜色 ===== */
 .red {
   color: #ff0000;
 }
-
 .green {
   color: #00b050;
 }
-
 .blue {
   color: #2972f4;
+}
+
+html.dark {
+  .red {
+    color: #ff8888;
+  }
+  .green {
+    color: #66ee66;
+  }
+  .blue {
+    color: #88bbff;
+  }
+}
+
+/* ===== 表格颜色变量 ===== */
+.stock-pool-table {
+  --sp-text: #000;
+  --sp-text-secondary: #888;
+  --sp-bg: var(--vp-c-bg);
+  --sp-border: #000;
+  --sp-link: #00a3f5;
+  --sp-bg-green: #00b050;
+  --sp-bg-pink: #ffe9e8;
+  --sp-bg-light-red: #ff9c99;
+  --sp-bg-dividend-bar: #fff7e6;
+  --sp-color-dividend-bar: #d46b08;
+  --sp-input-price-color: #2972f4;
+  --sp-input-dividend-color: #ff0000;
+  --sp-input-pe-color: #ff0000;
+}
+
+html.dark {
+  .stock-pool-table {
+    --sp-text: #fff;
+    --sp-text-secondary: var(--vp-c-text-3);
+    --sp-bg: var(--vp-c-bg);
+    --sp-border: var(--vp-c-divider);
+    --sp-link: #7ad8ff;
+    --sp-bg-green: #2a8a2a;
+    --sp-bg-pink: #4a3535;
+    --sp-bg-light-red: #6a3a3a;
+    --sp-bg-dividend-bar: #4a3a20;
+    --sp-color-dividend-bar: #ffb860;
+    --sp-input-price-color: #88bbff;
+    --sp-input-dividend-color: #ff8888;
+    --sp-input-pe-color: #ff8888;
+  }
 }
 
 .toolbar {
@@ -699,7 +745,7 @@ const mergedTableData = computed(() => {
 .table-tip {
   margin-top: 16px;
   font-size: 13px;
-  color: #000;
+  color: var(--vp-c-text-1);
 }
 
 .vp-doc {
@@ -712,18 +758,19 @@ const mergedTableData = computed(() => {
   border-collapse: collapse;
   border-spacing: 0;
   font-size: 13px;
-  color: #000;
+  color: var(--sp-text);
+
   th,
   td {
     line-height: 22px;
     white-space: nowrap;
     padding: 4px 6px;
-    color: #000;
+    color: var(--sp-text);
     font-weight: normal;
-    border: 1px solid #000;
+    border: 1px solid var(--sp-border);
     text-align: center;
     vertical-align: top;
-    background-color: #fff;
+    background-color: var(--sp-bg);
   }
 
   thead th {
@@ -765,27 +812,27 @@ const mergedTableData = computed(() => {
   }
 
   .bg-green {
-    background-color: #00b050;
+    background-color: var(--sp-bg-green);
   }
 
   .bg-pink {
-    background-color: #ffe9e8;
+    background-color: var(--sp-bg-pink);
   }
 
   .bg-light-red {
-    background-color: #ff9c99;
+    background-color: var(--sp-bg-light-red);
   }
 
   .stock-link {
     font-weight: bold;
-    color: #00a3f5;
+    color: var(--sp-link);
     text-decoration: underline;
     cursor: pointer;
   }
 
   .stock-code {
     font-size: 12px;
-    color: #888;
+    color: var(--sp-text-secondary);
     font-weight: normal;
   }
 
@@ -806,7 +853,7 @@ const mergedTableData = computed(() => {
       text-align: center;
       font-weight: bold;
       font-size: 14px;
-      color: #2972f4;
+      color: var(--sp-input-price-color);
       padding: 1px 4px;
     }
   }
@@ -822,7 +869,7 @@ const mergedTableData = computed(() => {
       text-align: center;
       font-weight: bold;
       font-size: 14px;
-      color: #ff0000;
+      color: var(--sp-input-dividend-color);
       padding: 1px 4px;
     }
   }
@@ -838,7 +885,7 @@ const mergedTableData = computed(() => {
       text-align: center;
       font-weight: bold;
       font-size: 14px;
-      color: #ff0000;
+      color: var(--sp-input-pe-color);
       padding: 1px 4px;
     }
   }
@@ -850,13 +897,34 @@ const mergedTableData = computed(() => {
   }
 
   .dividend-time-bar {
-    background-color: #fff7e6;
-    color: #d46b08;
+    background-color: var(--sp-bg-dividend-bar);
+    color: var(--sp-color-dividend-bar);
     font-size: 12px;
     font-weight: bold;
     padding: 6px 8px;
     text-align: center;
-    border-bottom: 2px solid #d46b08;
+    border-bottom: 2px solid var(--sp-color-dividend-bar);
+  }
+}
+
+/* 暗黑模式下表格内语义颜色微调 */
+html.dark {
+  .stock-pool-table {
+    .light-blue {
+      color: #7ad8ff;
+    }
+    .red {
+      color: #ff8888;
+    }
+    .green {
+      color: #66ee66;
+    }
+    .blue {
+      color: #88bbff;
+    }
+    .orange {
+      color: #ffb860;
+    }
   }
 }
 
