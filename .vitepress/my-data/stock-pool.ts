@@ -211,11 +211,11 @@ const stocks: StockItem[] = [
     // sharesHeld: 2000,
     url: "/value-investing/industry/塑料包装/永新股份/",
     remark:
-      "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2000股，5.2%股息率接回来",
+      "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2200股，5.3%股息率接回来",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.052, quantity: 2000 }],
+      dividend: [{ value: 0.053, quantity: 2200 }],
       // price: [
       //   { value: 9.7, quantity: 1400 },
       //   { value: 9.2, quantity: 1600 },
