@@ -306,7 +306,6 @@ const stocks: StockItem[] = [
     // 中国电信H
     code: "00728",
     industry: Industry.TELECOMMUNICATION_SERVICES,
-    sharesHeld: 2000,
     url: "/value-investing/industry/电信服务/中国电信/",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
@@ -611,7 +610,6 @@ const stocks: StockItem[] = [
     // 安踏体育
     code: "02020",
     industry: Industry.TEXTILES_AND_APPAREL,
-    sharesHeld: 200,
     url: "/value-investing/industry/纺织服装/安踏体育/",
     dividendAdjust: 0.8,
     dividendPerYear: 2,
