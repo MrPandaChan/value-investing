@@ -157,7 +157,7 @@ const stocks: StockItem[] = [
     // 分众传媒
     code: "002027",
     industry: Industry.MEDIA,
-    sharesHeld: 1600,
+    sharesHeld: 3800,
     url: "/value-investing/industry/传媒/分众传媒/",
     plan: {
       type: PlanType.DIVIDEND,
@@ -707,6 +707,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(178000);
+export const cash = ref(167000);
 
 export { stocks };

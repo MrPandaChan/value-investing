@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { computed, onMounted } from "vue";
+import { computed, onMounted, ref } from "vue";
 import {
   formatNum,
   formatPercent,
@@ -10,6 +10,9 @@ import { cash, stocks } from "../../my-data/stock-pool";
 import { useStockPoolData } from "./use-stock-pool-data";
 
 const { tableData, groupMetaMap, exchangeRate, refresh } = useStockPoolData();
+
+/** 是否在组合中显示现金行 */
+const showCash = ref(false);
 
 interface PortfolioRow {
   index: number;
@@ -60,11 +63,11 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     (s) => s.sharesHeld && s.sharesHeld > 0 && groupMetaMap.value[s.code],
   );
 
-  const cashVal = cash.value || 0;
+  const cashVal = showCash.value ? cash.value || 0 : 0;
   const result: PortfolioRow[] = [];
   let idx = 1;
 
-  // 无持仓股票时，若有现金则仅显示现金行
+  // 无持仓股票时，若有现金且显示现金则仅显示现金行
   if (!heldStocks.length) {
     if (cashVal > 0) {
       result.push({
@@ -200,7 +203,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     });
   }
 
-  // 现金行（放到最后，参与总市值和比例计算）
+  // 现金行（放到最后，参与总市值和比例计算；showCash=false 时 cashVal=0 跳过）
   if (cashVal > 0) {
     result.push({
       index: idx++,
@@ -211,8 +214,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       shareholdingRatio:
         totalHoldingValue > 0 ? cashVal / totalHoldingValue : 0,
       industry: "现金",
-      industryRatio:
-        totalHoldingValue > 0 ? cashVal / totalHoldingValue : 0,
+      industryRatio: totalHoldingValue > 0 ? cashVal / totalHoldingValue : 0,
       expectedDividend: 0,
       paidDividend: 0,
       unpaidDividend: 0,
@@ -443,6 +445,13 @@ onMounted(() => {
           </tr>
         </tbody>
       </table>
+
+      <el-switch
+        class="cash-switch"
+        v-model="showCash"
+        active-text="显示现金"
+        inactive-text="隐藏现金"
+      />
     </footer>
   </div>
 </template>
@@ -542,6 +551,15 @@ onMounted(() => {
       padding: 4px 6px;
       background-color: #f88920;
     }
+  }
+
+  .portfolio-footer {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  .cash-switch {
+    margin-left: 16px;
   }
 }
 </style>

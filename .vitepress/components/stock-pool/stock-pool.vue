@@ -393,7 +393,9 @@ const mergedTableData = computed(() => {
       <template v-else-if="changeSortOrder === 'desc'">按涨幅排序</template>
       <template v-else>按跌幅排序</template>
     </el-button>
-    <el-button type="primary" :loading="isLoading" @click="refresh">刷新实时数据</el-button>
+    <el-button type="primary" :loading="isLoading" @click="refresh"
+      >刷新实时数据</el-button
+    >
     <el-button type="primary" :loading="isLoading" @click="init"
       >初始化/获取分红数据（避免高频调用）</el-button
     >
