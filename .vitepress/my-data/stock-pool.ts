@@ -108,7 +108,7 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
-        { value: 47.5, quantity: 400 },
+        { value: 47.5, quantity: 300 },
         { value: 45, quantity: 400 },
       ],
     },
@@ -117,26 +117,33 @@ const stocks: StockItem[] = [
     // 云南白药
     code: "000538",
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
-    sharesHeld: 600,
+    sharesHeld: 1000,
     url: "/value-investing/industry/中药/云南白药/",
+    remark: "目前仓位已打满，给个超级低价然后装死",
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 47, quantity: 400 }],
+      // price: [{ value: 46.8, quantity: 400 }], // 已接
+      dividend: [{ value: 0.06, quantity: 400 }],
     },
   },
   {
     // 东阿阿胶
     code: "000423",
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
-    sharesHeld: 500,
+    sharesHeld: 900,
     dividendPerYear: 2,
-    remark: "几乎100%分红率，一般6月/9月分红",
+    remark:
+      "几乎100%分红率，一般6月/9月分红，目前仓位已打满，给个超级低价然后装死",
     url: "/value-investing/industry/中药/东阿阿胶/",
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 44, quantity: 400 }],
+      // price: [{ value: 43.8, quantity: 400 }], // 已买
+      dividend: [
+        { value: 0.065, quantity: 100 },
+        { value: 0.07, quantity: 400 },
+      ],
     },
   },
   {
@@ -163,7 +170,7 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
-        { value: 0.07, quantity: 2200 },
+        // { value: 0.07, quantity: 2200 }, // 已买
         { value: 0.075, quantity: 3000 },
       ],
     },
@@ -179,10 +186,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [
-        { value: 0.05, quantity: 2000 },
-        { value: 0.054, quantity: 3000 },
-      ],
+      dividend: [{ value: 0.052, quantity: 2000 }],
     },
   },
   {
@@ -213,9 +217,9 @@ const stocks: StockItem[] = [
     remark:
       "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2200股，5.3%股息率接回来",
     plan: {
-      type: PlanType.DIVIDEND,
+      type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.053, quantity: 2200 }],
+      price: [{ value: 10.1, quantity: 2000 }],
       // price: [
       //   { value: 9.7, quantity: 1400 },
       //   { value: 9.2, quantity: 1600 },
@@ -226,15 +230,15 @@ const stocks: StockItem[] = [
     // 招商银行
     code: "600036",
     industry: Industry.BANKING,
-    sharesHeld: 1000,
+    sharesHeld: 1400,
     dividendPerYear: 2,
     remark: "预估07-15左右分红，分完后计划减1块",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
-        { value: 36.5, quantity: 500 },
-        { value: 35.5, quantity: 600 },
+        // { value: 36.5, quantity: 400 }, // 已买
+        { value: 35.5, quantity: 400 },
       ],
     },
   },
@@ -405,9 +409,8 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
-        { value: 26.61, quantity: 400 },
-        { value: 25.61, quantity: 600 },
-        { value: 24.61, quantity: 800 },
+        { value: 25.8, quantity: 200 },
+        { value: 24.6, quantity: 200 },
       ],
     },
   },
