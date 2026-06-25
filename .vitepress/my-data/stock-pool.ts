@@ -119,12 +119,12 @@ const stocks: StockItem[] = [
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     sharesHeld: 1000,
     url: "/value-investing/industry/中药/云南白药/",
-    remark: "目前仓位已打满，给个超级低价然后装死",
+    remark: "目前仓位已打满，给个特别低价然后装死",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       // price: [{ value: 46.8, quantity: 400 }], // 已接
-      dividend: [{ value: 0.06, quantity: 400 }],
+      dividend: [{ value: 0.06, quantity: 100 }],
     },
   },
   {
@@ -134,7 +134,7 @@ const stocks: StockItem[] = [
     sharesHeld: 900,
     dividendPerYear: 2,
     remark:
-      "几乎100%分红率，一般6月/9月分红，目前仓位已打满，给个超级低价然后装死",
+      "几乎100%分红率，一般6月/9月分红，目前仓位已打满，给个特别划算的价格然后装死",
     url: "/value-investing/industry/中药/东阿阿胶/",
     plan: {
       type: PlanType.DIVIDEND,
@@ -142,7 +142,7 @@ const stocks: StockItem[] = [
       // price: [{ value: 43.8, quantity: 400 }], // 已买
       dividend: [
         { value: 0.065, quantity: 100 },
-        { value: 0.07, quantity: 400 },
+        { value: 0.07, quantity: 100 },
       ],
     },
   },
@@ -215,11 +215,11 @@ const stocks: StockItem[] = [
     // sharesHeld: 2000,
     url: "/value-investing/industry/塑料包装/永新股份/",
     remark:
-      "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2200股，5.3%股息率接回来",
+      "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2200股，5.5%股息率左右接回来，横向比对机会成本",
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 10.1, quantity: 2000 }],
+      dividend: [{ value: 0.055, quantity: 2000 }],
       // price: [
       //   { value: 9.7, quantity: 1400 },
       //   { value: 9.2, quantity: 1600 },
@@ -614,7 +614,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.057, quantity: 500 }],
+      dividend: [{ value: 0.057, quantity: 400 }],
     },
   },
   {
