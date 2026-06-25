@@ -402,13 +402,13 @@ const stocks: StockItem[] = [
     // 紫金矿业
     code: "601899",
     industry: Industry.NON_FERROUS_METALS,
-    sharesHeld: 300,
+    sharesHeld: 400,
     url: "/value-investing/industry/有色金属/紫金矿业/",
     dividendPerYear: 2,
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 25, quantity: 200 }],
+      price: [{ value: 24.5, quantity: 200 }],
     },
   },
   {
@@ -710,6 +710,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(170000);
+export const cash = ref(120000);
 
 export { stocks };
