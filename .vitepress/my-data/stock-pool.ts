@@ -132,7 +132,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.07, quantity: 100 }],
+      dividend: [{ value: 0.065, quantity: 100 }],
     },
   },
   {
@@ -262,9 +262,9 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     remark: "预估8月分红",
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 36, quantity: 100 }],
+      dividend: [{ value: 0.085, quantity: 100 }],
     },
   },
   {
