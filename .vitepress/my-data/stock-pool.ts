@@ -113,26 +113,26 @@ const stocks: StockItem[] = [
     // 云南白药
     code: "000538",
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
-    sharesHeld: 200,
+    sharesHeld: 300,
     url: "/value-investing/industry/中药/云南白药/",
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 47, quantity: 100 }],
+      dividend: [{ value: 0.06, quantity: 100 }],
     },
   },
   {
     // 东阿阿胶
     code: "000423",
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
-    sharesHeld: 200,
+    sharesHeld: 300,
     dividendPerYear: 2,
     remark: "几乎100%分红率，一般6月/9月分红",
     url: "/value-investing/industry/中药/东阿阿胶/",
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 44, quantity: 100 }],
+      dividend: [{ value: 0.07, quantity: 100 }],
     },
   },
   {
@@ -143,12 +143,9 @@ const stocks: StockItem[] = [
     remark: "预估6月中分红",
     url: "/value-investing/industry/中药/羚锐制药/",
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
-      price: [
-        { value: 19.1, quantity: 200 },
-        { value: 18.1, quantity: 300 },
-      ],
+      dividend: [{ value: 0.065, quantity: 200 }],
     },
   },
   {
@@ -206,9 +203,9 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [
-        { value: 10.5, quantity: 800 },
-        { value: 9.7, quantity: 400 },
-        { value: 9.2, quantity: 400 },
+        { value: 10, quantity: 400 },
+        { value: 9.5, quantity: 500 },
+        { value: 9, quantity: 600 },
       ],
     },
   },
@@ -216,16 +213,13 @@ const stocks: StockItem[] = [
     // 招商银行
     code: "600036",
     industry: Industry.BANKING,
-    sharesHeld: 500,
+    sharesHeld: 700,
     dividendPerYear: 2,
     remark: "预估07-15左右分红，分完后计划减1块",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [
-        { value: 36.5, quantity: 200 },
-        { value: 35.5, quantity: 200 },
-      ],
+      price: [{ value: 35.5, quantity: 200 }],
     },
   },
   {
@@ -396,9 +390,8 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
-        { value: 26.61, quantity: 200 },
-        { value: 25.61, quantity: 200 },
-        { value: 24.61, quantity: 200 },
+        { value: 25.61, quantity: 100 },
+        { value: 24.61, quantity: 100 },
       ],
     },
   },
@@ -526,7 +519,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.1, quantity: 200 }],
+      dividend: [{ value: 0.1, quantity: 100 }],
     },
   },
   {
