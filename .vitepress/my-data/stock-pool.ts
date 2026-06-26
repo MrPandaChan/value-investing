@@ -332,7 +332,7 @@ const stocks: StockItem[] = [
     // 中国铁塔
     code: "00788",
     industry: Industry.TELECOMMUNICATION_SERVICES,
-    sharesHeld: 2000,
+    sharesHeld: 2500,
     url: "/value-investing/industry/电信服务/中国铁塔/",
     dividendPerYear: 2,
     dividendAdjust: 0.8 * 1.3,
@@ -341,7 +341,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
-      dividend: [{ value: 0.063, quantity: 1500 }],
+      dividend: [{ value: 0.065, quantity: 1000 }],
     },
   },
   {
@@ -420,9 +420,9 @@ const stocks: StockItem[] = [
     dividendAdjust: 0.8,
     dividendPerYear: 1,
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 26, quantity: 400 }],
+      dividend: [{ value: 0.051, quantity: 200 }],
     },
   },
   {
@@ -471,7 +471,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      price: [{ value: 150, quantity: 200 }],
+      price: [{ value: 140, quantity: 200 }],
     },
   },
   {
