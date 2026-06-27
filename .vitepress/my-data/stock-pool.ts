@@ -115,6 +115,7 @@ const stocks: StockItem[] = [
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     sharesHeld: 300,
     url: "/value-investing/industry/中药/云南白药/",
+    remark: "目前仓位已打满，给个特别低价然后装死",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
@@ -127,7 +128,8 @@ const stocks: StockItem[] = [
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     sharesHeld: 300,
     dividendPerYear: 2,
-    remark: "几乎100%分红率，一般6月/9月分红",
+    remark:
+      "几乎100%分红率，一般6月/9月分红，目前仓位已打满，给个特别划算的价格然后装死",
     url: "/value-investing/industry/中药/东阿阿胶/",
     plan: {
       type: PlanType.DIVIDEND,
@@ -157,7 +159,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.075, quantity: 1200 }],
+      dividend: [{ value: 0.075, quantity: 1000 }],
     },
   },
   {
@@ -170,10 +172,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [
-        { value: 0.05, quantity: 2000 },
-        { value: 0.054, quantity: 3000 },
-      ],
+      dividend: [{ value: 0.052, quantity: 2000 }],
     },
   },
   {
@@ -187,8 +186,8 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
       dividend: [
-        { value: 0.044, quantity: 1000 },
-        { value: 0.047, quantity: 1200 },
+        { value: 0.045, quantity: 500 },
+        { value: 0.049, quantity: 600 },
       ],
     },
   },
@@ -198,7 +197,7 @@ const stocks: StockItem[] = [
     industry: Industry.PAPER_AND_PACKAGING,
     url: "/value-investing/industry/塑料包装/永新股份/",
     remark:
-      "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2200股，5.3%股息率接回来",
+      "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2200股，5.5%股息率左右接回来，横向比对机会成本",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
@@ -219,7 +218,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 35.5, quantity: 200 }],
+      price: [{ value: 35.5, quantity: 100 }],
     },
   },
   {
@@ -229,13 +228,13 @@ const stocks: StockItem[] = [
     sharesHeld: 100,
     url: "/value-investing/industry/家电/美的/",
     dividendPerYear: 2,
-    remark: "预估6月15左右分红",
+    remark: "6-29分红，计划减3.8",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
-        { value: 75, quantity: 100 },
-        { value: 71, quantity: 200 },
+        { value: 71.2, quantity: 100 },
+        { value: 67.2, quantity: 200 },
       ],
     },
   },
@@ -319,7 +318,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
-      dividend: [{ value: 0.063, quantity: 1500 }],
+      dividend: [{ value: 0.065, quantity: 1000 }],
     },
   },
   {
@@ -386,10 +385,11 @@ const stocks: StockItem[] = [
     sharesHeld: 500,
     url: "/value-investing/industry/有色金属/紫金矿业/",
     dividendPerYear: 2,
+    remark: "6-26分红，计划减0.38",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 24.61, quantity: 100 }],
+      price: [{ value: 24.23, quantity: 100 }],
     },
   },
   {
@@ -400,9 +400,9 @@ const stocks: StockItem[] = [
     dividendAdjust: 0.8,
     dividendPerYear: 1,
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 26, quantity: 400 }],
+      dividend: [{ value: 0.051, quantity: 200 }],
     },
   },
   {
@@ -450,7 +450,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      price: [{ value: 150, quantity: 200 }],
+      price: [{ value: 140, quantity: 200 }],
     },
   },
   {
@@ -459,11 +459,11 @@ const stocks: StockItem[] = [
     industry: Industry.BAIJIU,
     url: "/value-investing/industry/白酒/贵州茅台/",
     dividendPerYear: 2,
-    remark: "预估6月下旬分红",
+    remark: "6月26分红，计划减28.02",
     plan: {
-      type: PlanType.DIVIDEND,
+      type: PlanType.PRICE,
       maxPositionRatio: 0.2,
-      dividend: [{ value: 0.045, quantity: 100 }],
+      price: [{ value: 1127.09, quantity: 100 }],
     },
   },
   {
@@ -584,13 +584,13 @@ const stocks: StockItem[] = [
     // 中国平安
     code: "601318",
     industry: Industry.INSURANCE,
-    sharesHeld: 100,
+    sharesHeld: 200,
     url: "/value-investing/industry/保险/中国平安/",
     dividendPerYear: 2,
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.057, quantity: 100 }],
+      dividend: [{ value: 0.06, quantity: 100 }],
     },
   },
   {
@@ -620,7 +620,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.052, quantity: 400 }],
+      dividend: [{ value: 0.052, quantity: 300 }],
     },
   },
   {
@@ -666,7 +666,6 @@ const stocks: StockItem[] = [
     code: "002594",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     url: "/value-investing/industry/汽车/比亚迪/",
-    dividendAdjust: 0.8,
     dividendPerYear: 1,
     plan: {
       type: PlanType.PRICE,
@@ -685,6 +684,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(53000);
+export const cash = ref(30000);
 
 export { stocks };
