@@ -22,6 +22,7 @@ export enum Industry {
   INSURANCE = "保险",
   ENTERPRISE_SERVICES = "企业服务",
   SHIPPING = "航运",
+  ETF = "ETF",
 }
 
 interface PlanEntry {
@@ -254,8 +255,8 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
-        { value: 75, quantity: 300 },
-        { value: 71, quantity: 500 },
+        { value: 71.2, quantity: 300 },
+        { value: 67.2, quantity: 500 },
       ],
     },
   },
@@ -699,6 +700,17 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [{ value: 68, quantity: 100 }],
+    },
+  },
+  {
+    // 恒生科技ETF
+    code: "513180",
+    industry: Industry.ETF,
+    sharesHeld: 5000,
+    plan: {
+      type: PlanType.PRICE,
+      maxPositionRatio: 0.01,
+      price: [],
     },
   },
   /**
