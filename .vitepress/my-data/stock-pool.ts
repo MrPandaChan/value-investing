@@ -362,7 +362,11 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.2,
-      dividend: [{ value: 0.05, quantity: 500 }],
+      dividend: [
+        { value: 0.046, quantity: 200 },
+        { value: 0.05, quantity: 300 },
+        { value: 0.054, quantity: 400 },
+      ],
     },
   },
   {
@@ -671,6 +675,28 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [{ value: 68, quantity: 100 }],
+    },
+  },
+  {
+    // 中概互联
+    code: "513050",
+    industry: Industry.INTERNET,
+    sharesHeld: 14000,
+    plan: {
+      type: PlanType.PRICE,
+      maxPositionRatio: 0.05,
+      price: [{ value: 0.847, quantity: 3000 }],
+    },
+  },
+  {
+    // 恒生科技
+    code: "513180",
+    industry: Industry.INTERNET,
+    sharesHeld: 2400,
+    plan: {
+      type: PlanType.PRICE,
+      maxPositionRatio: 0.03,
+      price: [],
     },
   },
   /**

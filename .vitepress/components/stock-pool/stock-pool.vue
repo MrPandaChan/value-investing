@@ -8,7 +8,6 @@ import {
   getCurrencyPrefix,
   isBCode,
   isHKCode,
-  isSHETFCode,
 } from "../../../fetch-data/helper";
 import { useStockPoolData, type RowData } from "./use-stock-pool-data";
 import StockPoolPortfolio from "./portfolio.vue";
@@ -96,10 +95,10 @@ const indexList = ref<IndexData[]>([]);
 const group1Labels = new Set(INDEX_CODES_GROUP1.map((v) => v.label));
 const group2Labels = new Set(INDEX_CODES_GROUP2.map((v) => v.label));
 const indexListGroup1 = computed(() =>
-  indexList.value.filter((v: IndexData) => group1Labels.has(v.label))
+  indexList.value.filter((v: IndexData) => group1Labels.has(v.label)),
 );
 const indexListGroup2 = computed(() =>
-  indexList.value.filter((v: IndexData) => group2Labels.has(v.label))
+  indexList.value.filter((v: IndexData) => group2Labels.has(v.label)),
 );
 
 async function fetchIndices() {
@@ -141,7 +140,7 @@ watch(
   () => {
     syncAllEdits();
   },
-  { deep: true }
+  { deep: true },
 );
 
 watch(
@@ -149,7 +148,7 @@ watch(
   (val) => {
     localStorage.setItem(MARKET_FILTER_STORAGE_KEY, JSON.stringify(val));
   },
-  { deep: true }
+  { deep: true },
 );
 
 async function refresh() {
@@ -292,7 +291,7 @@ const mergedTableData = computed(() => {
       .slice(1)
       .reduce(
         (sum, r) => sum + (r.quantity && r.price ? r.quantity * r.price : 0),
-        0
+        0,
       );
 
     const mergedRows: MergedRowData[] = resolvedRows.map((row, index) => {
@@ -301,7 +300,7 @@ const mergedTableData = computed(() => {
         index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
       const annualDps = row.exList.reduce(
         (pre: number, cur: { dps: number }) => pre + cur.dps,
-        0
+        0,
       );
       const adjustedAnnualDps =
         meta?.dividendAdjust != null

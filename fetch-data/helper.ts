@@ -119,6 +119,12 @@ export function toEastMoneySecId(stockCode: string) {
   } else if (/^(0|3|2)\d{5}$/.test(code)) {
     // 深市A股（0/3开头，创业板30开头，B股2开头）
     return `0.${code}`;
+  } else if (/^5\d{5}$/.test(code)) {
+    // 沪市ETF/基金（5开头，如510xxx/513xxx/588xxx）
+    return `1.${code}`;
+  } else if (/^15\d{4}$/.test(code)) {
+    // 深市ETF/基金（159xxx, 15xxxx）
+    return `0.${code}`;
   } else if (/^0\d{4}$/.test(code)) {
     // 港股（假设00开头为港股，需根据实际情况调整）
     return `116.${code}`;
@@ -163,10 +169,14 @@ export function isBCode(code: string): boolean {
 }
 
 /**
- * 沪市ETF（5开头6位代码，如 510050、513050）
+ * 是否为ETF/基金代码
+ * 沪市ETF：5开头6位（510xxx-518xxx, 56xxxx, 588xxx 等）
+ * 深市ETF：15开头6位（159xxx, 15xxxx）
+ * ETF价格有3位小数，东方财富API返回值需除以1000（同港股）
  */
-export function isSHETFCode(code: string): boolean {
-  return /^5\d{5}$/.test(code.trim());
+export function isETFCode(code: string): boolean {
+  const c = code.trim();
+  return /^5\d{5}$/.test(c) || /^15\d{4}$/.test(c);
 }
 
 /**
