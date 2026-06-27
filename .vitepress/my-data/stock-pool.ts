@@ -22,6 +22,7 @@ export enum Industry {
   INSURANCE = "保险",
   ENTERPRISE_SERVICES = "企业服务",
   SHIPPING = "航运",
+  ETF = "ETF",
 }
 
 interface PlanEntry {
@@ -680,7 +681,7 @@ const stocks: StockItem[] = [
   {
     // 中概互联
     code: "513050",
-    industry: Industry.INTERNET,
+    industry: Industry.ETF,
     sharesHeld: 14000,
     plan: {
       type: PlanType.PRICE,
@@ -691,7 +692,7 @@ const stocks: StockItem[] = [
   {
     // 恒生科技
     code: "513180",
-    industry: Industry.INTERNET,
+    industry: Industry.ETF,
     sharesHeld: 2400,
     plan: {
       type: PlanType.PRICE,

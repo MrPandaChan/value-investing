@@ -2,6 +2,10 @@ import formatDate, { amortize, getPayVal } from "./helper";
 import { loadAllStockData } from "./load-all-data";
 import { saveDataToTsFileAsync } from "./save-data";
 import type {
+  EastMoneyHKDividendResponse,
+  HKDetailItem,
+  HKGjzbItem,
+  HKStockDataType,
   ReportDateItem,
   SinaFinanceData,
   SinaResponseDataReportDate,
@@ -22,7 +26,308 @@ import type {
   WorkingCapitalData,
 } from "../types/index";
 
+// ===================== 港股数据兼容工具 =====================
+
+/**
+ * 判断数据是否为港股格式（gjzb 为数组则为港股）
+ */
+function isHKStockData(data: StockData): data is HKStockDataType {
+  return Array.isArray((data as any).gjzb);
+}
+
+/**
+ * 港股 DATE_TYPE_CODE → A-share date_type 映射
+ */
+function mapHKDateType(dateTypeCode: string, dateValue: string): 1 | 2 | 3 | 4 {
+  if (dateTypeCode === "001") return 4; // 年报
+  if (dateTypeCode === "002") return 2; // 中报
+  // 季报根据日期月份判断
+  const month = parseInt(dateValue.substring(5, 7), 10);
+  if (month === 3) return 1;
+  if (month === 9) return 3;
+  return 1; // 默认Q1
+}
+
+/**
+ * 从港股数据中获取按日期排序的 report_date 数组
+ */
+function getReportDates(data: StockData): SinaResponseDataReportDate[] {
+  if (isHKStockData(data)) {
+    const dateSet = new Set<string>();
+    const dates: SinaResponseDataReportDate[] = [];
+    for (const item of data.gjzb) {
+      const dv = item.REPORT_DATE.replace(/\s.*$/, ""); // "2026-03-31"
+      if (!dateSet.has(dv)) {
+        dateSet.add(dv);
+        dates.push({
+          date_value: dv,
+          date_description: "",
+          date_type: mapHKDateType(item.DATE_TYPE_CODE, dv),
+        });
+      }
+    }
+    dates.sort((a, b) => b.date_value.localeCompare(a.date_value));
+    return dates;
+  }
+  return data.gjzb.report_date;
+}
+
+/**
+ * 格式化日期为显示年份（兼容港股）
+ */
+function formatYear(date: SinaResponseDataReportDate) {
+  const year = date.date_value.substring(0, 4);
+  return date.date_type < 4 ? `${year}Q${date.date_type}` : year;
+}
+
+/**
+ * 港股关键指标 gjzb 字段映射表（A-share item_field → HK gjzb 字段名）
+ */
+const HK_GJZB_FIELD_MAP: Record<string, keyof HKGjzbItem> = {
+  BIZINCO: "OPERATE_INCOME",
+  PARENETP: "HOLDER_PROFIT",
+  MANANETR: "NETCASH_OPERATE",
+  SGPMARGIN: "GROSS_PROFIT_RATIO",
+  SNPMARGINCONMS: "NET_PROFIT_RATIO",
+  ROEWEIGHTED: "ROE_YEARLY",
+  ROA: "ROA",
+  ROIC: "ROIC_YEARLY",
+  EMCONMS: "EQUITY_MULTIPLIER",
+  TATURNDAYS: "TOTAL_ASSETS_TDAYS",
+  CURASSTURNDAYS: "CURRENT_ASSETS_TDAYS",
+  ACCRECGTURNDAYS: "ACCOUNTS_RECE_TDAYS",
+  INVTURNDAYS: "INVENTORY_TDAYS",
+  ASSLIABRT: "DEBT_ASSET_RATIO",
+  EPSBASIC: "BASIC_EPS",
+  PAIDINCAPI: "ISSUED_COMMON_SHARES",
+  PERPROFIT: "OPERATE_PROFIT",
+  CURFDS: "END_CASH",
+  TOTASSET: "TOTAL_ASSETS",
+  PARESHARRIGH: "TOTAL_PARENT_EQUITY",
+  TOTLIABSHAREQUI: "TOTAL_ASSETS",
+};
+
+/**
+ * 港股 fzb/lrb/llb 明细项字段映射（A-share item_field → STD_ITEM_NAME）
+ * 按优先级：先查 fzb，再查 lrb，再查 llb
+ */
+interface HKDetailFieldDef {
+  /** 数据源 */
+  source: "fzb" | "lrb" | "llb";
+  /** STD_ITEM_NAME 中文名称 */
+  name: string;
+}
+
+const HK_DETAIL_FIELD_MAP: Record<string, HKDetailFieldDef[]> = {
+  // ===== fzb 资产负债表 =====
+  TOTCURRASSET: [{ source: "fzb", name: "流动资产合计" }],
+  INVE: [{ source: "fzb", name: "存货" }],
+  TOTALNONCASSETS: [{ source: "fzb", name: "非流动资产合计" }],
+  NOTESACCOPAYA: [{ source: "fzb", name: "应付票据" }],
+  LONGPAYA: [{ source: "fzb", name: "长期应付款" }],
+  MINYSHARRIGH: [{ source: "fzb", name: "少数股东权益" }],
+  FIXEDASSENETW: [{ source: "fzb", name: "物业厂房及设备" }],
+  CONSPROG: [{ source: "fzb", name: "在建工程" }],
+  INTAASSET: [{ source: "fzb", name: "无形资产" }],
+  NOTESACCORECE: [{ source: "fzb", name: "应收帐款" }],
+  PREP: [{ source: "fzb", name: "预付款项" }],
+  ACCOPAYA: [{ source: "fzb", name: "应付帐款" }],
+  GOODWILL: [{ source: "fzb", name: "商誉" }],
+  // 融资租赁负债 = (流动 + 非流动)
+  LEASELIAB: [
+    { source: "fzb", name: "融资租赁负债(流动)" },
+    { source: "fzb", name: "融资租赁负债(非流动)" },
+  ],
+  // 联营公司权益 + 合营公司权益 ≈ 长期股权投资
+  EQUIINVE: [
+    { source: "fzb", name: "联营公司权益" },
+    { source: "fzb", name: "合营公司权益" },
+  ],
+  // 所有者权益合计 ≈ 净资产
+  RIGHAGGR: [{ source: "fzb", name: "净资产" }],
+  // 使用权资产（港股 FZB 中可能有或使用融资租赁替代）
+  RUSEASSETS: [{ source: "fzb", name: "土地使用权" }],
+  // 长期待摊费用（港股可能不单独列示）
+  LOGPREPEXPE: [{ source: "fzb", name: "长期待摊费用" }],
+  // 交易性金融资产 ≈ 指定以公允价值记账之金融资产(流动)
+  TRADFINASSET: [{ source: "fzb", name: "指定以公允价值记账之金融资产(流动)" }],
+  // 合同负债 ≈ 递延收入(流动) + 递延收入(非流动)
+  CONTRACTLIAB: [
+    { source: "fzb", name: "递延收入(流动)" },
+    { source: "fzb", name: "递延收入(非流动)" },
+  ],
+
+  // ===== lrb 利润表 =====
+  SALESEXPE: [{ source: "lrb", name: "销售及分销费用" }],
+  MANAEXPE: [{ source: "lrb", name: "行政开支" }],
+  INTEINCO: [{ source: "lrb", name: "利息收入" }],
+  FINEXPE: [{ source: "lrb", name: "融资成本" }],
+  INTERESTEXPENSE: [{ source: "lrb", name: "融资成本" }],
+  INTEEXPE: [{ source: "lrb", name: "融资成本" }],
+  // 投资收益 = 应占联营公司 + 应占合营公司 + 其他收益(含公允/汇兑)
+  // 港股 IFRS 下利润表将投资收益、公允价值变动、汇兑收益合并为"其他收益"
+  INVEINCO: [
+    { source: "lrb", name: "应占联营公司溢利" },
+    { source: "lrb", name: "应占合营公司溢利" },
+    { source: "lrb", name: "其他收益" },
+  ],
+  // 以下单项不再单独映射，已包含在 INVEINCO（其他收益）中
+  // VALUECHGLOSS/EXCHGGAIN 留空，避免重复计算
+  // 少数股东损益
+  MINORITYPROFIT: [{ source: "lrb", name: "少数股东损益" }],
+  // 持续经营业务税后利润（用于 NPCUT 近似计算）
+  CONTINUINGPROFIT: [{ source: "lrb", name: "持续经营业务税后利润" }],
+
+  // ===== llb 现金流量表 =====
+  // 经营业务现金净额
+  MANANETR_LLB: [{ source: "llb", name: "经营业务现金净额" }],
+  // CAPEX = 购建固定资产 + 购建无形资产及其他资产
+  ACQUASSETCASH: [
+    { source: "llb", name: "购建固定资产" },
+    { source: "llb", name: "购建无形资产及其他资产" },
+  ],
+  // 折旧及摊销（来自间接法现金流量表补充资料）
+  DEPRECIATION: [{ source: "llb", name: "加:折旧及摊销" }],
+};
+
+/**
+ * 港股计算字段映射（A-share item_field → 计算函数）
+ * 用于没有直接数据源、需要从已有字段推导的指标
+ */
+type HKComputedFieldFn = (dateValue: string, data: HKStockDataType) => number;
+
+const HK_COMPUTED_FIELD_MAP: Record<string, HKComputedFieldFn> = {
+  // 总资产周转率 = 营业收入 / 总资产（返回比率，与 A股 Sina 数据 scale 一致）
+  TATURNRT: (dv, data) => {
+    const rev = getHKFieldValue("BIZINCO", dv, data);
+    const ta = getHKFieldValue("TOTASSET", dv, data);
+    return ta > 0 ? rev / ta : 0;
+  },
+  // 期间费用率 = (销售费 + 管理费 + 财务费) / 营业收入 × 100
+  TRIEXPRT: (dv, data) => {
+    const rev = getHKFieldValue("BIZINCO", dv, data);
+    const sell = getHKFieldValue("SALESEXPE", dv, data);
+    const mgmt = getHKFieldValue("MANAEXPE", dv, data);
+    const fin = getHKFieldValue("FINEXPE", dv, data);
+    return rev > 0 ? ((sell + mgmt + fin) / rev) * 100 : 0;
+  },
+  // 营业成本 = 营业收入 - 毛利（gjzb 中 GROSS_PROFIT 已是毛利额）
+  BIZCOST: (dv, data) => {
+    const rev = getHKFieldValue("BIZINCO", dv, data);
+    const entry = data.gjzb.find(
+      (v) => v.REPORT_DATE.replace(/\s.*$/, "") === dv,
+    );
+    const gp = entry?.GROSS_PROFIT ?? 0;
+    return rev - gp;
+  },
+  // 扣非净利润 ≈ 持续经营业务税后利润 - 少数股东损益
+  // IFRS 无扣非概念，此为最接近的"经常性净利润"近似
+  NPCUT: (dv, data) => {
+    const continuingProfit = getHKFieldValue("CONTINUINGPROFIT", dv, data);
+    const minorityProfit = getHKFieldValue("MINORITYPROFIT", dv, data);
+    return continuingProfit - minorityProfit;
+  },
+};
+
+/**
+ * 港股数据访问器：根据 A-share item_field 从港股数据中获取值
+ */
+function getHKFieldValue(
+  field: string,
+  dateValue: string,
+  data: HKStockDataType,
+  key?: "item_value" | "item_tongbi",
+  restrictToSource?: "fzb" | "lrb" | "llb",
+): number {
+  // tongbi 在港股数据中没有直接对应，intercept
+  if (key === "item_tongbi") {
+    // 尝试从 gjzb 中获取 YOY 字段
+    const gjzbField = HK_GJZB_FIELD_MAP[field];
+    if (gjzbField) {
+      const yoyField = `${gjzbField}_YOY` as keyof HKGjzbItem;
+      const entry = data.gjzb.find(
+        (v) => v.REPORT_DATE.replace(/\s.*$/, "") === dateValue,
+      );
+      if (entry && entry[yoyField] != null) {
+        return Number(entry[yoyField]) ?? 0;
+      }
+    }
+    return 0;
+  }
+
+  // 1. 先查 gjzb（如果未限制数据源）
+  if (!restrictToSource) {
+    const gjzbField = HK_GJZB_FIELD_MAP[field];
+    if (gjzbField) {
+      const entry = data.gjzb.find(
+        (v) => v.REPORT_DATE.replace(/\s.*$/, "") === dateValue,
+      );
+      if (entry && entry[gjzbField] != null) {
+        return Number(entry[gjzbField]) ?? 0;
+      }
+    }
+  }
+
+  // 2. 查 fzb/lrb/llb 明细
+  const detailDefs = HK_DETAIL_FIELD_MAP[field];
+  if (detailDefs) {
+    let total = 0;
+    for (const def of detailDefs) {
+      // 如果限制了数据源，跳过不匹配的
+      if (restrictToSource && def.source !== restrictToSource) continue;
+
+      let arr: HKDetailItem[];
+      if (def.source === "fzb") arr = data.fzb;
+      else if (def.source === "lrb") arr = data.lrb;
+      else arr = data.llb;
+
+      const items = arr.filter(
+        (v) =>
+          v.REPORT_DATE.replace(/\s.*$/, "") === dateValue &&
+          v.STD_ITEM_NAME === def.name,
+      );
+      total += items.reduce((sum, v) => sum + (v.AMOUNT ?? 0), 0);
+    }
+    return total;
+  }
+
+  // 3. 查计算字段（从已有数据推导，不受 restrictToSource 限制）
+  const computedFn = HK_COMPUTED_FIELD_MAP[field];
+  if (computedFn) {
+    return computedFn(dateValue, data);
+  }
+
+  return 0;
+}
+
+/**
+ * 统一的数据访问器，兼容 A股 和 港股
+ */
 function getVal(dateValue: string, data: StockData) {
+  // 港股数据使用独立访问器
+  if (isHKStockData(data)) {
+    return (
+      field: string,
+      options?: {
+        b?: keyof SinaFinanceData;
+        key?: keyof ReportDateItem;
+      },
+    ) => {
+      // 港股不支持按 b 选项过滤数据源（gjzb/fzb/lrb/llb 是数组而非 SinaResponseData）
+      // 仅在明细字段查找时指定来源
+      const hkKey =
+        options?.key === "item_tongbi" ? "item_tongbi" : "item_value";
+      const sourceMap: Record<string, "fzb" | "lrb" | "llb"> = {
+        fzb: "fzb",
+        lrb: "lrb",
+        llb: "llb",
+      };
+      const restrictToSource = options?.b ? sourceMap[options.b as string] : undefined;
+      return getHKFieldValue(field, dateValue, data, hkKey, restrictToSource);
+    };
+  }
+
+  // A股数据使用原有访问器
   return (
     field: string,
     options?: {
@@ -46,16 +351,12 @@ function getVal(dateValue: string, data: StockData) {
   };
 }
 
-function formatYear(date: SinaResponseDataReportDate) {
-  const year = date.date_value.substring(0, 4);
-  return date.date_type < 4 ? `${year}Q${date.date_type}` : year;
-}
-
 // 营收基本数据
 function generateBasicRevenueData(data: StockData) {
   const arr: BasicRevenueData[] = [];
+  const isHK = isHKStockData(data);
 
-  const { report_date } = data.gjzb;
+  const report_date = getReportDates(data);
   for (let i = 0; i < report_date.length; i += 1) {
     const date = report_date[i];
     if (!date) continue;
@@ -69,23 +370,43 @@ function generateBasicRevenueData(data: StockData) {
       const cashFlowFromOperating = val("MANANETR");
       // 购建固定资产、无形资产和其他长期资产所支付的现金
       const capex = val("ACQUASSETCASH");
-      // // 核心利润 = 营业收入 - 营业成本 - 税金及附加 - 销售费用 - 管理费用 - 研发费用 - 利息费用（财务费用为正则扣除，为负则不加回）
-      const coreProfit =
-        revenue -
-        val("BIZCOST") -
-        val("BIZTAX") -
-        val("SALESEXPE") -
-        val("MANAEXPE") -
-        val("DEVEEXPE") -
-        (val("FINEXPE") > 0 ? val("INTERESTEXPENSE") : 0);
+
+      let coreProfit: number;
+      let financialProfit: number;
+
+      if (isHK) {
+        // 港股 IFRS 口径：核心利润 = 毛利 - 销售费用 - 管理费用（行政开支）
+        // 因为在 IFRS 下营业成本、税金等已包含在毛利计算中
+        coreProfit =
+          val("SGPMARGIN") / 100 * revenue -
+          val("SALESEXPE") -
+          val("MANAEXPE");
+        // 港股金融利润：利息收入 + 投资/其他收益 - 融资成本
+        // INVEINCO 已包含：应占联营公司溢利 + 应占合营公司溢利 + 其他收益
+        financialProfit =
+          val("INTEINCO") +
+          val("INVEINCO") -
+          val("FINEXPE");
+      } else {
+        // A股口径
+        coreProfit =
+          revenue -
+          val("BIZCOST") -
+          val("BIZTAX") -
+          val("SALESEXPE") -
+          val("MANAEXPE") -
+          val("DEVEEXPE") -
+          (val("FINEXPE") > 0 ? val("INTERESTEXPENSE") : 0);
+        financialProfit =
+          val("INTEINCO") +
+          val("INTEEXPE") +
+          val("INVEINCO") +
+          val("VALUECHGLOSS") +
+          val("EXCHGGAIN");
+      }
+
       // 利息收入 + 利息支出 + 投资收益 + 公允价值变动收益 + 汇兑收益
       const fcf = cashFlowFromOperating - capex;
-      const financialProfit =
-        val("INTEINCO") +
-        val("INTEEXPE") +
-        val("INVEINCO") +
-        val("VALUECHGLOSS") +
-        val("EXCHGGAIN");
       const operatingProfit = netProfit - financialProfit;
 
       arr.push({
@@ -117,7 +438,7 @@ function generateBasicRevenueData(data: StockData) {
 function generateCostsExpensesData(data: StockData) {
   const arr: CostsExpensesData[] = [];
 
-  const { report_date } = data.gjzb;
+  const report_date = getReportDates(data);
   for (let i = 0; i < report_date.length; i += 1) {
     const date = report_date[i];
     if (!date) continue;
@@ -163,7 +484,7 @@ function generateCostsExpensesData(data: StockData) {
 function generateBalanceData(data: StockData) {
   const arr: BalanceData[] = [];
 
-  const { report_date } = data.gjzb;
+  const report_date = getReportDates(data);
   for (let i = 0; i < report_date.length; i += 1) {
     const date = report_date[i];
     if (!date) continue;
@@ -230,7 +551,7 @@ function generateWorkingCapitalData(data: StockData) {
   const arr: WorkingCapitalData[] = [];
   let prevWc = 0;
 
-  const { report_date } = data.gjzb;
+  const report_date = getReportDates(data);
   for (let i = report_date.length - 1; i >= 0; i -= 1) {
     const date = report_date[i];
     if (!date) continue;
@@ -288,7 +609,7 @@ function generateWorkingCapitalData(data: StockData) {
 function generateFixedAssetInvestmentAnalysisData(data: StockData) {
   const arr: FixedAssetInvestmentAnalysisData[] = [];
 
-  const { report_date } = data.gjzb;
+  const report_date = getReportDates(data);
   for (let i = 0; i < report_date.length; i += 1) {
     const date = report_date[i];
     if (!date) continue;
@@ -318,11 +639,16 @@ function generateFixedAssetInvestmentAnalysisData(data: StockData) {
       // 补充资料才有这项，要取东方财富财报的现金流量表下的补充资料中才能找到
       // 应该取得是：将净利润调节为经营活动现金流量 下的 固定资产折旧、油气资产折耗、生产性生物资产折旧;
       let depreciation = 0;
-      const target = data.eastMoneyCashFlow.find(
-        (v) => formatDate(v.REPORT_DATE, "Ymd") === date.date_value,
-      );
-      if (target) {
-        depreciation = amortize(target);
+      if (isHKStockData(data)) {
+        // 港股：从 LLB 间接法补充资料中获取 "加:折旧及摊销"
+        depreciation = val("DEPRECIATION");
+      } else {
+        const target = data.eastMoneyCashFlow.find(
+          (v) => formatDate(v.REPORT_DATE, "Ymd") === date.date_value,
+        );
+        if (target) {
+          depreciation = amortize(target);
+        }
       }
 
       arr.push({
@@ -345,7 +671,7 @@ function generateReturnData(data: StockData) {
   const arr: ReturnData[] = [];
   let prevCapitalEmployed = 0;
 
-  const { report_date } = data.gjzb;
+  const report_date = getReportDates(data);
   // 从旧到新遍历，便于计算年度平均已动用资本 =（期初 + 期末）÷ 2
   for (let i = report_date.length - 1; i >= 0; i -= 1) {
     const date = report_date[i];
@@ -404,7 +730,7 @@ function generateTurnoverRateData(data: StockData) {
   let prevEquity = 0;
   let prevFixedAssets = 0;
 
-  const { report_date } = data.gjzb;
+  const report_date = getReportDates(data);
   for (let i = report_date.length - 1; i >= 0; i -= 1) {
     const date = report_date[i];
     if (!date) continue;
@@ -498,6 +824,11 @@ function generateTurnoverRateData(data: StockData) {
 function generatePrimaryBusinessData(data: StockData) {
   const arr: PrimaryBusinessData[] = [];
 
+  // 港股没有主营业务数据，直接返回空数组
+  if (!data.primaryBusiness || data.primaryBusiness.length === 0) {
+    return arr;
+  }
+
   const firstYear = data.primaryBusiness.find((v) =>
     formatDate(v.REPORT_DATE, "Ymd").endsWith("1231"),
   );
@@ -538,20 +869,51 @@ function generatePrimaryBusinessData(data: StockData) {
 }
 
 /**
+ * 港股分红方案解析（格式："每股派港币0.66元"）
+ */
+function parseHKDividend(planExplain: string): number {
+  const match = planExplain.match(/每股派港[元幣币]\s*([\d.]+)/);
+  if (match && match[1]) {
+    return parseFloat(match[1]);
+  }
+  return 0;
+}
+
+/**
  * 估值数据
  */
 function generateVauationData(data: StockData): ValuationData {
   const historyData: ValuationHistoryData[] = [];
+  const report_date = getReportDates(data);
+  const isHK = isHKStockData(data);
 
-  for (const date of data.gjzb.report_date.slice().reverse()) {
+  for (const date of report_date.slice().reverse()) {
     if (date.date_type === 4) {
       const val = getVal(date.date_value, data);
 
       let dps = 0;
       let totalDividend = 0;
       let totalDividendA = 0;
-      if (Array.isArray(data.dividendData)) {
-        const arr = data.dividendData.filter(
+
+      if (isHK && Array.isArray(data.dividendData)) {
+        // 港股分红数据处理
+        const year = date.date_value.slice(0, 4);
+        const hkDividends = data.dividendData as EastMoneyHKDividendResponse[];
+        const arr = hkDividends.filter((v) => v.YEAR === year);
+
+        dps = arr.reduce((pre, cur) => {
+          if (cur.PLAN_EXPLAIN) {
+            return pre + parseHKDividend(cur.PLAN_EXPLAIN);
+          }
+          return pre;
+        }, 0);
+        // 港股没有 TOTAL_DIVIDEND 字段，用每股分红 * 总股本估算
+        const shares = val("PAIDINCAPI");
+        totalDividend = dps * shares;
+      } else if (Array.isArray(data.dividendData)) {
+        // A股分红数据处理（已排除港股，此处为 A股格式）
+        const aShareDividends = data.dividendData as any[];
+        const arr = aShareDividends.filter(
           (v) => v.REPORT_DATE.slice(0, 4) === date.date_value.slice(0, 4),
         );
 
@@ -587,8 +949,8 @@ function generateVauationData(data: StockData): ValuationData {
       });
     }
   }
-  const lastDateValue = data.gjzb.report_date[0]?.date_value!;
 
+  const lastDateValue = report_date[0]?.date_value!;
   const lastVal = getVal(lastDateValue, data);
   const cash = lastVal("CURFDS");
   const tradingFinancialAssets = lastVal("TRADFINASSET");
@@ -618,7 +980,7 @@ function generateVauationData(data: StockData): ValuationData {
   const debtRatio = lastVal("ASSLIABRT");
   const minorityInterest = lastVal("MINYSHARRIGH");
 
-  const lastYearDateValue = data.gjzb.report_date.find(
+  const lastYearDateValue = report_date.find(
     (v) => v.date_type === 4,
   )!.date_value;
   const lastYearVal = getVal(lastYearDateValue, data);
@@ -657,13 +1019,15 @@ function generateRecentYearData(item: {
   const isBank = code === "600036";
   const netProfitKey = isBank ? "NETPARECOMPPROF" : "PARENETP";
 
-  const dates = data.gjzb.report_date.slice(0, 5);
+  const report_date = getReportDates(data);
+  const dates = report_date.slice(0, 5);
   for (let i = 0; i < 4; i += 1) {
     const item = dates[i]!;
     const prevItem = dates[i + 1]!;
+    if (!prevItem) break;
 
     const val = getVal(item.date_value, data);
-    const lastVal = getVal(prevItem!.date_value, data);
+    const lastVal = getVal(prevItem.date_value, data);
 
     if (item.date_type === prevItem.date_type + 1) {
       // 计算单个季度数据并累加
