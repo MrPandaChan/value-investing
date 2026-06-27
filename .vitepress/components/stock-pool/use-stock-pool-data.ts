@@ -1,6 +1,6 @@
 import { computed, reactive, ref, watch } from "vue";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
-import { isHKCode, isBCode } from "../../../fetch-data/helper";
+import { isHKCode, isBCode, isETFCode } from "../../../fetch-data/helper";
 import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
 import { PlanType, stocks, type StockItem } from "../../my-data/stock-pool";
 
@@ -301,7 +301,7 @@ async function buildTableData(
         PE_TTM,
         change,
       } = dynamicData;
-      const prevClose = isHKCode(code)
+      const prevClose = isHKCode(code) || isETFCode(code)
         ? originPrevClose / 1000
         : originPrevClose / 100;
       // 港股 PE_TTM 是以收盘价来算的
@@ -430,7 +430,7 @@ async function refreshData() {
 
     const { price, prevClose: originPrevClose, PE_TTM, change } = dynamicData;
     const code = item.code;
-    const prevClose = isHKCode(code)
+    const prevClose = isHKCode(code) || isETFCode(code)
       ? originPrevClose / 1000
       : originPrevClose / 100;
     const pricePE = isHKCode(code)
