@@ -2275,10 +2275,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300308",
-      "price": 1382.33,
-      "marketValue": 1541622301294,
-      "PB": 44.5,
-      "PE_TTM": 103.13,
+      "price": 1253.89,
+      "marketValue": 1398381564003,
+      "PB": 40.37,
+      "PE_TTM": 93.54,
       "totalSharesOutstanding": 1115234641
     },
     "recentYearData": {
@@ -4500,10 +4500,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300750",
-      "price": 408.98,
-      "marketValue": 1892197979987,
-      "PB": 5.79,
-      "PE_TTM": 23.96,
+      "price": 381,
+      "marketValue": 1762744951770,
+      "PB": 5.39,
+      "PE_TTM": 22.32,
       "totalSharesOutstanding": 4626627170
     },
     "recentYearData": {
@@ -5373,7 +5373,7 @@ const data: ServiceData = {
         "year": "2026Q1",
         "roe": 4.35,
         "roa": 2.851198,
-        "roic": 3.534576,
+        "roic": 3.956054,
         "roce": 4.2297847319899375,
         "netProfitMargin": 6.19012,
         "assetTurnover": 37.7595,
@@ -6669,9 +6669,9 @@ const data: ServiceData = {
           "basicEps": 4.7715,
           "totalSharesOutstanding": 536158873,
           "dps": 2.4,
-          "dividendRatio": 0.5056634374866793,
-          "totalDividend": 1286980135.5,
-          "totalDividendA": 1286980135.5
+          "dividendRatio": 0.14746203384989826,
+          "totalDividend": 375310323.5,
+          "totalDividendA": 375310323.5
         }
       ],
       "cash": 3601247085.06,
@@ -6689,10 +6689,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "300866",
-      "price": 115.47,
-      "marketValue": 61923831520,
-      "PB": 6.04,
-      "PE_TTM": 24.56,
+      "price": 106.09,
+      "marketValue": 56893559245,
+      "PB": 5.55,
+      "PE_TTM": 22.57,
       "totalSharesOutstanding": 536276362
     },
     "recentYearData": {
@@ -9754,10 +9754,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600018",
-      "price": 4.9,
-      "marketValue": 114071806470,
-      "PB": 0.79,
-      "PE_TTM": 8.35,
+      "price": 4.76,
+      "marketValue": 110812611999,
+      "PB": 0.76,
+      "PE_TTM": 8.11,
       "totalSharesOutstanding": 23279960504
     },
     "recentYearData": {
@@ -12291,10 +12291,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600025",
-      "price": 9.37,
-      "marketValue": 174573353188,
-      "PB": 2.6,
-      "PE_TTM": 20.44,
+      "price": 9.01,
+      "marketValue": 167866159256,
+      "PB": 2.5,
+      "PE_TTM": 19.66,
       "totalSharesOutstanding": 18631094257
     },
     "recentYearData": {
@@ -15204,9 +15204,9 @@ const data: ServiceData = {
           "basicEps": 0.262,
           "totalSharesOutstanding": 120926000000,
           "dps": 0.2,
-          "dividendRatio": 0.7609724920079223,
-          "totalDividend": 24205773998.28,
-          "totalDividendA": 19434931878.28
+          "dividendRatio": 0.33519181380804175,
+          "totalDividend": 10662116405.42,
+          "totalDividendA": 8554925552.62
         }
       ],
       "cash": 156123000000,
@@ -15224,10 +15224,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600028",
-      "price": 4.77,
-      "marketValue": 576814702839,
-      "PB": 0.7,
-      "PE_TTM": 16.22,
+      "price": 4.52,
+      "marketValue": 546583324283,
+      "PB": 0.67,
+      "PE_TTM": 15.37,
       "totalSharesOutstanding": 120925514222
     },
     "recentYearData": {
@@ -17941,10 +17941,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600036",
-      "price": 37.65,
-      "marketValue": 949527186878,
-      "PB": 0.84,
-      "PE_TTM": 6.3,
+      "price": 36,
+      "marketValue": 907914441636,
+      "PB": 0.8,
+      "PE_TTM": 6.02,
       "totalSharesOutstanding": 25219845601
     },
     "recentYearData": {
@@ -20298,10 +20298,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600050",
-      "price": 4.32,
-      "marketValue": 135062317413,
-      "PB": 0.8,
-      "PE_TTM": 15.6,
+      "price": 4.05,
+      "marketValue": 126620922574,
+      "PB": 0.75,
+      "PE_TTM": 14.62,
       "totalSharesOutstanding": 31264425327
     },
     "recentYearData": {
@@ -21077,19 +21077,19 @@ const data: ServiceData = {
       },
       {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.09000339008158127,
-        "longTermOperatingAssetsPerYuanRevenue": 0.128168883291116,
-        "fixedAssets": 3728496096.52,
-        "longTermOperatingAssets": 5309546458.340001,
+        "fixedAssetsPerYuanRevenue": 0.002926768530004406,
+        "longTermOperatingAssetsPerYuanRevenue": 0.041092261739539095,
+        "fixedAssets": 121244822.33,
+        "longTermOperatingAssets": 1702295184.1499999,
         "depreciation": 721309000.7199999,
         "depreciationOverRevenue": 0.017411914530834887
       },
       {
         "year": "2024",
-        "fixedAssetsPerYuanRevenue": 0.1022243356086917,
-        "longTermOperatingAssetsPerYuanRevenue": 0.14456015666775232,
-        "fixedAssets": 3804543063.56,
-        "longTermOperatingAssets": 5380180150.28,
+        "fixedAssetsPerYuanRevenue": 0.004963283724576581,
+        "longTermOperatingAssetsPerYuanRevenue": 0.04729910478363722,
+        "fixedAssets": 184721441.86,
+        "longTermOperatingAssets": 1760358528.58,
         "depreciation": 716368135.78,
         "depreciationOverRevenue": 0.019248108250567223
       },
@@ -21307,7 +21307,7 @@ const data: ServiceData = {
         "wcDays": 39.63593951497237,
         "receivablesDays": 41.784457,
         "inventoryDays": 40.4081,
-        "fixedAssetsDays": 32.85123737977717
+        "fixedAssetsDays": 1.0682705134516082
       },
       {
         "year": "2024",
@@ -21322,7 +21322,7 @@ const data: ServiceData = {
         "wcDays": 19.354514379918903,
         "receivablesDays": 39.684453,
         "inventoryDays": 50.375748,
-        "fixedAssetsDays": 37.31188249717247
+        "fixedAssetsDays": 1.811598559470452
       },
       {
         "year": "2023",
@@ -22611,9 +22611,9 @@ const data: ServiceData = {
           "basicEps": 2.51,
           "totalSharesOutstanding": 2213939223,
           "dps": 2.5,
-          "dividendRatio": 0.9964652125071497,
-          "totalDividend": 5534848057.5,
-          "totalDividendA": 5534848057.5
+          "dividendRatio": 0.19929304250142996,
+          "totalDividend": 1106969611.5,
+          "totalDividendA": 1106969611.5
         }
       ],
       "cash": 5859868488.83,
@@ -22631,10 +22631,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600066",
-      "price": 27.42,
-      "marketValue": 60706213495,
-      "PB": 5.15,
-      "PE_TTM": 11.12,
+      "price": 26.8,
+      "marketValue": 59333571176,
+      "PB": 5.03,
+      "PE_TTM": 10.87,
       "totalSharesOutstanding": 2213939223
     },
     "recentYearData": {
@@ -25276,10 +25276,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600096",
-      "price": 32.53,
-      "marketValue": 59301888479,
-      "PB": 2.48,
-      "PE_TTM": 11.21,
+      "price": 32.13,
+      "marketValue": 58572692187,
+      "PB": 2.45,
+      "PE_TTM": 11.07,
       "totalSharesOutstanding": 1822990731
     },
     "recentYearData": {
@@ -28197,10 +28197,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600188",
-      "price": 19.84,
-      "marketValue": 199131144077,
-      "PB": 2.6,
-      "PE_TTM": 20.84,
+      "price": 17.98,
+      "marketValue": 180462599320,
+      "PB": 2.36,
+      "PE_TTM": 18.89,
       "totalSharesOutstanding": 10036852020
     },
     "recentYearData": {
@@ -30822,9 +30822,9 @@ const data: ServiceData = {
           "basicEps": 1.34,
           "totalSharesOutstanding": 567115486,
           "dps": 1.1,
-          "dividendRatio": 0.8213621379785065,
-          "totalDividend": 623827034.6,
-          "totalDividendA": 623827034.6
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
       "cash": 452893627.32,
@@ -30842,10 +30842,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600285",
-      "price": 19.93,
-      "marketValue": 11302611636,
-      "PB": 3.74,
-      "PE_TTM": 14.32,
+      "price": 19.37,
+      "marketValue": 10985026964,
+      "PB": 3.63,
+      "PE_TTM": 13.92,
       "totalSharesOutstanding": 567115486
     },
     "recentYearData": {
@@ -33491,9 +33491,9 @@ const data: ServiceData = {
           "basicEps": 3.99,
           "totalSharesOutstanding": 3130471626,
           "dps": 1.25,
-          "dividendRatio": 0.3123674237437882,
-          "totalDividend": 3913089532.5,
-          "totalDividendA": 3913089532.5
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
       "cash": 46828563167.76,
@@ -33511,10 +33511,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600309",
-      "price": 74.3,
-      "marketValue": 232594041812,
-      "PB": 2.16,
-      "PE_TTM": 17.67,
+      "price": 71.79,
+      "marketValue": 224736558031,
+      "PB": 2.09,
+      "PE_TTM": 17.07,
       "totalSharesOutstanding": 3130471626
     },
     "recentYearData": {
@@ -36120,10 +36120,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600406",
-      "price": 23.95,
-      "marketValue": 192360559936,
-      "PB": 3.6,
-      "PE_TTM": 23.12,
+      "price": 22.74,
+      "marketValue": 182642134987,
+      "PB": 3.67,
+      "PE_TTM": 21.95,
       "totalSharesOutstanding": 8031756156
     },
     "recentYearData": {
@@ -38673,9 +38673,9 @@ const data: ServiceData = {
           "basicEps": 0.77,
           "totalSharesOutstanding": 5483559226,
           "dps": 0.5,
-          "dividendRatio": 0.6522538341046313,
-          "totalDividend": 2741779613,
-          "totalDividendA": 2741779613
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
       "cash": 5015657410.51,
@@ -38693,10 +38693,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600415",
-      "price": 10.63,
-      "marketValue": 58290234572,
-      "PB": 2.76,
-      "PE_TTM": 13.28,
+      "price": 9.76,
+      "marketValue": 53519538046,
+      "PB": 2.53,
+      "PE_TTM": 12.19,
       "totalSharesOutstanding": 5483559226
     },
     "recentYearData": {
@@ -41830,10 +41830,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600436",
-      "price": 114.29,
-      "marketValue": 68953123931,
-      "PB": 4.53,
-      "PE_TTM": 36.25,
+      "price": 108,
+      "marketValue": 65158258680,
+      "PB": 4.28,
+      "PE_TTM": 34.25,
       "totalSharesOutstanding": 603317210
     },
     "recentYearData": {
@@ -44046,7 +44046,7 @@ const data: ServiceData = {
           "profit_tb": -0.04532,
           "basicEps": 65.66,
           "totalSharesOutstanding": 1252270215,
-          "dps": 51.98123,
+          "dps": 51.95,
           "dividendRatio": 0.36443893447880515,
           "totalDividend": 30000637540.76,
           "totalDividendA": 30000637540.76
@@ -44067,10 +44067,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600519",
-      "price": 1241.41,
-      "marketValue": 1551863800297,
-      "PB": 6.58,
-      "PE_TTM": 18.76,
+      "price": 1168.63,
+      "marketValue": 1460882861377,
+      "PB": 6.19,
+      "PE_TTM": 17.66,
       "totalSharesOutstanding": 1250081601
     },
     "recentYearData": {
@@ -46796,10 +46796,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600612",
-      "price": 34.21,
-      "marketValue": 17895858706,
-      "PB": 1.3,
-      "PE_TTM": 10.6,
+      "price": 32.24,
+      "marketValue": 16865316711,
+      "PB": 1.23,
+      "PE_TTM": 9.99,
       "totalSharesOutstanding": 523117764
     },
     "recentYearData": {
@@ -51366,10 +51366,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600660",
-      "price": 50.05,
-      "marketValue": 130617663777,
-      "PB": 3.63,
-      "PE_TTM": 14.52,
+      "price": 50.43,
+      "marketValue": 131609366319,
+      "PB": 3.65,
+      "PE_TTM": 14.63,
       "totalSharesOutstanding": 2609743532
     },
     "recentYearData": {
@@ -53867,10 +53867,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600690",
-      "price": 19.98,
-      "marketValue": 187365040407,
-      "PB": 1.5,
-      "PE_TTM": 10.01,
+      "price": 19.72,
+      "marketValue": 184926856698,
+      "PB": 1.48,
+      "PE_TTM": 9.88,
       "totalSharesOutstanding": 9377629650
     },
     "recentYearData": {
@@ -56176,10 +56176,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600809",
-      "price": 113.61,
-      "marketValue": 138600135261,
-      "PB": 3.08,
-      "PE_TTM": 12.62,
+      "price": 108.1,
+      "marketValue": 131878132398,
+      "PB": 2.93,
+      "PE_TTM": 12.01,
       "totalSharesOutstanding": 1219964222
     },
     "recentYearData": {
@@ -58773,10 +58773,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600873",
-      "price": 8.25,
-      "marketValue": 23134993613,
-      "PB": 1.41,
-      "PE_TTM": 9.72,
+      "price": 7.36,
+      "marketValue": 20639218544,
+      "PB": 1.26,
+      "PE_TTM": 8.67,
       "totalSharesOutstanding": 2804241650
     },
     "recentYearData": {
@@ -61610,10 +61610,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600886",
-      "price": 13.18,
-      "marketValue": 105499234373,
-      "PB": 1.53,
-      "PE_TTM": 14.19,
+      "price": 13.06,
+      "marketValue": 104538695062,
+      "PB": 1.51,
+      "PE_TTM": 14.06,
       "totalSharesOutstanding": 8004494262
     },
     "recentYearData": {
@@ -64043,9 +64043,9 @@ const data: ServiceData = {
           "basicEps": 1.83,
           "totalSharesOutstanding": 6325360667,
           "dps": 1.38,
-          "dividendRatio": 0.7547662821899657,
-          "totalDividend": 8728997720.46,
-          "totalDividendA": 8728997720.46
+          "dividendRatio": 0.26252740250085765,
+          "totalDividend": 3036173120.16,
+          "totalDividendA": 3036173120.16
         }
       ],
       "cash": 19755302604.96,
@@ -64063,10 +64063,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600887",
-      "price": 24.63,
-      "marketValue": 155793633228,
-      "PB": 2.89,
-      "PE_TTM": 12.89,
+      "price": 24.27,
+      "marketValue": 153516503388,
+      "PB": 2.85,
+      "PE_TTM": 12.7,
       "totalSharesOutstanding": 6325360667
     },
     "recentYearData": {
@@ -66060,10 +66060,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600900",
-      "price": 26.94,
-      "marketValue": 659173785269,
-      "PB": 2.89,
-      "PE_TTM": 18.27,
+      "price": 26.65,
+      "marketValue": 652078002131,
+      "PB": 2.86,
+      "PE_TTM": 18.07,
       "totalSharesOutstanding": 24468217716
     },
     "recentYearData": {
@@ -66788,8 +66788,8 @@ const data: ServiceData = {
       {
         "year": "2025",
         "roe": 15.64,
-        "roa": 15.753373,
-        "roic": 14.272671,
+        "roa": 15.99237,
+        "roic": 14.573492,
         "roce": 20.204575754956046,
         "netProfitMargin": 30.673497,
         "assetTurnover": 36.9605,
@@ -67965,8 +67965,8 @@ const data: ServiceData = {
       "debtRatio": 27.092482,
       "interestBearingDebtOverTotal": 0.0602242343666825,
       "roe": 15.64,
-      "roic": 14.272671,
-      "roa": 15.753373,
+      "roic": 14.573492,
+      "roa": 15.99237,
       "grossProfitMargin": 51.468786,
       "netProfitMargin": 30.673497,
       "tradingFinancialAssets": 19977000000,
@@ -67975,10 +67975,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600938",
-      "price": 30.54,
-      "marketValue": 1451564794671,
-      "PB": 1.73,
-      "PE_TTM": 11.64,
+      "price": 27.37,
+      "marketValue": 1300894840542,
+      "PB": 1.55,
+      "PE_TTM": 10.44,
       "totalSharesOutstanding": 47529953984
     },
     "recentYearData": {
@@ -68857,8 +68857,8 @@ const data: ServiceData = {
       {
         "year": "2025",
         "roe": 9.94,
-        "roa": 8.782274,
-        "roic": 9.825258,
+        "roa": 8.606698,
+        "roic": 9.576444,
         "roce": 12.807972549873275,
         "netProfitMargin": 13.070434,
         "assetTurnover": 50.420500000000004,
@@ -71163,10 +71163,10 @@ const data: ServiceData = {
           "profit_tb": -0.00924,
           "basicEps": 6.35,
           "totalSharesOutstanding": 468445000000,
-          "dps": 4.7036999999999995,
-          "dividendRatio": 0.7426102249342353,
-          "totalDividend": 101808148787.359,
-          "totalDividendA": 4246349216.01
+          "dps": 4.7786144,
+          "dividendRatio": 0.3945251164152413,
+          "totalDividend": 54087420834.9475,
+          "totalDividendA": 2259176587.17
         }
       ],
       "cash": 205262000000,
@@ -71174,8 +71174,8 @@ const data: ServiceData = {
       "debtRatio": 33.731903,
       "interestBearingDebtOverTotal": 0.04751585069007501,
       "roe": 9.94,
-      "roic": 9.825258,
-      "roa": 8.782274,
+      "roic": 9.576444,
+      "roa": 8.606698,
       "grossProfitMargin": 28.868287,
       "netProfitMargin": 13.070434,
       "tradingFinancialAssets": 139863000000,
@@ -71184,10 +71184,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "600941",
-      "price": 91.93,
-      "marketValue": 1992988606517,
-      "PB": 1.4,
-      "PE_TTM": 14.68,
+      "price": 86.82,
+      "marketValue": 1882206796669,
+      "PB": 1.32,
+      "PE_TTM": 13.86,
       "totalSharesOutstanding": 21679414843
     },
     "recentYearData": {
@@ -73113,9 +73113,9 @@ const data: ServiceData = {
           "basicEps": 0.3372,
           "totalSharesOutstanding": 5925928614,
           "dps": 0.2,
-          "dividendRatio": 0.5930795090547539,
-          "totalDividend": 1185185722.8,
-          "totalDividendA": 1185185722.8
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
       "cash": 8379393029.49,
@@ -76358,9 +76358,9 @@ const data: ServiceData = {
           "basicEps": 0.27,
           "totalSharesOutstanding": 19454388000,
           "dps": 0.12,
-          "dividendRatio": 0.4516860317478744,
-          "totalDividend": 2334526607.88,
-          "totalDividendA": 2334526607.88
+          "dividendRatio": 0.1129215079369686,
+          "totalDividend": 583631651.97,
+          "totalDividendA": 583631651.97
         }
       ],
       "cash": 5242802000,
@@ -76378,10 +76378,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601018",
-      "price": 3.28,
-      "marketValue": 63810393949,
-      "PB": 0.8,
-      "PE_TTM": 12.36,
+      "price": 3.17,
+      "marketValue": 61670411225,
+      "PB": 0.77,
+      "PE_TTM": 11.94,
       "totalSharesOutstanding": 19454388399
     },
     "recentYearData": {
@@ -78679,9 +78679,9 @@ const data: ServiceData = {
           "basicEps": 1.08,
           "totalSharesOutstanding": 3288100259,
           "dps": 0.32999999999999996,
-          "dividendRatio": 0.3080412252758138,
-          "totalDividend": 1085073085.47,
-          "totalDividendA": 1085073085.47
+          "dividendRatio": 0.14001873876173357,
+          "totalDividend": 493215038.85,
+          "totalDividendA": 493215038.85
         }
       ],
       "cash": 5963505024.93,
@@ -78699,10 +78699,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601058",
-      "price": 12.23,
-      "marketValue": 40213466168,
-      "PB": 1.84,
-      "PE_TTM": 11.36,
+      "price": 11.73,
+      "marketValue": 38569416038,
+      "PB": 1.77,
+      "PE_TTM": 10.89,
       "totalSharesOutstanding": 3288100259
     },
     "recentYearData": {
@@ -81644,10 +81644,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601088",
-      "price": 41.51,
-      "marketValue": 900328417959,
-      "PB": 1.87,
-      "PE_TTM": 17.46,
+      "price": 39.57,
+      "marketValue": 858250915409,
+      "PB": 1.78,
+      "PE_TTM": 16.64,
       "totalSharesOutstanding": 21689434304
     },
     "recentYearData": {
@@ -84865,10 +84865,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601225",
-      "price": 23.3,
-      "marketValue": 225893500000,
-      "PB": 2.42,
-      "PE_TTM": 13.97,
+      "price": 20.7,
+      "marketValue": 200686500000,
+      "PB": 2.15,
+      "PE_TTM": 12.41,
       "totalSharesOutstanding": 9695000000
     },
     "recentYearData": {
@@ -85747,8 +85747,8 @@ const data: ServiceData = {
       {
         "year": "2025",
         "roe": 11.95,
-        "roa": 11.22561,
-        "roic": 11.277444,
+        "roa": 11.226941,
+        "roic": 11.279241,
         "roce": 14.010848261558154,
         "netProfitMargin": 30.43416,
         "assetTurnover": 29.083,
@@ -87944,8 +87944,8 @@ const data: ServiceData = {
       "debtRatio": 24.509719,
       "interestBearingDebtOverTotal": 0.06224541383170515,
       "roe": 11.95,
-      "roic": 11.277444,
-      "roa": 11.22561,
+      "roic": 11.279241,
+      "roa": 11.226941,
       "grossProfitMargin": 36.660578,
       "netProfitMargin": 30.43416,
       "tradingFinancialAssets": 507139277,
@@ -87954,10 +87954,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601298",
-      "price": 8.32,
-      "marketValue": 54005952000,
-      "PB": 1.15,
-      "PE_TTM": 10.3,
+      "price": 8.12,
+      "marketValue": 52707732000,
+      "PB": 1.12,
+      "PE_TTM": 10.05,
       "totalSharesOutstanding": 6491100000
     },
     "recentYearData": {
@@ -90484,8 +90484,8 @@ const data: ServiceData = {
           "totalSharesOutstanding": 0,
           "dps": 2.7,
           "dividendRatio": 0,
-          "totalDividend": 48890633386.5,
-          "totalDividendA": 28782175724.1
+          "totalDividend": 17202259895.25,
+          "totalDividendA": 10127061828.85
         }
       ],
       "cash": 725711000000,
@@ -90503,10 +90503,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601318",
-      "price": 51.98,
-      "marketValue": 941235230900,
-      "PB": 0.95,
-      "PE_TTM": 7.09,
+      "price": 47.23,
+      "marketValue": 855223931424,
+      "PB": 0.87,
+      "PE_TTM": 6.44,
       "totalSharesOutstanding": 18107641995
     },
     "recentYearData": {
@@ -93016,10 +93016,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601600",
-      "price": 9.86,
-      "marketValue": 169148017284,
-      "PB": 2.1,
-      "PE_TTM": 11.53,
+      "price": 8.4,
+      "marketValue": 144101759147,
+      "PB": 1.79,
+      "PE_TTM": 9.83,
       "totalSharesOutstanding": 17154971327
     },
     "recentYearData": {
@@ -95493,10 +95493,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601717",
-      "price": 16.03,
-      "marketValue": 28619960878,
-      "PB": 1.25,
-      "PE_TTM": 6.99,
+      "price": 14.19,
+      "marketValue": 25334825007,
+      "PB": 1.11,
+      "PE_TTM": 6.18,
       "totalSharesOutstanding": 1785399930
     },
     "recentYearData": {
@@ -97446,9 +97446,9 @@ const data: ServiceData = {
           "basicEps": 0.36,
           "totalSharesOutstanding": 91507138699,
           "dps": 0.272,
-          "dividendRatio": 0.7500419366008472,
-          "totalDividend": 24889941726.13,
-          "totalDividendA": 21115286206.13
+          "dividendRatio": 0.4996602901179133,
+          "totalDividend": 16581093532.26,
+          "totalDividendA": 14066506840.26
         }
       ],
       "cash": 83340320421.18,
@@ -97466,10 +97466,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601728",
-      "price": 5.68,
-      "marketValue": 519760547810,
-      "PB": 1.13,
-      "PE_TTM": 16.41,
+      "price": 5.32,
+      "marketValue": 486817977879,
+      "PB": 1.06,
+      "PE_TTM": 15.37,
       "totalSharesOutstanding": 91507138699
     },
     "recentYearData": {
@@ -100207,10 +100207,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601857",
-      "price": 9.68,
-      "marketValue": 1771643065278,
-      "PB": 1.12,
-      "PE_TTM": 11.2,
+      "price": 8.93,
+      "marketValue": 1634377331915,
+      "PB": 1.04,
+      "PE_TTM": 10.33,
       "totalSharesOutstanding": 183020977818
     },
     "recentYearData": {
@@ -103464,10 +103464,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601898",
-      "price": 13.73,
-      "marketValue": 182041448482,
-      "PB": 1.11,
-      "PE_TTM": 10.25,
+      "price": 12.51,
+      "marketValue": 165865879134,
+      "PB": 1.01,
+      "PE_TTM": 9.34,
       "totalSharesOutstanding": 13258663400
     },
     "recentYearData": {
@@ -104243,19 +104243,19 @@ const data: ServiceData = {
       },
       {
         "year": "2025",
-        "fixedAssetsPerYuanRevenue": 0.34244102864129866,
-        "longTermOperatingAssetsPerYuanRevenue": 0.61237748718571,
-        "fixedAssets": 119539000209,
-        "longTermOperatingAssets": 213768171586,
+        "fixedAssetsPerYuanRevenue": 0.2714677734477068,
+        "longTermOperatingAssetsPerYuanRevenue": 0.5414042319921181,
+        "fixedAssets": 94763721379,
+        "longTermOperatingAssets": 188992892756,
         "depreciation": 16677727590,
         "depreciationOverRevenue": 0.04777635902369694
       },
       {
         "year": "2024",
-        "fixedAssetsPerYuanRevenue": 0.444008165368258,
-        "longTermOperatingAssetsPerYuanRevenue": 0.68522974338374,
-        "fixedAssets": 134818620308,
-        "longTermOperatingAssets": 208063129921,
+        "fixedAssetsPerYuanRevenue": 0.4072154449379534,
+        "longTermOperatingAssetsPerYuanRevenue": 0.6484370229534354,
+        "fixedAssets": 123646880253,
+        "longTermOperatingAssets": 196891389866,
         "depreciation": 10617446030,
         "depreciationOverRevenue": 0.03496722279093859
       },
@@ -104473,7 +104473,7 @@ const data: ServiceData = {
         "wcDays": 26.0037953150105,
         "receivablesDays": 8.312233,
         "inventoryDays": 52.030164,
-        "fixedAssetsDays": 124.990975454074
+        "fixedAssetsDays": 99.08573730841297
       },
       {
         "year": "2024",
@@ -104488,7 +104488,7 @@ const data: ServiceData = {
         "wcDays": 26.253933128943064,
         "receivablesDays": 8.648859,
         "inventoryDays": 46.607183,
-        "fixedAssetsDays": 162.06298035941415
+        "fixedAssetsDays": 148.63363740235297
       },
       {
         "year": "2023",
@@ -106625,10 +106625,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601899",
-      "price": 30.44,
-      "marketValue": 809421353094,
-      "PB": 4.27,
-      "PE_TTM": 13.12,
+      "price": 25.1,
+      "marketValue": 667426937012,
+      "PB": 3.52,
+      "PE_TTM": 10.82,
       "totalSharesOutstanding": 26590714622
     },
     "recentYearData": {
@@ -109342,10 +109342,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "601919",
-      "price": 14.15,
-      "marketValue": 216678721435,
-      "PB": 0.95,
-      "PE_TTM": 8.65,
+      "price": 13.39,
+      "marketValue": 205040853711,
+      "PB": 0.9,
+      "PE_TTM": 8.19,
       "totalSharesOutstanding": 15312983847
     },
     "recentYearData": {
@@ -111201,9 +111201,9 @@ const data: ServiceData = {
           "basicEps": 2.66,
           "totalSharesOutstanding": 160000000,
           "dps": 0.82,
-          "dividendRatio": 0.30829925015182796,
-          "totalDividend": 129901530,
-          "totalDividendA": 129901530
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
       "cash": 1884210120.99,
@@ -111221,10 +111221,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603173",
-      "price": 35.7,
-      "marketValue": 5712000000,
-      "PB": 2.93,
-      "PE_TTM": 14.35,
+      "price": 34.05,
+      "marketValue": 5448000000,
+      "PB": 2.8,
+      "PE_TTM": 13.69,
       "totalSharesOutstanding": 160000000
     },
     "recentYearData": {
@@ -114254,9 +114254,9 @@ const data: ServiceData = {
           "basicEps": 2.26,
           "totalSharesOutstanding": 1807973428,
           "dps": 1.9,
-          "dividendRatio": 0.8438560624467533,
-          "totalDividend": 3435028122.2,
-          "totalDividendA": 3435028122.2
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
       "cash": 4553036704.72,
@@ -114274,11 +114274,11 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603195",
-      "price": 39.47,
-      "marketValue": 71358189465,
-      "PB": 4.96,
-      "PE_TTM": 17.18,
-      "totalSharesOutstanding": 1807909538
+      "price": 38.35,
+      "marketValue": 69181366606,
+      "PB": 4.81,
+      "PE_TTM": 16.65,
+      "totalSharesOutstanding": 1803946978
     },
     "recentYearData": {
       "netProfit": 4153960464.89
@@ -117103,9 +117103,9 @@ const data: ServiceData = {
           "basicEps": 1.23,
           "totalSharesOutstanding": 5851824944,
           "dps": 1.36,
-          "dividendRatio": 1.1295059358519823,
-          "totalDividend": 7949988216.08,
-          "totalDividendA": 7553923032.08
+          "dividendRatio": 0.46498203278750955,
+          "totalDividend": 3272759853.68,
+          "totalDividendA": 3109674189.68
         }
       ],
       "cash": 21856254933.9,
@@ -117123,10 +117123,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603288",
-      "price": 33.04,
-      "marketValue": 193344296150,
-      "PB": 5.18,
-      "PE_TTM": 26.56,
+      "price": 32.98,
+      "marketValue": 192993186653,
+      "PB": 5.17,
+      "PE_TTM": 26.51,
       "totalSharesOutstanding": 5851824944
     },
     "recentYearData": {
@@ -119216,10 +119216,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603486",
-      "price": 53.8,
-      "marketValue": 31128585312,
-      "PB": 3.35,
-      "PE_TTM": 18.44,
+      "price": 49.45,
+      "marketValue": 28611682968,
+      "PB": 3.08,
+      "PE_TTM": 16.95,
       "totalSharesOutstanding": 578598240
     },
     "recentYearData": {
@@ -122453,9 +122453,9 @@ const data: ServiceData = {
           "basicEps": 2.36,
           "totalSharesOutstanding": 867892956,
           "dps": 1.1720000000000002,
-          "dividendRatio": 0.5003174477082836,
-          "totalDividend": 1017895898.58,
-          "totalDividendA": 1017895898.58
+          "dividendRatio": 0.26825366866988054,
+          "totalDividend": 545762116.37,
+          "totalDividendA": 545762116.37
         }
       ],
       "cash": 2697594233.02,
@@ -122473,10 +122473,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603529",
-      "price": 20.08,
-      "marketValue": 17427291079,
-      "PB": 1.85,
-      "PE_TTM": 10.72,
+      "price": 19.05,
+      "marketValue": 16533361307,
+      "PB": 1.76,
+      "PE_TTM": 10.17,
       "totalSharesOutstanding": 867892982
     },
     "recentYearData": {
@@ -124858,9 +124858,9 @@ const data: ServiceData = {
           "basicEps": 0.95,
           "totalSharesOutstanding": 2100063103,
           "dps": 0.6699999999999999,
-          "dividendRatio": 0.7031505555890822,
-          "totalDividend": 1407042279.01,
-          "totalDividendA": 1407042279.01
+          "dividendRatio": 0.4512757297064259,
+          "totalDividend": 903027134.29,
+          "totalDividendA": 903027134.29
         }
       ],
       "cash": 7292550856.81,
@@ -124878,10 +124878,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603565",
-      "price": 10.4,
-      "marketValue": 21840656271,
-      "PB": 2.09,
-      "PE_TTM": 11.02,
+      "price": 10.1,
+      "marketValue": 21210637340,
+      "PB": 2.03,
+      "PE_TTM": 10.71,
       "totalSharesOutstanding": 2100063103
     },
     "recentYearData": {
@@ -127079,10 +127079,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603599",
-      "price": 10.9,
-      "marketValue": 9921935861,
-      "PB": 0.97,
-      "PE_TTM": 15.19,
+      "price": 9.95,
+      "marketValue": 9057179983,
+      "PB": 0.89,
+      "PE_TTM": 13.86,
       "totalSharesOutstanding": 910269345
     },
     "recentYearData": {
@@ -130636,10 +130636,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "603993",
-      "price": 21.65,
-      "marketValue": 463186815310,
-      "PB": 5.6,
-      "PE_TTM": 19.18,
+      "price": 17.24,
+      "marketValue": 368837907434,
+      "PB": 4.46,
+      "PE_TTM": 15.27,
       "totalSharesOutstanding": 21394310176
     },
     "recentYearData": {
@@ -133336,10 +133336,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "605499",
-      "price": 120.63,
-      "marketValue": 88566462765,
-      "PB": 4.65,
-      "PE_TTM": 18.87,
+      "price": 110.9,
+      "marketValue": 81422703479,
+      "PB": 4.27,
+      "PE_TTM": 17.35,
       "totalSharesOutstanding": 734199310
     },
     "recentYearData": {
@@ -135561,10 +135561,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "689009",
-      "price": 34,
-      "marketValue": 24862245544,
-      "PB": 3.27,
-      "PE_TTM": 16.52,
+      "price": 37.52,
+      "marketValue": 27436219200,
+      "PB": 3.61,
+      "PE_TTM": 18.23,
       "totalSharesOutstanding": 731242516
     },
     "recentYearData": {
@@ -138086,10 +138086,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000333",
-      "price": 78.28,
-      "marketValue": 595979997640,
-      "PB": 2.89,
-      "PE_TTM": 13.48,
+      "price": 78.55,
+      "marketValue": 598035626145,
+      "PB": 2.9,
+      "PE_TTM": 13.53,
       "totalSharesOutstanding": 7613438907
     },
     "recentYearData": {
@@ -140119,10 +140119,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000408",
-      "price": 78.96,
-      "marketValue": 123881508976,
-      "PB": 8.1,
-      "PE_TTM": 26.48,
+      "price": 68.05,
+      "marketValue": 106764649010,
+      "PB": 6.98,
+      "PE_TTM": 22.82,
       "totalSharesOutstanding": 1568914754
     },
     "recentYearData": {
@@ -142431,10 +142431,10 @@ const data: ServiceData = {
           "profit_tb": 0.11663,
           "basicEps": 2.7,
           "totalSharesOutstanding": 643976824,
-          "dps": 2.7055823,
-          "dividendRatio": 0.999997870125679,
-          "totalDividend": 1738737387.42,
-          "totalDividendA": 1738737387.42
+          "dps": 2.7010919,
+          "dividendRatio": 0.4699990090655767,
+          "totalDividend": 817206589.66,
+          "totalDividendA": 817206589.66
         }
       ],
       "cash": 6146687592.49,
@@ -142452,10 +142452,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000423",
-      "price": 45.3,
-      "marketValue": 29172150127,
-      "PB": 2.96,
-      "PE_TTM": 16.49,
+      "price": 43.48,
+      "marketValue": 28000112308,
+      "PB": 2.84,
+      "PE_TTM": 15.83,
       "totalSharesOutstanding": 643976824
     },
     "recentYearData": {
@@ -145253,10 +145253,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000538",
-      "price": 48.66,
-      "marketValue": 86822218262,
-      "PB": 2.21,
-      "PE_TTM": 16.52,
+      "price": 47,
+      "marketValue": 83860342341,
+      "PB": 2.14,
+      "PE_TTM": 15.95,
       "totalSharesOutstanding": 1784262603
     },
     "recentYearData": {
@@ -146135,8 +146135,8 @@ const data: ServiceData = {
       {
         "year": "2025",
         "roe": 22.66,
-        "roa": 22.249758,
-        "roic": 19.366499,
+        "roa": 22.25116,
+        "roic": 19.368144,
         "roce": 26.11655361775458,
         "netProfitMargin": 42.205534,
         "assetTurnover": 38.655499999999996,
@@ -147444,8 +147444,8 @@ const data: ServiceData = {
       "debtRatio": 21.813703,
       "interestBearingDebtOverTotal": 0.10105863625515903,
       "roe": 22.66,
-      "roic": 19.366499,
-      "roa": 22.249758,
+      "roic": 19.368144,
+      "roa": 22.25116,
       "grossProfitMargin": 86.624118,
       "netProfitMargin": 42.205534,
       "tradingFinancialAssets": 1507953548.02,
@@ -147454,10 +147454,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000568",
-      "price": 81.27,
-      "marketValue": 119621431898,
-      "PB": 2.32,
-      "PE_TTM": 12.03,
+      "price": 75.2,
+      "marketValue": 110686990018,
+      "PB": 2.15,
+      "PE_TTM": 11.13,
       "totalSharesOutstanding": 1471901463
     },
     "recentYearData": {
@@ -149691,10 +149691,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000596",
-      "price": 82.54,
-      "marketValue": 43630644000,
-      "PB": 1.67,
-      "PE_TTM": 15.44,
+      "price": 78.97,
+      "marketValue": 41743542000,
+      "PB": 1.6,
+      "PE_TTM": 14.77,
       "totalSharesOutstanding": 528600000
     },
     "recentYearData": {
@@ -152228,14 +152228,2106 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000651",
-      "price": 36.99,
-      "marketValue": 207195998360,
+      "price": 37.02,
+      "marketValue": 207364040532,
       "PB": 1.36,
-      "PE_TTM": 7.1,
+      "PE_TTM": 7.11,
       "totalSharesOutstanding": 5601405741
     },
     "recentYearData": {
       "netProfit": 29180803312.59
+    }
+  },
+  "000690": {
+    "basicRevenueData": [
+      {
+        "year": "2025Q2",
+        "revenue": 4356718521.52,
+        "netProfit": 558584609.82,
+        "netProfitMargin": 0.1282122329135731,
+        "netProfitExcludingNon": 544663614.79,
+        "coreProfit": 595148093.7500006,
+        "cashFlowFromOperating": 1281895527.42,
+        "fcf": 773307853.51,
+        "capex": 508587673.91,
+        "fcfOverNetProfit": 1.3844059430122735,
+        "netProfitExcludingNonOvernetProfit": 0.9750780906146232,
+        "cashFlowFromOperatingOverNetProfit": 2.2948994742856983,
+        "operatingProfit": 466163854.25000006,
+        "financialProfit": 92420755.57000001,
+        "operatingProfitOverNetProfit": 0.8345447512422838
+      },
+      {
+        "year": "2024",
+        "revenue": 7903721308.59,
+        "netProfit": 705541276.56,
+        "netProfitMargin": 0.0892669729881792,
+        "netProfitExcludingNon": 711826115.84,
+        "coreProfit": 756044404.7799997,
+        "cashFlowFromOperating": 1679376863.19,
+        "fcf": 1109982.5299999714,
+        "capex": 1678266880.66,
+        "fcfOverNetProfit": 0.0015732354248810237,
+        "netProfitExcludingNonOvernetProfit": 1.008907826499738,
+        "cashFlowFromOperatingOverNetProfit": 2.380267347897943,
+        "operatingProfit": 636459251.78,
+        "financialProfit": 69082024.78,
+        "operatingProfitOverNetProfit": 0.9020864872473195
+      },
+      {
+        "year": "2023",
+        "revenue": 10274802080.05,
+        "netProfit": 888539014.67,
+        "netProfitMargin": 0.08647748226656607,
+        "netProfitExcludingNon": 844813174.69,
+        "coreProfit": 858250461.3899996,
+        "cashFlowFromOperating": 2006962289.74,
+        "fcf": 24366143.950000048,
+        "capex": 1982596145.79,
+        "fcfOverNetProfit": 0.027422705753724883,
+        "netProfitExcludingNonOvernetProfit": 0.9507890601784779,
+        "cashFlowFromOperatingOverNetProfit": 2.258721627980937,
+        "operatingProfit": 700781436.99,
+        "financialProfit": 187757577.68,
+        "operatingProfitOverNetProfit": 0.7886895515221327
+      },
+      {
+        "year": "2022",
+        "revenue": 9415000196.83,
+        "netProfit": 183140599.31,
+        "netProfitMargin": 0.019452001644318907,
+        "netProfitExcludingNon": 90067027.49,
+        "coreProfit": 2881926.179999411,
+        "cashFlowFromOperating": 1195940313.15,
+        "fcf": 944771934.4100001,
+        "capex": 251168378.74,
+        "fcfOverNetProfit": 5.158724706425119,
+        "netProfitExcludingNonOvernetProfit": 0.49179170445732007,
+        "cashFlowFromOperatingOverNetProfit": 6.5301758193203545,
+        "operatingProfit": -82125778.56,
+        "financialProfit": 265266377.87,
+        "operatingProfitOverNetProfit": -0.4484302162896531
+      },
+      {
+        "year": "2021",
+        "revenue": 9410648533.02,
+        "netProfit": 824373483.76,
+        "netProfitMargin": 0.08760007143688829,
+        "netProfitExcludingNon": 801994384.02,
+        "coreProfit": 757741439.2500007,
+        "cashFlowFromOperating": 1434788266.7,
+        "fcf": 1153567144.72,
+        "capex": 281221121.98,
+        "fcfOverNetProfit": 1.3993258728538123,
+        "netProfitExcludingNonOvernetProfit": 0.972853202849359,
+        "cashFlowFromOperatingOverNetProfit": 1.7404590212628797,
+        "operatingProfit": 677524327.3199999,
+        "financialProfit": 146849156.44,
+        "operatingProfitOverNetProfit": 0.8218657449167152
+      },
+      {
+        "year": "2020",
+        "revenue": 7159672229.83,
+        "netProfit": 1817862102.81,
+        "netProfitMargin": 0.2539029783006091,
+        "netProfitExcludingNon": 1696968887.17,
+        "coreProfit": 2195756644.27,
+        "cashFlowFromOperating": 3517729726.83,
+        "fcf": 3174784699.71,
+        "capex": 342945027.12,
+        "fcfOverNetProfit": 1.7464386846518818,
+        "netProfitExcludingNonOvernetProfit": 0.9334970372873022,
+        "cashFlowFromOperatingOverNetProfit": 1.935091622952254,
+        "operatingProfit": 1765010766.6299999,
+        "financialProfit": 52851336.17999999,
+        "operatingProfitOverNetProfit": 0.9709266527431845
+      },
+      {
+        "year": "2019",
+        "revenue": 5626823268.01,
+        "netProfit": 883186076.57,
+        "netProfitMargin": 0.15695998159230445,
+        "netProfitExcludingNon": 728531780.49,
+        "coreProfit": 837822674.74,
+        "cashFlowFromOperating": 1903336782.1,
+        "fcf": 1547612583.4299998,
+        "capex": 355724198.67,
+        "fcfOverNetProfit": 1.7523063649739707,
+        "netProfitExcludingNonOvernetProfit": 0.8248904730466022,
+        "cashFlowFromOperatingOverNetProfit": 2.1550801496915857,
+        "operatingProfit": 680589846.1800001,
+        "financialProfit": 202596230.39,
+        "operatingProfitOverNetProfit": 0.7706075358696594
+      },
+      {
+        "year": "2018",
+        "revenue": 3834291613.98,
+        "netProfit": 462891210.18,
+        "netProfitMargin": 0.12072404938953464,
+        "netProfitExcludingNon": 278501733.19,
+        "coreProfit": 606363581.5500001,
+        "cashFlowFromOperating": 982660768.78,
+        "fcf": -1335984895.0800002,
+        "capex": 2318645663.86,
+        "fcfOverNetProfit": -2.8861746900756415,
+        "netProfitExcludingNonOvernetProfit": 0.6016569921077174,
+        "cashFlowFromOperatingOverNetProfit": 2.1228762766911955,
+        "operatingProfit": 232522263.13000003,
+        "financialProfit": 230368947.04999998,
+        "operatingProfitOverNetProfit": 0.5023259418548505
+      },
+      {
+        "year": "2017",
+        "revenue": 2514872093.55,
+        "netProfit": 103137656.1,
+        "netProfitMargin": 0.041011094108730835,
+        "netProfitExcludingNon": -209996234.5,
+        "coreProfit": -15741913.619999647,
+        "cashFlowFromOperating": 773878921.79,
+        "fcf": -1767651683.29,
+        "capex": 2541530605.08,
+        "fcfOverNetProfit": -17.138761439140364,
+        "netProfitExcludingNonOvernetProfit": -2.036077243178692,
+        "cashFlowFromOperatingOverNetProfit": 7.503359597775463,
+        "operatingProfit": -271849369.62,
+        "financialProfit": 374987025.71999997,
+        "operatingProfitOverNetProfit": -2.635791619662375
+      },
+      {
+        "year": "2016",
+        "revenue": 3539851233.18,
+        "netProfit": 674563689.03,
+        "netProfitMargin": 0.19056272272324012,
+        "netProfitExcludingNon": 619765094.48,
+        "coreProfit": 966756709.7999997,
+        "cashFlowFromOperating": 1123920893.74,
+        "fcf": -383402276.75,
+        "capex": 1507323170.49,
+        "fcfOverNetProfit": -0.5683707602188307,
+        "netProfitExcludingNonOvernetProfit": 0.9187643873496979,
+        "cashFlowFromOperatingOverNetProfit": 1.6661449645416886,
+        "operatingProfit": 561375464.73,
+        "financialProfit": 113188224.3,
+        "operatingProfitOverNetProfit": 0.8322052815164706
+      },
+      {
+        "year": "2015",
+        "revenue": 3574114397.35,
+        "netProfit": 644315400.16,
+        "netProfitMargin": 0.18027274130837076,
+        "netProfitExcludingNon": 583902330.78,
+        "coreProfit": 909619800.1500001,
+        "cashFlowFromOperating": 1145407212.51,
+        "fcf": 351497091.23,
+        "capex": 793910121.28,
+        "fcfOverNetProfit": 0.5455357595716543,
+        "netProfitExcludingNonOvernetProfit": 0.9062368067486857,
+        "cashFlowFromOperatingOverNetProfit": 1.7777119904716947,
+        "operatingProfit": 506870883.71999997,
+        "financialProfit": 137444516.44,
+        "operatingProfitOverNetProfit": 0.7866813110382446
+      }
+    ],
+    "costsExpensesData": [
+      {
+        "year": "2025Q2",
+        "grossProfitMargin": 17.778929,
+        "netProfitMargin": 12.82122329135731,
+        "grossProfitMinusNetProfit": 4.957705708642692,
+        "devExpenses": 0,
+        "manageExpenses": 94663957.98,
+        "devAndManageExpenses": 94663957.98,
+        "sellingExpenses": 3951393.1,
+        "financialExpenses": 16175994.6,
+        "totalOperatingExpenses": 114791345.67999999,
+        "sellingExpensesRatio": 0.000906965432924368,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.021728270374229506,
+        "devAndManageExpensesRatio": 0.021728270374229506,
+        "totalOperatingExpensesRatio": 2.634812
+      },
+      {
+        "year": "2024",
+        "grossProfitMargin": 14.918351,
+        "netProfitMargin": 8.92669729881792,
+        "grossProfitMinusNetProfit": 5.991653701182079,
+        "devExpenses": 0,
+        "manageExpenses": 191380165.2,
+        "devAndManageExpenses": 191380165.2,
+        "sellingExpenses": 6970312.65,
+        "financialExpenses": 52347853.72,
+        "totalOperatingExpenses": 250698331.57,
+        "sellingExpensesRatio": 0.0008819026352086145,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.02421393135307065,
+        "devAndManageExpensesRatio": 0.02421393135307065,
+        "totalOperatingExpensesRatio": 3.171902
+      },
+      {
+        "year": "2023",
+        "grossProfitMargin": 13.559388,
+        "netProfitMargin": 8.647748226656606,
+        "grossProfitMinusNetProfit": 4.911639773343394,
+        "devExpenses": 0,
+        "manageExpenses": 238733435.05,
+        "devAndManageExpenses": 238733435.05,
+        "sellingExpenses": 8195633.15,
+        "financialExpenses": 92502682.46,
+        "totalOperatingExpenses": 339431750.66,
+        "sellingExpensesRatio": 0.0007976438948554538,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.02323484512792078,
+        "devAndManageExpensesRatio": 0.02323484512792078,
+        "totalOperatingExpensesRatio": 3.303535
+      },
+      {
+        "year": "2022",
+        "grossProfitMargin": 5.422481,
+        "netProfitMargin": 1.9452001644318908,
+        "grossProfitMinusNetProfit": 3.4772808355681093,
+        "devExpenses": 0,
+        "manageExpenses": 187641611.69,
+        "devAndManageExpenses": 187641611.69,
+        "sellingExpenses": 5008437.79,
+        "financialExpenses": 163790125.41,
+        "totalOperatingExpenses": 356440174.89,
+        "sellingExpensesRatio": 0.0005319636415606581,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.01993006986374555,
+        "devAndManageExpensesRatio": 0.01993006986374555,
+        "totalOperatingExpensesRatio": 3.785875
+      },
+      {
+        "year": "2021",
+        "grossProfitMargin": 16.257003,
+        "netProfitMargin": 8.76000714368883,
+        "grossProfitMinusNetProfit": 7.496995856311171,
+        "devExpenses": 0,
+        "manageExpenses": 412470215.99,
+        "devAndManageExpenses": 412470215.99,
+        "sellingExpenses": 9202650.04,
+        "financialExpenses": 208812819.17,
+        "totalOperatingExpenses": 630485685.2,
+        "sellingExpensesRatio": 0.0009778975389113536,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.04383015841498364,
+        "devAndManageExpensesRatio": 0.04383015841498364,
+        "totalOperatingExpensesRatio": 6.699704
+      },
+      {
+        "year": "2020",
+        "grossProfitMargin": 41.988175,
+        "netProfitMargin": 25.39029783006091,
+        "grossProfitMinusNetProfit": 16.59787716993909,
+        "devExpenses": 0,
+        "manageExpenses": 358376479.71,
+        "devAndManageExpenses": 358376479.71,
+        "sellingExpenses": 10066448.08,
+        "financialExpenses": 296856846.37,
+        "totalOperatingExpenses": 665299774.16,
+        "sellingExpensesRatio": 0.0014059928662738543,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.050054872374864195,
+        "devAndManageExpensesRatio": 0.050054872374864195,
+        "totalOperatingExpensesRatio": 9.292321
+      },
+      {
+        "year": "2019",
+        "grossProfitMargin": 30.685944,
+        "netProfitMargin": 15.695998159230445,
+        "grossProfitMinusNetProfit": 14.989945840769554,
+        "devExpenses": 0,
+        "manageExpenses": 360452224.65,
+        "devAndManageExpenses": 360452224.65,
+        "sellingExpenses": 10473851.21,
+        "financialExpenses": 384083279.64,
+        "totalOperatingExpenses": 755009355.5,
+        "sellingExpensesRatio": 0.0018614146403969456,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.06405963142636228,
+        "devAndManageExpensesRatio": 0.06405963142636228,
+        "totalOperatingExpensesRatio": 13.418039
+      },
+      {
+        "year": "2018",
+        "grossProfitMargin": 31.580872,
+        "netProfitMargin": 12.072404938953465,
+        "grossProfitMinusNetProfit": 19.508467061046534,
+        "devExpenses": 0,
+        "manageExpenses": 287145043.31,
+        "devAndManageExpenses": 287145043.31,
+        "sellingExpenses": 4117259.44,
+        "financialExpenses": 209910110.48,
+        "totalOperatingExpenses": 501172413.23,
+        "sellingExpensesRatio": 0.0010737992449474335,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.0748886814615394,
+        "devAndManageExpensesRatio": 0.0748886814615394,
+        "totalOperatingExpensesRatio": 13.070795
+      },
+      {
+        "year": "2017",
+        "grossProfitMargin": 25.282001,
+        "netProfitMargin": 4.101109410873083,
+        "grossProfitMinusNetProfit": 21.18089158912692,
+        "devExpenses": 0,
+        "manageExpenses": 335081712.65,
+        "devAndManageExpenses": 335081712.65,
+        "sellingExpenses": 6831503.8,
+        "financialExpenses": 233798328.18,
+        "totalOperatingExpenses": 575711544.63,
+        "sellingExpensesRatio": 0.0027164418490789447,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.13324006159573615,
+        "devAndManageExpensesRatio": 0.13324006159573615,
+        "totalOperatingExpensesRatio": 22.892279
+      },
+      {
+        "year": "2016",
+        "grossProfitMargin": 36.343866,
+        "netProfitMargin": 19.056272272324012,
+        "grossProfitMinusNetProfit": 17.287593727675986,
+        "devExpenses": 0,
+        "manageExpenses": 271831566.49,
+        "devAndManageExpenses": 271831566.49,
+        "sellingExpenses": 6128192.52,
+        "financialExpenses": 158430968.91,
+        "totalOperatingExpenses": 436390727.91999996,
+        "sellingExpensesRatio": 0.0017312005833914049,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.07679180524369157,
+        "devAndManageExpensesRatio": 0.07679180524369157,
+        "totalOperatingExpensesRatio": 12.327939
+      },
+      {
+        "year": "2015",
+        "grossProfitMargin": 35.234891,
+        "netProfitMargin": 18.027274130837075,
+        "grossProfitMinusNetProfit": 17.207616869162923,
+        "devExpenses": 0,
+        "manageExpenses": 304910412.54,
+        "devAndManageExpenses": 304910412.54,
+        "sellingExpenses": 2078146.8,
+        "financialExpenses": 218769760.72,
+        "totalOperatingExpenses": 525758320.06000006,
+        "sellingExpensesRatio": 0.0005814438400575053,
+        "devExpensesRatio": 0,
+        "manageExpensesRatio": 0.08531075915367274,
+        "devAndManageExpensesRatio": 0.08531075915367274,
+        "totalOperatingExpensesRatio": 14.71017
+      }
+    ],
+    "balanceData": [
+      {
+        "year": "2025Q2",
+        "currentAssets": 6591960693.91,
+        "cash": 3982326260.11,
+        "inventory": 499602616.73,
+        "nonCurrentAssets": 15100738116.45,
+        "goodwill": 0,
+        "totalAssets": 21692698810.36,
+        "equity": 12411785026.85,
+        "interestFreeLiabilities": 1004056644.76,
+        "interestBearingDebt": 7218621726.94,
+        "interestExpense": 51367187.65,
+        "interestFreeLiabilitiesOverTotal": 0.046285464687339066,
+        "interestBearingDebtOverTotal": 0.3327673421387536,
+        "debtRatio": 42.783582
+      },
+      {
+        "year": "2024",
+        "currentAssets": 6259967178.77,
+        "cash": 4402983205.88,
+        "inventory": 323338362.99,
+        "nonCurrentAssets": 14938789051.22,
+        "goodwill": 0,
+        "totalAssets": 21198756229.99,
+        "equity": 12204909559.62,
+        "interestFreeLiabilities": 506909771.5,
+        "interestBearingDebt": 7381452643.74,
+        "interestExpense": 159141885.57,
+        "interestFreeLiabilitiesOverTotal": 0.023912241171152857,
+        "interestBearingDebtOverTotal": 0.3482021569405764,
+        "debtRatio": 42.426294
+      },
+      {
+        "year": "2023",
+        "currentAssets": 7244809050.12,
+        "cash": 4728136712.57,
+        "inventory": 298411429.67,
+        "nonCurrentAssets": 13562249648.34,
+        "goodwill": 0,
+        "totalAssets": 20807058698.46,
+        "equity": 12127654393.92,
+        "interestFreeLiabilities": 621803097.85,
+        "interestBearingDebt": 7316315656.210001,
+        "interestExpense": 230925095.76,
+        "interestFreeLiabilitiesOverTotal": 0.029884238174231796,
+        "interestBearingDebtOverTotal": 0.351626616824583,
+        "debtRatio": 41.713749
+      },
+      {
+        "year": "2022",
+        "currentAssets": 7834492903.6,
+        "cash": 5933777501.55,
+        "inventory": 521051504.25,
+        "nonCurrentAssets": 12261918796.37,
+        "goodwill": 0,
+        "totalAssets": 20096411699.97,
+        "equity": 11288216411.49,
+        "interestFreeLiabilities": 610264432.8,
+        "interestBearingDebt": 7562792432.95,
+        "interestExpense": 268960287.84,
+        "interestFreeLiabilitiesOverTotal": 0.030366835727241342,
+        "interestBearingDebtOverTotal": 0.37632551252725827,
+        "debtRatio": 43.829919
+      },
+      {
+        "year": "2021",
+        "currentAssets": 6803108232.77,
+        "cash": 4779327668.37,
+        "inventory": 349267651.53,
+        "nonCurrentAssets": 12885950679.84,
+        "goodwill": 0,
+        "totalAssets": 19689058912.61,
+        "equity": 11183605177.59,
+        "interestFreeLiabilities": 939971907.54,
+        "interestBearingDebt": 6727762602.64,
+        "interestExpense": 292077896.51,
+        "interestFreeLiabilitiesOverTotal": 0.04774082457226984,
+        "interestBearingDebtOverTotal": 0.3417005674319536,
+        "debtRatio": 43.222998
+      },
+      {
+        "year": "2020",
+        "currentAssets": 5916186477.03,
+        "cash": 4160508064.92,
+        "inventory": 185274603.42,
+        "nonCurrentAssets": 13385430585.32,
+        "goodwill": 0,
+        "totalAssets": 19301617062.35,
+        "equity": 10898365809.58,
+        "interestFreeLiabilities": 513902171.47,
+        "interestBearingDebt": 6594179799.27,
+        "interestExpense": 371856161.7,
+        "interestFreeLiabilitiesOverTotal": 0.026624824739292167,
+        "interestBearingDebtOverTotal": 0.34163872270229106,
+        "debtRatio": 43.529657
+      },
+      {
+        "year": "2019",
+        "currentAssets": 4736671898.69,
+        "cash": 2841561556.23,
+        "inventory": 441861702.65,
+        "nonCurrentAssets": 14249519120.7,
+        "goodwill": 0,
+        "totalAssets": 18986191019.39,
+        "equity": 9500183674.72,
+        "interestFreeLiabilities": 483286085.24,
+        "interestBearingDebt": 7766340950.68,
+        "interestExpense": 468045183.41,
+        "interestFreeLiabilitiesOverTotal": 0.025454609866003935,
+        "interestBearingDebtOverTotal": 0.4090520812072564,
+        "debtRatio": 49.955702
+      },
+      {
+        "year": "2018",
+        "currentAssets": 6144478212.76,
+        "cash": 3393950277.05,
+        "inventory": 370976224.67,
+        "nonCurrentAssets": 15448689436.13,
+        "goodwill": 0,
+        "totalAssets": 21593167648.89,
+        "equity": 8858432290.98,
+        "interestFreeLiabilities": 296575297.43,
+        "interestBearingDebt": 10963616888.83,
+        "interestExpense": 270715280.4,
+        "interestFreeLiabilitiesOverTotal": 0.013734682296381166,
+        "interestBearingDebtOverTotal": 0.5077354590628387,
+        "debtRatio": 58.969487
+      },
+      {
+        "year": "2017",
+        "currentAssets": 3786521041.4,
+        "cash": 2142308444.1,
+        "inventory": 76775823.44,
+        "nonCurrentAssets": 13602588848.33,
+        "goodwill": 0,
+        "totalAssets": 17389109889.73,
+        "equity": 8483919846.91,
+        "interestFreeLiabilities": 152352837.21,
+        "interestBearingDebt": 8023082586.21,
+        "interestExpense": 269184582.61,
+        "interestFreeLiabilitiesOverTotal": 0.008761393663972388,
+        "interestBearingDebtOverTotal": 0.46138546694379273,
+        "debtRatio": 51.199994
+      },
+      {
+        "year": "2016",
+        "currentAssets": 5646271366.91,
+        "cash": 4004101265.61,
+        "inventory": 184638698.42,
+        "nonCurrentAssets": 10099039446.69,
+        "goodwill": 0,
+        "totalAssets": 15745310813.6,
+        "equity": 8236574017.39,
+        "interestFreeLiabilities": 213138346.52,
+        "interestBearingDebt": 6968353904.05,
+        "interestExpense": 0,
+        "interestFreeLiabilitiesOverTotal": 0.013536623636282996,
+        "interestBearingDebtOverTotal": 0.4425669322469703,
+        "debtRatio": 47.676132
+      },
+      {
+        "year": "2015",
+        "currentAssets": 1644930483.69,
+        "cash": 1268879463.8,
+        "inventory": 98869460.31,
+        "nonCurrentAssets": 8056597746.24,
+        "goodwill": 0,
+        "totalAssets": 9701528229.93,
+        "equity": 5058231625.81,
+        "interestFreeLiabilities": 25210705.07,
+        "interestBearingDebt": 4254160032.21,
+        "interestExpense": 0,
+        "interestFreeLiabilitiesOverTotal": 0.002598632346625858,
+        "interestBearingDebtOverTotal": 0.43850411310308535,
+        "debtRatio": 47.861496
+      }
+    ],
+    "workingCapitalData": [
+      {
+        "year": "2025Q2",
+        "wcPerYuanRevenue": 0.17418365135171526,
+        "wc": 758869139.9900001,
+        "receivables": 933716400.73,
+        "prepayments": 5181579.88,
+        "inventory": 499602616.73,
+        "accountsPayable": 679631457.35,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.21431643933798114,
+        "prepaymentsToRevenueRatio": 0.0011893308815810796,
+        "inventoryToRevenueRatio": 0.11467406357840519,
+        "accountsPayableToRevenueRatio": 0.15599618244625219,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 92126553.76000011
+      },
+      {
+        "year": "2024",
+        "wcPerYuanRevenue": 0.08435805871664076,
+        "wc": 666742586.23,
+        "receivables": 848516020.44,
+        "prepayments": 1797974.3,
+        "inventory": 323338362.99,
+        "accountsPayable": 506909771.5,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.1073565207211706,
+        "prepaymentsToRevenueRatio": 0.00022748452656673357,
+        "inventoryToRevenueRatio": 0.040909636153110086,
+        "accountsPayableToRevenueRatio": 0.06413558268420666,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -358450035.9999999
+      },
+      {
+        "year": "2023",
+        "wcPerYuanRevenue": 0.09977735962628013,
+        "wc": 1025192622.2299999,
+        "receivables": 1340551611.31,
+        "prepayments": 8032679.1,
+        "inventory": 298411429.67,
+        "accountsPayable": 621803097.85,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.13046982324972206,
+        "prepaymentsToRevenueRatio": 0.0007817843144245666,
+        "inventoryToRevenueRatio": 0.029043034342180526,
+        "accountsPayableToRevenueRatio": 0.06051728228004701,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 1585077.5199998617
+      },
+      {
+        "year": "2022",
+        "wcPerYuanRevenue": 0.10872092653324059,
+        "wc": 1023607544.71,
+        "receivables": 1112820473.26,
+        "prepayments": 0,
+        "inventory": 521051504.25,
+        "accountsPayable": 610264432.8,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.11819654275043807,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0.055342697117036314,
+        "accountsPayableToRevenueRatio": 0.06481831333423381,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 129577749.83999991
+      },
+      {
+        "year": "2021",
+        "wcPerYuanRevenue": 0.09500193230392531,
+        "wc": 894029794.8700001,
+        "receivables": 1228280650.88,
+        "prepayments": 0,
+        "inventory": 349267651.53,
+        "accountsPayable": 621596383.64,
+        "customerAdvances": 0,
+        "contractLiabilities": 61922123.9,
+        "receivablesToRevenueRatio": 0.13052029799755244,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0.03711408945988076,
+        "accountsPayableToRevenueRatio": 0.06605244914406781,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0.006580006009440071,
+        "changeInWC": 431016259.12000024
+      },
+      {
+        "year": "2020",
+        "wcPerYuanRevenue": 0.06466965538183495,
+        "wc": 463013535.7499999,
+        "receivables": 791641103.8,
+        "prepayments": 0,
+        "inventory": 185274603.42,
+        "accountsPayable": 513902171.47,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.11056946161609367,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0.025877525880035876,
+        "accountsPayableToRevenueRatio": 0.07177733211429459,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -154384744.05000007
+      },
+      {
+        "year": "2019",
+        "wcPerYuanRevenue": 0.10972412858780811,
+        "wc": 617398279.8,
+        "receivables": 658822662.39,
+        "prepayments": 0,
+        "inventory": 441861702.65,
+        "accountsPayable": 483286085.24,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.11708607699402673,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0.07852773787335783,
+        "accountsPayableToRevenueRatio": 0.08588968627957644,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -85096332.20000005
+      },
+      {
+        "year": "2018",
+        "wcPerYuanRevenue": 0.18321366310237672,
+        "wc": 702494612,
+        "receivables": 628093684.76,
+        "prepayments": 0,
+        "inventory": 370976224.67,
+        "accountsPayable": 296575297.43,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.1638095763165071,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0.09675221971052071,
+        "accountsPayableToRevenueRatio": 0.07734813292465109,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 518278943.14
+      },
+      {
+        "year": "2017",
+        "wcPerYuanRevenue": 0.07325051215625072,
+        "wc": 184215668.85999998,
+        "receivables": 259792682.63,
+        "prepayments": 0,
+        "inventory": 76775823.44,
+        "accountsPayable": 152352837.21,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.10330254301851031,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0.030528718990087102,
+        "accountsPayableToRevenueRatio": 0.060580749852346696,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -223249917.67
+      },
+      {
+        "year": "2016",
+        "wcPerYuanRevenue": 0.1151081103947852,
+        "wc": 407465586.53,
+        "receivables": 435965234.63,
+        "prepayments": 0,
+        "inventory": 184638698.42,
+        "accountsPayable": 213138346.52,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.12315919678871752,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0.0521600164123652,
+        "accountsPayableToRevenueRatio": 0.06021110280629752,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": 64268942.30999994
+      },
+      {
+        "year": "2015",
+        "wcPerYuanRevenue": 0.09602284819827273,
+        "wc": 343196644.22,
+        "receivables": 269537888.98,
+        "prepayments": 0,
+        "inventory": 98869460.31,
+        "accountsPayable": 25210705.07,
+        "customerAdvances": 0,
+        "contractLiabilities": 0,
+        "receivablesToRevenueRatio": 0.07541389530784097,
+        "prepaymentsToRevenueRatio": 0,
+        "inventoryToRevenueRatio": 0.02766264571254519,
+        "accountsPayableToRevenueRatio": 0.007053692822113441,
+        "advancesToRevenueRatio": 0,
+        "contractLiabilitiesToRevenueRatio": 0,
+        "changeInWC": -32115622.089999974
+      }
+    ],
+    "fixedAssetInvestmentAnalysisData": [
+      {
+        "year": "2025Q2",
+        "fixedAssetsPerYuanRevenue": 2.490790174033093,
+        "longTermOperatingAssetsPerYuanRevenue": 2.644045526629765,
+        "fixedAssets": 10851671684.43,
+        "longTermOperatingAssets": 11519362117.61,
+        "depreciation": 313562909.19,
+        "depreciationOverRevenue": 0.07197226711828106
+      },
+      {
+        "year": "2024",
+        "fixedAssetsPerYuanRevenue": 1.3586283089194178,
+        "longTermOperatingAssetsPerYuanRevenue": 1.4444277667599899,
+        "fixedAssets": 10738219515.66,
+        "longTermOperatingAssets": 11416354518.859999,
+        "depreciation": 648661038.3299999,
+        "depreciationOverRevenue": 0.08207033282221322
+      },
+      {
+        "year": "2023",
+        "fixedAssetsPerYuanRevenue": 0.8779058525978055,
+        "longTermOperatingAssetsPerYuanRevenue": 0.9468885331349037,
+        "fixedAssets": 9020308880.36,
+        "longTermOperatingAssets": 9729092269.830002,
+        "depreciation": 706211635.4499999,
+        "depreciationOverRevenue": 0.0687323833537593
+      },
+      {
+        "year": "2022",
+        "fixedAssetsPerYuanRevenue": 0.8740995723293661,
+        "longTermOperatingAssetsPerYuanRevenue": 0.9474971330976251,
+        "fixedAssets": 8229647645.530001,
+        "longTermOperatingAssets": 8920685694.61,
+        "depreciation": 760345492.31,
+        "depreciationOverRevenue": 0.08075894598132943
+      },
+      {
+        "year": "2021",
+        "fixedAssetsPerYuanRevenue": 0.9404562148513076,
+        "longTermOperatingAssetsPerYuanRevenue": 1.0171616616233539,
+        "fixedAssets": 8850302898.66,
+        "longTermOperatingAssets": 9572150898.800001,
+        "depreciation": 782450202.95,
+        "depreciationOverRevenue": 0.08314519453197573
+      },
+      {
+        "year": "2020",
+        "fixedAssetsPerYuanRevenue": 1.3343580967095252,
+        "longTermOperatingAssetsPerYuanRevenue": 1.4254873429299901,
+        "fixedAssets": 9553566609.660002,
+        "longTermOperatingAssets": 10206022143.150003,
+        "depreciation": 792448795,
+        "depreciationOverRevenue": 0.11068227281387935
+      },
+      {
+        "year": "2019",
+        "fixedAssetsPerYuanRevenue": 1.8271983390027682,
+        "longTermOperatingAssetsPerYuanRevenue": 1.9414409090039662,
+        "fixedAssets": 10281322129.17,
+        "longTermOperatingAssets": 10924144880.250002,
+        "depreciation": 770815187.65,
+        "depreciationOverRevenue": 0.13698940786576524
+      },
+      {
+        "year": "2018",
+        "fixedAssetsPerYuanRevenue": 2.7983678829744765,
+        "longTermOperatingAssetsPerYuanRevenue": 2.9662571239839264,
+        "fixedAssets": 10729758506.52,
+        "longTermOperatingAssets": 11373494815.400002,
+        "depreciation": 494692750.28999996,
+        "depreciationOverRevenue": 0.12901802995012895
+      },
+      {
+        "year": "2017",
+        "fixedAssetsPerYuanRevenue": 2.6777566280335012,
+        "longTermOperatingAssetsPerYuanRevenue": 2.9419502643158584,
+        "fixedAssets": 6734215417.16,
+        "longTermOperatingAssets": 7398628620.339999,
+        "depreciation": 467179779.37,
+        "depreciationOverRevenue": 0.18576681516654303
+      },
+      {
+        "year": "2016",
+        "fixedAssetsPerYuanRevenue": 1.4668909485485035,
+        "longTermOperatingAssetsPerYuanRevenue": 1.630539088699184,
+        "fixedAssets": 5192575733.16,
+        "longTermOperatingAssets": 5771865803.879999,
+        "depreciation": 435520702.83000004,
+        "depreciationOverRevenue": 0.12303361755650764
+      },
+      {
+        "year": "2015",
+        "fixedAssetsPerYuanRevenue": 1.382474147952163,
+        "longTermOperatingAssetsPerYuanRevenue": 1.535123274878408,
+        "fixedAssets": 4941120756.16,
+        "longTermOperatingAssets": 5486706198.45,
+        "depreciation": 425059790.27,
+        "depreciationOverRevenue": 0.11892730422539283
+      }
+    ],
+    "returnData": [
+      {
+        "year": "2025Q2",
+        "roe": 4.5,
+        "roa": 3.590827,
+        "roic": 3.110668,
+        "roce": 3.927580925955381,
+        "netProfitMargin": 12.821223,
+        "assetTurnover": 20.315,
+        "equityMultiplier": 1.74775
+      },
+      {
+        "year": "2024",
+        "roe": 5.85,
+        "roa": 5.179811,
+        "roic": 4.430826,
+        "roce": 5.602129807719458,
+        "netProfitMargin": 8.926697,
+        "assetTurnover": 37.6315,
+        "equityMultiplier": 1.736903
+      },
+      {
+        "year": "2023",
+        "roe": 7.59,
+        "roa": 6.560898,
+        "roic": 5.846532,
+        "roce": 6.982163084390907,
+        "netProfitMargin": 8.647748,
+        "assetTurnover": 50.2392,
+        "equityMultiplier": 1.71567
+      },
+      {
+        "year": "2022",
+        "roe": 1.63,
+        "roa": 2.192201,
+        "roic": 2.459724,
+        "roce": 2.328627178069716,
+        "netProfitMargin": 1.945512,
+        "assetTurnover": 47.328900000000004,
+        "equityMultiplier": 1.780307
+      },
+      {
+        "year": "2021",
+        "roe": 7.55,
+        "roa": 6.544991,
+        "roic": 6.308822,
+        "roce": 7.247931567262718,
+        "netProfitMargin": 8.760007,
+        "assetTurnover": 48.2848,
+        "equityMultiplier": 1.761276
+      },
+      {
+        "year": "2020",
+        "roe": 17.89,
+        "roa": 13.960442,
+        "roic": 12.599406,
+        "roce": 15.352977156600623,
+        "netProfitMargin": 25.390314,
+        "assetTurnover": 37.3992,
+        "equityMultiplier": 1.770841
+      },
+      {
+        "year": "2019",
+        "roe": 9.62,
+        "roa": 7.63491,
+        "roic": 7.286509,
+        "roce": 8.610132872126991,
+        "netProfitMargin": 15.695415,
+        "assetTurnover": 27.732400000000002,
+        "equityMultiplier": 1.998229
+      },
+      {
+        "year": "2018",
+        "roe": 5.34,
+        "roa": 4.83916,
+        "roic": 4.038676,
+        "roce": 5.284545622660411,
+        "netProfitMargin": 12.05645,
+        "assetTurnover": 19.6719,
+        "equityMultiplier": 2.43721
+      },
+      {
+        "year": "2017",
+        "roe": 1.23,
+        "roa": 2.219419,
+        "roic": 2.348152,
+        "roce": 2.4043123469939935,
+        "netProfitMargin": 4.10052,
+        "assetTurnover": 15.179799999999998,
+        "equityMultiplier": 2.04918
+      },
+      {
+        "year": "2016",
+        "roe": 9.42,
+        "roa": 8.584658,
+        "roic": 7.044889,
+        "roce": 7.374557123417745,
+        "netProfitMargin": 19.055752,
+        "assetTurnover": 27.8215,
+        "equityMultiplier": 1.911173
+      },
+      {
+        "year": "2015",
+        "roe": 12.91,
+        "roa": 11.430681,
+        "roic": 9.686491,
+        "roce": 9.327621780716571,
+        "netProfitMargin": 18.027274,
+        "assetTurnover": 37.1199,
+        "equityMultiplier": 1.917968
+      }
+    ],
+    "turnoverRateData": [
+      {
+        "year": "2025Q2",
+        "totalAssets": 21692698810.36,
+        "avgTotalAssets": 21445727520.175003,
+        "avgCurrentAssets": 6425963936.34,
+        "avgInventory": 411470489.86,
+        "equity": 12411785026.85,
+        "avgEquity": 12308347293.235,
+        "totalAssetsDays": 886.040935,
+        "currentAssetsDays": 265.491907,
+        "wcDays": 63.577032743376066,
+        "receivablesDays": 36.81691,
+        "inventoryDays": 20.676097,
+        "fixedAssetsDays": 909.1384135220788
+      },
+      {
+        "year": "2024",
+        "totalAssets": 21198756229.99,
+        "avgTotalAssets": 21002907464.225,
+        "avgCurrentAssets": 6752388114.445,
+        "avgInventory": 310874896.33000004,
+        "equity": 12204909559.62,
+        "avgEquity": 12166281976.77,
+        "totalAssetsDays": 956.643888,
+        "currentAssetsDays": 307.558886,
+        "wcDays": 30.790691431573883,
+        "receivablesDays": 49.854006,
+        "inventoryDays": 16.642579,
+        "fixedAssetsDays": 495.8993327555875
+      },
+      {
+        "year": "2023",
+        "totalAssets": 20807058698.46,
+        "avgTotalAssets": 20451735199.215,
+        "avgCurrentAssets": 7539650976.860001,
+        "avgInventory": 409731466.96000004,
+        "equity": 12127654393.92,
+        "avgEquity": 11707935402.705,
+        "totalAssetsDays": 716.570948,
+        "currentAssetsDays": 264.168042,
+        "wcDays": 36.418736263592244,
+        "receivablesDays": 42.979608,
+        "inventoryDays": 16.607739,
+        "fixedAssetsDays": 320.435636198199
+      },
+      {
+        "year": "2022",
+        "totalAssets": 20096411699.97,
+        "avgTotalAssets": 19892735306.29,
+        "avgCurrentAssets": 7318800568.185,
+        "avgInventory": 435159577.89,
+        "equity": 11288216411.49,
+        "avgEquity": 11235910794.54,
+        "totalAssetsDays": 760.633643,
+        "currentAssetsDays": 279.847918,
+        "wcDays": 39.68313818463281,
+        "receivablesDays": 44.758172,
+        "inventoryDays": 17.593117,
+        "fixedAssetsDays": 319.04634390021863
+      },
+      {
+        "year": "2021",
+        "totalAssets": 19689058912.61,
+        "avgTotalAssets": 19495337987.48,
+        "avgCurrentAssets": 6359647354.9,
+        "avgInventory": 267271127.47499996,
+        "equity": 11183605177.59,
+        "avgEquity": 11041647215.915,
+        "totalAssetsDays": 745.575016,
+        "currentAssetsDays": 243.285363,
+        "wcDays": 34.67570529093274,
+        "receivablesDays": 38.635585,
+        "inventoryDays": 12.20918,
+        "fixedAssetsDays": 343.2665184207272
+      },
+      {
+        "year": "2020",
+        "totalAssets": 19301617062.35,
+        "avgTotalAssets": 19143904040.87,
+        "avgCurrentAssets": 5326429187.86,
+        "avgInventory": 313568153.03499997,
+        "equity": 10899689254.24,
+        "avgEquity": 10200597606.91,
+        "totalAssetsDays": 962.586726,
+        "currentAssetsDays": 267.821549,
+        "wcDays": 23.604424214369757,
+        "receivablesDays": 36.465842,
+        "inventoryDays": 27.178456,
+        "fixedAssetsDays": 487.0407052989767
+      },
+      {
+        "year": "2019",
+        "totalAssets": 18986191019.39,
+        "avgTotalAssets": 20289679334.14,
+        "avgCurrentAssets": 5440575055.725,
+        "avgInventory": 406418963.65999997,
+        "equity": 9501505959.58,
+        "avgEquity": 9180646647.99,
+        "totalAssetsDays": 1298.118709,
+        "currentAssetsDays": 348.083976,
+        "wcDays": 40.04930693454996,
+        "receivablesDays": 41.167979,
+        "inventoryDays": 37.513871,
+        "fixedAssetsDays": 666.9273937360103
+      },
+      {
+        "year": "2018",
+        "totalAssets": 21593167648.89,
+        "avgTotalAssets": 19491138769.309998,
+        "avgCurrentAssets": 4965499627.08,
+        "avgInventory": 223876024.055,
+        "equity": 8859787336.4,
+        "avgEquity": 8672836977.445,
+        "totalAssetsDays": 1830.014684,
+        "currentAssetsDays": 466.208636,
+        "wcDays": 66.8729870323675,
+        "receivablesDays": 41.681635,
+        "inventoryDays": 30.721853,
+        "fixedAssetsDays": 1021.4042772856839
+      },
+      {
+        "year": "2017",
+        "totalAssets": 17389109889.73,
+        "avgTotalAssets": 16567210351.665,
+        "avgCurrentAssets": 4716396204.155,
+        "avgInventory": 130707260.92999999,
+        "equity": 8485886618.49,
+        "avgEquity": 8362221114.4,
+        "totalAssetsDays": 2371.570205,
+        "currentAssetsDays": 675.144727,
+        "wcDays": 26.736436937031513,
+        "receivablesDays": 49.798327,
+        "inventoryDays": 25.041542,
+        "fixedAssetsDays": 977.3811692322279
+      },
+      {
+        "year": "2016",
+        "totalAssets": 15745310813.6,
+        "avgTotalAssets": 12723419521.765,
+        "avgCurrentAssets": 3645600925.3,
+        "avgInventory": 141754079.365,
+        "equity": 8238555610.31,
+        "avgEquity": 6648393618.06,
+        "totalAssetsDays": 1293.961448,
+        "currentAssetsDays": 370.754657,
+        "wcDays": 42.014460294096594,
+        "receivablesDays": 35.874547,
+        "inventoryDays": 22.64711,
+        "fixedAssetsDays": 535.4151962202038
+      },
+      {
+        "year": "2015",
+        "totalAssets": 9701528229.93,
+        "avgTotalAssets": 9628552608.27,
+        "avgCurrentAssets": 2227468892.5550003,
+        "avgInventory": 113492098.43,
+        "equity": 5058231625.81,
+        "avgEquity": 5036044075.66,
+        "totalAssetsDays": 969.828761,
+        "currentAssetsDays": 224.360138,
+        "wcDays": 35.048339592369544,
+        "receivablesDays": 31.14547,
+        "inventoryDays": 17.650563,
+        "fixedAssetsDays": 504.6030640025395
+      }
+    ],
+    "primaryBusinessData": [
+      {
+        "year": "2024",
+        "mainType": "行业",
+        "itemName": "电力及相关业务",
+        "mainBusinessIncome": 7903721308.59,
+        "mbiRatio": 1,
+        "mainBusinessCost": 6724616383.14,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 1179104925.45,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.149184
+      },
+      {
+        "year": "2024",
+        "mainType": "产品",
+        "itemName": "电力",
+        "mainBusinessIncome": 7886987141.69,
+        "mbiRatio": 0.997883,
+        "mainBusinessCost": 6724616383.14,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 1162370758.55,
+        "mbpRatio": 0.985808,
+        "grossProfitRatio": 0.147378
+      },
+      {
+        "year": "2024",
+        "mainType": "产品",
+        "itemName": "发电副产品",
+        "mainBusinessIncome": 13366801.76,
+        "mbiRatio": 0.001691,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2024",
+        "mainType": "产品",
+        "itemName": "销售原材料",
+        "mainBusinessIncome": 3367365.14,
+        "mbiRatio": 0.000426,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2024",
+        "mainType": "地区",
+        "itemName": "广东省",
+        "mainBusinessIncome": 7900353943.45,
+        "mbiRatio": 0.999574,
+        "mainBusinessCost": 6724616383.14,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 1175737560.31,
+        "mbpRatio": 0.997144,
+        "grossProfitRatio": 0.148821
+      },
+      {
+        "year": "2024",
+        "mainType": "地区",
+        "itemName": "天津市",
+        "mainBusinessIncome": 2078535.24,
+        "mbiRatio": 0.000263,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2024",
+        "mainType": "地区",
+        "itemName": "浙江省",
+        "mainBusinessIncome": 1288829.9,
+        "mbiRatio": 0.000163,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2023",
+        "mainType": "行业",
+        "itemName": "电力及相关业务",
+        "mainBusinessIncome": 10274478087.6,
+        "mbiRatio": 0.999968,
+        "mainBusinessCost": 8881601720.6,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 1392876367,
+        "mbpRatio": 0.999767,
+        "grossProfitRatio": 0.135567
+      },
+      {
+        "year": "2023",
+        "mainType": "行业",
+        "itemName": "其他",
+        "mainBusinessIncome": 323992.45,
+        "mbiRatio": 0.000032,
+        "mainBusinessCost": 0.05,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 323992.4,
+        "mbpRatio": 0.000233,
+        "grossProfitRatio": 1
+      },
+      {
+        "year": "2023",
+        "mainType": "产品",
+        "itemName": "电力",
+        "mainBusinessIncome": 9901783667.25,
+        "mbiRatio": 0.963696,
+        "mainBusinessCost": 8588558154.7,
+        "mbcRatio": 0.967006,
+        "mainBusinessProfit": 1313225512.55,
+        "mbpRatio": 0.942596,
+        "grossProfitRatio": 0.132625
+      },
+      {
+        "year": "2023",
+        "mainType": "产品",
+        "itemName": "销售原材料",
+        "mainBusinessIncome": 345780534.93,
+        "mbiRatio": 0.033653,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2023",
+        "mainType": "产品",
+        "itemName": "发电副产品",
+        "mainBusinessIncome": 26913885.42,
+        "mbiRatio": 0.002619,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2023",
+        "mainType": "产品",
+        "itemName": "其他",
+        "mainBusinessIncome": 323992.45,
+        "mbiRatio": 0.000032,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2023",
+        "mainType": "地区",
+        "itemName": "广东省",
+        "mainBusinessIncome": 9929021545.12,
+        "mbiRatio": 0.966347,
+        "mainBusinessCost": 8588558154.7,
+        "mbcRatio": 0.967006,
+        "mainBusinessProfit": 1340463390.42,
+        "mbpRatio": 0.962147,
+        "grossProfitRatio": 0.135005
+      },
+      {
+        "year": "2023",
+        "mainType": "地区",
+        "itemName": "河北省",
+        "mainBusinessIncome": 345185038.18,
+        "mbiRatio": 0.033595,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2023",
+        "mainType": "地区",
+        "itemName": "内蒙古",
+        "mainBusinessIncome": 595496.75,
+        "mbiRatio": 0.000058,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2023",
+        "mainType": "地区",
+        "itemName": "山东省",
+        "mainBusinessIncome": 0,
+        "mbiRatio": 0,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2022",
+        "mainType": "行业",
+        "itemName": "电力及相关业务",
+        "mainBusinessIncome": 9415000196.83,
+        "mbiRatio": 1,
+        "mainBusinessCost": 8904473517.44,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 510526679.39,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.054225
+      },
+      {
+        "year": "2022",
+        "mainType": "产品",
+        "itemName": "电力",
+        "mainBusinessIncome": 9152180882.91,
+        "mbiRatio": 0.972085,
+        "mainBusinessCost": 8724382929.39,
+        "mbcRatio": 0.979775,
+        "mainBusinessProfit": 427797953.52,
+        "mbpRatio": 0.837954,
+        "grossProfitRatio": 0.046743
+      },
+      {
+        "year": "2022",
+        "mainType": "产品",
+        "itemName": "销售原材料",
+        "mainBusinessIncome": 231844796.23,
+        "mbiRatio": 0.024625,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2022",
+        "mainType": "产品",
+        "itemName": "发电副产品",
+        "mainBusinessIncome": 30974517.69,
+        "mbiRatio": 0.00329,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "广东省",
+        "mainBusinessIncome": 9222030666.09,
+        "mbiRatio": 0.979504,
+        "mainBusinessCost": 8756298504.63,
+        "mbcRatio": 0.983359,
+        "mainBusinessProfit": 465732161.46,
+        "mbpRatio": 0.912258,
+        "grossProfitRatio": 0.050502
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "河北省",
+        "mainBusinessIncome": 134234319.48,
+        "mbiRatio": 0.014257,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2022",
+        "mainType": "地区",
+        "itemName": "山东省",
+        "mainBusinessIncome": 58735211.26,
+        "mbiRatio": 0.006238,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2021",
+        "mainType": "行业",
+        "itemName": "电力",
+        "mainBusinessIncome": 9244904712.51,
+        "mbiRatio": 0.982388,
+        "mainBusinessCost": 7762197185.55,
+        "mbcRatio": 0.984956,
+        "mainBusinessProfit": 1482707526.96,
+        "mbpRatio": 0.96916,
+        "grossProfitRatio": 0.160381
+      },
+      {
+        "year": "2021",
+        "mainType": "行业",
+        "itemName": "销售原材料",
+        "mainBusinessIncome": 128984955.75,
+        "mbiRatio": 0.013706,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2021",
+        "mainType": "行业",
+        "itemName": "发电副产品",
+        "mainBusinessIncome": 36758864.76,
+        "mbiRatio": 0.003906,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2021",
+        "mainType": "产品",
+        "itemName": "电力",
+        "mainBusinessIncome": 9244904712.51,
+        "mbiRatio": 0.982388,
+        "mainBusinessCost": 7762197185.55,
+        "mbcRatio": 0.984956,
+        "mainBusinessProfit": 1482707526.96,
+        "mbpRatio": 0.96916,
+        "grossProfitRatio": 0.160381
+      },
+      {
+        "year": "2021",
+        "mainType": "产品",
+        "itemName": "销售原材料",
+        "mainBusinessIncome": 128984955.75,
+        "mbiRatio": 0.013706,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2021",
+        "mainType": "产品",
+        "itemName": "发电副产品",
+        "mainBusinessIncome": 36758864.76,
+        "mbiRatio": 0.003906,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2021",
+        "mainType": "地区",
+        "itemName": "广东省",
+        "mainBusinessIncome": 9281663577.27,
+        "mbiRatio": 0.986294,
+        "mainBusinessCost": 7762197185.55,
+        "mbcRatio": 0.984956,
+        "mainBusinessProfit": 1519466391.72,
+        "mbpRatio": 0.993187,
+        "grossProfitRatio": 0.163706
+      },
+      {
+        "year": "2021",
+        "mainType": "地区",
+        "itemName": "河北省",
+        "mainBusinessIncome": 128984955.75,
+        "mbiRatio": 0.013706,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "行业",
+        "itemName": "电力",
+        "mainBusinessIncome": 7131078746.97,
+        "mbiRatio": 0.996006,
+        "mainBusinessCost": 4153440828.16,
+        "mbcRatio": 0.999996,
+        "mainBusinessProfit": 2977637918.81,
+        "mbpRatio": 0.990494,
+        "grossProfitRatio": 0.417558
+      },
+      {
+        "year": "2020",
+        "mainType": "行业",
+        "itemName": "发电副产品",
+        "mainBusinessIncome": 28343471.31,
+        "mbiRatio": 0.003959,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "行业",
+        "itemName": "融资租赁",
+        "mainBusinessIncome": 250011.55,
+        "mbiRatio": 0.000035,
+        "mainBusinessCost": 15657.53,
+        "mbcRatio": 0.000004,
+        "mainBusinessProfit": 234354.02,
+        "mbpRatio": 0.000078,
+        "grossProfitRatio": 0.937373
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "电力",
+        "mainBusinessIncome": 7131078746.97,
+        "mbiRatio": 0.996006,
+        "mainBusinessCost": 4153440828.16,
+        "mbcRatio": 0.999996,
+        "mainBusinessProfit": 2977637918.81,
+        "mbpRatio": 0.990494,
+        "grossProfitRatio": 0.417558
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "发电副产品",
+        "mainBusinessIncome": 28343471.31,
+        "mbiRatio": 0.003959,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2020",
+        "mainType": "产品",
+        "itemName": "融资租赁",
+        "mainBusinessIncome": 250011.55,
+        "mbiRatio": 0.000035,
+        "mainBusinessCost": 15657.53,
+        "mbcRatio": 0.000004,
+        "mainBusinessProfit": 234354.02,
+        "mbpRatio": 0.000078,
+        "grossProfitRatio": 0.937373
+      },
+      {
+        "year": "2020",
+        "mainType": "地区",
+        "itemName": "广东省",
+        "mainBusinessIncome": 7159628837.85,
+        "mbiRatio": 0.999994,
+        "mainBusinessCost": 4153440828.16,
+        "mbcRatio": 0.999996,
+        "mainBusinessProfit": 3006188009.69,
+        "mbpRatio": 0.999991,
+        "grossProfitRatio": 0.41988
+      },
+      {
+        "year": "2020",
+        "mainType": "地区",
+        "itemName": "山西省",
+        "mainBusinessIncome": 43391.98,
+        "mbiRatio": 0.000006,
+        "mainBusinessCost": 15657.53,
+        "mbcRatio": 0.000004,
+        "mainBusinessProfit": 27734.45,
+        "mbpRatio": 0.000009,
+        "grossProfitRatio": 0.639161
+      },
+      {
+        "year": "2019",
+        "mainType": "行业",
+        "itemName": "新能源发电",
+        "mainBusinessIncome": 5625230741.17,
+        "mbiRatio": 0.999717,
+        "mainBusinessCost": 3900128259.66,
+        "mbcRatio": 0.999987,
+        "mainBusinessProfit": 1725102481.51,
+        "mbpRatio": 0.999107,
+        "grossProfitRatio": 0.306672
+      },
+      {
+        "year": "2019",
+        "mainType": "行业",
+        "itemName": "融资租赁",
+        "mainBusinessIncome": 1592526.84,
+        "mbiRatio": 0.000283,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2019",
+        "mainType": "产品",
+        "itemName": "新能源发电",
+        "mainBusinessIncome": 5625230741.17,
+        "mbiRatio": 0.999717,
+        "mainBusinessCost": 3900128259.66,
+        "mbcRatio": 0.999987,
+        "mainBusinessProfit": 1725102481.51,
+        "mbpRatio": 0.999107,
+        "grossProfitRatio": 0.306672
+      },
+      {
+        "year": "2019",
+        "mainType": "产品",
+        "itemName": "融资租赁",
+        "mainBusinessIncome": 1592526.84,
+        "mbiRatio": 0.000283,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2019",
+        "mainType": "地区",
+        "itemName": "广东省",
+        "mainBusinessIncome": 5626487421.05,
+        "mbiRatio": 0.99994,
+        "mainBusinessCost": 3900168610.82,
+        "mbcRatio": 0.999997,
+        "mainBusinessProfit": 1726318810.23,
+        "mbpRatio": 0.999812,
+        "grossProfitRatio": 0.30682
+      },
+      {
+        "year": "2019",
+        "mainType": "地区",
+        "itemName": "山西省",
+        "mainBusinessIncome": 335846.96,
+        "mbiRatio": 0.00006,
+        "mainBusinessCost": 0,
+        "mbcRatio": 0,
+        "mainBusinessProfit": 0,
+        "mbpRatio": 0,
+        "grossProfitRatio": 0
+      },
+      {
+        "year": "2018",
+        "mainType": "行业",
+        "itemName": "新能源发电",
+        "mainBusinessIncome": 3829486443.71,
+        "mbiRatio": 0.998747,
+        "mainBusinessCost": 2623285342.08,
+        "mbcRatio": 0.999961,
+        "mainBusinessProfit": 1206201101.63,
+        "mbpRatio": 0.996117,
+        "grossProfitRatio": 0.314977
+      },
+      {
+        "year": "2018",
+        "mainType": "行业",
+        "itemName": "融资租赁",
+        "mainBusinessIncome": 4805170.27,
+        "mbiRatio": 0.001253,
+        "mainBusinessCost": 103524.75,
+        "mbcRatio": 0.000039,
+        "mainBusinessProfit": 4701645.52,
+        "mbpRatio": 0.003883,
+        "grossProfitRatio": 0.978456
+      },
+      {
+        "year": "2018",
+        "mainType": "产品",
+        "itemName": "新能源发电",
+        "mainBusinessIncome": 3829486443.71,
+        "mbiRatio": 0.998747,
+        "mainBusinessCost": 2623285342.08,
+        "mbcRatio": 0.999961,
+        "mainBusinessProfit": 1206201101.63,
+        "mbpRatio": 0.996117,
+        "grossProfitRatio": 0.314977
+      },
+      {
+        "year": "2018",
+        "mainType": "产品",
+        "itemName": "融资租赁",
+        "mainBusinessIncome": 4805170.27,
+        "mbiRatio": 0.001253,
+        "mainBusinessCost": 103524.75,
+        "mbcRatio": 0.000039,
+        "mainBusinessProfit": 4701645.52,
+        "mbpRatio": 0.003883,
+        "grossProfitRatio": 0.978456
+      },
+      {
+        "year": "2018",
+        "mainType": "地区",
+        "itemName": "广东省",
+        "mainBusinessIncome": 3833129143.03,
+        "mbiRatio": 0.999697,
+        "mainBusinessCost": 2623363822.03,
+        "mbcRatio": 0.99999,
+        "mainBusinessProfit": 1209765321,
+        "mbpRatio": 0.999061,
+        "grossProfitRatio": 0.315608
+      },
+      {
+        "year": "2018",
+        "mainType": "地区",
+        "itemName": "山西省",
+        "mainBusinessIncome": 1162470.95,
+        "mbiRatio": 0.000303,
+        "mainBusinessCost": 25044.8,
+        "mbcRatio": 0.00001,
+        "mainBusinessProfit": 1137426.15,
+        "mbpRatio": 0.000939,
+        "grossProfitRatio": 0.978456
+      },
+      {
+        "year": "2017",
+        "mainType": "行业",
+        "itemName": "新能源发电",
+        "mainBusinessIncome": 2470430992.21,
+        "mbiRatio": 0.982329,
+        "mainBusinessCost": 1840919368.26,
+        "mbcRatio": 0.979701,
+        "mainBusinessProfit": 629511623.95,
+        "mbpRatio": 0.990094,
+        "grossProfitRatio": 0.254819
+      },
+      {
+        "year": "2017",
+        "mainType": "行业",
+        "itemName": "建筑施工",
+        "mainBusinessIncome": 37276432.03,
+        "mbiRatio": 0.014822,
+        "mainBusinessCost": 34842950.03,
+        "mbcRatio": 0.018543,
+        "mainBusinessProfit": 2433482,
+        "mbpRatio": 0.003827,
+        "grossProfitRatio": 0.065282
+      },
+      {
+        "year": "2017",
+        "mainType": "行业",
+        "itemName": "融资租赁",
+        "mainBusinessIncome": 7164669.31,
+        "mbiRatio": 0.002849,
+        "mainBusinessCost": 3299780.05,
+        "mbcRatio": 0.001756,
+        "mainBusinessProfit": 3864889.26,
+        "mbpRatio": 0.006079,
+        "grossProfitRatio": 0.539437
+      },
+      {
+        "year": "2017",
+        "mainType": "产品",
+        "itemName": "新能源发电",
+        "mainBusinessIncome": 2470430992.21,
+        "mbiRatio": 0.982329,
+        "mainBusinessCost": 1840919368.26,
+        "mbcRatio": 0.979701,
+        "mainBusinessProfit": 629511623.95,
+        "mbpRatio": 0.990094,
+        "grossProfitRatio": 0.254819
+      },
+      {
+        "year": "2017",
+        "mainType": "产品",
+        "itemName": "建筑施工",
+        "mainBusinessIncome": 37276432.03,
+        "mbiRatio": 0.014822,
+        "mainBusinessCost": 34842950.03,
+        "mbcRatio": 0.018543,
+        "mainBusinessProfit": 2433482,
+        "mbpRatio": 0.003827,
+        "grossProfitRatio": 0.065282
+      },
+      {
+        "year": "2017",
+        "mainType": "产品",
+        "itemName": "融资租赁",
+        "mainBusinessIncome": 7164669.31,
+        "mbiRatio": 0.002849,
+        "mainBusinessCost": 3299780.05,
+        "mbcRatio": 0.001756,
+        "mainBusinessProfit": 3864889.26,
+        "mbpRatio": 0.006079,
+        "grossProfitRatio": 0.539437
+      },
+      {
+        "year": "2017",
+        "mainType": "地区",
+        "itemName": "广东省",
+        "mainBusinessIncome": 2513372728.3,
+        "mbiRatio": 0.999404,
+        "mainBusinessCost": 1878371546.5,
+        "mbcRatio": 0.999633,
+        "mainBusinessProfit": 635001181.8,
+        "mbpRatio": 0.998728,
+        "grossProfitRatio": 0.252649
+      },
+      {
+        "year": "2017",
+        "mainType": "地区",
+        "itemName": "山西省",
+        "mainBusinessIncome": 1499365.25,
+        "mbiRatio": 0.000596,
+        "mainBusinessCost": 690551.84,
+        "mbcRatio": 0.000367,
+        "mainBusinessProfit": 808813.41,
+        "mbpRatio": 0.001272,
+        "grossProfitRatio": 0.539437
+      },
+      {
+        "year": "2016",
+        "mainType": "行业",
+        "itemName": "新能源发电",
+        "mainBusinessIncome": 3533624818.06,
+        "mbiRatio": 0.998241,
+        "mainBusinessCost": 2248615427.94,
+        "mbcRatio": 0.997907,
+        "mainBusinessProfit": 1285009390.12,
+        "mbpRatio": 0.998827,
+        "grossProfitRatio": 0.363652
+      },
+      {
+        "year": "2016",
+        "mainType": "行业",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 6226415.12,
+        "mbiRatio": 0.001759,
+        "mainBusinessCost": 4716981.13,
+        "mbcRatio": 0.002093,
+        "mainBusinessProfit": 1509433.99,
+        "mbpRatio": 0.001173,
+        "grossProfitRatio": 0.242424
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "新能源发电",
+        "mainBusinessIncome": 3533624818.06,
+        "mbiRatio": 0.998241,
+        "mainBusinessCost": 2248615427.94,
+        "mbcRatio": 0.997907,
+        "mainBusinessProfit": 1285009390.12,
+        "mbpRatio": 0.998827,
+        "grossProfitRatio": 0.363652
+      },
+      {
+        "year": "2016",
+        "mainType": "产品",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 6226415.12,
+        "mbiRatio": 0.001759,
+        "mainBusinessCost": 4716981.13,
+        "mbcRatio": 0.002093,
+        "mainBusinessProfit": 1509433.99,
+        "mbpRatio": 0.001173,
+        "grossProfitRatio": 0.242424
+      },
+      {
+        "year": "2016",
+        "mainType": "地区",
+        "itemName": "广东省",
+        "mainBusinessIncome": 3533624818.06,
+        "mbiRatio": 0.998241,
+        "mainBusinessCost": 2248615427.94,
+        "mbcRatio": 0.997907,
+        "mainBusinessProfit": 1285009390.12,
+        "mbpRatio": 0.998827,
+        "grossProfitRatio": 0.363652
+      },
+      {
+        "year": "2016",
+        "mainType": "地区",
+        "itemName": "其他(补充)",
+        "mainBusinessIncome": 6226415.12,
+        "mbiRatio": 0.001759,
+        "mainBusinessCost": 4716981.13,
+        "mbcRatio": 0.002093,
+        "mainBusinessProfit": 1509433.99,
+        "mbpRatio": 0.001173,
+        "grossProfitRatio": 0.242424
+      },
+      {
+        "year": "2015",
+        "mainType": "行业",
+        "itemName": "新能源发电",
+        "mainBusinessIncome": 3574114397.35,
+        "mbiRatio": 1,
+        "mainBusinessCost": 2314779055.37,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 1259335341.98,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.352349
+      },
+      {
+        "year": "2015",
+        "mainType": "地区",
+        "itemName": "广东地区",
+        "mainBusinessIncome": 3574114397.35,
+        "mbiRatio": 1,
+        "mainBusinessCost": 2314779055.37,
+        "mbcRatio": 1,
+        "mainBusinessProfit": 1259335341.98,
+        "mbpRatio": 1,
+        "grossProfitRatio": 0.352349
+      }
+    ],
+    "valuationData": {
+      "historyData": [
+        {
+          "year": "2015",
+          "profit": 644315400.16,
+          "profit_tb": -0.36923,
+          "basicEps": 0.37,
+          "totalSharesOutstanding": 1726612500,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        },
+        {
+          "year": "2016",
+          "profit": 674563689.03,
+          "profit_tb": 0.04695,
+          "basicEps": 0.33,
+          "totalSharesOutstanding": 2175887862,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        },
+        {
+          "year": "2017",
+          "profit": 103137656.1,
+          "profit_tb": -0.8471,
+          "basicEps": 0.05,
+          "totalSharesOutstanding": 2175887862,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        },
+        {
+          "year": "2018",
+          "profit": 462891210.18,
+          "profit_tb": 3.48809,
+          "basicEps": 0.21,
+          "totalSharesOutstanding": 2175887862,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        },
+        {
+          "year": "2019",
+          "profit": 883186076.57,
+          "profit_tb": 0.90798,
+          "basicEps": 0.41,
+          "totalSharesOutstanding": 2175887862,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        },
+        {
+          "year": "2020",
+          "profit": 1817862102.81,
+          "profit_tb": 1.0583,
+          "basicEps": 0.84,
+          "totalSharesOutstanding": 2175887862,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        },
+        {
+          "year": "2021",
+          "profit": 824373483.76,
+          "profit_tb": -0.54651,
+          "basicEps": 0.38,
+          "totalSharesOutstanding": 2175887862,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        },
+        {
+          "year": "2022",
+          "profit": 183140599.31,
+          "profit_tb": -0.77784,
+          "basicEps": 0.08,
+          "totalSharesOutstanding": 2175887862,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        },
+        {
+          "year": "2023",
+          "profit": 888539014.67,
+          "profit_tb": 3.85168,
+          "basicEps": 0.41,
+          "totalSharesOutstanding": 2175887862,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        },
+        {
+          "year": "2024",
+          "profit": 705541276.56,
+          "profit_tb": -0.20595,
+          "basicEps": 0.32,
+          "totalSharesOutstanding": 2175887862,
+          "dps": 0,
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
+        }
+      ],
+      "cash": 3982326260.11,
+      "interestBearingDebt": 7218621726.94,
+      "debtRatio": 42.783582,
+      "interestBearingDebtOverTotal": 0.3327673421387536,
+      "roe": 5.85,
+      "roic": 4.430826,
+      "roa": 5.179811,
+      "grossProfitMargin": 14.918351,
+      "netProfitMargin": 8.926697,
+      "tradingFinancialAssets": 439415205.44,
+      "longTermEquityInvestment": 2319833069.74,
+      "minorityInterest": 0
+    },
+    "dynamicData": {
+      "price": 4.73,
+      "marketValue": 10291949587,
+      "PB": 0.84,
+      "PE": 9.21,
+      "totalSharesOutstanding": 2175887862
+    },
+    "recentYearData": {
+      "netProfit": 898138322.5899999
     }
   },
   "000786": {
@@ -154637,9 +156729,9 @@ const data: ServiceData = {
           "basicEps": 1.717,
           "totalSharesOutstanding": 1702236042,
           "dps": 0.6849999999999999,
-          "dividendRatio": 0.40119721844934914,
-          "totalDividend": 1166031688.77,
-          "totalDividendA": 1166031688.77
+          "dividendRatio": 0,
+          "totalDividend": 0,
+          "totalDividendA": 0
         }
       ],
       "cash": 2431397914.11,
@@ -154657,10 +156749,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000786",
-      "price": 19.51,
-      "marketValue": 33210625179,
-      "PB": 1.24,
-      "PE_TTM": 11.58,
+      "price": 18.08,
+      "marketValue": 30776427639,
+      "PB": 1.15,
+      "PE_TTM": 10.73,
       "totalSharesOutstanding": 1702236042
     },
     "recentYearData": {
@@ -157242,10 +159334,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000792",
-      "price": 30.69,
-      "marketValue": 162398361283,
-      "PB": 3.63,
-      "PE_TTM": 15.75,
+      "price": 28.91,
+      "marketValue": 152979362160,
+      "PB": 3.42,
+      "PE_TTM": 14.83,
       "totalSharesOutstanding": 5291572541
     },
     "recentYearData": {
@@ -159479,10 +161571,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000807",
-      "price": 25.99,
-      "marketValue": 90132212956,
-      "PB": 2.62,
-      "PE_TTM": 10.38,
+      "price": 22.48,
+      "marketValue": 77959682464,
+      "PB": 2.27,
+      "PE_TTM": 8.98,
       "totalSharesOutstanding": 3467957405
     },
     "recentYearData": {
@@ -162076,10 +164168,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000858",
-      "price": 76.55,
-      "marketValue": 297137092783,
-      "PB": 2.32,
-      "PE_TTM": 23.58,
+      "price": 73.17,
+      "marketValue": 284017257726,
+      "PB": 2.22,
+      "PE_TTM": 22.54,
       "totalSharesOutstanding": 3881608005
     },
     "recentYearData": {
@@ -164673,10 +166765,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "000915",
-      "price": 26.91,
-      "marketValue": 6305860261,
-      "PB": 2.52,
-      "PE_TTM": 13.61,
+      "price": 27,
+      "marketValue": 6326950095,
+      "PB": 2.53,
+      "PE_TTM": 13.66,
       "totalSharesOutstanding": 234331485
     },
     "recentYearData": {
@@ -165546,7 +167638,7 @@ const data: ServiceData = {
         "year": "2026Q1",
         "roe": 1.74,
         "roa": 1.497061,
-        "roic": 1.321276,
+        "roic": 1.721131,
         "roce": 1.655746469370763,
         "netProfitMargin": 50.13062,
         "assetTurnover": 2.1493,
@@ -166958,10 +169050,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "001872",
-      "price": 19.72,
-      "marketValue": 48943012488,
-      "PB": 0.75,
-      "PE_TTM": 10.52,
+      "price": 20.08,
+      "marketValue": 49836495475,
+      "PB": 0.76,
+      "PE_TTM": 10.71,
       "totalSharesOutstanding": 2481897185
     },
     "recentYearData": {
@@ -169511,9 +171603,9 @@ const data: ServiceData = {
           "basicEps": 0.72,
           "totalSharesOutstanding": 612491866,
           "dps": 0.55,
-          "dividendRatio": 0.7688764041970406,
-          "totalDividend": 336870526.3,
-          "totalDividendA": 336870526.3
+          "dividendRatio": 0.3914279875912206,
+          "totalDividend": 171497722.48,
+          "totalDividendA": 171497722.48
         }
       ],
       "cash": 654590507.13,
@@ -169531,10 +171623,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002014",
-      "price": 10.42,
-      "marketValue": 6382165244,
-      "PB": 2.66,
-      "PE_TTM": 14.51,
+      "price": 10.15,
+      "marketValue": 6216792440,
+      "PB": 2.59,
+      "PE_TTM": 14.13,
       "totalSharesOutstanding": 612491866
     },
     "recentYearData": {
@@ -172524,10 +174616,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002027",
-      "price": 5.06,
-      "marketValue": 73077530614,
-      "PB": 4.73,
-      "PE_TTM": 20.3,
+      "price": 4.76,
+      "marketValue": 68744870696,
+      "PB": 4.45,
+      "PE_TTM": 19.09,
       "totalSharesOutstanding": 14442199726
     },
     "recentYearData": {
@@ -175869,9 +177961,9 @@ const data: ServiceData = {
           "basicEps": 2.23,
           "totalSharesOutstanding": 5039430000,
           "dps": 0.8899999999999999,
-          "dividendRatio": 0.403436349443062,
-          "totalDividend": 4485089039.01,
-          "totalDividendA": 4220345524.25
+          "dividendRatio": 0.2085174888335353,
+          "totalDividend": 2318133963.14,
+          "totalDividendA": 2207188863.14
         }
       ],
       "cash": 16992297000,
@@ -175889,10 +177981,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002352",
-      "price": 31.86,
-      "marketValue": 167752715365,
-      "PB": 1.71,
-      "PE_TTM": 14.7,
+      "price": 30.82,
+      "marketValue": 162276794964,
+      "PB": 1.65,
+      "PE_TTM": 14.22,
       "totalSharesOutstanding": 5265308078
     },
     "recentYearData": {
@@ -179114,9 +181206,9 @@ const data: ServiceData = {
           "basicEps": 1.33,
           "totalSharesOutstanding": 944938916,
           "dps": 1,
-          "dividendRatio": 0.7524119038462104,
-          "totalDividend": 944938916,
-          "totalDividendA": 944938916
+          "dividendRatio": 0.3762059519231052,
+          "totalDividend": 472469458,
+          "totalDividendA": 472469458
         }
       ],
       "cash": 1488871187.68,
@@ -179134,10 +181226,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002508",
-      "price": 15.46,
-      "marketValue": 14608755641,
-      "PB": 1.29,
-      "PE_TTM": 11.95,
+      "price": 14.44,
+      "marketValue": 13644917947,
+      "PB": 1.2,
+      "PE_TTM": 11.16,
       "totalSharesOutstanding": 944938916
     },
     "recentYearData": {
@@ -181207,9 +183299,9 @@ const data: ServiceData = {
           "basicEps": 1.32,
           "totalSharesOutstanding": 2212237681,
           "dps": 1.03,
-          "dividendRatio": 0.7812106489857095,
-          "totalDividend": 2265689078.02,
-          "totalDividendA": 2265689078.02
+          "dividendRatio": 0.47782787268057964,
+          "totalDividend": 1385809824.42,
+          "totalDividendA": 1385809824.42
         }
       ],
       "cash": 5141734422.19,
@@ -181227,10 +183319,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002555",
-      "price": 18.26,
-      "marketValue": 40395460055,
-      "PB": 3.07,
-      "PE_TTM": 12.53,
+      "price": 18.41,
+      "marketValue": 40727295707,
+      "PB": 3.1,
+      "PE_TTM": 12.63,
       "totalSharesOutstanding": 2212237681
     },
     "recentYearData": {
@@ -183704,10 +185796,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002594",
-      "price": 87.59,
-      "marketValue": 798575334718,
-      "PB": 3.44,
-      "PE_TTM": 28.99,
+      "price": 78.2,
+      "marketValue": 712964849583,
+      "PB": 3.07,
+      "PE_TTM": 25.88,
       "totalSharesOutstanding": 9117197565
     },
     "recentYearData": {
@@ -187045,10 +189137,10 @@ const data: ServiceData = {
     },
     "dynamicData": {
       "code": "002867",
-      "price": 11.74,
-      "marketValue": 12743463504,
-      "PB": 1.88,
-      "PE_TTM": 11.13,
+      "price": 11.48,
+      "marketValue": 12461240292,
+      "PB": 1.84,
+      "PE_TTM": 10.89,
       "totalSharesOutstanding": 1085473893
     },
     "recentYearData": {

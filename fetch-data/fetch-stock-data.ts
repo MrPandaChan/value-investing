@@ -11,7 +11,7 @@ import type {
   SinaResponse,
 } from "./types";
 import { isHKCode, isETFCode, stocksToSecIds, toSECUCODE, v } from "./helper";
-import { StockType, type StockItem } from "../types";
+import { type StockItem } from "../types";
 import { stockData } from "../types/stocks";
 
 /**
@@ -27,9 +27,39 @@ export const FINANCE_URL_V1 =
   "https://datacenter.eastmoney.com/securities/api/data/v1/get";
 
 /**
+ * 港股数据：
+ *
+ * https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_HKF10_FN_INCOME_PC&columns=SECUCODE%2CSECURITY_CODE%2CSECURITY_NAME_ABBR%2CORG_CODE%2CREPORT_DATE%2CDATE_TYPE_CODE%2CFISCAL_YEAR%2CSTART_DATE%2CSTD_ITEM_CODE%2CSTD_ITEM_NAME%2CAMOUNT&quoteColumns=&filter=(SECUCODE%3D%2200883.HK%22)&pageNumber=1&pageSize=&sortTypes=-1%2C1&sortColumns=REPORT_DATE%2CSTD_ITEM_CODE&source=F10&client=PC&v=04855552746748565
+ * 请求下面这个可以获取到全部数据，然后再用 JSON-HANDLE 来找要获取的数据并进行格式化
+ * https://datacenter.eastmoney.com/securities/api/data/v1/get?reportName=RPT_HKF10_FN_INCOME_PC&columns=ALL&quoteColumns=&filter=(SECUCODE%3D%2200883.HK%22)&pageNumber=1&pageSize=&sortTypes=-1&sortColumns=REPORT_DATE&source=F10&client=PC&v=04855552746748565
+ */
+
+/**
  * 关键指标
  */
 async function getGjzb(paperCode: string) {
+  if (isHKCode(paperCode)) {
+    const res = await axios.get<EastMoneyResponseWrap<any>>(FINANCE_URL_V1, {
+      params: {
+        reportName: "RPT_HKF10_FN_MAININDICATOR",
+        columns: "ALL",
+        quoteColumns: "",
+        filter: `(SECUCODE="${toSECUCODE(paperCode)}")`,
+        pageNumber: 1,
+        pageSize: "",
+        sortTypes: -1,
+        sortColumns: "REPORT_DATE",
+        source: "F10",
+        client: "PC",
+        v: v(),
+      },
+    });
+    if (res.data.success) {
+      return res.data.result.data;
+    }
+    return null;
+  }
+
   const res = await axios.get<SinaResponse>(SINA_URL, {
     params: {
       paperCode,
@@ -50,6 +80,28 @@ async function getGjzb(paperCode: string) {
  * type 0 1 2 3 4 分别表示，按报告期，一季报，半年报，三季报，年报
  */
 async function getFzb(paperCode: string) {
+  if (isHKCode(paperCode)) {
+    const res = await axios.get<EastMoneyResponseWrap<any>>(FINANCE_URL_V1, {
+      params: {
+        reportName: "RPT_HKF10_FN_BALANCE_PC",
+        columns: "ALL",
+        quoteColumns: "",
+        filter: `(SECUCODE="${toSECUCODE(paperCode)}")`,
+        pageNumber: 1,
+        pageSize: "",
+        sortTypes: -1,
+        sortColumns: "REPORT_DATE",
+        source: "F10",
+        client: "PC",
+        v: v(),
+      },
+    });
+    if (res.data.success) {
+      return res.data.result.data;
+    }
+    return null;
+  }
+
   const res = await axios.get<SinaResponse>(SINA_URL, {
     params: {
       paperCode,
@@ -70,6 +122,28 @@ async function getFzb(paperCode: string) {
  * type 0 1 2 3 4 分别表示，按报告期，一季报，半年报，三季报，年报
  */
 async function getLrb(paperCode: string) {
+  if (isHKCode(paperCode)) {
+    const res = await axios.get<EastMoneyResponseWrap<any>>(FINANCE_URL_V1, {
+      params: {
+        reportName: "RPT_HKF10_FN_INCOME_PC",
+        columns: "ALL",
+        quoteColumns: "",
+        filter: `(SECUCODE="${toSECUCODE(paperCode)}")`,
+        pageNumber: 1,
+        pageSize: "",
+        sortTypes: -1,
+        sortColumns: "REPORT_DATE",
+        source: "F10",
+        client: "PC",
+        v: v(),
+      },
+    });
+    if (res.data.success) {
+      return res.data.result.data;
+    }
+    return null;
+  }
+
   const res = await axios.get<SinaResponse>(SINA_URL, {
     params: {
       paperCode,
@@ -86,10 +160,32 @@ async function getLrb(paperCode: string) {
 }
 
 /**
- * 资产负债表
+ * 现金流量表
  * type 0 1 2 3 4 分别表示，按报告期，一季报，半年报，三季报，年报
  */
 async function getLlb(paperCode: string) {
+  if (isHKCode(paperCode)) {
+    const res = await axios.get<EastMoneyResponseWrap<any>>(FINANCE_URL_V1, {
+      params: {
+        reportName: "RPT_HKF10_FN_CASHFLOW_PC",
+        columns: "ALL",
+        quoteColumns: "",
+        filter: `(SECUCODE="${toSECUCODE(paperCode)}")`,
+        pageNumber: 1,
+        pageSize: "",
+        sortTypes: -1,
+        sortColumns: "REPORT_DATE",
+        source: "F10",
+        client: "PC",
+        v: v(),
+      },
+    });
+    if (res.data.success) {
+      return res.data.result.data;
+    }
+    return null;
+  }
+
   const res = await axios.get<SinaResponse>(SINA_URL, {
     params: {
       paperCode,
@@ -175,6 +271,11 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
 async function getPrimaryBusinessData(
   code: string,
 ): Promise<PrimaryBusinessResponseData[] | null> {
+  // 东方财富似乎没有港股主营业务的接口？
+  if (isHKCode(code)) {
+    return null;
+  }
+
   const SECUCODE = toSECUCODE(code);
   const res = await axios.get<
     EastMoneyResponseWrap<PrimaryBusinessResponseData>
@@ -210,6 +311,28 @@ async function getPrimaryBusinessData(
 async function getCashflow(
   code: string,
 ): Promise<EastMoneyCashFlowResponse[] | null> {
+  if (isHKCode(code)) {
+    const res = await axios.get<EastMoneyResponseWrap<any>>(FINANCE_URL_V1, {
+      params: {
+        reportName: "RPT_HKF10_FN_CASHFLOW_PC",
+        columns: "ALL",
+        quoteColumns: "",
+        filter: `(SECUCODE="${toSECUCODE(code)}")`,
+        pageNumber: 1,
+        pageSize: "",
+        sortTypes: -1,
+        sortColumns: "REPORT_DATE",
+        source: "F10",
+        client: "PC",
+        v: v(),
+      },
+    });
+    if (res.data.success) {
+      return res.data.result.data;
+    }
+    return null;
+  }
+
   const SECUCODE = toSECUCODE(code);
   const res = await axios.get<EastMoneyResponseWrap<EastMoneyCashFlowResponse>>(
     FINANCE_URL,
@@ -256,6 +379,29 @@ async function getDividend(
   code: string,
 ): Promise<EastMoneyDividendResponse[] | null> {
   const SECUCODE = toSECUCODE(code);
+
+  if (isHKCode(code)) {
+    const res = await axios.get<EastMoneyResponseWrap<any>>(FINANCE_URL_V1, {
+      params: {
+        reportName: "RPT_HKF10_MAIN_DIVBASIC",
+        columns: "ALL",
+        quoteColumns: "",
+        filter: `(SECUCODE="${SECUCODE}")(IS_BFP="0")`,
+        pageNumber: 1,
+        pageSize: 4,
+        sortTypes: "-1,-1",
+        sortColumns: "NOTICE_DATE,EX_DIVIDEND_DATE",
+        source: "F10",
+        client: "PC",
+        v: v(),
+      },
+    });
+    if (res.data.success) {
+      return res.data.result.data;
+    }
+    return null;
+  }
+
   const res = await axios.get<EastMoneyResponseWrap<EastMoneyDividendResponse>>(
     FINANCE_URL_V1,
     {
@@ -370,8 +516,7 @@ export async function main() {
 
   for (let i = 0; i < stockData.length; i += 1) {
     const stock = stockData[i];
-    // 暂时只处理A股
-    if (!stock || stock.type !== StockType.A) {
+    if (!stock) {
       continue;
     }
 
