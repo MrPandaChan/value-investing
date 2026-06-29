@@ -322,7 +322,9 @@ function getVal(dateValue: string, data: StockData) {
         lrb: "lrb",
         llb: "llb",
       };
-      const restrictToSource = options?.b ? sourceMap[options.b as string] : undefined;
+      const restrictToSource = options?.b
+        ? sourceMap[options.b as string]
+        : undefined;
       return getHKFieldValue(field, dateValue, data, hkKey, restrictToSource);
     };
   }
@@ -378,15 +380,12 @@ function generateBasicRevenueData(data: StockData) {
         // 港股 IFRS 口径：核心利润 = 毛利 - 销售费用 - 管理费用（行政开支）
         // 因为在 IFRS 下营业成本、税金等已包含在毛利计算中
         coreProfit =
-          val("SGPMARGIN") / 100 * revenue -
+          (val("SGPMARGIN") / 100) * revenue -
           val("SALESEXPE") -
           val("MANAEXPE");
         // 港股金融利润：利息收入 + 投资/其他收益 - 融资成本
         // INVEINCO 已包含：应占联营公司溢利 + 应占合营公司溢利 + 其他收益
-        financialProfit =
-          val("INTEINCO") +
-          val("INVEINCO") -
-          val("FINEXPE");
+        financialProfit = val("INTEINCO") + val("INVEINCO") - val("FINEXPE");
       } else {
         // A股口径
         coreProfit =
