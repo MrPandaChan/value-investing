@@ -196,6 +196,7 @@ const stocks: StockItem[] = [
     // 永新股份
     code: "002014",
     industry: Industry.PAPER_AND_PACKAGING,
+    sharesHeld: 400,
     url: "/value-investing/industry/塑料包装/永新股份/",
     remark:
       "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2200股，5.5%股息率左右接回来，横向比对机会成本",
@@ -203,7 +204,6 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [
-        { value: 10, quantity: 400 },
         { value: 9.5, quantity: 500 },
         { value: 9, quantity: 600 },
       ],
@@ -213,13 +213,13 @@ const stocks: StockItem[] = [
     // 招商银行
     code: "600036",
     industry: Industry.BANKING,
-    sharesHeld: 700,
+    sharesHeld: 800,
     dividendPerYear: 2,
     remark: "预估07-15左右分红，分完后计划减1块",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 35.5, quantity: 100 }],
+      price: [{ value: 34.5, quantity: 100 }],
     },
   },
   {
@@ -334,8 +334,8 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
-        { value: 26, quantity: 300 },
-        { value: 25, quantity: 400 },
+        { value: 26, quantity: 200 },
+        { value: 25, quantity: 300 },
       ],
     },
   },
@@ -350,7 +350,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.08,
-      dividend: [{ value: 0.04, quantity: 600 }],
+      dividend: [{ value: 0.04, quantity: 200 }],
     },
   },
   {
@@ -535,8 +535,8 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
-        { value: 0.058, quantity: 200 },
-        { value: 0.062, quantity: 400 },
+        { value: 0.058, quantity: 100 },
+        { value: 0.062, quantity: 200 },
       ],
     },
   },
@@ -618,14 +618,14 @@ const stocks: StockItem[] = [
     // 小商品城
     code: "600415",
     industry: Industry.ENTERPRISE_SERVICES,
-    sharesHeld: 1100,
+    sharesHeld: 1500,
     url: "/value-investing/industry/企业服务/小商品城/",
     dividendPerYear: 1,
     remark: "25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.052, quantity: 300 }],
+      dividend: [{ value: 0.055, quantity: 300 }],
     },
   },
   {
