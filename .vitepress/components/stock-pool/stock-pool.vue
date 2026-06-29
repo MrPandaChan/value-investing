@@ -12,6 +12,10 @@ import {
 import { useStockPoolData, type RowData } from "./use-stock-pool-data";
 import StockPoolPortfolio from "./portfolio.vue";
 
+/**
+ * TODO: 已分红和未分红的数字用颜色区分，方便辨别，越接近分红日的颜色渐变，或者看怎么优化一下，更直观
+ */
+
 const {
   tableData,
   groupMetaMap,
