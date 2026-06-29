@@ -231,7 +231,7 @@ const stocks: StockItem[] = [
     // 招商银行
     code: "600036",
     industry: Industry.BANKING,
-    sharesHeld: 1400,
+    sharesHeld: 1600,
     dividendPerYear: 2,
     remark: "预估07-15左右分红，分完后计划减1块",
     plan: {
@@ -239,7 +239,8 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.1,
       price: [
         // { value: 36.5, quantity: 400 }, // 已买
-        { value: 35.5, quantity: 400 },
+        // { value: 35.5, quantity: 200 }, // 已买
+        { value: 34.5, quantity: 400 },
       ],
     },
   },
@@ -292,13 +293,16 @@ const stocks: StockItem[] = [
     // 中国移动
     code: "600941",
     industry: Industry.TELECOMMUNICATION_SERVICES,
-    sharesHeld: 600,
+    sharesHeld: 700,
     url: "/value-investing/industry/电信服务/中国移动/",
     dividendPerYear: 2,
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.055, quantity: 100 }],
+      dividend: [
+        { value: 0.055, quantity: 100 },
+        { value: 0.058, quantity: 200 },
+      ],
     },
   },
   {
@@ -485,7 +489,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.2,
-      dividend: [{ value: 0.045, quantity: 100 }],
+      dividend: [{ value: 0.05, quantity: 100 }],
     },
   },
   {
@@ -612,10 +616,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [
-        { value: 0.057, quantity: 400 },
-        { value: 0.06, quantity: 500 },
-      ],
+      dividend: [{ value: 0.06, quantity: 500 }],
     },
   },
   {
@@ -639,14 +640,17 @@ const stocks: StockItem[] = [
     // 小商品城
     code: "600415",
     industry: Industry.ENTERPRISE_SERVICES,
-    sharesHeld: 1800,
+    sharesHeld: 2300,
     url: "/value-investing/industry/企业服务/小商品城/",
     dividendPerYear: 1,
     remark: "25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
-      dividend: [{ value: 0.052, quantity: 500 }],
+      maxPositionRatio: 0.03,
+      dividend: [
+        { value: 0.052, quantity: 500 },
+        { value: 0.056, quantity: 600 },
+      ],
     },
   },
   {
