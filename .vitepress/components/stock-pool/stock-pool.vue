@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { computed, onMounted, reactive, ref, watch } from "vue";
+import { ElMessage } from "element-plus";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import {
   formatNum,
@@ -10,7 +11,11 @@ import {
   isHKCode,
 } from "../../../fetch-data/helper";
 import { useStockPoolData, type RowData } from "./use-stock-pool-data";
+import { buildExDisplay, type ExDisplayInfo } from "./use-dividend-status";
+import { stocks } from "../../my-data/stock-pool";
 import StockPoolPortfolio from "./portfolio.vue";
+
+// ========== 分红状态判断（已拆分至 use-dividend-status.ts） ==========
 
 const {
   tableData,
@@ -44,6 +49,7 @@ interface MergedRowData extends RowData {
   decline: number;
   totalMarketCap?: number;
   rowKey: string;
+  exListDisplay: ExDisplayInfo[];
 }
 
 // 编辑缓冲：input 绑定到这些 buffer，仅 blur 时同步到 custom*
@@ -51,7 +57,25 @@ const editPrice = reactive<Record<string, number>>({});
 const editDividend = reactive<Record<string, number>>({});
 const editPE = reactive<Record<string, number>>({});
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
+const industryFilter = ref<string[]>([]); // 行业筛选：空数组表示全部
 const changeSortOrder = ref<"asc" | "desc" | null>(null); // null=默认, "desc"=按涨幅, "asc"=按跌幅
+
+// code → industry 映射表
+const industryMap = computed(() => {
+  const map: Record<string, string> = {};
+  for (const s of stocks) {
+    map[s.code] = s.industry;
+  }
+  return map;
+});
+
+// 行业选项（去重排序）
+const industryOptions = computed(() => {
+  const industries = new Set(
+    stocks.map((s) => s.industry).filter(Boolean),
+  );
+  return Array.from(industries).sort();
+});
 
 interface IndexData {
   code: string;
@@ -102,19 +126,23 @@ const indexListGroup2 = computed(() =>
 );
 
 async function fetchIndices() {
-  const indexCodeList = INDEX_CODES.map((v) => v.code);
-  const dynamicDataList = await getDynamicData(indexCodeList);
-  indexList.value = INDEX_CODES.map((item) => {
-    // API 返回的 f12 是点后面的部分，如 "100.HSI" → "HSI"、"1.00001" → "00001"
-    const shortCode = item.code.split(".").pop()!;
-    const d = dynamicDataList.find((v) => v.code === shortCode);
-    return {
-      code: item.code,
-      label: item.label,
-      price: d ? d.price : 0,
-      change: d ? d.change : 0,
-    };
-  });
+  try {
+    const indexCodeList = INDEX_CODES.map((v) => v.code);
+    const dynamicDataList = await getDynamicData(indexCodeList);
+    indexList.value = INDEX_CODES.map((item) => {
+      // API 返回的 f12 是点后面的部分，如 "100.HSI" → "HSI"、"1.00001" → "00001"
+      const shortCode = item.code.split(".").pop()!;
+      const d = dynamicDataList.find((v) => v.code === shortCode);
+      return {
+        code: item.code,
+        label: item.label,
+        price: d ? d.price : 0,
+        change: d ? d.change : 0,
+      };
+    });
+  } catch {
+    ElMessage.warning("指数数据获取失败，请稍后重试");
+  }
 }
 
 const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
@@ -152,12 +180,20 @@ watch(
 );
 
 async function refresh() {
-  await refreshShared();
+  try {
+    await refreshShared();
+  } catch {
+    ElMessage.error("行情数据刷新失败，请检查网络后重试");
+  }
   fetchIndices(); // 指数数据始终实时获取
 }
 
 async function init() {
-  await initShared();
+  try {
+    await initShared();
+  } catch {
+    ElMessage.error("分红数据获取失败，请检查网络后重试");
+  }
   fetchIndices();
 }
 
@@ -323,6 +359,7 @@ const mergedTableData = computed(() => {
         decline,
         totalMarketCap: index === 0 ? totalMarketCap : undefined,
         rowKey: `${code}-${index}`,
+        exListDisplay: buildExDisplay(row.exList),
       };
     });
 
@@ -336,6 +373,14 @@ const mergedTableData = computed(() => {
       if (isHKCode(g.code)) return marketFilter.value.includes("hk");
       if (isBCode(g.code)) return marketFilter.value.includes("b");
       return marketFilter.value.includes("a");
+    });
+  }
+
+  // 按行业筛选
+  if (industryFilter.value.length) {
+    filteredGroups = filteredGroups.filter((g) => {
+      const ind = industryMap.value[g.code];
+      return ind && industryFilter.value.includes(ind);
     });
   }
 
@@ -385,6 +430,21 @@ const mergedTableData = computed(() => {
       <el-option label="B股" value="b" />
       <el-option label="港股" value="hk" />
     </el-select>
+    <el-select
+      v-model="industryFilter"
+      multiple
+      placeholder="全部行业"
+      collapse-tags
+      collapse-tags-tooltip
+      style="width: 160px; margin-right: 12px"
+    >
+      <el-option
+        v-for="ind in industryOptions"
+        :key="ind"
+        :label="ind"
+        :value="ind"
+      />
+    </el-select>
     <el-button
       :type="changeSortOrder ? 'primary' : 'default'"
       @click="toggleChangeSort"
@@ -397,7 +457,7 @@ const mergedTableData = computed(() => {
       >刷新实时数据</el-button
     >
     <el-button type="primary" :loading="isLoading" @click="init"
-      >初始化/获取分红数据（避免高频调用）</el-button
+      >更新分红数据</el-button
     >
     <el-button type="primary" @click="portfolioDialogVisible = true"
       >透视盈余</el-button
@@ -539,12 +599,42 @@ const mergedTableData = computed(() => {
           :rowspan="row.exDateRowSpan"
           class="bold"
         >
-          <div v-for="(ex, i) in row.exList" :key="i">
+          <div
+            v-for="(ex, i) in row.exListDisplay"
+            :key="i"
+            :class="'dividend-status dividend-' + ex.status"
+            :title="
+              ex.isPredicted
+                ? '预测下次约 ' +
+                  formatShortExDate(ex.exDate).slice(2) +
+                  '（基于去年），' +
+                  (ex.daysUntilEx !== null && ex.daysUntilEx > 0
+                    ? '距预测日 ' + ex.daysUntilEx + ' 天'
+                    : '预测日已过')
+                : ex.status === 'paid'
+                  ? '已除权 ' + ex.exDate
+                  : ex.status === 'upcoming_urgent'
+                    ? '距除权仅剩 ' + ex.daysUntilEx + ' 天'
+                    : ex.status === 'upcoming_soon'
+                      ? '距除权还有 ' + ex.daysUntilEx + ' 天'
+                      : ex.status === 'upcoming_close'
+                        ? '距除权还有 ' + ex.daysUntilEx + ' 天'
+                        : ex.status === 'past_year'
+                          ? '往期分红'
+                          : ex.status === 'unknown'
+                            ? '日期未定'
+                            : '待分红 ' + ex.exDate
+            "
+          >
             {{ formatShortExDate(ex.exDate) }}
           </div>
         </td>
         <td v-if="row.dpsRowSpan > 0" :rowspan="row.dpsRowSpan" class="bold">
-          <div v-for="(ex, i) in row.exList" :key="i">
+          <div
+            v-for="(ex, i) in row.exListDisplay"
+            :key="i"
+            :class="'dividend-status dividend-' + ex.status"
+          >
             {{ getCurrencyPrefix(row.code) }}{{ Number(ex.dps.toFixed(4)) }}
           </div>
         </td>
@@ -837,7 +927,6 @@ html.dark {
 
   .stock-change {
     font-size: 12px;
-    font-weight: normal;
     font-weight: bold;
   }
 
@@ -904,6 +993,46 @@ html.dark {
     text-align: center;
     border-bottom: 2px solid var(--sp-color-dividend-bar);
   }
+
+  // ===== 分红状态颜色 =====
+  .dividend-status {
+    border-radius: 2px;
+    padding: 0 3px;
+    margin: 1px 0;
+    line-height: 20px;
+  }
+
+  // 已分红 / 往期 → 灰色
+  .dividend-paid,
+  .dividend-past_year {
+    color: #999;
+  }
+
+  // ≤7天 → 深红
+  .dividend-upcoming_urgent {
+    color: #cc0000;
+    background-color: rgba(204, 0, 0, 0.12);
+    font-weight: 900;
+  }
+
+  // 8-30天 → 红色
+  .dividend-upcoming_soon {
+    color: #e65c00;
+    background-color: rgba(230, 92, 0, 0.09);
+    font-weight: 900;
+  }
+
+  // 31-60天 → 橙色
+  .dividend-upcoming_close {
+    color: #f88825;
+    background-color: rgba(248, 136, 37, 0.07);
+  }
+
+  // 远期 / 未定 → 默认色
+  .dividend-upcoming,
+  .dividend-unknown {
+    color: var(--sp-text);
+  }
 }
 
 /* 暗黑模式下表格内语义颜色微调 */
@@ -923,6 +1052,26 @@ html.dark {
     }
     .orange {
       color: #ffb860;
+    }
+    .dividend-paid,
+    .dividend-past_year {
+      color: #666;
+    }
+    .dividend-upcoming_urgent {
+      color: #ff5555;
+      background-color: rgba(255, 85, 85, 0.18);
+    }
+    .dividend-upcoming_soon {
+      color: #ff8c42;
+      background-color: rgba(255, 140, 66, 0.14);
+    }
+    .dividend-upcoming_close {
+      color: #ffb860;
+      background-color: rgba(255, 184, 96, 0.1);
+    }
+    .dividend-upcoming,
+    .dividend-unknown {
+      color: var(--sp-text);
     }
   }
 }

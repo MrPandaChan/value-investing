@@ -22,6 +22,7 @@ export enum Industry {
   INSURANCE = "保险",
   ENTERPRISE_SERVICES = "企业服务",
   SHIPPING = "航运",
+  MACHINERY = "机械",
   ETF = "ETF",
 }
 
@@ -223,6 +224,46 @@ const stocks: StockItem[] = [
     },
   },
   {
+    // 兴业银行
+    code: "601166",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.03,
+      dividend: [{ value: 0.07, quantity: 200 }],
+    },
+  },
+  {
+    // 中创智领A
+    code: "601717",
+    industry: Industry.MACHINERY,
+    url: "/value-investing/industry/机械/中创智领/",
+    dividendPerYear: 1,
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.02,
+      dividend: [{ value: 0.1, quantity: 200 }],
+    },
+  },
+  {
+    // 中创智领H
+    code: "00564",
+    industry: Industry.MACHINERY,
+    url: "/value-investing/industry/机械/中创智领/",
+    dividendPerYear: 1,
+    remark: "",
+    dividendAdjust: 0.8,
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.02,
+      dividend: [{ value: 0.1, quantity: 200 }],
+    },
+  },
+  {
     // 美的集团
     code: "000333",
     industry: Industry.HOME_APPLIANCES,
@@ -394,7 +435,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 24.23, quantity: 100 }],
+      price: [{ value: 24.5, quantity: 100 }],
     },
   },
   {
@@ -407,7 +448,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.051, quantity: 200 }],
+      dividend: [{ value: 0.052, quantity: 200 }],
     },
   },
   {
@@ -528,16 +569,14 @@ const stocks: StockItem[] = [
     // 伊利股份
     code: "600887",
     industry: Industry.DAIRY_PRODUCTS,
+    sharesHeld: 100,
     url: "/value-investing/industry/乳制品/伊利股份/",
     dividendPerYear: 2,
-    remark: "护城河一般，不成长，纯吃息",
+    remark: "缓慢成长，纯吃息",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [
-        { value: 0.058, quantity: 100 },
-        { value: 0.062, quantity: 200 },
-      ],
+      dividend: [{ value: 0.062, quantity: 200 }],
     },
   },
   {
@@ -625,7 +664,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.055, quantity: 300 }],
+      dividend: [{ value: 0.056, quantity: 300 }],
     },
   },
   {
@@ -711,6 +750,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(20000);
+export const cash = ref(18000);
 
 export { stocks };

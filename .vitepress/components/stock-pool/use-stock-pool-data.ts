@@ -86,12 +86,16 @@ interface DividendStorageData {
 }
 
 function saveDividendToStorage() {
-  const data: DividendStorageData = {
-    version: computeDividendFingerprint(),
-    timestamp: dividendUpdateTime.value,
-    data: { ...exListMap.value },
-  };
-  localStorage.setItem(DIVIDEND_STORAGE_KEY, JSON.stringify(data));
+  try {
+    const data: DividendStorageData = {
+      version: computeDividendFingerprint(),
+      timestamp: dividendUpdateTime.value,
+      data: { ...exListMap.value },
+    };
+    localStorage.setItem(DIVIDEND_STORAGE_KEY, JSON.stringify(data));
+  } catch {
+    // localStorage 空间不足或写入失败，静默忽略
+  }
 }
 
 function loadDividendFromStorage(): boolean {
@@ -139,39 +143,43 @@ interface StorageData {
 }
 
 function saveToStorage() {
-  const stocksMap: Record<string, StockStorage> = {};
-  const codes: string[] = Array.from(
-    new Set(tableData.value.map((r: RowData) => r.code)),
-  );
-  for (const code of codes) {
-    const rows = tableData.value.filter((r: RowData) => r.code === code);
-    const first = rows[0];
-    stocksMap[code] = {
-      name: first.name,
-      url: first.url,
-      remark: first.remark,
-      maxPositionRatio: first.maxPositionRatio,
-      sharesHeld: first.sharesHeld,
-      change: first.change,
-      rows: rows.map((r: RowData) => ({
-        price: r.price,
-        pe: r.pe,
-        dividend: r.dividend,
-        quantity: r.quantity,
-      })),
-      exList: first.exList,
-      meta: groupMetaMap.value[code],
+  try {
+    const stocksMap: Record<string, StockStorage> = {};
+    const codes: string[] = Array.from(
+      new Set(tableData.value.map((r: RowData) => r.code)),
+    );
+    for (const code of codes) {
+      const rows = tableData.value.filter((r: RowData) => r.code === code);
+      const first = rows[0];
+      stocksMap[code] = {
+        name: first.name,
+        url: first.url,
+        remark: first.remark,
+        maxPositionRatio: first.maxPositionRatio,
+        sharesHeld: first.sharesHeld,
+        change: first.change,
+        rows: rows.map((r: RowData) => ({
+          price: r.price,
+          pe: r.pe,
+          dividend: r.dividend,
+          quantity: r.quantity,
+        })),
+        exList: first.exList,
+        meta: groupMetaMap.value[code],
+      };
+    }
+    const data: StorageData = {
+      version: computeFingerprint(),
+      stocks: stocksMap,
+      customPrice: { ...customPrice },
+      customDividend: { ...customDividend },
+      customPE: { ...customPE },
+      dynamicUpdateTime: dynamicUpdateTime.value,
     };
+    localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
+  } catch {
+    // localStorage 空间不足或写入失败，静默忽略
   }
-  const data: StorageData = {
-    version: computeFingerprint(),
-    stocks: stocksMap,
-    customPrice: { ...customPrice },
-    customDividend: { ...customDividend },
-    customPE: { ...customPE },
-    dynamicUpdateTime: dynamicUpdateTime.value,
-  };
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(data));
 }
 
 function loadFromStorage(): boolean {
