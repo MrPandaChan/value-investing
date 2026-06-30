@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import { computed, ref, onMounted, watch } from "vue";
+import { useData } from "vitepress";
 import MarkdownIt from "markdown-it";
 import * as echarts from "echarts";
 
@@ -79,6 +80,7 @@ const showChart = computed(() => {
 // 图表相关逻辑
 const chartRef = ref<HTMLElement>();
 const chartInstance = ref<echarts.ECharts>();
+const { isDark } = useData();
 const selectedColumns = ref<string[]>(
   showChart.value && props.defaultSelectedKey
     ? [props.defaultSelectedKey]
@@ -104,6 +106,11 @@ watch(
   },
   { deep: true }
 );
+
+// 监听黑夜模式切换
+watch(isDark, () => {
+  updateChart();
+});
 
 function groupBy<T extends Record<string, any>, K extends keyof T>(
   array: T[],
@@ -146,6 +153,7 @@ function updateChart() {
 
   if (!chartInstance.value) return;
 
+  const dark = isDark.value;
   const series: echarts.SeriesOption[] = [];
   let barCount = 0;
 
@@ -177,6 +185,8 @@ function updateChart() {
         return Number(v.toString().replace(/%/, ""));
       });
 
+      const labelColor = dark ? "#ccc" : "#333";
+
       if (isPercentage) {
         // 右侧y轴(百分比) - 折线图
         series.push({
@@ -193,6 +203,7 @@ function updateChart() {
           label: {
             show: true,
             position: "top",
+            color: labelColor,
             formatter: (params: any) => {
               return params.value !== null
                 ? params.value > 10
@@ -213,6 +224,7 @@ function updateChart() {
           showBackground: false,
           label: {
             show: true,
+            color: labelColor,
             formatter: (params: any) => {
               return params.value !== null
                 ? params.value > 10
@@ -235,14 +247,24 @@ function updateChart() {
     barWidthPercent = 40;
   }
 
+  const textColor = dark ? "#aaa" : "#333";
+  const axisColor = dark ? "#555" : "#333";
+  const splitColor = dark ? "#444" : "#e0e0e0";
+  const tooltipBg = dark ? "rgba(40,40,40,0.95)" : "rgba(255,255,255,0.95)";
+  const tooltipBorder = dark ? "#555" : "#ccc";
+  const tooltipText = dark ? "#ddd" : "#333";
+
   const option: echarts.EChartsOption = {
     tooltip: {
       trigger: "axis",
+      backgroundColor: tooltipBg,
+      borderColor: tooltipBorder,
+      textStyle: { color: tooltipText },
     },
     grid: {
       left: "3%",
       right: "4%",
-      bottom: "15%", // 增加底部空间
+      bottom: "15%",
       containLabel: true,
     },
     legend: {
@@ -260,8 +282,9 @@ function updateChart() {
       selected: Object.fromEntries(
         selectedColumns.value.map((colKey) => [colKey, true])
       ),
-      top: "bottom", // 将图例放在底部
-      padding: [10, 0, 0, 0], // 增加顶部内边距
+      top: "bottom",
+      padding: [10, 0, 0, 0],
+      textStyle: { color: textColor },
     },
     xAxis: {
       type: "category",
@@ -271,9 +294,7 @@ function updateChart() {
       },
       axisLine: {
         show: true,
-        lineStyle: {
-          width: 1,
-        },
+        lineStyle: { width: 1, color: axisColor },
       },
       axisTick: {
         show: true,
@@ -282,6 +303,7 @@ function updateChart() {
       axisLabel: {
         interval: 0,
         rotate: years.value.length > 11 ? 30 : 0,
+        color: textColor,
       },
     },
     yAxis: [
@@ -291,17 +313,14 @@ function updateChart() {
         position: "left",
         axisLine: {
           show: true,
-          lineStyle: {
-            width: 1,
-          },
+          lineStyle: { width: 1, color: axisColor },
         },
         axisTick: {
           show: true,
         },
+        axisLabel: { color: textColor },
         splitLine: {
-          lineStyle: {
-            type: "dashed",
-          },
+          lineStyle: { type: "dashed", color: splitColor },
         },
       },
       {
@@ -310,6 +329,7 @@ function updateChart() {
         position: "right",
         axisLabel: {
           formatter: "{value}%",
+          color: textColor,
         },
         splitLine: {
           show: false,
@@ -746,6 +766,51 @@ th.selected-column {
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+// ===== 黑夜模式适配 =====
+html.dark {
+  th.selected-column {
+    background-color: #1a2a3a;
+    &::after {
+      background-color: #4096ff;
+    }
+  }
+
+  .help-icon {
+    background-color: #1a2a3a;
+    color: #4096ff;
+
+    &:hover {
+      background-color: #253545;
+    }
+  }
+
+  .description-modal {
+    background: #1e1e1e;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+  }
+
+  .description-header {
+    border-bottom-color: #333;
+
+    h3 {
+      color: #ddd;
+    }
+  }
+
+  .close-btn {
+    color: #888;
+
+    &:hover {
+      background-color: #333;
+      color: #ddd;
+    }
+  }
+
+  .description-content {
+    color: #ccc;
   }
 }
 </style>

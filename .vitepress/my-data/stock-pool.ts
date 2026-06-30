@@ -22,6 +22,7 @@ export enum Industry {
   INSURANCE = "保险",
   ENTERPRISE_SERVICES = "企业服务",
   SHIPPING = "航运",
+  MACHINERY = "机械",
   ETF = "ETF",
 }
 
@@ -242,6 +243,46 @@ const stocks: StockItem[] = [
         // { value: 35.5, quantity: 200 }, // 已买
         { value: 34.5, quantity: 400 },
       ],
+    },
+  },
+  {
+    // 兴业银行
+    code: "601166",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.03,
+      dividend: [{ value: 0.07, quantity: 200 }],
+    },
+  },
+  {
+    // 中创智领A
+    code: "601717",
+    industry: Industry.MACHINERY,
+    url: "/value-investing/industry/机械/中创智领/",
+    dividendPerYear: 1,
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.02,
+      dividend: [{ value: 0.1, quantity: 200 }],
+    },
+  },
+  {
+    // 中创智领H
+    code: "00564",
+    industry: Industry.MACHINERY,
+    url: "/value-investing/industry/机械/中创智领/",
+    dividendPerYear: 1,
+    remark: "",
+    dividendAdjust: 0.8,
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.02,
+      dividend: [{ value: 0.1, quantity: 200 }],
     },
   },
   {
