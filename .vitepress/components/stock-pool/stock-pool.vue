@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { computed, onMounted, reactive, ref, watch } from "vue";
+import { ElMessage } from "element-plus";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import {
   formatNum,
@@ -10,119 +11,11 @@ import {
   isHKCode,
 } from "../../../fetch-data/helper";
 import { useStockPoolData, type RowData } from "./use-stock-pool-data";
+import { buildExDisplay, type ExDisplayInfo } from "./use-dividend-status";
+import { stocks } from "../../my-data/stock-pool";
 import StockPoolPortfolio from "./portfolio.vue";
 
-// ========== 分红状态判断 ==========
-type DividendStatus =
-  | "paid" // 今年已分红 → 灰色
-  | "upcoming_urgent" // 距除权 ≤ 7 天 → 深红
-  | "upcoming_soon" // 距除权 8-30 天 → 红色
-  | "upcoming_close" // 距除权 31-60 天 → 橙色
-  | "upcoming" // 距除权 > 60 天 → 默认色
-  | "past_year" // 往年无预测价值 → 灰色
-  | "unknown"; // 日期未定 → 默认色
-
-interface ExDisplayInfo {
-  dps: number;
-  exDate: string;
-  payDate: string;
-  status: DividendStatus;
-  daysUntilEx: number | null;
-  isPredicted: boolean;
-}
-
-function parseDateSafe(s: string): Date | null {
-  if (!s || s === "-") return null;
-  const d = new Date(s);
-  return isNaN(d.getTime()) ? null : d;
-}
-
-function getDividendStatus(
-  exDate: string,
-  _payDate: string,
-): {
-  status: DividendStatus;
-  daysUntilEx: number | null;
-  isPredicted: boolean;
-} {
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  const thisYear = today.getFullYear();
-
-  const dEx = parseDateSafe(exDate);
-
-  // 无除权日 → 默认色
-  if (!dEx) return { status: "unknown", daysUntilEx: null, isPredicted: false };
-
-  const daysUntilEx = Math.ceil((dEx.getTime() - today.getTime()) / 86400000);
-
-  // 除权日在往年 → 投射到今年作为预测
-  if (dEx.getFullYear() < thisYear) {
-    const projected = new Date(thisYear, dEx.getMonth(), dEx.getDate());
-    const projectedDays = Math.ceil(
-      (projected.getTime() - today.getTime()) / 86400000,
-    );
-    if (projectedDays >= -60) {
-      return {
-        status: classifyDays(projectedDays),
-        daysUntilEx: projectedDays,
-        isPredicted: true,
-      };
-    }
-    return { status: "past_year", daysUntilEx, isPredicted: false };
-  }
-
-  // 除权日在今年且已过 → 已除权，灰色
-  if (dEx.getFullYear() === thisYear && dEx <= today) {
-    return { status: "paid", daysUntilEx, isPredicted: false };
-  }
-
-  // 除权日在未来 → 按紧迫度分级
-  if (dEx > today) {
-    return { status: classifyDays(daysUntilEx), daysUntilEx, isPredicted: false };
-  }
-
-  return { status: "past_year", daysUntilEx, isPredicted: false };
-}
-
-/** 根据距今天数返回三级紧迫度 */
-function classifyDays(days: number | null): DividendStatus {
-  if (days === null) return "upcoming";
-  if (days <= 7) return "upcoming_urgent";
-  if (days <= 30) return "upcoming_soon";
-  if (days <= 60) return "upcoming_close";
-  return "upcoming";
-}
-
-function buildExDisplay(exList: RowData["exList"]): ExDisplayInfo[] {
-  const statusOrder: Record<DividendStatus, number> = {
-    upcoming_urgent: 0,
-    upcoming_soon: 1,
-    upcoming_close: 2,
-    upcoming: 3,
-    unknown: 4,
-    past_year: 5,
-    paid: 6,
-  };
-  return exList
-    .map((ex) => {
-      const statusInfo = getDividendStatus(ex.exDate, ex.payDate);
-      return {
-        dps: ex.dps,
-        exDate: ex.exDate,
-        payDate: ex.payDate,
-        ...statusInfo,
-      };
-    })
-    .sort((a, b) => {
-      const orderDiff = statusOrder[a.status] - statusOrder[b.status];
-      if (orderDiff !== 0) return orderDiff;
-      // 同状态按距今天数升序（越近的越靠前），null 排后面
-      const aDays = a.daysUntilEx ?? Infinity;
-      const bDays = b.daysUntilEx ?? Infinity;
-      return aDays - bDays;
-    });
-}
+// ========== 分红状态判断（已拆分至 use-dividend-status.ts） ==========
 
 const {
   tableData,
@@ -164,7 +57,25 @@ const editPrice = reactive<Record<string, number>>({});
 const editDividend = reactive<Record<string, number>>({});
 const editPE = reactive<Record<string, number>>({});
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
+const industryFilter = ref<string[]>([]); // 行业筛选：空数组表示全部
 const changeSortOrder = ref<"asc" | "desc" | null>(null); // null=默认, "desc"=按涨幅, "asc"=按跌幅
+
+// code → industry 映射表
+const industryMap = computed(() => {
+  const map: Record<string, string> = {};
+  for (const s of stocks) {
+    map[s.code] = s.industry;
+  }
+  return map;
+});
+
+// 行业选项（去重排序）
+const industryOptions = computed(() => {
+  const industries = new Set(
+    stocks.map((s) => s.industry).filter(Boolean),
+  );
+  return Array.from(industries).sort();
+});
 
 interface IndexData {
   code: string;
@@ -215,19 +126,23 @@ const indexListGroup2 = computed(() =>
 );
 
 async function fetchIndices() {
-  const indexCodeList = INDEX_CODES.map((v) => v.code);
-  const dynamicDataList = await getDynamicData(indexCodeList);
-  indexList.value = INDEX_CODES.map((item) => {
-    // API 返回的 f12 是点后面的部分，如 "100.HSI" → "HSI"、"1.00001" → "00001"
-    const shortCode = item.code.split(".").pop()!;
-    const d = dynamicDataList.find((v) => v.code === shortCode);
-    return {
-      code: item.code,
-      label: item.label,
-      price: d ? d.price : 0,
-      change: d ? d.change : 0,
-    };
-  });
+  try {
+    const indexCodeList = INDEX_CODES.map((v) => v.code);
+    const dynamicDataList = await getDynamicData(indexCodeList);
+    indexList.value = INDEX_CODES.map((item) => {
+      // API 返回的 f12 是点后面的部分，如 "100.HSI" → "HSI"、"1.00001" → "00001"
+      const shortCode = item.code.split(".").pop()!;
+      const d = dynamicDataList.find((v) => v.code === shortCode);
+      return {
+        code: item.code,
+        label: item.label,
+        price: d ? d.price : 0,
+        change: d ? d.change : 0,
+      };
+    });
+  } catch {
+    ElMessage.warning("指数数据获取失败，请稍后重试");
+  }
 }
 
 const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
@@ -265,12 +180,20 @@ watch(
 );
 
 async function refresh() {
-  await refreshShared();
+  try {
+    await refreshShared();
+  } catch {
+    ElMessage.error("行情数据刷新失败，请检查网络后重试");
+  }
   fetchIndices(); // 指数数据始终实时获取
 }
 
 async function init() {
-  await initShared();
+  try {
+    await initShared();
+  } catch {
+    ElMessage.error("分红数据获取失败，请检查网络后重试");
+  }
   fetchIndices();
 }
 
@@ -453,6 +376,14 @@ const mergedTableData = computed(() => {
     });
   }
 
+  // 按行业筛选
+  if (industryFilter.value.length) {
+    filteredGroups = filteredGroups.filter((g) => {
+      const ind = industryMap.value[g.code];
+      return ind && industryFilter.value.includes(ind);
+    });
+  }
+
   // 第二步：排序
   if (changeSortOrder.value) {
     // 按涨跌幅排序
@@ -499,6 +430,21 @@ const mergedTableData = computed(() => {
       <el-option label="B股" value="b" />
       <el-option label="港股" value="hk" />
     </el-select>
+    <el-select
+      v-model="industryFilter"
+      multiple
+      placeholder="全部行业"
+      collapse-tags
+      collapse-tags-tooltip
+      style="width: 160px; margin-right: 12px"
+    >
+      <el-option
+        v-for="ind in industryOptions"
+        :key="ind"
+        :label="ind"
+        :value="ind"
+      />
+    </el-select>
     <el-button
       :type="changeSortOrder ? 'primary' : 'default'"
       @click="toggleChangeSort"
@@ -511,7 +457,7 @@ const mergedTableData = computed(() => {
       >刷新实时数据</el-button
     >
     <el-button type="primary" :loading="isLoading" @click="init"
-      >初始化/获取分红数据（避免高频调用）</el-button
+      >更新分红数据</el-button
     >
     <el-button type="primary" @click="portfolioDialogVisible = true"
       >透视盈余</el-button
@@ -981,7 +927,6 @@ html.dark {
 
   .stock-change {
     font-size: 12px;
-    font-weight: normal;
     font-weight: bold;
   }
 
