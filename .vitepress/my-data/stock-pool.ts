@@ -590,6 +590,7 @@ const stocks: StockItem[] = [
     // 伊利股份
     code: "600887",
     industry: Industry.DAIRY_PRODUCTS,
+    sharesHeld: 200,
     url: "/value-investing/industry/乳制品/伊利股份/",
     dividendPerYear: 2,
     remark: "缓慢成长，纯吃息",
@@ -597,8 +598,8 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
-        { value: 0.058, quantity: 600 },
-        { value: 0.062, quantity: 800 },
+        // { value: 0.058, quantity: 200 }, // 已买
+        { value: 0.06, quantity: 200 },
       ],
     },
   },
@@ -769,6 +770,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(64000);
+export const cash = ref(60000);
 
 export { stocks };
