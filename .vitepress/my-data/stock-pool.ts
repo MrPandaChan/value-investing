@@ -246,6 +246,58 @@ const stocks: StockItem[] = [
     },
   },
   {
+    // 工商银行
+    code: "601398",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.055, quantity: 100 }],
+    },
+  },
+  {
+    // 中国银行
+    code: "601988",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.055, quantity: 100 }],
+    },
+  },
+  {
+    // 农业银行
+    code: "601288",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.055, quantity: 100 }],
+    },
+  },
+  {
+    // 建设银行
+    code: "601939",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.055, quantity: 100 }],
+    },
+  },
+  {
     // 兴业银行
     code: "601166",
     industry: Industry.BANKING,
