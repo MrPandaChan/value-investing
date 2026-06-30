@@ -427,7 +427,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.051, quantity: 200 }],
+      dividend: [{ value: 0.052, quantity: 200 }],
     },
   },
   {
@@ -551,7 +551,7 @@ const stocks: StockItem[] = [
     industry: Industry.DAIRY_PRODUCTS,
     url: "/value-investing/industry/乳制品/伊利股份/",
     dividendPerYear: 2,
-    remark: "护城河一般，不成长，纯吃息",
+    remark: "缓慢成长，纯吃息",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,

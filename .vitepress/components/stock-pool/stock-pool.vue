@@ -12,9 +12,117 @@ import {
 import { useStockPoolData, type RowData } from "./use-stock-pool-data";
 import StockPoolPortfolio from "./portfolio.vue";
 
-/**
- * TODO: 已分红和未分红的数字用颜色区分，方便辨别，越接近分红日的颜色渐变，或者看怎么优化一下，更直观
- */
+// ========== 分红状态判断 ==========
+type DividendStatus =
+  | "paid" // 今年已分红 → 灰色
+  | "upcoming_urgent" // 距除权 ≤ 7 天 → 深红
+  | "upcoming_soon" // 距除权 8-30 天 → 红色
+  | "upcoming_close" // 距除权 31-60 天 → 橙色
+  | "upcoming" // 距除权 > 60 天 → 默认色
+  | "past_year" // 往年无预测价值 → 灰色
+  | "unknown"; // 日期未定 → 默认色
+
+interface ExDisplayInfo {
+  dps: number;
+  exDate: string;
+  payDate: string;
+  status: DividendStatus;
+  daysUntilEx: number | null;
+  isPredicted: boolean;
+}
+
+function parseDateSafe(s: string): Date | null {
+  if (!s || s === "-") return null;
+  const d = new Date(s);
+  return isNaN(d.getTime()) ? null : d;
+}
+
+function getDividendStatus(
+  exDate: string,
+  _payDate: string,
+): {
+  status: DividendStatus;
+  daysUntilEx: number | null;
+  isPredicted: boolean;
+} {
+  const today = new Date();
+  today.setHours(0, 0, 0, 0);
+  const thisYear = today.getFullYear();
+
+  const dEx = parseDateSafe(exDate);
+
+  // 无除权日 → 默认色
+  if (!dEx) return { status: "unknown", daysUntilEx: null, isPredicted: false };
+
+  const daysUntilEx = Math.ceil((dEx.getTime() - today.getTime()) / 86400000);
+
+  // 除权日在往年 → 投射到今年作为预测
+  if (dEx.getFullYear() < thisYear) {
+    const projected = new Date(thisYear, dEx.getMonth(), dEx.getDate());
+    const projectedDays = Math.ceil(
+      (projected.getTime() - today.getTime()) / 86400000,
+    );
+    if (projectedDays >= -60) {
+      return {
+        status: classifyDays(projectedDays),
+        daysUntilEx: projectedDays,
+        isPredicted: true,
+      };
+    }
+    return { status: "past_year", daysUntilEx, isPredicted: false };
+  }
+
+  // 除权日在今年且已过 → 已除权，灰色
+  if (dEx.getFullYear() === thisYear && dEx <= today) {
+    return { status: "paid", daysUntilEx, isPredicted: false };
+  }
+
+  // 除权日在未来 → 按紧迫度分级
+  if (dEx > today) {
+    return { status: classifyDays(daysUntilEx), daysUntilEx, isPredicted: false };
+  }
+
+  return { status: "past_year", daysUntilEx, isPredicted: false };
+}
+
+/** 根据距今天数返回三级紧迫度 */
+function classifyDays(days: number | null): DividendStatus {
+  if (days === null) return "upcoming";
+  if (days <= 7) return "upcoming_urgent";
+  if (days <= 30) return "upcoming_soon";
+  if (days <= 60) return "upcoming_close";
+  return "upcoming";
+}
+
+function buildExDisplay(exList: RowData["exList"]): ExDisplayInfo[] {
+  const statusOrder: Record<DividendStatus, number> = {
+    upcoming_urgent: 0,
+    upcoming_soon: 1,
+    upcoming_close: 2,
+    upcoming: 3,
+    unknown: 4,
+    past_year: 5,
+    paid: 6,
+  };
+  return exList
+    .map((ex) => {
+      const statusInfo = getDividendStatus(ex.exDate, ex.payDate);
+      return {
+        dps: ex.dps,
+        exDate: ex.exDate,
+        payDate: ex.payDate,
+        ...statusInfo,
+      };
+    })
+    .sort((a, b) => {
+      const orderDiff = statusOrder[a.status] - statusOrder[b.status];
+      if (orderDiff !== 0) return orderDiff;
+      // 同状态按距今天数升序（越近的越靠前），null 排后面
+      const aDays = a.daysUntilEx ?? Infinity;
+      const bDays = b.daysUntilEx ?? Infinity;
+      return aDays - bDays;
+    });
+}
 
 const {
   tableData,
@@ -48,6 +156,7 @@ interface MergedRowData extends RowData {
   decline: number;
   totalMarketCap?: number;
   rowKey: string;
+  exListDisplay: ExDisplayInfo[];
 }
 
 // 编辑缓冲：input 绑定到这些 buffer，仅 blur 时同步到 custom*
@@ -327,6 +436,7 @@ const mergedTableData = computed(() => {
         decline,
         totalMarketCap: index === 0 ? totalMarketCap : undefined,
         rowKey: `${code}-${index}`,
+        exListDisplay: buildExDisplay(row.exList),
       };
     });
 
@@ -543,12 +653,42 @@ const mergedTableData = computed(() => {
           :rowspan="row.exDateRowSpan"
           class="bold"
         >
-          <div v-for="(ex, i) in row.exList" :key="i">
+          <div
+            v-for="(ex, i) in row.exListDisplay"
+            :key="i"
+            :class="'dividend-status dividend-' + ex.status"
+            :title="
+              ex.isPredicted
+                ? '预测下次约 ' +
+                  formatShortExDate(ex.exDate).slice(2) +
+                  '（基于去年），' +
+                  (ex.daysUntilEx !== null && ex.daysUntilEx > 0
+                    ? '距预测日 ' + ex.daysUntilEx + ' 天'
+                    : '预测日已过')
+                : ex.status === 'paid'
+                  ? '已除权 ' + ex.exDate
+                  : ex.status === 'upcoming_urgent'
+                    ? '距除权仅剩 ' + ex.daysUntilEx + ' 天'
+                    : ex.status === 'upcoming_soon'
+                      ? '距除权还有 ' + ex.daysUntilEx + ' 天'
+                      : ex.status === 'upcoming_close'
+                        ? '距除权还有 ' + ex.daysUntilEx + ' 天'
+                        : ex.status === 'past_year'
+                          ? '往期分红'
+                          : ex.status === 'unknown'
+                            ? '日期未定'
+                            : '待分红 ' + ex.exDate
+            "
+          >
             {{ formatShortExDate(ex.exDate) }}
           </div>
         </td>
         <td v-if="row.dpsRowSpan > 0" :rowspan="row.dpsRowSpan" class="bold">
-          <div v-for="(ex, i) in row.exList" :key="i">
+          <div
+            v-for="(ex, i) in row.exListDisplay"
+            :key="i"
+            :class="'dividend-status dividend-' + ex.status"
+          >
             {{ getCurrencyPrefix(row.code) }}{{ Number(ex.dps.toFixed(4)) }}
           </div>
         </td>
@@ -908,6 +1048,46 @@ html.dark {
     text-align: center;
     border-bottom: 2px solid var(--sp-color-dividend-bar);
   }
+
+  // ===== 分红状态颜色 =====
+  .dividend-status {
+    border-radius: 2px;
+    padding: 0 3px;
+    margin: 1px 0;
+    line-height: 20px;
+  }
+
+  // 已分红 / 往期 → 灰色
+  .dividend-paid,
+  .dividend-past_year {
+    color: #999;
+  }
+
+  // ≤7天 → 深红
+  .dividend-upcoming_urgent {
+    color: #cc0000;
+    background-color: rgba(204, 0, 0, 0.12);
+    font-weight: 900;
+  }
+
+  // 8-30天 → 红色
+  .dividend-upcoming_soon {
+    color: #e65c00;
+    background-color: rgba(230, 92, 0, 0.09);
+    font-weight: 900;
+  }
+
+  // 31-60天 → 橙色
+  .dividend-upcoming_close {
+    color: #f88825;
+    background-color: rgba(248, 136, 37, 0.07);
+  }
+
+  // 远期 / 未定 → 默认色
+  .dividend-upcoming,
+  .dividend-unknown {
+    color: var(--sp-text);
+  }
 }
 
 /* 暗黑模式下表格内语义颜色微调 */
@@ -927,6 +1107,26 @@ html.dark {
     }
     .orange {
       color: #ffb860;
+    }
+    .dividend-paid,
+    .dividend-past_year {
+      color: #666;
+    }
+    .dividend-upcoming_urgent {
+      color: #ff5555;
+      background-color: rgba(255, 85, 85, 0.18);
+    }
+    .dividend-upcoming_soon {
+      color: #ff8c42;
+      background-color: rgba(255, 140, 66, 0.14);
+    }
+    .dividend-upcoming_close {
+      color: #ffb860;
+      background-color: rgba(255, 184, 96, 0.1);
+    }
+    .dividend-upcoming,
+    .dividend-unknown {
+      color: var(--sp-text);
     }
   }
 }
