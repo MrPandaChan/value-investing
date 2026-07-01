@@ -8,6 +8,7 @@ const props = defineProps<{
 }>();
 
 const turnoverRateData = data[props.code].turnoverRateData;
+const turnoverRateDataQuarterly = data[props.code].turnoverRateDataQuarterly;
 
 const description = `如果有精力，可对资产周转率进一步拆解，资产周转率代表资产效率，拆解后可以对资产效率变化的原因有进一步了解。
 
@@ -214,11 +215,16 @@ const tableData = computed(() => {
   // 返回按年份降序排列的数据 + 统计行
   return [...sortedData, ...statsRows];
 });
+
+const quarterlyTableData = computed(() => {
+  return turnoverRateDataQuarterly?.length ? turnoverRateDataQuarterly : [];
+});
 </script>
 
 <template>
   <AppTable
     :data="tableData"
+    :quarterly-data="quarterlyTableData"
     :columns="columns"
     :caption="tableCaption"
     :description="description"

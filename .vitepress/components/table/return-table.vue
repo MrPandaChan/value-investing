@@ -8,6 +8,7 @@ const props = defineProps<{
 }>();
 
 const returnData = data[props.code].returnData;
+const returnDataQuarterly = data[props.code].returnDataQuarterly;
 
 const description = `收益率指标一般看这么几个：ROE、资产回报率(Return on Assets, ROA)和资本投入回报率(Return on Investment Capital, ROIC)，以及前面我们已经算过的净经营资产收益率。收益率当然是越高越好，持续高更好，我的大体感觉，ROE 在 20%以上的都是比较优秀的公司。ROA 主要和 ROE 结合起来看，看在去掉杠杆效应的情况下总资产的获利能力。
 
@@ -76,11 +77,16 @@ const tableData = computed(() => {
   // 返回按年份降序排列的数据 + 统计行
   return [...sortedData];
 });
+
+const quarterlyTableData = computed(() => {
+  return returnDataQuarterly?.length ? returnDataQuarterly : [];
+});
 </script>
 
 <template>
   <AppTable
     :data="tableData"
+    :quarterly-data="quarterlyTableData"
     :columns="columns"
     :caption="tableCaption"
     :description="description"

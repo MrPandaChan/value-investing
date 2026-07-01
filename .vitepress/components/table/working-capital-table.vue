@@ -8,6 +8,7 @@ const props = defineProps<{
 }>();
 
 const workingCapitalData = data[props.code].workingCapitalData;
+const workingCapitalDataQuarterly = data[props.code].workingCapitalDataQuarterly;
 
 const description = `
 把企业看成一个投入产出系统，目的是服务客户，客户满意，企业获得收入，实现商业循环。
@@ -257,11 +258,16 @@ const tableData = computed(() => {
   // 返回按年份降序排列的数据 + 统计行
   return [...sortedData, ...statsRows];
 });
+
+const quarterlyTableData = computed(() => {
+  return workingCapitalDataQuarterly?.length ? workingCapitalDataQuarterly : [];
+});
 </script>
 
 <template>
   <AppTable
     :data="tableData"
+    :quarterly-data="quarterlyTableData"
     :columns="columns"
     :caption="tableCaption"
     :description="description"

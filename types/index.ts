@@ -281,12 +281,19 @@ export interface RecentYearData {
 export interface ServiceData {
   [code: string | number]: {
     basicRevenueData: BasicRevenueData[];
+    basicRevenueDataQuarterly: BasicRevenueData[];
     costsExpensesData: CostsExpensesData[];
+    costsExpensesDataQuarterly: CostsExpensesData[];
     balanceData: BalanceData[];
+    balanceDataQuarterly: BalanceData[];
     workingCapitalData: WorkingCapitalData[];
+    workingCapitalDataQuarterly: WorkingCapitalData[];
     fixedAssetInvestmentAnalysisData: FixedAssetInvestmentAnalysisData[];
+    fixedAssetInvestmentAnalysisDataQuarterly: FixedAssetInvestmentAnalysisData[];
     returnData: ReturnData[];
+    returnDataQuarterly: ReturnData[];
     turnoverRateData: TurnoverRateData[];
+    turnoverRateDataQuarterly: TurnoverRateData[];
     primaryBusinessData: PrimaryBusinessData[];
     valuationData: ValuationData;
     dynamicData: DynamicData;

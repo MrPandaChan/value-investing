@@ -8,6 +8,7 @@ const props = defineProps<{
 }>();
 
 const basicRevenueData = data[props.code].basicRevenueData;
+const basicRevenueDataQuarterly = data[props.code].basicRevenueDataQuarterly;
 
 const description = `1. 看收入、净利润和利润率
 2. 看收入利润发展过程
@@ -233,11 +234,16 @@ const tableData = computed(() => {
   // 返回按年份降序排列的数据 + 统计行
   return [...sortedData, ...statsRows];
 });
+
+const quarterlyTableData = computed(() => {
+  return basicRevenueDataQuarterly?.length ? basicRevenueDataQuarterly : [];
+});
 </script>
 
 <template>
   <AppTable
     :data="tableData"
+    :quarterly-data="quarterlyTableData"
     :columns="columns"
     :caption="tableCaption"
     :description="description"

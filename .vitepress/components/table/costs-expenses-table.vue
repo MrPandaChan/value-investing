@@ -8,6 +8,7 @@ const props = defineProps<{
 }>();
 
 const costsExpensesData = data[props.code].costsExpensesData;
+const costsExpensesDataQuarterly = data[props.code].costsExpensesDataQuarterly;
 
 const description = `1. 研发资本化往往被诟病为操纵利润，需特别注意，研发费用资本化放在开发费用中
 2. 看研发费用总额变化
@@ -238,11 +239,16 @@ const tableData = computed(() => {
   // 返回按年份降序排列的数据 + 统计行
   return [...sortedData, ...statsRows];
 });
+
+const quarterlyTableData = computed(() => {
+  return costsExpensesDataQuarterly?.length ? costsExpensesDataQuarterly : [];
+});
 </script>
 
 <template>
   <AppTable
     :data="tableData"
+    :quarterly-data="quarterlyTableData"
     :columns="columns"
     :caption="tableCaption"
     :description="description"
