@@ -500,13 +500,13 @@ const stocks: StockItem[] = [
     // 紫金矿业
     code: "601899",
     industry: Industry.NON_FERROUS_METALS,
-    sharesHeld: 400,
+    sharesHeld: 500,
     url: "/value-investing/industry/有色金属/紫金矿业/",
     dividendPerYear: 2,
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 24.5, quantity: 100 }],
+      price: [{ value: 23.5, quantity: 100 }],
     },
   },
   {
@@ -527,7 +527,7 @@ const stocks: StockItem[] = [
     // 赛轮轮胎
     code: "601058",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
-    sharesHeld: 1000,
+    sharesHeld: 1200,
     url: "/value-investing/industry/汽车/赛轮轮胎/",
     dividendPerYear: 2,
     remark: "",
@@ -535,8 +535,8 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [
-        { value: 11.22, quantity: 800 },
-        { value: 10.62, quantity: 1000 },
+        { value: 11.22, quantity: 200 }, // 11.22 已经买了 200 股
+        { value: 10.62, quantity: 400 },
       ],
     },
   },
@@ -822,6 +822,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(60000);
+export const cash = ref(55000);
 
 export { stocks };

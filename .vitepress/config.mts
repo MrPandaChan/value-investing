@@ -1,8 +1,10 @@
 import { defineConfig } from "vitepress";
-import { generateSidebar, getIndustryTree, getCompanyFilesMap } from "./generate-sidebar.js";
+import {
+  generateSidebar,
+  getIndustryTree,
+  getCompanyFilesMap,
+} from "./generate-sidebar.js";
 import { generateValueSidebar } from "./generate-value-sidebar.js";
-
-const isDev = process.env.NODE_ENV !== "production";
 
 // 自动生成侧边栏
 const industrySidebar = generateSidebar();
@@ -10,9 +12,7 @@ const valueSidebar = generateValueSidebar();
 
 // https://vitepress.dev/reference/site-config
 export default defineConfig({
-  head: [
-    ["link", { rel: "icon", href: "/value-investing/favicon.ico" }],
-  ],
+  head: [["link", { rel: "icon", href: "/value-investing/favicon.ico" }]],
   vite: {
     plugins: [
       {
