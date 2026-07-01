@@ -491,6 +491,18 @@ const stocks: StockItem[] = [
     },
   },
   {
+    // 云铝股份
+    code: "000807",
+    industry: Industry.NON_FERROUS_METALS,
+    url: "/value-investing/industry/有色金属/云铝股份/",
+    dividendPerYear: 2,
+    plan: {
+      type: PlanType.PRICE,
+      maxPositionRatio: 0.05,
+      price: [{ value: 21.5, quantity: 100 }],
+    },
+  },
+  {
     // 保利物业
     code: "06049",
     industry: Industry.PROPERTY_MANAGEMENT,
