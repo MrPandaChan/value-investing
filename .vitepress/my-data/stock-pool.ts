@@ -428,14 +428,14 @@ const stocks: StockItem[] = [
     // 紫金矿业
     code: "601899",
     industry: Industry.NON_FERROUS_METALS,
-    sharesHeld: 600,
+    sharesHeld: 700,
     url: "/value-investing/industry/有色金属/紫金矿业/",
     dividendPerYear: 2,
     remark: "6-26分红，计划减0.38",
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 24.5, quantity: 100 }],
+      price: [{ value: 23.5, quantity: 100 }],
     },
   },
   {
