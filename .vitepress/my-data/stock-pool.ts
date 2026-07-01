@@ -224,6 +224,58 @@ const stocks: StockItem[] = [
     },
   },
   {
+    // 工商银行
+    code: "601398",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.055, quantity: 100 }],
+    },
+  },
+  {
+    // 中国银行
+    code: "601988",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.055, quantity: 100 }],
+    },
+  },
+  {
+    // 农业银行
+    code: "601288",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.055, quantity: 100 }],
+    },
+  },
+  {
+    // 建设银行
+    code: "601939",
+    industry: Industry.BANKING,
+    dividendPerYear: 2,
+    url: "",
+    remark: "",
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.05,
+      dividend: [{ value: 0.055, quantity: 100 }],
+    },
+  },
+  {
     // 兴业银行
     code: "601166",
     industry: Industry.BANKING,
@@ -463,8 +515,8 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.03,
       price: [
-        { value: 11.22, quantity: 300 },
-        { value: 10.62, quantity: 400 },
+        { value: 11, quantity: 300 },
+        { value: 10.5, quantity: 400 },
       ],
     },
   },
@@ -576,7 +628,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.062, quantity: 200 }],
+      dividend: [{ value: 0.06, quantity: 200 }],
     },
   },
   {
@@ -750,6 +802,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(18000);
+export const cash = ref(15000);
 
 export { stocks };
