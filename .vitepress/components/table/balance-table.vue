@@ -8,6 +8,7 @@ const props = defineProps<{
 }>();
 
 const balanceData = data[props.code].balanceData;
+const balanceDataQuarterly = data[props.code].balanceDataQuarterly;
 
 const description = `1. 总资产（轻资产还是重资产，业绩优秀、资产不“重”的企业来说，信息量不多，看一眼就够了。）
 2. 债务（行业欣欣向荣、利润现金流好的龙头公司无须过度关注。有息债务是多少？现金流是否充沛？）
@@ -219,11 +220,16 @@ const tableData = computed(() => {
   // 返回按年份降序排列的数据 + 统计行
   return [...sortedData, ...statsRows];
 });
+
+const quarterlyTableData = computed(() => {
+  return balanceDataQuarterly?.length ? balanceDataQuarterly : [];
+});
 </script>
 
 <template>
   <AppTable
     :data="tableData"
+    :quarterly-data="quarterlyTableData"
     :columns="columns"
     :caption="tableCaption"
     :description="description"

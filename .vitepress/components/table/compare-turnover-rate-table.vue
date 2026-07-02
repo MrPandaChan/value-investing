@@ -38,6 +38,18 @@ const compareData = props.codes.reduce((pre: MergeData[], code) => {
   return pre.concat(arr);
 }, []);
 
+const compareDataQuarterly = props.codes.reduce((pre: MergeData[], code) => {
+  const name = stockData.find((v) => v.code === code)?.name ?? "";
+
+  const arr = data[code].turnoverRateDataQuarterly.map((v, i) => ({
+    ...v,
+    ...data[code].fixedAssetInvestmentAnalysisDataQuarterly[i],
+    name,
+  }));
+
+  return pre.concat(arr);
+}, []);
+
 // 定义表格列
 const columns: TableColumn[] = [
   {
@@ -141,11 +153,16 @@ const tableData = computed(() => {
 
   return sortedData;
 });
+
+const quarterlyTableData = computed(() => {
+  return compareDataQuarterly?.length ? compareDataQuarterly : [];
+});
 </script>
 
 <template>
   <AppTable
     :data="tableData"
+    :quarterly-data="quarterlyTableData"
     :columns="columns"
     :caption="tableCaption"
     default-selected-key="totalAssets"

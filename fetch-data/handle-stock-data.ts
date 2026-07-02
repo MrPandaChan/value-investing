@@ -354,7 +354,7 @@ function getVal(dateValue: string, data: StockData) {
 }
 
 // 营收基本数据
-function generateBasicRevenueData(data: StockData) {
+function generateBasicRevenueData(data: StockData, quarterly = false) {
   const arr: BasicRevenueData[] = [];
   const isHK = isHKStockData(data);
 
@@ -363,7 +363,8 @@ function generateBasicRevenueData(data: StockData) {
     const date = report_date[i];
     if (!date) continue;
 
-    if (date.date_type === 4 || i === 0) {
+    const shouldInclude = quarterly ? true : date.date_type === 4;
+    if (shouldInclude) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -434,7 +435,7 @@ function generateBasicRevenueData(data: StockData) {
   return arr;
 }
 
-function generateCostsExpensesData(data: StockData) {
+function generateCostsExpensesData(data: StockData, quarterly = false) {
   const arr: CostsExpensesData[] = [];
 
   const report_date = getReportDates(data);
@@ -442,7 +443,8 @@ function generateCostsExpensesData(data: StockData) {
     const date = report_date[i];
     if (!date) continue;
 
-    if (date.date_type === 4 || i === 0) {
+    const shouldInclude = quarterly ? true : date.date_type === 4;
+    if (shouldInclude) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -480,7 +482,7 @@ function generateCostsExpensesData(data: StockData) {
   return arr;
 }
 
-function generateBalanceData(data: StockData) {
+function generateBalanceData(data: StockData, quarterly = false) {
   const arr: BalanceData[] = [];
 
   const report_date = getReportDates(data);
@@ -488,7 +490,8 @@ function generateBalanceData(data: StockData) {
     const date = report_date[i];
     if (!date) continue;
 
-    if (date.date_type === 4 || i === 0) {
+    const shouldInclude = quarterly ? true : date.date_type === 4;
+    if (shouldInclude) {
       const val = getVal(date.date_value, data);
 
       const currentAssets = val("TOTCURRASSET");
@@ -546,7 +549,7 @@ function generateBalanceData(data: StockData) {
   return arr;
 }
 
-function generateWorkingCapitalData(data: StockData) {
+function generateWorkingCapitalData(data: StockData, quarterly = false) {
   const arr: WorkingCapitalData[] = [];
   let prevWc = 0;
 
@@ -555,7 +558,8 @@ function generateWorkingCapitalData(data: StockData) {
     const date = report_date[i];
     if (!date) continue;
 
-    if (date.date_type === 4 || i === 0) {
+    const shouldInclude = quarterly ? true : date.date_type === 4;
+    if (shouldInclude) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -605,7 +609,7 @@ function generateWorkingCapitalData(data: StockData) {
   return arr;
 }
 
-function generateFixedAssetInvestmentAnalysisData(data: StockData) {
+function generateFixedAssetInvestmentAnalysisData(data: StockData, quarterly = false) {
   const arr: FixedAssetInvestmentAnalysisData[] = [];
 
   const report_date = getReportDates(data);
@@ -613,7 +617,8 @@ function generateFixedAssetInvestmentAnalysisData(data: StockData) {
     const date = report_date[i];
     if (!date) continue;
 
-    if (date.date_type === 4 || i === 0) {
+    const shouldInclude = quarterly ? true : date.date_type === 4;
+    if (shouldInclude) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -666,7 +671,7 @@ function generateFixedAssetInvestmentAnalysisData(data: StockData) {
   return arr;
 }
 
-function generateReturnData(data: StockData) {
+function generateReturnData(data: StockData, quarterly = false) {
   const arr: ReturnData[] = [];
   let prevCapitalEmployed = 0;
 
@@ -676,7 +681,8 @@ function generateReturnData(data: StockData) {
     const date = report_date[i];
     if (!date) continue;
 
-    if (date.date_type === 4 || i === 0) {
+    const shouldInclude = quarterly ? true : date.date_type === 4;
+    if (shouldInclude) {
       const val = getVal(date.date_value, data);
 
       const roe = val("ROEWEIGHTED");
@@ -721,7 +727,7 @@ function generateReturnData(data: StockData) {
   return arr;
 }
 
-function generateTurnoverRateData(data: StockData) {
+function generateTurnoverRateData(data: StockData, quarterly = false) {
   const arr: TurnoverRateData[] = [];
   let prevTotalAssets = 0;
   let prevCurrentAssets = 0;
@@ -734,7 +740,8 @@ function generateTurnoverRateData(data: StockData) {
     const date = report_date[i];
     if (!date) continue;
 
-    if (date.date_type === 4 || i === 0) {
+    const shouldInclude = quarterly ? true : date.date_type === 4;
+    if (shouldInclude) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
@@ -1049,13 +1056,21 @@ function generateRecentYearData(item: {
 
   for (const stockData of allStockData) {
     const basicRevenueData = generateBasicRevenueData(stockData.data);
+    const basicRevenueDataQuarterly = generateBasicRevenueData(stockData.data, true);
     const costsExpensesData = generateCostsExpensesData(stockData.data);
+    const costsExpensesDataQuarterly = generateCostsExpensesData(stockData.data, true);
     const balanceData = generateBalanceData(stockData.data);
+    const balanceDataQuarterly = generateBalanceData(stockData.data, true);
     const workingCapitalData = generateWorkingCapitalData(stockData.data);
+    const workingCapitalDataQuarterly = generateWorkingCapitalData(stockData.data, true);
     const fixedAssetInvestmentAnalysisData =
       generateFixedAssetInvestmentAnalysisData(stockData.data);
+    const fixedAssetInvestmentAnalysisDataQuarterly =
+      generateFixedAssetInvestmentAnalysisData(stockData.data, true);
     const returnData = generateReturnData(stockData.data);
+    const returnDataQuarterly = generateReturnData(stockData.data, true);
     const turnoverRateData = generateTurnoverRateData(stockData.data);
+    const turnoverRateDataQuarterly = generateTurnoverRateData(stockData.data, true);
     const primaryBusinessData = generatePrimaryBusinessData(stockData.data);
     const valuationData = generateVauationData(stockData.data);
     const dynamicData = stockData.data.dynamicData;
@@ -1063,15 +1078,23 @@ function generateRecentYearData(item: {
 
     data[stockData.code] = {
       basicRevenueData: basicRevenueData.slice(0, 11),
+      basicRevenueDataQuarterly: basicRevenueDataQuarterly.slice(0, 48),
       costsExpensesData: costsExpensesData.slice(0, 11),
+      costsExpensesDataQuarterly: costsExpensesDataQuarterly.slice(0, 48),
       balanceData: balanceData.slice(0, 11),
+      balanceDataQuarterly: balanceDataQuarterly.slice(0, 48),
       workingCapitalData: workingCapitalData.slice(0, 11),
+      workingCapitalDataQuarterly: workingCapitalDataQuarterly.slice(0, 48),
       fixedAssetInvestmentAnalysisData: fixedAssetInvestmentAnalysisData.slice(
         0,
         11,
       ),
+      fixedAssetInvestmentAnalysisDataQuarterly:
+        fixedAssetInvestmentAnalysisDataQuarterly.slice(0, 48),
       returnData: returnData.slice(0, 11),
+      returnDataQuarterly: returnDataQuarterly.slice(0, 48),
       turnoverRateData: turnoverRateData.slice(0, 11),
+      turnoverRateDataQuarterly: turnoverRateDataQuarterly.slice(0, 48),
       primaryBusinessData: primaryBusinessData,
       valuationData,
       dynamicData,

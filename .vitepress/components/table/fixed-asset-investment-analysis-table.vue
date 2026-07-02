@@ -9,6 +9,8 @@ const props = defineProps<{
 
 const fixedAssetInvestmentAnalysisData =
   data[props.code].fixedAssetInvestmentAnalysisData;
+const fixedAssetInvestmentAnalysisDataQuarterly =
+  data[props.code].fixedAssetInvestmentAnalysisDataQuarterly;
 
 const description = `这里的数据还是用期末数，如果特别重要，也就是资产特别“重”​，数字变动剧烈的，考虑采用期间数 ​（期初+期末）/2
 
@@ -192,8 +194,12 @@ const tableData = computed(() => {
   // 返回按年份降序排列的数据 + 统计行
   return [...sortedData, ...statsRows];
 });
+
+const quarterlyTableData = computed(() => {
+  return fixedAssetInvestmentAnalysisDataQuarterly?.length ? fixedAssetInvestmentAnalysisDataQuarterly : [];
+});
 </script>
 
 <template>
-  <AppTable :data="tableData" :columns="columns" :caption="tableCaption" :description="description" />
+  <AppTable :data="tableData" :quarterly-data="quarterlyTableData" :columns="columns" :caption="tableCaption" :description="description" />
 </template>

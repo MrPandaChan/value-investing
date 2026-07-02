@@ -18,7 +18,7 @@ export interface TableColumn {
       row: any,
       column: TableColumn,
       rowIndex: number,
-      columnIndex: number
+      columnIndex: number,
     ) => { rowspan: number; colspan: number } | null;
   };
   // 表头单元格合并配置
@@ -44,6 +44,9 @@ interface MergeCell {
   colspan: number;
 }
 
+// 报告期类型
+type ReportPeriod = "latest" | "annual" | "q1" | "q2" | "q3";
+
 // 定义组件的属性
 const props = withDefaults(
   defineProps<{
@@ -54,14 +57,265 @@ const props = withDefaults(
     groupKey?: string;
     defaultSelectedKey?: string;
     description?: string;
+    quarterlyData?: any[];
   }>(),
   {
     caption: "",
     data: () => [],
     columns: () => [],
     emptyText: "暂无数据",
-  }
+  },
 );
+
+const reportPeriod = ref<ReportPeriod>("annual");
+const isSingleQuarter = ref(false);
+const hasQuarterly = computed(() => !!props.quarterlyData?.length);
+
+// ===== 单季度数据转换 =====
+// 财务报表数据是累计值（一季报=1-3月，中报=1-6月，三季报=1-9月，年报=1-12月）
+// 单季度模式下需要做减法拆分：Q2单季=中报-一季报，Q3单季=三季报-中报，Q4单季=年报-三季报
+// 以下字段不参与减法（比率/百分比/资产负债盘点值/周转天数/平均值/已计算的差值）
+const SINGLE_QUARTER_SKIP_KEYS = new Set([
+  // 比率/百分比
+  "netProfitMargin",
+  "fcfOverNetProfit",
+  "netProfitExcludingNonOvernetProfit",
+  "cashFlowFromOperatingOverNetProfit",
+  "operatingProfitOverNetProfit",
+  "grossProfitMargin",
+  "grossProfitMinusNetProfit",
+  "sellingExpensesRatio",
+  "devExpensesRatio",
+  "manageExpensesRatio",
+  "devAndManageExpensesRatio",
+  "totalOperatingExpensesRatio",
+  "interestFreeLiabilitiesOverTotal",
+  "interestBearingDebtOverTotal",
+  "debtRatio",
+  "receivablesToRevenueRatio",
+  "prepaymentsToRevenueRatio",
+  "inventoryToRevenueRatio",
+  "accountsPayableToRevenueRatio",
+  "advancesToRevenueRatio",
+  "contractLiabilitiesToRevenueRatio",
+  "fixedAssetsPerYuanRevenue",
+  "longTermOperatingAssetsPerYuanRevenue",
+  "depreciationOverRevenue",
+  "wcPerYuanRevenue",
+  "roe",
+  "roa",
+  "roic",
+  "roce",
+  "assetTurnover",
+  "equityMultiplier",
+  "mbiRatio",
+  "mbcRatio",
+  "mbpRatio",
+  "grossProfitRatio",
+  // 周转天数
+  "totalAssetsDays",
+  "currentAssetsDays",
+  "wcDays",
+  "receivablesDays",
+  "inventoryDays",
+  "fixedAssetsDays",
+  // 平均值
+  "avgTotalAssets",
+  "avgCurrentAssets",
+  "avgInventory",
+  "avgEquity",
+  // 资产负债表时点值（非累计）
+  "currentAssets",
+  "cash",
+  "nonCurrentAssets",
+  "goodwill",
+  "totalAssets",
+  "equity",
+  "interestFreeLiabilities",
+  "interestBearingDebt",
+  "interestExpense",
+  "receivables",
+  "prepayments",
+  "accountsPayable",
+  "customerAdvances",
+  "contractLiabilities",
+  "fixedAssets",
+  "longTermOperatingAssets",
+  "wc",
+  // 已计算的差值
+  "changeInWC",
+  // 非数据字段
+  "year",
+  "_cellMerge",
+  "_isStatRow",
+]);
+
+function toSingleQuarter(data: any[]): any[] {
+  const sorted = [...data].sort((a, b) =>
+    yearSortKey(a.year).localeCompare(yearSortKey(b.year)),
+  );
+  const result: any[] = [];
+  const yearLastEntry = new Map<string, any>();
+
+  for (const item of sorted) {
+    const yearPrefix = item.year.match(/^\d{4}/)?.[0] ?? item.year;
+    const prev = yearLastEntry.get(yearPrefix);
+
+    if (prev) {
+      const sq: any = {};
+      for (const key of Object.keys(item)) {
+        if (SINGLE_QUARTER_SKIP_KEYS.has(key)) {
+          sq[key] = item[key];
+        } else if (
+          typeof item[key] === "number" &&
+          typeof prev[key] === "number"
+        ) {
+          sq[key] = item[key] - prev[key];
+        } else {
+          sq[key] = item[key];
+        }
+      }
+      result.push(sq);
+    } else {
+      // 该年第一个报告期（A股Q1 或 港股中报），保留原值
+      result.push({ ...item });
+    }
+
+    yearLastEntry.set(yearPrefix, item);
+  }
+
+  return result;
+}
+
+// ===== 年份/季度排序辅助 =====
+function yearSortKey(year: string): string {
+  const m = year.match(/^(\d{4})(?:Q(\d))?$/);
+  if (!m) return year;
+  const q = m[2] || "4";
+  return `${m[1]}${q}`;
+}
+
+function getYearPrefix(year: string): string {
+  return year.match(/^\d{4}/)?.[0] ?? year;
+}
+
+const PERIOD_OPTIONS: { value: ReportPeriod; label: string }[] = [
+  { value: "latest", label: "最新" },
+  { value: "annual", label: "年报" },
+  { value: "q1", label: "一季报" },
+  { value: "q2", label: "中报" },
+  { value: "q3", label: "三季报" },
+];
+
+// ===== 当前显示数据 =====
+const currentData = computed(() => {
+  if (!hasQuarterly.value) return props.data;
+
+  // 年报 + 累计：直接返回原数据（含增速统计行、已排序）
+  if (reportPeriod.value === "annual" && !isSingleQuarter.value) {
+    return props.data;
+  }
+
+  const qt = props.quarterlyData!;
+  let result: any[];
+
+  if (reportPeriod.value === "latest") {
+    if (isSingleQuarter.value) {
+      // 最新 + 单季：全部季度数据拆分为单季
+      result = toSingleQuarter(qt);
+    } else {
+      // 最新 + 累计：年报数据 + 最新不完整年份的已有季报
+      const annualEntries = qt.filter((item) => !item.year.includes("Q"));
+      const allSorted = [...annualEntries].sort((a, b) =>
+        yearSortKey(a.year).localeCompare(yearSortKey(b.year)),
+      );
+      const maxAnnualYear = allSorted.length
+        ? getYearPrefix(allSorted[allSorted.length - 1].year)
+        : "";
+      if (maxAnnualYear) {
+        const nextYear = (parseInt(maxAnnualYear) + 1).toString();
+        const extra = qt.filter((item) => {
+          const y = getYearPrefix(item.year);
+          return y === nextYear && item.year.includes("Q");
+        });
+        result = [...annualEntries, ...extra];
+      } else {
+        result = annualEntries;
+      }
+    }
+  } else if (reportPeriod.value === "annual") {
+    // 年报 + 单季：所有年份 Q1/Q2/Q3/Q4 单季
+    result = toSingleQuarter(qt);
+  } else if (reportPeriod.value === "q1") {
+    result = qt.filter((item) => item.year.includes("Q1"));
+    if (isSingleQuarter.value) {
+      result = toSingleQuarter(result);
+    }
+  } else if (reportPeriod.value === "q2") {
+    if (isSingleQuarter.value) {
+      // 中报 + 单季：需要 Q1+Q2 做减法，展示 Q1、Q2 单季
+      result = qt.filter(
+        (item) => item.year.includes("Q1") || item.year.includes("Q2"),
+      );
+      result = toSingleQuarter(result);
+    } else {
+      result = qt.filter((item) => item.year.includes("Q2"));
+    }
+  } else if (reportPeriod.value === "q3") {
+    if (isSingleQuarter.value) {
+      // 三季报 + 单季：需要 Q1+Q2+Q3 做减法，展示 Q1、Q2、Q3 单季
+      result = qt.filter(
+        (item) =>
+          item.year.includes("Q1") ||
+          item.year.includes("Q2") ||
+          item.year.includes("Q3"),
+      );
+      result = toSingleQuarter(result);
+    } else {
+      result = qt.filter((item) => item.year.includes("Q3"));
+    }
+  } else {
+    return props.data;
+  }
+
+  // 单季模式下（除"最新"外），剔除目标报告期不存在的年份
+  // 例：2026年只有一季报数据，选中「中报+单季」则不展示2026年
+  if (isSingleQuarter.value && reportPeriod.value !== "latest") {
+    const requiredSuffix: string | null =
+      reportPeriod.value === "annual"
+        ? null
+        : reportPeriod.value === "q1"
+          ? "Q1"
+          : reportPeriod.value === "q2"
+            ? "Q2"
+            : "Q3";
+    const yearsWithTarget = new Set(
+      qt
+        .filter((item) =>
+          requiredSuffix === null
+            ? !item.year.includes("Q")
+            : item.year.includes(requiredSuffix),
+        )
+        .map((item) => getYearPrefix(item.year)),
+    );
+    result = result.filter((item) => {
+      const y = getYearPrefix(item.year);
+      return yearsWithTarget.has(y);
+    });
+  }
+
+  if (result.length === 0) return [];
+  // 只保留最近十年数据（统计行不受影响）
+  const minYear = new Date().getFullYear() - 10;
+  result = result.filter((item) => {
+    if (item._isStatRow) return true;
+    const y = parseInt(getYearPrefix(item.year));
+    return isNaN(y) || y >= minYear;
+  });
+  return result.sort((a, b) =>
+    yearSortKey(b.year).localeCompare(yearSortKey(a.year)),
+  );
+});
 
 const md = MarkdownIt({
   html: true,
@@ -71,7 +325,7 @@ const mdText =
   typeof props.description === "string" ? md.render(props.description) : "";
 
 const showChart = computed(() => {
-  if (props.data.length === 0) {
+  if (currentData.value.length === 0) {
     return false;
   }
   return true;
@@ -84,7 +338,7 @@ const { isDark } = useData();
 const selectedColumns = ref<string[]>(
   showChart.value && props.defaultSelectedKey
     ? [props.defaultSelectedKey]
-    : [props.columns[1].key]
+    : [props.columns[1].key],
 );
 
 // 控制说明弹窗的显示状态
@@ -100,11 +354,11 @@ onMounted(() => {
 
 // 监听数据变化更新图表
 watch(
-  () => props.data,
+  () => currentData.value,
   () => {
     updateChart();
   },
-  { deep: true }
+  { deep: true },
 );
 
 // 监听黑夜模式切换
@@ -112,9 +366,14 @@ watch(isDark, () => {
   updateChart();
 });
 
+// 监听报告期或单季切换
+watch([reportPeriod, isSingleQuarter], () => {
+  updateChart();
+});
+
 function groupBy<T extends Record<string, any>, K extends keyof T>(
   array: T[],
-  key: K
+  key: K,
 ): T[][] {
   const resultMap = new Map<T[K], T[]>();
 
@@ -132,16 +391,258 @@ function groupBy<T extends Record<string, any>, K extends keyof T>(
 }
 
 const group = computed(() => {
-  return props.groupKey ? groupBy(props.data, props.groupKey) : [props.data];
+  return props.groupKey
+    ? groupBy(currentData.value, props.groupKey)
+    : [currentData.value];
 });
 
 const years = computed(() => {
+  const minYear = new Date().getFullYear() - 10;
   return Array.from(
     new Set(
-      props.data.map((item) => item.year).filter((year) => /\d{4}/.test(year))
-    )
-  );
+      currentData.value
+        .map((item) => item.year)
+        .filter((year) => /\d{4}/.test(year)),
+    ),
+  )
+    .filter((y) => parseInt(y) >= minYear)
+    .sort((a, b) => yearSortKey(a).localeCompare(yearSortKey(b)));
 });
+
+// 单季度季度颜色（深→浅）
+const QUARTER_COLORS = ["#1677ff", "#4096ff", "#69b1ff", "#91caff"];
+
+// ===== 单季度嵌套柱图渲染 =====
+function renderNestedQuarterChart(colKey: string, column: TableColumn) {
+  const chart = chartInstance.value;
+  if (!chart) return;
+
+  const dark = isDark.value;
+  const qt = props.quarterlyData!;
+
+  // ---- 辅助：格式转换 ----
+  function fmtVal(raw: number): number {
+    if (!column.formatter) return raw;
+    const s = String(column.formatter(raw));
+    const n = Number(s.replace(/%/, ""));
+    return isNaN(n) ? raw : n;
+  }
+  function fmtStr(raw: number): string {
+    if (!column.formatter) return String(raw);
+    return String(column.formatter(raw));
+  }
+
+  // ---- 1. 筛选 + 转单季度 ----
+  let filtered: any[];
+  const rp = reportPeriod.value;
+  if (rp === "q1") {
+    filtered = toSingleQuarter(qt.filter((item) => item.year.includes("Q1")));
+  } else if (rp === "q2") {
+    filtered = toSingleQuarter(
+      qt.filter((item) => item.year.includes("Q1") || item.year.includes("Q2")),
+    );
+  } else if (rp === "q3") {
+    filtered = toSingleQuarter(
+      qt.filter(
+        (item) =>
+          item.year.includes("Q1") ||
+          item.year.includes("Q2") ||
+          item.year.includes("Q3"),
+      ),
+    );
+  } else {
+    filtered = toSingleQuarter(qt);
+  }
+
+  // ---- 2. 剔除目标报告期不存在的年份 ----
+  if (rp !== "latest") {
+    const suffix: string | null =
+      rp === "annual" ? null : rp === "q1" ? "Q1" : rp === "q2" ? "Q2" : "Q3";
+    const valid = new Set(
+      qt
+        .filter((item) =>
+          suffix === null
+            ? !item.year.includes("Q")
+            : item.year.includes(suffix),
+        )
+        .map((item) => getYearPrefix(item.year)),
+    );
+    filtered = filtered.filter((item) => valid.has(getYearPrefix(item.year)));
+  }
+
+  // ---- 3. 按年份分组：收集 Q1-Q4 单季值 + 年度累计 ----
+  const Q_LABELS = ["一季度", "二季度", "三季度", "四季度"];
+  const Q_COLORS = QUARTER_COLORS;
+  const yearMap = new Map<
+    string,
+    {
+      year: string;
+      totalRaw: number;
+      totalFmt: number;
+      qRaw: (number | null)[];
+      qFmt: (number | null)[];
+    }
+  >();
+  for (const item of filtered) {
+    const y = getYearPrefix(item.year);
+    const m = item.year.match(/Q(\d)/);
+    const qi = m ? parseInt(m[1]) - 1 : 3;
+    const raw = typeof item[colKey] === "number" ? item[colKey] : 0;
+    if (!yearMap.has(y)) {
+      yearMap.set(y, {
+        year: y,
+        totalRaw: 0,
+        totalFmt: 0,
+        qRaw: [null, null, null, null],
+        qFmt: [null, null, null, null],
+      });
+    }
+    const e = yearMap.get(y)!;
+    e.qRaw[qi] = raw;
+    e.qFmt[qi] = fmtVal(raw);
+    e.totalRaw += raw;
+    e.totalFmt += e.qFmt[qi] ?? 0;
+  }
+
+  // ---- 4. 年份升序 + 裁剪至最近十年 + 当年 ----
+  const allYears = [...yearMap.entries()]
+    .sort(([a], [b]) => a.localeCompare(b))
+    .map(([, e]) => e);
+  const minYear = new Date().getFullYear() - 10;
+  const yrList = allYears.filter((e) => parseInt(e.year) >= minYear);
+  const yrLabels = yrList.map((e) => e.year);
+
+  // ---- 5. 构建 series：bar 年柱 + pictorialBar 四季度柱 ----
+  const series: echarts.SeriesOption[] = [];
+  const labelColor = dark ? "#ccc" : "#333";
+
+  // 年柱：bar 底层，barGap: '-100%' 与 pictorialBar 中心对齐
+  series.push({
+    name: "年度",
+    type: "bar",
+    data: yrList.map((e) => e.totalFmt),
+    barWidth: "80%",
+    barGap: "-100%",
+    z: 1,
+    itemStyle: {
+      color: dark ? "rgba(64, 150, 255, 0.12)" : "rgba(24, 144, 255, 0.12)",
+      borderColor: dark ? "rgba(64, 150, 255, 0.5)" : "rgba(24, 144, 255, 0.5)",
+      borderWidth: 1,
+    },
+    label: {
+      show: true,
+      position: "top",
+      color: labelColor,
+      formatter: (p: any) =>
+        p.value != null && p.value > 10 ? p.value.toFixed(0) : "",
+    },
+    emphasis: {
+      itemStyle: {
+        color: dark ? "rgba(64, 150, 255, 0.22)" : "rgba(24, 144, 255, 0.22)",
+        borderColor: dark
+          ? "rgba(64, 150, 255, 0.7)"
+          : "rgba(24, 144, 255, 0.7)",
+      },
+    },
+    tooltip: {
+      formatter: (p: any) => {
+        const idx = allYears.findIndex((x) => x.year === p.name);
+        const e = allYears[idx];
+        if (!e) return "";
+        const prev = allYears[idx - 1];
+        const yoy = (cur: number | null, pre: number | null | undefined) => {
+          if (cur == null || pre == null || pre === 0) return "";
+          const pct = ((cur - pre) / Math.abs(pre)) * 100;
+          const sign = pct > 0 ? "+" : "";
+          const color = pct > 0
+            ? (dark ? "#ff7875" : "#cf1322")
+            : (dark ? "#95de64" : "#389e0d");
+          return ` <span style="color:${color};margin-left:6px;">${sign}${pct.toFixed(3)}%</span>`;
+        };
+        let html = `<div style="font-weight:bold;margin-bottom:4px;">${p.name}年</div>`;
+        html += `<div>年度累计：${fmtStr(e.totalRaw)}${yoy(e.totalRaw, prev?.totalRaw)}</div>`;
+        for (let qi = 0; qi < 4; qi++) {
+          const v = e.qRaw[qi];
+          if (v == null) continue;
+          html += `<div><span style="display:inline-block;width:8px;height:8px;border-radius:2px;background:${Q_COLORS[qi]};margin-right:4px;vertical-align:middle;"></span>${Q_LABELS[qi]}：${fmtStr(v)}${yoy(v, prev?.qRaw?.[qi])}</div>`;
+        }
+        return html;
+      },
+    },
+  });
+
+  // 季度柱：pictorialBar，紧凑像素宽度
+  const qBarW = 10;
+  const qGap = 2;
+  const qStep = qBarW + qGap;
+  const qStart = -((3 * qStep) / 2);
+  for (let q = 0; q < 4; q++) {
+    const offsetX = qStart + q * qStep;
+    series.push({
+      name: Q_LABELS[q],
+      type: "pictorialBar",
+      symbol: "rect",
+      symbolSize: [qBarW, "100%"],
+      symbolOffset: [offsetX, 0],
+      symbolPosition: "start",
+      silent: true,
+      tooltip: { show: false },
+      data: yrList.map((e) => e.qFmt[q]),
+      z: 2,
+      itemStyle: { color: Q_COLORS[q] },
+      label: { show: false },
+      animation: false,
+      emphasis: { itemStyle: { opacity: 0.85 } },
+    });
+  }
+
+  // ---- 6. option ----
+  const textColor = dark ? "#aaa" : "#333";
+  const axisColor = dark ? "#555" : "#333";
+  const splitColor = dark ? "#444" : "#e0e0e0";
+  const tBg = dark ? "rgba(40,40,40,0.95)" : "rgba(255,255,255,0.95)";
+  const tBorder = dark ? "#555" : "#ccc";
+  const tText = dark ? "#ddd" : "#333";
+
+  const option: echarts.EChartsOption = {
+    tooltip: {
+      trigger: "item",
+      enterable: true,
+      hideDelay: 200,
+      backgroundColor: tBg,
+      borderColor: tBorder,
+      textStyle: { color: tText },
+    },
+    grid: { left: "3%", right: "4%", bottom: "15%", containLabel: true },
+    legend: { show: false },
+    xAxis: {
+      type: "category",
+      data: yrLabels,
+      axisPointer: { type: "shadow" },
+      axisLine: { show: true, lineStyle: { width: 1, color: axisColor } },
+      axisTick: { show: true, alignWithLabel: true },
+      axisLabel: {
+        interval: 0,
+        rotate: yrLabels.length > 11 ? 30 : 0,
+        color: textColor,
+      },
+    },
+    yAxis: [
+      {
+        type: "value",
+        position: "left",
+        axisLine: { show: true, lineStyle: { width: 1, color: axisColor } },
+        axisTick: { show: true },
+        axisLabel: { color: textColor },
+        splitLine: { lineStyle: { type: "dashed", color: splitColor } },
+      },
+    ],
+    series,
+  };
+
+  chart.clear();
+  chart.setOption(option, true);
+}
 
 // 更新图表数据
 function updateChart() {
@@ -153,33 +654,55 @@ function updateChart() {
 
   if (!chartInstance.value) return;
 
+  // 单季度 + 单个绝对值列 → 嵌套柱图
+  const colKey = selectedColumns.value[0];
+  const column = colKey
+    ? props.columns.find((c) => c.key === colKey)
+    : undefined;
+  const isPercentage =
+    column &&
+    (/率|\/|比重/.test(column.title) ||
+      (colKey &&
+        currentData.value.some((v) => v[colKey]?.toString().includes("%"))));
+  const isSingleQuarterAbsolute =
+    isSingleQuarter.value &&
+    !isPercentage &&
+    selectedColumns.value.length === 1 &&
+    !props.groupKey;
+
+  if (isSingleQuarterAbsolute && hasQuarterly.value) {
+    renderNestedQuarterChart(colKey!, column!);
+    return;
+  }
+
+  // ---- 以下是原有图表渲染逻辑 ----
   const dark = isDark.value;
   const series: echarts.SeriesOption[] = [];
   let barCount = 0;
 
   // 添加选中的列数据
-  selectedColumns.value.forEach((colKey) => {
-    const column = props.columns.find((c) => c.key === colKey);
-    if (!column) return;
+  selectedColumns.value.forEach((ck) => {
+    const col = props.columns.find((c) => c.key === ck);
+    if (!col) return;
 
     group.value.forEach((arr, i) => {
       const values = years.value.map((year) => {
         const target = arr.find((v) => v.year === year);
         if (target) {
-          const val = target[colKey];
-          if (column.formatter) {
-            return column.formatter(val);
+          const val = target[ck];
+          if (col.formatter) {
+            return col.formatter(val);
           }
         }
         return "-";
       });
 
-      const isPercentage =
-        /率|\/|比重/.test(column.title) ||
+      const isPct =
+        /率|\/|比重/.test(col.title) ||
         values.some((v) => v?.toString().includes("%"));
       const name = props.groupKey
-        ? `${column.title}-${arr[0][props.groupKey]}`
-        : column.title;
+        ? `${col.title}-${arr[0][props.groupKey]}`
+        : col.title;
       const data = values.map((v) => {
         if (v === "-") return null;
         return Number(v.toString().replace(/%/, ""));
@@ -187,8 +710,7 @@ function updateChart() {
 
       const labelColor = dark ? "#ccc" : "#333";
 
-      if (isPercentage) {
-        // 右侧y轴(百分比) - 折线图
+      if (isPct) {
         series.push({
           name,
           type: "line",
@@ -197,25 +719,21 @@ function updateChart() {
           showSymbol: true,
           symbolSize: (val) => (val !== null ? 6 : 0),
           symbol: "circle",
-          lineStyle: {
-            width: 2,
-          },
+          lineStyle: { width: 2 },
           label: {
             show: true,
             position: "top",
             color: labelColor,
-            formatter: (params: any) => {
-              return params.value !== null
+            formatter: (params: any) =>
+              params.value !== null
                 ? params.value > 10
                   ? `${params.value.toFixed(0)}%`
                   : `${params.value}%`
-                : "";
-            },
+                : "",
           },
         });
       } else {
         barCount += 1;
-        // 左侧y轴(数值) - 柱状图
         series.push({
           name,
           type: "bar",
@@ -225,13 +743,12 @@ function updateChart() {
           label: {
             show: true,
             color: labelColor,
-            formatter: (params: any) => {
-              return params.value !== null
+            formatter: (params: any) =>
+              params.value !== null
                 ? params.value > 10
                   ? params.value.toFixed(0)
                   : params.value
-                : "";
-            },
+                : "",
             position: "top",
           },
         });
@@ -273,14 +790,14 @@ function updateChart() {
           props.columns.find((c) => c.key === colKey)?.title || colKey;
         if (props.groupKey) {
           return pre.concat(
-            group.value.map((v) => `${title}-${v[0][props.groupKey!]}`)
+            group.value.map((v) => `${title}-${v[0][props.groupKey!]}`),
           );
         }
         pre.push(title);
         return pre;
       }, []),
       selected: Object.fromEntries(
-        selectedColumns.value.map((colKey) => [colKey, true])
+        selectedColumns.value.map((colKey) => [colKey, true]),
       ),
       top: "bottom",
       padding: [10, 0, 0, 0],
@@ -360,14 +877,16 @@ function handleColumnClick(columnKey: string) {
 }
 
 // 判断数据是否为空
-const isEmpty = computed(() => !props.data || props.data.length === 0);
+const isEmpty = computed(
+  () => !currentData.value || currentData.value.length === 0,
+);
 
 // 计算单元格合并属性
 const getMergeCellAttrs = (
   row: any,
   column: TableColumn,
   rowIndex: number,
-  columnIndex: number
+  columnIndex: number,
 ): MergeCell | null => {
   // 1. 首先检查行数据中是否有针对该列的合并单元格配置（最高优先级）
   if (row._cellMerge && row._cellMerge[column.key]) {
@@ -388,11 +907,14 @@ const getMergeCellAttrs = (
   const currentValue = row[column.key];
 
   // 如果是第一行或者当前值与上一行不同
-  if (rowIndex === 0 || props.data[rowIndex - 1][column.key] !== currentValue) {
+  if (
+    rowIndex === 0 ||
+    currentData.value[rowIndex - 1][column.key] !== currentValue
+  ) {
     // 计算当前值连续出现的次数
     let count = 1;
-    for (let i = rowIndex + 1; i < props.data.length; i++) {
-      if (props.data[i][column.key] === currentValue) {
+    for (let i = rowIndex + 1; i < currentData.value.length; i++) {
+      if (currentData.value[i][column.key] === currentValue) {
         count++;
       } else {
         break;
@@ -417,7 +939,7 @@ const shouldRenderCell = (
   row: any,
   column: TableColumn,
   rowIndex: number,
-  columnIndex: number
+  columnIndex: number,
 ): boolean => {
   const mergeAttrs = getMergeCellAttrs(row, column, rowIndex, columnIndex);
   // 如果rowspan和colspan都为0，则不渲染该单元格
@@ -464,9 +986,9 @@ const formatColumnTitle = (title: string) => {
       const midPoint = Math.ceil(title.length / 2);
       return `<span style="white-space: nowrap;">${title.substring(
         0,
-        midPoint
+        midPoint,
       )}</span><br><span style="white-space: nowrap;">${title.substring(
-        midPoint
+        midPoint,
       )}</span>`;
     }
 
@@ -497,15 +1019,35 @@ const formatColumnTitle = (title: string) => {
 
   return `<span style="white-space: nowrap;">${title.substring(
     0,
-    adjustedMidPoint
+    adjustedMidPoint,
   )}</span><br><span style="white-space: nowrap;">${title.substring(
-    adjustedMidPoint
+    adjustedMidPoint,
   )}</span>`;
 };
 </script>
 
 <template>
   <div class="chart-container" ref="chartRef" v-if="showChart"></div>
+  <div class="table-header-bar" v-if="hasQuarterly">
+    <div class="header-controls">
+      <label class="single-quarter-check">
+        <input type="checkbox" v-model="isSingleQuarter" />
+        <span>单季度</span>
+      </label>
+      <select class="period-select" v-model="reportPeriod">
+        <option
+          v-for="opt in PERIOD_OPTIONS"
+          :key="opt.value"
+          :value="opt.value"
+        >
+          {{ opt.label }}
+        </option>
+      </select>
+    </div>
+    <div class="single-quarter-notice" v-if="isSingleQuarter">
+      利润表/现金流已拆分为单季度（累计减法）；资产负债表为期末时点值，比率/周转指标不做拆分。
+    </div>
+  </div>
   <table>
     <caption v-if="caption || description">
       <div class="caption-wrapper">
@@ -537,7 +1079,7 @@ const formatColumnTitle = (title: string) => {
     </thead>
     <tbody>
       <template v-if="!isEmpty">
-        <tr v-for="(row, rowIndex) in data" :key="rowIndex">
+        <tr v-for="(row, rowIndex) in currentData" :key="rowIndex">
           <template v-for="(column, columnIndex) in columns" :key="column.key">
             <td
               v-if="shouldRenderCell(row, column, rowIndex, columnIndex)"
@@ -584,6 +1126,72 @@ const formatColumnTitle = (title: string) => {
   width: 100%;
   height: 300px;
   margin-bottom: 20px;
+}
+
+.table-header-bar {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.header-controls {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+// 单季度复选框
+.single-quarter-check {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  cursor: pointer;
+  font-size: 13px;
+  color: #666;
+  user-select: none;
+  white-space: nowrap;
+
+  input[type="checkbox"] {
+    width: 14px;
+    height: 14px;
+    accent-color: #1890ff;
+    cursor: pointer;
+  }
+}
+
+// 报告期下拉菜单
+.period-select {
+  padding: 4px 28px 4px 10px;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  background: #fff
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23999'/%3E%3C/svg%3E")
+    no-repeat right 8px center;
+  background-size: 10px 6px;
+  font-size: 13px;
+  color: #333;
+  cursor: pointer;
+  appearance: none;
+  outline: none;
+  transition: border-color 0.2s;
+
+  &:hover {
+    border-color: #1890ff;
+  }
+
+  &:focus {
+    border-color: #1890ff;
+    box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.15);
+  }
+}
+
+// 单季提示
+.single-quarter-notice {
+  font-size: 11px;
+  color: #bbb;
+  line-height: 1.4;
 }
 
 table {
@@ -771,6 +1379,33 @@ th.selected-column {
 
 // ===== 黑夜模式适配 =====
 html.dark {
+  .single-quarter-notice {
+    color: #777;
+  }
+
+  .single-quarter-check {
+    color: #aaa;
+
+    input[type="checkbox"] {
+      accent-color: #4096ff;
+    }
+  }
+
+  .period-select {
+    border-color: #555;
+    background-color: #1e1e1e;
+    color: #ccc;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='10' height='6'%3E%3Cpath d='M0 0l5 6 5-6z' fill='%23888'/%3E%3C/svg%3E");
+
+    &:hover {
+      border-color: #4096ff;
+    }
+
+    &:focus {
+      border-color: #4096ff;
+      box-shadow: 0 0 0 2px rgba(64, 150, 255, 0.2);
+    }
+  }
   th.selected-column {
     background-color: #1a2a3a;
     &::after {
