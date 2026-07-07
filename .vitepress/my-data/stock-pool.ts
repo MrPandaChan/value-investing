@@ -54,7 +54,7 @@ interface DividendPlan extends BasePlan {
 
 interface PEPlan extends BasePlan {
   type: PlanType.PE;
-  value: number;
+  pe: PlanEntry[];
 }
 
 interface EntryPrice {
@@ -379,7 +379,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.055,
+      value: 0.07,
     },
   },
   {
@@ -471,7 +471,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.075,
+      value: 0.08,
     },
   },
   {
@@ -547,7 +547,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.06,
+      value: 0.065,
     },
   },
   {
@@ -713,7 +713,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.PE,
-      value: 15,
+      value: 12,
     },
   },
   {
@@ -1020,7 +1020,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.PRICE,
-      value: 1,
+      value: 0.5,
     },
   },
   /**
