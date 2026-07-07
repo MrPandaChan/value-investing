@@ -213,6 +213,40 @@ function formatShortExDate(dateStr: string): string {
   return dateStr.replace(/^\d{2}(\d{2})/, "$1");
 }
 
+const UPCOMING_LABEL: Record<string, string> = {
+  upcoming_urgent: "距除权仅剩",
+  upcoming_soon: "距除权还有",
+  upcoming_close: "距除权还有",
+}
+
+/** 生成除权日 hover 提示文本 */
+function getExTitle(ex: ExDisplayInfo): string {
+  if (ex.isPredicted) {
+    const datePart = formatShortExDate(ex.exDate).slice(2)
+    const daysPart =
+      ex.daysUntilEx !== null && ex.daysUntilEx > 0
+        ? `距预测日 ${ex.daysUntilEx} 天`
+        : "预测日已过"
+    return `预测下次约 ${datePart}（基于去年），${daysPart}`
+  }
+
+  const label = UPCOMING_LABEL[ex.status]
+  if (label && ex.daysUntilEx !== null) {
+    return `${label} ${ex.daysUntilEx} 天`
+  }
+
+  switch (ex.status) {
+    case "paid":
+      return `已除权 ${ex.exDate}`
+    case "past_year":
+      return "往期分红"
+    case "unknown":
+      return "日期未定"
+    default:
+      return `待分红 ${ex.exDate}`
+  }
+}
+
 // 将 custom* 的值同步到编辑缓冲区
 function syncEditFromCustom(code: string) {
   if (customPrice[code] !== undefined) editPrice[code] = customPrice[code];
@@ -603,28 +637,7 @@ const mergedTableData = computed(() => {
             v-for="(ex, i) in row.exListDisplay"
             :key="i"
             :class="'dividend-status dividend-' + ex.status"
-            :title="
-              ex.isPredicted
-                ? '预测下次约 ' +
-                  formatShortExDate(ex.exDate).slice(2) +
-                  '（基于去年），' +
-                  (ex.daysUntilEx !== null && ex.daysUntilEx > 0
-                    ? '距预测日 ' + ex.daysUntilEx + ' 天'
-                    : '预测日已过')
-                : ex.status === 'paid'
-                  ? '已除权 ' + ex.exDate
-                  : ex.status === 'upcoming_urgent'
-                    ? '距除权仅剩 ' + ex.daysUntilEx + ' 天'
-                    : ex.status === 'upcoming_soon'
-                      ? '距除权还有 ' + ex.daysUntilEx + ' 天'
-                      : ex.status === 'upcoming_close'
-                        ? '距除权还有 ' + ex.daysUntilEx + ' 天'
-                        : ex.status === 'past_year'
-                          ? '往期分红'
-                          : ex.status === 'unknown'
-                            ? '日期未定'
-                            : '待分红 ' + ex.exDate
-            "
+            :title="getExTitle(ex)"
           >
             {{ formatShortExDate(ex.exDate) }}
           </div>
