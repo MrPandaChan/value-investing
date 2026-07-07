@@ -1,6 +1,7 @@
 <script lang="ts" setup>
 import { computed, onMounted, reactive, ref, watch } from "vue";
 import { ElMessage } from "element-plus";
+import { CaretTop, CaretBottom } from "@element-plus/icons-vue";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import {
   formatNum,
@@ -56,9 +57,14 @@ interface MergedRowData extends RowData {
 const editPrice = reactive<Record<string, number>>({});
 const editDividend = reactive<Record<string, number>>({});
 const editPE = reactive<Record<string, number>>({});
+type SortKey = "dividend" | "pe" | "decline" | "exDate";
+
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
 const industryFilter = ref<string[]>([]); // 行业筛选：空数组表示全部
-const changeSortOrder = ref<"asc" | "desc" | null>(null); // null=默认, "desc"=按涨幅, "asc"=按跌幅
+const sortConfig = ref<{ key: SortKey; order: "asc" | "desc" }>({
+  key: "decline",
+  order: "asc",
+});
 
 // code → industry 映射表
 const industryMap = computed(() => {
@@ -71,9 +77,7 @@ const industryMap = computed(() => {
 
 // 行业选项（去重排序）
 const industryOptions = computed(() => {
-  const industries = new Set(
-    stocks.map((s) => s.industry).filter(Boolean),
-  );
+  const industries = new Set(stocks.map((s) => s.industry).filter(Boolean));
   return Array.from(industries).sort();
 });
 
@@ -213,6 +217,40 @@ function formatShortExDate(dateStr: string): string {
   return dateStr.replace(/^\d{2}(\d{2})/, "$1");
 }
 
+const UPCOMING_LABEL: Record<string, string> = {
+  upcoming_urgent: "距除权仅剩",
+  upcoming_soon: "距除权还有",
+  upcoming_close: "距除权还有",
+};
+
+/** 生成除权日 hover 提示文本 */
+function getExTitle(ex: ExDisplayInfo): string {
+  if (ex.isPredicted) {
+    const datePart = formatShortExDate(ex.exDate).slice(2);
+    const daysPart =
+      ex.daysUntilEx !== null && ex.daysUntilEx > 0
+        ? `距预测日 ${ex.daysUntilEx} 天`
+        : "预测日已过";
+    return `预测下次约 ${datePart}（基于去年），${daysPart}`;
+  }
+
+  const label = UPCOMING_LABEL[ex.status];
+  if (label && ex.daysUntilEx !== null) {
+    return `${label} ${ex.daysUntilEx} 天`;
+  }
+
+  switch (ex.status) {
+    case "paid":
+      return `已除权 ${ex.exDate}`;
+    case "past_year":
+      return "往期分红";
+    case "unknown":
+      return "日期未定";
+    default:
+      return `待分红 ${ex.exDate}`;
+  }
+}
+
 // 将 custom* 的值同步到编辑缓冲区
 function syncEditFromCustom(code: string) {
   if (customPrice[code] !== undefined) editPrice[code] = customPrice[code];
@@ -273,14 +311,19 @@ function onPEBlur(code: string) {
   syncEditFromCustom(code);
 }
 
-function toggleChangeSort() {
-  if (!changeSortOrder.value) {
-    changeSortOrder.value = "desc";
-  } else if (changeSortOrder.value === "desc") {
-    changeSortOrder.value = "asc";
+function handleSort(key: SortKey) {
+  if (sortConfig.value.key === key) {
+    sortConfig.value = {
+      key,
+      order: sortConfig.value.order === "asc" ? "desc" : "asc",
+    };
   } else {
-    changeSortOrder.value = null;
+    sortConfig.value = { key, order: "asc" };
   }
+}
+
+function getSortActive(key: SortKey, order: "asc" | "desc"): boolean {
+  return sortConfig.value.key === key && sortConfig.value.order === order;
 }
 
 // 按 code 分组，为 name 和 code 列计算 rowspan，并按最小跌幅排序
@@ -385,27 +428,46 @@ const mergedTableData = computed(() => {
   }
 
   // 第二步：排序
-  if (changeSortOrder.value) {
-    // 按涨跌幅排序
-    filteredGroups.sort((a, b) => {
-      const aChange = a.rows[0]?.change ?? 0;
-      const bChange = b.rows[0]?.change ?? 0;
-      return changeSortOrder.value === "desc"
-        ? bChange - aChange
-        : aChange - bChange;
-    });
-  } else {
-    // 默认按最小跌幅（计划行中 decline 最小值）升序排列
-    filteredGroups.sort((a, b) => {
-      const aMinDecline = a.rows
-        .filter((r) => !r.isFirstRow)
-        .reduce((min, r) => Math.min(min, r.decline), Infinity);
-      const bMinDecline = b.rows
-        .filter((r) => !r.isFirstRow)
-        .reduce((min, r) => Math.min(min, r.decline), Infinity);
-      return aMinDecline - bMinDecline;
-    });
-  }
+  const { key, order } = sortConfig.value;
+  const sortMultiplier = order === "asc" ? 1 : -1;
+  filteredGroups.sort((a, b) => {
+    let aVal: number | string = 0;
+    let bVal: number | string = 0;
+
+    switch (key) {
+      case "dividend":
+        aVal = a.rows[0]?.dividend ?? 0;
+        bVal = b.rows[0]?.dividend ?? 0;
+        break;
+      case "pe":
+        aVal = a.rows[0]?.pe ?? 0;
+        bVal = b.rows[0]?.pe ?? 0;
+        break;
+      case "decline":
+        aVal = a.rows
+          .filter((r) => !r.isFirstRow)
+          .reduce((min, r) => Math.min(min, r.decline), Infinity);
+        bVal = b.rows
+          .filter((r) => !r.isFirstRow)
+          .reduce((min, r) => Math.min(min, r.decline), Infinity);
+        break;
+      case "exDate": {
+        const getExSortVal = (
+          ex: MergedRowData["exListDisplay"][number] | undefined,
+        ): number => {
+          if (!ex) return 99999;
+          const s = ex.status;
+          if (s === "paid" || s === "past_year") return 20000;
+          if (s === "unknown") return 10000;
+          return ex.daysUntilEx ?? 9999;
+        };
+        aVal = getExSortVal(a.rows[0]?.exListDisplay[0]);
+        bVal = getExSortVal(b.rows[0]?.exListDisplay[0]);
+        break;
+      }
+    }
+    return sortMultiplier * ((aVal as number) - (bVal as number));
+  });
 
   // 第三步：展平
   for (const g of filteredGroups) {
@@ -445,14 +507,6 @@ const mergedTableData = computed(() => {
         :value="ind"
       />
     </el-select>
-    <el-button
-      :type="changeSortOrder ? 'primary' : 'default'"
-      @click="toggleChangeSort"
-    >
-      <template v-if="!changeSortOrder">涨跌幅排序</template>
-      <template v-else-if="changeSortOrder === 'desc'">按涨幅排序</template>
-      <template v-else>按跌幅排序</template>
-    </el-button>
     <el-button type="primary" :loading="isLoading" @click="refresh"
       >刷新实时数据</el-button
     >
@@ -498,15 +552,71 @@ const mergedTableData = computed(() => {
       <tr>
         <th class="bold light-blue">名称</th>
         <th class="bold blue">股价</th>
-        <th class="bold red">股息率</th>
-        <th class="bold red">PE_TTM</th>
-        <th class="bold bg-green">还要跌</th>
-        <th class="bold">除权除息</th>
+        <th class="bold red sortable" @click="handleSort('dividend')">
+          <span class="sort-header">
+            股息率
+            <span class="sort-arrows">
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('dividend', 'asc') }"
+                ><CaretTop
+              /></el-icon>
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('dividend', 'desc') }"
+                ><CaretBottom
+              /></el-icon>
+            </span>
+          </span>
+        </th>
+        <th class="bold red sortable" @click="handleSort('pe')">
+          <span class="sort-header">
+            PE_TTM
+            <span class="sort-arrows">
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('pe', 'asc') }"
+                ><CaretTop
+              /></el-icon>
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('pe', 'desc') }"
+                ><CaretBottom
+              /></el-icon>
+            </span>
+          </span>
+        </th>
+        <th class="bold bg-green sortable" @click="handleSort('decline')">
+          <span class="sort-header">
+            还要跌
+            <span class="sort-arrows">
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('decline', 'asc') }"
+                ><CaretTop
+              /></el-icon>
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('decline', 'desc') }"
+                ><CaretBottom
+              /></el-icon>
+            </span>
+          </span>
+        </th>
+        <th class="bold sortable" @click="handleSort('exDate')">
+          <span class="sort-header">
+            除权除息
+            <span class="sort-arrows">
+              <el-icon :size="12" :class="{ active: getSortActive('exDate', 'asc') }"><CaretTop /></el-icon>
+              <el-icon :size="12" :class="{ active: getSortActive('exDate', 'desc') }"><CaretBottom /></el-icon>
+            </span>
+          </span>
+        </th>
         <th class="bold">每股分红</th>
         <th class="bold bg-pink red">年分红</th>
         <th class="bold">计划股数</th>
         <th class="bold">计划市值</th>
-        <th class="bold">持有股数/市值</th>
+        <th class="bold">持有</th>
         <th class="bold">备注</th>
       </tr>
     </thead>
@@ -603,28 +713,7 @@ const mergedTableData = computed(() => {
             v-for="(ex, i) in row.exListDisplay"
             :key="i"
             :class="'dividend-status dividend-' + ex.status"
-            :title="
-              ex.isPredicted
-                ? '预测下次约 ' +
-                  formatShortExDate(ex.exDate).slice(2) +
-                  '（基于去年），' +
-                  (ex.daysUntilEx !== null && ex.daysUntilEx > 0
-                    ? '距预测日 ' + ex.daysUntilEx + ' 天'
-                    : '预测日已过')
-                : ex.status === 'paid'
-                  ? '已除权 ' + ex.exDate
-                  : ex.status === 'upcoming_urgent'
-                    ? '距除权仅剩 ' + ex.daysUntilEx + ' 天'
-                    : ex.status === 'upcoming_soon'
-                      ? '距除权还有 ' + ex.daysUntilEx + ' 天'
-                      : ex.status === 'upcoming_close'
-                        ? '距除权还有 ' + ex.daysUntilEx + ' 天'
-                        : ex.status === 'past_year'
-                          ? '往期分红'
-                          : ex.status === 'unknown'
-                            ? '日期未定'
-                            : '待分红 ' + ex.exDate
-            "
+            :title="getExTitle(ex)"
           >
             {{ formatShortExDate(ex.exDate) }}
           </div>
@@ -867,6 +956,39 @@ html.dark {
     border-bottom-width: 1px;
   }
 
+  // 表头排序
+  .sortable {
+    cursor: pointer;
+    user-select: none;
+
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .sort-header {
+    display: inline-flex;
+    align-items: center;
+  }
+
+  .sort-arrows {
+    display: inline-flex;
+    flex-direction: column;
+    margin-left: 3px;
+    line-height: 0;
+
+    .el-icon {
+      display: block;
+      color: #bbb;
+      transition: color 0.15s;
+      margin: -2px 0;
+
+      &.active {
+        color: #2972f4;
+      }
+    }
+  }
+
   // 消除表头底部与表体顶部边框叠加：表体第一行去掉上边框
   tbody tr:first-child td {
     border-top-width: 0;
@@ -1052,6 +1174,10 @@ html.dark {
     }
     .orange {
       color: #ffb860;
+    }
+
+    .sort-arrows .el-icon.active {
+      color: #88bbff;
     }
     .dividend-paid,
     .dividend-past_year {
