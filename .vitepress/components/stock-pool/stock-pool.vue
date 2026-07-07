@@ -57,7 +57,7 @@ interface MergedRowData extends RowData {
 const editPrice = reactive<Record<string, number>>({});
 const editDividend = reactive<Record<string, number>>({});
 const editPE = reactive<Record<string, number>>({});
-type SortKey = "dividend" | "pe" | "decline" | "exDate";
+type SortKey = "dividend" | "pe" | "decline" | "exDate" | "change";
 
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
 const industryFilter = ref<string[]>([]); // 行业筛选：空数组表示全部
@@ -465,6 +465,10 @@ const mergedTableData = computed(() => {
         bVal = getExSortVal(b.rows[0]?.exListDisplay[0]);
         break;
       }
+      case "change":
+        aVal = a.rows[0]?.change ?? 0;
+        bVal = b.rows[0]?.change ?? 0;
+        break;
     }
     return sortMultiplier * ((aVal as number) - (bVal as number));
   });
@@ -550,7 +554,15 @@ const mergedTableData = computed(() => {
   <table v-if="mergedTableData.length" class="stock-pool-table">
     <thead>
       <tr>
-        <th class="bold light-blue">名称</th>
+        <th class="bold light-blue sortable" @click="handleSort('change')">
+          <span class="sort-header">
+            名称
+            <span class="sort-arrows">
+              <el-icon :size="12" :class="{ active: getSortActive('change', 'asc') }"><CaretTop /></el-icon>
+              <el-icon :size="12" :class="{ active: getSortActive('change', 'desc') }"><CaretBottom /></el-icon>
+            </span>
+          </span>
+        </th>
         <th class="bold blue">股价</th>
         <th class="bold red sortable" @click="handleSort('dividend')">
           <span class="sort-header">
