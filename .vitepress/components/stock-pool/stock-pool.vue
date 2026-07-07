@@ -807,7 +807,7 @@ const mergedTableData = computed(() => {
                 class="deviation-tag"
                 :style="getDeviationStyle(row.strikePriceInfo.deviation)"
               >
-                距离：{{ formatPercent(row.strikePriceInfo.deviation) }}
+                偏离：{{ formatPercent(row.strikePriceInfo.deviation) }}
               </span>
             </div>
             <div class="sp-dividend">
