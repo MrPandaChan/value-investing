@@ -57,7 +57,7 @@ interface PEPlan extends BasePlan {
   pe: PlanEntry[];
 }
 
-interface EntryPrice {
+export interface EntryPrice {
   type: PlanType;
   value: number;
 }
