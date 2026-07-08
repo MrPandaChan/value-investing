@@ -1004,8 +1004,8 @@ const stocks: StockItem[] = [
       price: [{ value: 0.847, quantity: 3000 }],
     },
     strikePrice: {
-      type: PlanType.PE,
-      value: 15,
+      type: PlanType.PRICE,
+      value: 1.18,
     },
   },
   {
