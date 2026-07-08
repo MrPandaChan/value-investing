@@ -2,7 +2,12 @@ import { computed, reactive, ref, watch } from "vue";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import { isHKCode, isBCode, isETFCode } from "../../../fetch-data/helper";
 import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
-import { PlanType, stocks, type StockItem } from "../../my-data/stock-pool";
+import {
+  PlanType,
+  stocks,
+  type StockItem,
+  type EntryPrice,
+} from "../../my-data/stock-pool";
 
 export interface RowData {
   name: string;
@@ -28,6 +33,43 @@ export interface GroupMeta {
   dividendAdjust?: number;
 }
 
+export interface StrikePriceInfo {
+  price: number;
+  dividend: number;
+  deviation: number;
+  pe: number;
+}
+
+/**
+ * 根据买入点类型和参数计算目标价格、股息率和偏离度
+ * 计算方式与买入计划行一致，可复用
+ */
+export function computeStrikePriceInfo(
+  entry: EntryPrice,
+  meta: GroupMeta,
+): StrikePriceInfo {
+  const { effectiveDps, realPrice, pricePE } = meta;
+  let price: number;
+  let dividend: number;
+
+  if (entry.type === PlanType.PRICE) {
+    price = entry.value;
+    dividend = effectiveDps / price;
+  } else if (entry.type === PlanType.DIVIDEND) {
+    price = effectiveDps / entry.value;
+    dividend = entry.value;
+  } else {
+    // PlanType.PE
+    price = realPrice * (entry.value / pricePE);
+    dividend = effectiveDps / price;
+  }
+
+  const deviation = ((realPrice - price) / realPrice) * 100;
+  const pe = pricePE * (price / realPrice);
+
+  return { price, dividend, deviation, pe };
+}
+
 const STORAGE_KEY = "stock-pool-data";
 const DIVIDEND_STORAGE_KEY = "stock-pool-dividend";
 
@@ -49,9 +91,17 @@ const isLoading = computed(() => loadingPromise.value !== null);
 // 基于 stocks 结构自动生成指纹，数据变更时自动失效旧缓存
 function computeFingerprint(): string {
   const entries = stocks.map((item: StockItem) => {
+    const typeStr =
+      item.plan.type === PlanType.PRICE
+        ? "PRICE"
+        : item.plan.type === PlanType.DIVIDEND
+          ? "DIVIDEND"
+          : item.plan.type === PlanType.PE
+            ? "PE"
+            : "EMPTY";
     const base = {
       code: item.code,
-      type: item.plan.type === PlanType.PRICE ? "PRICE" : "DIVIDEND",
+      type: typeStr,
       dpy: item.dividendPerYear,
       adj: item.dividendAdjust,
       remark: item.remark,
@@ -64,10 +114,19 @@ function computeFingerprint(): string {
         entries: item.plan.price.map((e) => ({ v: e.value, q: e.quantity })),
       };
     }
-    return {
-      ...base,
-      entries: item.plan.dividend.map((e) => ({ v: e.value, q: e.quantity })),
-    };
+    if (item.plan.type === PlanType.DIVIDEND) {
+      return {
+        ...base,
+        entries: item.plan.dividend.map((e) => ({ v: e.value, q: e.quantity })),
+      };
+    }
+    if (item.plan.type === PlanType.PE) {
+      return {
+        ...base,
+        entries: item.plan.pe.map((e) => ({ v: e.value, q: e.quantity })),
+      };
+    }
+    return { ...base, entries: [] };
   });
   return JSON.stringify(entries);
 }
@@ -388,6 +447,24 @@ async function buildTableData(
             maxPositionRatio: item.plan.maxPositionRatio,
           });
         }
+      } else if (item.plan.type === PlanType.PE) {
+        for (let pi = 0; pi < item.plan.pe.length; pi++) {
+          const v = item.plan.pe[pi];
+          const targetPrice = price * (v.value / pricePE);
+          tableData.value.push({
+            name,
+            code,
+            price: targetPrice,
+            pe: v.value,
+            dividend: effectiveDps / targetPrice,
+            quantity: v.quantity,
+            sharesHeld: item.sharesHeld,
+            url: item.url,
+            exList,
+            remark: item.remark,
+            maxPositionRatio: item.plan.maxPositionRatio,
+          });
+        }
       }
     }
   }
@@ -484,6 +561,12 @@ async function refreshData() {
           row.price = targetPrice;
           row.pe = pricePE * (targetPrice / price);
           row.dividend = planDiv;
+        } else if (item.plan.type === PlanType.PE) {
+          const planPE = item.plan.pe[index - 1].value;
+          const targetPrice = price * (planPE / pricePE);
+          row.price = targetPrice;
+          row.pe = planPE;
+          row.dividend = effectiveDps / targetPrice;
         }
       }
     });

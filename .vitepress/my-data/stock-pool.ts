@@ -39,6 +39,7 @@ export enum PlanType {
   EMPTY, // 没有计划
   PRICE, // 按价格
   DIVIDEND, // 按股息率
+  PE, // PE_TTM
 }
 
 interface PricePlan extends BasePlan {
@@ -51,7 +52,17 @@ interface DividendPlan extends BasePlan {
   dividend: PlanEntry[];
 }
 
-export type PlanItem = PricePlan | DividendPlan;
+interface PEPlan extends BasePlan {
+  type: PlanType.PE;
+  pe: PlanEntry[];
+}
+
+interface EntryPrice {
+  type: PlanType;
+  value: number;
+}
+
+export type PlanItem = PricePlan | DividendPlan | PEPlan;
 
 export interface StockItem {
   code: string;
@@ -66,7 +77,8 @@ export interface StockItem {
   dividendAdjust?: number;
   /** 一年分红次数，设置后仅展示和计算最新的 n 条分红数据 */
   dividendPerYear?: number;
-  plan: PlanItem;
+  plan: PlanItem; // 买入计划
+  strikePrice: EntryPrice; // 击球点
 }
 
 const stocks: StockItem[] = [
@@ -98,6 +110,10 @@ const stocks: StockItem[] = [
         { value: 378, quantity: 200 },
       ],
     },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 15,
+    },
   },
   {
     // 福耀玻璃
@@ -109,6 +125,10 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [{ value: 46, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 12,
     },
   },
   {
@@ -122,6 +142,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.06, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
     },
   },
   {
@@ -138,6 +162,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.065, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.06,
+    },
   },
   {
     // 羚锐制药
@@ -151,6 +179,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.03,
       dividend: [{ value: 0.058, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 分众传媒
@@ -162,6 +194,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.075, quantity: 1000 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.075,
     },
   },
   {
@@ -175,6 +211,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
       dividend: [{ value: 0.052, quantity: 2000 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.05,
     },
   },
   {
@@ -191,6 +231,10 @@ const stocks: StockItem[] = [
         { value: 0.045, quantity: 500 },
         { value: 0.049, quantity: 600 },
       ],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.05,
     },
   },
   {
@@ -209,6 +253,10 @@ const stocks: StockItem[] = [
         { value: 9, quantity: 600 },
       ],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 招商银行
@@ -221,6 +269,10 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [{ value: 34.5, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
     },
   },
   {
@@ -235,6 +287,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 中国银行
@@ -247,6 +303,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
     },
   },
   {
@@ -261,6 +321,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 建设银行
@@ -273,6 +337,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
     },
   },
   {
@@ -287,6 +355,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.03,
       dividend: [{ value: 0.07, quantity: 200 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.07,
+    },
   },
   {
     // 中创智领A
@@ -299,6 +371,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.02,
       dividend: [{ value: 0.1, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.1,
     },
   },
   {
@@ -313,6 +389,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.02,
       dividend: [{ value: 0.1, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.1,
     },
   },
   {
@@ -331,6 +411,10 @@ const stocks: StockItem[] = [
         { value: 67.2, quantity: 200 },
       ],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 海尔智家
@@ -344,6 +428,10 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.08,
       price: [{ value: 18.5, quantity: 300 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.058,
     },
   },
   {
@@ -359,6 +447,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.085, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.08,
+    },
   },
   {
     // 中国移动
@@ -372,6 +464,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.1,
       dividend: [{ value: 0.055, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 中国电信
@@ -384,6 +480,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 700 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.058,
     },
   },
   {
@@ -399,6 +499,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.062, quantity: 4000 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.058,
+    },
   },
   {
     // 中国铁塔
@@ -413,6 +517,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
       dividend: [{ value: 0.065, quantity: 1000 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.065,
     },
   },
   {
@@ -431,6 +539,10 @@ const stocks: StockItem[] = [
         { value: 25, quantity: 300 },
       ],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.04,
+    },
   },
   {
     // 国投电力
@@ -444,6 +556,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.04, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.04,
     },
   },
   {
@@ -462,6 +578,10 @@ const stocks: StockItem[] = [
         { value: 0.054, quantity: 400 },
       ],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.05,
+    },
   },
   {
     // 中国海洋石油H
@@ -474,6 +594,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.2,
       dividend: [{ value: 0.05, quantity: 2000 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.05,
     },
   },
   {
@@ -488,6 +612,10 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [{ value: 23.5, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.PRICE,
+      value: 24.5,
     },
   },
   {
@@ -514,6 +642,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.052, quantity: 200 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.05,
+    },
   },
   {
     // 赛轮轮胎
@@ -530,6 +662,10 @@ const stocks: StockItem[] = [
         { value: 11, quantity: 300 },
         { value: 10.5, quantity: 400 },
       ],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 10,
     },
   },
   {
@@ -549,6 +685,10 @@ const stocks: StockItem[] = [
         },
       ],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 泡泡玛特
@@ -561,6 +701,10 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [{ value: 140, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 12,
     },
   },
   {
@@ -575,6 +719,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.2,
       dividend: [{ value: 0.05, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.05,
+    },
   },
   {
     // 泸州老窖
@@ -588,6 +736,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.08, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.08,
+    },
   },
   {
     // 山西汾酒
@@ -599,6 +751,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.065, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.07,
     },
   },
   {
@@ -614,6 +770,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       price: [{ value: 50, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.1,
+    },
   },
   {
     // 宇通客车
@@ -627,6 +787,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.1, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.1,
     },
   },
   {
@@ -642,6 +806,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.06, quantity: 200 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.06,
+    },
   },
   {
     // 中国神华A
@@ -654,6 +822,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
       dividend: [{ value: 0.055, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
     },
   },
   {
@@ -671,6 +843,10 @@ const stocks: StockItem[] = [
         { value: 0.06, quantity: 500 },
       ],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 陕西煤业
@@ -687,6 +863,10 @@ const stocks: StockItem[] = [
         { value: 0.06, quantity: 400 },
       ],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 中国平安
@@ -699,6 +879,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.06, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.06,
     },
   },
   {
@@ -716,6 +900,10 @@ const stocks: StockItem[] = [
         { value: 60, quantity: 400 },
       ],
     },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 12,
+    },
   },
   {
     // 小商品城
@@ -730,6 +918,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.056, quantity: 300 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
   },
   {
     // 中国通信服务
@@ -743,6 +935,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       dividend: [{ value: 0.06, quantity: 2000 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.06,
+    },
   },
   {
     // 中远海控A
@@ -754,6 +950,10 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.03,
       dividend: [{ value: 0.09, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.09,
     },
   },
   {
@@ -768,6 +968,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.03,
       dividend: [{ value: 0.09, quantity: 500 }],
     },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.09,
+    },
   },
   {
     // 比亚迪
@@ -779,6 +983,10 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [{ value: 68, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 15,
     },
   },
   {
@@ -801,6 +1009,10 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.03,
       price: [],
+    },
+    strikePrice: {
+      type: PlanType.PRICE,
+      value: 0.5,
     },
   },
   /**

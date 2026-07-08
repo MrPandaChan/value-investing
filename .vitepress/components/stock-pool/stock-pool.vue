@@ -11,7 +11,12 @@ import {
   isBCode,
   isHKCode,
 } from "../../../fetch-data/helper";
-import { useStockPoolData, type RowData } from "./use-stock-pool-data";
+import {
+  useStockPoolData,
+  computeStrikePriceInfo,
+  type RowData,
+  type StrikePriceInfo,
+} from "./use-stock-pool-data";
 import { buildExDisplay, type ExDisplayInfo } from "./use-dividend-status";
 import { stocks } from "../../my-data/stock-pool";
 import StockPoolPortfolio from "./portfolio.vue";
@@ -43,6 +48,7 @@ interface MergedRowData extends RowData {
   sharesHeldRowSpan: number;
   remarkRowSpan: number;
   maxPositionRatioRowSpan: number;
+  strikePriceRowSpan: number;
   annualDps: number;
   adjustedAnnualDps?: number;
   isFirstRow: boolean;
@@ -51,13 +57,20 @@ interface MergedRowData extends RowData {
   totalMarketCap?: number;
   rowKey: string;
   exListDisplay: ExDisplayInfo[];
+  strikePriceInfo?: StrikePriceInfo;
 }
 
 // 编辑缓冲：input 绑定到这些 buffer，仅 blur 时同步到 custom*
 const editPrice = reactive<Record<string, number>>({});
 const editDividend = reactive<Record<string, number>>({});
 const editPE = reactive<Record<string, number>>({});
-type SortKey = "dividend" | "pe" | "decline" | "exDate" | "change";
+type SortKey =
+  | "dividend"
+  | "pe"
+  | "decline"
+  | "exDate"
+  | "change"
+  | "deviation";
 
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
 const industryFilter = ref<string[]>([]); // 行业筛选：空数组表示全部
@@ -215,6 +228,19 @@ function displayName(name: string, code: string): string {
 function formatShortExDate(dateStr: string): string {
   if (!dateStr || dateStr === "-") return dateStr;
   return dateStr.replace(/^\d{2}(\d{2})/, "$1");
+}
+
+/**
+ * 根据偏离度动态计算渐变色（hsl），≤0 纯红，正数越大越橙
+ */
+function getDeviationStyle(deviation: number) {
+  const clamped = Math.max(-25, Math.min(25, deviation));
+  // ≤0 全部纯红，>0 随偏离增大渐变至橙色 (hue 0→30)
+  const hue = clamped <= 0 ? 0 : Math.min((clamped / 25) * 30, 30);
+  return {
+    color: `hsl(${hue}, 80%, var(--dev-l))`,
+    backgroundColor: `hsla(${hue}, 75%, var(--dev-bg-l), var(--dev-alpha))`,
+  };
 }
 
 const UPCOMING_LABEL: Record<string, string> = {
@@ -395,6 +421,7 @@ const mergedTableData = computed(() => {
         sharesHeldRowSpan: index === 0 ? group.length : 0,
         remarkRowSpan: index === 0 ? group.length : 0,
         maxPositionRatioRowSpan: index === 0 ? group.length : 0,
+        strikePriceRowSpan: 0,
         annualDps,
         adjustedAnnualDps,
         isFirstRow: index === 0,
@@ -405,6 +432,19 @@ const mergedTableData = computed(() => {
         exListDisplay: buildExDisplay(row.exList),
       };
     });
+
+    // 计算理想买点（strikePrice）
+    const stockItem = stocks.find((s) => s.code === code);
+    const strikePriceInfo =
+      stockItem && meta
+        ? computeStrikePriceInfo(stockItem.strikePrice, meta)
+        : undefined;
+    if (strikePriceInfo) {
+      mergedRows[0]!.strikePriceRowSpan = group.length;
+      for (const mr of mergedRows) {
+        mr.strikePriceInfo = strikePriceInfo;
+      }
+    }
 
     groups.push({ code, rows: mergedRows });
   }
@@ -468,6 +508,10 @@ const mergedTableData = computed(() => {
       case "change":
         aVal = a.rows[0]?.change ?? 0;
         bVal = b.rows[0]?.change ?? 0;
+        break;
+      case "deviation":
+        aVal = a.rows[0]?.strikePriceInfo?.deviation ?? 99999;
+        bVal = b.rows[0]?.strikePriceInfo?.deviation ?? 99999;
         break;
     }
     return sortMultiplier * ((aVal as number) - (bVal as number));
@@ -558,8 +602,16 @@ const mergedTableData = computed(() => {
           <span class="sort-header">
             名称
             <span class="sort-arrows">
-              <el-icon :size="12" :class="{ active: getSortActive('change', 'asc') }"><CaretTop /></el-icon>
-              <el-icon :size="12" :class="{ active: getSortActive('change', 'desc') }"><CaretBottom /></el-icon>
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('change', 'asc') }"
+                ><CaretTop
+              /></el-icon>
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('change', 'desc') }"
+                ><CaretBottom
+              /></el-icon>
             </span>
           </span>
         </th>
@@ -615,12 +667,37 @@ const mergedTableData = computed(() => {
             </span>
           </span>
         </th>
+        <th class="bold light-blue sortable" @click="handleSort('deviation')">
+          <span class="sort-header">
+            理想买点
+            <span class="sort-arrows">
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('deviation', 'asc') }"
+                ><CaretTop
+              /></el-icon>
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('deviation', 'desc') }"
+                ><CaretBottom
+              /></el-icon>
+            </span>
+          </span>
+        </th>
         <th class="bold sortable" @click="handleSort('exDate')">
           <span class="sort-header">
             除权除息
             <span class="sort-arrows">
-              <el-icon :size="12" :class="{ active: getSortActive('exDate', 'asc') }"><CaretTop /></el-icon>
-              <el-icon :size="12" :class="{ active: getSortActive('exDate', 'desc') }"><CaretBottom /></el-icon>
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('exDate', 'asc') }"
+                ><CaretTop
+              /></el-icon>
+              <el-icon
+                :size="12"
+                :class="{ active: getSortActive('exDate', 'desc') }"
+                ><CaretBottom
+              /></el-icon>
             </span>
           </span>
         </th>
@@ -715,6 +792,29 @@ const mergedTableData = computed(() => {
           "
         >
           {{ row.decline === 0 ? "-" : formatPercent(row.decline) }}
+        </td>
+        <td
+          v-if="row.strikePriceRowSpan > 0"
+          :rowspan="row.strikePriceRowSpan"
+          class="bold strike-price-cell"
+        >
+          <template v-if="row.strikePriceInfo">
+            <div class="sp-price">
+              {{ formatPrice(row.strikePriceInfo.price, row.code) }}
+            </div>
+            <div class="sp-deviation">
+              <span
+                class="deviation-tag"
+                :style="getDeviationStyle(row.strikePriceInfo.deviation)"
+              >
+                偏离：{{ formatPercent(row.strikePriceInfo.deviation) }}
+              </span>
+            </div>
+            <div class="sp-dividend">
+              {{ formatPercent(row.strikePriceInfo.dividend * 100) }} |
+              {{ formatNum(row.strikePriceInfo.pe, 2).toFixed(2) }}
+            </div>
+          </template>
         </td>
         <td
           v-if="row.exDateRowSpan > 0"
@@ -947,14 +1047,14 @@ html.dark {
 .stock-pool-table {
   border-collapse: collapse;
   border-spacing: 0;
-  font-size: 13px;
   color: var(--sp-text);
 
   th,
   td {
     line-height: 22px;
     white-space: nowrap;
-    padding: 4px 6px;
+    padding: 2px 4px;
+    font-size: 13px;
     color: var(--sp-text);
     font-weight: normal;
     border: 1px solid var(--sp-border);
@@ -1118,6 +1218,29 @@ html.dark {
     text-align: left;
   }
 
+  .strike-price-cell {
+    font-size: 12px;
+    line-height: 18px;
+
+    .sp-price {
+      color: #2972f4;
+    }
+    .sp-dividend {
+      color: #4a7c7f;
+    }
+    .sp-deviation {
+      .deviation-tag {
+        --dev-l: 50%;
+        --dev-bg-l: 45%;
+        --dev-alpha: 0.25;
+        display: inline-block;
+        padding: 0 4px;
+        border-radius: 3px;
+        font-weight: bold;
+      }
+    }
+  }
+
   .dividend-time-bar {
     background-color: var(--sp-bg-dividend-bar);
     color: var(--sp-color-dividend-bar);
@@ -1210,6 +1333,20 @@ html.dark {
     .dividend-upcoming,
     .dividend-unknown {
       color: var(--sp-text);
+    }
+
+    .strike-price-cell {
+      .sp-price {
+        color: #88bbff;
+      }
+      .sp-dividend {
+        color: #7ab5b5;
+      }
+      .deviation-tag {
+        --dev-l: 68%;
+        --dev-bg-l: 55%;
+        --dev-alpha: 0.32;
+      }
     }
   }
 }
