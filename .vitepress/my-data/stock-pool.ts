@@ -23,6 +23,7 @@ export enum Industry {
   ENTERPRISE_SERVICES = "企业服务",
   SHIPPING = "航运",
   MACHINERY = "机械",
+  FINANCIAL = "金融",
   ETF = "ETF",
 }
 
@@ -1006,6 +1007,23 @@ const stocks: StockItem[] = [
     strikePrice: {
       type: PlanType.PE,
       value: 15,
+    },
+  },
+  {
+    // 香港交易所
+    code: "00388",
+    industry: Industry.FINANCIAL,
+    url: "value-investing/industry/金融/港交所",
+    dividendPerYear: 1,
+    remark: "周期成长股，周期底部击球",
+    plan: {
+      type: PlanType.PE,
+      maxPositionRatio: 0.1,
+      pe: [{ value: 21, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 21,
     },
   },
   {
