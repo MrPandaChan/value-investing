@@ -57,7 +57,7 @@ interface PEPlan extends BasePlan {
   pe: PlanEntry[];
 }
 
-interface EntryPrice {
+export interface EntryPrice {
   type: PlanType;
   value: number;
 }
@@ -629,6 +629,10 @@ const stocks: StockItem[] = [
       maxPositionRatio: 0.05,
       price: [{ value: 20, quantity: 100 }],
     },
+    strikePrice: {
+      type: PlanType.PRICE,
+      value: 21.5,
+    },
   },
   {
     // 保利物业
@@ -998,6 +1002,10 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.05,
       price: [{ value: 0.847, quantity: 3000 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 15,
     },
   },
   {

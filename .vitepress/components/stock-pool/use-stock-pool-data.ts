@@ -282,7 +282,8 @@ function loadFromStorage(): boolean {
     Object.assign(customDividend, data.customDividend || {});
     Object.assign(customPE, data.customPE || {});
 
-    if (data.dynamicUpdateTime) dynamicUpdateTime.value = data.dynamicUpdateTime;
+    if (data.dynamicUpdateTime)
+      dynamicUpdateTime.value = data.dynamicUpdateTime;
 
     // 尝试从分红独立存储加载更新时间（不影响表结构加载成败）
     loadDividendFromStorage();
@@ -368,9 +369,10 @@ async function buildTableData(
         PE_TTM,
         change,
       } = dynamicData;
-      const prevClose = isHKCode(code) || isETFCode(code)
-        ? originPrevClose / 1000
-        : originPrevClose / 100;
+      const prevClose =
+        isHKCode(code) || isETFCode(code)
+          ? originPrevClose / 1000
+          : originPrevClose / 100;
       // 港股 PE_TTM 是以收盘价来算的
       const pricePE = isHKCode(code)
         ? PE_TTM * (1 + (price - prevClose) / prevClose)
@@ -492,10 +494,7 @@ async function refreshData() {
   if (!tableData.value.length) {
     // 表为空：先尝试从分红存储加载，避免不必要的 API 调用
     tableData.value = [];
-    const dynamicDataList = await getDynamicData([
-      ...stockCodes,
-      "133.CNHHKD",
-    ]);
+    const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
     return buildTableData(dynamicDataList, true);
   }
 
@@ -515,9 +514,10 @@ async function refreshData() {
 
     const { price, prevClose: originPrevClose, PE_TTM, change } = dynamicData;
     const code = item.code;
-    const prevClose = isHKCode(code) || isETFCode(code)
-      ? originPrevClose / 1000
-      : originPrevClose / 100;
+    const prevClose =
+      isHKCode(code) || isETFCode(code)
+        ? originPrevClose / 1000
+        : originPrevClose / 100;
     const pricePE = isHKCode(code)
       ? PE_TTM * (1 + (price - prevClose) / prevClose)
       : PE_TTM;
@@ -589,10 +589,7 @@ async function init() {
   loadingPromise.value = (async () => {
     tableData.value = [];
     const stockCodes = stocks.map((v) => v.code);
-    const dynamicDataList = await getDynamicData([
-      ...stockCodes,
-      "133.CNHHKD",
-    ]);
+    const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
     return buildTableData(dynamicDataList, false);
   })().finally(() => {
     loadingPromise.value = null;
