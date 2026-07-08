@@ -235,8 +235,8 @@ function formatShortExDate(dateStr: string): string {
  */
 function getDeviationStyle(deviation: number) {
   const clamped = Math.max(-25, Math.min(25, deviation));
-  // ≤0 全部纯红，>0 随偏离增大渐变至橙色 (hue 0→30)
-  const hue = clamped <= 0 ? 0 : Math.min((clamped / 25) * 30, 30);
+  // ≤0 全部纯红，>0 随偏离增大渐变至橙 (hue 0→50)
+  const hue = clamped <= 0 ? 0 : Math.min((clamped / 25) * 50, 50);
   return {
     color: `hsl(${hue}, 80%, var(--dev-l))`,
     backgroundColor: `hsla(${hue}, 75%, var(--dev-bg-l), var(--dev-alpha))`,
