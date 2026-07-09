@@ -573,12 +573,8 @@ const stocks: StockItem[] = [
     remark: "预估7月中分红",
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.1,
-      dividend: [
-        { value: 0.046, quantity: 200 },
-        { value: 0.05, quantity: 300 },
-        { value: 0.054, quantity: 400 },
-      ],
+      maxPositionRatio: 0.2,
+      dividend: [{ value: 0.05, quantity: 400 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
