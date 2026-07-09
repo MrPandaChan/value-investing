@@ -189,11 +189,12 @@ const stocks: StockItem[] = [
     code: "002027",
     industry: Industry.MEDIA,
     sharesHeld: 1800,
+    remark: "7月9分红，减去0.19",
     url: "/value-investing/industry/传媒/分众传媒/",
     plan: {
-      type: PlanType.DIVIDEND,
+      type: PlanType.PRICE,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.075, quantity: 1000 }],
+      price: [{ value: 4.34, quantity: 1000 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -616,22 +617,6 @@ const stocks: StockItem[] = [
     strikePrice: {
       type: PlanType.PRICE,
       value: 24.5,
-    },
-  },
-  {
-    // 云铝股份
-    code: "000807",
-    industry: Industry.NON_FERROUS_METALS,
-    url: "/value-investing/industry/有色金属/云铝股份/",
-    dividendPerYear: 2,
-    plan: {
-      type: PlanType.PRICE,
-      maxPositionRatio: 0.05,
-      price: [{ value: 20, quantity: 100 }],
-    },
-    strikePrice: {
-      type: PlanType.PRICE,
-      value: 21.5,
     },
   },
   {
