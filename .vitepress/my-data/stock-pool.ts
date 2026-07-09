@@ -1027,6 +1027,23 @@ const stocks: StockItem[] = [
     },
   },
   {
+    // 国电南瑞
+    code: "600406",
+    industry: Industry.ELECTRIC_POWER,
+    url: "value-investing/industry/电力/国电南瑞",
+    dividendPerYear: 2,
+    remark: "历史最底部差不多16~18PE",
+    plan: {
+      type: PlanType.PE,
+      maxPositionRatio: 0.05,
+      pe: [{ value: 18, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 18,
+    },
+  },
+  {
     // 恒生科技ETF
     code: "513180",
     industry: Industry.ETF,
