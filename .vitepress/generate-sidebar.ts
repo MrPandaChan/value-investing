@@ -229,12 +229,17 @@ export function getCompanyFilesMap(): Record<string, CompanyFilesData> {
 
   if (!existsSync(INDUSTRY_DIR)) return map;
 
-  for (const industryEntry of readdirSync(INDUSTRY_DIR, { withFileTypes: true })) {
-    if (!industryEntry.isDirectory() || industryEntry.name.startsWith(".")) continue;
+  for (const industryEntry of readdirSync(INDUSTRY_DIR, {
+    withFileTypes: true,
+  })) {
+    if (!industryEntry.isDirectory() || industryEntry.name.startsWith("."))
+      continue;
 
     const industryDir = join(INDUSTRY_DIR, industryEntry.name);
 
-    for (const companyEntry of readdirSync(industryDir, { withFileTypes: true })) {
+    for (const companyEntry of readdirSync(industryDir, {
+      withFileTypes: true,
+    })) {
       if (!companyEntry.isDirectory()) continue;
       // 跳过行业资料目录（与行业同名的目录）
       if (companyEntry.name === industryEntry.name) continue;
@@ -250,7 +255,9 @@ export function getCompanyFilesMap(): Record<string, CompanyFilesData> {
         if (entry.isDirectory()) {
           const subDir = join(companyDir, entry.name);
           if (entry.name === "tracking") {
-            const subFiles = readdirSync(subDir).filter((f) => f.endsWith(".md"));
+            const subFiles = readdirSync(subDir).filter((f) =>
+              f.endsWith(".md"),
+            );
             data.tracking = subFiles.map((f) => {
               const name = getModuleName(f);
               return {
@@ -260,7 +267,9 @@ export function getCompanyFilesMap(): Record<string, CompanyFilesData> {
               };
             });
           } else if (entry.name === "notes") {
-            const subFiles = readdirSync(subDir).filter((f) => f.endsWith(".md"));
+            const subFiles = readdirSync(subDir).filter((f) =>
+              f.endsWith(".md"),
+            );
             data.notes = subFiles.map((f) => {
               const name = getModuleName(f);
               return {
