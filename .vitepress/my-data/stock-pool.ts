@@ -23,6 +23,7 @@ export enum Industry {
   ENTERPRISE_SERVICES = "企业服务",
   SHIPPING = "航运",
   MACHINERY = "机械",
+  FINANCIAL = "金融",
   ETF = "ETF",
 }
 
@@ -528,7 +529,7 @@ const stocks: StockItem[] = [
     // 长江电力
     code: "600900",
     industry: Industry.ELECTRIC_POWER,
-    sharesHeld: 500,
+    sharesHeld: 700,
     url: "/value-investing/industry/电力/长江电力/",
     dividendPerYear: 2,
     remark: "预估7月中分红",
@@ -994,7 +995,41 @@ const stocks: StockItem[] = [
     },
   },
   {
-    // 恒生科技
+    // 香港交易所
+    code: "00388",
+    industry: Industry.FINANCIAL,
+    url: "value-investing/industry/金融/港交所",
+    dividendPerYear: 1,
+    remark: "周期成长股，周期底部击球",
+    plan: {
+      type: PlanType.PE,
+      maxPositionRatio: 0.1,
+      pe: [{ value: 21, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 21,
+    },
+  },
+  {
+    // 国电南瑞
+    code: "600406",
+    industry: Industry.ELECTRIC_POWER,
+    url: "value-investing/industry/电力/国电南瑞",
+    dividendPerYear: 2,
+    remark: "历史最底部差不多16~18PE",
+    plan: {
+      type: PlanType.PE,
+      maxPositionRatio: 0.05,
+      pe: [{ value: 18, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 18,
+    },
+  },
+  {
+    // 恒生科技ETF
     code: "513180",
     industry: Industry.ETF,
     sharesHeld: 2400,
@@ -1019,7 +1054,7 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(15000);
+export const cash = ref(10000);
 
 /**
  * TODO:
