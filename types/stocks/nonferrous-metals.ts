@@ -28,7 +28,7 @@ const nonferrousMetalsStockData: StockItem[] = [
     type: StockType.A,
     name: "洛阳钼业",
     code: "603993",
-    level: StockLevel.CORE,
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.DIVIDEND,
@@ -39,7 +39,7 @@ const nonferrousMetalsStockData: StockItem[] = [
     type: StockType.A,
     name: "藏格矿业",
     code: "000408",
-    level: StockLevel.CORE,
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.DIVIDEND,
@@ -50,7 +50,7 @@ const nonferrousMetalsStockData: StockItem[] = [
     type: StockType.A,
     name: "云铝股份",
     code: "000807",
-    level: StockLevel.CORE,
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.DIVIDEND,
@@ -61,7 +61,40 @@ const nonferrousMetalsStockData: StockItem[] = [
     type: StockType.A,
     name: "中国铝业",
     code: "601600",
-    level: StockLevel.CORE,
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.05,
+    },
+  },
+  {
+    type: StockType.A,
+    name: "南山铝业",
+    code: "600219",
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.05,
+    },
+  },
+  {
+    type: StockType.A,
+    name: "天山铝业",
+    code: "002532",
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.05,
+    },
+  },
+  {
+    type: StockType.A,
+    name: "神火股份",
+    code: "000933",
+    level: StockLevel.MARGIN,
     allocation: 0.05,
     valuationConfig: {
       type: ValuationType.DIVIDEND,
