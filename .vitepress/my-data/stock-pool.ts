@@ -529,7 +529,7 @@ const stocks: StockItem[] = [
     // 长江电力
     code: "600900",
     industry: Industry.ELECTRIC_POWER,
-    sharesHeld: 700,
+    sharesHeld: 300,
     url: "/value-investing/industry/电力/长江电力/",
     dividendPerYear: 2,
     remark: "预估7月中分红",
@@ -1050,7 +1050,7 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(10000);
+export const cash = ref(22000);
 
 /**
  * TODO:
