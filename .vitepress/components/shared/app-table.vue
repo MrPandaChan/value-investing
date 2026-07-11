@@ -67,7 +67,7 @@ const props = withDefaults(
   },
 );
 
-const reportPeriod = ref<ReportPeriod>("annual");
+const reportPeriod = ref<ReportPeriod>("latest");
 const isSingleQuarter = ref(false);
 const hasQuarterly = computed(() => !!props.quarterlyData?.length);
 
@@ -554,9 +554,14 @@ function renderNestedQuarterChart(colKey: string, column: TableColumn) {
           if (cur == null || pre == null || pre === 0) return "";
           const pct = ((cur - pre) / Math.abs(pre)) * 100;
           const sign = pct > 0 ? "+" : "";
-          const color = pct > 0
-            ? (dark ? "#ff7875" : "#cf1322")
-            : (dark ? "#95de64" : "#389e0d");
+          const color =
+            pct > 0
+              ? dark
+                ? "#ff7875"
+                : "#cf1322"
+              : dark
+                ? "#95de64"
+                : "#389e0d";
           return ` <span style="color:${color};margin-left:6px;">${sign}${pct.toFixed(3)}%</span>`;
         };
         let html = `<div style="font-weight:bold;margin-bottom:4px;">${p.name}年</div>`;
