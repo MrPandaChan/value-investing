@@ -121,26 +121,11 @@ const currentCaption = computed(() => {
 </script>
 
 <template>
-  <div class="tabs">
-    <button
-      :class="{ active: activeTab === 'industry' }"
-      @click="activeTab = 'industry'"
-    >
-      行业
-    </button>
-    <button
-      :class="{ active: activeTab === 'product' }"
-      @click="activeTab = 'product'"
-    >
-      产品
-    </button>
-    <button
-      :class="{ active: activeTab === 'region' }"
-      @click="activeTab = 'region'"
-    >
-      地区
-    </button>
-  </div>
+  <el-tabs v-model="activeTab" class="primary-business-tabs">
+    <el-tab-pane label="行业" name="industry" />
+    <el-tab-pane label="产品" name="product" />
+    <el-tab-pane label="地区" name="region" />
+  </el-tabs>
 
   <AppTable
     v-if="currentTableData.length"
@@ -154,24 +139,8 @@ const currentCaption = computed(() => {
 </template>
 
 <style scoped lang="scss">
-.tabs {
-  display: flex;
-  gap: 8px;
+.primary-business-tabs {
   margin-top: 16px;
   margin-bottom: 16px;
-}
-
-.tabs button {
-  padding: 8px 16px;
-  border: 1px solid #ddd;
-  background: white;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.tabs button.active {
-  background: #1890ff;
-  color: white;
-  border-color: #1890ff;
 }
 </style>

@@ -1,7 +1,7 @@
 <script lang="ts" setup>
 import { computed, onMounted, reactive, ref, watch } from "vue";
 import { ElMessage } from "element-plus";
-import { CaretTop, CaretBottom } from "@element-plus/icons-vue";
+import { CaretTop, CaretBottom, WarningFilled } from "@element-plus/icons-vue";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import {
   formatNum,
@@ -18,6 +18,7 @@ import {
   type StrikePriceInfo,
 } from "./use-stock-pool-data";
 import { buildExDisplay, type ExDisplayInfo } from "./use-dividend-status";
+import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
 import { stocks } from "../../my-data/stock-pool";
 import StockPoolPortfolio from "./portfolio.vue";
 
@@ -404,7 +405,7 @@ const mergedTableData = computed(() => {
       const decline =
         index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
       const annualDps = row.exList.reduce(
-        (pre: number, cur: { dps: number }) => pre + cur.dps,
+        (pre: number, cur: ExItem) => pre + getEffectiveEventDps(cur),
         0,
       );
       const adjustedAnnualDps =
@@ -837,6 +838,9 @@ const mergedTableData = computed(() => {
             :class="'dividend-status dividend-' + ex.status"
           >
             {{ getCurrencyPrefix(row.code) }}{{ Number(ex.dps.toFixed(4)) }}
+            <el-tooltip v-if="ex.planRaw" :content="ex.planRaw" placement="top">
+              <el-icon :size="12" class="bonus-icon"><WarningFilled /></el-icon>
+            </el-tooltip>
           </div>
         </td>
         <td
@@ -1361,5 +1365,12 @@ html.dark {
     max-height: 88vh;
     overflow: auto;
   }
+}
+
+.bonus-icon {
+  color: #e6a23c;
+  vertical-align: middle;
+  margin-left: 2px;
+  cursor: help;
 }
 </style>

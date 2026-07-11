@@ -8,6 +8,7 @@ import {
 } from "../../../fetch-data/helper";
 import { cash, stocks } from "../../my-data/stock-pool";
 import { useStockPoolData } from "./use-stock-pool-data";
+import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
 
 const { tableData, groupMetaMap, exchangeRate, refresh } = useStockPoolData();
 
@@ -44,7 +45,7 @@ function formatTax(tax: number): string {
 }
 
 /** 计算已分红的每股分红（派息日落在今年1月1日至今天的分红之和） */
-function getPaidDps(exList: { dps: number; payDate: string }[]): number {
+function getPaidDps(exList: ExItem[]): number {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   const yearStart = new Date(today.getFullYear(), 0, 1);
@@ -54,7 +55,7 @@ function getPaidDps(exList: { dps: number; payDate: string }[]): number {
       const payDate = new Date(ex.payDate.replace(/\//g, "-"));
       return payDate >= yearStart && payDate <= today;
     })
-    .reduce((sum, ex) => sum + ex.dps, 0);
+    .reduce((sum, ex) => sum + getEffectiveEventDps(ex), 0);
 }
 
 const portfolioData = computed<PortfolioRow[]>(() => {

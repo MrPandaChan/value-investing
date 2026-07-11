@@ -1086,7 +1086,7 @@ const stocks: StockItem[] = [
     industry: Industry.BEVERAGE,
     url: "value-investing/industry/茶饮/东鹏饮料",
     dividendPerYear: 2,
-    remark: "2025年年报是10转3派10",
+    remark: "2025年年报是10转3派2.5",
     plan: {
       type: PlanType.PE,
       maxPositionRatio: 0.05,
