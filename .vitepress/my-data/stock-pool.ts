@@ -192,6 +192,7 @@ const stocks: StockItem[] = [
     sharesHeld: 1800,
     remark: "7月9分红，减去0.19",
     url: "/value-investing/industry/传媒/分众传媒/",
+    remark: "2025年业绩去掉减值后为 50.75亿",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,

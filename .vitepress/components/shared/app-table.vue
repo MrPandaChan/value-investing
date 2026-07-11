@@ -67,7 +67,7 @@ const props = withDefaults(
   },
 );
 
-const reportPeriod = ref<ReportPeriod>("annual");
+const reportPeriod = ref<ReportPeriod>("latest");
 const isSingleQuarter = ref(false);
 const hasQuarterly = computed(() => !!props.quarterlyData?.length);
 
@@ -224,23 +224,22 @@ const currentData = computed(() => {
       // 最新 + 单季：全部季度数据拆分为单季
       result = toSingleQuarter(qt);
     } else {
-      // 最新 + 累计：年报数据 + 最新不完整年份的已有季报
-      const annualEntries = qt.filter((item) => !item.year.includes("Q"));
-      const allSorted = [...annualEntries].sort((a, b) =>
-        yearSortKey(a.year).localeCompare(yearSortKey(b.year)),
-      );
-      const maxAnnualYear = allSorted.length
-        ? getYearPrefix(allSorted[allSorted.length - 1].year)
-        : "";
-      if (maxAnnualYear) {
-        const nextYear = (parseInt(maxAnnualYear) + 1).toString();
-        const extra = qt.filter((item) => {
-          const y = getYearPrefix(item.year);
-          return y === nextYear && item.year.includes("Q");
-        });
-        result = [...annualEntries, ...extra];
-      } else {
-        result = annualEntries;
+      // 最新 + 累计：每年取最完整的数据
+      // 有年报的年份只留年报，无年报的年份保留已有季报
+      const yearMap = new Map<string, any[]>();
+      for (const item of qt) {
+        const y = getYearPrefix(item.year);
+        if (!yearMap.has(y)) yearMap.set(y, []);
+        yearMap.get(y)!.push(item);
+      }
+      result = [];
+      for (const [, items] of yearMap) {
+        const annual = items.find((item) => !item.year.includes("Q"));
+        if (annual) {
+          result.push(annual);
+        } else {
+          result.push(...items);
+        }
       }
     }
   } else if (reportPeriod.value === "annual") {
@@ -278,29 +277,14 @@ const currentData = computed(() => {
     return props.data;
   }
 
-  // 单季模式下（除"最新"外），剔除目标报告期不存在的年份
-  // 例：2026年只有一季报数据，选中「中报+单季」则不展示2026年
+  // 单季模式下（除"最新"外），保留所有有可用数据的年份
+  // 不完整年份有多少展示多少，toSingleQuarter 已正确计算
   if (isSingleQuarter.value && reportPeriod.value !== "latest") {
-    const requiredSuffix: string | null =
-      reportPeriod.value === "annual"
-        ? null
-        : reportPeriod.value === "q1"
-          ? "Q1"
-          : reportPeriod.value === "q2"
-            ? "Q2"
-            : "Q3";
-    const yearsWithTarget = new Set(
-      qt
-        .filter((item) =>
-          requiredSuffix === null
-            ? !item.year.includes("Q")
-            : item.year.includes(requiredSuffix),
-        )
-        .map((item) => getYearPrefix(item.year)),
-    );
+    // 收集原始 qt 中存在数据的年份（涵盖任何季度或年报）
+    const yearsWithData = new Set(qt.map((item) => getYearPrefix(item.year)));
     result = result.filter((item) => {
       const y = getYearPrefix(item.year);
-      return yearsWithTarget.has(y);
+      return yearsWithData.has(y);
     });
   }
 
@@ -554,9 +538,14 @@ function renderNestedQuarterChart(colKey: string, column: TableColumn) {
           if (cur == null || pre == null || pre === 0) return "";
           const pct = ((cur - pre) / Math.abs(pre)) * 100;
           const sign = pct > 0 ? "+" : "";
-          const color = pct > 0
-            ? (dark ? "#ff7875" : "#cf1322")
-            : (dark ? "#95de64" : "#389e0d");
+          const color =
+            pct > 0
+              ? dark
+                ? "#ff7875"
+                : "#cf1322"
+              : dark
+                ? "#95de64"
+                : "#389e0d";
           return ` <span style="color:${color};margin-left:6px;">${sign}${pct.toFixed(3)}%</span>`;
         };
         let html = `<div style="font-weight:bold;margin-bottom:4px;">${p.name}年</div>`;
