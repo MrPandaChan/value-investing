@@ -193,9 +193,9 @@ const stocks: StockItem[] = [
     remark: "7月9分红，减去0.19",
     url: "/value-investing/industry/传媒/分众传媒/",
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 4.34, quantity: 1000 }],
+      dividend: [{ value: 0.075, quantity: 1000 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
