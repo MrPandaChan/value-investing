@@ -1122,7 +1122,7 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(55000);
+export const cash = ref(58000);
 
 /**
  * TODO:
