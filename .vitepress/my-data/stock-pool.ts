@@ -191,7 +191,6 @@ const stocks: StockItem[] = [
     code: "002027",
     industry: Industry.MEDIA,
     sharesHeld: 1800,
-    remark: "7月9分红，减去0.19",
     url: "/value-investing/industry/传媒/分众传媒/",
     remark: "2025年业绩去掉减值后为 50.75亿",
     plan: {
@@ -539,6 +538,7 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
       price: [
+        { value: 27.2, quantity: 200 },
         { value: 26, quantity: 200 },
         { value: 25, quantity: 300 },
       ],
@@ -552,14 +552,17 @@ const stocks: StockItem[] = [
     // 国投电力
     code: "600886",
     industry: Industry.ELECTRIC_POWER,
-    sharesHeld: 900,
+    sharesHeld: 700,
     url: "/value-investing/industry/电力/国投电力/",
     dividendPerYear: 1,
     remark: "预估8月分红",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.04, quantity: 200 }],
+      dividend: [
+        { value: 13.5, quantity: 200 },
+        { value: 12.75, quantity: 200 },
+      ],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -1103,7 +1106,7 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(22000);
+export const cash = ref(25000);
 
 /**
  * TODO:
