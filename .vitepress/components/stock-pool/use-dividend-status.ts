@@ -16,6 +16,7 @@ export interface ExDisplayInfo {
   exDate: string;
   payDate: string;
   planRaw?: string; // 原始分红方案文本，如 "10转3派25元(实施方案)"
+  bonusRatio?: number; // 转送股比例，有值才显示感叹号
   status: DividendStatus;
   daysUntilEx: number | null;
   isPredicted: boolean;
@@ -104,6 +105,7 @@ export function buildExDisplay(exList: RowData["exList"]): ExDisplayInfo[] {
         exDate: ex.exDate,
         payDate: ex.payDate,
         planRaw: ex.planRaw,
+        bonusRatio: ex.bonusRatio,
         ...statusInfo,
       };
     })

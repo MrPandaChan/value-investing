@@ -838,7 +838,7 @@ const mergedTableData = computed(() => {
             :class="'dividend-status dividend-' + ex.status"
           >
             {{ getCurrencyPrefix(row.code) }}{{ Number(ex.dps.toFixed(4)) }}
-            <el-tooltip v-if="ex.planRaw" :content="ex.planRaw" placement="top">
+            <el-tooltip v-if="ex.bonusRatio" :content="ex.planRaw || ''" placement="top">
               <el-icon :size="12" class="bonus-icon"><WarningFilled /></el-icon>
             </el-tooltip>
           </div>
