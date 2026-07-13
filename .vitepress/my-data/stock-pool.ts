@@ -614,7 +614,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 23.5, quantity: 100 }],
+      price: [{ value: 25, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PRICE,
