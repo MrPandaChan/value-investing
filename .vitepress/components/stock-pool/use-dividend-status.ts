@@ -1,4 +1,5 @@
 import type { RowData } from "./use-stock-pool-data";
+import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
 
 // ========== 分红状态判断 ==========
 export type DividendStatus =
@@ -14,6 +15,8 @@ export interface ExDisplayInfo {
   dps: number;
   exDate: string;
   payDate: string;
+  planRaw?: string; // 原始分红方案文本，如 "10转3派25元(实施方案)"
+  bonusRatio?: number; // 转送股比例，有值才显示感叹号
   status: DividendStatus;
   daysUntilEx: number | null;
   isPredicted: boolean;
@@ -98,9 +101,11 @@ export function buildExDisplay(exList: RowData["exList"]): ExDisplayInfo[] {
     .map((ex) => {
       const statusInfo = getDividendStatus(ex.exDate, ex.payDate);
       return {
-        dps: ex.dps,
+        dps: getEffectiveEventDps(ex),
         exDate: ex.exDate,
         payDate: ex.payDate,
+        planRaw: ex.planRaw,
+        bonusRatio: ex.bonusRatio,
         ...statusInfo,
       };
     })

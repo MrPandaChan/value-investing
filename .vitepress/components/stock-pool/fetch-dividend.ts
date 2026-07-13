@@ -18,18 +18,33 @@ export interface ExItem {
   dps: number;
   exDate: string;
   payDate: string; // 派息日
+  bonusRatio?: number; // 转送股比例，如 3 表示 10转3，已除权后每股分红需除以 (1+bonusRatio/10)
+  planRaw?: string; // 原始分红方案文本，如 "10转3派25元(实施方案)"
   isRmb?: boolean; // 港股人民币分红：dps 为人民币数值，需用汇率转为港币
 }
 
 /**
- * 解析A股分红方案的每股分红
- * e.g., '10派2.031195元(实施方案)' -> 0.2031195
+ * 解析A股分红方案的每股分红及转股比例
+ * e.g., '10派2.031195元(实施方案)' -> { dps: 0.2031195 }
+ * e.g., '10转3股派25元(实施方案)' -> { dps: 2.5, bonusRatio: 3 }
  */
-function getADps(str: string): number {
-  const match = str.match(/派.*?(\d+\.?\d*)\s*元/);
-  if (!match) return 0;
-  const result = parseFloat(match[1]);
-  return isNaN(result) ? 0 : result / 10;
+function getADps(str: string): { dps: number; bonusRatio?: number } {
+  let bonusRatio: number | undefined
+
+  // 提取转/送股比例，如 "10转3股"、"10送2股"、"10转3"（不带股字）
+  const bonusMatch = str.match(/(?:转|送)(\d+\.?\d*)\s*股?/)
+  if (bonusMatch) {
+    const r = parseFloat(bonusMatch[1])
+    if (!isNaN(r) && r > 0) bonusRatio = r
+  }
+
+  // 提取派现金额
+  const match = str.match(/派.*?(\d+\.?\d*)\s*元/)
+  if (!match) return { dps: 0 }
+  const result = parseFloat(match[1])
+  const dps = isNaN(result) ? 0 : result / 10
+
+  return { dps, bonusRatio }
 }
 
 /**
@@ -59,6 +74,28 @@ function getHKDps(str: string): { dps: number; isRmb: boolean } {
 function formatExDate(dateStr: string): string {
   if (!dateStr) return "-";
   return dateStr.replace(/\//g, "-").split(" ")[0];
+}
+
+/**
+ * 计算每股分红的有效值，对有转送股的已除权事件做稀释调整
+ * - 已除权（exDate 已过）：股价已反映稀释，dps 需除以 (1 + bonusRatio/10)
+ * - 未除权（exDate 未到）：事件未发生，dps 维持原值
+ */
+export function getEffectiveEventDps(ex: ExItem): number {
+  if (!ex.bonusRatio) return ex.dps
+  // 解析除权日期，判断是否已除权
+  const exDate = _parseDateSafe(ex.exDate)
+  if (!exDate || exDate > new Date()) return ex.dps
+  // 已除权，每股分红需稀释：持有股数变多，每股实际分到的现金变少
+  return ex.dps / (1 + ex.bonusRatio / 10)
+}
+
+/** 安全解析日期字符串，失败返回 null */
+function _parseDateSafe(s: string): Date | null {
+  if (!s || s === "-") return null
+  const normalized = s.replace(/\//g, "-")
+  const d = new Date(normalized)
+  return isNaN(d.getTime()) ? null : d
 }
 
 /**
@@ -111,12 +148,14 @@ async function fetchADividend(
     })
     .map((item: DividendMainResponse) => {
       const str = item.IMPL_PLAN_NEWPROFILE || "";
-      const dps = getADps(str);
+      const { dps, bonusRatio } = getADps(str);
       if (dps === 0 && str) {
         console.warn(`[A股分红解析为0] ${code}: ${str}`);
       }
       return {
         dps,
+        bonusRatio: bonusRatio ?? undefined,
+        planRaw: str || undefined,
         exDate: formatExDate(item.EX_DIVIDEND_DATE),
         payDate: formatExDate(item.PAY_CASH_DATE),
       };
@@ -216,14 +255,17 @@ function getCodesKey(codes: string[]): string {
 
 export async function fetchAllDividendData(
   codes: string[],
+  forceRefresh = false,
 ): Promise<Record<string, ExItem[]>> {
   const today = getTodayStr();
   const codesKey = getCodesKey(codes);
 
-  // 从 localStorage 读取缓存，codes 没变且同一天则直接返回
-  const cached = readCache();
-  if (cached && cached.codesKey === codesKey && cached.date === today) {
-    return cached.data;
+  // 从 localStorage 读取缓存，codes 没变且同一天则直接返回（除非强制刷新）
+  if (!forceRefresh) {
+    const cached = readCache();
+    if (cached && cached.codesKey === codesKey && cached.date === today) {
+      return cached.data;
+    }
   }
 
   const results = await Promise.all(

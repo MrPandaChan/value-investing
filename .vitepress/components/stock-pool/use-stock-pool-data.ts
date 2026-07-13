@@ -1,7 +1,7 @@
 import { computed, reactive, ref, watch } from "vue";
 import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import { isHKCode, isBCode, isETFCode } from "../../../fetch-data/helper";
-import { fetchAllDividendData, type ExItem } from "./fetch-dividend";
+import { fetchAllDividendData, getEffectiveEventDps, type ExItem } from "./fetch-dividend";
 import {
   PlanType,
   stocks,
@@ -306,8 +306,8 @@ async function buildTableData(
   const stockCodes = stocks.map((v) => v.code);
 
   if (!useCachedDividend) {
-    // 重新获取分红数据
-    const exListMapResult = await fetchAllDividendData(stockCodes);
+    // 重新获取分红数据（强制刷新，绕过 fetchAllDividendData 的当日缓存）
+    const exListMapResult = await fetchAllDividendData(stockCodes, true);
     exListMap.value = exListMapResult;
     dividendUpdateTime.value = new Date().toLocaleString();
     saveDividendToStorage();
@@ -384,7 +384,7 @@ async function buildTableData(
       const dps =
         Math.round(
           exList.reduce(
-            (pre: number, cur: { dps: number }) => pre + cur.dps,
+            (pre: number, cur: ExItem) => pre + getEffectiveEventDps(cur),
             0,
           ) * 100,
         ) / 100;

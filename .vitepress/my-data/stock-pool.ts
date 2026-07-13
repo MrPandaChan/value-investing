@@ -24,6 +24,7 @@ export enum Industry {
   SHIPPING = "航运",
   MACHINERY = "机械",
   FINANCIAL = "金融",
+  BEVERAGE = "茶饮",
   ETF = "ETF",
 }
 
@@ -1026,6 +1027,58 @@ const stocks: StockItem[] = [
     },
   },
   {
+    // 宁德时代
+    code: "300750",
+    industry: Industry.AUTOMOTIVE_AND_PARTS,
+    url: "value-investing/industry/汽车/宁德时代",
+    dividendPerYear: 2,
+    remark: "历史最底部14PE~15PE",
+    plan: {
+      type: PlanType.PE,
+      maxPositionRatio: 0.1,
+      pe: [{ value: 15, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 15,
+    },
+  },
+  {
+    // 农夫山泉
+    code: "09633",
+    industry: Industry.BEVERAGE,
+    url: "value-investing/industry/茶饮/农夫山泉",
+    dividendPerYear: 1,
+    dividendAdjust: 0.8,
+    remark: "历史底部大概20PE",
+    plan: {
+      type: PlanType.PE,
+      maxPositionRatio: 0.05,
+      pe: [{ value: 20, quantity: 400 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 20,
+    },
+  },
+  {
+    // 东鹏饮料
+    code: "605499",
+    industry: Industry.BEVERAGE,
+    url: "value-investing/industry/茶饮/东鹏饮料",
+    dividendPerYear: 2,
+    remark: "2025年年报是10转3派2.5",
+    plan: {
+      type: PlanType.PE,
+      maxPositionRatio: 0.05,
+      pe: [{ value: 16, quantity: 100 }],
+    },
+    strikePrice: {
+      type: PlanType.PE,
+      value: 16,
+    },
+  },
+  {
     // 恒生科技ETF
     code: "513180",
     industry: Industry.ETF,
@@ -1043,7 +1096,6 @@ const stocks: StockItem[] = [
   /**
    * TODO:
    * 古茗
-   * 东鹏特饮
    * 新奥能源
    * 中国财险
    * 卫龙美味
