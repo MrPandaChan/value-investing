@@ -73,6 +73,8 @@ export interface StockItem {
   url?: string;
   industry: Industry;
   remark?: string;
+  /** 护城河评分 0-5 */
+  moatScore: number;
   /**
    * 年分红调整系数，与年分红相乘得到调整后年分红，
    * 调整后年分红用于股息率反推股价
@@ -97,6 +99,7 @@ const stocks: StockItem[] = [
      */
     code: "00700",
     industry: Industry.INTERNET,
+    moatScore: 4.5,
     sharesHeld: 400,
     dividendAdjust: 0.8,
     url: "/value-investing/industry/互联网/腾讯控股/",
@@ -123,6 +126,7 @@ const stocks: StockItem[] = [
     // 福耀玻璃
     code: "600660",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
+    moatScore: 4,
     sharesHeld: 1200,
     url: "/value-investing/industry/汽车/福耀玻璃/",
     plan: {
@@ -142,6 +146,7 @@ const stocks: StockItem[] = [
     // 云南白药
     code: "000538",
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
+    moatScore: 4,
     sharesHeld: 1000,
     url: "/value-investing/industry/中药/云南白药/",
     remark: "目前仓位已打满，给个特别低价然后装死",
@@ -160,6 +165,7 @@ const stocks: StockItem[] = [
     // 东阿阿胶
     code: "000423",
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
+    moatScore: 3.5,
     sharesHeld: 900,
     dividendPerYear: 2,
     remark:
@@ -183,6 +189,7 @@ const stocks: StockItem[] = [
     // 羚锐制药
     code: "600285",
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
+    moatScore: 3,
     sharesHeld: 900,
     dividendPerYear: 1,
     remark: "预估6月中分红",
@@ -201,6 +208,7 @@ const stocks: StockItem[] = [
     // 分众传媒
     code: "002027",
     industry: Industry.MEDIA,
+    moatScore: 3.5,
     sharesHeld: 4000,
     url: "/value-investing/industry/传媒/分众传媒/",
     remark: "2025年业绩去掉减值后为 50.75亿",
@@ -221,6 +229,7 @@ const stocks: StockItem[] = [
     // 青岛港H
     code: "06198",
     industry: Industry.SEAPORTS_AND_SERVICES,
+    moatScore: 3,
     sharesHeld: 1000,
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
@@ -239,6 +248,7 @@ const stocks: StockItem[] = [
     // 青岛港A
     code: "601298",
     industry: Industry.SEAPORTS_AND_SERVICES,
+    moatScore: 3,
     sharesHeld: 4000,
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
@@ -262,6 +272,7 @@ const stocks: StockItem[] = [
     // 永新股份
     code: "002014",
     industry: Industry.PAPER_AND_PACKAGING,
+    moatScore: 3,
     sharesHeld: 1000,
     url: "/value-investing/industry/塑料包装/永新股份/",
     remark:
@@ -284,6 +295,7 @@ const stocks: StockItem[] = [
     // 招商银行
     code: "600036",
     industry: Industry.BANKING,
+    moatScore: 4,
     sharesHeld: 1600,
     dividendPerYear: 2,
     remark: "预估07-15左右分红，分完后计划减1块",
@@ -305,6 +317,7 @@ const stocks: StockItem[] = [
     // 工商银行
     code: "601398",
     industry: Industry.BANKING,
+    moatScore: 3.5,
     dividendPerYear: 2,
     url: "",
     remark: "",
@@ -322,6 +335,7 @@ const stocks: StockItem[] = [
     // 中国银行
     code: "601988",
     industry: Industry.BANKING,
+    moatScore: 3.5,
     dividendPerYear: 2,
     url: "",
     remark: "",
@@ -339,6 +353,7 @@ const stocks: StockItem[] = [
     // 农业银行
     code: "601288",
     industry: Industry.BANKING,
+    moatScore: 3.5,
     dividendPerYear: 2,
     url: "",
     remark: "",
@@ -356,6 +371,7 @@ const stocks: StockItem[] = [
     // 建设银行
     code: "601939",
     industry: Industry.BANKING,
+    moatScore: 3.5,
     dividendPerYear: 2,
     url: "",
     remark: "",
@@ -373,6 +389,7 @@ const stocks: StockItem[] = [
     // 兴业银行
     code: "601166",
     industry: Industry.BANKING,
+    moatScore: 3,
     dividendPerYear: 2,
     url: "",
     remark: "",
@@ -390,6 +407,7 @@ const stocks: StockItem[] = [
     // 中创智领A
     code: "601717",
     industry: Industry.MACHINERY,
+    moatScore: 2.5,
     url: "/value-investing/industry/机械/中创智领/",
     dividendPerYear: 1,
     remark: "",
@@ -407,6 +425,7 @@ const stocks: StockItem[] = [
     // 中创智领H
     code: "00564",
     industry: Industry.MACHINERY,
+    moatScore: 2.5,
     url: "/value-investing/industry/机械/中创智领/",
     dividendPerYear: 1,
     remark: "",
@@ -425,6 +444,7 @@ const stocks: StockItem[] = [
     // 美的集团
     code: "000333",
     industry: Industry.HOME_APPLIANCES,
+    moatScore: 4,
     sharesHeld: 100,
     url: "/value-investing/industry/家电/美的/",
     dividendPerYear: 2,
@@ -446,6 +466,7 @@ const stocks: StockItem[] = [
     // 海尔智家
     code: "600690",
     industry: Industry.HOME_APPLIANCES,
+    moatScore: 3.5,
     sharesHeld: 3600,
     url: "/value-investing/industry/家电/海尔/",
     dividendPerYear: 2,
@@ -464,6 +485,7 @@ const stocks: StockItem[] = [
     // 格力电器
     code: "000651",
     industry: Industry.HOME_APPLIANCES,
+    moatScore: 3,
     sharesHeld: 1200,
     url: "/value-investing/industry/家电/格力/",
     dividendPerYear: 2,
@@ -482,6 +504,7 @@ const stocks: StockItem[] = [
     // 中国移动
     code: "600941",
     industry: Industry.TELECOMMUNICATION_SERVICES,
+    moatScore: 4,
     sharesHeld: 700,
     url: "/value-investing/industry/电信服务/中国移动/",
     dividendPerYear: 2,
@@ -502,6 +525,7 @@ const stocks: StockItem[] = [
     // 中国电信
     code: "601728",
     industry: Industry.TELECOMMUNICATION_SERVICES,
+    moatScore: 3.5,
     url: "/value-investing/industry/电信服务/中国电信/",
     dividendPerYear: 2,
     remark: "类债属性，几乎不增长，不宜买多，预计9月底分红",
@@ -519,6 +543,7 @@ const stocks: StockItem[] = [
     // 中国电信H
     code: "00728",
     industry: Industry.TELECOMMUNICATION_SERVICES,
+    moatScore: 3.5,
     sharesHeld: 2000,
     url: "/value-investing/industry/电信服务/中国电信/",
     dividendPerYear: 2,
@@ -538,6 +563,7 @@ const stocks: StockItem[] = [
     // 中国铁塔
     code: "00788",
     industry: Industry.TELECOMMUNICATION_SERVICES,
+    moatScore: 3,
     sharesHeld: 2500,
     url: "/value-investing/industry/电信服务/中国铁塔/",
     dividendPerYear: 2,
@@ -558,6 +584,7 @@ const stocks: StockItem[] = [
     // 长江电力
     code: "600900",
     industry: Industry.ELECTRIC_POWER,
+    moatScore: 4.5,
     sharesHeld: 1200,
     url: "/value-investing/industry/电力/长江电力/",
     dividendPerYear: 2,
@@ -576,6 +603,7 @@ const stocks: StockItem[] = [
     // 国投电力
     code: "600886",
     industry: Industry.ELECTRIC_POWER,
+    moatScore: 3,
     sharesHeld: 1200,
     url: "/value-investing/industry/电力/国投电力/",
     dividendPerYear: 1,
@@ -594,6 +622,7 @@ const stocks: StockItem[] = [
     // 中国海油A
     code: "600938",
     industry: Industry.PETROLEUM_AND_PETROCHEMICALS,
+    moatScore: 4.5,
     url: "/value-investing/industry/石油石化/中国海油/",
     dividendPerYear: 2,
     remark: "预估7月中分红",
@@ -611,6 +640,7 @@ const stocks: StockItem[] = [
     // 中国海洋石油H
     code: "00883",
     industry: Industry.PETROLEUM_AND_PETROCHEMICALS,
+    moatScore: 4.5,
     url: "/value-investing/industry/石油石化/中国海油/",
     dividendPerYear: 2,
     dividendAdjust: 0.72,
@@ -628,6 +658,7 @@ const stocks: StockItem[] = [
     // 紫金矿业
     code: "601899",
     industry: Industry.NON_FERROUS_METALS,
+    moatScore: 4,
     sharesHeld: 500,
     url: "/value-investing/industry/有色金属/紫金矿业/",
     dividendPerYear: 2,
@@ -645,6 +676,7 @@ const stocks: StockItem[] = [
     // 保利物业
     code: "06049",
     industry: Industry.PROPERTY_MANAGEMENT,
+    moatScore: 3,
     sharesHeld: 600,
     url: "/value-investing/industry/物业/保利物业/",
     dividendAdjust: 0.8,
@@ -663,6 +695,7 @@ const stocks: StockItem[] = [
     // 赛轮轮胎
     code: "601058",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
+    moatScore: 3.5,
     sharesHeld: 1200,
     url: "/value-investing/industry/汽车/赛轮轮胎/",
     dividendPerYear: 2,
@@ -684,6 +717,7 @@ const stocks: StockItem[] = [
     // 申洲国际
     code: "02313",
     industry: Industry.TEXTILES_AND_APPAREL,
+    moatScore: 3.5,
     sharesHeld: 300,
     url: "/value-investing/industry/纺织服装/申洲国际/",
     dividendPerYear: 2,
@@ -707,6 +741,7 @@ const stocks: StockItem[] = [
     // 泡泡玛特
     code: "09992",
     industry: Industry.POP_TOYS,
+    moatScore: 3,
     url: "/value-investing/industry/潮玩/泡泡玛特/",
     dividendPerYear: 1,
     dividendAdjust: 0.8,
@@ -724,6 +759,7 @@ const stocks: StockItem[] = [
     // 贵州茅台
     code: "600519",
     industry: Industry.BAIJIU,
+    moatScore: 5,
     url: "/value-investing/industry/白酒/贵州茅台/",
     dividendPerYear: 2,
     remark: "预估6月下旬分红",
@@ -741,6 +777,7 @@ const stocks: StockItem[] = [
     // 泸州老窖
     code: "000568",
     industry: Industry.BAIJIU,
+    moatScore: 3.5,
     url: "/value-investing/industry/白酒/泸州老窖/",
     dividendPerYear: 2,
     remark: "预估8月分红",
@@ -758,6 +795,7 @@ const stocks: StockItem[] = [
     // 山西汾酒
     code: "600809",
     industry: Industry.BAIJIU,
+    moatScore: 3.5,
     url: "/value-investing/industry/白酒/山西汾酒/",
     dividendPerYear: 1,
     plan: {
@@ -774,6 +812,7 @@ const stocks: StockItem[] = [
     // 古井贡B
     code: "200596",
     industry: Industry.BAIJIU,
+    moatScore: 3.5,
     sharesHeld: 1000,
     url: "/value-investing/industry/白酒/古井贡/",
     dividendPerYear: 2,
@@ -792,6 +831,7 @@ const stocks: StockItem[] = [
     // 宇通客车
     code: "600066",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
+    moatScore: 3,
     sharesHeld: 400,
     url: "/value-investing/industry/汽车/宇通客车/",
     dividendPerYear: 2,
@@ -810,6 +850,7 @@ const stocks: StockItem[] = [
     // 伊利股份
     code: "600887",
     industry: Industry.DAIRY_PRODUCTS,
+    moatScore: 3.5,
     sharesHeld: 200,
     url: "/value-investing/industry/乳制品/伊利股份/",
     dividendPerYear: 2,
@@ -831,6 +872,7 @@ const stocks: StockItem[] = [
     // 中国神华A
     code: "601088",
     industry: Industry.COAL,
+    moatScore: 4,
     url: "/value-investing/industry/煤炭/中国神华/",
     dividendPerYear: 2,
     remark: "预估7月上旬分红",
@@ -848,6 +890,7 @@ const stocks: StockItem[] = [
     // 中国神华H
     code: "01088",
     industry: Industry.COAL,
+    moatScore: 4,
     url: "/value-investing/industry/煤炭/中国神华/",
     dividendPerYear: 2,
     dividendAdjust: 0.72,
@@ -868,6 +911,7 @@ const stocks: StockItem[] = [
     // 陕西煤业
     code: "601225",
     industry: Industry.COAL,
+    moatScore: 3,
     url: "/value-investing/industry/煤炭/陕西煤业/",
     dividendPerYear: 2,
     plan: {
@@ -887,6 +931,7 @@ const stocks: StockItem[] = [
     // 中国平安
     code: "601318",
     industry: Industry.INSURANCE,
+    moatScore: 3.5,
     sharesHeld: 600,
     url: "/value-investing/industry/保险/中国平安/",
     dividendPerYear: 2,
@@ -904,6 +949,7 @@ const stocks: StockItem[] = [
     // 安踏体育
     code: "02020",
     industry: Industry.TEXTILES_AND_APPAREL,
+    moatScore: 4,
     sharesHeld: 200,
     url: "/value-investing/industry/纺织服装/安踏体育/",
     dividendAdjust: 0.8,
@@ -925,6 +971,7 @@ const stocks: StockItem[] = [
     // 小商品城
     code: "600415",
     industry: Industry.ENTERPRISE_SERVICES,
+    moatScore: 3,
     sharesHeld: 2300,
     url: "/value-investing/industry/企业服务/小商品城/",
     dividendPerYear: 1,
@@ -946,6 +993,7 @@ const stocks: StockItem[] = [
     // 中国通信服务
     code: "00552",
     industry: Industry.TELECOMMUNICATION_SERVICES,
+    moatScore: 3,
     url: "/value-investing/industry/电信服务/中国通信服务/",
     dividendAdjust: 0.8,
     dividendPerYear: 1,
@@ -963,6 +1011,7 @@ const stocks: StockItem[] = [
     // 中远海控A
     code: "601919",
     industry: Industry.SHIPPING,
+    moatScore: 2,
     sharesHeld: 200,
     url: "/value-investing/industry/航运/中远海控/",
     dividendPerYear: 2,
@@ -980,6 +1029,7 @@ const stocks: StockItem[] = [
     // 中远海控H
     code: "01919",
     industry: Industry.SHIPPING,
+    moatScore: 2,
     sharesHeld: 1000,
     url: "/value-investing/industry/航运/中远海控/",
     dividendAdjust: 0.8,
@@ -998,6 +1048,7 @@ const stocks: StockItem[] = [
     // 比亚迪
     code: "002594",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
+    moatScore: 3.5,
     sharesHeld: 100,
     url: "/value-investing/industry/汽车/比亚迪/",
     dividendPerYear: 1,
@@ -1015,6 +1066,7 @@ const stocks: StockItem[] = [
     // 香港交易所
     code: "00388",
     industry: Industry.FINANCIAL,
+    moatScore: 4.5,
     url: "value-investing/industry/金融/港交所",
     dividendPerYear: 1,
     remark: "周期成长股，周期底部击球",
@@ -1032,6 +1084,7 @@ const stocks: StockItem[] = [
     // 国电南瑞
     code: "600406",
     industry: Industry.ELECTRIC_POWER,
+    moatScore: 4.5,
     url: "value-investing/industry/电力/国电南瑞",
     dividendPerYear: 2,
     remark: "历史最底部差不多16~18PE",
@@ -1049,6 +1102,7 @@ const stocks: StockItem[] = [
     // 宁德时代
     code: "300750",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
+    moatScore: 4,
     url: "value-investing/industry/汽车/宁德时代",
     dividendPerYear: 2,
     remark: "历史最底部14PE~15PE",
@@ -1066,6 +1120,7 @@ const stocks: StockItem[] = [
     // 农夫山泉
     code: "09633",
     industry: Industry.BEVERAGE,
+    moatScore: 4.5,
     url: "value-investing/industry/茶饮/农夫山泉",
     dividendPerYear: 1,
     dividendAdjust: 0.8,
@@ -1084,6 +1139,7 @@ const stocks: StockItem[] = [
     // 东鹏饮料
     code: "605499",
     industry: Industry.BEVERAGE,
+    moatScore: 3.5,
     url: "value-investing/industry/茶饮/东鹏饮料",
     dividendPerYear: 2,
     remark: "2025年年报是10转3派2.5",
@@ -1101,6 +1157,7 @@ const stocks: StockItem[] = [
     // 云天化
     code: "600096",
     industry: Industry.BEVERAGE,
+    moatScore: 2.5,
     url: "value-investing/industry/化肥/云天化",
     dividendPerYear: 2,
     plan: {
@@ -1117,6 +1174,7 @@ const stocks: StockItem[] = [
     // 恒生科技ETF
     code: "513180",
     industry: Industry.ETF,
+    moatScore: 2.5,
     sharesHeld: 5000,
     plan: {
       type: PlanType.PRICE,

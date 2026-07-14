@@ -34,6 +34,7 @@ interface PortfolioRow {
   holdingNetProfit: number; // 持有净利润（人民币）
   retainedNetProfit: number; // 公司留存部分（人民币）
   peTtm: number;
+  moatScore: number; // 护城河评分 0-5
   rowspan: number;
 }
 
@@ -90,6 +91,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
         holdingNetProfit: 0,
         retainedNetProfit: 0,
         peTtm: 0,
+        moatScore: 0,
         rowspan: 1,
       });
     }
@@ -105,6 +107,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     const name = isHKCode(s.code) ? `${rawName}H` : rawName;
     const sharesHeld = s.sharesHeld!;
     const price = meta.realPrice;
+    const moatScore = s.moatScore;
 
     // 持有金额（转为人民币）
     const rawHoldingValue = sharesHeld * price;
@@ -164,6 +167,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       holdingNetProfit,
       retainedNetProfit,
       peTtm: meta.pricePE,
+      moatScore,
       industry: s.industry,
     };
   });
@@ -226,11 +230,26 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       holdingNetProfit: 0,
       retainedNetProfit: 0,
       peTtm: 0,
+      moatScore: 0,
       rowspan: 1,
     });
   }
 
   return result;
+});
+
+/** 加权综合护城河得分（不含现金，按持股比例归一化加权） */
+const compositeMoatScore = computed(() => {
+  const rows = portfolioData.value.filter((r) => r.code !== "__cash__");
+  if (!rows.length) return 0;
+  const totalRatio = rows.reduce((sum, r) => sum + r.shareholdingRatio, 0);
+  if (totalRatio === 0) return 0;
+  return (
+    rows.reduce(
+      (sum, r) => sum + (r.shareholdingRatio / totalRatio) * r.moatScore,
+      0,
+    ) || 0
+  );
 });
 
 const totals = computed(() => {
@@ -308,6 +327,7 @@ onMounted(() => {
           <th>扣税后股息</th>
           <th class="holding-net-profit">持有净利润</th>
           <th class="retained">留存部分</th>
+          <th class="bold">护城河</th>
         </tr>
       </thead>
       <tbody>
@@ -340,6 +360,15 @@ onMounted(() => {
           </td>
           <td class="retained">
             {{ formatNum(item.retainedNetProfit, 2).toFixed(2) }}
+          </td>
+          <td>
+            <el-rate
+              v-if="item.code !== '__cash__'"
+              :model-value="item.moatScore"
+              disabled
+              class="moat-rate"
+            />
+            <span v-else>-</span>
           </td>
         </tr>
         <!-- 合计行 -->
@@ -377,6 +406,9 @@ onMounted(() => {
           <td class="bold retained">
             {{ formatNum(totals.sumRetainedNetProfit, 2).toFixed(2) }}
           </td>
+          <td class="bold">
+            {{ compositeMoatScore.toFixed(2) }}
+          </td>
         </tr>
         <!-- 比率行 -->
         <tr class="bold-tr">
@@ -403,6 +435,7 @@ onMounted(() => {
           <td class="retained">
             {{ formatPercent(totals.sumRetainedNetProfitRate * 100) }}
           </td>
+          <td></td>
         </tr>
         <!-- 标签行 -->
         <tr class="bold-tr">
@@ -423,6 +456,7 @@ onMounted(() => {
           <td class="sum-dividend-rate">组合股息率</td>
           <td class="sum-holding-net-profit-margin">总收益率</td>
           <td class="retained">公司留存率</td>
+          <td class="bold">组合护城河</td>
         </tr>
       </tbody>
     </table>
@@ -443,6 +477,12 @@ onMounted(() => {
           <tr>
             <td>PE_TTM</td>
             <td>{{ (1 / totals.perspectiveSurplusRate).toFixed(2) }}</td>
+          </tr>
+          <tr>
+            <td>组合护城河得分</td>
+            <td class="bold">
+              {{ compositeMoatScore.toFixed(2) }}
+            </td>
           </tr>
         </tbody>
       </table>
@@ -582,6 +622,13 @@ html.dark .portfolio-container {
 
   .cash-switch {
     margin-left: 16px;
+  }
+
+  .moat-rate {
+    --el-rate-fill-color: #f7ba2a;
+    --el-rate-icon-size: 10px;
+    --el-rate-icon-margin: 0px;
+    justify-content: center;
   }
 }
 </style>

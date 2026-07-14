@@ -2,7 +2,6 @@
 import { computed, onMounted, reactive, ref, watch } from "vue";
 import { ElMessage } from "element-plus";
 import { CaretTop, CaretBottom, WarningFilled } from "@element-plus/icons-vue";
-import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
 import {
   formatNum,
   formatPercent,
@@ -24,6 +23,13 @@ import StockPoolPortfolio from "./portfolio.vue";
 
 // ========== 分红状态判断（已拆分至 use-dividend-status.ts） ==========
 
+// 指数代码列表（提前定义，因为 useStockPoolData 需要在一次请求中合并获取）
+const INDEX_CODE_LIST = [
+  "1.000985", "1.000001", "0.399001", "100.HSI", "124.HSTECH",
+  "1.000922", "0.399006", "1.000688", "0.399371", "0.399370",
+  "1.000016", "0.399850", "1.000300", "1.000905", "1.000852", "2.932000",
+];
+
 const {
   tableData,
   groupMetaMap,
@@ -31,13 +37,14 @@ const {
   customDividend,
   customPE,
   exchangeRate,
+  indexDataMap,
   isLoading,
   dividendUpdateTime,
   dynamicUpdateTime,
   init: initShared,
   refresh: refreshShared,
   loadFromStorage,
-} = useStockPoolData();
+} = useStockPoolData(INDEX_CODE_LIST);
 
 const portfolioDialogVisible = ref(false);
 
@@ -89,6 +96,15 @@ const industryMap = computed(() => {
   return map;
 });
 
+// code → moatScore 映射表
+const moatScoreMap = computed(() => {
+  const map: Record<string, number> = {};
+  for (const s of stocks) {
+    map[s.code] = s.moatScore;
+  }
+  return map;
+});
+
 // 行业选项（去重排序）
 const industryOptions = computed(() => {
   const industries = new Set(stocks.map((s) => s.industry).filter(Boolean));
@@ -126,14 +142,26 @@ const INDEX_CODES_GROUP2: { code: string; label: string }[] = [
   { code: "2.932000", label: "中证2000" },
 ];
 
-// 合并数组：供 fetchIndices 统一获取数据
+// 合并数组：供视图展示
 const INDEX_CODES: { code: string; label: string }[] = [
   ...INDEX_CODES_GROUP1,
   ...INDEX_CODES_GROUP2,
 ];
-const indexList = ref<IndexData[]>([]);
 
-// 从 indexList 中按组拆分，用 label 匹配（因 fetchIndices 按 INDEX_CODES 顺序填充）
+// 基于 composable 中一次请求获取的 indexDataMap 构建展示数据
+const indexList = computed<IndexData[]>(() =>
+  INDEX_CODES.map((item) => {
+    const d = indexDataMap.value[item.code];
+    return {
+      code: item.code,
+      label: item.label,
+      price: d ? d.price : 0,
+      change: d ? d.change : 0,
+    };
+  }),
+);
+
+// 按组拆分
 const group1Labels = new Set(INDEX_CODES_GROUP1.map((v) => v.label));
 const group2Labels = new Set(INDEX_CODES_GROUP2.map((v) => v.label));
 const indexListGroup1 = computed(() =>
@@ -142,26 +170,6 @@ const indexListGroup1 = computed(() =>
 const indexListGroup2 = computed(() =>
   indexList.value.filter((v: IndexData) => group2Labels.has(v.label)),
 );
-
-async function fetchIndices() {
-  try {
-    const indexCodeList = INDEX_CODES.map((v) => v.code);
-    const dynamicDataList = await getDynamicData(indexCodeList);
-    indexList.value = INDEX_CODES.map((item) => {
-      // API 返回的 f12 是点后面的部分，如 "100.HSI" → "HSI"、"1.00001" → "00001"
-      const shortCode = item.code.split(".").pop()!;
-      const d = dynamicDataList.find((v) => v.code === shortCode);
-      return {
-        code: item.code,
-        label: item.label,
-        price: d ? d.price : 0,
-        change: d ? d.change : 0,
-      };
-    });
-  } catch {
-    ElMessage.warning("指数数据获取失败，请稍后重试");
-  }
-}
 
 const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
 
@@ -203,7 +211,6 @@ async function refresh() {
   } catch {
     ElMessage.error("行情数据刷新失败，请检查网络后重试");
   }
-  fetchIndices(); // 指数数据始终实时获取
 }
 
 async function init() {
@@ -212,7 +219,6 @@ async function init() {
   } catch {
     ElMessage.error("分红数据获取失败，请检查网络后重试");
   }
-  fetchIndices();
 }
 
 function formatPrice(price: number, code: string): string {
@@ -731,6 +737,11 @@ const mergedTableData = computed(() => {
           >
             {{ row.change >= 0 ? "+" : "" }}{{ row.change.toFixed(2) }}%
           </div>
+          <el-rate
+            :model-value="moatScoreMap[row.code]"
+            disabled
+            class="moat-rate"
+          />
         </td>
         <td
           class="bold"
@@ -1166,6 +1177,14 @@ html.dark {
   .stock-change {
     font-size: 12px;
     font-weight: bold;
+  }
+
+  .moat-rate {
+    margin-top: 2px;
+    --el-rate-fill-color: #f7ba2a;
+    --el-rate-icon-size: 10px;
+    --el-rate-icon-margin: 0px;
+    justify-content: center;
   }
 
   .plan-price-input {
