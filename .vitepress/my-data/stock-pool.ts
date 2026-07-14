@@ -229,7 +229,7 @@ const stocks: StockItem[] = [
     // 青岛港H
     code: "06198",
     industry: Industry.SEAPORTS_AND_SERVICES,
-    moatScore: 3,
+    moatScore: 4,
     sharesHeld: 1000,
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
@@ -248,7 +248,7 @@ const stocks: StockItem[] = [
     // 青岛港A
     code: "601298",
     industry: Industry.SEAPORTS_AND_SERVICES,
-    moatScore: 3,
+    moatScore: 4,
     sharesHeld: 4000,
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
@@ -1084,7 +1084,7 @@ const stocks: StockItem[] = [
     // 国电南瑞
     code: "600406",
     industry: Industry.ELECTRIC_POWER,
-    moatScore: 4.5,
+    moatScore: 4,
     url: "value-investing/industry/电力/国电南瑞",
     dividendPerYear: 2,
     remark: "历史最底部差不多16~18PE",
