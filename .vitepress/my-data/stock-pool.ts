@@ -25,6 +25,7 @@ export enum Industry {
   MACHINERY = "机械",
   FINANCIAL = "金融",
   BEVERAGE = "茶饮",
+  MATERIALS = "材料",
   ETF = "ETF",
 }
 
@@ -797,7 +798,7 @@ const stocks: StockItem[] = [
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
+      maxPositionRatio: 0.03,
       dividend: [{ value: 0.1, quantity: 200 }],
     },
     strikePrice: {
@@ -873,14 +874,13 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
-        { value: 0.05, quantity: 500 },
-        { value: 0.055, quantity: 800 },
-        { value: 0.06, quantity: 1200 },
+        { value: 0.055, quantity: 500 },
+        { value: 0.06, quantity: 800 },
       ],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.055,
+      value: 0.06,
     },
   },
   {
@@ -1095,6 +1095,22 @@ const stocks: StockItem[] = [
     strikePrice: {
       type: PlanType.PE,
       value: 16,
+    },
+  },
+  {
+    // 云天化
+    code: "600096",
+    industry: Industry.BEVERAGE,
+    url: "value-investing/industry/化肥/云天化",
+    dividendPerYear: 2,
+    plan: {
+      type: PlanType.DIVIDEND,
+      maxPositionRatio: 0.03,
+      dividend: [{ value: 0.06, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.06,
     },
   },
   {
