@@ -131,8 +131,6 @@ export function toEastMoneySecId(stockCode: string) {
   } else if (/^[A-Za-z]+$/.test(code)) {
     // 美股（纯字母代码如AAPL）
     return code.toUpperCase(); // 或返回 `US.${code}` 根据接口要求
-  } else if (/CNHHKD$/.test(code)) {
-    return code;
   }
 
   // 默认返回沪市格式（可根据需求调整）
@@ -145,6 +143,56 @@ export function stocksToSecIds(stocks: string[]) {
 
 export function isHKCode(code: string) {
   return toSECUCODE(code).endsWith(".HK");
+}
+
+/**
+ * 将股票代码转换为腾讯 qt.gtimg.cn 接口格式
+ * A股:      600519 → sh600519
+ * 深市:     000001 → sz000001
+ * 港股:     00700  → r_hk00700
+ * 东方财富指数: 1.000001 → sh000001
+ */
+export function toTencentStockCode(code: string): string {
+  const c = code.trim();
+
+  // 已经是腾讯格式（如 sh600519, sz000001, r_hk00700），直接返回
+  if (/^(?:sh|sz|bj|r_hk)/.test(c)) return c;
+
+  // 东方财富指数代码 1.000001 → sh000001, 0.399001 → sz399001
+  if (c.includes(".")) {
+    const [market, num] = c.split(".");
+    if (market === "1") return `sh${num}`;
+    if (market === "0") return `sz${num}`;
+    // 港股指数：100.HSI → r_hkHSI, 124.HSTECH → r_hkHSTECH
+    if (market === "100" || market === "124") return `r_hk${num}`;
+    // 其他指数市场码（如 2.932000 中证2000），默认 sh 前缀
+    return `sh${num}`;
+  }
+
+  // A股：沪市 6/9/688/689 开头
+  if (/^(6|9|688|689)\d+$/.test(c)) return `sh${c}`;
+  // A股：深市 0/3/2 开头（6位）
+  if (/^(0|3|2)\d{5}$/.test(c)) return `sz${c}`;
+  // ETF：沪市 5 开头
+  if (/^5\d{5}$/.test(c)) return `sh${c}`;
+  // ETF：深市 15 开头
+  if (/^15\d{4}$/.test(c)) return `sz${c}`;
+  // B股：深B 200/28 开头
+  if (/^(200|28)\d{3,4}$/.test(c)) return `sz${c}`;
+  // B股：沪B 900 开头
+  if (/^900\d{3,4}$/.test(c)) return `sh${c}`;
+  // 港股：0 开头 5 位
+  if (/^0\d{4}$/.test(c)) return `r_hk${c}`;
+
+  // fallback: 沪市
+  return `sh${c}`;
+}
+
+/**
+ * 批量转换股票代码为腾讯格式，逗号拼接
+ */
+export function stocksToTencentCodes(codes: string[]): string {
+  return codes.map(toTencentStockCode).join(",");
 }
 
 /**

@@ -1,7 +1,13 @@
 import { computed, reactive, ref, watch } from "vue";
-import { getDynamicData } from "../../../fetch-data/fetch-stock-data";
+import { getExchangeRate } from "../../../fetch-data/fetch-stock-data";
+import { getDynamicDataFromTencent } from "../../../fetch-data/fetch-tencent-stock";
 import { isHKCode, isBCode, isETFCode } from "../../../fetch-data/helper";
-import { fetchAllDividendData, getEffectiveEventDps, type ExItem } from "./fetch-dividend";
+import type { DynamicData } from "../../../fetch-data/types";
+import {
+  fetchAllDividendData,
+  getEffectiveEventDps,
+  type ExItem,
+} from "./fetch-dividend";
 import {
   PlanType,
   stocks,
@@ -91,11 +97,13 @@ const indexDataMap = ref<Record<string, { price: number; change: number }>>({});
 let indexCodes: string[] = [];
 
 /** 从动态数据中提取指数数据 */
-function updateIndexData(dynamicDataList: { code: string; price: number; change: number }[]) {
+function updateIndexData(
+  dynamicDataList: { code: string; price: number; change: number }[],
+) {
   const map: Record<string, { price: number; change: number }> = {};
   for (const code of indexCodes) {
-    const short = code.split(".").pop()!;
-    const d = dynamicDataList.find((v) => v.code === short);
+    // 直接以完整原始 code 匹配（如 "1.000001"），避免与个股 code 冲突
+    const d = dynamicDataList.find((v) => v.code === code);
     if (d) map[code] = { price: d.price, change: d.change };
   }
   indexDataMap.value = map;
@@ -317,7 +325,7 @@ function loadFromStorage(): boolean {
  * @param useCachedDividend 是否使用缓存的 exListMap（不重新获取）
  */
 async function buildTableData(
-  dynamicDataList: Awaited<ReturnType<typeof getDynamicData>>,
+  dynamicDataList: DynamicData[],
   useCachedDividend: boolean,
 ) {
   const stockCodes = stocks.map((v) => v.code);
@@ -343,10 +351,8 @@ async function buildTableData(
   // 动态数据已获取，记录更新时间
   dynamicUpdateTime.value = new Date().toLocaleString();
 
-  const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
-  if (exchangeTarget) {
-    exchangeRate.value = exchangeTarget.price / 100;
-  }
+  const rate = await getExchangeRate();
+  exchangeRate.value = rate;
 
   // 港股人民币分红按汇率转为港币（字符串中的港币计算值不准确）
   for (const item of stocks) {
@@ -378,22 +384,9 @@ async function buildTableData(
     const item = stocks[i];
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (dynamicData) {
-      const {
-        name,
-        code,
-        price,
-        prevClose: originPrevClose,
-        PE_TTM,
-        change,
-      } = dynamicData;
-      const prevClose =
-        isHKCode(code) || isETFCode(code)
-          ? originPrevClose / 1000
-          : originPrevClose / 100;
+      const { name, code, price, PE_TTM, change } = dynamicData;
       // 港股 PE_TTM 是以收盘价来算的
-      const pricePE = isHKCode(code)
-        ? PE_TTM * (1 + (price - prevClose) / prevClose)
-        : PE_TTM;
+      const pricePE = PE_TTM;
       const rawExList = exListMap.value[code] || [];
       const exList = item.dividendPerYear
         ? rawExList.slice(0, item.dividendPerYear)
@@ -508,40 +501,31 @@ async function buildTableData(
 async function refreshData() {
   const stockCodes = stocks.map((v) => v.code);
 
-  // 合并：股票代码 + 汇率 + 指数代码，一次请求搞定
-  const allCodes = [...stockCodes, "133.CNHHKD", ...indexCodes];
+  // 股票+指数走腾讯（不限频），汇率走免费 API
+  const [dynamicDataList, rate] = await Promise.all([
+    getDynamicDataFromTencent([...stockCodes, ...indexCodes]),
+    getExchangeRate(),
+  ]);
+  exchangeRate.value = rate;
+
   if (!tableData.value.length) {
     // 表为空：先尝试从分红存储加载，避免不必要的 API 调用
     tableData.value = [];
-    const dynamicDataList = await getDynamicData(allCodes);
     updateIndexData(dynamicDataList);
     return buildTableData(dynamicDataList, true);
   }
 
-  const dynamicDataList = await getDynamicData(allCodes);
-  updateIndexData(dynamicDataList);
-
   dynamicUpdateTime.value = new Date().toLocaleString();
-
-  const exchangeTarget = dynamicDataList.find((v) => v.code === "CNHHKD");
-  if (exchangeTarget) {
-    exchangeRate.value = exchangeTarget.price / 100;
-  }
 
   for (let i = 0; i < stockCodes.length; i++) {
     const item = stocks[i];
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (!dynamicData) continue;
 
-    const { price, prevClose: originPrevClose, PE_TTM, change } = dynamicData;
+    const { price, PE_TTM, change } = dynamicData;
     const code = item.code;
-    const prevClose =
-      isHKCode(code) || isETFCode(code)
-        ? originPrevClose / 1000
-        : originPrevClose / 100;
-    const pricePE = isHKCode(code)
-      ? PE_TTM * (1 + (price - prevClose) / prevClose)
-      : PE_TTM;
+
+    const pricePE = PE_TTM;
     const meta = groupMetaMap.value[code];
     const dps = meta?.dps || 0;
     const effectiveDps =
@@ -601,6 +585,7 @@ async function refreshData() {
     }
   }
 
+  updateIndexData(dynamicDataList);
   saveToStorage();
 }
 
@@ -610,8 +595,12 @@ async function init() {
   loadingPromise.value = (async () => {
     tableData.value = [];
     const stockCodes = stocks.map((v) => v.code);
-    const allCodes = [...stockCodes, "133.CNHHKD", ...indexCodes];
-    const dynamicDataList = await getDynamicData(allCodes);
+    // 股票+指数走腾讯（不限频），汇率走免费 API
+    const [dynamicDataList, rate] = await Promise.all([
+      getDynamicDataFromTencent([...stockCodes, ...indexCodes]),
+      getExchangeRate(),
+    ]);
+    exchangeRate.value = rate;
     updateIndexData(dynamicDataList);
     return buildTableData(dynamicDataList, false);
   })().finally(() => {
