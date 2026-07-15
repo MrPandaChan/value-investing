@@ -581,7 +581,7 @@ const stocks: StockItem[] = [
     code: "600886",
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 3,
-    sharesHeld: 700,
+    sharesHeld: 500,
     url: "/value-investing/industry/电力/国投电力/",
     dividendPerYear: 1,
     remark: "预估8月分红",
@@ -1185,7 +1185,7 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(25000);
+export const cash = ref(28000);
 
 /**
  * TODO:
