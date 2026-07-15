@@ -96,11 +96,11 @@ const industryMap = computed(() => {
   return map;
 });
 
-// code → moatScore 映射表
-const moatScoreMap = computed(() => {
+// code → qualityScore 映射表
+const qualityScoreMap = computed(() => {
   const map: Record<string, number> = {};
   for (const s of stocks) {
-    map[s.code] = s.moatScore;
+    map[s.code] = s.qualityScore;
   }
   return map;
 });
@@ -738,7 +738,7 @@ const mergedTableData = computed(() => {
             {{ row.change >= 0 ? "+" : "" }}{{ row.change.toFixed(2) }}%
           </div>
           <el-rate
-            :model-value="moatScoreMap[row.code]"
+            :model-value="qualityScoreMap[row.code]"
             disabled
             class="moat-rate"
           />

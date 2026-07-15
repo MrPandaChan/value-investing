@@ -34,7 +34,7 @@ interface PortfolioRow {
   holdingNetProfit: number; // 持有净利润（人民币）
   retainedNetProfit: number; // 公司留存部分（人民币）
   peTtm: number;
-  moatScore: number; // 护城河评分 0-5
+  qualityScore: number; // 综合素质评分 0-5
   rowspan: number;
 }
 
@@ -91,7 +91,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
         holdingNetProfit: 0,
         retainedNetProfit: 0,
         peTtm: 0,
-        moatScore: 0,
+        qualityScore: 0,
         rowspan: 1,
       });
     }
@@ -107,7 +107,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     const name = isHKCode(s.code) ? `${rawName}H` : rawName;
     const sharesHeld = s.sharesHeld!;
     const price = meta.realPrice;
-    const moatScore = s.moatScore;
+    const qualityScore = s.qualityScore;
 
     // 持有金额（转为人民币）
     const rawHoldingValue = sharesHeld * price;
@@ -167,7 +167,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       holdingNetProfit,
       retainedNetProfit,
       peTtm: meta.pricePE,
-      moatScore,
+      qualityScore,
       industry: s.industry,
     };
   });
@@ -230,7 +230,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       holdingNetProfit: 0,
       retainedNetProfit: 0,
       peTtm: 0,
-      moatScore: 0,
+      qualityScore: 0,
       rowspan: 1,
     });
   }
@@ -238,15 +238,15 @@ const portfolioData = computed<PortfolioRow[]>(() => {
   return result;
 });
 
-/** 加权综合护城河得分（不含现金，按持股比例归一化加权） */
-const compositeMoatScore = computed(() => {
+/** 加权综合素质得分（不含现金，按持股比例归一化加权） */
+const compositeQualityScore = computed(() => {
   const rows = portfolioData.value.filter((r) => r.code !== "__cash__");
   if (!rows.length) return 0;
   const totalRatio = rows.reduce((sum, r) => sum + r.shareholdingRatio, 0);
   if (totalRatio === 0) return 0;
   return (
     rows.reduce(
-      (sum, r) => sum + (r.shareholdingRatio / totalRatio) * r.moatScore,
+      (sum, r) => sum + (r.shareholdingRatio / totalRatio) * r.qualityScore,
       0,
     ) || 0
   );
@@ -364,7 +364,7 @@ onMounted(() => {
           <td>
             <el-rate
               v-if="item.code !== '__cash__'"
-              :model-value="item.moatScore"
+              :model-value="item.qualityScore"
               disabled
               class="moat-rate"
             />
@@ -407,7 +407,7 @@ onMounted(() => {
             {{ formatNum(totals.sumRetainedNetProfit, 2).toFixed(2) }}
           </td>
           <td class="bold">
-            {{ compositeMoatScore.toFixed(2) }}
+            {{ compositeQualityScore.toFixed(2) }}
           </td>
         </tr>
         <!-- 比率行 -->
@@ -479,9 +479,9 @@ onMounted(() => {
             <td>{{ (1 / totals.perspectiveSurplusRate).toFixed(2) }}</td>
           </tr>
           <tr>
-            <td>组合护城河得分</td>
+            <td>组合综合素质得分</td>
             <td class="bold">
-              {{ compositeMoatScore.toFixed(2) }}
+              {{ compositeQualityScore.toFixed(2) }}
             </td>
           </tr>
         </tbody>
