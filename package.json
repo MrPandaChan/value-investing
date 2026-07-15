@@ -7,7 +7,8 @@
     "handle-data": "tsx fetch-data/handle-stock-data.ts",
     "update-data": "pnpm run fetch-data & pnpm run handle-data & pnpm run update-dynamic",
     "force-update": "pnpm run fetch-data -- -f & pnpm run handle-data & pnpm run update-dynamic",
-    "update-dynamic": "tsx fetch-data/update-dynamic-data.ts & pnpm run handle-data"
+    "update-dynamic": "tsx fetch-data/update-dynamic-data.ts & pnpm run handle-data",
+    "create-company": "tsx scripts/create-company.ts"
   },
   "devDependencies": {
     "@element-plus/icons-vue": "^2.3.2",
