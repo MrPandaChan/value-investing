@@ -544,6 +544,17 @@ const otherStockData: StockItem[] = [
       dividendYield: 0.08,
     },
   },
+  {
+    type: StockType.A,
+    name: "中国中免",
+    code: "601888",
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.01,
+    },
+  },
 ];
 
 export { otherStockData };

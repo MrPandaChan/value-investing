@@ -327,7 +327,7 @@ onMounted(() => {
           <th>扣税后股息</th>
           <th class="holding-net-profit">持有净利润</th>
           <th class="retained">留存部分</th>
-          <th class="bold">护城河</th>
+          <th class="bold">安心指数</th>
         </tr>
       </thead>
       <tbody>
@@ -456,7 +456,7 @@ onMounted(() => {
           <td class="sum-dividend-rate">组合股息率</td>
           <td class="sum-holding-net-profit-margin">总收益率</td>
           <td class="retained">公司留存率</td>
-          <td class="bold">组合护城河</td>
+          <td class="bold">安心指数</td>
         </tr>
       </tbody>
     </table>
