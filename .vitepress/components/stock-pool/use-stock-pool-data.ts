@@ -84,6 +84,23 @@ const exchangeRate = ref(1.1555); // 港币兑人民币汇率（1 CNY = exchange
 const dividendUpdateTime = ref(""); // 分红数据更新时间
 const dynamicUpdateTime = ref(""); // 动态数据（股价等）更新时间
 
+/** 指数实时数据：code → { price, change } */
+const indexDataMap = ref<Record<string, { price: number; change: number }>>({});
+
+/** 需要获取的指数代码列表（由外部设置） */
+let indexCodes: string[] = [];
+
+/** 从动态数据中提取指数数据 */
+function updateIndexData(dynamicDataList: { code: string; price: number; change: number }[]) {
+  const map: Record<string, { price: number; change: number }> = {};
+  for (const code of indexCodes) {
+    const short = code.split(".").pop()!;
+    const d = dynamicDataList.find((v) => v.code === short);
+    if (d) map[code] = { price: d.price, change: d.change };
+  }
+  indexDataMap.value = map;
+}
+
 // 防止并发 init/refresh 调用
 const loadingPromise = ref<Promise<void> | null>(null);
 const isLoading = computed(() => loadingPromise.value !== null);
@@ -491,14 +508,18 @@ async function buildTableData(
 async function refreshData() {
   const stockCodes = stocks.map((v) => v.code);
 
+  // 合并：股票代码 + 汇率 + 指数代码，一次请求搞定
+  const allCodes = [...stockCodes, "133.CNHHKD", ...indexCodes];
   if (!tableData.value.length) {
     // 表为空：先尝试从分红存储加载，避免不必要的 API 调用
     tableData.value = [];
-    const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
+    const dynamicDataList = await getDynamicData(allCodes);
+    updateIndexData(dynamicDataList);
     return buildTableData(dynamicDataList, true);
   }
 
-  const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
+  const dynamicDataList = await getDynamicData(allCodes);
+  updateIndexData(dynamicDataList);
 
   dynamicUpdateTime.value = new Date().toLocaleString();
 
@@ -589,7 +610,9 @@ async function init() {
   loadingPromise.value = (async () => {
     tableData.value = [];
     const stockCodes = stocks.map((v) => v.code);
-    const dynamicDataList = await getDynamicData([...stockCodes, "133.CNHHKD"]);
+    const allCodes = [...stockCodes, "133.CNHHKD", ...indexCodes];
+    const dynamicDataList = await getDynamicData(allCodes);
+    updateIndexData(dynamicDataList);
     return buildTableData(dynamicDataList, false);
   })().finally(() => {
     loadingPromise.value = null;
@@ -620,7 +643,8 @@ function ensureWatch() {
   );
 }
 
-export function useStockPoolData() {
+export function useStockPoolData(indexCodeList?: string[]) {
+  if (indexCodeList) indexCodes = indexCodeList;
   ensureWatch();
   return {
     tableData,
@@ -630,6 +654,7 @@ export function useStockPoolData() {
     customDividend,
     customPE,
     exchangeRate,
+    indexDataMap,
     isLoading,
     dividendUpdateTime,
     dynamicUpdateTime,
