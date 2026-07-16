@@ -429,21 +429,15 @@ async function getDividend(
 }
 
 /**
- * 获取人民币和港币汇率
+ * 获取人民币兑港币汇率（HKD/CNY，即 1 人民币可兑换多少港币）
+ *
+ * 使用免费的 ExchangeRate-API（数据源：欧洲央行），每天自动更新。
+ * 替代东方财富 push2.eastmoney.com 的 133.CNHHKD 接口。
  */
 export async function getExchangeRate() {
-  const res = await axios.get(
-    "https://push2.eastmoney.com/api/qt/ulist.np/get",
-    {
-      params: {
-        fields: "f2",
-        secids: "133.CNHHKD",
-        ut: "b2884a393a59ad64002292a3e90d46a5",
-        // v: v(),
-      },
-    },
-  );
-  return res.data.data.diff[0].f2 / 10000;
+  const res = await axios.get("https://open.er-api.com/v6/latest/CNY");
+  // rates.HKD = 1 CNY 可兑换的港币数，即 HKD/CNY
+  return res.data.rates.HKD;
 }
 
 async function fetchAStockData(stockItem: StockItem) {
