@@ -587,7 +587,7 @@ const stocks: StockItem[] = [
     remark: "预估8月分红",
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.05,
+      maxPositionRatio: 0.08,
       price: [
         { value: 13.5, quantity: 200 },
         { value: 12.75, quantity: 200 },
