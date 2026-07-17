@@ -609,7 +609,10 @@ function generateWorkingCapitalData(data: StockData, quarterly = false) {
   return arr;
 }
 
-function generateFixedAssetInvestmentAnalysisData(data: StockData, quarterly = false) {
+function generateFixedAssetInvestmentAnalysisData(
+  data: StockData,
+  quarterly = false,
+) {
   const arr: FixedAssetInvestmentAnalysisData[] = [];
 
   const report_date = getReportDates(data);
@@ -1056,13 +1059,22 @@ function generateRecentYearData(item: {
 
   for (const stockData of allStockData) {
     const basicRevenueData = generateBasicRevenueData(stockData.data);
-    const basicRevenueDataQuarterly = generateBasicRevenueData(stockData.data, true);
+    const basicRevenueDataQuarterly = generateBasicRevenueData(
+      stockData.data,
+      true,
+    );
     const costsExpensesData = generateCostsExpensesData(stockData.data);
-    const costsExpensesDataQuarterly = generateCostsExpensesData(stockData.data, true);
+    const costsExpensesDataQuarterly = generateCostsExpensesData(
+      stockData.data,
+      true,
+    );
     const balanceData = generateBalanceData(stockData.data);
     const balanceDataQuarterly = generateBalanceData(stockData.data, true);
     const workingCapitalData = generateWorkingCapitalData(stockData.data);
-    const workingCapitalDataQuarterly = generateWorkingCapitalData(stockData.data, true);
+    const workingCapitalDataQuarterly = generateWorkingCapitalData(
+      stockData.data,
+      true,
+    );
     const fixedAssetInvestmentAnalysisData =
       generateFixedAssetInvestmentAnalysisData(stockData.data);
     const fixedAssetInvestmentAnalysisDataQuarterly =
@@ -1070,7 +1082,10 @@ function generateRecentYearData(item: {
     const returnData = generateReturnData(stockData.data);
     const returnDataQuarterly = generateReturnData(stockData.data, true);
     const turnoverRateData = generateTurnoverRateData(stockData.data);
-    const turnoverRateDataQuarterly = generateTurnoverRateData(stockData.data, true);
+    const turnoverRateDataQuarterly = generateTurnoverRateData(
+      stockData.data,
+      true,
+    );
     const primaryBusinessData = generatePrimaryBusinessData(stockData.data);
     const valuationData = generateVauationData(stockData.data);
     const dynamicData = stockData.data.dynamicData;
