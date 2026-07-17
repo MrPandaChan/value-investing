@@ -16,6 +16,8 @@
 
 ## 四、业务构成
 
+<PrimaryBusinessTable code="600436"/>
+
 ## 五、资产负债
 
 <BalanceTable code="600436" />

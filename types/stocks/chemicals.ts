@@ -38,6 +38,28 @@ const chemicalsStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+  {
+    type: StockType.A,
+    name: "宝丰能源",
+    code: "600989",
+    level: StockLevel.MARGIN,
+    allocation: 0,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.05,
+    },
+  },
+  {
+    type: StockType.A,
+    name: "卫星化学",
+    code: "002648",
+    level: StockLevel.MARGIN,
+    allocation: 0,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.05,
+    },
+  },
 ];
 
 export { chemicalsStockData };
