@@ -649,7 +649,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       maxPositionRatio: 0.1,
-      price: [{ value: 25, quantity: 100 }],
+      price: [{ value: 24.5, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PRICE,
@@ -800,9 +800,9 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     remark: "预估6月中分红",
     plan: {
-      type: PlanType.PRICE,
+      type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      price: [{ value: 50, quantity: 100 }],
+      dividend: [{ value: 0.1, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
