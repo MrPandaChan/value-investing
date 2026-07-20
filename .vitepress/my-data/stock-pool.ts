@@ -814,14 +814,17 @@ const stocks: StockItem[] = [
     code: "600066",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3,
-    sharesHeld: 500,
+    sharesHeld: 400,
     url: "/value-investing/industry/汽车/宇通客车/",
     dividendPerYear: 2,
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.1, quantity: 100 }],
+      dividend: [
+        { value: 0.086, quantity: 100 },
+        { value: 0.1, quantity: 100 },
+      ],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -1185,7 +1188,7 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(28000);
+export const cash = ref(31000);
 
 /**
  * TODO:
