@@ -82,6 +82,15 @@ type SortKey =
 
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
 const industryFilter = ref<string[]>([]); // 行业筛选：空数组表示全部
+const zoneFilter = ref<string[]>([]); // 分区筛选：空数组表示全部
+
+const ZONE_OPTIONS = [
+  { label: "险地区", value: "danger" },
+  { label: "平庸区", value: "mediocre" },
+  { label: "观察区", value: "observe" },
+  { label: "核心价值区", value: "core" },
+  { label: "超额溢价区", value: "premium" },
+]
 const sortConfig = ref<{ key: SortKey; order: "asc" | "desc" }>({
   key: "decline",
   order: "asc",
@@ -186,6 +195,16 @@ onMounted(() => {
       // ignore
     }
   }
+  // 加载持久化的分区筛选
+  const savedZoneFilter = localStorage.getItem(ZONE_FILTER_STORAGE_KEY);
+  if (savedZoneFilter) {
+    try {
+      const arr: string[] = JSON.parse(savedZoneFilter);
+      if (Array.isArray(arr)) zoneFilter.value = arr;
+    } catch {
+      // ignore
+    }
+  }
 });
 
 // custom* 变化时同步编辑缓冲区（持久化由 composable 统一处理）
@@ -197,10 +216,20 @@ watch(
   { deep: true },
 );
 
+const ZONE_FILTER_STORAGE_KEY = "stock-pool-zone-filter";
+
 watch(
   marketFilter,
   (val) => {
     localStorage.setItem(MARKET_FILTER_STORAGE_KEY, JSON.stringify(val));
+  },
+  { deep: true },
+);
+
+watch(
+  zoneFilter,
+  (val) => {
+    localStorage.setItem(ZONE_FILTER_STORAGE_KEY, JSON.stringify(val));
   },
   { deep: true },
 );
@@ -238,16 +267,42 @@ function formatShortExDate(dateStr: string): string {
 }
 
 /**
- * 根据偏离度动态计算渐变色（hsl），≤0 纯红，正数越大越橙
+ * 根据偏离值返回分区 key（用于筛选和配色）
  */
-function getDeviationStyle(deviation: number) {
-  const clamped = Math.max(-25, Math.min(25, deviation));
-  // ≤0 全部纯红，>0 随偏离增大渐变至橙 (hue 0→50)
-  const hue = clamped <= 0 ? 0 : Math.min((clamped / 25) * 50, 50);
-  return {
-    color: `hsl(${hue}, 80%, var(--dev-l))`,
-    backgroundColor: `hsla(${hue}, 75%, var(--dev-bg-l), var(--dev-alpha))`,
-  };
+function getDeviationZoneKey(deviation: number): string {
+  if (deviation >= 45) return "danger"
+  if (deviation >= 20) return "mediocre"
+  if (deviation >= 10) return "observe"
+  if (deviation >= -20) return "core"
+  return "premium"
+}
+
+/**
+ * 根据偏离值返回分区 CSS 类名（用于分层配色）
+ */
+function getDeviationZoneClass(deviation: number): string {
+  return `zone-${getDeviationZoneKey(deviation)}`
+}
+
+/**
+ * 根据偏离值返回分区描述标签
+ */
+function getDeviationLabel(deviation: number): string {
+  if (deviation >= 60) return "险地区4层"
+  if (deviation >= 55) return "险地区3层：30%"
+  if (deviation >= 50) return "险地区2层：30%"
+  if (deviation >= 45) return "险地区1层：30%"
+  if (deviation >= 35) return "平庸区2层：轮动"
+  if (deviation >= 20) return "平庸区1层：持有"
+  if (deviation >= 15) return "观察1层：5%"
+  if (deviation >= 10) return "观察2层：5%"
+  if (deviation >= 5) return "核心价值1层：10%"
+  if (deviation >= 0) return "核心价值2层：10%"
+  if (deviation >= -5) return "核心价值3层：15%"
+  if (deviation >= -10) return "核心价值4层：15%"
+  if (deviation >= -15) return "核心价值5层：15%"
+  if (deviation >= -20) return "核心价值5层：15%"
+  return "超额溢价区：15%"
 }
 
 const UPCOMING_LABEL: Record<string, string> = {
@@ -474,6 +529,15 @@ const mergedTableData = computed(() => {
     });
   }
 
+  // 按分区筛选
+  if (zoneFilter.value.length) {
+    filteredGroups = filteredGroups.filter((g) => {
+      const info = g.rows[0]?.strikePriceInfo;
+      if (!info) return false;
+      return zoneFilter.value.includes(getDeviationZoneKey(info.deviation));
+    });
+  }
+
   // 第二步：排序
   const { key, order } = sortConfig.value;
   const sortMultiplier = order === "asc" ? 1 : -1;
@@ -560,6 +624,21 @@ const mergedTableData = computed(() => {
         :key="ind"
         :label="ind"
         :value="ind"
+      />
+    </el-select>
+    <el-select
+      v-model="zoneFilter"
+      multiple
+      placeholder="全部分区"
+      collapse-tags
+      collapse-tags-tooltip
+      style="width: 160px; margin-right: 12px"
+    >
+      <el-option
+        v-for="z in ZONE_OPTIONS"
+        :key="z.value"
+        :label="z.label"
+        :value="z.value"
       />
     </el-select>
     <el-button type="primary" :loading="isLoading" @click="refresh"
@@ -814,13 +893,13 @@ const mergedTableData = computed(() => {
             <div class="sp-price">
               {{ formatPrice(row.strikePriceInfo.price, row.code) }}
             </div>
-            <div class="sp-deviation">
-              <span
-                class="deviation-tag"
-                :style="getDeviationStyle(row.strikePriceInfo.deviation)"
-              >
-                偏离：{{ formatPercent(row.strikePriceInfo.deviation) }}
-              </span>
+            <div
+              class="sp-deviation"
+              :class="getDeviationZoneClass(row.strikePriceInfo.deviation)"
+            >
+              <span>偏离：{{ formatPercent(row.strikePriceInfo.deviation) }}</span>
+              <br />
+              <span>{{ getDeviationLabel(row.strikePriceInfo.deviation) }}</span>
             </div>
             <div class="sp-dividend">
               {{ formatPercent(row.strikePriceInfo.dividend * 100) }} |
@@ -1252,14 +1331,30 @@ html.dark {
       color: #4a7c7f;
     }
     .sp-deviation {
-      .deviation-tag {
-        --dev-l: 50%;
-        --dev-bg-l: 45%;
-        --dev-alpha: 0.25;
-        display: inline-block;
-        padding: 0 4px;
-        border-radius: 3px;
-        font-weight: bold;
+      display: inline-block;
+      padding: 2px 5px;
+      border-radius: 3px;
+      font-weight: bold;
+
+      &.zone-danger {
+        background-color: #fff2f0;
+        color: #ff4d4f;
+      }
+      &.zone-mediocre {
+        background-color: #fef0e6;
+        color: #cc3d00;
+      }
+      &.zone-observe {
+        background-color: #fffbe6;
+        color: #d48806;
+      }
+      &.zone-core {
+        background-color: #f6ffed;
+        color: #389e0d;
+      }
+      &.zone-premium {
+        background-color: #e6f7ff;
+        color: #096dd9;
       }
     }
   }
@@ -1365,10 +1460,27 @@ html.dark {
       .sp-dividend {
         color: #7ab5b5;
       }
-      .deviation-tag {
-        --dev-l: 68%;
-        --dev-bg-l: 55%;
-        --dev-alpha: 0.32;
+      .sp-deviation {
+        &.zone-danger {
+          background-color: #2a1215;
+          color: #ff7875;
+        }
+        &.zone-mediocre {
+          background-color: #2d1b10;
+          color: #ff8c52;
+        }
+        &.zone-observe {
+          background-color: #2b2611;
+          color: #ffc53d;
+        }
+        &.zone-core {
+          background-color: #162312;
+          color: #73d13d;
+        }
+        &.zone-premium {
+          background-color: #111d2c;
+          color: #69c0ff;
+        }
       }
     }
   }
