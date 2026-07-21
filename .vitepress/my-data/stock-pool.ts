@@ -748,11 +748,11 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.2,
-      dividend: [{ value: 0.05, quantity: 100 }],
+      dividend: [{ value: 0.045, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.05,
+      value: 0.045,
     },
   },
   {
@@ -861,11 +861,11 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.1,
-      dividend: [{ value: 0.055, quantity: 200 }],
+      dividend: [{ value: 0.05, quantity: 200 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.055,
+      value: 0.05,
     },
   },
   {
@@ -896,13 +896,13 @@ const stocks: StockItem[] = [
     qualityScore: 3,
     url: "/value-investing/industry/煤炭/陕西煤业/",
     dividendPerYear: 2,
+    remark: "中报业绩预增",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
       dividend: [
         { value: 0.05, quantity: 200 },
         { value: 0.055, quantity: 300 },
-        { value: 0.06, quantity: 400 },
       ],
     },
     strikePrice: {
