@@ -954,14 +954,17 @@ const stocks: StockItem[] = [
     code: "600415",
     industry: Industry.ENTERPRISE_SERVICES,
     qualityScore: 3,
-    sharesHeld: 1500,
+    sharesHeld: 1200,
     url: "/value-investing/industry/企业服务/小商品城/",
     dividendPerYear: 1,
     remark: "25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
     plan: {
       type: PlanType.DIVIDEND,
       maxPositionRatio: 0.05,
-      dividend: [{ value: 0.055, quantity: 300 }],
+      dividend: [
+        { value: 0.0455, quantity: 200 },
+        { value: 0.055, quantity: 300 },
+      ],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -1188,7 +1191,7 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(31000);
+export const cash = ref(33000);
 
 /**
  * TODO:
