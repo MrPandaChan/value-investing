@@ -25,9 +25,21 @@ import StockPoolPortfolio from "./portfolio.vue";
 
 // 指数代码列表（提前定义，因为 useStockPoolData 需要在一次请求中合并获取）
 const INDEX_CODE_LIST = [
-  "1.000985", "1.000001", "0.399001", "100.HSI", "124.HSTECH",
-  "1.000922", "0.399006", "1.000688", "0.399371", "0.399370",
-  "1.000016", "0.399850", "1.000300", "1.000905", "1.000852", "2.932000",
+  "1.000985",
+  "1.000001",
+  "0.399001",
+  "100.HSI",
+  "124.HSTECH",
+  "1.000922",
+  "0.399006",
+  "1.000688",
+  "0.399371",
+  "0.399370",
+  "1.000016",
+  "0.399850",
+  "1.000300",
+  "1.000905",
+  "1.000852",
 ];
 
 const {
@@ -90,7 +102,7 @@ const ZONE_OPTIONS = [
   { label: "观察区", value: "observe" },
   { label: "核心价值区", value: "core" },
   { label: "超额溢价区", value: "premium" },
-]
+];
 const sortConfig = ref<{ key: SortKey; order: "asc" | "desc" }>({
   key: "decline",
   order: "asc",
@@ -148,7 +160,6 @@ const INDEX_CODES_GROUP2: { code: string; label: string }[] = [
   { code: "1.000300", label: "沪深300" },
   { code: "1.000905", label: "中证500" },
   { code: "1.000852", label: "中证1000" },
-  { code: "2.932000", label: "中证2000" },
 ];
 
 // 合并数组：供视图展示
@@ -270,39 +281,39 @@ function formatShortExDate(dateStr: string): string {
  * 根据偏离值返回分区 key（用于筛选和配色）
  */
 function getDeviationZoneKey(deviation: number): string {
-  if (deviation >= 45) return "danger"
-  if (deviation >= 20) return "mediocre"
-  if (deviation >= 10) return "observe"
-  if (deviation >= -20) return "core"
-  return "premium"
+  if (deviation >= 45) return "danger";
+  if (deviation >= 20) return "mediocre";
+  if (deviation >= 10) return "observe";
+  if (deviation >= -20) return "core";
+  return "premium";
 }
 
 /**
  * 根据偏离值返回分区 CSS 类名（用于分层配色）
  */
 function getDeviationZoneClass(deviation: number): string {
-  return `zone-${getDeviationZoneKey(deviation)}`
+  return `zone-${getDeviationZoneKey(deviation)}`;
 }
 
 /**
  * 根据偏离值返回分区描述标签
  */
 function getDeviationLabel(deviation: number): string {
-  if (deviation >= 60) return "险地区4层"
-  if (deviation >= 55) return "险地区3层：30%"
-  if (deviation >= 50) return "险地区2层：30%"
-  if (deviation >= 45) return "险地区1层：30%"
-  if (deviation >= 35) return "平庸区2层：轮动"
-  if (deviation >= 20) return "平庸区1层：持有"
-  if (deviation >= 15) return "观察1层：5%"
-  if (deviation >= 10) return "观察2层：5%"
-  if (deviation >= 5) return "核心价值1层：10%"
-  if (deviation >= 0) return "核心价值2层：10%"
-  if (deviation >= -5) return "核心价值3层：15%"
-  if (deviation >= -10) return "核心价值4层：15%"
-  if (deviation >= -15) return "核心价值5层：15%"
-  if (deviation >= -20) return "核心价值5层：15%"
-  return "超额溢价区：15%"
+  if (deviation >= 60) return "险地区4";
+  if (deviation >= 55) return "险地区3：30%";
+  if (deviation >= 50) return "险地区2：30%";
+  if (deviation >= 45) return "险地区1：30%";
+  if (deviation >= 35) return "平庸区2：轮动";
+  if (deviation >= 20) return "平庸区1：持有";
+  if (deviation >= 15) return "观察1：5%";
+  if (deviation >= 10) return "观察2：5%";
+  if (deviation >= 5) return "核心价值1：10%";
+  if (deviation >= 0) return "核心价值2：10%";
+  if (deviation >= -5) return "核心价值3：15%";
+  if (deviation >= -10) return "核心价值4：15%";
+  if (deviation >= -15) return "核心价值5：15%";
+  if (deviation >= -20) return "核心价值5：15%";
+  return "超额溢价区：15%";
 }
 
 const UPCOMING_LABEL: Record<string, string> = {
@@ -440,17 +451,21 @@ const mergedTableData = computed(() => {
       let price = row.price;
       let dividend = row.dividend;
       let pe = row.pe;
+      let pb = row.pb;
 
       if (isLast && meta) {
         const cp = customPrice[code];
         const cd = customDividend[code];
         const cpe = customPE[code];
-        if (cp !== undefined) price = cp;
+        if (cp !== undefined) {
+          price = cp;
+          pb = row.pb * (cp / row.price);
+        }
         if (cd !== undefined) dividend = cd;
         if (cpe !== undefined) pe = cpe;
       }
 
-      return { ...row, price, dividend, pe };
+      return { ...row, price, dividend, pe, pb };
     });
 
     // 计划市值合计
@@ -874,7 +889,8 @@ const mergedTableData = computed(() => {
             class="plan-pe-input"
             @blur="onPEBlur(row.code)"
           />
-          <span v-else>{{ formatNum(row.pe, 2).toFixed(2) }}</span>
+          <span v-else-if="row.pe">{{ formatNum(row.pe, 2).toFixed(2) }}</span>
+          <span v-else>-</span>
         </td>
         <td
           class="bold"
@@ -897,9 +913,13 @@ const mergedTableData = computed(() => {
               class="sp-deviation"
               :class="getDeviationZoneClass(row.strikePriceInfo.deviation)"
             >
-              <span>偏离：{{ formatPercent(row.strikePriceInfo.deviation) }}</span>
+              <span
+                >偏离：{{ formatPercent(row.strikePriceInfo.deviation) }}</span
+              >
               <br />
-              <span>{{ getDeviationLabel(row.strikePriceInfo.deviation) }}</span>
+              <span>{{
+                getDeviationLabel(row.strikePriceInfo.deviation)
+              }}</span>
             </div>
             <div class="sp-dividend">
               {{ formatPercent(row.strikePriceInfo.dividend * 100) }} |
@@ -928,7 +948,11 @@ const mergedTableData = computed(() => {
             :class="'dividend-status dividend-' + ex.status"
           >
             {{ getCurrencyPrefix(row.code) }}{{ Number(ex.dps.toFixed(4)) }}
-            <el-tooltip v-if="ex.bonusRatio" :content="ex.planRaw || ''" placement="top">
+            <el-tooltip
+              v-if="ex.bonusRatio"
+              :content="ex.planRaw || ''"
+              placement="top"
+            >
               <el-icon :size="12" class="bonus-icon"><WarningFilled /></el-icon>
             </el-tooltip>
           </div>
