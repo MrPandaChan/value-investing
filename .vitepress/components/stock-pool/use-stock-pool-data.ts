@@ -20,6 +20,7 @@ export interface RowData {
   code: string;
   price: number;
   pe: number;
+  pb: number;
   dividend: number;
   quantity: number;
   sharesHeld?: number;
@@ -210,6 +211,7 @@ interface StockStorage {
   rows: {
     price: number;
     pe: number;
+    pb: number;
     dividend: number;
     quantity: number;
   }[];
@@ -245,6 +247,7 @@ function saveToStorage() {
         rows: rows.map((r: RowData) => ({
           price: r.price,
           pe: r.pe,
+          pb: r.pb,
           dividend: r.dividend,
           quantity: r.quantity,
         })),
@@ -288,6 +291,7 @@ function loadFromStorage(): boolean {
           code,
           price: r.price,
           pe: r.pe,
+          pb: r.pb,
           dividend: r.dividend,
           quantity: r.quantity,
           sharesHeld: s.sharesHeld,
@@ -384,7 +388,7 @@ async function buildTableData(
     const item = stocks[i];
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (dynamicData) {
-      const { name, code, price, PE_TTM, change } = dynamicData;
+      const { name, code, price, PE_TTM, PB, change } = dynamicData;
       // 港股 PE_TTM 是以收盘价来算的
       const pricePE = PE_TTM;
       const rawExList = exListMap.value[code] || [];
@@ -415,6 +419,7 @@ async function buildTableData(
         code,
         price,
         pe: pricePE,
+        pb: PB,
         dividend: effectiveDps / price,
         quantity: 0,
         sharesHeld: item.sharesHeld,
@@ -432,6 +437,7 @@ async function buildTableData(
             code,
             price: v.value,
             pe: pricePE * (v.value / price),
+            pb: PB * (v.value / price),
             dividend: effectiveDps / v.value,
             quantity: v.quantity,
             sharesHeld: item.sharesHeld,
@@ -450,6 +456,7 @@ async function buildTableData(
             code,
             price: targetPrice,
             pe: pricePE * (targetPrice / price),
+            pb: PB * (targetPrice / price),
             dividend: v.value,
             quantity: v.quantity,
             sharesHeld: item.sharesHeld,
@@ -468,6 +475,7 @@ async function buildTableData(
             code,
             price: targetPrice,
             pe: v.value,
+            pb: PB * (targetPrice / price),
             dividend: effectiveDps / targetPrice,
             quantity: v.quantity,
             sharesHeld: item.sharesHeld,
@@ -522,7 +530,7 @@ async function refreshData() {
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (!dynamicData) continue;
 
-    const { price, PE_TTM, change } = dynamicData;
+    const { price, PE_TTM, PB, change } = dynamicData;
     const code = item.code;
 
     const pricePE = PE_TTM;
@@ -551,6 +559,7 @@ async function refreshData() {
         // 实时行
         row.price = price;
         row.pe = pricePE;
+        row.pb = PB;
         row.dividend = effectiveDps / price;
         row.change = change;
       } else {
@@ -559,18 +568,21 @@ async function refreshData() {
           const planPrice = item.plan.price[index - 1].value;
           row.price = planPrice;
           row.pe = pricePE * (planPrice / price);
+          row.pb = PB * (planPrice / price);
           row.dividend = effectiveDps / planPrice;
         } else if (item.plan.type === PlanType.DIVIDEND) {
           const planDiv = item.plan.dividend[index - 1].value;
           const targetPrice = effectiveDps / planDiv;
           row.price = targetPrice;
           row.pe = pricePE * (targetPrice / price);
+          row.pb = PB * (targetPrice / price);
           row.dividend = planDiv;
         } else if (item.plan.type === PlanType.PE) {
           const planPE = item.plan.pe[index - 1].value;
           const targetPrice = price * (planPE / pricePE);
           row.price = targetPrice;
           row.pe = planPE;
+          row.pb = PB * (targetPrice / price);
           row.dividend = effectiveDps / targetPrice;
         }
       }

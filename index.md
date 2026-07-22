@@ -15,9 +15,8 @@ hero:
       link: /value-investing/入门与计划/TODO
 
 features:
-  - title: 投研步骤
-    details: 研究 ➡️ 提取投资逻辑 ➡️ 纳入股票池并评级 ➡️ 每周跟踪并等待击球区
-
+  - title: 投研SOP
+    details: 点子获取 ➡️ 初步筛选 ➡️ 深度覆盖 ➡️ 调研 ➡️ 跟踪 ➡️ 决策研究
 ---
 
 <IndustryOverview />
