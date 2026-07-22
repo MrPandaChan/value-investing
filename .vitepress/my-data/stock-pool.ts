@@ -1055,7 +1055,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.PRICE,
-      value: 1.18,
+      value: 1,
     },
   },
   {
