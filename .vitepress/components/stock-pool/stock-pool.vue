@@ -266,6 +266,12 @@ function formatPrice(price: number, code: string): string {
   return `${prefix}${formatNum(price, 2).toFixed(2)}`;
 }
 
+/** 格式化市值（单位:亿），直接以亿为单位显示 */
+function formatMarketCap(marketValue: number, code: string): string {
+  const prefix = getCurrencyPrefix(code);
+  return `${prefix}${formatNum(marketValue, 0)}亿`;
+}
+
 /** 港股名称后加 H 标识 */
 function displayName(name: string, code: string): string {
   return isHKCode(code) ? `${name}H` : name;
@@ -853,7 +859,15 @@ const mergedTableData = computed(() => {
             class="plan-price-input"
             @blur="onPriceBlur(row.code)"
           />
-          <span v-else>{{ formatPrice(row.price, row.code) }}</span>
+          <template v-else>
+            <div>{{ formatPrice(row.price, row.code) }}</div>
+            <div
+              v-if="row.isFirstRow && row.marketValue != null"
+              class="market-cap"
+            >
+              {{ formatMarketCap(row.marketValue, row.code) }}
+            </div>
+          </template>
         </td>
         <td
           class="bold"
@@ -1273,17 +1287,19 @@ html.dark {
 
   .stock-code {
     font-size: 12px;
+    line-height: 16px;
     color: var(--sp-text-secondary);
     font-weight: normal;
   }
 
   .stock-change {
     font-size: 12px;
+    line-height: 16px;
     font-weight: bold;
   }
 
   .moat-rate {
-    margin-top: 2px;
+    height: 16px;
     --el-rate-fill-color: #f7ba2a;
     --el-rate-icon-size: 10px;
     --el-rate-icon-margin: 0px;
@@ -1304,6 +1320,13 @@ html.dark {
       color: var(--sp-input-price-color);
       padding: 1px 4px;
     }
+  }
+
+  .market-cap {
+    font-size: 12px;
+    color: #b8860b;
+    font-weight: bold;
+    margin-top: 2px;
   }
 
   .plan-dividend-input {
@@ -1431,6 +1454,10 @@ html.dark {
   .dividend-upcoming,
   .dividend-unknown {
     color: var(--sp-text);
+  }
+
+  .market-cap {
+    color: #daa520;
   }
 }
 
