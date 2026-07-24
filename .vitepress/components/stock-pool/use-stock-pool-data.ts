@@ -28,6 +28,7 @@ export interface RowData {
   remark?: string;
   maxPositionRatio?: number;
   change?: number; // 涨跌幅，仅实时行
+  marketValue?: number; // 总市值（亿），仅实时行
   exList: ExItem[];
 }
 
@@ -214,6 +215,7 @@ interface StockStorage {
     pb: number;
     dividend: number;
     quantity: number;
+    marketValue?: number;
   }[];
   exList: ExItem[];
   meta: GroupMeta;
@@ -250,6 +252,7 @@ function saveToStorage() {
           pb: r.pb,
           dividend: r.dividend,
           quantity: r.quantity,
+          marketValue: r.marketValue,
         })),
         exList: first.exList,
         meta: groupMetaMap.value[code],
@@ -300,6 +303,7 @@ function loadFromStorage(): boolean {
           remark: s.remark,
           maxPositionRatio: s.maxPositionRatio,
           change: s.change,
+          marketValue: r.marketValue,
         });
       }
     }
@@ -426,6 +430,7 @@ async function buildTableData(
         url: item.url,
         exList,
         change,
+        marketValue: dynamicData.marketValue,
         remark: item.remark,
         maxPositionRatio: item.plan.maxPositionRatio,
       });
@@ -562,6 +567,7 @@ async function refreshData() {
         row.pb = PB;
         row.dividend = effectiveDps / price;
         row.change = change;
+        row.marketValue = dynamicData.marketValue;
       } else {
         // 计划行
         if (item.plan.type === PlanType.PRICE) {
