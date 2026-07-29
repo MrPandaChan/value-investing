@@ -34,9 +34,7 @@ interface PlanEntry {
   quantity: number; // 计划买入股数
 }
 
-interface BasePlan {
-  maxPositionRatio: number;
-}
+interface BasePlan {}
 
 export enum PlanType {
   EMPTY, // 没有计划
@@ -82,10 +80,16 @@ export interface StockItem {
   dividendAdjust?: number;
   /** 一年分红次数，设置后仅展示和计算最新的 n 条分红数据 */
   dividendPerYear?: number;
+  maxPositionRatio: number;
   plan: PlanItem; // 买入计划
+  exit: PlanItem; // 退出计划，数据结构与 plan 一致
   strikePrice: EntryPrice; // 击球点
 }
 
+/**
+ * 买入：至少 8% 预期回报率开始买入
+ * 退出：大部分以股息率小于 “无风险收益率 × 3” 作为开始退出位置
+ */
 const stocks: StockItem[] = [
   {
     // 腾讯控股
@@ -105,9 +109,9 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/互联网/腾讯控股/",
     remark:
       "预期收益率：9.5% - 467；10% - 443；10.5% - 422；11% - 403；11.5% - 386；12% - 370",
+    maxPositionRatio: 0.2,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.2,
       price: [
         // { value: 403, quantity: 200 },
         // { value: 386, quantity: 200 },
@@ -116,6 +120,10 @@ const stocks: StockItem[] = [
         { value: 394.6, quantity: 200 },
         { value: 378, quantity: 200 },
       ],
+    },
+    exit: {
+      type: PlanType.PE,
+      pe: [{ value: 20, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -129,13 +137,17 @@ const stocks: StockItem[] = [
     qualityScore: 4,
     sharesHeld: 1200,
     url: "/value-investing/industry/汽车/福耀玻璃/",
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.1,
       price: [
         { value: 47.5, quantity: 300 },
         { value: 45, quantity: 400 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.03, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -150,11 +162,15 @@ const stocks: StockItem[] = [
     sharesHeld: 1000,
     url: "/value-investing/industry/中药/云南白药/",
     remark: "目前仓位已打满，给个特别低价然后装死",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       // price: [{ value: 46.8, quantity: 400 }], // 已接
       dividend: [{ value: 0.06, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -171,14 +187,18 @@ const stocks: StockItem[] = [
     remark:
       "几乎100%分红率，一般6月/9月分红，目前仓位已打满，给个特别划算的价格然后装死",
     url: "/value-investing/industry/中药/东阿阿胶/",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       // price: [{ value: 43.8, quantity: 400 }], // 已买
       dividend: [
         { value: 0.065, quantity: 100 },
         { value: 0.07, quantity: 100 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -194,10 +214,14 @@ const stocks: StockItem[] = [
     dividendPerYear: 1,
     remark: "预估6月中分红",
     url: "/value-investing/industry/中药/羚锐制药/",
+    maxPositionRatio: 0.03,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.03,
       price: [{ value: 18.2, quantity: 700 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -212,13 +236,17 @@ const stocks: StockItem[] = [
     sharesHeld: 4000,
     url: "/value-investing/industry/传媒/分众传媒/",
     remark: "2025年业绩去掉减值后为 50.75亿",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [
         // { value: 0.07, quantity: 2200 }, // 已买
         { value: 0.075, quantity: 3000 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.055, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -234,10 +262,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.1,
       dividend: [{ value: 0.052, quantity: 2000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.032, quantity: 1000 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -252,9 +284,9 @@ const stocks: StockItem[] = [
     sharesHeld: 4000,
     url: "/value-investing/industry/港口/青岛港/",
     dividendPerYear: 2,
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.1,
       dividend: [
         { value: 0.047, quantity: 1500 },
         {
@@ -262,6 +294,10 @@ const stocks: StockItem[] = [
           quantity: 3000,
         },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.032, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -277,14 +313,18 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/塑料包装/永新股份/",
     remark:
       "2025年分红率有降低，分红比过去两年低；6.23涨停清仓2200股，5.5%股息率左右接回来，横向比对机会成本",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.057, quantity: 1000 }],
       // price: [
       //   { value: 9.7, quantity: 1400 },
       //   { value: 9.2, quantity: 1600 },
       // ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -299,14 +339,18 @@ const stocks: StockItem[] = [
     sharesHeld: 1600,
     dividendPerYear: 2,
     remark: "预估07-15左右分红，分完后计划减1块",
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.1,
       price: [
         // { value: 36.5, quantity: 400 }, // 已买
         // { value: 35.5, quantity: 200 }, // 已买
         { value: 34.5, quantity: 400 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -321,10 +365,14 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     url: "",
     remark: "",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.032, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -339,10 +387,14 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     url: "",
     remark: "",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.032, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -357,10 +409,14 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     url: "",
     remark: "",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.032, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -375,10 +431,14 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     url: "",
     remark: "",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.032, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -393,10 +453,14 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     url: "",
     remark: "",
+    maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.03,
       dividend: [{ value: 0.07, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -411,10 +475,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/机械/中创智领/",
     dividendPerYear: 1,
     remark: "",
+    maxPositionRatio: 0.02,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.02,
       dividend: [{ value: 0.1, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.06, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -430,10 +498,14 @@ const stocks: StockItem[] = [
     dividendPerYear: 1,
     remark: "",
     dividendAdjust: 0.8,
+    maxPositionRatio: 0.02,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.02,
       dividend: [{ value: 0.1, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.06, quantity: 200 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -449,13 +521,17 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/家电/美的/",
     dividendPerYear: 2,
     remark: "预估6月15左右分红",
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.1,
       price: [
         { value: 71.2, quantity: 300 },
         { value: 67.2, quantity: 500 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -471,10 +547,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/家电/海尔/",
     dividendPerYear: 2,
     remark: "预估7月/8月分红",
+    maxPositionRatio: 0.08,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.08,
       price: [{ value: 18.5, quantity: 1000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -490,10 +570,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/家电/格力/",
     dividendPerYear: 2,
     remark: "预估8月分红",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.05,
       price: [{ value: 36, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.05, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -508,13 +592,17 @@ const stocks: StockItem[] = [
     sharesHeld: 700,
     url: "/value-investing/industry/电信服务/中国移动/",
     dividendPerYear: 2,
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.1,
       dividend: [
         // { value: 0.055, quantity: 100 }, // 已买
         { value: 0.058, quantity: 200 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -529,10 +617,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/电信服务/中国电信/",
     dividendPerYear: 2,
     remark: "类债属性，几乎不增长，不宜买多，预计9月底分红",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.055, quantity: 2000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 1000 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -549,10 +641,14 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     dividendAdjust: 0.8,
     remark: "类债属性，几乎不增长，不宜买多",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.062, quantity: 4000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 2000 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -570,10 +666,14 @@ const stocks: StockItem[] = [
     dividendAdjust: 0.8 * 1.3,
     remark:
       "0.8 × 1.3 预估今年30%增长，后续几乎不增长，不宜买多，优先买移动和电信",
+    maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.03,
       dividend: [{ value: 0.065, quantity: 1000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 500 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -589,10 +689,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/电力/长江电力/",
     dividendPerYear: 2,
     remark: "预估7月中分红",
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.1,
-      dividend: [{ value: 0.039, quantity: 1000 }],
+      dividend: [{ value: 0.038, quantity: 1000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.03, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -608,10 +712,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/电力/国投电力/",
     dividendPerYear: 1,
     remark: "预估8月分红",
+    maxPositionRatio: 0.08,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.08,
       dividend: [{ value: 0.04, quantity: 1000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.03, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -626,10 +734,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/石油石化/中国海油/",
     dividendPerYear: 2,
     remark: "预估7月中分红",
+    maxPositionRatio: 0.2,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.2,
       dividend: [{ value: 0.05, quantity: 1400 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.035, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -644,10 +756,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/石油石化/中国海油/",
     dividendPerYear: 2,
     dividendAdjust: 0.72,
+    maxPositionRatio: 0.2,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.2,
-      dividend: [{ value: 0.05, quantity: 2000 }],
+      dividend: [{ value: 0.05, quantity: 1000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.035, quantity: 1000 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -662,10 +778,14 @@ const stocks: StockItem[] = [
     sharesHeld: 500,
     url: "/value-investing/industry/有色金属/紫金矿业/",
     dividendPerYear: 2,
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.1,
       price: [{ value: 23.5, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.02, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PRICE,
@@ -681,10 +801,15 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/物业/保利物业/",
     dividendAdjust: 0.8,
     dividendPerYear: 1,
+    maxPositionRatio: 0.05,
+    remark: "资产负债表现金占比极大",
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.052, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.035, quantity: 200 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -700,13 +825,17 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/汽车/赛轮轮胎/",
     dividendPerYear: 2,
     remark: "",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.05,
       price: [
         { value: 11.22, quantity: 200 }, // 11.22 已经买了 200 股
         { value: 10.62, quantity: 400 },
       ],
+    },
+    exit: {
+      type: PlanType.PE,
+      pe: [{ value: 15, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -722,15 +851,19 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/纺织服装/申洲国际/",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
+    maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.03,
       dividend: [
         {
           value: 0.055,
           quantity: 200,
         },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -745,10 +878,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/潮玩/泡泡玛特/",
     dividendPerYear: 1,
     dividendAdjust: 0.8,
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.05,
       price: [{ value: 140, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.PE,
+      pe: [{ value: 22, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -763,10 +900,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/白酒/贵州茅台/",
     dividendPerYear: 2,
     remark: "预估6月下旬分红",
+    maxPositionRatio: 0.2,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.2,
       dividend: [{ value: 0.045, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.03, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -781,10 +922,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/白酒/泸州老窖/",
     dividendPerYear: 2,
     remark: "预估8月分红",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.08, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -798,10 +943,14 @@ const stocks: StockItem[] = [
     qualityScore: 3.5,
     url: "/value-investing/industry/白酒/山西汾酒/",
     dividendPerYear: 1,
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.065, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -817,10 +966,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/白酒/古井贡/",
     dividendPerYear: 2,
     remark: "预估6月中分红",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.05,
       price: [{ value: 50, quantity: 1000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.045, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -836,10 +989,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/汽车/宇通客车/",
     dividendPerYear: 2,
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
+    maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.03,
       dividend: [{ value: 0.1, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.06, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -855,13 +1012,17 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/乳制品/伊利股份/",
     dividendPerYear: 2,
     remark: "缓慢成长，纯吃息",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [
         // { value: 0.058, quantity: 200 }, // 已买
         { value: 0.06, quantity: 200 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -876,10 +1037,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/煤炭/中国神华/",
     dividendPerYear: 2,
     remark: "预估7月上旬分红",
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.1,
       dividend: [{ value: 0.05, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.035, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -894,13 +1059,17 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/煤炭/中国神华/",
     dividendPerYear: 2,
     dividendAdjust: 0.72,
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.1,
       dividend: [
         { value: 0.055, quantity: 300 },
         { value: 0.06, quantity: 500 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.035, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -914,14 +1083,18 @@ const stocks: StockItem[] = [
     qualityScore: 3,
     url: "/value-investing/industry/煤炭/陕西煤业/",
     dividendPerYear: 2,
-    remark: "中报业绩预增",
+    remark: "中报业绩预增，今年业绩不错，买入和退出条件放宽",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [
         { value: 0.05, quantity: 500 },
         { value: 0.055, quantity: 800 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.035, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -936,10 +1109,14 @@ const stocks: StockItem[] = [
     sharesHeld: 600,
     url: "/value-investing/industry/保险/中国平安/",
     dividendPerYear: 2,
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.06, quantity: 500 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -955,13 +1132,17 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/纺织服装/安踏体育/",
     dividendAdjust: 0.8,
     dividendPerYear: 2,
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.05,
       price: [
         { value: 64, quantity: 200 },
         { value: 60, quantity: 400 },
       ],
+    },
+    exit: {
+      type: PlanType.PE,
+      pe: [{ value: 18, quantity: 200 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -977,13 +1158,17 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/企业服务/小商品城/",
     dividendPerYear: 1,
     remark: "25年有一次性收入，分红率提高，26年分红绝对值未必能维持",
+    maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.03,
       dividend: [
         // { value: 0.052, quantity: 500 }, // 已买
         { value: 0.056, quantity: 600 },
       ],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.035, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -998,10 +1183,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/电信服务/中国通信服务/",
     dividendAdjust: 0.8,
     dividendPerYear: 1,
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.05,
       dividend: [{ value: 0.06, quantity: 2000 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -1016,10 +1205,14 @@ const stocks: StockItem[] = [
     sharesHeld: 200,
     url: "/value-investing/industry/航运/中远海控/",
     dividendPerYear: 2,
+    maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.03,
       dividend: [{ value: 0.09, quantity: 500 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.05, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -1035,10 +1228,14 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/航运/中远海控/",
     dividendAdjust: 0.8,
     dividendPerYear: 2,
+    maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.03,
       dividend: [{ value: 0.09, quantity: 500 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.05, quantity: 500 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -1053,10 +1250,15 @@ const stocks: StockItem[] = [
     sharesHeld: 100,
     url: "/value-investing/industry/汽车/比亚迪/",
     dividendPerYear: 1,
+    maxPositionRatio: 0.05,
+    remark: "计划待定，目前还看不清",
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.05,
       price: [{ value: 62, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.PRICE,
+      price: [{ value: 120, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PRICE,
@@ -1071,10 +1273,14 @@ const stocks: StockItem[] = [
     url: "value-investing/industry/金融/港交所",
     dividendPerYear: 1,
     remark: "周期成长股，周期底部击球",
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PE,
-      maxPositionRatio: 0.1,
       pe: [{ value: 21, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.PE,
+      pe: [{ value: 30, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -1089,10 +1295,14 @@ const stocks: StockItem[] = [
     url: "value-investing/industry/电力/国电南瑞",
     dividendPerYear: 2,
     remark: "历史最底部差不多16~18PE",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PE,
-      maxPositionRatio: 0.05,
       pe: [{ value: 18, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.PE,
+      pe: [{ value: 30, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -1107,10 +1317,14 @@ const stocks: StockItem[] = [
     url: "value-investing/industry/汽车/宁德时代",
     dividendPerYear: 2,
     remark: "历史最底部14PE~15PE",
+    maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PE,
-      maxPositionRatio: 0.1,
       pe: [{ value: 15, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.PE,
+      pe: [{ value: 28, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -1126,10 +1340,14 @@ const stocks: StockItem[] = [
     dividendPerYear: 1,
     dividendAdjust: 0.8,
     remark: "历史底部大概20PE",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PE,
-      maxPositionRatio: 0.05,
       pe: [{ value: 20, quantity: 400 }],
+    },
+    exit: {
+      type: PlanType.PE,
+      pe: [{ value: 35, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -1144,10 +1362,14 @@ const stocks: StockItem[] = [
     url: "value-investing/industry/茶饮/东鹏饮料",
     dividendPerYear: 2,
     remark: "2025年年报是10转3派2.5",
+    maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PE,
-      maxPositionRatio: 0.05,
       pe: [{ value: 16, quantity: 100 }],
+    },
+    exit: {
+      type: PlanType.PE,
+      pe: [{ value: 30, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.PE,
@@ -1161,10 +1383,14 @@ const stocks: StockItem[] = [
     qualityScore: 2.5,
     url: "value-investing/industry/化肥/云天化",
     dividendPerYear: 2,
+    maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      maxPositionRatio: 0.03,
       dividend: [{ value: 0.06, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -1177,9 +1403,13 @@ const stocks: StockItem[] = [
     industry: Industry.ETF,
     qualityScore: 2.5,
     sharesHeld: 5000,
+    maxPositionRatio: 0.01,
     plan: {
       type: PlanType.PRICE,
-      maxPositionRatio: 0.01,
+      price: [],
+    },
+    exit: {
+      type: PlanType.PRICE,
       price: [],
     },
     strikePrice: {
@@ -1198,12 +1428,5 @@ const stocks: StockItem[] = [
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
 export const cash = ref(63000);
-
-/**
- * TODO:
- *
- * 1. 股票池增加击球点（内在价值点），判断价格的偏离度
- * 2. 增加卖出计划，方便波动降本
- */
 
 export { stocks };

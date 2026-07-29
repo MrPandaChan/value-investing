@@ -13,6 +13,7 @@ import {
   stocks,
   type StockItem,
   type EntryPrice,
+  type PlanItem,
 } from "../../my-data/stock-pool";
 
 export interface RowData {
@@ -95,6 +96,17 @@ const dynamicUpdateTime = ref(""); // 动态数据（股价等）更新时间
 /** 指数实时数据：code → { price, change } */
 const indexDataMap = ref<Record<string, { price: number; change: number }>>({});
 
+/** 计划模式：买入 or 退出 */
+const planMode = ref<'buy' | 'exit'>('buy');
+
+/** 获取当前模式下的有效计划 */
+function getEffectivePlan(item: StockItem): PlanItem {
+  if (planMode.value === 'exit' && item.exit) {
+    return item.exit;
+  }
+  return item.plan;
+}
+
 /** 需要获取的指数代码列表（由外部设置） */
 let indexCodes: string[] = [];
 
@@ -118,12 +130,13 @@ const isLoading = computed(() => loadingPromise.value !== null);
 // 基于 stocks 结构自动生成指纹，数据变更时自动失效旧缓存
 function computeFingerprint(): string {
   const entries = stocks.map((item: StockItem) => {
+    const ep = getEffectivePlan(item);
     const typeStr =
-      item.plan.type === PlanType.PRICE
+      ep.type === PlanType.PRICE
         ? "PRICE"
-        : item.plan.type === PlanType.DIVIDEND
+        : ep.type === PlanType.DIVIDEND
           ? "DIVIDEND"
-          : item.plan.type === PlanType.PE
+          : ep.type === PlanType.PE
             ? "PE"
             : "EMPTY";
     const base = {
@@ -132,25 +145,26 @@ function computeFingerprint(): string {
       dpy: item.dividendPerYear,
       adj: item.dividendAdjust,
       remark: item.remark,
-      mpr: item.plan.maxPositionRatio,
+      mpr: item.maxPositionRatio,
       sh: item.sharesHeld,
+      mode: planMode.value,
     };
-    if (item.plan.type === PlanType.PRICE) {
+    if (ep.type === PlanType.PRICE) {
       return {
         ...base,
-        entries: item.plan.price.map((e) => ({ v: e.value, q: e.quantity })),
+        entries: ep.price.map((e) => ({ v: e.value, q: e.quantity })),
       };
     }
-    if (item.plan.type === PlanType.DIVIDEND) {
+    if (ep.type === PlanType.DIVIDEND) {
       return {
         ...base,
-        entries: item.plan.dividend.map((e) => ({ v: e.value, q: e.quantity })),
+        entries: ep.dividend.map((e) => ({ v: e.value, q: e.quantity })),
       };
     }
-    if (item.plan.type === PlanType.PE) {
+    if (ep.type === PlanType.PE) {
       return {
         ...base,
-        entries: item.plan.pe.map((e) => ({ v: e.value, q: e.quantity })),
+        entries: ep.pe.map((e) => ({ v: e.value, q: e.quantity })),
       };
     }
     return { ...base, entries: [] };
@@ -390,6 +404,7 @@ async function buildTableData(
 
   for (let i = 0; i < stockCodes.length; i += 1) {
     const item = stocks[i];
+    const ep = getEffectivePlan(item);
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (dynamicData) {
       const { name, code, price, PE_TTM, PB, change } = dynamicData;
@@ -411,7 +426,7 @@ async function buildTableData(
           ? Math.round(dps * item.dividendAdjust * 100) / 100
           : dps;
       groupMetaMap.value[code] = {
-        planType: item.plan.type,
+        planType: ep.type,
         dps,
         effectiveDps,
         pricePE,
@@ -432,11 +447,11 @@ async function buildTableData(
         change,
         marketValue: dynamicData.marketValue,
         remark: item.remark,
-        maxPositionRatio: item.plan.maxPositionRatio,
+        maxPositionRatio: item.maxPositionRatio,
       });
-      if (item.plan.type === PlanType.PRICE) {
-        for (let pi = 0; pi < item.plan.price.length; pi++) {
-          const v = item.plan.price[pi];
+      if (ep.type === PlanType.PRICE) {
+        for (let pi = 0; pi < ep.price.length; pi++) {
+          const v = ep.price[pi];
           tableData.value.push({
             name,
             code,
@@ -449,12 +464,12 @@ async function buildTableData(
             url: item.url,
             exList,
             remark: item.remark,
-            maxPositionRatio: item.plan.maxPositionRatio,
+            maxPositionRatio: item.maxPositionRatio,
           });
         }
-      } else if (item.plan.type === PlanType.DIVIDEND) {
-        for (let pi = 0; pi < item.plan.dividend.length; pi++) {
-          const v = item.plan.dividend[pi];
+      } else if (ep.type === PlanType.DIVIDEND) {
+        for (let pi = 0; pi < ep.dividend.length; pi++) {
+          const v = ep.dividend[pi];
           const targetPrice = effectiveDps / v.value;
           tableData.value.push({
             name,
@@ -468,12 +483,12 @@ async function buildTableData(
             url: item.url,
             exList,
             remark: item.remark,
-            maxPositionRatio: item.plan.maxPositionRatio,
+            maxPositionRatio: item.maxPositionRatio,
           });
         }
-      } else if (item.plan.type === PlanType.PE) {
-        for (let pi = 0; pi < item.plan.pe.length; pi++) {
-          const v = item.plan.pe[pi];
+      } else if (ep.type === PlanType.PE) {
+        for (let pi = 0; pi < ep.pe.length; pi++) {
+          const v = ep.pe[pi];
           const targetPrice = price * (v.value / pricePE);
           tableData.value.push({
             name,
@@ -487,7 +502,7 @@ async function buildTableData(
             url: item.url,
             exList,
             remark: item.remark,
-            maxPositionRatio: item.plan.maxPositionRatio,
+            maxPositionRatio: item.maxPositionRatio,
           });
         }
       }
@@ -532,6 +547,7 @@ async function refreshData() {
 
   for (let i = 0; i < stockCodes.length; i++) {
     const item = stocks[i];
+    const ep = getEffectivePlan(item);
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (!dynamicData) continue;
 
@@ -548,7 +564,7 @@ async function refreshData() {
 
     groupMetaMap.value[code] = {
       ...(meta || {
-        planType: item.plan.type,
+        planType: ep.type,
         dps: 0,
         effectiveDps: 0,
         dividendAdjust: undefined,
@@ -570,21 +586,21 @@ async function refreshData() {
         row.marketValue = dynamicData.marketValue;
       } else {
         // 计划行
-        if (item.plan.type === PlanType.PRICE) {
-          const planPrice = item.plan.price[index - 1].value;
+        if (ep.type === PlanType.PRICE) {
+          const planPrice = ep.price[index - 1]!.value;
           row.price = planPrice;
           row.pe = pricePE * (planPrice / price);
           row.pb = PB * (planPrice / price);
           row.dividend = effectiveDps / planPrice;
-        } else if (item.plan.type === PlanType.DIVIDEND) {
-          const planDiv = item.plan.dividend[index - 1].value;
+        } else if (ep.type === PlanType.DIVIDEND) {
+          const planDiv = ep.dividend[index - 1]!.value;
           const targetPrice = effectiveDps / planDiv;
           row.price = targetPrice;
           row.pe = pricePE * (targetPrice / price);
           row.pb = PB * (targetPrice / price);
           row.dividend = planDiv;
-        } else if (item.plan.type === PlanType.PE) {
-          const planPE = item.plan.pe[index - 1].value;
+        } else if (ep.type === PlanType.PE) {
+          const planPE = ep.pe[index - 1]!.value;
           const targetPrice = price * (planPE / pricePE);
           row.price = targetPrice;
           row.pe = planPE;
@@ -665,6 +681,7 @@ export function useStockPoolData(indexCodeList?: string[]) {
     isLoading,
     dividendUpdateTime,
     dynamicUpdateTime,
+    planMode,
     init,
     refresh,
     loadFromStorage,

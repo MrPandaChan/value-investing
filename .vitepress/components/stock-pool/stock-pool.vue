@@ -53,6 +53,7 @@ const {
   isLoading,
   dividendUpdateTime,
   dynamicUpdateTime,
+  planMode,
   init: initShared,
   refresh: refreshShared,
   loadFromStorage,
@@ -192,8 +193,14 @@ const indexListGroup2 = computed(() =>
 );
 
 const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
+const PLAN_MODE_STORAGE_KEY = "stock-pool-plan-mode";
 
 onMounted(() => {
+  // 加载持久化的计划模式
+  const savedMode = localStorage.getItem(PLAN_MODE_STORAGE_KEY);
+  if (savedMode === "buy" || savedMode === "exit") {
+    planMode.value = savedMode;
+  }
   loadFromStorage();
   refresh();
   // 加载持久化的市场筛选
@@ -244,6 +251,12 @@ watch(
   },
   { deep: true },
 );
+
+function handlePlanModeChange(val: "buy" | "exit") {
+  localStorage.setItem(PLAN_MODE_STORAGE_KEY, val);
+  tableData.value = [];
+  refresh();
+}
 
 async function refresh() {
   try {
@@ -485,7 +498,11 @@ const mergedTableData = computed(() => {
     const mergedRows: MergedRowData[] = resolvedRows.map((row, index) => {
       const isLast = index === group.length - 1 && index > 0;
       const decline =
-        index === 0 ? 0 : ((realPrice - row.price) / realPrice) * 100;
+        index === 0
+          ? 0
+          : planMode.value === "exit"
+            ? ((row.price - realPrice) / realPrice) * 100
+            : ((realPrice - row.price) / realPrice) * 100;
       const annualDps = row.exList.reduce(
         (pre: number, cur: ExItem) => pre + getEffectiveEventDps(cur),
         0,
@@ -619,6 +636,15 @@ const mergedTableData = computed(() => {
 </script>
 
 <template>
+  <el-radio-group
+    class="plan-mode-group"
+    v-model="planMode"
+    @change="handlePlanModeChange"
+  >
+    <el-radio-button value="buy">买入</el-radio-button>
+    <el-radio-button value="exit">退出</el-radio-button>
+  </el-radio-group>
+
   <div class="toolbar">
     <el-select
       v-model="marketFilter"
@@ -662,6 +688,7 @@ const mergedTableData = computed(() => {
         :value="z.value"
       />
     </el-select>
+
     <el-button type="primary" :loading="isLoading" @click="refresh"
       >刷新实时数据</el-button
     >
@@ -759,7 +786,7 @@ const mergedTableData = computed(() => {
         </th>
         <th class="bold bg-green sortable" @click="handleSort('decline')">
           <span class="sort-header">
-            还要跌
+            {{ planMode === "exit" ? "还要涨" : "还要跌" }}
             <span class="sort-arrows">
               <el-icon
                 :size="12"
@@ -810,8 +837,8 @@ const mergedTableData = computed(() => {
         </th>
         <th class="bold">每股分红</th>
         <th class="bold bg-pink red">年分红</th>
-        <th class="bold">计划股数</th>
-        <th class="bold">计划市值</th>
+        <th class="bold">股数</th>
+        <th class="bold">市值</th>
         <th class="bold">持有</th>
         <th class="bold">备注</th>
       </tr>
@@ -1132,6 +1159,10 @@ html.dark {
     --sp-input-dividend-color: #ff8888;
     --sp-input-pe-color: #ff8888;
   }
+}
+
+.plan-mode-group {
+  margin-bottom: 16px;
 }
 
 .toolbar {
