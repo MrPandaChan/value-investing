@@ -577,7 +577,7 @@ const stocks: StockItem[] = [
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.05, quantity: 100 }],
+      dividend: [{ value: 0.055, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
