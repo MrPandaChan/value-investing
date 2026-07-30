@@ -247,3 +247,5 @@ ChatGPT 的高级数据分析功能
 ## 投研闭环
 
 [我常用的5个AI工具，串成一套投研闭环（2026.07.13 投资实战派）](https://mp.weixin.qq.com/s/N7A6XxHK4BkdVEWezmgcJg)
+
+AI股票研究公众号推荐：奔波儿r
