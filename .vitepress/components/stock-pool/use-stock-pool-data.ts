@@ -352,12 +352,14 @@ async function buildTableData(
 ) {
   const stockCodes = stocks.map((v) => v.code);
 
+  // 标记是否新获取了分红数据（而非复用缓存），用于控制汇率转换只执行一次
+  let freshDataFetched = !useCachedDividend;
+
   if (!useCachedDividend) {
     // 重新获取分红数据（强制刷新，绕过 fetchAllDividendData 的当日缓存）
     const exListMapResult = await fetchAllDividendData(stockCodes, true);
     exListMap.value = exListMapResult;
     dividendUpdateTime.value = new Date().toLocaleString();
-    saveDividendToStorage();
   } else if (!Object.keys(exListMap.value).length) {
     // 尝试从分红存储加载
     loadDividendFromStorage();
@@ -366,7 +368,7 @@ async function buildTableData(
       const exListMapResult = await fetchAllDividendData(stockCodes);
       exListMap.value = exListMapResult;
       dividendUpdateTime.value = new Date().toLocaleString();
-      saveDividendToStorage();
+      freshDataFetched = true;
     }
   }
 
@@ -376,30 +378,35 @@ async function buildTableData(
   const rate = await getExchangeRate();
   exchangeRate.value = rate;
 
-  // 港股人民币分红按汇率转为港币（字符串中的港币计算值不准确）
-  for (const item of stocks) {
-    if (isHKCode(item.code)) {
-      const exList = exListMap.value[item.code];
-      if (exList) {
-        for (const ex of exList) {
-          if (ex.isRmb) {
-            ex.dps = ex.dps * exchangeRate.value;
-            delete ex.isRmb;
+  // 汇率转换仅在新获取数据时执行一次，避免缓存的已转换数据被重复乘
+  if (freshDataFetched) {
+    // 港股人民币分红按汇率转为港币（字符串中的港币计算值不准确）
+    for (const item of stocks) {
+      if (isHKCode(item.code)) {
+        const exList = exListMap.value[item.code];
+        if (exList) {
+          for (const ex of exList) {
+            if (ex.isRmb) {
+              ex.dps = ex.dps * exchangeRate.value;
+              delete ex.isRmb;
+            }
           }
         }
       }
     }
-  }
-  // B股分红数据为人民币，转为港币后再计算股息率
-  for (const item of stocks) {
-    if (isBCode(item.code)) {
-      const exList = exListMap.value[item.code];
-      if (exList) {
-        for (const ex of exList) {
-          ex.dps = ex.dps * exchangeRate.value;
+    // B股分红数据为人民币，转为港币后再计算股息率
+    for (const item of stocks) {
+      if (isBCode(item.code)) {
+        const exList = exListMap.value[item.code];
+        if (exList) {
+          for (const ex of exList) {
+            ex.dps = ex.dps * exchangeRate.value;
+          }
         }
       }
     }
+    // 转换后再保存到分红独立存储
+    saveDividendToStorage();
   }
 
   for (let i = 0; i < stockCodes.length; i += 1) {
