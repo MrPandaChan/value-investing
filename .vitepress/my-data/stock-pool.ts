@@ -500,8 +500,8 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 71.2, quantity: 100 },
-        { value: 67.2, quantity: 200 },
+        { value: 75, quantity: 100 },
+        { value: 71, quantity: 200 },
       ],
     },
     exit: {
