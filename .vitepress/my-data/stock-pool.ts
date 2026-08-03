@@ -541,17 +541,14 @@ const stocks: StockItem[] = [
     code: "000651",
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3,
-    sharesHeld: 300,
+    sharesHeld: 400,
     url: "/value-investing/industry/家电/格力/",
     dividendPerYear: 2,
     remark: "预估8月分红",
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      price: [
-        { value: 41.18, quantity: 100 },
-        { value: 36, quantity: 100 },
-      ],
+      price: [{ value: 36, quantity: 100 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1427,6 +1424,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(42000);
+export const cash = ref(38000);
 
 export { stocks };
