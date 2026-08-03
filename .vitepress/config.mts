@@ -62,7 +62,7 @@ export default defineConfig({
         link: "/value-investing/投资理念与心法/投资信息源",
       },
       { text: "行业与企业", link: "/industry-overview" },
-      { text: "投资计划", link: "/value-investing/入门与计划/投资计划" },
+      { text: "投资计划", link: "/value-investing/投资计划/投资计划" },
     ],
     sidebar: {
       "/value-investing/": valueSidebar,
