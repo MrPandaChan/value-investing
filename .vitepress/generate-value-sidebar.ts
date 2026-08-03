@@ -8,7 +8,7 @@
  *
  * 目录结构：
  *   value-investing/
- *     入门与计划/
+ *     投资计划/
  *       TODO.md
  *       投资计划.md
  *       ...
@@ -33,7 +33,7 @@ const VALUE_DIR = join(ROOT, "value-investing");
 
 /** 分组排序：按此数组中的顺序排列，未列出的目录排在最后 */
 const GROUP_ORDER = [
-  "入门与计划",
+  "投资计划",
   "投资理念与心法",
   "市场与宏观环境",
   "公司分析与估值",

@@ -20,7 +20,7 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
       </p>
       <nav class="hero-links">
         <a
-          :href="withBase('/value-investing/入门与计划/投资计划')"
+          :href="withBase('/value-investing/投资计划/投资计划')"
           class="hero-btn"
         >
           <span class="hero-btn-icon">→</span>
@@ -31,11 +31,7 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
 
     <!-- Grid -->
     <section class="grid">
-      <div
-        v-for="ind in industries"
-        :key="ind.name"
-        class="card"
-      >
+      <div v-for="ind in industries" :key="ind.name" class="card">
         <div class="card-top">
           <a :href="withBase(ind.route)" class="card-name">{{ ind.name }}</a>
         </div>

@@ -12,7 +12,7 @@ hero:
       link: /industry-overview
     - theme: alt
       text: 待办清单
-      link: /value-investing/入门与计划/TODO
+      link: /value-investing/投资计划/TODO
 
 features:
   - title: 投研SOP
