@@ -96,6 +96,7 @@ type SortKey =
 const marketFilter = ref<string[]>([]); // 市场筛选：空数组表示全部
 const industryFilter = ref<string[]>([]); // 行业筛选：空数组表示全部
 const zoneFilter = ref<string[]>([]); // 分区筛选：空数组表示全部
+const heldOnlyFilter = ref(false); // 已持有筛选：仅显示有持有股数的股票
 
 const ZONE_OPTIONS = [
   { label: "险地区", value: "danger" },
@@ -194,6 +195,7 @@ const indexListGroup2 = computed(() =>
 
 const MARKET_FILTER_STORAGE_KEY = "stock-pool-market-filter";
 const PLAN_MODE_STORAGE_KEY = "stock-pool-plan-mode";
+const HELD_ONLY_STORAGE_KEY = "stock-pool-held-only";
 
 onMounted(() => {
   // 加载持久化的计划模式
@@ -223,6 +225,8 @@ onMounted(() => {
       // ignore
     }
   }
+  // 加载持久化的已持有筛选
+  heldOnlyFilter.value = localStorage.getItem(HELD_ONLY_STORAGE_KEY) === "1";
 });
 
 // custom* 变化时同步编辑缓冲区（持久化由 composable 统一处理）
@@ -251,6 +255,10 @@ watch(
   },
   { deep: true },
 );
+
+watch(heldOnlyFilter, (val) => {
+  localStorage.setItem(HELD_ONLY_STORAGE_KEY, val ? "1" : "0");
+});
 
 function handlePlanModeChange(val: "buy" | "exit") {
   localStorage.setItem(PLAN_MODE_STORAGE_KEY, val);
@@ -576,6 +584,14 @@ const mergedTableData = computed(() => {
     });
   }
 
+  // 按已持有筛选：仅保留有持有股数的股票
+  if (heldOnlyFilter.value) {
+    filteredGroups = filteredGroups.filter((g) => {
+      const sh = g.rows[0]?.sharesHeld;
+      return sh != null && sh > 0;
+    });
+  }
+
   // 第二步：排序
   const { key, order } = sortConfig.value;
   const sortMultiplier = order === "asc" ? 1 : -1;
@@ -636,14 +652,22 @@ const mergedTableData = computed(() => {
 </script>
 
 <template>
-  <el-radio-group
-    class="plan-mode-group"
-    v-model="planMode"
-    @change="handlePlanModeChange"
-  >
-    <el-radio-button value="buy">买入</el-radio-button>
-    <el-radio-button value="exit">退出</el-radio-button>
-  </el-radio-group>
+  <div class="plan-mode-row">
+    <el-radio-group
+      class="plan-mode-group"
+      v-model="planMode"
+      @change="handlePlanModeChange"
+    >
+      <el-radio-button value="buy">买入</el-radio-button>
+      <el-radio-button value="exit">退出</el-radio-button>
+    </el-radio-group>
+    <el-switch
+      v-model="heldOnlyFilter"
+      active-text="已持有"
+      inactive-text="全部"
+      class="held-only-switch"
+    />
+  </div>
 
   <div class="toolbar">
     <el-select
@@ -1161,8 +1185,15 @@ html.dark {
   }
 }
 
-.plan-mode-group {
+.plan-mode-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin-bottom: 16px;
+}
+
+.plan-mode-group {
+  margin-bottom: 0;
 }
 
 .toolbar {
