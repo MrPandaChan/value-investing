@@ -119,33 +119,32 @@ const calculateGrowthRate = (
   return (Math.pow(endValue / startValue, 1 / years) - 1) * 100;
 };
 
-// 计算单列的各种增速
+// 计算单列的各种增速（仅基于完整年度数据，最新报告期不完整时自动跳过）
 const calculateColumnGrowth = (data: any[], column: string) => {
-  // 确保数据按年份升序排列（从早到晚）
-  const sortedData = [...data].sort(
-    (a, b) => parseInt(a.year) - parseInt(b.year)
-  );
+  // 仅保留完整年度（剔除 Q 季度/最新不完整报告期）并按年份升序排列
+  const annualData = data
+    .filter((v) => !String(v.year).includes("Q"))
+    .sort((a, b) => parseInt(a.year) - parseInt(b.year));
 
-  // 1年年化增速（最新一年比前一年）
-  const oneYear = calculateGrowthRate(
-    sortedData[sortedData.length - 2][column], // 前一年
-    sortedData[sortedData.length - 1][column], // 最新一年
-    1
-  );
+  if (annualData.length < 2) {
+    return { oneYear: NaN, fiveYear: NaN, nineYear: NaN };
+  }
 
-  // 5年年化增速（最新一年比5年前）
-  const fiveYear = calculateGrowthRate(
-    sortedData[sortedData.length - 6][column], // 5年前
-    sortedData[sortedData.length - 1][column], // 最新一年
-    5
-  );
+  const latest = annualData[annualData.length - 1][column]; // 最新完整年度
+  const prev = annualData[annualData.length - 2][column]; // 前一年
+  const earliest = annualData[0][column]; // 最早完整年度
 
-  // 9年年化增速（最新一年比9年前）
-  const nineYear = calculateGrowthRate(
-    sortedData[0][column], // 最早一年
-    sortedData[sortedData.length - 1][column], // 最新一年
-    sortedData.length - 1 // 总年数减1
-  );
+  // 1年年化增速（最新完整年度比前一年）
+  const oneYear = calculateGrowthRate(prev, latest, 1);
+
+  // 5年年化增速（最新完整年度比5年前）
+  const fiveYear =
+    annualData.length >= 6
+      ? calculateGrowthRate(annualData[annualData.length - 6][column], latest, 5)
+      : NaN;
+
+  // 长期年化增速（最早完整年度比最新完整年度，按实际跨年年数计算）
+  const nineYear = calculateGrowthRate(earliest, latest, annualData.length - 1);
 
   return {
     oneYear,
@@ -169,10 +168,7 @@ const tableData = computed(() => {
   // 计算所有数值列的增速
   const growthData = numericColumns.reduce((acc, column) => {
     try {
-      acc[column] = calculateColumnGrowth(
-        sortedData.filter((v) => !v.year.includes("Q")),
-        column
-      );
+      acc[column] = calculateColumnGrowth(sortedData, column);
     } catch (e) {
       console.error(`Error calculating growth for ${column}:`, e);
       acc[column] = {
