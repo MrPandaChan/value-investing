@@ -655,7 +655,7 @@ const stocks: StockItem[] = [
     code: "600900",
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 4.5,
-    sharesHeld: 200,
+    sharesHeld: 300,
     url: "/value-investing/industry/电力/长江电力/",
     dividendPerYear: 2,
     remark: "预估7月中分红",
@@ -663,8 +663,8 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 27.6, quantity: 100 },
         { value: 26.6, quantity: 200 },
+        { value: 26, quantity: 200 },
         { value: 25, quantity: 400 },
       ],
     },
