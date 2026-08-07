@@ -566,6 +566,17 @@ const otherStockData: StockItem[] = [
       dividendYield: 0.01,
     },
   },
+  {
+    type: StockType.A,
+    name: "乖宝宠物",
+    code: "301498",
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.01,
+    },
+  },
 ];
 
 export { otherStockData };

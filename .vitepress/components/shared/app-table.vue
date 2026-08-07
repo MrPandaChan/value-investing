@@ -211,6 +211,9 @@ const PERIOD_OPTIONS: { value: ReportPeriod; label: string }[] = [
 const currentData = computed(() => {
   if (!hasQuarterly.value) return props.data;
 
+  // 抽取年化增速统计行（始终展示，与报告期选择无关）
+  const statRows = props.data.filter((v) => v._isStatRow);
+
   // 年报 + 累计：直接返回原数据（含增速统计行、已排序）
   if (reportPeriod.value === "annual" && !isSingleQuarter.value) {
     return props.data;
@@ -296,9 +299,12 @@ const currentData = computed(() => {
     const y = parseInt(getYearPrefix(item.year));
     return isNaN(y) || y >= minYear;
   });
-  return result.sort((a, b) =>
-    yearSortKey(b.year).localeCompare(yearSortKey(a.year)),
+  // 旧年份在上、新年份在下
+  result.sort((a, b) =>
+    yearSortKey(a.year).localeCompare(yearSortKey(b.year)),
   );
+  // 始终展示年化增速统计行
+  return [...result, ...statRows];
 });
 
 const md = MarkdownIt({
