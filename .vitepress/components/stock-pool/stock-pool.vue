@@ -861,8 +861,8 @@ const mergedTableData = computed(() => {
         </th>
         <th class="bold">每股分红</th>
         <th class="bold bg-pink red">年分红</th>
-        <th class="bold">股数</th>
-        <th class="bold">市值</th>
+        <th class="bold">目标</th>
+        <th class="bold">目标市值</th>
         <th class="bold">持有</th>
         <th class="bold">备注</th>
       </tr>
@@ -1425,7 +1425,7 @@ html.dark {
 
   .remark-cell {
     white-space: normal;
-    max-width: 140px;
+    min-width: 140px;
     text-align: left;
   }
 
