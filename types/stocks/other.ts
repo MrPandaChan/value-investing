@@ -387,17 +387,6 @@ const otherStockData: StockItem[] = [
   },
   {
     type: StockType.A,
-    name: "公牛集团",
-    code: "603195",
-    level: StockLevel.ROTATION,
-    allocation: 0.05,
-    valuationConfig: {
-      type: ValuationType.REFERENCE,
-      price: 28.05,
-    },
-  },
-  {
-    type: StockType.A,
     name: "华特达因",
     code: "000915",
     level: StockLevel.MARGIN,
