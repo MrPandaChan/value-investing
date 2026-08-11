@@ -566,6 +566,17 @@ const otherStockData: StockItem[] = [
       dividendYield: 0.01,
     },
   },
+  {
+    type: StockType.A,
+    name: "海康威视",
+    code: "002415",
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.04,
+    },
+  },
 ];
 
 export { otherStockData };
