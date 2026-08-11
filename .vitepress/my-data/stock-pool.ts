@@ -26,6 +26,7 @@ export enum Industry {
   FINANCIAL = "金融",
   BEVERAGE = "茶饮",
   MATERIALS = "材料",
+  SECURITY = "安防",
   ETF = "ETF",
 }
 
@@ -1391,6 +1392,49 @@ const stocks: StockItem[] = [
     strikePrice: {
       type: PlanType.DIVIDEND,
       value: 0.06,
+    },
+  },
+  {
+    // 万华化学
+    code: "600309",
+    industry: Industry.MATERIALS,
+    qualityScore: 3.5,
+    url: "value-investing/industry/材料/万华化学",
+    remark: "分红有时一年两次，有时一年一次",
+    dividendPerYear: 2,
+    maxPositionRatio: 0.05,
+    plan: {
+      type: PlanType.PRICE,
+      price: [{ value: 60, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.PRICE,
+      price: [{ value: 100, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.PRICE,
+      value: 60,
+    },
+  },
+  {
+    // 海康威视
+    code: "002415",
+    industry: Industry.SECURITY,
+    qualityScore: 3.5,
+    url: "value-investing/industry/安防/海康威视",
+    dividendPerYear: 2,
+    maxPositionRatio: 0.05,
+    plan: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 4, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 2, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 4,
     },
   },
   {
