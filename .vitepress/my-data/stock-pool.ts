@@ -966,17 +966,14 @@ const stocks: StockItem[] = [
     code: "600066",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3,
-    sharesHeld: 300,
+    sharesHeld: 400,
     url: "/value-investing/industry/汽车/宇通客车/",
     dividendPerYear: 2,
     remark: "2025年99.65%分红率，26Q1营收同比下滑7.92%",
     maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [
-        { value: 0.085, quantity: 100 },
-        { value: 0.1, quantity: 200 },
-      ],
+      dividend: [{ value: 0.1, quantity: 200 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
