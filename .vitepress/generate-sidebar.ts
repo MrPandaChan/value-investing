@@ -72,6 +72,8 @@ function getModuleName(filename: string): string {
 function getDisplayName(name: string): string {
   if (MODULE_LABELS[name]) return MODULE_LABELS[name];
   if (/[\u4e00-\u9fff]/.test(name)) return name;
+  // 日期文件名（如 2026-08-11）保留 "-"，不做转空格处理
+  if (/^\d{4}-\d{1,2}(-\d{1,2})?$/.test(name)) return name;
   return name.charAt(0).toUpperCase() + name.slice(1).replace(/-/g, " ");
 }
 
