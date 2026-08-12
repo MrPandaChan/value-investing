@@ -15,7 +15,7 @@ export function saveJsonToFile(
     pretty?: boolean; // 是否美化JSON格式
     encoding?: BufferEncoding; // 文件编码
     createDir?: boolean; // 如果目录不存在是否创建
-  }
+  },
 ): boolean {
   try {
     const opts = {
@@ -46,7 +46,7 @@ export function saveJsonToFile(
     console.error(
       `保存JSON数据到文件失败: ${
         error instanceof Error ? error.message : String(error)
-      }`
+      }`,
     );
     return false;
   }
@@ -66,7 +66,7 @@ export async function saveJsonToFileAsync(
     pretty?: boolean; // 是否美化JSON格式
     encoding?: BufferEncoding; // 文件编码
     createDir?: boolean; // 如果目录不存在是否创建
-  }
+  },
 ): Promise<boolean> {
   try {
     const opts = {
@@ -99,7 +99,7 @@ export async function saveJsonToFileAsync(
     console.error(
       `异步保存JSON数据到文件失败: ${
         error instanceof Error ? error.message : String(error)
-      }`
+      }`,
     );
     return false;
   }
@@ -123,7 +123,7 @@ export function saveDataToTsFile(
     encoding?: BufferEncoding; // 文件编码
     createDir?: boolean; // 如果目录不存在是否创建
     pretty?: boolean; // 是否美化JSON格式
-  }
+  },
 ): boolean {
   try {
     const opts = {
@@ -183,7 +183,7 @@ export { ${opts.exportName} };
     console.error(
       `保存数据到TS文件失败: ${
         error instanceof Error ? error.message : String(error)
-      }`
+      }`,
     );
     return false;
   }
@@ -207,7 +207,7 @@ export async function saveDataToTsFileAsync(
     encoding?: BufferEncoding; // 文件编码
     createDir?: boolean; // 如果目录不存在是否创建
     pretty?: boolean; // 是否美化JSON格式
-  }
+  },
 ): Promise<boolean> {
   try {
     const opts = {
@@ -270,7 +270,7 @@ export { ${opts.exportName} };
     console.error(
       `异步保存数据到TS文件失败: ${
         error instanceof Error ? error.message : String(error)
-      }`
+      }`,
     );
     return false;
   }
