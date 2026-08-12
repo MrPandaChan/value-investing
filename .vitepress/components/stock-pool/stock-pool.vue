@@ -20,6 +20,7 @@ import { buildExDisplay, type ExDisplayInfo } from "./use-dividend-status";
 import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
 import { stocks } from "../../my-data/stock-pool";
 import StockPoolPortfolio from "./portfolio.vue";
+import MarkdownIt from "markdown-it";
 
 // ========== 分红状态判断（已拆分至 use-dividend-status.ts） ==========
 
@@ -60,6 +61,13 @@ const {
 } = useStockPoolData(INDEX_CODE_LIST);
 
 const portfolioDialogVisible = ref(false);
+
+// remark 使用 markdown 渲染
+const md = MarkdownIt({ html: true });
+
+function renderRemark(text?: string): string {
+  return text ? md.render(text) : "";
+}
 
 interface MergedRowData extends RowData {
   nameRowSpan: number;
@@ -1105,9 +1113,8 @@ const mergedTableData = computed(() => {
           v-if="row.remarkRowSpan > 0"
           :rowspan="row.remarkRowSpan"
           class="remark-cell"
-        >
-          {{ row.remark }}
-        </td>
+          v-html="renderRemark(row.remark)"
+        ></td>
       </tr>
     </tbody>
   </table>
@@ -1427,6 +1434,10 @@ html.dark {
     white-space: normal;
     min-width: 140px;
     text-align: left;
+
+    p {
+      margin: 0;
+    }
   }
 
   .strike-price-cell {
