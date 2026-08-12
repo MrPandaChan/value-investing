@@ -331,6 +331,9 @@ const selectedColumns = ref<string[]>(
     : [props.columns[1].key],
 );
 
+// 是否显示非百分比数据的同比变动折线（默认勾选）
+const showYoY = ref(true);
+
 // 控制说明弹窗的显示状态
 const showDescription = ref(false);
 
@@ -361,6 +364,11 @@ watch([reportPeriod, isSingleQuarter], () => {
   updateChart();
 });
 
+// 监听同比变动开关
+watch(showYoY, () => {
+  updateChart();
+});
+
 function groupBy<T extends Record<string, any>, K extends keyof T>(
   array: T[],
   key: K,
@@ -378,6 +386,39 @@ function groupBy<T extends Record<string, any>, K extends keyof T>(
   }
 
   return Array.from(resultMap.values());
+}
+
+// 计算上一报告期标签（年度→上年，季度→上年同期），用于同比计算
+function prevYearLabel(year: string): string | null {
+  const m = year.match(/^(\d{4})(?:Q(\d))?$/);
+  if (!m) return null;
+  const prevYear = parseInt(m[1], 10) - 1;
+  return m[2] ? `${prevYear}Q${m[2]}` : String(prevYear);
+}
+
+// 获取某组在指定报告期的原始值：优先当前显示数据，其次回退原始季度数据
+// （"最新"模式下上年同期可能被年报替代，需要从 quarterlyData 中找回）
+function getRawValue(
+  arr: any[],
+  yearLabel: string,
+  ck: string,
+  groupKeyVal?: unknown,
+): number | undefined {
+  const target = arr.find((v) => v.year === yearLabel);
+  if (target && typeof target[ck] === "number") {
+    return target[ck];
+  }
+  if (hasQuarterly.value) {
+    const found = props.quarterlyData!.find(
+      (v) =>
+        v.year === yearLabel &&
+        (!props.groupKey || v[props.groupKey] === groupKeyVal),
+    );
+    if (found && typeof found[ck] === "number") {
+      return found[ck];
+    }
+  }
+  return undefined;
 }
 
 const group = computed(() => {
@@ -523,8 +564,7 @@ function renderNestedQuarterChart(colKey: string, column: TableColumn) {
       show: true,
       position: "top",
       color: labelColor,
-      formatter: (p: any) =>
-        p.value != null && p.value > 10 ? p.value.toFixed(0) : "",
+      formatter: (p: any) => (p.value != null ? p.value.toFixed(2) : ""),
     },
     emphasis: {
       itemStyle: {
@@ -591,6 +631,93 @@ function renderNestedQuarterChart(colKey: string, column: TableColumn) {
     });
   }
 
+  // ---- 5.5 年度同比折线（勾选"同比变动"时叠加，保持嵌套柱图原样式） ----
+  // 每年折线点 = 当年已披露报告期的累计值 vs 上年同期累计值：
+  // 完整年度取全年累计；最新不完整年度（如仅有 2026Q1）取 Q1 值 vs 上年 Q1 值
+  if (showYoY.value) {
+    // 该年已披露的最高季度索引（单季拆分后完整年度为 3）
+    const maxQuarterIdx = (e: { qRaw: (number | null)[] }): number => {
+      for (let q = 3; q >= 0; q--) {
+        if (e.qRaw[q] != null) return q;
+      }
+      return -1;
+    };
+    // 该年从 Q1 到指定季度的单季值之和（即已披露报告期的累计值）
+    const cumulativeTo = (
+      e: { qRaw: (number | null)[] },
+      upTo: number,
+    ): number | null => {
+      let sum = 0;
+      let has = false;
+      for (let i = 0; i <= upTo; i++) {
+        if (e.qRaw[i] != null) {
+          sum += e.qRaw[i]!;
+          has = true;
+        }
+      }
+      return has ? sum : null;
+    };
+
+    const yoyData = yrList.map((e) => {
+      const ai = allYears.findIndex((x) => x.year === e.year);
+      const prev = ai > 0 ? allYears[ai - 1] : undefined;
+      const qMax = maxQuarterIdx(e);
+      if (qMax < 0) return null;
+      const cur = cumulativeTo(e, qMax);
+      const prevVal = prev ? cumulativeTo(prev, qMax) : null;
+      if (cur == null || prevVal == null || prevVal === 0) return null;
+      return ((cur - prevVal) / Math.abs(prevVal)) * 100;
+    });
+
+    const yoyColor = "#fa8c16";
+    series.push({
+      name: "年度同比",
+      type: "line",
+      yAxisIndex: 1,
+      data: yoyData,
+      showSymbol: true,
+      symbolSize: (val: number | null) => (val !== null ? 6 : 0),
+      symbol: "circle",
+      z: 3,
+      itemStyle: { color: yoyColor },
+      lineStyle: { width: 2, type: "dashed", color: yoyColor },
+      label: {
+        show: true,
+        position: "top",
+        distance: 12,
+        color: yoyColor,
+        formatter: (params: any) =>
+          params.value !== null ? `${params.value.toFixed(1)}%` : "",
+      },
+      tooltip: {
+        formatter: (p: any) => {
+          const ai = allYears.findIndex((x) => x.year === p.name);
+          const e = ai >= 0 ? allYears[ai] : undefined;
+          if (!e) return "";
+          const prev = ai > 0 ? allYears[ai - 1] : undefined;
+          const qMax = maxQuarterIdx(e);
+          const cur = qMax >= 0 ? cumulativeTo(e, qMax) : null;
+          const prevVal = prev ? cumulativeTo(prev, qMax) : null;
+          const pct =
+            cur != null && prevVal != null && prevVal !== 0
+              ? ((cur - prevVal) / Math.abs(prevVal)) * 100
+              : null;
+          if (pct == null) return "";
+          const sign = pct > 0 ? "+" : "";
+          const color =
+            pct > 0
+              ? dark
+                ? "#ff7875"
+                : "#cf1322"
+              : dark
+                ? "#95de64"
+                : "#389e0d";
+          return `<div style="font-weight:bold;margin-bottom:4px;">${p.name}年同比</div><div>${sign}${pct.toFixed(2)}%</div>`;
+        },
+      },
+    });
+  }
+
   // ---- 6. option ----
   const textColor = dark ? "#aaa" : "#333";
   const axisColor = dark ? "#555" : "#333";
@@ -608,7 +735,12 @@ function renderNestedQuarterChart(colKey: string, column: TableColumn) {
       borderColor: tBorder,
       textStyle: { color: tText },
     },
-    grid: { left: "3%", right: "4%", bottom: "15%", containLabel: true },
+    grid: {
+      left: "3%",
+      right: showYoY.value ? "6%" : "4%",
+      bottom: "15%",
+      containLabel: true,
+    },
     legend: { show: false },
     xAxis: {
       type: "category",
@@ -631,6 +763,16 @@ function renderNestedQuarterChart(colKey: string, column: TableColumn) {
         axisLabel: { color: textColor },
         splitLine: { lineStyle: { type: "dashed", color: splitColor } },
       },
+      ...(showYoY.value
+        ? [
+            {
+              type: "value",
+              position: "right",
+              axisLabel: { formatter: "{value}%", color: textColor },
+              splitLine: { show: false },
+            },
+          ]
+        : []),
     ],
     series,
   };
@@ -665,6 +807,7 @@ function updateChart() {
     selectedColumns.value.length === 1 &&
     !props.groupKey;
 
+  // 单季度模式始终保留嵌套柱图样式；同比折线在嵌套柱图内按年度口径绘制
   if (isSingleQuarterAbsolute && hasQuarterly.value) {
     renderNestedQuarterChart(colKey!, column!);
     return;
@@ -676,20 +819,24 @@ function updateChart() {
   let barCount = 0;
 
   // 添加选中的列数据
+  const yoyNames: string[] = [];
   selectedColumns.value.forEach((ck) => {
     const col = props.columns.find((c) => c.key === ck);
     if (!col) return;
 
-    group.value.forEach((arr, i) => {
-      const values = years.value.map((year) => {
+    group.value.forEach((arr) => {
+      // 原始值（未格式化），用于计算同比
+      const rawValues = years.value.map((year) => {
         const target = arr.find((v) => v.year === year);
-        if (target) {
-          const val = target[ck];
-          if (col.formatter) {
-            return col.formatter(val);
-          }
+        return target ? target[ck] : undefined;
+      });
+
+      const values = rawValues.map((val) => {
+        if (val === undefined || val === null) return "-";
+        if (col.formatter) {
+          return col.formatter(val);
         }
-        return "-";
+        return val;
       });
 
       const isPct =
@@ -737,16 +884,55 @@ function updateChart() {
           showBackground: false,
           label: {
             show: true,
-            color: labelColor,
+            // 勾选同比时移到柱内顶部，避免与折线百分比标签重叠
+            position: showYoY.value ? "insideTop" : "top",
+            color: showYoY.value ? (dark ? "#e8e8e8" : "#fff") : labelColor,
             formatter: (params: any) =>
-              params.value !== null
-                ? params.value > 10
-                  ? params.value.toFixed(0)
-                  : params.value
-                : "",
-            position: "top",
+              params.value !== null ? params.value.toFixed(2) : "",
           },
         });
+
+        // 勾选"同比变动"时，为非百分比数据添加同比折线
+        if (showYoY.value) {
+          const groupKeyVal = props.groupKey
+            ? arr[0]?.[props.groupKey]
+            : undefined;
+          const yoyData = rawValues.map((val, idx) => {
+            if (typeof val !== "number" || !isFinite(val)) return null;
+            const yearLabel = years.value[idx];
+            const prevLabel = yearLabel ? prevYearLabel(yearLabel) : null;
+            // 最新报告期（如 2026Q1）在显示数据中可能没有上年同期（被上年年报替代），
+            // 回退到原始季度数据查找，保证最新数据也有同比
+            const prev = prevLabel
+              ? getRawValue(arr, prevLabel, ck, groupKeyVal)
+              : undefined;
+            if (typeof prev !== "number" || !isFinite(prev) || prev === 0) {
+              return null;
+            }
+            return ((val - prev) / Math.abs(prev)) * 100;
+          });
+          const yoyName = `${name}同比`;
+          yoyNames.push(yoyName);
+          series.push({
+            name: yoyName,
+            type: "line",
+            yAxisIndex: 1,
+            data: yoyData,
+            showSymbol: true,
+            symbolSize: (val: number | null) => (val !== null ? 6 : 0),
+            symbol: "circle",
+            itemStyle: { color: "#fa8c16" },
+            lineStyle: { width: 2, type: "dashed", color: "#fa8c16" },
+            label: {
+              show: true,
+              position: "top",
+              distance: 10,
+              color: "#fa8c16",
+              formatter: (params: any) =>
+                params.value !== null ? `${params.value.toFixed(1)}%` : "",
+            },
+          });
+        }
       }
     });
   });
@@ -780,17 +966,24 @@ function updateChart() {
       containLabel: true,
     },
     legend: {
-      data: selectedColumns.value.reduce((pre: string[], colKey) => {
-        const title =
-          props.columns.find((c) => c.key === colKey)?.title || colKey;
-        if (props.groupKey) {
-          return pre.concat(
-            group.value.map((v) => `${title}-${v[0][props.groupKey!]}`),
-          );
-        }
-        pre.push(title);
-        return pre;
-      }, []),
+      data: (() => {
+        const legendData = selectedColumns.value.reduce(
+          (pre: string[], colKey) => {
+            const title =
+              props.columns.find((c) => c.key === colKey)?.title || colKey;
+            if (props.groupKey) {
+              return pre.concat(
+                group.value.map((v) => `${title}-${v[0][props.groupKey!]}`),
+              );
+            }
+            pre.push(title);
+            return pre;
+          },
+          [],
+        );
+        if (showYoY.value) legendData.push(...yoyNames);
+        return legendData;
+      })(),
       selected: Object.fromEntries(
         selectedColumns.value.map((colKey) => [colKey, true]),
       ),
@@ -1023,13 +1216,17 @@ const formatColumnTitle = (title: string) => {
 
 <template>
   <div class="chart-container" ref="chartRef" v-if="showChart"></div>
-  <div class="table-header-bar" v-if="hasQuarterly">
+  <div class="table-header-bar" v-if="hasQuarterly || showChart">
     <div class="header-controls">
-      <label class="single-quarter-check">
+      <label class="single-quarter-check" v-if="hasQuarterly">
         <input type="checkbox" v-model="isSingleQuarter" />
         <span>单季度</span>
       </label>
-      <select class="period-select" v-model="reportPeriod">
+      <select
+        v-if="hasQuarterly"
+        class="period-select"
+        v-model="reportPeriod"
+      >
         <option
           v-for="opt in PERIOD_OPTIONS"
           :key="opt.value"
@@ -1038,6 +1235,9 @@ const formatColumnTitle = (title: string) => {
           {{ opt.label }}
         </option>
       </select>
+      <el-checkbox v-if="showChart" v-model="showYoY" size="small">
+        同比变动
+      </el-checkbox>
     </div>
     <div class="single-quarter-notice" v-if="isSingleQuarter">
       利润表/现金流已拆分为单季度（累计减法）；资产负债表为期末时点值，比率/周转指标不做拆分。
@@ -1135,6 +1335,11 @@ const formatColumnTitle = (title: string) => {
   display: flex;
   align-items: center;
   gap: 12px;
+
+  :deep(.el-checkbox) {
+    margin-right: 0;
+    font-size: 13px;
+  }
 }
 
 // 单季度复选框
