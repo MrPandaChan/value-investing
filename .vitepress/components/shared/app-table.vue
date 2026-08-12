@@ -1149,6 +1149,59 @@ const getCellValue = (row: any, column: TableColumn) => {
   return value ?? "-";
 };
 
+// 计算单元格同比小字（勾选"同比变动"时，非百分比列在数值下方显示）
+function calcCellYoY(
+  row: any,
+  column: TableColumn,
+): { text: string; positive: boolean } | null {
+  if (!showYoY.value || row._isStatRow) return null;
+  if (column.key === "year" || column.key === props.groupKey) return null;
+
+  const val = row[column.key];
+  if (typeof val !== "number" || !isFinite(val)) return null;
+
+  // 百分比列不显示同比
+  if (/率|\/|比重/.test(column.title)) return null;
+
+  const prevLabel = prevYearLabel(String(row.year));
+  if (!prevLabel) return null;
+
+  const groupKeyVal = props.groupKey ? row[props.groupKey] : undefined;
+  // 分组表格只取本组行，避免匹配到其他公司的同报告期
+  const groupRows = props.groupKey
+    ? currentData.value.filter((r) => r[props.groupKey] === groupKeyVal)
+    : currentData.value;
+  const prev = getRawValue(groupRows, prevLabel, column.key, groupKeyVal);
+  if (typeof prev !== "number" || !isFinite(prev) || prev === 0) return null;
+
+  const pct = ((val - prev) / Math.abs(prev)) * 100;
+  return {
+    text: `${pct > 0 ? "+" : ""}${pct.toFixed(2)}%`,
+    positive: pct > 0,
+  };
+}
+
+// 预计算每个单元格的同比文本（随数据/开关变化自动更新）
+const cellYoYMap = computed(() => {
+  const map = new Map<
+    any,
+    Map<string, { text: string; positive: boolean } | null>
+  >();
+  if (!showYoY.value) return map;
+  for (const row of currentData.value) {
+    if (row._isStatRow) continue;
+    const colMap = new Map<
+      string,
+      { text: string; positive: boolean } | null
+    >();
+    for (const column of props.columns) {
+      colMap.set(column.key, calcCellYoY(row, column));
+    }
+    map.set(row, colMap);
+  }
+  return map;
+});
+
 // 处理表格标题，最多显示两行，并且两行字数尽量平衡
 const formatColumnTitle = (title: string) => {
   // 如果标题为空或长度小于等于4，直接返回
@@ -1287,7 +1340,24 @@ const formatColumnTitle = (title: string) => {
                   ?.colspan || 1
               "
             >
-              {{ getCellValue(row, column) }}
+              <template v-if="cellYoYMap.get(row)?.get(column.key)">
+                <div class="cell-value">
+                  {{ getCellValue(row, column) }}
+                </div>
+                <div
+                  class="yoy-text"
+                  :class="
+                    cellYoYMap.get(row)!.get(column.key)!.positive
+                      ? 'up'
+                      : 'down'
+                  "
+                >
+                  {{ cellYoYMap.get(row)!.get(column.key)!.text }}
+                </div>
+              </template>
+              <template v-else>
+                {{ getCellValue(row, column) }}
+              </template>
             </td>
           </template>
         </tr>
@@ -1477,6 +1547,28 @@ td span {
   line-height: normal;
 }
 
+// 单元格主值
+.cell-value {
+  line-height: 1.2;
+}
+
+// 同比小字
+.yoy-text {
+  display: block;
+  font-size: 11px;
+  line-height: 1.3;
+  margin-top: 2px;
+  white-space: nowrap;
+
+  &.up {
+    color: #cf1322; // 同比增长用红色
+  }
+
+  &.down {
+    color: #389e0d; // 同比减少用绿色
+  }
+}
+
 // 选中列的样式
 th.selected-column {
   background-color: #f0f7ff;
@@ -1610,6 +1702,16 @@ html.dark {
     background-color: #1a2a3a;
     &::after {
       background-color: #4096ff;
+    }
+  }
+
+  .yoy-text {
+    &.up {
+      color: #ff7875;
+    }
+
+    &.down {
+      color: #95de64;
     }
   }
 
