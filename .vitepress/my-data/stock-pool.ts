@@ -107,7 +107,7 @@ const stocks: StockItem[] = [
     qualityScore: 4.5,
     sharesHeld: 400,
     dividendAdjust: 0.8,
-    url: "/value-investing/industry/互联网/腾讯控股/",
+    url: "/value-investing/industry/传媒/互联网平台/腾讯控股/",
     remark:
       "**稳定增长型**，景气度→，互联网公用事业，AI资本开支大，护城河深厚，中性情况下预计1%dy+10%eps=11%cagr，近期业绩可能承压，PE15左右合理",
     maxPositionRatio: 0.2,
@@ -137,7 +137,7 @@ const stocks: StockItem[] = [
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
     sharesHeld: 1200,
-    url: "/value-investing/industry/汽车/福耀玻璃/",
+    url: "/value-investing/industry/汽车/汽车玻璃/福耀玻璃/",
     remark:
       "**稳定增长型**，景气度↘，全球汽车下行但市占率+ASP提升对冲，中性情况下预计4%dy+5%~8%eps=9%~12%cagr，PE15左右合理",
     maxPositionRatio: 0.1,
@@ -163,7 +163,7 @@ const stocks: StockItem[] = [
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3.5,
     sharesHeld: 1000,
-    url: "/value-investing/industry/中药/云南白药/",
+    url: "/value-investing/industry/医药生物/中药/云南白药/",
     remark:
       "**稳定增长型→缓慢增长型**，景气度→，各板块市占率见顶，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，股息率5%以上合理",
     maxPositionRatio: 0.05,
@@ -190,7 +190,7 @@ const stocks: StockItem[] = [
     dividendPerYear: 2,
     remark:
       "**稳定增长型**，景气度↘，警惕压货和无序提价，驴皮紧张，消费萎靡，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，股息率5%以上合理",
-    url: "/value-investing/industry/中药/东阿阿胶/",
+    url: "/value-investing/industry/医药生物/中药/东阿阿胶/",
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
@@ -218,7 +218,7 @@ const stocks: StockItem[] = [
     dividendPerYear: 1,
     remark:
       "**稳定增长型→缓慢增长型**，景气度→，贴膏板块见顶，竞争压力大，第二曲线待观察，销售费用率高，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，PE13左右合理（护城河狭窄）",
-    url: "/value-investing/industry/中药/羚锐制药/",
+    url: "/value-investing/industry/医药生物/中药/羚锐制药/",
     maxPositionRatio: 0.03,
     plan: {
       type: PlanType.PRICE,
@@ -239,7 +239,7 @@ const stocks: StockItem[] = [
     industry: Industry.MEDIA,
     qualityScore: 3.5,
     sharesHeld: 4000,
-    url: "/value-investing/industry/传媒/分众传媒/",
+    url: "/value-investing/industry/传媒/广告营销/分众传媒/",
     remark:
       "**周期型**，景气度↘，经济萎靡，新潮收购需跟踪，中性情况下预计7%dy+1%~2%eps=8%~9%cagr，适合CAPE估值，股息率7%以上合理",
     maxPositionRatio: 0.05,
@@ -265,7 +265,7 @@ const stocks: StockItem[] = [
     industry: Industry.SEAPORTS_AND_SERVICES,
     qualityScore: 3.5,
     sharesHeld: 1000,
-    url: "/value-investing/industry/港口/青岛港/",
+    url: "/value-investing/industry/交通运输/港口/青岛港/",
     remark:
       "**缓慢增长型**，景气度→，集装箱亮点液散承压，中性情况下预计4.5%dy+2%~4%eps=6.5%~8.5%cagr，股息率4.5%以上合理",
     dividendPerYear: 2,
@@ -290,7 +290,7 @@ const stocks: StockItem[] = [
     industry: Industry.SEAPORTS_AND_SERVICES,
     qualityScore: 3.5,
     sharesHeld: 4000,
-    url: "/value-investing/industry/港口/青岛港/",
+    url: "/value-investing/industry/交通运输/港口/青岛港/",
     remark:
       "**缓慢增长型**，景气度→，集装箱亮点液散承压，中性情况下预计4%dy+2%~4%eps=6%~8%cagr，股息率4%以上合理",
     dividendPerYear: 2,
@@ -320,7 +320,7 @@ const stocks: StockItem[] = [
     industry: Industry.PAPER_AND_PACKAGING,
     qualityScore: 3,
     sharesHeld: 1000,
-    url: "/value-investing/industry/塑料包装/永新股份/",
+    url: "/value-investing/industry/轻工制造/包装印刷/永新股份/",
     remark:
       "**稳定增长型**，景气度↘，油价高位压制毛利率，薄膜第二曲线放量中，中性情况下预计5%dy+4%~6%eps=9%~11%cagr，短期承压（毛利率20.86%十年低位），股息率5%以上合理",
     maxPositionRatio: 0.05,
@@ -489,7 +489,7 @@ const stocks: StockItem[] = [
     code: "601717",
     industry: Industry.MACHINERY,
     qualityScore: 2.5,
-    url: "/value-investing/industry/机械/中创智领/",
+    url: "/value-investing/industry/机械设备/煤矿机械/中创智领/",
     dividendPerYear: 1,
     remark:
       "**周期型**，景气度↓，煤机周期下行，汽零新能源第二曲线待验证，中性情况下预计8%dy+0%eps=8%cagr，当前承压（扣非-35%），股息率8%以上合理",
@@ -512,7 +512,7 @@ const stocks: StockItem[] = [
     code: "00564",
     industry: Industry.MACHINERY,
     qualityScore: 2.5,
-    url: "/value-investing/industry/机械/中创智领/",
+    url: "/value-investing/industry/机械设备/煤矿机械/中创智领/",
     dividendPerYear: 1,
     remark:
       "**周期型**，景气度↓，煤机周期下行，汽零新能源第二曲线待验证，中性情况下预计8%dy+0%eps=8%cagr，当前承压（扣非-35%），股息率8%以上合理",
@@ -537,7 +537,7 @@ const stocks: StockItem[] = [
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 4,
     sharesHeld: 100,
-    url: "/value-investing/industry/家电/美的/",
+    url: "/value-investing/industry/家用电器/白电/美的集团/",
     dividendPerYear: 2,
     remark:
       "**稳定增长型**，景气度↘，国内空调内销承压，海外+ToB对冲，中性情况下预计5%dy+5%~8%eps=10%~13%cagr，股息率5%以上合理",
@@ -564,7 +564,7 @@ const stocks: StockItem[] = [
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3.5,
     sharesHeld: 3600,
-    url: "/value-investing/industry/家电/海尔/",
+    url: "/value-investing/industry/家用电器/白电/海尔智家/",
     dividendPerYear: 2,
     remark:
       "**稳定增长型**，景气度↘，北美关税+国内需求疲软，海外品牌矩阵强，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，股息率5%以上合理",
@@ -588,7 +588,7 @@ const stocks: StockItem[] = [
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3,
     sharesHeld: 1200,
-    url: "/value-investing/industry/家电/格力/",
+    url: "/value-investing/industry/家用电器/白电/格力电器/",
     dividendPerYear: 2,
     remark:
       "**缓慢增长型**，景气度↓，空调份额下滑，高股息防御，中性情况下预计7%dy+0%~2%eps=7%~9%cagr，股息率7%以上合理",
@@ -612,7 +612,7 @@ const stocks: StockItem[] = [
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 4,
     sharesHeld: 700,
-    url: "/value-investing/industry/电信服务/中国移动/",
+    url: "/value-investing/industry/通信/运营商/中国移动/",
     dividendPerYear: 2,
     remark:
       "**缓慢增长型**，景气度↘，ARPU承压，算力新业务提供期权，中性情况下预计5.9%dy+0%~3%eps=5.9%~8.9%cagr，股息率5.5%以上合理",
@@ -638,7 +638,7 @@ const stocks: StockItem[] = [
     code: "601728",
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3.5,
-    url: "/value-investing/industry/电信服务/中国电信/",
+    url: "/value-investing/industry/通信/运营商/中国电信/",
     dividendPerYear: 2,
     remark:
       "**缓慢增长型**，景气度↘，类债属性几乎不增长，智能业务待放量，中性情况下预计6%dy+1%eps=7%cagr，当前承压（净利转负），股息率6%以上合理",
@@ -662,7 +662,7 @@ const stocks: StockItem[] = [
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3.5,
     sharesHeld: 2000,
-    url: "/value-investing/industry/电信服务/中国电信/",
+    url: "/value-investing/industry/通信/运营商/中国电信/",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
     remark:
@@ -687,7 +687,7 @@ const stocks: StockItem[] = [
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3,
     sharesHeld: 2500,
-    url: "/value-investing/industry/电信服务/中国铁塔/",
+    url: "/value-investing/industry/通信/运营商/中国铁塔/",
     dividendPerYear: 2,
     dividendAdjust: 0.8 * 1.3,
     remark:
@@ -712,7 +712,7 @@ const stocks: StockItem[] = [
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 4.5,
     sharesHeld: 1200,
-    url: "/value-investing/industry/电力/长江电力/",
+    url: "/value-investing/industry/公用事业/电力/长江电力/",
     dividendPerYear: 2,
     remark:
       "**缓慢增长型**，景气度↗，来水改善，电价小幅下行，中性情况下预计4%dy+3%~5%eps=8%~9%cagr，股息率4%以上合理",
@@ -736,7 +736,7 @@ const stocks: StockItem[] = [
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 3,
     sharesHeld: 1200,
-    url: "/value-investing/industry/电力/国投电力/",
+    url: "/value-investing/industry/公用事业/电力/国投电力/",
     dividendPerYear: 1,
     remark:
       "**稳定增长型**，景气度→，来水恢复，火电受煤价压制，中性情况下预计4%dy+3%~5%eps=8%~9%cagr，股息率4%以上合理",
@@ -759,7 +759,7 @@ const stocks: StockItem[] = [
     code: "600938",
     industry: Industry.PETROLEUM_AND_PETROCHEMICALS,
     qualityScore: 4.5,
-    url: "/value-investing/industry/石油石化/中国海油/",
+    url: "/value-investing/industry/石油石化/油气开采/中国海油/",
     dividendPerYear: 2,
     remark:
       "**周期型**，景气度↗，油价高位，产量年增3%~5%，中性情况下预计4%dy+5%~8%eps=9%~12%cagr，短期向好（油价高位），股息率4%以上合理",
@@ -782,7 +782,7 @@ const stocks: StockItem[] = [
     code: "00883",
     industry: Industry.PETROLEUM_AND_PETROCHEMICALS,
     qualityScore: 4.5,
-    url: "/value-investing/industry/石油石化/中国海油/",
+    url: "/value-investing/industry/石油石化/油气开采/中国海油/",
     dividendPerYear: 2,
     dividendAdjust: 0.72,
     remark:
@@ -807,7 +807,7 @@ const stocks: StockItem[] = [
     industry: Industry.NON_FERROUS_METALS,
     qualityScore: 4,
     sharesHeld: 500,
-    url: "/value-investing/industry/有色金属/紫金矿业/",
+    url: "/value-investing/industry/有色金属/铜金/紫金矿业/",
     dividendPerYear: 2,
     remark:
       "**周期型**，景气度↗，金铜价格高位，产量持续扩张，中性情况下预计3%dy+10%~15%eps=13%~18%cagr，短期向好（金铜高位），PE 11倍左右合理",
@@ -831,7 +831,7 @@ const stocks: StockItem[] = [
     industry: Industry.PROPERTY_MANAGEMENT,
     qualityScore: 3,
     sharesHeld: 600,
-    url: "/value-investing/industry/物业/保利物业/",
+    url: "/value-investing/industry/房地产/物业服务/保利物业/",
     dividendAdjust: 0.8,
     dividendPerYear: 1,
     maxPositionRatio: 0.05,
@@ -856,7 +856,7 @@ const stocks: StockItem[] = [
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
     sharesHeld: 1200,
-    url: "/value-investing/industry/汽车/赛轮轮胎/",
+    url: "/value-investing/industry/汽车/轮胎/赛轮轮胎/",
     dividendPerYear: 2,
     remark:
       "**快速增长型**，景气度↗，关注天胶价格和海外产能爬坡，中性情况下预计2%dy+10%~15%eps=12%~17%cagr，PE 12倍左右合理",
@@ -883,7 +883,7 @@ const stocks: StockItem[] = [
     industry: Industry.TEXTILES_AND_APPAREL,
     qualityScore: 3.5,
     sharesHeld: 300,
-    url: "/value-investing/industry/纺织服装/申洲国际/",
+    url: "/value-investing/industry/纺织服饰/服装代工/申洲国际/",
     dividendPerYear: 2,
     dividendAdjust: 0.8,
     remark:
@@ -912,7 +912,7 @@ const stocks: StockItem[] = [
     code: "09992",
     industry: Industry.POP_TOYS,
     qualityScore: 3,
-    url: "/value-investing/industry/潮玩/泡泡玛特/",
+    url: "/value-investing/industry/轻工制造/潮玩/泡泡玛特/",
     dividendPerYear: 1,
     dividendAdjust: 0.8,
     remark:
@@ -936,7 +936,7 @@ const stocks: StockItem[] = [
     code: "600519",
     industry: Industry.BAIJIU,
     qualityScore: 5,
-    url: "/value-investing/industry/白酒/贵州茅台/",
+    url: "/value-investing/industry/食品饮料/白酒/贵州茅台/",
     dividendPerYear: 2,
     remark:
       "**稳定增长型**，景气度↗，批价企稳提价增厚，中性情况下预计4%dy+4%~7%eps=8%~11%cagr，PE 20倍左右合理",
@@ -959,7 +959,7 @@ const stocks: StockItem[] = [
     code: "000568",
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
-    url: "/value-investing/industry/白酒/泸州老窖/",
+    url: "/value-investing/industry/食品饮料/白酒/泸州老窖/",
     dividendPerYear: 2,
     remark:
       "**周期型**，景气度↓，行业主动出清，批价倒挂，中性情况下预计6%dy+0%~3%eps=6%~9%cagr，当前承压（净利-19%），股息率6%以上合理",
@@ -982,7 +982,7 @@ const stocks: StockItem[] = [
     code: "600809",
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
-    url: "/value-investing/industry/白酒/山西汾酒/",
+    url: "/value-investing/industry/食品饮料/白酒/山西汾酒/",
     dividendPerYear: 1,
     remark:
       "**周期型**，景气度↘，筑底企稳，合同负债改善，中性情况下预计6%dy+0%~3%eps=6%~9%cagr，当前承压（净利-19%），合同负债+35.9%现企稳信号，股息率6%以上合理",
@@ -1006,7 +1006,7 @@ const stocks: StockItem[] = [
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
     sharesHeld: 1000,
-    url: "/value-investing/industry/白酒/古井贡/",
+    url: "/value-investing/industry/食品饮料/白酒/古井贡/",
     dividendPerYear: 2,
     remark:
       "**周期型**，景气度↓，区域次高端承压，合同负债下降，中性情况下预计6%dy+0%~3%eps=6%~9%cagr，当前承压（净利-31%），股息率6%以上合理",
@@ -1030,7 +1030,7 @@ const stocks: StockItem[] = [
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3,
     sharesHeld: 400,
-    url: "/value-investing/industry/汽车/宇通客车/",
+    url: "/value-investing/industry/汽车/商用车/宇通客车/",
     dividendPerYear: 2,
     remark:
       "**快速增长型→稳定增长型**，景气度→，出口高增对冲国内萎缩，海外面临国内车企激烈竞争，中性情况下预计8%dy+0%~3%eps=8%~11%cagr，股息率8%以上合理",
@@ -1054,7 +1054,7 @@ const stocks: StockItem[] = [
     industry: Industry.DAIRY_PRODUCTS,
     qualityScore: 3.5,
     sharesHeld: 200,
-    url: "/value-investing/industry/乳制品/伊利股份/",
+    url: "/value-investing/industry/食品饮料/乳制品/伊利股份/",
     dividendPerYear: 2,
     remark:
       "**缓慢增长型**，景气度→，奶价企稳行业筑底，消费萎靡，中性情况下预计5%dy+2%~5%eps=7%~10%cagr，股息率5%以上合理",
@@ -1157,7 +1157,7 @@ const stocks: StockItem[] = [
     industry: Industry.INSURANCE,
     qualityScore: 3.5,
     sharesHeld: 600,
-    url: "/value-investing/industry/保险/中国平安/",
+    url: "/value-investing/industry/非银金融/保险/中国平安/",
     dividendPerYear: 2,
     remark:
       "**稳定增长型**，景气度↗，寿险NBV增长，关注利率和代理人，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，股息率5%以上合理",
@@ -1181,7 +1181,7 @@ const stocks: StockItem[] = [
     industry: Industry.TEXTILES_AND_APPAREL,
     qualityScore: 4,
     sharesHeld: 200,
-    url: "/value-investing/industry/纺织服装/安踏体育/",
+    url: "/value-investing/industry/纺织服饰/运动鞋服/安踏体育/",
     dividendAdjust: 0.8,
     dividendPerYear: 2,
     remark:
@@ -1209,7 +1209,7 @@ const stocks: StockItem[] = [
     industry: Industry.ENTERPRISE_SERVICES,
     qualityScore: 3,
     sharesHeld: 2300,
-    url: "/value-investing/industry/企业服务/小商品城/",
+    url: "/value-investing/industry/商贸零售/商贸市场/小商品城/",
     dividendPerYear: 1,
     remark:
       "**稳定增长型**，景气度→，外贸出口高企，贸易毛利极薄，中性情况下预计4%dy+6%~8%eps=10%~12%cagr，股息率4%以上合理",
@@ -1235,7 +1235,7 @@ const stocks: StockItem[] = [
     code: "00552",
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3,
-    url: "/value-investing/industry/电信服务/中国通信服务/",
+    url: "",
     dividendAdjust: 0.8,
     dividendPerYear: 1,
     remark:
@@ -1260,7 +1260,7 @@ const stocks: StockItem[] = [
     industry: Industry.SHIPPING,
     qualityScore: 2,
     sharesHeld: 200,
-    url: "/value-investing/industry/航运/中远海控/",
+    url: "/value-investing/industry/交通运输/航运/中远海控/",
     dividendPerYear: 2,
     remark:
       "**周期型**，景气度↗（地缘+抢运支撑），运价两年新高，中性情况下预计8%dy+0%eps=8%cagr，周期股看PB，当前运价高位不可持续，股息率8%以上合理",
@@ -1284,7 +1284,7 @@ const stocks: StockItem[] = [
     industry: Industry.SHIPPING,
     qualityScore: 2,
     sharesHeld: 1000,
-    url: "/value-investing/industry/航运/中远海控/",
+    url: "/value-investing/industry/交通运输/航运/中远海控/",
     dividendAdjust: 0.8,
     dividendPerYear: 2,
     remark:
@@ -1309,7 +1309,7 @@ const stocks: StockItem[] = [
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
     sharesHeld: 100,
-    url: "/value-investing/industry/汽车/比亚迪/",
+    url: "/value-investing/industry/汽车/乘用车/比亚迪/",
     dividendPerYear: 1,
     maxPositionRatio: 0.05,
     remark:
@@ -1332,7 +1332,7 @@ const stocks: StockItem[] = [
     code: "00388",
     industry: Industry.FINANCIAL,
     qualityScore: 4.5,
-    url: "value-investing/industry/金融/港交所",
+    url: "/value-investing/industry/非银金融/交易所/港交所/",
     dividendPerYear: 1,
     remark:
       "**周期成长型**，景气度↑，ADT周期上行，中性情况下预计3%dy+8%~10%eps=11%~13%cagr，短期向好（ADT+17.8%），PE 25倍左右合理",
@@ -1355,7 +1355,7 @@ const stocks: StockItem[] = [
     code: "600406",
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 4,
-    url: "value-investing/industry/电力/国电南瑞",
+    url: "/value-investing/industry/电力设备/电网设备/国电南瑞/",
     dividendPerYear: 2,
     remark:
       "**稳定增长型**，景气度↑，电网投资高景气，增收不增利，中性情况下预计2.2%dy+6%~9%eps=8.2%~11.2%cagr，PE 18倍左右合理",
@@ -1378,7 +1378,7 @@ const stocks: StockItem[] = [
     code: "300750",
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
-    url: "value-investing/industry/汽车/宁德时代",
+    url: "/value-investing/industry/电力设备/电池/宁德时代/",
     dividendPerYear: 2,
     remark:
       "**快速增长型**，景气度↑，储能高增，全球市占率第一，中性情况下预计1.5%dy+15%~20%eps=16.5%~21.5%cagr，PE 19倍左右合理",
@@ -1401,7 +1401,7 @@ const stocks: StockItem[] = [
     code: "09633",
     industry: Industry.BEVERAGE,
     qualityScore: 4.5,
-    url: "value-investing/industry/茶饮/农夫山泉",
+    url: "/value-investing/industry/食品饮料/饮料/农夫山泉/",
     dividendPerYear: 1,
     dividendAdjust: 0.8,
     remark:
@@ -1425,7 +1425,7 @@ const stocks: StockItem[] = [
     code: "605499",
     industry: Industry.BEVERAGE,
     qualityScore: 3.5,
-    url: "value-investing/industry/茶饮/东鹏饮料",
+    url: "/value-investing/industry/食品饮料/饮料/东鹏饮料/",
     dividendPerYear: 2,
     remark:
       "**快速增长型→稳定增长型**，景气度↘，能量饮料增速回落，茶饮接棒，中性情况下预计4.3%dy+10%~15%eps=14.3%~19.3%cagr，PE 16倍左右合理",
@@ -1448,7 +1448,7 @@ const stocks: StockItem[] = [
     code: "600096",
     industry: Industry.BEVERAGE,
     qualityScore: 2.5,
-    url: "value-investing/industry/化肥/云天化",
+    url: "/value-investing/industry/基础化工/化肥农药/云天化/",
     dividendPerYear: 2,
     remark:
       "**周期型**，景气度↓，硫磺高价+出口暂停，磷矿资源强，中性情况下预计5%dy+3%eps=8%cagr，当前承压（硫磺同比+269%+出口暂停），股息率5%以上合理",
@@ -1471,7 +1471,7 @@ const stocks: StockItem[] = [
     code: "600309",
     industry: Industry.MATERIALS,
     qualityScore: 3.5,
-    url: "value-investing/industry/材料/万华化学",
+    url: "/value-investing/industry/基础化工/化工新材料/万华化学/",
     remark:
       "**周期型**，景气度↑，MDI涨价驱动，重资产高负债，中性情况下预计1.6%dy+8%~10%eps=9.6%~11.6%cagr，短期向好（MDI涨价），PE 13倍左右合理",
     dividendPerYear: 2,
@@ -1494,7 +1494,7 @@ const stocks: StockItem[] = [
     code: "002415",
     industry: Industry.SECURITY,
     qualityScore: 3.5,
-    url: "value-investing/industry/安防/海康威视",
+    url: "/value-investing/industry/电子/安防/海康威视/",
     dividendPerYear: 2,
     remark:
       "**稳定增长型**，景气度↗，创新业务驱动，海外承压，中性情况下预计3%dy+3%~5%eps=6%~8%cagr，PE 18倍左右合理",
