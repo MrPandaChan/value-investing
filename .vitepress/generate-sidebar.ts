@@ -2,16 +2,22 @@
  * 自动化侧边栏生成脚本
  *
  * 扫描 industry/ 目录，动态生成 VitePress sidebar。
- * - 每个行业下按「行业总览」「公司A」「公司B」…分为独立分组
- * - 全部分组默认展开，不折叠
  *
- * 目录结构：
+ * 目录结构（三级：一级行业 → 细分赛道 → 公司）：
  *   industry/
- *     石油石化/
- *       石油石化/index.md      ← 行业总览
- *       中国海油/index.md      ← 公司
- *       中国海油/notes/        ← 笔记（collapsed 分组）
- *       中国海油/tracking/     ← 跟踪（collapsed 分组）
+ *     汽车/                          ← 一级行业（申万）
+ *       投研资料/行业总览.md          ← 一级行业总览
+ *       乘用车/                      ← 细分赛道
+ *         投研资料/行业总览.md        ← 赛道总览
+ *         比亚迪/index.md            ← 公司
+ *         比亚迪/notes/              ← 笔记（collapsed 分组）
+ *         比亚迪/tracking/           ← 跟踪（collapsed 分组）
+ *
+ * 不拆赛道的行业（如煤炭、银行），公司直接挂一级行业下：
+ *   industry/
+ *     煤炭/
+ *       投研资料/行业总览.md
+ *       中国神华/index.md
  */
 
 import { readdirSync, existsSync } from "node:fs";
@@ -77,16 +83,26 @@ function getDisplayName(name: string): string {
   return name.charAt(0).toUpperCase() + name.slice(1).replace(/-/g, " ");
 }
 
+/** 判断目录是否为「赛道」：赛道下含投研资料目录 */
+function isSegment(dir: string): boolean {
+  return existsSync(join(dir, "投研资料"));
+}
+
+/** 判断目录是否为「公司」：含 index.md */
+function isCompany(dir: string): boolean {
+  return existsSync(join(dir, "index.md"));
+}
+
 /**
  * 构建公司分组（全部展开，不折叠）
  * 公司下所有文档（含 notes/tracking）扁平列出
  */
 function buildCompanyGroup(
-  industryName: string,
+  routePrefix: string,
   companyName: string,
   companyDir: string,
 ): SidebarItem {
-  const prefix = `/industry/${industryName}/${companyName}`;
+  const prefix = `${routePrefix}/${companyName}`;
   const items: SidebarItem[] = [{ text: "公司总览", link: `${prefix}/index` }];
 
   const entries = readdirSync(companyDir, { withFileTypes: true });
@@ -140,57 +156,98 @@ function buildCompanyGroup(
 }
 
 /**
- * 构建行业总览分组
+ * 构建「投研资料」目录下的侧边栏 items
+ * （行业总览/赛道总览 + 其他 md + notes 子目录）
  */
-function buildIndustryOverviewGroup(
-  industryDir: string,
-  industryName: string,
-): SidebarItem | null {
-  const selfDir = join(industryDir, industryName);
-  if (!existsSync(join(selfDir, "index.md"))) return null;
+function buildTouyanItems(
+  touyanDir: string,
+  prefix: string,
+  overviewText: string,
+): SidebarItem[] {
+  const items: SidebarItem[] = [];
 
-  const prefix = `/industry/${industryName}/${industryName}`;
-  const items: SidebarItem[] = [{ text: "行业总览", link: `${prefix}/index` }];
+  if (existsSync(join(touyanDir, "行业总览.md"))) {
+    items.push({ text: overviewText, link: `${prefix}/行业总览` });
+  }
 
-  // 行业资料目录下其他 md 文件
-  const entries = readdirSync(selfDir, { withFileTypes: true });
-  for (const entry of entries) {
-    if (
-      entry.isFile() &&
-      entry.name.endsWith(".md") &&
-      entry.name !== "index.md"
-    ) {
-      const mod = getModuleName(entry.name);
-      items.push({ text: getDisplayName(mod), link: `${prefix}/${mod}` });
+  // 投研资料目录下其他 md 文件
+  for (const f of readdirSync(touyanDir)) {
+    if (f === "行业总览.md" || !f.endsWith(".md")) continue;
+    const mod = getModuleName(f);
+    items.push({ text: getDisplayName(mod), link: `${prefix}/${mod}` });
+  }
+
+  // notes 子目录
+  const notesDir = join(touyanDir, "notes");
+  if (existsSync(notesDir)) {
+    const subFiles = readdirSync(notesDir).filter((f) => f.endsWith(".md"));
+    if (subFiles.length > 0) {
+      items.push({
+        text: "笔记",
+        collapsed: true,
+        items: subFiles.map((f) => ({
+          text: getDisplayName(getModuleName(f)),
+          link: `${prefix}/notes/${getModuleName(f)}`,
+        })),
+      });
     }
   }
 
-  return { text: industryName, items };
+  return items;
 }
 
 /**
- * 扫描单个行业 → 返回分组数组
+ * 扫描单个一级行业 → 返回分组数组
  */
 function scanIndustry(
   industryDir: string,
   industryName: string,
 ): SidebarItem[] | null {
   const groups: SidebarItem[] = [];
+  const industryPrefix = `/industry/${industryName}`;
 
-  // 1. 行业总览分组
-  const overview = buildIndustryOverviewGroup(industryDir, industryName);
-  if (overview) groups.push(overview);
+  // 1. 一级行业投研资料（行业总览 + 其他资料）
+  const industryTouyan = join(industryDir, "投研资料");
+  if (existsSync(industryTouyan)) {
+    groups.push(
+      ...buildTouyanItems(
+        industryTouyan,
+        `${industryPrefix}/投研资料`,
+        "行业总览",
+      ),
+    );
+  }
 
-  // 2. 公司分组
-  const entries = readdirSync(industryDir, { withFileTypes: true });
-  for (const entry of entries) {
-    if (!entry.isDirectory()) continue;
-    if (entry.name === industryName) continue; // 跳过同名资料目录
+  // 2. 赛道 / 公司
+  for (const entry of readdirSync(industryDir, { withFileTypes: true })) {
+    if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
+    if (entry.name === "投研资料") continue;
 
-    const companyDir = join(industryDir, entry.name);
-    if (!existsSync(join(companyDir, "index.md"))) continue;
+    const subDir = join(industryDir, entry.name);
 
-    groups.push(buildCompanyGroup(industryName, entry.name, companyDir));
+    if (isSegment(subDir)) {
+      // 赛道：赛道总览 + 赛道资料 + 公司
+      const segPrefix = `${industryPrefix}/${entry.name}`;
+      const segmentItems: SidebarItem[] = buildTouyanItems(
+        join(subDir, "投研资料"),
+        `${segPrefix}/投研资料`,
+        "赛道总览",
+      );
+
+      for (const c of readdirSync(subDir, { withFileTypes: true })) {
+        if (!c.isDirectory() || c.name.startsWith(".")) continue;
+        if (c.name === "投研资料") continue;
+        const companyDir = join(subDir, c.name);
+        if (isCompany(companyDir)) {
+          segmentItems.push(buildCompanyGroup(segPrefix, c.name, companyDir));
+        }
+      }
+
+      groups.push({ text: entry.name, items: segmentItems, collapsed: false });
+    } else if (isCompany(subDir)) {
+      // 不拆赛道的行业：公司直接挂一级
+      groups.push(buildCompanyGroup(industryPrefix, entry.name, subDir));
+    }
   }
 
   return groups.length > 0 ? groups : null;
@@ -226,6 +283,57 @@ export type CompanyFilesData = {
   notes: CompanyFileEntry[];
 };
 
+/** 构建单个公司的文件映射 */
+function buildCompanyFiles(
+  companyDir: string,
+  prefix: string,
+): CompanyFilesData {
+  const data: CompanyFilesData = { files: [], tracking: [], notes: [] };
+
+  for (const entry of readdirSync(companyDir, { withFileTypes: true })) {
+    if (entry.isDirectory()) {
+      const subDir = join(companyDir, entry.name);
+      if (entry.name === "tracking") {
+        const subFiles = readdirSync(subDir).filter((f) => f.endsWith(".md"));
+        data.tracking = subFiles.map((f) => {
+          const name = getModuleName(f);
+          return {
+            name,
+            label: getDisplayName(name),
+            link: `${prefix}/tracking/${name}`,
+          };
+        });
+      } else if (entry.name === "notes") {
+        const subFiles = readdirSync(subDir).filter((f) => f.endsWith(".md"));
+        data.notes = subFiles.map((f) => {
+          const name = getModuleName(f);
+          return {
+            name,
+            label: getDisplayName(name),
+            link: `${prefix}/notes/${name}`,
+          };
+        });
+      }
+    } else if (entry.name.endsWith(".md") && entry.name !== "index.md") {
+      const modName = getModuleName(entry.name);
+      data.files.push({
+        name: modName,
+        label: getDisplayName(modName),
+        link: `${prefix}/${modName}`,
+      });
+    }
+  }
+
+  // 按 ITEM_ORDER 排序
+  data.files.sort((a, b) => {
+    const orderA = ITEM_ORDER[a.label] ?? 99;
+    const orderB = ITEM_ORDER[b.label] ?? 99;
+    return orderA - orderB;
+  });
+
+  return data;
+}
+
 export function getCompanyFilesMap(): Record<string, CompanyFilesData> {
   const map: Record<string, CompanyFilesData> = {};
 
@@ -238,104 +346,105 @@ export function getCompanyFilesMap(): Record<string, CompanyFilesData> {
       continue;
 
     const industryDir = join(INDUSTRY_DIR, industryEntry.name);
+    const industryPrefix = `/industry/${industryEntry.name}`;
 
-    for (const companyEntry of readdirSync(industryDir, {
+    for (const segEntry of readdirSync(industryDir, {
       withFileTypes: true,
     })) {
-      if (!companyEntry.isDirectory()) continue;
-      // 跳过行业资料目录（与行业同名的目录）
-      if (companyEntry.name === industryEntry.name) continue;
+      if (!segEntry.isDirectory() || segEntry.name.startsWith(".")) continue;
+      if (segEntry.name === "投研资料") continue;
 
-      const companyDir = join(industryDir, companyEntry.name);
-      if (!existsSync(join(companyDir, "index.md"))) continue;
+      const segDir = join(industryDir, segEntry.name);
 
-      const route = `/industry/${industryEntry.name}/${companyEntry.name}/`;
-      const prefix = `/industry/${industryEntry.name}/${companyEntry.name}`;
-      const data: CompanyFilesData = { files: [], tracking: [], notes: [] };
+      if (isSegment(segDir)) {
+        // 赛道下公司
+        const segPrefix = `${industryPrefix}/${segEntry.name}`;
+        for (const companyEntry of readdirSync(segDir, {
+          withFileTypes: true,
+        })) {
+          if (!companyEntry.isDirectory() || companyEntry.name.startsWith("."))
+            continue;
+          if (companyEntry.name === "投研资料") continue;
 
-      for (const entry of readdirSync(companyDir, { withFileTypes: true })) {
-        if (entry.isDirectory()) {
-          const subDir = join(companyDir, entry.name);
-          if (entry.name === "tracking") {
-            const subFiles = readdirSync(subDir).filter((f) =>
-              f.endsWith(".md"),
+          const companyDir = join(segDir, companyEntry.name);
+          if (isCompany(companyDir)) {
+            map[`${segPrefix}/${companyEntry.name}/`] = buildCompanyFiles(
+              companyDir,
+              `${segPrefix}/${companyEntry.name}`,
             );
-            data.tracking = subFiles.map((f) => {
-              const name = getModuleName(f);
-              return {
-                name,
-                label: getDisplayName(name),
-                link: `${prefix}/tracking/${name}`,
-              };
-            });
-          } else if (entry.name === "notes") {
-            const subFiles = readdirSync(subDir).filter((f) =>
-              f.endsWith(".md"),
-            );
-            data.notes = subFiles.map((f) => {
-              const name = getModuleName(f);
-              return {
-                name,
-                label: getDisplayName(name),
-                link: `${prefix}/notes/${name}`,
-              };
-            });
           }
-        } else if (entry.name.endsWith(".md") && entry.name !== "index.md") {
-          const modName = getModuleName(entry.name);
-          data.files.push({
-            name: modName,
-            label: getDisplayName(modName),
-            link: `${prefix}/${modName}`,
-          });
         }
+      } else if (isCompany(segDir)) {
+        // 不拆赛道行业：公司直接挂一级
+        map[`${industryPrefix}/${segEntry.name}/`] = buildCompanyFiles(
+          segDir,
+          `${industryPrefix}/${segEntry.name}`,
+        );
       }
-
-      // 按 ITEM_ORDER 排序
-      data.files.sort((a, b) => {
-        const orderA = ITEM_ORDER[a.label] ?? 99;
-        const orderB = ITEM_ORDER[b.label] ?? 99;
-        return orderA - orderB;
-      });
-
-      map[route] = data;
     }
   }
 
   return map;
 }
 
+/** 行业树节点类型 */
+export type CompanyNode = { name: string; route: string };
+export type SegmentNode = {
+  name: string;
+  route: string;
+  companies: CompanyNode[];
+};
+export type IndustryNode = {
+  name: string;
+  route: string;
+  segments: SegmentNode[];
+  companies: CompanyNode[];
+};
+
 /** 获取行业树（用于总览页） */
-export function getIndustryTree() {
-  const tree: {
-    name: string;
-    route: string;
-    companies: { name: string; route: string }[];
-  }[] = [];
+export function getIndustryTree(): IndustryNode[] {
+  const tree: IndustryNode[] = [];
   if (!existsSync(INDUSTRY_DIR)) return tree;
 
   for (const e of readdirSync(INDUSTRY_DIR, { withFileTypes: true })) {
     if (!e.isDirectory() || e.name.startsWith(".")) continue;
     const dir = join(INDUSTRY_DIR, e.name);
-    const companies: { name: string; route: string }[] = [];
+    const industryPrefix = `/industry/${e.name}`;
+    const segments: SegmentNode[] = [];
+    const companies: CompanyNode[] = [];
 
     for (const s of readdirSync(dir, { withFileTypes: true })) {
-      if (!s.isDirectory() || s.name === e.name) continue;
-      if (existsSync(join(dir, s.name, "index.md"))) {
-        companies.push({
+      if (!s.isDirectory() || s.name.startsWith(".")) continue;
+      if (s.name === "投研资料") continue;
+
+      const subDir = join(dir, s.name);
+
+      if (isSegment(subDir)) {
+        const segPrefix = `${industryPrefix}/${s.name}`;
+        const segCompanies: CompanyNode[] = [];
+        for (const c of readdirSync(subDir, { withFileTypes: true })) {
+          if (!c.isDirectory() || c.name.startsWith(".")) continue;
+          if (c.name === "投研资料") continue;
+          if (isCompany(join(subDir, c.name))) {
+            segCompanies.push({ name: c.name, route: `${segPrefix}/${c.name}/` });
+          }
+        }
+        segments.push({
           name: s.name,
-          route: `/industry/${e.name}/${s.name}/`,
+          route: `${segPrefix}/投研资料/行业总览`,
+          companies: segCompanies,
         });
+      } else if (isCompany(subDir)) {
+        companies.push({ name: s.name, route: `${industryPrefix}/${s.name}/` });
       }
     }
 
-    if (companies.length > 0 || existsSync(join(dir, e.name, "index.md"))) {
-      tree.push({
-        name: e.name,
-        route: `/industry/${e.name}/${e.name}/`,
-        companies,
-      });
-    }
+    tree.push({
+      name: e.name,
+      route: `${industryPrefix}/投研资料/行业总览`,
+      segments,
+      companies,
+    });
   }
 
   return tree;

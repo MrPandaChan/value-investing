@@ -8,11 +8,13 @@ const { page } = useData();
 
 const currentData = computed<CompanyFilesData | null>(() => {
   const route = page.value.filePath;
-  // 匹配 /industry/{行业}/{公司}/index.md 模式
-  const match = route.match(/^industry\/([^/]+)\/([^/]+)\/index\.md$/);
-  if (!match) return null;
+  // 从文件路径推导公司目录路由：
+  //   industry/汽车/乘用车/比亚迪/index.md  -> /industry/汽车/乘用车/比亚迪/
+  //   industry/煤炭/中国神华/index.md        -> /industry/煤炭/中国神华/
+  const dir = route.replace(/\/[^/]+\.md$/, "");
+  if (!dir || !dir.startsWith("industry/")) return null;
 
-  const key = `/industry/${match[1]}/${match[2]}/`;
+  const key = `/${dir}/`;
   return (filesMap as Record<string, CompanyFilesData>)[key] ?? null;
 });
 

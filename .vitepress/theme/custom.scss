@@ -5,3 +5,8 @@
 .VPDoc.has-aside .content-container {
   max-width: 100% !important;
 }
+
+/* page 布局（如行业总览，无目录）内容占满宽度 */
+.VPDoc:not(.has-aside) .content-container {
+  max-width: 100% !important;
+}

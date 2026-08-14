@@ -1,9 +1,17 @@
 declare module "virtual:industry-tree" {
-  const tree: {
+  type CompanyNode = { name: string; route: string };
+  type SegmentNode = {
     name: string;
     route: string;
-    companies: { name: string; route: string }[];
-  }[];
+    companies: CompanyNode[];
+  };
+  type IndustryNode = {
+    name: string;
+    route: string;
+    segments: SegmentNode[];
+    companies: CompanyNode[];
+  };
+  const tree: IndustryNode[];
   export default tree;
 }
 
