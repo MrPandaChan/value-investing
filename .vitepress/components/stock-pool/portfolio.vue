@@ -6,7 +6,7 @@ import {
   canConvertToCNY,
   isHKCode,
 } from "../../../fetch-data/helper";
-import { cash, stocks } from "../../my-data/stock-pool";
+import { cash, stocks, TagKey } from "../../my-data/stock-pool";
 import { useStockPoolData } from "./use-stock-pool-data";
 import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
 
@@ -236,6 +236,31 @@ const portfolioData = computed<PortfolioRow[]>(() => {
   }
 
   return result;
+});
+
+/** 共同依赖标签暴露超过该仓位比例时标红 */
+const TAG_THRESHOLD = 0.5;
+
+/** 共同依赖标签暴露统计：按持有市值 × 权重累加，分母为持股总市值（不含现金） */
+const tagExposure = computed(() => {
+  const rows = portfolioData.value.filter((r) => r.code !== "__cash__");
+  const total = rows.reduce((s, r) => s + r.holdingValue, 0);
+  const map = new Map<TagKey, number>();
+  for (const row of rows) {
+    const stock = stocks.find((s) => s.code === row.code);
+    for (const t of stock?.tags ?? []) {
+      const w = t.weight ?? 1;
+      map.set(t.tag, (map.get(t.tag) ?? 0) + row.holdingValue * w);
+    }
+  }
+  return [...map.entries()]
+    .map(([tag, value]) => ({
+      tag,
+      value,
+      ratio: total > 0 ? value / total : 0,
+      over: total > 0 && value / total > TAG_THRESHOLD,
+    }))
+    .sort((a, b) => b.ratio - a.ratio);
 });
 
 /** 加权综合素质得分（不含现金，按持股比例归一化加权） */
@@ -494,6 +519,34 @@ onMounted(() => {
         inactive-text="隐藏现金"
       />
     </footer>
+
+    <section class="dependency-stats">
+      <h4>共同依赖统计（隐藏耦合）</h4>
+      <table class="portfolio-table">
+        <thead>
+          <tr>
+            <th>依赖标签</th>
+            <th>覆盖仓位</th>
+            <th>暴露市值</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr
+            v-for="item in tagExposure"
+            :key="item.tag"
+            :class="{ over: item.over }"
+          >
+            <td>{{ item.tag }}</td>
+            <td class="bold">{{ formatPercent(item.ratio * 100) }}</td>
+            <td>￥{{ formatNum(item.value, 2).toFixed(2) }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p class="hint">
+        覆盖仓位超过 {{ formatPercent(TAG_THRESHOLD * 100) }}
+        的标签标红，代表该共同依赖是组合的主要隐藏绳子。
+      </p>
+    </section>
   </div>
 </template>
 
@@ -622,6 +675,29 @@ html.dark .portfolio-container {
 
   .cash-switch {
     margin-left: 16px;
+  }
+
+  .dependency-stats {
+    margin-top: 20px;
+
+    h4 {
+      font-size: 14px;
+      font-weight: bold;
+      margin: 0 0 8px;
+      color: var(--pf-text);
+    }
+
+    tr.over td {
+      color: #e03131;
+      font-weight: bold;
+    }
+
+    .hint {
+      font-size: 12px;
+      color: var(--pf-text);
+      opacity: 0.7;
+      margin: 6px 0 0;
+    }
   }
 
   .moat-rate {

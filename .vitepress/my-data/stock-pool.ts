@@ -30,6 +30,35 @@ export enum Industry {
   ETF = "ETF",
 }
 
+/**
+ * 组合共同依赖标签，用于识别"正常事故"中的隐藏耦合。
+ * 不是行业分类，而是跨行业的共同依赖维度。
+ *
+ * 通过对每个公司进行风险画像分析来确定权重应该多大，避免太过于拍脑袋
+ */
+export enum TagKey {
+  /** 收入主要来自中国境内需求 */
+  DOMESTIC = "内需",
+  /** 收入来自海外市场/出口 */
+  EXPORT = "外需/出口",
+  /** 类债属性，盈利与利率强相关（银行/保险/运营商/公用事业/地产） */
+  RATE = "利率敏感",
+  /** 盈利与商品/周期价格强相关（油/煤/金铜/化工/运价） */
+  COMMODITY = "商品价格",
+  /** 盈利对人民币汇率敏感（美元收入/出口型） */
+  FX = "汇率",
+  /** 受政策、牌照、监管、补贴强影响 */
+  POLICY = "政策/监管",
+  /** 流动性较差（港股小盘/B股） */
+  LOW_LIQUIDITY = "低流动性",
+}
+
+/** 单个标签及暴露程度，weight 取值 0~1，缺省视为 1 */
+export interface StockTag {
+  tag: TagKey;
+  weight?: number;
+}
+
 interface PlanEntry {
   value: number;
   quantity: number; // 计划买入股数
@@ -85,6 +114,8 @@ export interface StockItem {
   plan: PlanItem; // 买入计划
   exit: PlanItem; // 退出计划，数据结构与 plan 一致
   strikePrice: EntryPrice; // 击球点
+  /** 共同依赖标签（用于组合集中度统计，weight 0~1） */
+  tags?: StockTag[];
 }
 
 /**
@@ -103,6 +134,11 @@ const stocks: StockItem[] = [
      * 12% - 370
      */
     code: "00700",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.75 },
+      { tag: TagKey.EXPORT, weight: 0.25 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.INTERNET,
     qualityScore: 4.5,
     sharesHeld: 400,
@@ -134,6 +170,12 @@ const stocks: StockItem[] = [
   {
     // 福耀玻璃
     code: "600660",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.FX, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+    ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
     sharesHeld: 1200,
@@ -160,6 +202,10 @@ const stocks: StockItem[] = [
   {
     // 云南白药
     code: "000538",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3.5,
     sharesHeld: 1000,
@@ -184,6 +230,7 @@ const stocks: StockItem[] = [
   {
     // 东阿阿胶
     code: "000423",
+    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3.5,
     sharesHeld: 900,
@@ -212,6 +259,10 @@ const stocks: StockItem[] = [
   {
     // 羚锐制药
     code: "600285",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3,
     sharesHeld: 900,
@@ -236,6 +287,7 @@ const stocks: StockItem[] = [
   {
     // 分众传媒
     code: "002027",
+    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
     industry: Industry.MEDIA,
     qualityScore: 3.5,
     sharesHeld: 4000,
@@ -262,6 +314,11 @@ const stocks: StockItem[] = [
   {
     // 青岛港H
     code: "06198",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.75 },
+      { tag: TagKey.EXPORT, weight: 0.25 },
+      { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+    ],
     industry: Industry.SEAPORTS_AND_SERVICES,
     qualityScore: 3.5,
     sharesHeld: 1000,
@@ -287,6 +344,10 @@ const stocks: StockItem[] = [
   {
     // 青岛港A
     code: "601298",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.75 },
+      { tag: TagKey.EXPORT, weight: 0.25 },
+    ],
     industry: Industry.SEAPORTS_AND_SERVICES,
     qualityScore: 3.5,
     sharesHeld: 4000,
@@ -317,6 +378,10 @@ const stocks: StockItem[] = [
   {
     // 永新股份
     code: "002014",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+    ],
     industry: Industry.PAPER_AND_PACKAGING,
     qualityScore: 3,
     sharesHeld: 1000,
@@ -344,6 +409,11 @@ const stocks: StockItem[] = [
   {
     // 招商银行
     code: "600036",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.BANKING,
     qualityScore: 4,
     sharesHeld: 1600,
@@ -372,6 +442,11 @@ const stocks: StockItem[] = [
   {
     // 工商银行
     code: "601398",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.BANKING,
     qualityScore: 3.5,
     dividendPerYear: 2,
@@ -395,6 +470,11 @@ const stocks: StockItem[] = [
   {
     // 中国银行
     code: "601988",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.BANKING,
     qualityScore: 3.5,
     dividendPerYear: 2,
@@ -418,6 +498,11 @@ const stocks: StockItem[] = [
   {
     // 农业银行
     code: "601288",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.BANKING,
     qualityScore: 3.5,
     dividendPerYear: 2,
@@ -441,6 +526,11 @@ const stocks: StockItem[] = [
   {
     // 建设银行
     code: "601939",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.BANKING,
     qualityScore: 3.5,
     dividendPerYear: 2,
@@ -464,6 +554,11 @@ const stocks: StockItem[] = [
   {
     // 兴业银行
     code: "601166",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.BANKING,
     qualityScore: 3,
     dividendPerYear: 2,
@@ -487,6 +582,10 @@ const stocks: StockItem[] = [
   {
     // 中创智领A
     code: "601717",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+    ],
     industry: Industry.MACHINERY,
     qualityScore: 2.5,
     url: "/value-investing/industry/机械设备/煤矿机械/中创智领/",
@@ -510,6 +609,11 @@ const stocks: StockItem[] = [
   {
     // 中创智领H
     code: "00564",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+    ],
     industry: Industry.MACHINERY,
     qualityScore: 2.5,
     url: "/value-investing/industry/机械设备/煤矿机械/中创智领/",
@@ -534,6 +638,12 @@ const stocks: StockItem[] = [
   {
     // 美的集团
     code: "000333",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.6 },
+      { tag: TagKey.EXPORT, weight: 0.4 },
+      { tag: TagKey.FX, weight: 0.5 },
+      { tag: TagKey.RATE, weight: 0.5 },
+    ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 4,
     sharesHeld: 100,
@@ -561,6 +671,12 @@ const stocks: StockItem[] = [
   {
     // 海尔智家
     code: "600690",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.FX, weight: 0.75 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3.5,
     sharesHeld: 3600,
@@ -585,6 +701,10 @@ const stocks: StockItem[] = [
   {
     // 格力电器
     code: "000651",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 0.5 },
+    ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3,
     sharesHeld: 1200,
@@ -609,6 +729,11 @@ const stocks: StockItem[] = [
   {
     // 中国移动
     code: "600941",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 4,
     sharesHeld: 700,
@@ -636,6 +761,11 @@ const stocks: StockItem[] = [
   {
     // 中国电信
     code: "601728",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3.5,
     url: "/value-investing/industry/通信/运营商/中国电信/",
@@ -659,6 +789,11 @@ const stocks: StockItem[] = [
   {
     // 中国电信H
     code: "00728",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3.5,
     sharesHeld: 2000,
@@ -684,6 +819,11 @@ const stocks: StockItem[] = [
   {
     // 中国铁塔
     code: "00788",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3,
     sharesHeld: 2500,
@@ -709,6 +849,10 @@ const stocks: StockItem[] = [
   {
     // 长江电力
     code: "600900",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+    ],
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 4.5,
     sharesHeld: 1200,
@@ -733,6 +877,11 @@ const stocks: StockItem[] = [
   {
     // 国投电力
     code: "600886",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+    ],
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 3,
     sharesHeld: 1200,
@@ -757,6 +906,12 @@ const stocks: StockItem[] = [
   {
     // 中国海油A
     code: "600938",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 1 },
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.FX, weight: 1 },
+    ],
     industry: Industry.PETROLEUM_AND_PETROCHEMICALS,
     qualityScore: 4.5,
     url: "/value-investing/industry/石油石化/油气开采/中国海油/",
@@ -780,6 +935,12 @@ const stocks: StockItem[] = [
   {
     // 中国海洋石油H
     code: "00883",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 1 },
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.FX, weight: 1 },
+    ],
     industry: Industry.PETROLEUM_AND_PETROCHEMICALS,
     qualityScore: 4.5,
     url: "/value-investing/industry/石油石化/油气开采/中国海油/",
@@ -804,6 +965,12 @@ const stocks: StockItem[] = [
   {
     // 紫金矿业
     code: "601899",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 1 },
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.FX, weight: 1 },
+    ],
     industry: Industry.NON_FERROUS_METALS,
     qualityScore: 4,
     sharesHeld: 500,
@@ -828,6 +995,12 @@ const stocks: StockItem[] = [
   {
     // 保利物业
     code: "06049",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 0.5 },
+      { tag: TagKey.POLICY, weight: 0.75 },
+      { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+    ],
     industry: Industry.PROPERTY_MANAGEMENT,
     qualityScore: 3,
     sharesHeld: 600,
@@ -853,6 +1026,11 @@ const stocks: StockItem[] = [
   {
     // 赛轮轮胎
     code: "601058",
+    tags: [
+      { tag: TagKey.EXPORT, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.FX, weight: 0.5 },
+    ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
     sharesHeld: 1200,
@@ -880,6 +1058,11 @@ const stocks: StockItem[] = [
   {
     // 申洲国际
     code: "02313",
+    tags: [
+      { tag: TagKey.EXPORT, weight: 1 },
+      { tag: TagKey.FX, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+    ],
     industry: Industry.TEXTILES_AND_APPAREL,
     qualityScore: 3.5,
     sharesHeld: 300,
@@ -910,6 +1093,12 @@ const stocks: StockItem[] = [
   {
     // 泡泡玛特
     code: "09992",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+    ],
     industry: Industry.POP_TOYS,
     qualityScore: 3,
     url: "/value-investing/industry/轻工制造/潮玩/泡泡玛特/",
@@ -934,6 +1123,7 @@ const stocks: StockItem[] = [
   {
     // 贵州茅台
     code: "600519",
+    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
     industry: Industry.BAIJIU,
     qualityScore: 5,
     url: "/value-investing/industry/食品饮料/白酒/贵州茅台/",
@@ -957,6 +1147,7 @@ const stocks: StockItem[] = [
   {
     // 泸州老窖
     code: "000568",
+    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
     url: "/value-investing/industry/食品饮料/白酒/泸州老窖/",
@@ -980,6 +1171,7 @@ const stocks: StockItem[] = [
   {
     // 山西汾酒
     code: "600809",
+    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
     url: "/value-investing/industry/食品饮料/白酒/山西汾酒/",
@@ -1003,6 +1195,10 @@ const stocks: StockItem[] = [
   {
     // 古井贡B
     code: "200596",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.LOW_LIQUIDITY, weight: 1 },
+    ],
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
     sharesHeld: 1000,
@@ -1027,6 +1223,11 @@ const stocks: StockItem[] = [
   {
     // 宇通客车
     code: "600066",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.FX, weight: 0.5 },
+    ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3,
     sharesHeld: 400,
@@ -1051,6 +1252,10 @@ const stocks: StockItem[] = [
   {
     // 伊利股份
     code: "600887",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+    ],
     industry: Industry.DAIRY_PRODUCTS,
     qualityScore: 3.5,
     sharesHeld: 200,
@@ -1078,6 +1283,11 @@ const stocks: StockItem[] = [
   {
     // 中国神华A
     code: "601088",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 0.75 },
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 0.5 },
+    ],
     industry: Industry.COAL,
     qualityScore: 4,
     url: "/value-investing/industry/煤炭/中国神华/",
@@ -1101,6 +1311,11 @@ const stocks: StockItem[] = [
   {
     // 中国神华H
     code: "01088",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 0.75 },
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 0.5 },
+    ],
     industry: Industry.COAL,
     qualityScore: 4,
     url: "/value-investing/industry/煤炭/中国神华/",
@@ -1128,6 +1343,10 @@ const stocks: StockItem[] = [
   {
     // 陕西煤业
     code: "601225",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 1 },
+      { tag: TagKey.DOMESTIC, weight: 1 },
+    ],
     industry: Industry.COAL,
     qualityScore: 3,
     url: "/value-investing/industry/煤炭/陕西煤业/",
@@ -1154,6 +1373,11 @@ const stocks: StockItem[] = [
   {
     // 中国平安
     code: "601318",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.INSURANCE,
     qualityScore: 3.5,
     sharesHeld: 600,
@@ -1178,6 +1402,7 @@ const stocks: StockItem[] = [
   {
     // 安踏体育
     code: "02020",
+    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
     industry: Industry.TEXTILES_AND_APPAREL,
     qualityScore: 4,
     sharesHeld: 200,
@@ -1206,6 +1431,10 @@ const stocks: StockItem[] = [
   {
     // 小商品城
     code: "600415",
+    tags: [
+      { tag: TagKey.EXPORT, weight: 1 },
+      { tag: TagKey.FX, weight: 0.5 },
+    ],
     industry: Industry.ENTERPRISE_SERVICES,
     qualityScore: 3,
     sharesHeld: 2300,
@@ -1233,6 +1462,11 @@ const stocks: StockItem[] = [
   {
     // 中国通信服务
     code: "00552",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.RATE, weight: 0.5 },
+      { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+    ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3,
     url: "",
@@ -1257,6 +1491,11 @@ const stocks: StockItem[] = [
   {
     // 中远海控A
     code: "601919",
+    tags: [
+      { tag: TagKey.EXPORT, weight: 1 },
+      { tag: TagKey.FX, weight: 0.75 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+    ],
     industry: Industry.SHIPPING,
     qualityScore: 2,
     sharesHeld: 200,
@@ -1281,6 +1520,11 @@ const stocks: StockItem[] = [
   {
     // 中远海控H
     code: "01919",
+    tags: [
+      { tag: TagKey.EXPORT, weight: 1 },
+      { tag: TagKey.FX, weight: 0.75 },
+      { tag: TagKey.COMMODITY, weight: 0.5 },
+    ],
     industry: Industry.SHIPPING,
     qualityScore: 2,
     sharesHeld: 1000,
@@ -1306,6 +1550,12 @@ const stocks: StockItem[] = [
   {
     // 比亚迪
     code: "002594",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.FX, weight: 0.5 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
     sharesHeld: 100,
@@ -1330,6 +1580,12 @@ const stocks: StockItem[] = [
   {
     // 香港交易所
     code: "00388",
+    tags: [
+      { tag: TagKey.RATE, weight: 0.5 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.FX, weight: 0.5 },
+    ],
     industry: Industry.FINANCIAL,
     qualityScore: 4.5,
     url: "/value-investing/industry/非银金融/交易所/港交所/",
@@ -1353,6 +1609,10 @@ const stocks: StockItem[] = [
   {
     // 国电南瑞
     code: "600406",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.75 },
+    ],
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 4,
     url: "/value-investing/industry/电力设备/电网设备/国电南瑞/",
@@ -1376,6 +1636,12 @@ const stocks: StockItem[] = [
   {
     // 宁德时代
     code: "300750",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.FX, weight: 0.5 },
+    ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
     url: "/value-investing/industry/电力设备/电池/宁德时代/",
@@ -1399,6 +1665,7 @@ const stocks: StockItem[] = [
   {
     // 农夫山泉
     code: "09633",
+    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
     industry: Industry.BEVERAGE,
     qualityScore: 4.5,
     url: "/value-investing/industry/食品饮料/饮料/农夫山泉/",
@@ -1423,6 +1690,7 @@ const stocks: StockItem[] = [
   {
     // 东鹏饮料
     code: "605499",
+    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
     industry: Industry.BEVERAGE,
     qualityScore: 3.5,
     url: "/value-investing/industry/食品饮料/饮料/东鹏饮料/",
@@ -1446,6 +1714,12 @@ const stocks: StockItem[] = [
   {
     // 云天化
     code: "600096",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 1 },
+      { tag: TagKey.DOMESTIC, weight: 0.75 },
+      { tag: TagKey.EXPORT, weight: 0.25 },
+      { tag: TagKey.POLICY, weight: 0.5 },
+    ],
     industry: Industry.BEVERAGE,
     qualityScore: 2.5,
     url: "/value-investing/industry/基础化工/化肥农药/云天化/",
@@ -1469,6 +1743,12 @@ const stocks: StockItem[] = [
   {
     // 万华化学
     code: "600309",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 1 },
+      { tag: TagKey.DOMESTIC, weight: 0.5 },
+      { tag: TagKey.EXPORT, weight: 0.5 },
+      { tag: TagKey.FX, weight: 0.5 },
+    ],
     industry: Industry.MATERIALS,
     qualityScore: 3.5,
     url: "/value-investing/industry/基础化工/化工新材料/万华化学/",
@@ -1492,6 +1772,11 @@ const stocks: StockItem[] = [
   {
     // 海康威视
     code: "002415",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 0.75 },
+      { tag: TagKey.EXPORT, weight: 0.25 },
+      { tag: TagKey.POLICY, weight: 0.75 },
+    ],
     industry: Industry.SECURITY,
     qualityScore: 3.5,
     url: "/value-investing/industry/电子/安防/海康威视/",
@@ -1515,6 +1800,7 @@ const stocks: StockItem[] = [
   {
     // 恒生科技ETF
     code: "513180",
+    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
     industry: Industry.ETF,
     qualityScore: 2.5,
     sharesHeld: 5000,
