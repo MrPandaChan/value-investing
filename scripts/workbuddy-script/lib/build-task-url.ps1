@@ -1,24 +1,21 @@
 ﻿# build-task-url.ps1
-# 公共函数库：从 config.json + prompt.md 构造 workbuddy:// 任务 URL
+# 公共函数库：从 config.json + prompt 内容构造 workbuddy:// 任务 URL
 # 被 once-test.ps1 与 task-loop.ps1 通过 . (点源) 方式加载
 
 function Build-TaskUrl {
     param(
-        [Parameter(Mandatory = $true)][string]$ConfigPath,
-        [Parameter(Mandatory = $true)][string]$PromptFile
+        [Parameter(Mandatory = $true)][string]$PromptContent,
+        [Parameter(Mandatory = $true)][string]$ConfigPath
     )
 
     # 读取配置（UTF-8 显式指定，避免中文乱码）
     $config = Get-Content -Raw -Encoding UTF8 $ConfigPath | ConvertFrom-Json
 
-    # 读取 prompt 内容并去掉首尾空白
-    $prompt = (Get-Content -Raw -Encoding UTF8 $PromptFile).Trim()
-
-    # cwd 默认取脚本目录；config 中显式配置则优先
-    $cwd = if ($config.cwd) { $config.cwd } else { Split-Path -Parent $PromptFile }
+    # cwd：config 中显式配置优先，否则取脚本目录
+    $cwd = if ($config.cwd) { $config.cwd } else { Split-Path -Parent $ConfigPath }
 
     # URL 编码（等价于 JS 的 encodeURIComponent）
-    $encodedPrompt = [uri]::EscapeDataString($prompt)
+    $encodedPrompt = [uri]::EscapeDataString($PromptContent)
     $encodedCwd    = [uri]::EscapeDataString($cwd)
 
     # 拼接 URL（与 workbuddy 协议格式一致）
@@ -35,12 +32,12 @@ function Build-TaskUrl {
 # 模拟回车键发送任务（打开 URL 并等待 enter_delay_seconds 后执行）
 function Send-WorkBuddyTask {
     param(
-        [Parameter(Mandatory = $true)][string]$ConfigPath,
-        [Parameter(Mandatory = $true)][string]$PromptFile
+        [Parameter(Mandatory = $true)][string]$PromptContent,
+        [Parameter(Mandatory = $true)][string]$ConfigPath
     )
 
     $config = Get-Content -Raw -Encoding UTF8 $ConfigPath | ConvertFrom-Json
-    $url = Build-TaskUrl -ConfigPath $ConfigPath -PromptFile $PromptFile
+    $url = Build-TaskUrl -PromptContent $PromptContent -ConfigPath $ConfigPath
 
     Write-Host "打开 WorkBuddy 并创建任务..."
     Start-Process $url

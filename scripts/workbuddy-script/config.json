@@ -1,7 +1,17 @@
 {
-  "interval_seconds": 100,
-  "enter_delay_seconds": 2,
+  "enter_delay_seconds": 3,
   "app_name": "WorkBuddy",
-  "skills": "fundamental-indicator-tracker",
-  "cwd": ""
+  "skills": "",
+  "cwd": "C:/Users/Administrator/Desktop/value/value-investing",
+  "tasks_file": "tasks.json",
+  "prompt_template": "prompt.md",
+  "framework_file": "value-investing/AI赋能投资/生意拆解.md",
+  "output_root": "C:/Users/Administrator/Desktop/value/value-investing",
+  "poll_seconds": 30,
+  "send_interval_seconds": 60,
+  "max_concurrent": 3,
+  "task_timeout_minutes": 30,
+  "max_retries": 2,
+  "min_file_bytes": 5000,
+  "stable_checks": 3
 }
