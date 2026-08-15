@@ -248,234 +248,234 @@
       "name": "创新药",
       "target": "创新药研发行业（专利药研发/临床/商业化）",
       "output": "industry/医药生物/化学制药/投研资料/创新药生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T19:32:40"
     },
     {
       "id": 29,
       "name": "医疗服务",
       "target": "连锁医疗服务机构行业（专科连锁：眼科/口腔等）",
       "output": "industry/医药生物/医疗服务/投研资料/医疗服务生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T19:33:49"
     },
     {
       "id": 30,
       "name": "医疗器械",
       "target": "医疗器械行业（医疗设备/高值耗材/体外诊断）",
       "output": "industry/医药生物/医疗器械/投研资料/医疗器械生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T19:34:58"
     },
     {
       "id": 31,
       "name": "医药外包",
       "target": "医药研发生产外包行业（CRO/CDMO）",
       "output": "industry/医药生物/医药外包/投研资料/医药外包生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T19:47:38"
     },
     {
       "id": 32,
       "name": "中药",
       "target": "中药行业（品牌中药/OTC/处方中成药）",
       "output": "industry/医药生物/中药/投研资料/中药生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T19:48:47"
     },
     {
       "id": 33,
       "name": "银行",
       "target": "商业银行行业（零售/对公/财富管理）",
       "output": "industry/银行/投研资料/银行生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T19:49:56"
     },
     {
       "id": 34,
       "name": "互联网平台",
       "target": "互联网平台行业（社交/内容/生态平台）",
       "output": "industry/传媒/互联网平台/投研资料/互联网平台生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:02:05"
     },
     {
       "id": 35,
       "name": "广告营销",
       "target": "广告营销行业（梯媒/线上广告/营销服务）",
       "output": "industry/传媒/广告营销/投研资料/广告营销生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:03:14"
     },
     {
       "id": 36,
       "name": "游戏",
       "target": "游戏行业（游戏研发/发行/运营）",
       "output": "industry/传媒/游戏/投研资料/游戏生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:04:23"
     },
     {
       "id": 37,
       "name": "煤矿机械",
       "target": "煤矿机械行业（煤机装备/智能化设备）",
       "output": "industry/机械设备/煤矿机械/投研资料/煤矿机械生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:16:03"
     },
     {
       "id": 38,
       "name": "空分设备",
       "target": "空分设备行业（空气分离设备制造/工业气体）",
       "output": "industry/机械设备/空分设备/投研资料/空分设备生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:19:12"
     },
     {
       "id": 39,
       "name": "白电",
       "target": "白色家电行业（空调/冰箱/洗衣机）",
       "output": "industry/家用电器/白电/投研资料/白电生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:30:21"
     },
     {
       "id": 40,
       "name": "电工器材",
       "target": "电工器材行业（开关插座/电工电器）",
       "output": "industry/家用电器/电工器材/投研资料/电工器材生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:33:00"
     },
     {
       "id": 41,
       "name": "免税",
       "target": "免税零售行业（离岛免税/口岸免税/市内免税）",
       "output": "industry/商贸零售/免税/投研资料/免税生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:35:09"
     },
     {
       "id": 42,
       "name": "商贸市场",
       "target": "商贸批发市场运营行业（小商品市场/商品交易市场）",
       "output": "industry/商贸零售/商贸市场/投研资料/商贸市场生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:45:19"
     },
     {
       "id": 43,
       "name": "化工新材料",
       "target": "化工新材料行业（聚氨酯/轻烃裂解/煤制烯烃）",
       "output": "industry/基础化工/化工新材料/投研资料/化工新材料生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:46:28"
     },
     {
       "id": 44,
       "name": "钾肥",
       "target": "钾肥行业（钾盐开采/氯化钾生产）",
       "output": "industry/基础化工/化肥农药/投研资料/钾肥生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:48:37"
     },
     {
       "id": 45,
       "name": "农药",
       "target": "农药行业（除草剂/杀虫剂/植物调节剂）",
       "output": "industry/基础化工/化肥农药/投研资料/农药生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T20:58:46"
     },
     {
       "id": 46,
       "name": "安防",
       "target": "安防行业（视频监控/智能安防/安防解决方案）",
       "output": "industry/电子/安防/投研资料/安防生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T21:00:25"
     },
     {
       "id": 47,
       "name": "钼钴",
       "target": "钼钴行业（钼矿开采/铜钴矿/钴冶炼）",
       "output": "industry/有色金属/钼钴/投研资料/钼钴生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T21:04:04"
     },
     {
       "id": 48,
       "name": "铜金",
       "target": "铜金行业（铜矿开采/金矿开采/冶炼加工）",
       "output": "industry/有色金属/铜金/投研资料/铜金生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T21:12:43"
     },
     {
       "id": 49,
       "name": "宠物食品",
       "target": "宠物食品行业（宠物主粮/零食/营养品）",
       "output": "industry/食品饮料/宠物食品/投研资料/宠物食品生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T21:17:52"
     },
     {
       "id": 50,
       "name": "乳制品",
       "target": "乳制品行业（液态奶/奶粉/奶酪）",
       "output": "industry/食品饮料/乳制品/投研资料/乳制品生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T21:20:31"
     },
     {
       "id": 51,
       "name": "电动两轮车",
       "target": "电动两轮车行业（电动自行车/电动摩托车）",
       "output": "industry/汽车/电动两轮车/投研资料/电动两轮车生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T21:27:11"
     },
     {
       "id": 52,
       "name": "保险",
       "target": "保险行业（财险/寿险/健康险）",
       "output": "industry/非银金融/保险/投研资料/保险生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T21:33:20"
     },
     {
       "id": 53,
       "name": "包装印刷",
       "target": "包装印刷行业（塑料软包装/彩印包装）",
       "output": "industry/轻工制造/包装印刷/投研资料/包装印刷生意全景.md",
-      "status": "pending",
-      "attempts": 0,
-      "last_sent": ""
+      "status": "done",
+      "attempts": 1,
+      "last_sent": "2026-08-15T21:39:59"
     }
   ]
 }
