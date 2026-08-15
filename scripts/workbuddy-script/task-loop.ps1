@@ -49,6 +49,12 @@ $minBytes     = [double]$config.min_file_bytes
 if ($minBytes -le 0) { $minBytes = 5000 }
 $stableChecks = [int]$config.stable_checks
 if ($stableChecks -lt 1) { $stableChecks = 3 }
+$completionMarker = [string]$config.completion_marker
+if (-not $completionMarker) { $completionMarker = '47. 最终洞见与哲学反思' }
+$sendKey = $config.send_key
+if (-not $sendKey) { $sendKey = '{ENTER}' }
+$sendRepeat = [int]$config.send_repeat
+if ($sendRepeat -lt 1) { $sendRepeat = 1 }
 
 # 带时间戳的日志输出（控制台 + 文件）
 function Write-Log {
@@ -67,7 +73,7 @@ function Read-Tasks {
 function Save-Tasks {
     param($TasksArray)
     $obj = @{ tasks = @($TasksArray) }
-    $json = $obj | ConvertTo-Json -Depth 10
+    $json = ConvertTo-Json2 -Object $obj -Depth 10
     $tmp = "$tasksPath.tmp"
     [System.IO.File]::WriteAllText($tmp, $json, (New-Object System.Text.UTF8Encoding($false)))
     Move-Item -Path $tmp -Destination $tasksPath -Force
@@ -78,6 +84,17 @@ function Get-OutputPath {
     param([object]$Task)
     $rel = [string]$Task.output -replace '/', '\'
     return Join-Path $outputRoot $rel
+}
+
+# 检查输出文件内容是否包含完成标记（任务输出为逐部分写入，需确认写到最后一个模块才算完成）
+function Test-CompletionMarker {
+    param([string]$Path)
+    try {
+        $content = [System.IO.File]::ReadAllText($Path, [System.Text.Encoding]::UTF8)
+        return $content.Contains($completionMarker)
+    } catch {
+        return $false
+    }
 }
 
 # 生成单次任务的 prompt（模板 + 注入字段）
@@ -94,10 +111,30 @@ function Build-TaskPrompt {
     return $prompt
 }
 
-# 尝试发送任务：标记 running 并写回，再真实发送
+# 预创建任务的输出文件（空的即可）。目的：
+#   1. 任务一发送，目标文件就存在，轮询判断有明确基准；
+#   2. 避免"文件不存在"与"任务还没真正开始"混淆。
+function Ensure-OutputFile {
+    param([object]$Task)
+    $outPath = Get-OutputPath -Task $Task
+    $dir = Split-Path -Parent $outPath
+    if (-not (Test-Path $dir)) {
+        New-Item -ItemType Directory -Path $dir -Force | Out-Null
+    }
+    if (-not (Test-Path $outPath)) {
+        [System.IO.File]::WriteAllText($outPath, '', (New-Object System.Text.UTF8Encoding($false)))
+        Write-Log "已预创建空输出文件：$outPath"
+    } else {
+        Write-Log "输出文件已存在（不覆盖）：$outPath"
+    }
+}
+
+# 尝试发送任务：预创建输出文件 -> 标记 running 并写回 -> 真实发送
 function Send-Task {
     param([object]$Task, [int]$Attempt)
     $nowStr = (Get-Date).ToString('yyyy-MM-ddTHH:mm:ss')
+    # 先预创建输出文件，再标记 running
+    Ensure-OutputFile -Task $Task
     $Task.status = 'running'
     $Task.attempts = $Attempt
     $Task.last_sent = $nowStr
@@ -132,7 +169,7 @@ while ($true) {
     $script:currentTasks = Read-Tasks
     $now = Get-Date
 
-    # ---- 1. 检查所有 running 任务：完成 / 超时 ----
+    # ---- 1. 检查所有 running 任务：完成 / 回车补发 / 超时 ----
     foreach ($task in $script:currentTasks) {
         if ($task.status -ne 'running') { continue }
 
@@ -143,7 +180,14 @@ while ($true) {
         if (Test-Path $outPath) {
             $fi = Get-Item $outPath
             $currentSize = $fi.Length
-            if ($currentSize -ge $minBytes) { $outReady = $true }
+            # 完成判断：大小达标 + 内容包含最后一个模块的完成标记
+            if ($currentSize -ge $minBytes -and (Test-CompletionMarker -Path $outPath)) {
+                $outReady = $true
+            } elseif ($currentSize -ge $minBytes) {
+                Write-Log "任务 [$($task.id)] $($task.name) 输出文件 $([math]::Round($currentSize/1KB,1)) KB 但尚未写到完成标记（$completionMarker），继续等待..."
+            }
+            # 注意：文件为空（0字节）属于正常状态——发送任务时已预创建空文件，
+            # 空文件说明 WorkBuddy 尚未开始写入，继续等待即可。
         }
 
         if ($outReady) {
@@ -160,7 +204,7 @@ while ($true) {
             if ($fileHistory[$key].count -ge $stableChecks) {
                 $task.status = 'done'
                 Save-Tasks -TasksArray $script:currentTasks
-                Write-Log "任务 [$($task.id)] $($task.name) 完成（输出 $([math]::Round($currentSize/1KB,1)) KB）"
+                Write-Log "任务 [$($task.id)] $($task.name) 完成（输出 $([math]::Round($currentSize/1KB,1)) KB，含完成标记）"
                 $fileHistory.Remove($key)
                 continue
             }
@@ -168,14 +212,20 @@ while ($true) {
             $fileHistory.Remove([string]$task.id)
         }
 
-        # 超时检查：从 last_sent 起算
+        # 超时检查：基准时间为 max(last_sent, 输出文件最后写入时间)
+        # 只要文件仍在被写入（逐部分输出持续追加），就不断重置超时计时，避免误重发
         if ($task.last_sent) {
             $lastSentDate = [datetime]::Parse($task.last_sent)
-            $elapsedMin = ($now - $lastSentDate).TotalMinutes
+            $baseTime = $lastSentDate
+            if (Test-Path $outPath) {
+                $writeTime = (Get-Item $outPath).LastWriteTime
+                if ($writeTime -gt $baseTime) { $baseTime = $writeTime }
+            }
+            $elapsedMin = ($now - $baseTime).TotalMinutes
             if ($elapsedMin -ge $timeoutMin) {
                 if ([int]$task.attempts -lt $maxRetries) {
                     $newAttempt = [int]$task.attempts + 1
-                    Write-Log "任务 [$($task.id)] $($task.name) 超时（$([math]::Round($elapsedMin,1)) 分钟），第 $newAttempt 次重发..."
+                    Write-Log "任务 [$($task.id)] $($task.name) 超时（$([math]::Round($elapsedMin,1)) 分钟无进展），第 $newAttempt 次重发..."
                     $null = Send-Task -Task $task -Attempt $newAttempt
                     $lastSendTime = $now
                 } else {

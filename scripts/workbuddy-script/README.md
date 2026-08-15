@@ -2,6 +2,12 @@
 
 通过 `workbuddy://` 协议自动打开 WorkBuddy 新建任务框，把任务内容填入任务框，等待数秒后自动触发回车键发送任务。
 
+> **重要：需要管理员权限运行。**
+> WorkBuddy 以管理员权限运行（Electron 多进程，`tasklist /v` 显示 User Name 为 N/A、低权限进程无法打开其 Token）。
+> 若脚本以普通权限运行，Windows 的 **UIPI 特权隔离**会静默拦截脚本模拟的键盘输入（SendKeys/SendWait），
+> 导致"prompt 已填入但回车不生效"——手动回车则正常。
+> `run-loop.bat` / `run-once.bat` 已内置自动提权逻辑（检测到非管理员时弹 UAC 请求提权），请使用 bat 启动脚本。
+
 本版本支持**并行任务队列**：
 - 以 `tasks.json` 为**唯一状态源**，每次循环重新读取，任务状态直接反映在文件中；
 - 任务状态机：`pending → running → done / failed`，各任务独立维护 `attempts` / `last_sent`；
@@ -42,8 +48,8 @@ workbuddy-task-runner/
 
 - **并发上限**：同一时刻最多 `max_concurrent`（默认 3）个任务处于 `running`；
 - **发送节拍**：每 `send_interval_seconds`（默认 60）秒才允许发送一个新的任务，避免一次性灌入过多任务；
-- **完成检测**：每个 `running` 任务的输出文件存在、大小 ≥ `min_file_bytes`、且连续 `stable_checks` 次轮询大小不变，才标记 `done` 释放槽位；
-- **超时重试**：距 `last_sent` 超过 `task_timeout_minutes` 仍无有效输出，自动重发（`attempts` 递增），超过 `max_retries` 次标记 `failed`；
+- **完成检测**：每个 `running` 任务的输出文件存在、大小 ≥ `min_file_bytes`、**内容包含完成标记 `completion_marker`**（默认 `47. 最终洞见与哲学反思`，因任务是逐部分输出，只有写到最后一个模块才算完成）、且连续 `stable_checks` 次轮询大小不变，才标记 `done` 释放槽位；
+- **超时重试**：以 `max(last_sent, 输出文件最后写入时间)` 为基准，超过 `task_timeout_minutes` 无进展才自动重发（`attempts` 递增）；只要文件仍在持续写入（逐部分输出），就不断重置计时，避免误重发；超过 `max_retries` 次标记 `failed`；
 - 全部任务进入 `done` / `failed` 后脚本自动退出。
 
 ## 快速开始
@@ -65,8 +71,10 @@ workbuddy-task-runner/
 
 | 字段 | 默认值 | 说明 |
 |------|--------|------|
-| `enter_delay_seconds` | `3` | 打开 WorkBuddy 后等待多久再按回车（秒） |
-| `app_name` | `"WorkBuddy"` | 发送回车前尝试激活的窗口（进程名或窗口标题片段），留空则不激活 |
+| `enter_delay_seconds` | `8` | 打开 WorkBuddy 后等待多久再按回车（秒） |
+| `app_name` | `""` | 发送回车前尝试激活的窗口名（回退用）。脚本会**优先按进程 ID 激活 WorkBuddy 主窗口**（Electron 多进程，主进程才有 MainWindowHandle），更可靠；`app_name` 仅在找不到主进程时作为回退 |
+| `send_key` | `"~"` | 发送的按键。`~` 表示回车（SendKeys 语法，兼容性最好），可改为 `"^{ENTER}"`（Ctrl+Enter）等 WorkBuddy 支持的快捷键 |
+| `send_repeat` | `1` | 每次任务发送时按 Enter 的次数（默认 1 次，回车只发一次） |
 | `skills` | `""` | 传入 URL 的 skills 参数，不需要则留空 |
 | `cwd` | 工作区根 | 传入 URL 的 cwd 参数（WorkBuddy 工作目录） |
 | `tasks_file` | `tasks.json` | 任务队列文件（状态源） |
@@ -76,10 +84,11 @@ workbuddy-task-runner/
 | `poll_seconds` | `30` | 轮询输出文件的间隔（秒） |
 | `send_interval_seconds` | `60` | 发送新任务的最小间隔（秒，节拍） |
 | `max_concurrent` | `3` | 同时运行的任务上限 |
-| `task_timeout_minutes` | `30` | 单个任务超时（分钟），超时后重发 |
+| `task_timeout_minutes` | `120` | 单个任务超时（分钟），超时后重发 |
 | `max_retries` | `2` | 单个任务最大重发次数 |
 | `min_file_bytes` | `5000` | 判定输出文件有效的最小大小（字节） |
 | `stable_checks` | `3` | 连续 N 次轮询文件大小不变才判定稳定完成 |
+| `completion_marker` | `47. 最终洞见与哲学反思` | 输出文件内容必须包含的完成标记（逐部分输出的最后一个模块） |
 
 ## prompt.md 占位符
 
@@ -97,16 +106,17 @@ workbuddy-task-runner/
 
 1. 读取 `config.json`，循环开始前校验 tasks.json / prompt 模板 / 框架文件存在；
 2. 每轮重新读取 `tasks.json`（状态源在磁盘）；
-3. 检查所有 `running` 任务的输出文件：完成 → `done`；超时 → 重发 / `failed`；
-4. 若 `running` 数 < `max_concurrent` 且距上次发送 ≥ `send_interval_seconds`，取下一个 `pending` 任务，标记 `running` 写回后发送；
-5. 全部任务结束自动退出。
+3. 发送任务前**预创建输出文件（空文件）**——任务一发送，目标文件就存在，便于区分"任务未开始"与"任务进行中"；
+4. 检查所有 `running` 任务的输出文件：内容包含完成标记 → `done`；超时无进展 → 重发 / `failed`；
+5. 若 `running` 数 < `max_concurrent` 且距上次发送 ≥ `send_interval_seconds`，取下一个 `pending` 任务，标记 `running` 写回后发送；
+6. 全部任务结束自动退出。
 
 ## 常见问题
 
 **Q1：回车没有生效 / 任务没有发送？**
 - 确认 WorkBuddy 已登录且能正常接收 `workbuddy://` 协议；
-- 把 `enter_delay_seconds` 调大（如 4~5 秒），等窗口完全弹出；
-- 确认 `app_name` 与你的 WorkBuddy 窗口标题匹配（可打开 WorkBuddy 后用任务管理器查看进程名）。若激活失败，脚本会回退到"在当前焦点窗口发送回车"，此时请确保打开 URL 后 WorkBuddy 窗口处于最前。
+- 把 `enter_delay_seconds` 调大，等窗口完全弹出；
+- 确认以管理员权限运行脚本（见文首提示）：WorkBuddy 是管理员进程时，普通权限脚本的模拟键盘会被系统拦截，导致回车无效。
 
 **Q2：如何跳过/重新排队某个任务？**
 在 `tasks.json` 中把该任务 `status` 改为 `done`（跳过）或 `pending`（重新排队）。脚本每次循环都会重新读取。
@@ -128,5 +138,5 @@ SendKeys 属于模拟键鼠操作，部分安全软件可能提示。属正常�
 - 脚本会真实触发键盘回车，运行期间请勿手动操作键盘鼠标，避免误触；
 - 循环任务会持续弹出 WorkBuddy 任务框，运行前确认这是你期望的行为；
 - **不要同时运行两个 task-loop 实例**，否则两个进程都会读写 tasks.json，可能导致重复发送；
-- 每个任务都会覆盖写入 `output` 指定的文件，若担心误覆盖，请先备份；
-- 输出文件判定为"完成"的依据是文件存在且大小稳定超过阈值，若 WorkBuddy 生成内容较慢（先写小文件再扩充），`stable_checks` 轮询机制会等文件稳定后再判定。
+- 每个任务发送时会预创建（或复用）`output` 指定的文件；若文件已存在则不覆盖，WorkBuddy 写入时覆盖更新；
+- 输出文件判定为"完成"的依据是：内容包含完成标记（`47. 最终洞见与哲学反思`）+ 大小超过阈值 + 连续 `stable_checks` 次轮询大小不变。空文件是正常状态（表示任务已发送、尚未开始写入），会继续等待。

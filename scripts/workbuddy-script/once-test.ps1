@@ -61,7 +61,7 @@ try {
     $task.status = 'running'
     $task.attempts = [int]$task.attempts + 1
     $task.last_sent = $nowStr
-    $json = @{ tasks = @($tasks) } | ConvertTo-Json -Depth 10
+    $json = ConvertTo-Json2 -Object @{ tasks = @($tasks) } -Depth 10
     [System.IO.File]::WriteAllText($tasksPath, $json, (New-Object System.Text.UTF8Encoding($false)))
     Write-Host "已标记任务 [$($task.id)] 为 running（attempts=$($task.attempts)）"
 
