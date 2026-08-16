@@ -1,13 +1,43 @@
 <script setup lang="ts">
+import { computed } from "vue";
 import { withBase } from "vitepress";
 import tree from "virtual:industry-tree";
 
-const industries = tree as {
+type CompanyNode = { name: string; route: string };
+type SegmentNode = {
   name: string;
   route: string;
-  companies: { name: string; route: string }[];
-}[];
-const total = industries.reduce((s, i) => s + i.companies.length, 0);
+  companies: CompanyNode[];
+};
+type IndustryNode = {
+  name: string;
+  route: string;
+  segments: SegmentNode[];
+  companies: CompanyNode[];
+};
+
+const industries = tree as IndustryNode[];
+
+const totalSegments = computed(() =>
+  industries.reduce((s, i) => s + i.segments.length, 0),
+);
+
+const totalCompanies = computed(() =>
+  industries.reduce(
+    (s, i) =>
+      s +
+      i.companies.length +
+      i.segments.reduce((x, seg) => x + seg.companies.length, 0),
+    0,
+  ),
+);
+
+function companyCount(ind: IndustryNode): number {
+  return (
+    ind.companies.length +
+    ind.segments.reduce((s, seg) => s + seg.companies.length, 0)
+  );
+}
 </script>
 
 <template>
@@ -16,7 +46,8 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
     <section class="hero">
       <h1 class="hero-title">行业与企业</h1>
       <p class="hero-sub">
-        {{ industries.length }} 个行业覆盖 · {{ total }} 家公司深度研究
+        {{ industries.length }} 个行业 · {{ totalSegments }} 条赛道 ·
+        {{ totalCompanies }} 家公司深度研究
       </p>
       <nav class="hero-links">
         <a
@@ -29,42 +60,79 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
       </nav>
     </section>
 
-    <!-- Grid -->
-    <section class="grid">
-      <div v-for="ind in industries" :key="ind.name" class="card">
-        <div class="card-top">
-          <a :href="withBase(ind.route)" class="card-name">{{ ind.name }}</a>
+    <!-- 行业列表 -->
+    <section class="industries">
+      <article v-for="ind in industries" :key="ind.name" class="industry">
+        <header class="industry-header">
+          <a :href="withBase(ind.route)" class="industry-name">
+            {{ ind.name }}
+          </a>
+          <span class="industry-meta">
+            <template v-if="ind.segments.length">
+              {{ ind.segments.length }} 赛道
+            </template>
+            <span
+              v-if="ind.segments.length && companyCount(ind)"
+              class="meta-dot"
+              >·</span
+            >
+            {{ companyCount(ind) }} 家公司
+          </span>
+        </header>
+
+        <!-- 拆赛道：按赛道分组展示 -->
+        <div v-if="ind.segments.length" class="segments">
+          <div v-for="seg in ind.segments" :key="seg.name" class="segment">
+            <a :href="withBase(seg.route)" class="segment-name">
+              {{ seg.name }}
+            </a>
+            <div class="segment-companies">
+              <a
+                v-for="c in seg.companies"
+                :key="c.route"
+                :href="withBase(c.route)"
+                class="company-tag"
+              >
+                {{ c.name }}
+              </a>
+              <span v-if="!seg.companies.length" class="segment-empty">
+                暂无公司 · 待研究
+              </span>
+            </div>
+          </div>
         </div>
 
-        <div v-if="ind.companies.length" class="card-companies">
+        <!-- 不拆赛道：直接列公司 -->
+        <div v-else class="companies">
           <a
             v-for="c in ind.companies"
             :key="c.route"
             :href="withBase(c.route)"
-            class="card-tag"
+            class="company-tag"
           >
             {{ c.name }}
           </a>
         </div>
-        <div v-else class="card-note">行业研究笔记</div>
-      </div>
+      </article>
     </section>
   </div>
 </template>
 
 <style scoped>
 .root {
-  margin: 0 auto;
-  padding: 48px 48px 80px;
+  width: 100%;
+  padding: 40px clamp(16px, 4vw, 64px) 80px;
+  box-sizing: border-box;
 }
 
+/* ===== Hero ===== */
 .hero {
   text-align: center;
-  margin-bottom: 48px;
+  margin-bottom: 40px;
 }
 .hero-title {
-  font-size: 34px;
-  line-height: 34px;
+  font-size: 36px;
+  line-height: 1.2;
   font-weight: 800;
   letter-spacing: -0.5px;
   margin: 0 0 10px;
@@ -113,67 +181,130 @@ const total = industries.reduce((s, i) => s + i.companies.length, 0);
   transform: translateX(3px);
 }
 
-.grid {
+/* ===== 行业网格 ===== */
+.industries {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  /* 不设置 align-items，默认 stretch：同一行卡片等高，消除底部参差空白 */
 }
 
-.card {
+.industry {
+  display: flex;
+  flex-direction: column;
   background: var(--vp-c-bg-soft);
   border: 1px solid var(--vp-c-border);
-  border-radius: 10px;
-  padding: 20px 22px 18px;
+  border-radius: 12px;
+  padding: 20px 22px;
   transition:
     border-color 0.2s,
-    box-shadow 0.2s,
-    transform 0.2s;
+    box-shadow 0.2s;
 }
-.card:hover {
-  border-color: #3b82f6;
-  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.15);
-  transform: translateY(-2px);
+.industry:hover {
+  border-color: var(--vp-c-brand-1);
+  box-shadow: 0 4px 20px rgba(59, 130, 246, 0.12);
 }
-.card-top {
+
+.industry-header {
+  flex-shrink: 0;
   display: flex;
-  align-items: center;
+  align-items: baseline;
   justify-content: space-between;
-  margin-bottom: 12px;
+  gap: 10px;
+  margin-bottom: 14px;
 }
-.card-name {
-  font-size: 15px;
-  font-weight: 600;
+.industry-name {
+  font-size: 17px;
+  font-weight: 700;
   color: var(--vp-c-brand-1);
-  margin: 0;
   text-decoration: none;
   transition: opacity 0.2s;
 }
-.card-name:hover {
-  opacity: 0.8;
+.industry-name:hover {
+  opacity: 0.75;
 }
-.card-companies {
+.industry-meta {
+  font-size: 12px;
+  color: var(--vp-c-text-3);
+  white-space: nowrap;
+}
+.meta-dot {
+  margin: 0 4px;
+}
+
+/* ===== 赛道分组 ===== */
+.segments {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+.segment {
+  padding-left: 12px;
+  border-left: 2px solid var(--vp-c-divider);
+  transition: border-color 0.2s;
+}
+.segment:hover {
+  border-left-color: var(--vp-c-brand-1);
+}
+.segment-name {
+  display: inline-block;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+  text-decoration: none;
+  margin-bottom: 7px;
+  transition: color 0.2s;
+}
+.segment-name:hover {
+  color: var(--vp-c-brand-1);
+}
+.segment-companies {
   display: flex;
   flex-wrap: wrap;
-  gap: 5px;
+  gap: 6px;
 }
-.card-tag {
+
+/* ===== 公司 tag ===== */
+.companies {
+  flex: 1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  align-content: flex-start;
+}
+.company-tag {
   font-size: 12px;
   color: var(--vp-c-text-2);
   background: var(--vp-c-bg);
-  border-radius: 5px;
-  padding: 3px 9px;
-  border: 1px solid transparent;
+  border: 1px solid var(--vp-c-border);
+  border-radius: 6px;
+  padding: 4px 10px;
   text-decoration: none;
   transition: all 0.15s;
 }
-.card-tag:hover {
-  border-color: #3b82f6;
-  color: var(--vp-c-text-1);
-  cursor: pointer;
+.company-tag:hover {
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  background: var(--vp-c-brand-soft);
 }
-.card-note {
-  font-size: 13px;
+
+.segment-empty {
+  font-size: 12px;
   color: var(--vp-c-text-3);
   font-style: italic;
+}
+
+/* ===== 响应式 ===== */
+@media (max-width: 640px) {
+  .root {
+    padding: 24px 16px 60px;
+  }
+  .industries {
+    grid-template-columns: 1fr;
+  }
+  .hero-title {
+    font-size: 28px;
+  }
 }
 </style>
