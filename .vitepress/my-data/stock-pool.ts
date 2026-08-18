@@ -51,6 +51,8 @@ export enum TagKey {
   POLICY = "政策/监管",
   /** 流动性较差（港股小盘/B股） */
   LOW_LIQUIDITY = "低流动性",
+  /** 收入/盈利对国内消费周期弹性（可选消费高、必选消费中、公用事业低） */
+  CONSUMER_SENSITIVITY = "消费敏感度",
 }
 
 /** 单个标签及暴露程度，weight 取值 0~1，缺省视为 1 */
@@ -138,6 +140,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 0.75 },
       { tag: TagKey.EXPORT, weight: 0.25 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.6 },
     ],
     industry: Industry.INTERNET,
     qualityScore: 4.5,
@@ -174,6 +177,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.FX, weight: 1 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.4 },
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
@@ -201,6 +205,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.7 },
     ],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3.5,
@@ -225,7 +230,10 @@ const stocks: StockItem[] = [
   {
     // 东阿阿胶
     code: "000423",
-    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.7 },
+    ],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3.5,
     sharesHeld: 300,
@@ -253,6 +261,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.6 },
     ],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3,
@@ -277,7 +286,10 @@ const stocks: StockItem[] = [
   {
     // 分众传媒
     code: "002027",
-    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.8 },
+    ],
     industry: Industry.MEDIA,
     qualityScore: 3.5,
     sharesHeld: 1800,
@@ -305,6 +317,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 0.75 },
       { tag: TagKey.EXPORT, weight: 0.25 },
       { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.SEAPORTS_AND_SERVICES,
     qualityScore: 3.5,
@@ -333,6 +346,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 0.75 },
       { tag: TagKey.EXPORT, weight: 0.25 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.SEAPORTS_AND_SERVICES,
     qualityScore: 3.5,
@@ -364,6 +378,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.5 },
     ],
     industry: Industry.PAPER_AND_PACKAGING,
     qualityScore: 3,
@@ -392,6 +407,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.4 },
     ],
     industry: Industry.BANKING,
     qualityScore: 4,
@@ -421,6 +437,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.3 },
     ],
     industry: Industry.BANKING,
     qualityScore: 3.5,
@@ -449,6 +466,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.3 },
     ],
     industry: Industry.BANKING,
     qualityScore: 3.5,
@@ -477,6 +495,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.3 },
     ],
     industry: Industry.BANKING,
     qualityScore: 3.5,
@@ -505,6 +524,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.3 },
     ],
     industry: Industry.BANKING,
     qualityScore: 3.5,
@@ -533,6 +553,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.35 },
     ],
     industry: Industry.BANKING,
     qualityScore: 3,
@@ -560,6 +581,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.MACHINERY,
     qualityScore: 2.5,
@@ -588,6 +610,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
       { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.MACHINERY,
     qualityScore: 2.5,
@@ -618,6 +641,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 0.4 },
       { tag: TagKey.FX, weight: 0.5 },
       { tag: TagKey.RATE, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.8 },
     ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 4,
@@ -651,6 +675,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.FX, weight: 0.75 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.8 },
     ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3.5,
@@ -679,6 +704,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.8 },
     ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3,
@@ -708,6 +734,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 4,
@@ -737,6 +764,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3.5,
@@ -765,6 +793,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3.5,
@@ -794,6 +823,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3,
@@ -822,6 +852,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0 },
     ],
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 4.5,
@@ -855,6 +886,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0 },
     ],
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 3,
@@ -889,6 +921,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 0.5 },
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.FX, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.PETROLEUM_AND_PETROCHEMICALS,
     qualityScore: 4.5,
@@ -918,6 +951,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 0.5 },
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.FX, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.PETROLEUM_AND_PETROCHEMICALS,
     qualityScore: 4.5,
@@ -948,6 +982,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 0.5 },
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.FX, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.05 },
     ],
     industry: Industry.NON_FERROUS_METALS,
     qualityScore: 4,
@@ -981,6 +1016,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.RATE, weight: 0.5 },
       { tag: TagKey.POLICY, weight: 0.75 },
       { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.5 },
     ],
     industry: Industry.PROPERTY_MANAGEMENT,
     qualityScore: 3,
@@ -1010,6 +1046,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 1 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
       { tag: TagKey.FX, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.5 },
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
@@ -1043,6 +1080,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 1 },
       { tag: TagKey.FX, weight: 1 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.2 },
     ],
     industry: Industry.TEXTILES_AND_APPAREL,
     qualityScore: 3.5,
@@ -1078,6 +1116,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.POLICY, weight: 0.5 },
       { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.9 },
     ],
     industry: Industry.POP_TOYS,
     qualityScore: 3,
@@ -1103,13 +1142,16 @@ const stocks: StockItem[] = [
   {
     // 贵州茅台
     code: "600519",
-    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.9 },
+    ],
     industry: Industry.BAIJIU,
     qualityScore: 5,
     url: "/value-investing/industry/食品饮料/白酒/贵州茅台/",
     dividendPerYear: 2,
     remark:
-      "**稳定增长型**，景气度↗，批价企稳提价增厚，中性情况下预计4%dy+4%~7%eps=8%~11%cagr，PE 20倍左右合理",
+      "**稳定增长型**，景气度↗，批价企稳提价增厚，中性情况下预计4%dy+4%~7%eps=8%~11%cagr，PE 18倍左右合理",
     maxPositionRatio: 0.2,
     plan: {
       type: PlanType.DIVIDEND,
@@ -1127,7 +1169,10 @@ const stocks: StockItem[] = [
   {
     // 泸州老窖
     code: "000568",
-    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 1 },
+    ],
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
     url: "/value-investing/industry/食品饮料/白酒/泸州老窖/",
@@ -1151,7 +1196,10 @@ const stocks: StockItem[] = [
   {
     // 山西汾酒
     code: "600809",
-    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 1 },
+    ],
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
     url: "/value-investing/industry/食品饮料/白酒/山西汾酒/",
@@ -1178,6 +1226,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.LOW_LIQUIDITY, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 1 },
     ],
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
@@ -1207,6 +1256,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 0.5 },
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.FX, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.4 },
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3,
@@ -1235,6 +1285,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.6 },
     ],
     industry: Industry.DAIRY_PRODUCTS,
     qualityScore: 3.5,
@@ -1264,6 +1315,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.COMMODITY, weight: 0.75 },
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.05 },
     ],
     industry: Industry.COAL,
     qualityScore: 4,
@@ -1292,6 +1344,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.COMMODITY, weight: 0.75 },
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.05 },
     ],
     industry: Industry.COAL,
     qualityScore: 4,
@@ -1323,6 +1376,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.COMMODITY, weight: 1 },
       { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.05 },
     ],
     industry: Industry.COAL,
     qualityScore: 3,
@@ -1354,6 +1408,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.3 },
     ],
     industry: Industry.INSURANCE,
     qualityScore: 3.5,
@@ -1379,7 +1434,10 @@ const stocks: StockItem[] = [
   {
     // 安踏体育
     code: "02020",
-    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.9 },
+    ],
     industry: Industry.TEXTILES_AND_APPAREL,
     qualityScore: 4,
     url: "/value-investing/industry/纺织服饰/运动鞋服/安踏体育/",
@@ -1410,6 +1468,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.EXPORT, weight: 1 },
       { tag: TagKey.FX, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.2 },
     ],
     industry: Industry.ENTERPRISE_SERVICES,
     qualityScore: 3,
@@ -1442,6 +1501,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.RATE, weight: 0.5 },
       { tag: TagKey.LOW_LIQUIDITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 3,
@@ -1471,6 +1531,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 1 },
       { tag: TagKey.FX, weight: 0.75 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.SHIPPING,
     qualityScore: 2,
@@ -1499,6 +1560,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 1 },
       { tag: TagKey.FX, weight: 0.75 },
       { tag: TagKey.COMMODITY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.SHIPPING,
     qualityScore: 2,
@@ -1529,6 +1591,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.FX, weight: 0.5 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.7 },
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
@@ -1578,6 +1641,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.POLICY, weight: 0.5 },
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.FX, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.2 },
     ],
     industry: Industry.FINANCIAL,
     qualityScore: 4.5,
@@ -1605,6 +1669,7 @@ const stocks: StockItem[] = [
     tags: [
       { tag: TagKey.DOMESTIC, weight: 1 },
       { tag: TagKey.POLICY, weight: 0.75 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 4,
@@ -1634,6 +1699,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.POLICY, weight: 0.5 },
       { tag: TagKey.FX, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.4 },
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
@@ -1658,7 +1724,10 @@ const stocks: StockItem[] = [
   {
     // 农夫山泉
     code: "09633",
-    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.7 },
+    ],
     industry: Industry.BEVERAGE,
     qualityScore: 4.5,
     url: "/value-investing/industry/食品饮料/饮料/农夫山泉/",
@@ -1683,7 +1752,10 @@ const stocks: StockItem[] = [
   {
     // 东鹏饮料
     code: "605499",
-    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.7 },
+    ],
     industry: Industry.BEVERAGE,
     qualityScore: 3.5,
     url: "/value-investing/industry/食品饮料/饮料/东鹏饮料/",
@@ -1712,6 +1784,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 0.75 },
       { tag: TagKey.EXPORT, weight: 0.25 },
       { tag: TagKey.POLICY, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
     ],
     industry: Industry.BEVERAGE,
     qualityScore: 2.5,
@@ -1741,6 +1814,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 0.5 },
       { tag: TagKey.EXPORT, weight: 0.5 },
       { tag: TagKey.FX, weight: 0.5 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.15 },
     ],
     industry: Industry.MATERIALS,
     qualityScore: 3.5,
@@ -1769,6 +1843,7 @@ const stocks: StockItem[] = [
       { tag: TagKey.DOMESTIC, weight: 0.75 },
       { tag: TagKey.EXPORT, weight: 0.25 },
       { tag: TagKey.POLICY, weight: 0.75 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.2 },
     ],
     industry: Industry.SECURITY,
     qualityScore: 3.5,
@@ -1793,7 +1868,10 @@ const stocks: StockItem[] = [
   {
     // 恒生科技ETF
     code: "513180",
-    tags: [{ tag: TagKey.DOMESTIC, weight: 1 }],
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.6 },
+    ],
     industry: Industry.ETF,
     qualityScore: 2.5,
     sharesHeld: 2400,
