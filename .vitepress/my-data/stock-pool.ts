@@ -181,6 +181,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
+    dividendPerYear: 2,
     sharesHeld: 500,
     url: "/value-investing/industry/汽车/汽车玻璃/福耀玻璃/",
     remark:
