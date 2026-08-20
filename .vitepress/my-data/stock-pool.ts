@@ -292,6 +292,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.MEDIA,
     qualityScore: 3.5,
+    dividendPerYear: 3,
     sharesHeld: 1800,
     url: "/value-investing/industry/传媒/广告营销/分众传媒/",
     remark:
@@ -382,6 +383,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.PAPER_AND_PACKAGING,
     qualityScore: 3,
+    dividendPerYear: 2,
     sharesHeld: 400,
     url: "/value-investing/industry/轻工制造/包装印刷/永新股份/",
     remark:
