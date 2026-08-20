@@ -302,6 +302,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.MEDIA,
     qualityScore: 3.5,
+    dividendPerYear: 3,
     sharesHeld: 4000,
     url: "/value-investing/industry/传媒/广告营销/分众传媒/",
     remark:
