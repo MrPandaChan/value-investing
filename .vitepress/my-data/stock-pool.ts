@@ -399,6 +399,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.PAPER_AND_PACKAGING,
     qualityScore: 3,
+    dividendPerYear: 2,
     sharesHeld: 1000,
     url: "/value-investing/industry/轻工制造/包装印刷/永新股份/",
     remark:
