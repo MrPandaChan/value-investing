@@ -989,7 +989,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.NON_FERROUS_METALS,
     qualityScore: 4,
-    sharesHeld: 700,
+    sharesHeld: 600,
     url: "/value-investing/industry/有色金属/铜金/紫金矿业/",
     dividendPerYear: 2,
     remark:
@@ -1904,6 +1904,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(36000);
+export const cash = ref(41000);
 
 export { stocks };

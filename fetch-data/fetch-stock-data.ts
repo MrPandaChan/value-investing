@@ -528,16 +528,22 @@ export async function main() {
 
     // 如果不是强制更新且文件已存在，则跳过
     if (!forceUpdate && fs.existsSync(dataFilePath)) {
-      console.log(`数据文件 ${stock.code}.json 已存在，跳过更新`);
+      console.log(
+        `数据文件 ${stock.code}.json 已存在，跳过更新（${i + 1}/${stockData.length}）`,
+      );
       continue;
     }
 
-    console.log(`正在获取 ${stock.name}(${stock.code}) 的数据...`);
+    console.log(
+      `正在获取 ${stock.name}(${stock.code}) 的数据...（${i + 1}/${stockData.length}）`,
+    );
     if (i > 0) {
       await sleep(10000);
     }
     await fetchAStockData(stock);
-    console.log(`获取 ${stock.name}(${stock.code}) 数据成功`);
+    console.log(
+      `获取 ${stock.name}(${stock.code}) 数据成功（${i + 1}/${stockData.length}）`,
+    );
   }
 
   console.log("数据更新完成！");
