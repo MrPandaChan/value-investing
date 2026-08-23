@@ -5,8 +5,8 @@
       "name": "白酒",
       "target": "中国白酒行业（高端/次高端/区域酒企，酱香/浓香/清香对比）",
       "output": "industry/食品饮料/白酒/投研资料/白酒生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:01:54"
     },
     {
@@ -14,8 +14,8 @@
       "name": "软饮料",
       "target": "中国软饮料行业（包装饮用水 + 功能饮料/即饮饮料）",
       "output": "industry/食品饮料/饮料/投研资料/软饮料生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:15:53"
     },
     {
@@ -23,8 +23,8 @@
       "name": "潮玩",
       "target": "潮玩/IP 授权零售行业",
       "output": "industry/轻工制造/潮玩/投研资料/潮玩生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:16:58"
     },
     {
@@ -32,8 +32,8 @@
       "name": "电解铝",
       "target": "电解铝行业（冶炼为核心，含铝加工对比）",
       "output": "industry/有色金属/铝/投研资料/电解铝生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:31:25"
     },
     {
@@ -41,8 +41,8 @@
       "name": "电网设备",
       "target": "电网自动化设备行业（二次设备/继保/电力信息化）",
       "output": "industry/电力设备/电网设备/投研资料/电网设备生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:38:52"
     },
     {
@@ -50,8 +50,8 @@
       "name": "电力运营",
       "target": "发电运营行业（水电为主，对比火电/新能源）",
       "output": "industry/公用事业/电力/投研资料/电力运营生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:40:01"
     },
     {
@@ -59,8 +59,8 @@
       "name": "电信运营",
       "target": "电信运营商行业（移动+固网+政企）",
       "output": "industry/通信/运营商/投研资料/电信运营生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:46:44"
     },
     {
@@ -68,8 +68,8 @@
       "name": "铁塔租赁",
       "target": "通信铁塔基础设施租赁行业",
       "output": "industry/通信/运营商/投研资料/铁塔租赁生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:47:53"
     },
     {
@@ -77,8 +77,8 @@
       "name": "运动品牌",
       "target": "运动鞋服品牌运营行业",
       "output": "industry/纺织服饰/运动鞋服/投研资料/运动品牌生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:49:02"
     },
     {
@@ -86,8 +86,8 @@
       "name": "服装代工",
       "target": "服装/纺织代工制造行业",
       "output": "industry/纺织服饰/服装代工/投研资料/服装代工生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T13:58:41"
     },
     {
@@ -95,8 +95,8 @@
       "name": "磷化工",
       "target": "磷化工行业（磷矿-磷肥-磷酸盐一体化）",
       "output": "industry/基础化工/化肥农药/投研资料/磷化工生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T14:02:20"
     },
     {
@@ -104,8 +104,8 @@
       "name": "港口",
       "target": "港口行业（集装箱/散杂货/液体散货）",
       "output": "industry/交通运输/港口/投研资料/港口生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T00:00:00"
     },
     {
@@ -113,8 +113,8 @@
       "name": "集装箱航运",
       "target": "集装箱航运行业",
       "output": "industry/交通运输/航运/投研资料/集装箱航运生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T14:10:59"
     },
     {
@@ -122,8 +122,8 @@
       "name": "交易所",
       "target": "证券交易所运营行业",
       "output": "industry/非银金融/交易所/投研资料/交易所生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T14:12:08"
     },
     {
@@ -131,8 +131,8 @@
       "name": "煤炭",
       "target": "动力煤开采行业（含煤电路一体化对比）",
       "output": "industry/煤炭/投研资料/煤炭生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T14:17:48"
     },
     {
@@ -140,8 +140,8 @@
       "name": "乘用车",
       "target": "新能源乘用车整车制造行业",
       "output": "industry/汽车/乘用车/投研资料/乘用车生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T14:24:57"
     },
     {
@@ -149,8 +149,8 @@
       "name": "汽车玻璃",
       "target": "汽车玻璃行业",
       "output": "industry/汽车/汽车玻璃/投研资料/汽车玻璃生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T14:26:36"
     },
     {
@@ -158,8 +158,8 @@
       "name": "动力电池",
       "target": "动力电池行业",
       "output": "industry/电力设备/电池/投研资料/动力电池生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T14:35:45"
     },
     {
@@ -167,8 +167,8 @@
       "name": "轮胎",
       "target": "轮胎行业（半钢/全钢/出海）",
       "output": "industry/汽车/轮胎/投研资料/轮胎生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T14:52:13"
     },
     {
@@ -176,8 +176,8 @@
       "name": "客车",
       "target": "客车制造行业（公交/旅游/出口）",
       "output": "industry/汽车/商用车/投研资料/客车生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T14:53:22"
     },
     {
@@ -185,8 +185,8 @@
       "name": "城市燃气",
       "target": "城市燃气分销行业",
       "output": "industry/公用事业/燃气/投研资料/城市燃气生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T15:05:32"
     },
     {
@@ -194,8 +194,8 @@
       "name": "油气开采",
       "target": "海上油气开采行业",
       "output": "industry/石油石化/油气开采/投研资料/油气开采生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T15:06:41"
     },
     {
@@ -203,8 +203,8 @@
       "name": "炼化一体化",
       "target": "炼化一体化行业（炼油+石化）",
       "output": "industry/石油石化/炼化及贸易/投研资料/炼化一体化生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T15:07:50"
     },
     {
@@ -212,8 +212,8 @@
       "name": "黄金珠宝",
       "target": "黄金珠宝零售行业",
       "output": "industry/轻工制造/珠宝首饰/投研资料/黄金珠宝生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T15:19:29"
     },
     {
@@ -221,8 +221,8 @@
       "name": "快递物流",
       "target": "快递物流行业（时效件+综合物流）",
       "output": "industry/交通运输/物流/投研资料/快递物流生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T15:20:38"
     },
     {
@@ -230,8 +230,8 @@
       "name": "物业服务",
       "target": "物业管理服务行业",
       "output": "industry/房地产/物业服务/投研资料/物业服务生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T15:21:47"
     },
     {
@@ -239,8 +239,8 @@
       "name": "消费电子出海",
       "target": "消费电子品牌出海/跨境电商行业",
       "output": "industry/电子/消费电子/投研资料/消费电子出海生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T15:33:57"
     },
     {
@@ -248,8 +248,8 @@
       "name": "创新药",
       "target": "创新药研发行业（专利药研发/临床/商业化）",
       "output": "industry/医药生物/化学制药/投研资料/创新药生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T19:32:40"
     },
     {
@@ -257,8 +257,8 @@
       "name": "医疗服务",
       "target": "连锁医疗服务机构行业（专科连锁：眼科/口腔等）",
       "output": "industry/医药生物/医疗服务/投研资料/医疗服务生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T19:33:49"
     },
     {
@@ -266,8 +266,8 @@
       "name": "医疗器械",
       "target": "医疗器械行业（医疗设备/高值耗材/体外诊断）",
       "output": "industry/医药生物/医疗器械/投研资料/医疗器械生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T19:34:58"
     },
     {
@@ -275,8 +275,8 @@
       "name": "医药外包",
       "target": "医药研发生产外包行业（CRO/CDMO）",
       "output": "industry/医药生物/医药外包/投研资料/医药外包生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T19:47:38"
     },
     {
@@ -284,8 +284,8 @@
       "name": "中药",
       "target": "中药行业（品牌中药/OTC/处方中成药）",
       "output": "industry/医药生物/中药/投研资料/中药生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T19:48:47"
     },
     {
@@ -293,8 +293,8 @@
       "name": "银行",
       "target": "商业银行行业（零售/对公/财富管理）",
       "output": "industry/银行/投研资料/银行生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T19:49:56"
     },
     {
@@ -302,8 +302,8 @@
       "name": "互联网平台",
       "target": "互联网平台行业（社交/内容/生态平台）",
       "output": "industry/传媒/互联网平台/投研资料/互联网平台生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:02:05"
     },
     {
@@ -311,8 +311,8 @@
       "name": "广告营销",
       "target": "广告营销行业（梯媒/线上广告/营销服务）",
       "output": "industry/传媒/广告营销/投研资料/广告营销生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:03:14"
     },
     {
@@ -320,8 +320,8 @@
       "name": "游戏",
       "target": "游戏行业（游戏研发/发行/运营）",
       "output": "industry/传媒/游戏/投研资料/游戏生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:04:23"
     },
     {
@@ -329,8 +329,8 @@
       "name": "煤矿机械",
       "target": "煤矿机械行业（煤机装备/智能化设备）",
       "output": "industry/机械设备/煤矿机械/投研资料/煤矿机械生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:16:03"
     },
     {
@@ -338,8 +338,8 @@
       "name": "空分设备",
       "target": "空分设备行业（空气分离设备制造/工业气体）",
       "output": "industry/机械设备/空分设备/投研资料/空分设备生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:19:12"
     },
     {
@@ -347,8 +347,8 @@
       "name": "白电",
       "target": "白色家电行业（空调/冰箱/洗衣机）",
       "output": "industry/家用电器/白电/投研资料/白电生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:30:21"
     },
     {
@@ -356,8 +356,8 @@
       "name": "电工器材",
       "target": "电工器材行业（开关插座/电工电器）",
       "output": "industry/家用电器/电工器材/投研资料/电工器材生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:33:00"
     },
     {
@@ -365,8 +365,8 @@
       "name": "免税",
       "target": "免税零售行业（离岛免税/口岸免税/市内免税）",
       "output": "industry/商贸零售/免税/投研资料/免税生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:35:09"
     },
     {
@@ -374,8 +374,8 @@
       "name": "商贸市场",
       "target": "商贸批发市场运营行业（小商品市场/商品交易市场）",
       "output": "industry/商贸零售/商贸市场/投研资料/商贸市场生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:45:19"
     },
     {
@@ -383,8 +383,8 @@
       "name": "化工新材料",
       "target": "化工新材料行业（聚氨酯/轻烃裂解/煤制烯烃）",
       "output": "industry/基础化工/化工新材料/投研资料/化工新材料生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:46:28"
     },
     {
@@ -392,8 +392,8 @@
       "name": "钾肥",
       "target": "钾肥行业（钾盐开采/氯化钾生产）",
       "output": "industry/基础化工/化肥农药/投研资料/钾肥生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:48:37"
     },
     {
@@ -401,8 +401,8 @@
       "name": "农药",
       "target": "农药行业（除草剂/杀虫剂/植物调节剂）",
       "output": "industry/基础化工/化肥农药/投研资料/农药生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T20:58:46"
     },
     {
@@ -410,8 +410,8 @@
       "name": "安防",
       "target": "安防行业（视频监控/智能安防/安防解决方案）",
       "output": "industry/电子/安防/投研资料/安防生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T21:00:25"
     },
     {
@@ -419,8 +419,8 @@
       "name": "钼钴",
       "target": "钼钴行业（钼矿开采/铜钴矿/钴冶炼）",
       "output": "industry/有色金属/钼钴/投研资料/钼钴生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T21:04:04"
     },
     {
@@ -428,8 +428,8 @@
       "name": "铜金",
       "target": "铜金行业（铜矿开采/金矿开采/冶炼加工）",
       "output": "industry/有色金属/铜金/投研资料/铜金生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T21:12:43"
     },
     {
@@ -437,8 +437,8 @@
       "name": "宠物食品",
       "target": "宠物食品行业（宠物主粮/零食/营养品）",
       "output": "industry/食品饮料/宠物食品/投研资料/宠物食品生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T21:17:52"
     },
     {
@@ -446,8 +446,8 @@
       "name": "乳制品",
       "target": "乳制品行业（液态奶/奶粉/奶酪）",
       "output": "industry/食品饮料/乳制品/投研资料/乳制品生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T21:20:31"
     },
     {
@@ -455,8 +455,8 @@
       "name": "电动两轮车",
       "target": "电动两轮车行业（电动自行车/电动摩托车）",
       "output": "industry/汽车/电动两轮车/投研资料/电动两轮车生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T21:27:11"
     },
     {
@@ -464,8 +464,8 @@
       "name": "保险",
       "target": "保险行业（财险/寿险/健康险）",
       "output": "industry/非银金融/保险/投研资料/保险生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T21:33:20"
     },
     {
@@ -473,8 +473,8 @@
       "name": "包装印刷",
       "target": "包装印刷行业（塑料软包装/彩印包装）",
       "output": "industry/轻工制造/包装印刷/投研资料/包装印刷生意全景.md",
-      "status": "done",
-      "attempts": 1,
+      "status": "pending",
+      "attempts": 0,
       "last_sent": "2026-08-15T21:39:59"
     }
   ]
