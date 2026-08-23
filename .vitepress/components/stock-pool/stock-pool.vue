@@ -1,7 +1,12 @@
 <script lang="ts" setup>
 import { computed, onMounted, reactive, ref, watch } from "vue";
 import { ElMessage } from "element-plus";
-import { CaretTop, CaretBottom, WarningFilled } from "@element-plus/icons-vue";
+import {
+  CaretTop,
+  CaretBottom,
+  WarningFilled,
+  InfoFilled,
+} from "@element-plus/icons-vue";
 import {
   formatNum,
   formatPercent,
@@ -20,6 +25,7 @@ import { buildExDisplay, type ExDisplayInfo } from "./use-dividend-status";
 import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
 import { stocks } from "../../my-data/stock-pool";
 import StockPoolPortfolio from "./portfolio.vue";
+import StockExtraInfo from "./stock-extra-info.vue";
 import MarkdownIt from "markdown-it";
 
 // ========== 分红状态判断（已拆分至 use-dividend-status.ts） ==========
@@ -883,10 +889,18 @@ const mergedTableData = computed(() => {
       >
         <td v-if="row.nameRowSpan > 0" :rowspan="row.nameRowSpan" class="bold">
           <div>
-            <a v-if="row.url" :href="row.url" class="stock-link">{{
-              displayName(row.name, row.code)
-            }}</a>
-            <span v-else>{{ displayName(row.name, row.code) }}</span>
+            <StockExtraInfo
+              :code="row.code"
+              :name="displayName(row.name, row.code)"
+            >
+              <a v-if="row.url" :href="row.url" class="stock-link">{{
+                displayName(row.name, row.code)
+              }}</a>
+              <span v-else>{{ displayName(row.name, row.code) }}</span>
+              <el-icon :size="13" class="extra-info-icon"
+                ><InfoFilled
+              /></el-icon>
+            </StockExtraInfo>
           </div>
           <div class="stock-code">{{ row.code }}</div>
           <div
@@ -1373,6 +1387,18 @@ html.dark {
     --el-rate-icon-size: 10px;
     --el-rate-icon-margin: 0px;
     justify-content: center;
+  }
+
+  .extra-info-icon {
+    color: var(--sp-text-secondary);
+    opacity: 0.5;
+    cursor: help;
+    vertical-align: -2px;
+    margin-left: 2px;
+
+    &:hover {
+      opacity: 0.9;
+    }
   }
 
   .plan-price-input {
