@@ -9,12 +9,12 @@
   "prompt_template": "prompt.md",
   "framework_file": "value-investing/AI赋能投资/生意拆解.md",
   "output_root": "C:/Users/Administrator/Desktop/value/value-investing",
-  "poll_seconds": 30,
-  "send_interval_seconds": 60,
-  "max_concurrent": 3,
+  "poll_seconds": 20,
+  "send_interval_seconds": 30,
+  "max_concurrent": 5,
   "task_timeout_minutes": 120,
   "max_retries": 2,
   "min_file_bytes": 5000,
   "stable_checks": 3,
-  "completion_marker": "47. 最终洞见与哲学反思"
+  "completion_marker": "50. 核心指标仪表盘"
 }

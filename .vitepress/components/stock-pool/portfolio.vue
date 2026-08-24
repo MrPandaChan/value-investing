@@ -6,9 +6,11 @@ import {
   canConvertToCNY,
   isHKCode,
 } from "../../../fetch-data/helper";
+import { InfoFilled } from "@element-plus/icons-vue";
 import { cash, stocks, TagKey } from "../../my-data/stock-pool";
 import { useStockPoolData } from "./use-stock-pool-data";
 import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
+import StockExtraInfo from "./stock-extra-info.vue";
 
 const { tableData, groupMetaMap, exchangeRate, refresh } = useStockPoolData();
 
@@ -358,7 +360,13 @@ onMounted(() => {
       <tbody>
         <tr v-for="item in portfolioData" :key="item.code">
           <td>{{ item.index }}</td>
-          <td class="bold">{{ item.name }}</td>
+          <td class="bold">
+            <StockExtraInfo v-if="item.code !== '__cash__'" :code="item.code" :name="item.name">
+              <span>{{ item.name }}</span>
+              <el-icon :size="13" class="extra-info-icon"><InfoFilled /></el-icon>
+            </StockExtraInfo>
+            <span v-else>{{ item.name }}</span>
+          </td>
           <td>{{ item.sharesHeld }}</td>
           <td>￥{{ formatNum(item.holdingValue, 2).toFixed(2) }}</td>
           <td class="bold">
@@ -705,6 +713,18 @@ html.dark .portfolio-container {
     --el-rate-icon-size: 10px;
     --el-rate-icon-margin: 0px;
     justify-content: center;
+  }
+
+  .extra-info-icon {
+    color: var(--pf-text);
+    opacity: 0.4;
+    cursor: help;
+    vertical-align: -2px;
+    margin-left: 2px;
+
+    &:hover {
+      opacity: 0.8;
+    }
   }
 }
 </style>
