@@ -37,8 +37,4 @@ coverage
 /weekly-report
 .workbuddy
 /daily-brief
-<<<<<<< HEAD
 .npmrc
-=======
-.npmrc
->>>>>>> master
