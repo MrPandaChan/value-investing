@@ -1478,7 +1478,7 @@ const stocks: StockItem[] = [
     qualityScore: 3,
     sharesHeld: 1200,
     url: "/value-investing/industry/商贸零售/商贸市场/小商品城/",
-    dividendPerYear: 1,
+    dividendPerYear: 2,
     remark:
       "**稳定增长型**，景气度→，外贸出口高企，贸易毛利极薄，中性情况下预计4%dy+6%~8%eps=10%~12%cagr，股息率4%以上合理",
     maxPositionRatio: 0.03,
