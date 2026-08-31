@@ -833,13 +833,13 @@ const stocks: StockItem[] = [
     qualityScore: 3,
     url: "/value-investing/industry/通信/运营商/中国铁塔/",
     dividendPerYear: 2,
-    dividendAdjust: 0.8 * 1.3,
+    dividendAdjust: 0.8 * 1.2,
     remark:
-      "**缓慢增长型**，景气度→，折旧到期利润释放期，中性情况下预计7%dy+1%~2%eps=8%~9%cagr，短期向好（折旧到期），股息率6.5%以上合理",
+      "**缓慢增长型**，景气度→，折旧到期利润释放期，应收压力大，议价能力差，中性情况下预计7%dy0%~1%eps=7%~8%cagr，短期向好（折旧到期），股息率7%以上合理",
     maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.065, quantity: 1000 }],
+      dividend: [{ value: 0.07, quantity: 1000 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -847,7 +847,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.065,
+      value: 0.07,
     },
   },
   {
