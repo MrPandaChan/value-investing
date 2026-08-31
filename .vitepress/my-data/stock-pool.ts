@@ -214,6 +214,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3.5,
+    dividendPerYear: 2,
     sharesHeld: 1000,
     url: "/value-investing/industry/医药生物/中药/云南白药/",
     remark:
