@@ -1476,7 +1476,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.ENTERPRISE_SERVICES,
     qualityScore: 3,
-    sharesHeld: 1200,
+    sharesHeld: 1000,
     url: "/value-investing/industry/商贸零售/商贸市场/小商品城/",
     dividendPerYear: 2,
     remark:
@@ -1905,6 +1905,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(39000);
+export const cash = ref(41000);
 
 export { stocks };
