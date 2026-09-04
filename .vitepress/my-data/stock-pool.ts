@@ -301,8 +301,8 @@ const stocks: StockItem[] = [
       "**周期型**，景气度↘，经济萎靡，新潮收购需跟踪，中性情况下预计7%dy+1%~2%eps=8%~9%cagr，适合CAPE估值，股息率7%以上合理",
     maxPositionRatio: 0.05,
     plan: {
-      type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.075, quantity: 1000 }],
+      type: PlanType.PRICE,
+      price: [{ value: 4.53, quantity: 1000 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1483,11 +1483,8 @@ const stocks: StockItem[] = [
       "**稳定增长型**，景气度→，外贸出口高企，贸易毛利极薄，中性情况下预计4%dy+6%~8%eps=10%~12%cagr，股息率4%以上合理",
     maxPositionRatio: 0.03,
     plan: {
-      type: PlanType.DIVIDEND,
-      dividend: [
-        { value: 0.05, quantity: 200 },
-        { value: 0.055, quantity: 200 },
-      ],
+      type: PlanType.PRICE,
+      price: [{ value: 10, quantity: 200 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
