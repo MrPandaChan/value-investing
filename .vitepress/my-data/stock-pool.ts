@@ -1851,11 +1851,11 @@ const stocks: StockItem[] = [
     url: "/value-investing/industry/电子/安防/海康威视/",
     dividendPerYear: 2,
     remark:
-      "**稳定增长型**，景气度↗，创新业务驱动，海外承压，中性情况下预计3%dy+3%~5%eps=6%~8%cagr，PE 18倍左右合理",
+      "**稳定增长型**，景气度↗，创新业务驱动，海外承压，中性情况下预计3%dy+3%~5%eps=6%~8%cagr，PE 15倍左右合理",
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.04, quantity: 200 }],
+      dividend: [{ value: 0.045, quantity: 200 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1863,7 +1863,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.04,
+      value: 0.045,
     },
   },
   {
