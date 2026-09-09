@@ -353,7 +353,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.SEAPORTS_AND_SERVICES,
     qualityScore: 3.5,
-    sharesHeld: 1500,
+    sharesHeld: 1100,
     url: "/value-investing/industry/交通运输/港口/青岛港/",
     remark:
       "**缓慢增长型**，景气度→，集装箱亮点液散承压，中性情况下预计4%dy+2%~4%eps=6%~8%cagr，股息率4%以上合理",
@@ -362,6 +362,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
+        { value: 0.037, quantity: 400 },
         { value: 0.045, quantity: 500 },
         { value: 0.05, quantity: 600 },
       ],
@@ -869,7 +870,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 26.6, quantity: 200 },
+        { value: 27, quantity: 200 },
         { value: 26, quantity: 200 },
         { value: 25, quantity: 400 },
       ],
@@ -1054,7 +1055,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
-    sharesHeld: 300,
+    sharesHeld: 500,
     url: "/value-investing/industry/汽车/轮胎/赛轮轮胎/",
     dividendPerYear: 2,
     remark:
@@ -1902,6 +1903,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(41000);
+export const cash = ref(42000);
 
 export { stocks };
