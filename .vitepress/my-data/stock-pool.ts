@@ -267,6 +267,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3,
+    sharesHeld: 200,
     dividendPerYear: 1,
     remark:
       "**稳定增长型→缓慢增长型**，景气度→，贴膏板块见顶，竞争压力大，第二曲线待观察，销售费用率高，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，PE13左右合理（护城河狭窄）",
@@ -274,7 +275,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.058, quantity: 200 }],
+      dividend: [{ value: 0.063, quantity: 200 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -990,7 +991,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.NON_FERROUS_METALS,
     qualityScore: 4,
-    sharesHeld: 600,
+    sharesHeld: 700,
     url: "/value-investing/industry/有色金属/铜金/紫金矿业/",
     dividendPerYear: 2,
     remark:
@@ -999,9 +1000,9 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 31.5, quantity: 100 },
+        { value: 26.5, quantity: 200 },
+        { value: 25.5, quantity: 200 },
         { value: 24.5, quantity: 200 },
-        { value: 23.5, quantity: 200 },
       ],
     },
     exit: {
@@ -1903,6 +1904,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(42000);
+export const cash = ref(36000);
 
 export { stocks };
