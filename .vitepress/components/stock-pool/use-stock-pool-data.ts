@@ -127,6 +127,9 @@ function updateIndexData(
 const loadingPromise = ref<Promise<void> | null>(null);
 const isLoading = computed(() => loadingPromise.value !== null);
 
+// 数据缓存版本：分红数据结构或过滤逻辑变更时递增，使浏览器旧缓存失效并重新获取
+const DATA_CACHE_VERSION = "v2";
+
 // 基于 stocks 结构自动生成指纹，数据变更时自动失效旧缓存
 function computeFingerprint(): string {
   const entries = stocks.map((item: StockItem) => {
@@ -169,12 +172,15 @@ function computeFingerprint(): string {
     }
     return { ...base, entries: [] };
   });
-  return JSON.stringify(entries);
+  return JSON.stringify([DATA_CACHE_VERSION, ...entries]);
 }
 
-/** 分红数据指纹：仅基于公司 code，公司增删变化时才需重新获取分红 */
+/** 分红数据指纹：基于缓存版本与公司 code，两者变化时才需重新获取分红 */
 function computeDividendFingerprint(): string {
-  return JSON.stringify([...stocks.map((s) => s.code)].sort());
+  return JSON.stringify([
+    DATA_CACHE_VERSION,
+    ...stocks.map((s) => s.code).sort(),
+  ]);
 }
 
 // ========== 分红数据独立存储（code 变化才失效） ==========
@@ -357,7 +363,7 @@ async function buildTableData(
 
   if (!useCachedDividend) {
     // 重新获取分红数据（强制刷新，绕过 fetchAllDividendData 的当日缓存）
-    const exListMapResult = await fetchAllDividendData(stockCodes, true);
+    const exListMapResult = await fetchAllDividendData(stocks, true);
     exListMap.value = exListMapResult;
     dividendUpdateTime.value = new Date().toLocaleString();
   } else if (!Object.keys(exListMap.value).length) {
@@ -365,7 +371,7 @@ async function buildTableData(
     loadDividendFromStorage();
     if (!Object.keys(exListMap.value).length) {
       // 分红存储也没有，需要重新获取
-      const exListMapResult = await fetchAllDividendData(stockCodes);
+      const exListMapResult = await fetchAllDividendData(stocks);
       exListMap.value = exListMapResult;
       dividendUpdateTime.value = new Date().toLocaleString();
       freshDataFetched = true;
