@@ -99,17 +99,47 @@ function _parseDateSafe(s: string): Date | null {
 }
 
 /**
- * 获取单只股票的分红（除权除息）数据
- * 返回最近一年内的数据：包含还未除权除息（未来）和最近一年内已除权除息的
+ * 筛选需要保留的分红记录：
+ * 1. 除权日在最近一年内，或除权日未定（待实施）；
+ * 2. 若不足 minEvents 条，补足最近 minEvents 条历史记录
+ *    （分红除权日与当前日期错位时，最近 n 次分红可能刚超出一年窗口，如中期+年度分红）
+ * 结果保持原顺序（公告日降序）
  */
-export async function fetchDividendData(code: string): Promise<ExItem[]> {
+function selectRecentEvents<T extends { exDate: string }>(
+  items: T[],
+  oneYearAgo: Date,
+  minEvents: number,
+): T[] {
+  const inWindow = (item: T) => {
+    // 除权除息日为空表示还未确定，不能忽略
+    if (!item.exDate || item.exDate === "-") return true;
+    const exDate = _parseDateSafe(item.exDate);
+    return !exDate || exDate >= oneYearAgo;
+  };
+  const kept = new Set<T>([
+    ...items.filter(inWindow),
+    ...items.slice(0, Math.max(minEvents, 0)),
+  ]);
+  return items.filter((item) => kept.has(item));
+}
+
+/**
+ * 获取单只股票的分红（除权除息）数据
+ * 返回最近一年内的数据：包含还未除权除息（未来）和最近一年内已除权除息的，
+ * 且保证至少包含最近 minEvents 条记录
+ * @param minEvents 最少保留的记录数（对应一年分红次数）
+ */
+export async function fetchDividendData(
+  code: string,
+  minEvents = 0,
+): Promise<ExItem[]> {
   const oneYearAgo = new Date();
   oneYearAgo.setFullYear(oneYearAgo.getFullYear() - 1);
 
   if (isHKCode(code)) {
-    return fetchHKDividend(code, oneYearAgo);
+    return fetchHKDividend(code, oneYearAgo, minEvents);
   }
-  return fetchADividend(code, oneYearAgo);
+  return fetchADividend(code, oneYearAgo, minEvents);
 }
 
 /**
@@ -118,6 +148,7 @@ export async function fetchDividendData(code: string): Promise<ExItem[]> {
 async function fetchADividend(
   code: string,
   oneYearAgo: Date,
+  minEvents: number,
 ): Promise<ExItem[]> {
   const SECUCODE = toSECUCODE(code);
 
@@ -139,13 +170,7 @@ async function fetchADividend(
 
   if (!res.data.success) return [];
 
-  return res.data.result.data
-    .filter((item: DividendMainResponse) => {
-      // 除权除息日为空表示还未确定，不能忽略
-      if (!item.EX_DIVIDEND_DATE) return true;
-      const exDate = new Date(item.EX_DIVIDEND_DATE);
-      return exDate >= oneYearAgo;
-    })
+  const items = res.data.result.data
     .map((item: DividendMainResponse) => {
       const str = item.IMPL_PLAN_NEWPROFILE || "";
       const { dps, bonusRatio } = getADps(str);
@@ -161,6 +186,8 @@ async function fetchADividend(
       };
     })
     .filter((item: ExItem) => item.dps > 0);
+
+  return selectRecentEvents(items, oneYearAgo, minEvents);
 }
 
 /**
@@ -169,6 +196,7 @@ async function fetchADividend(
 async function fetchHKDividend(
   code: string,
   oneYearAgo: Date,
+  minEvents: number,
 ): Promise<ExItem[]> {
   const SECUCODE = toSECUCODE(code);
 
@@ -190,14 +218,7 @@ async function fetchHKDividend(
 
   if (!res.data.success) return [];
 
-  return res.data.result.data
-    .filter((item: HKDividendMainResponse) => {
-      // 除权除息日为空表示还未确定，不能忽略
-      if (!item.EX_DIVIDEND_DATE) return true;
-      // 港股日期格式: "2025/06/12"
-      const exDate = new Date(item.EX_DIVIDEND_DATE);
-      return exDate >= oneYearAgo;
-    })
+  const items = res.data.result.data
     .map((item: HKDividendMainResponse) => {
       const str = item.PLAN_EXPLAIN || "";
       const { dps, isRmb } = getHKDps(str);
@@ -212,6 +233,8 @@ async function fetchHKDividend(
       };
     })
     .filter((item: ExItem) => item.dps > 0);
+
+  return selectRecentEvents(items, oneYearAgo, minEvents);
 }
 
 /**
@@ -249,16 +272,26 @@ function getTodayStr(): string {
   return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`;
 }
 
-function getCodesKey(codes: string[]): string {
-  return [...codes].sort().join(",");
+/** 分红获取项：code + 一年分红次数 */
+export interface DividendFetchItem {
+  code: string;
+  /** 一年分红次数，用于保证至少取到最近 n 条分红记录 */
+  dividendPerYear?: number;
+}
+
+function getCodesKey(items: DividendFetchItem[]): string {
+  return items
+    .map((v) => `${v.code}:${v.dividendPerYear ?? 0}`)
+    .sort()
+    .join(",");
 }
 
 export async function fetchAllDividendData(
-  codes: string[],
+  items: DividendFetchItem[],
   forceRefresh = false,
 ): Promise<Record<string, ExItem[]>> {
   const today = getTodayStr();
-  const codesKey = getCodesKey(codes);
+  const codesKey = getCodesKey(items);
 
   // 从 localStorage 读取缓存，codes 没变且同一天则直接返回（除非强制刷新）
   if (!forceRefresh) {
@@ -269,8 +302,8 @@ export async function fetchAllDividendData(
   }
 
   const results = await Promise.all(
-    codes.map(async (code) => {
-      const data = await fetchDividendData(code);
+    items.map(async ({ code, dividendPerYear }) => {
+      const data = await fetchDividendData(code, dividendPerYear ?? 0);
       return { code, data };
     }),
   );
