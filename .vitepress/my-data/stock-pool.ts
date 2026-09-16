@@ -395,7 +395,10 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.057, quantity: 500 }],
+      dividend: [
+        { value: 0.053, quantity: 400 },
+        { value: 0.057, quantity: 500 },
+      ],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1621,7 +1624,7 @@ const stocks: StockItem[] = [
     code: "513050",
     industry: Industry.ETF,
     qualityScore: 3,
-    sharesHeld: 14000,
+    sharesHeld: 16000,
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
@@ -1904,6 +1907,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(36000);
+export const cash = ref(34000);
 
 export { stocks };
