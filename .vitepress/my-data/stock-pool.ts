@@ -695,8 +695,11 @@ const stocks: StockItem[] = [
       "**稳定增长型**，景气度↘，北美关税+国内需求疲软，海外品牌矩阵强，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，股息率5%以上合理",
     maxPositionRatio: 0.08,
     plan: {
-      type: PlanType.PRICE,
-      price: [{ value: 18.5, quantity: 300 }],
+      type: PlanType.DIVIDEND,
+      dividend: [
+        { value: 0.058, quantity: 100 },
+        { value: 0.063, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.DIVIDEND,
