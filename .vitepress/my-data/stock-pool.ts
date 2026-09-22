@@ -1770,16 +1770,16 @@ const stocks: StockItem[] = [
       "**快速增长型→稳定增长型**，景气度↘，能量饮料增速回落，茶饮接棒，中性情况下预计4.3%dy+10%~15%eps=14.3%~19.3%cagr，PE 16倍左右合理",
     maxPositionRatio: 0.05,
     plan: {
-      type: PlanType.PE,
-      pe: [{ value: 16, quantity: 100 }],
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.05, quantity: 100 }],
     },
     exit: {
-      type: PlanType.PE,
-      pe: [{ value: 30, quantity: 100 }],
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.03, quantity: 100 }],
     },
     strikePrice: {
-      type: PlanType.PE,
-      value: 16,
+      type: PlanType.DIVIDEND,
+      value: 0.05,
     },
   },
   {
