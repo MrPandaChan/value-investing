@@ -661,10 +661,10 @@ const stocks: StockItem[] = [
       "**稳定增长型**，景气度↘，国内空调内销承压，海外+ToB对冲，中性情况下预计5%dy+5%~8%eps=10%~13%cagr，股息率5%以上合理",
     maxPositionRatio: 0.1,
     plan: {
-      type: PlanType.PRICE,
-      price: [
-        { value: 75, quantity: 100 },
-        { value: 71, quantity: 200 },
+      type: PlanType.DIVIDEND,
+      dividend: [
+        { value: 0.055, quantity: 100 },
+        { value: 0.06, quantity: 200 },
       ],
     },
     exit: {
@@ -724,8 +724,8 @@ const stocks: StockItem[] = [
       "**缓慢增长型**，景气度↓，空调份额下滑，高股息防御，中性情况下预计7%dy+0%~2%eps=7%~9%cagr，股息率7%以上合理",
     maxPositionRatio: 0.05,
     plan: {
-      type: PlanType.PRICE,
-      price: [{ value: 36, quantity: 100 }],
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.085, quantity: 100 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1907,6 +1907,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(29000);
+export const cash = ref(29566);
 
 export { stocks };
