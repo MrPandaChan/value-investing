@@ -363,7 +363,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
-        { value: 0.037, quantity: 400 },
+        { value: 0.038, quantity: 400 },
         { value: 0.045, quantity: 500 },
         { value: 0.05, quantity: 600 },
       ],
@@ -899,17 +899,18 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 3,
-    sharesHeld: 800,
+    sharesHeld: 600,
     url: "/value-investing/industry/公用事业/电力/国投电力/",
     dividendPerYear: 1,
     remark:
       "**稳定增长型**，景气度→，来水恢复，火电受煤价压制，中性情况下预计4%dy+3%~5%eps=8%~9%cagr，股息率4%以上合理",
     maxPositionRatio: 0.08,
     plan: {
-      type: PlanType.PRICE,
-      price: [
-        { value: 13, quantity: 300 },
-        { value: 12.75, quantity: 400 },
+      type: PlanType.DIVIDEND,
+      dividend: [
+        { value: 0.035, quantity: 200 },
+        { value: 0.038, quantity: 200 },
+        { value: 0.04, quantity: 200 },
       ],
     },
     exit: {
@@ -1907,6 +1908,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(31000);
+export const cash = ref(34000);
 
 export { stocks };
