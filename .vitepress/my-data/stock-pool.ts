@@ -144,7 +144,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.INTERNET,
     qualityScore: 4.5,
-    sharesHeld: 400,
+    sharesHeld: 500,
     dividendAdjust: 0.8,
     url: "/value-investing/industry/传媒/互联网平台/腾讯控股/",
     remark:
@@ -276,7 +276,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3,
-    sharesHeld: 900,
+    sharesHeld: 1200,
     dividendPerYear: 1,
     remark:
       "**稳定增长型→缓慢增长型**，景气度→，贴膏板块见顶，竞争压力大，第二曲线待观察，销售费用率高，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，PE13左右合理（护城河狭窄）",
@@ -367,7 +367,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.SEAPORTS_AND_SERVICES,
     qualityScore: 3.5,
-    sharesHeld: 4000,
+    sharesHeld: 3000,
     url: "/value-investing/industry/交通运输/港口/青岛港/",
     remark:
       "**缓慢增长型**，景气度→，集装箱亮点液散承压，中性情况下预计4%dy+2%~4%eps=6%~8%cagr，股息率4%以上合理",
@@ -708,7 +708,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3.5,
-    sharesHeld: 3600,
+    sharesHeld: 3700,
     url: "/value-investing/industry/家用电器/白电/海尔智家/",
     dividendPerYear: 2,
     remark:
@@ -1284,7 +1284,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3,
-    sharesHeld: 400,
+    sharesHeld: 500,
     url: "/value-investing/industry/汽车/商用车/宇通客车/",
     dividendPerYear: 2,
     remark:
@@ -1912,6 +1912,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(73000);
+export const cash = ref(498000);
 
 export { stocks };
