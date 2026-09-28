@@ -601,15 +601,15 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.02,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.1, quantity: 200 }],
+      dividend: [{ value: 0.12, quantity: 200 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.06, quantity: 100 }],
+      dividend: [{ value: 0.07, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.1,
+      value: 0.12,
     },
   },
   {
@@ -631,15 +631,15 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.02,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.1, quantity: 200 }],
+      dividend: [{ value: 0.12, quantity: 200 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.06, quantity: 200 }],
+      dividend: [{ value: 0.07, quantity: 200 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.1,
+      value: 0.12,
     },
   },
   {
@@ -1195,11 +1195,11 @@ const stocks: StockItem[] = [
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.04, quantity: 100 }],
+      dividend: [{ value: 0.05, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.08,
+      value: 0.09,
     },
   },
   {
@@ -1468,7 +1468,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.PE,
-      value: 12,
+      value: 11,
     },
   },
   {
@@ -1716,7 +1716,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PE,
-      pe: [{ value: 15, quantity: 100 }],
+      pe: [{ value: 14, quantity: 100 }],
     },
     exit: {
       type: PlanType.PE,
@@ -1724,7 +1724,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.PE,
-      value: 15,
+      value: 14,
     },
   },
   {
