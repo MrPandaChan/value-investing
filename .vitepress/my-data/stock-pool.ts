@@ -1002,8 +1002,8 @@ const stocks: StockItem[] = [
       "**周期型**，景气度↗，金铜价格高位，产量持续扩张，中性情况下预计3%dy+10%~15%eps=13%~18%cagr，短期向好（金铜高位），PE 11倍左右合理",
     maxPositionRatio: 0.1,
     plan: {
-      type: PlanType.DIVIDEND,
-      dividend: [
+      type: PlanType.PRICE,
+      price: [
         { value: 28, quantity: 100 },
         { value: 26.5, quantity: 200 },
         { value: 25, quantity: 200 },
