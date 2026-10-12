@@ -363,7 +363,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
-        { value: 0.038, quantity: 400 },
+        { value: 0.0373, quantity: 400 },
         { value: 0.045, quantity: 500 },
         { value: 0.05, quantity: 600 },
       ],
@@ -420,15 +420,19 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.BANKING,
     qualityScore: 4,
-    sharesHeld: 800,
+    sharesHeld: 700,
     url: "/value-investing/industry/银行/招商银行/",
     dividendPerYear: 2,
     remark:
       "**稳定增长型（边缘，有向缓慢增长漂移趋势）**，景气度→，关注净息差和财富管理中收，中性情况下预计5%dy+1%~3%eps=6%~8%cagr，股息率5%以上合理",
     maxPositionRatio: 0.1,
     plan: {
-      type: PlanType.PRICE,
-      price: [{ value: 34.5, quantity: 100 }],
+      type: PlanType.DIVIDEND,
+      dividend: [
+        { value: 0.0495, quantity: 100 },
+        { value: 0.055, quantity: 100 },
+        { value: 0.06, quantity: 200 },
+      ],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -899,7 +903,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 3,
-    sharesHeld: 600,
+    sharesHeld: 300,
     url: "/value-investing/industry/公用事业/电力/国投电力/",
     dividendPerYear: 1,
     remark:
@@ -908,6 +912,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
+        { value: 0.034, quantity: 300 },
         { value: 0.035, quantity: 200 },
         { value: 0.038, quantity: 200 },
         { value: 0.04, quantity: 200 },
@@ -1908,6 +1913,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(35000);
+export const cash = ref(64068);
 
 export { stocks };
