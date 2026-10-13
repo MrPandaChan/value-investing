@@ -1280,13 +1280,16 @@ const stocks: StockItem[] = [
     qualityScore: 3,
     sharesHeld: 500,
     url: "/value-investing/industry/汽车/商用车/宇通客车/",
-    dividendPerYear: 2,
+    dividendPerYear: 1,
     remark:
       "**快速增长型→稳定增长型**，景气度→，出口高增对冲国内萎缩，海外面临国内车企激烈竞争，中性情况下预计8%dy+0%~3%eps=8%~11%cagr，股息率8%以上合理",
     maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.11, quantity: 200 }],
+      dividend: [
+        { value: 0.085, quantity: 100 },
+        { value: 0.09, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1294,7 +1297,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.1,
+      value: 0.08,
     },
   },
   {
