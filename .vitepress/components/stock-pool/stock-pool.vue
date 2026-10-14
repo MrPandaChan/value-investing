@@ -142,6 +142,20 @@ const qualityScoreMap = computed(() => {
   return map;
 });
 
+// code → 价格显示精度映射表（仅配置了 pricePrecision 的标的，如 ETF）
+const pricePrecisionMap = computed(() => {
+  const map: Record<string, number> = {};
+  for (const s of stocks) {
+    if (s.pricePrecision != null) map[s.code] = s.pricePrecision;
+  }
+  return map;
+});
+
+/** 获取价格显示小数位数（未配置时默认 2 位） */
+function getPricePrecision(code: string): number {
+  return pricePrecisionMap.value[code] ?? 2;
+}
+
 // 行业选项（去重排序）
 const industryOptions = computed(() => {
   const industries = new Set(stocks.map((s) => s.industry).filter(Boolean));
@@ -298,7 +312,8 @@ async function init() {
 
 function formatPrice(price: number, code: string): string {
   const prefix = getCurrencyPrefix(code);
-  return `${prefix}${formatNum(price, 2).toFixed(2)}`;
+  const precision = getPricePrecision(code);
+  return `${prefix}${formatNum(price, precision).toFixed(precision)}`;
 }
 
 /** 格式化市值（单位:亿），直接以亿为单位显示 */
@@ -926,7 +941,7 @@ const mergedTableData = computed(() => {
           <el-input-number
             v-if="row.isLastRow"
             v-model="editPrice[row.code]"
-            :precision="2"
+            :precision="getPricePrecision(row.code)"
             :controls="false"
             size="small"
             class="plan-price-input"

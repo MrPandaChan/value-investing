@@ -112,6 +112,11 @@ export interface StockItem {
   dividendAdjust?: number;
   /** 一年分红次数，设置后仅展示和计算最新的 n 条分红数据 */
   dividendPerYear?: number;
+  /**
+   * 价格显示小数位数，默认 2 位。
+   * ETF 等价格精度为 3 位的标的可设为 3（同时保证编辑时不被截断）
+   */
+  pricePrecision?: number;
   maxPositionRatio: number;
   plan: PlanItem; // 买入计划
   exit: PlanItem; // 退出计划，数据结构与 plan 一致
@@ -1886,6 +1891,7 @@ const stocks: StockItem[] = [
     industry: Industry.ETF,
     qualityScore: 2.5,
     sharesHeld: 5000,
+    pricePrecision: 3,
     remark:
       "**一篮子互联网科技**，景气度→，高波动高弹性，不追求股息，中性情况下预计10%eps=10%cagr，PE20倍左右合理",
     maxPositionRatio: 0.01,
