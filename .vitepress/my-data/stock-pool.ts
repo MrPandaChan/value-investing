@@ -1649,11 +1649,11 @@ const stocks: StockItem[] = [
     industry: Industry.ETF,
     qualityScore: 3,
     sharesHeld: 16000,
-    maxPositionRatio: 0.05,
+    maxPositionRatio: 0.08,
     pricePrecision: 3,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 0.9, quantity: 3000 }],
+      price: [{ value: 0.92, quantity: 6000 }],
     },
     exit: {
       type: PlanType.PRICE,
