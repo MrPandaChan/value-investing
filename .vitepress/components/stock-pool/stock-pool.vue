@@ -23,7 +23,7 @@ import {
 } from "./use-stock-pool-data";
 import { buildExDisplay, type ExDisplayInfo } from "./use-dividend-status";
 import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
-import { stocks } from "../../my-data/stock-pool";
+import { cash, stocks } from "../../my-data/stock-pool";
 import StockPoolPortfolio from "./portfolio.vue";
 import StockExtraInfo from "./stock-extra-info.vue";
 import MarkdownIt from "markdown-it";
@@ -90,9 +90,15 @@ interface MergedRowData extends RowData {
   isLastRow: boolean;
   decline: number;
   totalMarketCap?: number;
+  /** 计划市值合计占总资产比例（含现金） */
+  totalMarketCapRatio?: number;
+  /** 目标市值 = 最大仓位比例 × 总资产（人民币，含现金） */
+  targetMarketCap?: number;
   rowKey: string;
   exListDisplay: ExDisplayInfo[];
   strikePriceInfo?: StrikePriceInfo;
+  /** 持股比例（持有市值占总资产的比例，分母含现金） */
+  shareholdingRatio: number;
 }
 
 // 编辑缓冲：input 绑定到这些 buffer，仅 blur 时同步到 custom*
@@ -481,6 +487,23 @@ function getSortActive(key: SortKey, order: "asc" | "desc"): boolean {
   return sortConfig.value.key === key && sortConfig.value.order === order;
 }
 
+/** 当前持仓总市值（人民币，含现金），用于计算持股比例 */
+const totalHoldingValue = computed(() => {
+  let total = 0;
+  for (const item of stocks) {
+    const shares = item.sharesHeld ?? 0;
+    if (shares <= 0) continue;
+    const meta = groupMetaMap.value[item.code];
+    const price = meta?.realPrice ?? 0;
+    if (price <= 0) continue;
+    const rawValue = shares * price;
+    total += canConvertToCNY(item.code)
+      ? rawValue / exchangeRate.value
+      : rawValue;
+  }
+  return total + (cash.value || 0);
+});
+
 // 按 code 分组，为 name 和 code 列计算 rowspan，并按最小跌幅排序
 const mergedTableData = computed(() => {
   const result: MergedRowData[] = [];
@@ -532,6 +555,21 @@ const mergedTableData = computed(() => {
         0,
       );
 
+    // 计划市值合计占总资产比例（含现金，港币/B股按汇率换算）
+    const totalMarketCapCNY = canConvertToCNY(code)
+      ? totalMarketCap / exchangeRate.value
+      : totalMarketCap;
+    const totalMarketCapRatio =
+      totalHoldingValue.value > 0
+        ? totalMarketCapCNY / totalHoldingValue.value
+        : 0;
+
+    // 目标市值 = 最大仓位比例 × 总资产（人民币，含现金）
+    const stockItem = stocks.find((s) => s.code === code);
+    const targetMarketCap = stockItem
+      ? stockItem.maxPositionRatio * totalHoldingValue.value
+      : undefined;
+
     const mergedRows: MergedRowData[] = resolvedRows.map((row, index) => {
       const isLast = index === group.length - 1 && index > 0;
       const decline =
@@ -549,6 +587,16 @@ const mergedTableData = computed(() => {
           ? annualDps * meta.dividendAdjust
           : undefined;
 
+      // 持股比例：持有市值（人民币，按汇率换算）/ 总资产（含现金）
+      const rawHoldingValue = (row.sharesHeld ?? 0) * realPrice;
+      const holdingValueCNY = canConvertToCNY(row.code)
+        ? rawHoldingValue / exchangeRate.value
+        : rawHoldingValue;
+      const shareholdingRatio =
+        totalHoldingValue.value > 0
+          ? holdingValueCNY / totalHoldingValue.value
+          : 0;
+
       return {
         ...row,
         nameRowSpan: index === 0 ? group.length : 0,
@@ -565,13 +613,15 @@ const mergedTableData = computed(() => {
         isLastRow: isLast,
         decline,
         totalMarketCap: index === 0 ? totalMarketCap : undefined,
+        totalMarketCapRatio: index === 0 ? totalMarketCapRatio : undefined,
+        targetMarketCap: index === 0 ? targetMarketCap : undefined,
         rowKey: `${code}-${index}`,
         exListDisplay: buildExDisplay(row.exList),
+        shareholdingRatio,
       };
     });
 
     // 计算理想买点（strikePrice）
-    const stockItem = stocks.find((s) => s.code === code);
     const strikePriceInfo =
       stockItem && meta
         ? computeStrikePriceInfo(stockItem.strikePrice, meta)
@@ -1075,9 +1125,28 @@ const mergedTableData = computed(() => {
         </td>
         <td class="bold">
           <template v-if="row.isFirstRow && row.maxPositionRatio !== undefined">
-            <span class="normal red"
-              >{{ (row.maxPositionRatio * 100).toFixed(0) }}%</span
+            <div>
+              <span class="normal red"
+                >{{ (row.maxPositionRatio * 100).toFixed(0) }}%</span
+              >
+            </div>
+            <template
+              v-if="row.targetMarketCap !== undefined && row.targetMarketCap > 0"
             >
+              <template v-if="canConvertToCNY(row.code)">
+                <div class="red">
+                  {{ getCurrencyPrefix(row.code)
+                  }}{{ (row.targetMarketCap * exchangeRate).toFixed(0) }}
+                </div>
+                <div class="red">￥{{ row.targetMarketCap.toFixed(0) }}</div>
+              </template>
+              <template v-else>
+                <span class="red"
+                  >{{ getCurrencyPrefix(row.code)
+                  }}{{ row.targetMarketCap.toFixed(0) }}</span
+                >
+              </template>
+            </template>
           </template>
           <template v-else>{{ row.quantity || "-" }}</template>
         </td>
@@ -1085,6 +1154,9 @@ const mergedTableData = computed(() => {
           <template
             v-if="row.totalMarketCap !== undefined && row.totalMarketCap > 0"
           >
+            <div v-if="row.totalMarketCapRatio !== undefined">
+              {{ formatPercent(row.totalMarketCapRatio * 100) }}
+            </div>
             <template v-if="canConvertToCNY(row.code)">
               <div>
                 {{ getCurrencyPrefix(row.code)
@@ -1137,6 +1209,9 @@ const mergedTableData = computed(() => {
               </div>
             </template>
           </template>
+          <div v-if="row.sharesHeld != null && row.sharesHeld > 0">
+            {{ formatPercent(row.shareholdingRatio * 100) }}
+          </div>
         </td>
         <td
           v-if="row.remarkRowSpan > 0"
