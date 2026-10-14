@@ -147,6 +147,7 @@ function computeFingerprint(): string {
       type: typeStr,
       dpy: item.dividendPerYear,
       adj: item.dividendAdjust,
+      pp: item.pricePrecision,
       remark: item.remark,
       mpr: item.maxPositionRatio,
       sh: item.sharesHeld,
