@@ -438,8 +438,8 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       dividend: [
         { value: 0.0495, quantity: 100 },
-        { value: 0.055, quantity: 100 },
-        { value: 0.06, quantity: 200 },
+        { value: 0.055, quantity: 200 },
+        { value: 0.06, quantity: 100 },
       ],
     },
     exit: {
@@ -1019,7 +1019,7 @@ const stocks: StockItem[] = [
       price: [
         { value: 28, quantity: 200 },
         { value: 26.5, quantity: 200 },
-        { value: 25, quantity: 200 },
+        { value: 25.27, quantity: 300 },
       ],
     },
     exit: {
@@ -1082,9 +1082,9 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 11.5, quantity: 200 },
-        { value: 11, quantity: 300 },
-        { value: 10.5, quantity: 400 },
+        { value: 11.71, quantity: 300 },
+        { value: 11.12, quantity: 400 },
+        { value: 10.57, quantity: 500 },
       ],
     },
     exit: {
@@ -1205,7 +1205,11 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.09, quantity: 100 }],
+      dividend: [
+        { value: 0.09, quantity: 100 },
+        { value: 0.095, quantity: 100 },
+        { value: 0.1, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1260,8 +1264,8 @@ const stocks: StockItem[] = [
       "**周期型**，景气度↓，区域次高端承压，合同负债下降，中性情况下预计6%dy+0%~3%eps=6%~9%cagr，当前承压（净利-31%），股息率6%以上合理",
     maxPositionRatio: 0.05,
     plan: {
-      type: PlanType.PRICE,
-      price: [{ value: 50, quantity: 100 }],
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.1, quantity: 100 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1447,7 +1451,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
-        { value: 0.058, quantity: 100 },
+        { value: 0.057, quantity: 100 },
         { value: 0.06, quantity: 200 },
       ],
     },
@@ -1508,8 +1512,8 @@ const stocks: StockItem[] = [
       "**稳定增长型**，景气度→，外贸出口高企，贸易毛利极薄，中性情况下预计4%dy+6%~8%eps=10%~12%cagr，股息率4%以上合理",
     maxPositionRatio: 0.03,
     plan: {
-      type: PlanType.PRICE,
-      price: [{ value: 10, quantity: 200 }],
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.06, quantity: 300 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1852,7 +1856,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 60, quantity: 200 }],
+      price: [{ value: 60, quantity: 100 }],
     },
     exit: {
       type: PlanType.PRICE,
