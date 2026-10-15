@@ -998,7 +998,17 @@ const mergedTableData = computed(() => {
             @blur="onPriceBlur(row.code)"
           />
           <template v-else>
-            <div>{{ formatPrice(row.price, row.code) }}</div>
+            <el-tooltip
+              v-if="row.isFirstRow && row.high && row.low"
+              placement="top"
+            >
+              <template #content>
+                <div>最高：{{ formatPrice(row.high, row.code) }}</div>
+                <div>最低：{{ formatPrice(row.low, row.code) }}</div>
+              </template>
+              <div>{{ formatPrice(row.price, row.code) }}</div>
+            </el-tooltip>
+            <div v-else>{{ formatPrice(row.price, row.code) }}</div>
             <div
               v-if="row.isFirstRow && row.marketValue != null"
               class="market-cap"
