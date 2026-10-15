@@ -10,12 +10,14 @@ const TENCENT_STOCK_URL = "https://qt.gtimg.cn/q=";
  *
  * 腾讯接口字段索引（A股）：
  *   [1] 名称  [2] 代码  [3] 现价  [4] 昨收
- *   [32] 涨跌幅(%)  [39] PE_TTM  [44] 总市值(亿)
+ *   [32] 涨跌幅(%)  [33] 最高  [34] 最低  [39] PE_TTM  [44] 总市值(亿)
  *   [46] 市净率  [72] 总股本
  * 
  * 港股（r_hk）字段位置有差异：
  *   [57] PE_TTM           [58] 市净率           [69] 总股本
  *   ([44] 总市值亿与 A 股相同)
+ *
+ * 最高/最低价 [33]/[34] 在 A股、港股、B股、ETF 中位置一致（已实测验证）
  */
 export async function getDynamicDataFromTencent(
   codes: string[],
@@ -70,6 +72,10 @@ export async function getDynamicDataFromTencent(
       // change: 腾讯返回百分比数值（如 2.98），前端直接拼 % 显示
       const change = parseFloat(item[32]) || 0;
 
+      // high / low: 当日最高/最低价，A股/港股/ETF/B股 均在 [33]/[34]
+      const high = parseFloat(item[33]) || 0;
+      const low = parseFloat(item[34]) || 0;
+
       // PE_TTM: A 股 [39]，港股 [57]（返回字段位置不同）
       const PE_TTM = isHK ? (parseFloat(item[57]) || 0) : (parseFloat(item[39]) || 0);
 
@@ -94,6 +100,8 @@ export async function getDynamicDataFromTencent(
         PB,
         PE_TTM,
         totalSharesOutstanding,
+        high,
+        low,
       };
     })
     .filter(Boolean) as DynamicData[];

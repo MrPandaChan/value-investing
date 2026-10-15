@@ -111,6 +111,10 @@ export interface DynamicData {
   PB: number;
   PE_TTM: number;
   totalSharesOutstanding: number;
+  /** 当日最高价（腾讯行情接口 [33]，其他数据源可能不提供） */
+  high?: number;
+  /** 当日最低价（腾讯行情接口 [34]，其他数据源可能不提供） */
+  low?: number;
 }
 
 export interface EastMoneyData {
