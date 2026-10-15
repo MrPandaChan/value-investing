@@ -30,6 +30,8 @@ export interface RowData {
   maxPositionRatio?: number;
   change?: number; // 涨跌幅，仅实时行
   marketValue?: number; // 总市值（亿），仅实时行
+  high?: number; // 当日最高价，仅实时行
+  low?: number; // 当日最低价，仅实时行
   exList: ExItem[];
 }
 
@@ -230,6 +232,8 @@ interface StockStorage {
   maxPositionRatio?: number;
   sharesHeld?: number;
   change?: number;
+  high?: number; // 当日最高价，仅实时行
+  low?: number; // 当日最低价，仅实时行
   rows: {
     price: number;
     pe: number;
@@ -267,6 +271,8 @@ function saveToStorage() {
         maxPositionRatio: first.maxPositionRatio,
         sharesHeld: first.sharesHeld,
         change: first.change,
+        high: first.high,
+        low: first.low,
         rows: rows.map((r: RowData) => ({
           price: r.price,
           pe: r.pe,
@@ -309,8 +315,8 @@ function loadFromStorage(): boolean {
       const s = data.stocks[code];
       if (!s) continue;
       groupMetaMap.value[code] = s.meta;
-      for (const r of s.rows) {
-        tableData.value.push({
+      for (const [ri, r] of s.rows.entries()) {
+        const row: RowData = {
           name: s.name,
           code,
           price: r.price,
@@ -325,7 +331,13 @@ function loadFromStorage(): boolean {
           maxPositionRatio: s.maxPositionRatio,
           change: s.change,
           marketValue: r.marketValue,
-        });
+        };
+        // 当日最高/最低价仅实时行（第一行）有
+        if (ri === 0) {
+          if (s.high != null) row.high = s.high;
+          if (s.low != null) row.low = s.low;
+        }
+        tableData.value.push(row);
       }
     }
 
@@ -421,7 +433,7 @@ async function buildTableData(
     const ep = getEffectivePlan(item);
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (dynamicData) {
-      const { name, code, price, PE_TTM, PB, change } = dynamicData;
+      const { name, code, price, PE_TTM, PB, change, high, low } = dynamicData;
       // 港股 PE_TTM 是以收盘价来算的
       const pricePE = PE_TTM;
       const rawExList = exListMap.value[code] || [];
@@ -460,6 +472,8 @@ async function buildTableData(
         exList,
         change,
         marketValue: dynamicData.marketValue,
+        high,
+        low,
         remark: item.remark,
         maxPositionRatio: item.maxPositionRatio,
       });
@@ -565,7 +579,7 @@ async function refreshData() {
     const dynamicData = dynamicDataList.find((v) => v.code === item.code);
     if (!dynamicData) continue;
 
-    const { price, PE_TTM, PB, change } = dynamicData;
+    const { price, PE_TTM, PB, change, high, low } = dynamicData;
     const code = item.code;
 
     const pricePE = PE_TTM;
@@ -598,6 +612,8 @@ async function refreshData() {
         row.dividend = effectiveDps / price;
         row.change = change;
         row.marketValue = dynamicData.marketValue;
+        if (high != null) row.high = high;
+        if (low != null) row.low = low;
       } else {
         // 计划行
         if (ep.type === PlanType.PRICE) {
