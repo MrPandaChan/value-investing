@@ -877,7 +877,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 4.5,
-    sharesHeld: 300,
+    sharesHeld: 200,
     url: "/value-investing/industry/公用事业/电力/长江电力/",
     dividendPerYear: 2,
     remark:
@@ -886,6 +886,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
+        { value: 27.82, quantity: 100 },
         { value: 27, quantity: 200 },
         { value: 26, quantity: 300 },
         { value: 25, quantity: 400 },
@@ -1937,6 +1938,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(62300);
+export const cash = ref(65254);
 
 export { stocks };
