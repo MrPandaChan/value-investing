@@ -1856,7 +1856,11 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 60, quantity: 100 }],
+      price: [
+        { value: 60, quantity: 100 },
+        { value: 57, quantity: 100 },
+        { value: 54, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.PRICE,
@@ -1905,14 +1909,14 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.ETF,
     qualityScore: 2.5,
-    sharesHeld: 2400,
+    sharesHeld: 5800,
     pricePrecision: 3,
     remark:
       "**一篮子互联网科技**，景气度→，高波动高弹性，不追求股息，中性情况下预计10%eps=10%cagr，PE20倍左右合理",
     maxPositionRatio: 0.01,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 0.514, quantity: 3400 }],
+      price: [{ value: 0.437, quantity: 3400 }],
     },
     exit: {
       type: PlanType.PRICE,
@@ -1933,6 +1937,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(64068);
+export const cash = ref(62300);
 
 export { stocks };
