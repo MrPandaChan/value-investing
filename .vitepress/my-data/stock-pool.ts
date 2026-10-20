@@ -1152,11 +1152,11 @@ const stocks: StockItem[] = [
     dividendPerYear: 1,
     dividendAdjust: 0.8,
     remark:
-      "**快速增长型**，景气度↘，增速自然回落，IP依赖度高，中性情况下预计2%dy+10%~15%eps=12%~17%cagr，PE 15倍左右合理（目前不懂不投）",
+      "**快速增长型**，景气度↘，增速自然回落，IP依赖度高，中性情况下预计2%dy+10%~15%eps=12%~17%cagr，PE 15倍左右合理（目前不懂不投），2026上半年eps4.392，4.392 × 2 × 15 = 131.76",
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 140, quantity: 200 }],
+      price: [{ value: 150, quantity: 200 }],
     },
     exit: {
       type: PlanType.PE,
