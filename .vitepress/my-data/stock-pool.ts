@@ -404,6 +404,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
+        { value: 0.05, quantity: 400 },
         { value: 0.053, quantity: 400 },
         { value: 0.057, quantity: 500 },
       ],
@@ -700,7 +701,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3.5,
-    sharesHeld: 1600,
+    sharesHeld: 1700,
     url: "/value-investing/industry/家用电器/白电/海尔智家/",
     dividendPerYear: 2,
     remark:
@@ -1938,6 +1939,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(105256);
+export const cash = ref(103245);
 
 export { stocks };
