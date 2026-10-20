@@ -149,10 +149,6 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.INTERNET,
     qualityScore: 4.5,
-<<<<<<< HEAD
-=======
-    sharesHeld: 600,
->>>>>>> master
     dividendAdjust: 0.8,
     url: "/value-investing/industry/传媒/互联网平台/腾讯控股/",
     remark:
@@ -1914,11 +1910,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.ETF,
     qualityScore: 2.5,
-<<<<<<< HEAD
     sharesHeld: 5800,
-=======
-    sharesHeld: 5000,
->>>>>>> master
     pricePrecision: 3,
     remark:
       "**一篮子互联网科技**，景气度→，高波动高弹性，不追求股息，中性情况下预计10%eps=10%cagr，PE20倍左右合理",
