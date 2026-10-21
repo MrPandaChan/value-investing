@@ -1752,7 +1752,10 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PE,
-      pe: [{ value: 12, quantity: 100 }],
+      pe: [
+        { value: 12, quantity: 100 },
+        { value: 10.78, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.PE,
