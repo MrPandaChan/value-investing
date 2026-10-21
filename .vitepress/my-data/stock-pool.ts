@@ -158,11 +158,8 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        // { value: 403, quantity: 200 },
-        // { value: 386, quantity: 200 },
-        // { value: 370, quantity: 200 },
-        // 直接取中间的价格
         { value: 386, quantity: 100 },
+        { value: 366, quantity: 100 },
       ],
     },
     exit: {
@@ -193,10 +190,10 @@ const stocks: StockItem[] = [
       "**稳定增长型**，景气度↘，全球汽车下行但市占率+ASP提升对冲，中性情况下预计4%dy+5%~8%eps=9%~12%cagr，PE15左右合理",
     maxPositionRatio: 0.1,
     plan: {
-      type: PlanType.PRICE,
-      price: [
-        { value: 47.5, quantity: 300 },
-        { value: 45, quantity: 400 },
+      type: PlanType.DIVIDEND,
+      dividend: [
+        { value: 0.048, quantity: 300 },
+        { value: 0.05, quantity: 400 },
       ],
     },
     exit: {
