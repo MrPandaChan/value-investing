@@ -1745,16 +1745,17 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
+    sharesHeld: 100,
     url: "/value-investing/industry/电力设备/电池/宁德时代/",
     dividendPerYear: 2,
     remark:
       "**快速增长型**，景气度↑，储能高增，全球市占率第一，中性情况下预计1.5%dy+15%~20%eps=16.5%~21.5%cagr，PE 19倍左右合理",
     maxPositionRatio: 0.1,
     plan: {
-      type: PlanType.PE,
-      pe: [
-        { value: 12, quantity: 100 },
-        { value: 10.78, quantity: 100 },
+      type: PlanType.PRICE,
+      price: [
+        { value: 207, quantity: 100 },
+        { value: 186, quantity: 100 },
       ],
     },
     exit: {
@@ -1951,6 +1952,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(96693);
+export const cash = ref(76493);
 
 export { stocks };
