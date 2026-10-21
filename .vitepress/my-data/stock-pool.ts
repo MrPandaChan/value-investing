@@ -157,11 +157,8 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        // { value: 403, quantity: 200 },
-        // { value: 386, quantity: 200 },
-        // { value: 370, quantity: 200 },
-        // 直接取中间的价格
         { value: 386, quantity: 100 },
+        { value: 366, quantity: 100 },
       ],
     },
     exit: {
