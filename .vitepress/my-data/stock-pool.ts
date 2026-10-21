@@ -193,7 +193,11 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 46, quantity: 100 }],
+      price: [
+        { value: 46, quantity: 100 },
+        { value: 44, quantity: 100 },
+        { value: 42, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -712,7 +716,10 @@ const stocks: StockItem[] = [
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.04, quantity: 100 }],
+      dividend: [
+        { value: 0.055, quantity: 100 },
+        { value: 0.04, quantity: 100 },
+      ],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -729,7 +736,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3,
-    sharesHeld: 400,
+    sharesHeld: 500,
     url: "/value-investing/industry/家用电器/白电/格力电器/",
     dividendPerYear: 2,
     remark:
@@ -741,7 +748,10 @@ const stocks: StockItem[] = [
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.06, quantity: 100 }],
+      dividend: [
+        { value: 0.075, quantity: 100 },
+        { value: 0.06, quantity: 100 },
+      ],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -1742,7 +1752,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PE,
-      pe: [{ value: 13, quantity: 100 }],
+      pe: [{ value: 12, quantity: 100 }],
     },
     exit: {
       type: PlanType.PE,
@@ -1938,6 +1948,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(103245);
+export const cash = ref(96693);
 
 export { stocks };
