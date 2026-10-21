@@ -10,12 +10,16 @@ const TENCENT_STOCK_URL = "https://qt.gtimg.cn/q=";
  *
  * 腾讯接口字段索引（A股）：
  *   [1] 名称  [2] 代码  [3] 现价  [4] 昨收
- *   [32] 涨跌幅(%)  [33] 最高  [34] 最低  [39] PE_TTM  [44] 总市值(亿)
- *   [46] 市净率  [72] 总股本
+ *   [32] 涨跌幅(%)  [33] 最高  [34] 最低  [39] PE_TTM
+ *   [44] 流通市值(亿)  [45] 总市值(亿)
+ *   [46] 市净率  [72] 流通股本
  * 
  * 港股（r_hk）字段位置有差异：
  *   [57] PE_TTM           [58] 市净率           [69] 总股本
- *   ([44] 总市值亿与 A 股相同)
+ *   ([44]/[45] 港股无流通概念，两者相同)
+ * 
+ * 注意：[44] 为流通市值（A股仅统计流通股本，B股仅统计B股股本），
+ *       [45] 才是总市值（总股本 × 价格），展示市值请用 [45]
  *
  * 最高/最低价 [33]/[34] 在 A股、港股、B股、ETF 中位置一致（已实测验证）
  */
@@ -79,8 +83,8 @@ export async function getDynamicDataFromTencent(
       // PE_TTM: A 股 [39]，港股 [57]（返回字段位置不同）
       const PE_TTM = isHK ? (parseFloat(item[57]) || 0) : (parseFloat(item[39]) || 0);
 
-      // 总市值（亿）
-      const marketValue = parseFloat(item[44]) || 0;
+      // 总市值（亿）：[45] = 总股本 × 价格；[44] 仅为流通市值，勿用
+      const marketValue = parseFloat(item[45]) || 0;
 
       // 市净率: A 股 [46]，港股 [58]
       const PB = isHK ? (parseFloat(item[58]) || 0) : (parseFloat(item[46]) || 0);

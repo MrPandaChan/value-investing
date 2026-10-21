@@ -132,6 +132,9 @@ const isLoading = computed(() => loadingPromise.value !== null);
 // 数据缓存版本：分红数据结构或过滤逻辑变更时递增，使浏览器旧缓存失效并重新获取
 const DATA_CACHE_VERSION = "v2";
 
+// 市值口径标识：旧缓存写入的是流通市值，标识不符时不复用缓存中的市值，等实时数据刷新
+const MARKET_VALUE_BASIS = "total";
+
 // 基于 stocks 结构自动生成指纹，数据变更时自动失效旧缓存
 function computeFingerprint(): string {
   const entries = stocks.map((item: StockItem) => {
@@ -248,6 +251,8 @@ interface StockStorage {
 
 interface StorageData {
   version: string;
+  /** 市值口径标识，缺省视为旧的流通市值缓存 */
+  mvBasis?: string;
   stocks: Record<string, StockStorage>;
   customPrice: Record<string, number>;
   customDividend: Record<string, number>;
@@ -287,6 +292,7 @@ function saveToStorage() {
     }
     const data: StorageData = {
       version: computeFingerprint(),
+      mvBasis: MARKET_VALUE_BASIS,
       stocks: stocksMap,
       customPrice: { ...customPrice },
       customDividend: { ...customDividend },
@@ -330,7 +336,10 @@ function loadFromStorage(): boolean {
           remark: s.remark,
           maxPositionRatio: s.maxPositionRatio,
           change: s.change,
-          marketValue: r.marketValue,
+          // 仅当缓存中的市值口径为总市值时才复用
+          ...(data.mvBasis === MARKET_VALUE_BASIS && r.marketValue != null
+            ? { marketValue: r.marketValue }
+            : {}),
         };
         // 当日最高/最低价仅实时行（第一行）有
         if (ri === 0) {
