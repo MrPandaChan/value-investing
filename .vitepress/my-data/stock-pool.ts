@@ -1152,19 +1152,19 @@ const stocks: StockItem[] = [
     dividendPerYear: 1,
     dividendAdjust: 0.8,
     remark:
-      "**快速增长型**，景气度↘，增速自然回落，IP依赖度高，中性情况下预计2%dy+10%~15%eps=12%~17%cagr，PE 15倍左右合理（目前不懂不投），2026上半年eps4.392，4.392 × 2 × 15 = 131.76",
+      "**快速增长型**，景气度↘，增速自然回落，IP依赖度高，中性情况下预计2%dy+10%~15%eps=12%~17%cagr，PE 15倍左右合理（目前不懂不投），2026上半年eps4.392，4.392 × 2 × 13 = 114.4",
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 150, quantity: 200 }],
+      price: [{ value: 115, quantity: 200 }],
     },
     exit: {
       type: PlanType.PE,
       pe: [{ value: 22, quantity: 100 }],
     },
     strikePrice: {
-      type: PlanType.PE,
-      value: 12,
+      type: PlanType.PRICE,
+      value: 110,
     },
   },
   {
@@ -1718,14 +1718,21 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
+    sharesHeld: 100,
     url: "/value-investing/industry/电力设备/电池/宁德时代/",
     dividendPerYear: 2,
     remark:
       "**快速增长型**，景气度↑，储能高增，全球市占率第一，中性情况下预计1.5%dy+15%~20%eps=16.5%~21.5%cagr，PE 19倍左右合理",
     maxPositionRatio: 0.1,
     plan: {
-      type: PlanType.PE,
-      pe: [{ value: 14, quantity: 100 }],
+      type: PlanType.PRICE,
+      price: [
+        { value: 220, quantity: 100 },
+        { value: 205, quantity: 100 },
+        { value: 200, quantity: 100 },
+        { value: 190, quantity: 100 },
+        { value: 185, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.PE,
@@ -1780,15 +1787,15 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.05, quantity: 100 }],
+      dividend: [{ value: 0.055, quantity: 100 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.03, quantity: 100 }],
+      dividend: [{ value: 0.035, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.05,
+      value: 0.055,
     },
   },
   {
@@ -1917,6 +1924,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(465000);
+export const cash = ref(442000);
 
 export { stocks };
