@@ -29,7 +29,8 @@ import { stockData } from "../types/stocks";
 
       const code: string = item[2] || originalCode;
       const price = parseFloat(item[3]) || 0;
-      const marketValue = parseFloat(item[44]) || 0;
+      // [45] 总市值（亿），[44] 仅为流通市值
+      const marketValue = parseFloat(item[45]) || 0;
       const PB = parseFloat(item[46]) || 0;
       const PE_TTM = parseFloat(item[39]) || 0;
       const totalSharesOutstanding = parseInt(item[72], 10) || 0;
@@ -118,7 +119,8 @@ export async function main() {
     const dynamicData: DynamicData = {
       code: item[2] || code,
       price,
-      marketValue: parseFloat(item[44]) || 0,
+      // [45] 总市值（亿），[44] 仅为流通市值
+      marketValue: parseFloat(item[45]) || 0,
       PB: parseFloat(item[46]) || 0,
       PE_TTM: parseFloat(item[39]) || 0,
       totalSharesOutstanding: parseInt(item[72], 10) || 0,

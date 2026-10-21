@@ -259,6 +259,7 @@ export async function getDynamicData(codes: string[]): Promise<DynamicData[]> {
       change,
       prevClose: v.f18,
       price: isHKCode(v.f12) || isETFCode(v.f12) ? price / 1000 : price / 100,
+      // f20 总市值，f21 为流通市值
       marketValue: v.f20,
       PB: v.f23 / 100,
       PE_TTM: v.f115 / 100,

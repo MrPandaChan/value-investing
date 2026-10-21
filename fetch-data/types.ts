@@ -107,6 +107,7 @@ export interface DynamicData {
   prevClose: number;
   code: string;
   price: number;
+  /** 总市值（亿），非流通市值 */
   marketValue: number;
   PB: number;
   PE_TTM: number;
