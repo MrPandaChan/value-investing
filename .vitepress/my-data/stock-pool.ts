@@ -149,7 +149,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.INTERNET,
     qualityScore: 4.5,
-    sharesHeld: 600,
+    sharesHeld: 700,
     dividendAdjust: 0.8,
     url: "/value-investing/industry/传媒/互联网平台/腾讯控股/",
     remark:
@@ -157,10 +157,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.2,
     plan: {
       type: PlanType.PRICE,
-      price: [
-        { value: 386, quantity: 100 },
-        { value: 366, quantity: 100 },
-      ],
+      price: [{ value: 366, quantity: 100 }],
     },
     exit: {
       type: PlanType.PE,
@@ -1715,7 +1712,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
-    sharesHeld: 100,
+    sharesHeld: 200,
     url: "/value-investing/industry/电力设备/电池/宁德时代/",
     dividendPerYear: 2,
     remark:
@@ -1724,7 +1721,6 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 220, quantity: 100 },
         { value: 205, quantity: 100 },
         { value: 200, quantity: 100 },
         { value: 190, quantity: 100 },
@@ -1921,6 +1917,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(442000);
+export const cash = ref(386000);
 
 export { stocks };
