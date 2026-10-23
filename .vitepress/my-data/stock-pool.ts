@@ -1010,7 +1010,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.NON_FERROUS_METALS,
     qualityScore: 4,
-    sharesHeld: 500,
+    sharesHeld: 600,
     url: "/value-investing/industry/有色金属/铜金/紫金矿业/",
     dividendPerYear: 2,
     remark:
@@ -1079,11 +1079,8 @@ const stocks: StockItem[] = [
       "**快速增长型**，景气度↗，关注天胶价格和海外产能爬坡，中性情况下预计2%dy+10%~15%eps=12%~17%cagr，PE 12倍左右合理",
     maxPositionRatio: 0.05,
     plan: {
-      type: PlanType.PRICE,
-      price: [
-        { value: 11.22, quantity: 200 }, // 11.22 已经买了 200 股
-        { value: 10.62, quantity: 400 },
-      ],
+      type: PlanType.PE,
+      pe: [{ value: 10, quantity: 400 }],
     },
     exit: {
       type: PlanType.PE,
@@ -1508,7 +1505,7 @@ const stocks: StockItem[] = [
       type: PlanType.DIVIDEND,
       dividend: [
         // { value: 0.052, quantity: 500 }, // 已买
-        { value: 0.056, quantity: 600 },
+        { value: 0.058, quantity: 600 },
       ],
     },
     exit: {
@@ -1917,6 +1914,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(386000);
+export const cash = ref(383000);
 
 export { stocks };
