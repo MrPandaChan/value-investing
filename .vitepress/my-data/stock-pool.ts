@@ -156,10 +156,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.2,
     plan: {
       type: PlanType.PRICE,
-      price: [
-        { value: 386, quantity: 100 },
-        { value: 366, quantity: 100 },
-      ],
+      price: [{ value: 366, quantity: 100 }],
     },
     exit: {
       type: PlanType.PE,
@@ -1521,7 +1518,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.03,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.06, quantity: 300 }],
+      dividend: [{ value: 0.058, quantity: 300 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1742,7 +1739,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
-    sharesHeld: 100,
+    sharesHeld: 200,
     url: "/value-investing/industry/电力设备/电池/宁德时代/",
     dividendPerYear: 2,
     remark:
