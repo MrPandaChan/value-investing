@@ -135,6 +135,17 @@ const electricityStockData: StockItem[] = [
       backYearsNum: 10,
     },
   },
+  {
+    type: StockType.A,
+    name: "阳光电源",
+    code: "300274",
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.05,
+    },
+  },
 ];
 
 export { electricityStockData };
