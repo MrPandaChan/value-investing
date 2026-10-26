@@ -1072,7 +1072,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
-    sharesHeld: 1200,
+    sharesHeld: 1600,
     url: "/value-investing/industry/汽车/轮胎/赛轮轮胎/",
     dividendPerYear: 2,
     remark:
@@ -1914,6 +1914,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(367000);
+export const cash = ref(377000);
 
 export { stocks };
