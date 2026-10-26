@@ -1013,7 +1013,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.NON_FERROUS_METALS,
     qualityScore: 4,
-    sharesHeld: 700,
+    sharesHeld: 800,
     url: "/value-investing/industry/有色金属/铜金/紫金矿业/",
     dividendPerYear: 2,
     remark:
@@ -1022,8 +1022,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 27, quantity: 100 },
-        { value: 26, quantity: 200 },
+        { value: 26, quantity: 100 },
         { value: 25, quantity: 200 },
       ],
     },
@@ -1078,7 +1077,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
-    sharesHeld: 500,
+    sharesHeld: 700,
     url: "/value-investing/industry/汽车/轮胎/赛轮轮胎/",
     dividendPerYear: 2,
     remark:
@@ -1087,9 +1086,8 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 11.71, quantity: 300 },
-        { value: 11.12, quantity: 400 },
-        { value: 10.57, quantity: 500 },
+        { value: 11, quantity: 400 },
+        { value: 10.45, quantity: 400 },
       ],
     },
     exit: {
@@ -1946,6 +1944,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(76602);
+export const cash = ref(71551);
 
 export { stocks };
