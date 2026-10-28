@@ -4,15 +4,26 @@ import {
   formatNum,
   formatPercent,
   canConvertToCNY,
-  isHKCode,
 } from "../../../fetch-data/helper";
 import { InfoFilled } from "@element-plus/icons-vue";
-import { cash, stocks, TagKey } from "../../my-data/stock-pool";
-import { useStockPoolData } from "./use-stock-pool-data";
+import { stocks, TagKey } from "../../my-data/stock-pool";
+import { usePortfolioBase } from "./use-portfolio-base";
+import { usePortfolioHistory } from "./use-portfolio-history";
 import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
 import StockExtraInfo from "./stock-extra-info.vue";
 
-const { tableData, groupMetaMap, exchangeRate, refresh } = useStockPoolData();
+const {
+  holdings,
+  stockHoldingValue,
+  cashValue,
+  tableData,
+  groupMetaMap,
+  exchangeRate,
+  refresh,
+} = usePortfolioBase();
+
+/** 历史业绩摘要（最近 5 个年度） */
+const { cagr: historyCagr } = usePortfolioHistory(5);
 
 /** 是否在组合中显示现金行 */
 const showCash = ref(false);
@@ -62,17 +73,15 @@ function getPaidDps(exList: ExItem[]): number {
 }
 
 const portfolioData = computed<PortfolioRow[]>(() => {
-  // 仅包含有持有股数且有可用元数据的股票
-  const heldStocks = stocks.filter(
-    (s) => s.sharesHeld && s.sharesHeld > 0 && groupMetaMap.value[s.code],
-  );
+  // 仅包含有持有股数且有可用元数据的股票（口径见 use-portfolio-base）
+  const heldHoldings = holdings.value;
 
-  const cashVal = showCash.value ? cash.value || 0 : 0;
+  const cashVal = showCash.value ? cashValue.value : 0;
   const result: PortfolioRow[] = [];
   let idx = 1;
 
   // 无持仓股票时，若有现金且显示现金则仅显示现金行
-  if (!heldStocks.length) {
+  if (!heldHoldings.length) {
     if (cashVal > 0) {
       result.push({
         index: 1,
@@ -100,26 +109,16 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     return result;
   }
 
-  // 计算每只股票的指标
-  const items = heldStocks.map((s) => {
-    const meta = groupMetaMap.value[s.code]!;
-    const nameRow = tableData.value.find((r) => r.code === s.code);
-    const rawName = nameRow?.name || s.code;
-    // 港股后面加上 H
-    const name = isHKCode(s.code) ? `${rawName}H` : rawName;
-    const sharesHeld = s.sharesHeld!;
-    const price = meta.realPrice;
-    const qualityScore = s.qualityScore;
-
-    // 持有金额（转为人民币）
-    const rawHoldingValue = sharesHeld * price;
-    const holdingValue = canConvertToCNY(s.code)
-      ? rawHoldingValue / exchangeRate.value
-      : rawHoldingValue;
+  // 计算每只股票的指标（持有市值、名称等基础口径来自 use-portfolio-base）
+  const items = heldHoldings.map((holding) => {
+    const meta = groupMetaMap.value[holding.code]!;
+    const nameRow = tableData.value.find((r) => r.code === holding.code);
+    const { code, name, sharesHeld, price, qualityScore, industry } = holding;
+    const holdingValue = holding.holdingValue;
 
     // 预计分红 = 原始分红 dps * sharesHeld（转为人民币）
     const rawExpectedDividend = meta.dps * sharesHeld;
-    const expectedDividend = canConvertToCNY(s.code)
+    const expectedDividend = canConvertToCNY(code)
       ? rawExpectedDividend / exchangeRate.value
       : rawExpectedDividend;
 
@@ -128,7 +127,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     const exList = nameRow?.exList || [];
     const paidDps = getPaidDps(exList);
     const rawPaidDividend = paidDps * sharesHeld;
-    const paidDividend = canConvertToCNY(s.code)
+    const paidDividend = canConvertToCNY(code)
       ? rawPaidDividend / exchangeRate.value
       : rawPaidDividend;
     // 未分红 = 预计分红 - 已分红
@@ -136,7 +135,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
 
     // 每股净利润 = 当前股价 / PE_TTM（转为人民币）
     const rawEps = meta.pricePE > 0 ? price / meta.pricePE : 0;
-    const eps = canConvertToCNY(s.code) ? rawEps / exchangeRate.value : rawEps;
+    const eps = canConvertToCNY(code) ? rawEps / exchangeRate.value : rawEps;
     // 持有净利润 = 每股净利润 * 持有股数（人民币）
     const holdingNetProfit = eps * sharesHeld;
     // 公司留存部分 = 持有净利润 - 预计分红（人民币）
@@ -144,7 +143,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
 
     // 扣税后股息 = 调整后分红 effectiveDps * sharesHeld（转为人民币）
     const rawNetDividend = meta.effectiveDps * sharesHeld;
-    const netDividend = canConvertToCNY(s.code)
+    const netDividend = canConvertToCNY(code)
       ? rawNetDividend / exchangeRate.value
       : rawNetDividend;
 
@@ -155,7 +154,7 @@ const portfolioData = computed<PortfolioRow[]>(() => {
 
     return {
       name,
-      code: s.code,
+      code,
       sharesHeld,
       holdingValue,
       shareholdingRatio: 0,
@@ -170,13 +169,12 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       retainedNetProfit,
       peTtm: meta.pricePE,
       qualityScore,
-      industry: s.industry,
+      industry,
     };
   });
 
   // 组合总市值（含现金）
-  const totalHoldingValue =
-    items.reduce((sum, i) => sum + i.holdingValue, 0) + cashVal;
+  const totalHoldingValue = stockHoldingValue.value + cashVal;
 
   // 持股比例（基于含现金的总市值）
   items.forEach((i) => {
@@ -517,6 +515,12 @@ onMounted(() => {
               {{ compositeQualityScore.toFixed(2) }}
             </td>
           </tr>
+          <tr>
+            <td>近 5 个年度复合增速</td>
+            <td class="bold">
+              {{ historyCagr == null ? "-" : formatPercent(historyCagr * 100) }}
+            </td>
+          </tr>
         </tbody>
       </table>
 
@@ -526,6 +530,10 @@ onMounted(() => {
         active-text="显示现金"
         inactive-text="隐藏现金"
       />
+
+      <a class="history-link" href="/value-investing/投资计划/持仓透视盈余"
+        >查看历史业绩表 →</a
+      >
     </footer>
 
     <section class="dependency-stats">
@@ -683,6 +691,15 @@ html.dark .portfolio-container {
 
   .cash-switch {
     margin-left: 16px;
+  }
+
+  .history-link {
+    margin-left: 16px;
+    font-size: 13px;
+    font-weight: bold;
+    color: var(--vp-c-brand-1);
+    text-decoration: underline;
+    white-space: nowrap;
   }
 
   .dependency-stats {

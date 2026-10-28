@@ -78,6 +78,22 @@ const operatorStockData: StockItem[] = [
       },
       backYearsNum: 10,
     },
+    hkMarketConfig: {
+      code: "00728",
+      dividendTaxRate: 0.8,
+    },
+  },
+  {
+    type: StockType.HK,
+    name: "中国电信",
+    code: "00728",
+    level: StockLevel.MARGIN,
+    allocation: 0.1,
+    sharesPerLot: 2000,
+    valuationConfig: {
+      type: ValuationType.REFERENCE,
+      price: 4,
+    },
   },
   {
     type: StockType.A,
