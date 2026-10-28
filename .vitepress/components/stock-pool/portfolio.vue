@@ -359,9 +359,15 @@ onMounted(() => {
         <tr v-for="item in portfolioData" :key="item.code">
           <td>{{ item.index }}</td>
           <td class="bold">
-            <StockExtraInfo v-if="item.code !== '__cash__'" :code="item.code" :name="item.name">
+            <StockExtraInfo
+              v-if="item.code !== '__cash__'"
+              :code="item.code"
+              :name="item.name"
+            >
               <span>{{ item.name }}</span>
-              <el-icon :size="13" class="extra-info-icon"><InfoFilled /></el-icon>
+              <el-icon :size="13" class="extra-info-icon"
+                ><InfoFilled
+              /></el-icon>
             </StockExtraInfo>
             <span v-else>{{ item.name }}</span>
           </td>
@@ -530,10 +536,6 @@ onMounted(() => {
         active-text="显示现金"
         inactive-text="隐藏现金"
       />
-
-      <a class="history-link" href="/value-investing/投资计划/持仓透视盈余"
-        >查看历史业绩表 →</a
-      >
     </footer>
 
     <section class="dependency-stats">
