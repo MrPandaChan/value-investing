@@ -23,6 +23,7 @@ import RotationModel from "../components/rotation-model/rotation-model.vue";
 import Step from "../components/step/step.vue";
 import StockPool from "../components/stock-pool/stock-pool.vue";
 import StockPoolPortfolio from "../components/stock-pool/portfolio.vue";
+import StockPoolPortfolioHistory from "../components/stock-pool/portfolio-history.vue";
 import IndustryOverview from "../components/industry-overview/industry-overview.vue";
 import "./custom.scss";
 import "./shared.scss";
@@ -68,6 +69,7 @@ export default define<Theme>({
     // 股票池
     app.component("StockPool", StockPool);
     app.component("StockPoolPortfolio", StockPoolPortfolio);
+    app.component("StockPoolPortfolioHistory", StockPoolPortfolioHistory);
 
     app.component("Step", Step);
 
