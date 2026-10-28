@@ -29,6 +29,54 @@ export interface CompanyHistory {
   /** 按当前股本折算的每股净利润（人民币/元） */
   epsByYear: Record<string, number>;
   years: string[];
+  /** 折算基准股本（最新年报股本），0 表示无法取得 */
+  baseShares: number;
+}
+
+/** 最新 TTM 组合快照（与实时透视盈余表同口径） */
+export interface LatestSnapshot {
+  /** 应占净利润（TTM，元） */
+  profit: number;
+  /** 应占股息（当前年化，元） */
+  dividend: number;
+  /** 股息税（元） */
+  tax: number;
+  /** 透视盈余 = 应占净利润 - 股息税（元） */
+  surplus: number;
+  /** 应占净资产（最新报告期，元） */
+  equity: number;
+  /** 组合 ROE = 有净资产数据公司的应占净利润 / 应占净资产 */
+  roe: number | null;
+  /** 分红率 = 应占股息 / 应占净利润 */
+  payoutRatio: number | null;
+  /** 按当前市值：透视盈余收益率 */
+  yield: number;
+  /** 按当前市值：隐含 PE */
+  pe: number | null;
+  /** 按当前市值：股息率 */
+  dividendYield: number;
+  /** 有 TTM 数据的持仓权重 */
+  coveredWeight: number;
+}
+
+/** 最新报告期（YTD）快照 */
+export interface LatestReportRow {
+  code: string;
+  name: string;
+  industry: string;
+  weight: number;
+  /** 最新季报期，如 2026Q2 */
+  period: string | null;
+  /** YTD 应占净利润（元） */
+  ytdProfit: number | null;
+  /** YTD 同比（对比上年同期） */
+  ytdYoy: number | null;
+  /** TTM 应占净利润（元） */
+  ttmProfit: number | null;
+  /** TTM 每股净利润（按最新股本，元/股） */
+  epsTtm: number | null;
+  /** 数据缺失原因 */
+  missing: string | null;
 }
 
 /** EPS 复合增速计算结果 */
@@ -90,6 +138,7 @@ interface CollectedHistory {
   dividendByYear: Record<string, number>;
   taxByYear: Record<string, number>;
   epsByYear: Record<string, number>;
+  baseShares: number;
 }
 
 /**
@@ -112,6 +161,7 @@ export function usePortfolioHistory(
     stockHoldingValue,
     cashValue,
     tableData,
+    groupMetaMap,
     exchangeRate,
     isLoading,
     refresh,
@@ -287,6 +337,119 @@ export function usePortfolioHistory(
     ),
   );
 
+  const companyMap = computed(
+    () => new Map(companies.value.map((company) => [company.code, company])),
+  );
+
+  /**
+   * 最新 TTM 快照
+   *
+   * 与实时透视盈余表（price / PE_TTM）完全同源，保证工具栏数字与弹窗一致；
+   * 股息税按当前年化分红（dps / effectiveDps）计算。
+   */
+  const latestSnapshot = computed<LatestSnapshot>(() => {
+    const total = denominator.value;
+    let profit = 0;
+    let dividend = 0;
+    let tax = 0;
+    let coveredWeight = 0;
+    let roeProfit = 0;
+    let equity = 0;
+
+    for (const holding of holdings.value) {
+      if (holding.isETF) continue;
+
+      const meta = groupMetaMap.value[holding.code];
+      if (!meta || meta.pricePE <= 0) continue;
+
+      const rawEps = holding.price / meta.pricePE;
+      const eps = canConvertToCNY(holding.code)
+        ? rawEps / exchangeRate.value
+        : rawEps;
+      const holdingProfit = eps * holding.sharesHeld;
+      profit += holdingProfit;
+      coveredWeight += total > 0 ? holding.holdingValue / total : 0;
+
+      const expectedDividend = canConvertToCNY(holding.code)
+        ? (meta.dps * holding.sharesHeld) / exchangeRate.value
+        : meta.dps * holding.sharesHeld;
+      const netDividend = canConvertToCNY(holding.code)
+        ? (meta.effectiveDps * holding.sharesHeld) / exchangeRate.value
+        : meta.effectiveDps * holding.sharesHeld;
+      dividend += expectedDividend;
+      tax += expectedDividend - netDividend;
+
+      const company = companyMap.value.get(holding.code);
+      const companyEquity = latestEquity(
+        holding.code,
+        company?.baseShares ?? 0,
+        holding.sharesHeld,
+        holdingProfit,
+      );
+      if (companyEquity !== undefined && companyEquity > 0) {
+        roeProfit += holdingProfit;
+        equity += companyEquity;
+      }
+    }
+
+    const surplus = profit - tax;
+    return {
+      profit,
+      dividend,
+      tax,
+      surplus,
+      equity,
+      roe: equity > 0 ? roeProfit / equity : null,
+      payoutRatio: profit > 0 ? dividend / profit : null,
+      yield: total > 0 ? surplus / total : 0,
+      pe: surplus > 0 ? total / surplus : null,
+      dividendYield: total > 0 ? dividend / total : 0,
+      coveredWeight: Math.min(1, coveredWeight),
+    };
+  });
+
+  /** 最新报告期（YTD）逐公司快照 */
+  const latestReports = computed<LatestReportRow[]>(() => {
+    const holdingMap = new Map(
+      holdings.value.map((holding) => [holding.code, holding]),
+    );
+
+    return companies.value
+      .filter((company) => company.hasData)
+      .map((company) => {
+        // TTM 统一走行情 PE：recentYearData 对港股的分季汇总不可靠
+        const holding = holdingMap.get(company.code);
+        const meta = groupMetaMap.value[company.code];
+        let epsTtm: number | null = null;
+        let ttmProfit: number | null = null;
+        if (holding && meta && meta.pricePE > 0) {
+          const rawEps = holding.price / meta.pricePE;
+          const eps = canConvertToCNY(company.code)
+            ? rawEps / exchangeRate.value
+            : rawEps;
+          epsTtm = eps;
+          ttmProfit = eps * holding.sharesHeld;
+        }
+
+        return buildLatestReport(company, epsTtm, ttmProfit);
+      });
+  });
+
+  /** 最新报告期分布：各报告期的公司数与权重 */
+  const reportPeriods = computed(() => {
+    const map = new Map<string, { count: number; weight: number }>();
+    for (const row of latestReports.value) {
+      const key = row.period ?? "无数据";
+      const item = map.get(key) ?? { count: 0, weight: 0 };
+      item.count += 1;
+      item.weight += row.weight;
+      map.set(key, item);
+    }
+    return [...map.entries()]
+      .map(([period, item]) => ({ period, ...item }))
+      .sort((a, b) => b.period.localeCompare(a.period));
+  });
+
   return {
     companies,
     missingCompanies,
@@ -295,6 +458,9 @@ export function usePortfolioHistory(
     allYears,
     rows,
     latestRow,
+    latestSnapshot,
+    latestReports,
+    reportPeriods,
     cagr,
     holdings,
     stockHoldingValue,
@@ -304,6 +470,91 @@ export function usePortfolioHistory(
     isLoading,
     refresh,
     loadFromStorage,
+  };
+}
+
+/**
+ * 最新报告期的应占净资产
+ *
+ * 优先用「季度净资产 × 持股数 / 折算股本」；
+ * 股本或季度净资产缺失时（招商银行、中国平安），用最近年报 ROE 反推：
+ * 应占净资产 = TTM 应占净利润 / 最近年报 ROE，保证与年度行可比。
+ */
+function latestEquity(
+  code: string,
+  baseShares: number,
+  sharesHeld: number,
+  ttmProfit: number,
+): number | undefined {
+  if (baseShares > 0) {
+    const row = data[code]?.balanceDataQuarterly?.find(
+      (item) => item.equity > 0,
+    );
+    if (row) return (row.equity * sharesHeld) / baseShares;
+  }
+
+  const roe = latestAnnualRoe(code);
+  if (roe > 0 && ttmProfit > 0) return ttmProfit / roe;
+  return undefined;
+}
+
+/** 最近一个年报的 ROE（小数），无数据返回 0 */
+function latestAnnualRoe(code: string): number {
+  const rows = data[code]?.returnData ?? [];
+  let latest: { year: string; roe: number } | undefined;
+  for (const row of rows) {
+    if (!latest || Number(row.year) > Number(latest.year)) latest = row;
+  }
+  return latest && latest.roe > 0 ? latest.roe / 100 : 0;
+}
+
+/** 构建单只公司的最新报告期快照（YTD 累计 + TTM） */
+function buildLatestReport(
+  company: CompanyHistory,
+  epsTtm: number | null,
+  ttmProfit: number | null,
+): LatestReportRow {
+  const service = data[company.code];
+  const baseShares = company.baseShares;
+  const quarterly = (service?.basicRevenueDataQuarterly ?? []).filter((row) =>
+    /^\d{4}Q\d$/.test(row.year),
+  );
+  const current = quarterly[0];
+
+  const period = current?.year ?? null;
+  let ytdProfit: number | null = null;
+  let ytdYoy: number | null = null;
+
+  // 缺失原因逐项拼接，避免「银行只缺一部分」被笼统标成无数据
+  const reasons: string[] = [];
+  if (!current) reasons.push("无季报");
+  else if (!(current.netProfit > 0)) reasons.push("季报净利润缺失");
+  if (!(baseShares > 0)) reasons.push("股本缺失");
+  const missing = reasons.length ? reasons.join(" / ") : null;
+
+  if (current && current.netProfit > 0 && baseShares > 0) {
+    ytdProfit = (current.netProfit * company.sharesHeld) / baseShares;
+    const match = current.year.match(/^(\d{4})(Q\d)$/);
+    if (match) {
+      const prevYear = `${Number(match[1]) - 1}${match[2]}`;
+      const prev = quarterly.find((row) => row.year === prevYear);
+      if (prev && prev.netProfit > 0) {
+        ytdYoy = current.netProfit / prev.netProfit - 1;
+      }
+    }
+  }
+
+  return {
+    code: company.code,
+    name: company.name,
+    industry: company.industry,
+    weight: company.weight,
+    period,
+    ytdProfit,
+    ytdYoy,
+    ttmProfit,
+    epsTtm,
+    missing,
   };
 }
 
@@ -330,6 +581,7 @@ function buildCompanyHistory(
     taxByYear: {},
     epsByYear: {},
     years: [],
+    baseShares: 0,
   });
 
   const collected = collectHistory(data[holding.code], holding, dividendAdjust);
@@ -414,6 +666,7 @@ function collectHistory(
     dividendByYear: {},
     taxByYear: {},
     epsByYear: {},
+    baseShares,
   };
 
   for (const row of history) {
