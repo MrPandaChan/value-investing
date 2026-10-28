@@ -493,7 +493,7 @@ watch(
             <th>行业</th>
             <th class="bold">权重</th>
             <th v-for="year in years" :key="year">{{ year }}</th>
-            <th>EPS 增速(年化)</th>
+            <th title="首末年度 EPS 的年化复合增速">EPS CAGR</th>
             <th>盈余占比</th>
           </tr>
         </thead>
@@ -514,8 +514,8 @@ watch(
 
       <p class="ph-note">
         权重 = 持有市值占比；盈余占比 = 该公司最新年度应占净利润 /
-        组合应占净利润。两者差异反映估值高低：盈余占比高于权重，说明其市盈率低于组合平均。EPS
-        增速为当前选中区间首末年度的年化复合增速（CAGR）；末年亏损时无法计算，显示「末年亏损」。
+        组合应占净利润。两者差异反映估值高低：盈余占比高于权重，说明其市盈率低于组合平均。        EPS
+        CAGR 为当前选中区间首末年度的年化复合增速；末年亏损时无法计算，显示「末年亏损」。
       </p>
 
       <table v-if="cashAndEtf.length" class="history-table snapshot-table">
