@@ -15,6 +15,7 @@ import {
   usePortfolioHistory,
   type CompanyHistory,
 } from "./use-portfolio-history";
+import { useTagExposure } from "./use-tag-exposure";
 import StockPoolPortfolio from "./portfolio.vue";
 
 const range = ref(10);
@@ -35,6 +36,7 @@ const {
   latestSnapshot,
   latestReports,
   reportPeriods,
+  concentration,
   cagr,
   holdings,
   totalHoldingValue,
@@ -72,6 +74,16 @@ const reportPeriodsText = computed(() =>
     .map((item) => `${item.period} ${item.count} 家 / ${pct(item.weight)}`)
     .join("；"),
 );
+
+/** 共同依赖标签暴露 */
+const { tagExposure, threshold: TAG_THRESHOLD } = useTagExposure(0.5);
+
+/** 集中度表的三个口径 */
+const concentrationRows = computed(() => [
+  { label: "市值（当前）", ...concentration.value.market },
+  { label: "TTM 盈余", ...concentration.value.profit },
+  { label: "行业（市值）", ...concentration.value.industry },
+]);
 
 /** 金额按万元展示（组合规模为百万级，用亿元会丢失精度） */
 function wan(value: number): string {
@@ -449,6 +461,46 @@ watch(
         </span>
       </div>
 
+      <table class="history-table concentration-table">
+        <caption>
+          持仓集中度（剔除现金与 ETF，行业按市值）
+        </caption>
+        <thead>
+          <tr>
+            <th>口径</th>
+            <th>Top1</th>
+            <th>CR3</th>
+            <th>CR5</th>
+            <th>CR10</th>
+            <th title="赫芬达尔指数 = Σ(权重²)，0~1，越大越集中">HHI</th>
+            <th title="有效持仓 = 1 / HHI，相当于几只等权持仓">有效持仓</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in concentrationRows" :key="item.label">
+            <td class="bold">{{ item.label }}</td>
+            <td>{{ pct(item.cr1) }}</td>
+            <td>{{ pct(item.cr3) }}</td>
+            <td>{{ pct(item.cr5) }}</td>
+            <td>{{ pct(item.cr10) }}</td>
+            <td :class="item.hhi > 0.18 ? 'red bold' : ''">
+              {{ item.hhi.toFixed(3) }}
+            </td>
+            <td>{{ item.effectiveN.toFixed(1) }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="ph-note">
+        <b>HHI（赫芬达尔指数）</b> = 各持仓权重的平方和（Σw²），取值 0~1，越大越集中；<b>有效持仓 = 1 / HHI</b>，表示「相当于几只等权持仓」。经验区间：HHI
+        低于 0.10 为分散，0.10~0.18 中等，高于 0.18 为集中（有效持仓少于 5.5
+        只）。名义 {{ concentration.stockCount }} 只个股，有效持仓
+        {{ concentration.market.effectiveN.toFixed(1) }} 只，前 3 占
+        {{ pct(concentration.market.cr3) }}。ETF 权重
+        {{ pct(concentration.etfWeight) }}、现金占比
+        {{ pct(concentration.cashRatio) }} 均未计入集中度分母。
+      </p>
+
       <table class="history-table">
         <caption>
           组合透视盈余与 ROE 历史（按当前持仓回溯，金额单位：万元）
@@ -569,6 +621,90 @@ watch(
         >。不同报告期不可直接相加，组合合计以 TTM 为准；TTM
         取行情 PE_TTM 对应每股收益，与工具栏、实时透视盈余弹窗同源。招商银行、中国平安等季报净利润或股本字段缺失，YTD
         与同比显示「-」，不参与合计。
+          </p>
+        </el-collapse-item>
+
+        <el-collapse-item name="history-concentration">
+          <template #title>
+            <span class="ph-collapse-title">
+              历史盈余集中度
+              <span class="ph-collapse-hint"
+                >按各年应占净利润，正利润公司归一化</span
+              >
+            </span>
+          </template>
+
+          <table class="history-table report-table">
+            <caption>
+              历史盈余集中度（CR3 / CR5 / CR10 / HHI）
+            </caption>
+            <thead>
+              <tr>
+                <th>年度</th>
+                <th>CR3</th>
+                <th>CR5</th>
+                <th>CR10</th>
+                <th>HHI</th>
+                <th>有效持仓</th>
+                <th>样本数</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in displayRows" :key="row.year">
+                <td class="bold">{{ row.year }}</td>
+                <td>{{ pct(row.concentration.cr3) }}</td>
+                <td>{{ pct(row.concentration.cr5) }}</td>
+                <td>{{ pct(row.concentration.cr10) }}</td>
+                <td>{{ row.concentration.hhi.toFixed(3) }}</td>
+                <td>{{ row.concentration.effectiveN.toFixed(1) }}</td>
+                <td>{{ row.concentration.count }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="ph-note">
+            HHI = 各公司应占净利润占比的平方和，越小越分散；有效持仓 = 1 /
+            HHI。样本数为当年有正利润数据的公司数，亏损公司不参与归一化。
+          </p>
+        </el-collapse-item>
+
+        <el-collapse-item name="tag-exposure">
+          <template #title>
+            <span class="ph-collapse-title">
+              共同依赖暴露
+              <span class="ph-collapse-hint"
+                >按持有市值 × 标签权重，识别隐藏耦合</span
+              >
+            </span>
+          </template>
+
+          <table class="history-table report-table">
+            <caption>
+              共同依赖标签暴露（分母为股票持仓市值）
+            </caption>
+            <thead>
+              <tr>
+                <th>依赖标签</th>
+                <th>覆盖仓位</th>
+                <th>暴露市值</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="item in tagExposure"
+                :key="item.tag"
+                :class="{ over: item.over }"
+              >
+                <td>{{ item.tag }}</td>
+                <td class="bold">{{ pct(item.ratio) }}</td>
+                <td>￥{{ formatNum(item.value, 2).toFixed(2) }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="ph-note">
+            覆盖仓位超过 {{ pct(TAG_THRESHOLD) }}
+            的标签标红，代表该共同依赖是组合的主要隐藏绳子。
           </p>
         </el-collapse-item>
       </el-collapse>
@@ -818,9 +954,15 @@ html.dark .portfolio-history {
     .yield {
       background-color: var(--ph-yield);
     }
+
+    tr.over td {
+      color: #e03131;
+      font-weight: bold;
+    }
   }
 
   .company-table,
+  .concentration-table,
   .report-table,
   .snapshot-table {
     margin-top: 16px;
@@ -890,6 +1032,10 @@ html.dark .portfolio-history {
 
   .green {
     color: #66ee66;
+  }
+
+  .history-table tr.over td {
+    color: #ff7875;
   }
 }
 

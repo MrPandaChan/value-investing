@@ -87,6 +87,20 @@ export interface EpsCagrResult {
   latestLoss: boolean;
 }
 
+/** 集中度指标（CR1/3/5/10、HHI、有效数量） */
+export interface ConcentrationMetrics {
+  cr1: number;
+  cr3: number;
+  cr5: number;
+  cr10: number;
+  /** 赫芬达尔指数 = Σ(权重²)，越大越集中 */
+  hhi: number;
+  /** 有效数量 = 1 / HHI，可理解为「相当于几个等权持仓」 */
+  effectiveN: number;
+  /** 参与计算的样本数（公司数 / 行业数） */
+  count: number;
+}
+
 /** 组合层某一年度的透视盈余 */
 export interface PortfolioYearRow {
   year: string;
@@ -114,6 +128,8 @@ export interface PortfolioYearRow {
   yoy: number | null;
   /** 该年度有数据的持仓权重（分母含 ETF/现金时为 < 1） */
   coveredWeight: number;
+  /** 该年度盈余集中度（按正利润公司的应占净利润） */
+  concentration: ConcentrationMetrics;
 }
 
 /** 不参与透视盈余的持仓快照（ETF 与现金） */
@@ -274,11 +290,13 @@ export function usePortfolioHistory(
       let coveredWeight = 0;
       let roeProfit = 0;
       let equity = 0;
+      const positiveProfits: number[] = [];
 
       for (const company of companies.value) {
         const companyProfit = company.profitByYear[year];
         if (companyProfit === undefined) continue;
         profit += companyProfit;
+        if (companyProfit > 0) positiveProfits.push(companyProfit);
         dividend += company.dividendByYear[year] ?? 0;
         tax += company.taxByYear[year] ?? 0;
         coveredWeight += company.weight;
@@ -306,6 +324,7 @@ export function usePortfolioHistory(
         payoutRatio: profit > 0 ? dividend / profit : null,
         yoy: null,
         coveredWeight,
+        concentration: computeConcentration(positiveProfits),
       };
     });
 
@@ -450,6 +469,58 @@ export function usePortfolioHistory(
       .sort((a, b) => b.period.localeCompare(a.period));
   });
 
+  /**
+   * 当前集中度快照
+   *
+   * 剔除现金与 ETF（ETF 单列权重），避免一篮子资产让集中度失真；
+   * 盈余口径使用与弹窗一致的 TTM 应占净利润。
+   */
+  const concentration = computed(() => {
+    const stockOnly = holdings.value.filter((holding) => !holding.isETF);
+    const market = computeConcentration(
+      stockOnly.map((holding) => holding.holdingValue),
+    );
+
+    const profits: number[] = [];
+    for (const holding of stockOnly) {
+      const meta = groupMetaMap.value[holding.code];
+      if (!meta || meta.pricePE <= 0) continue;
+      const rawEps = holding.price / meta.pricePE;
+      const eps = canConvertToCNY(holding.code)
+        ? rawEps / exchangeRate.value
+        : rawEps;
+      const profit = eps * holding.sharesHeld;
+      if (profit > 0) profits.push(profit);
+    }
+    const profit = computeConcentration(profits);
+
+    const industryMap = new Map<string, number>();
+    for (const holding of stockOnly) {
+      industryMap.set(
+        holding.industry,
+        (industryMap.get(holding.industry) ?? 0) + holding.holdingValue,
+      );
+    }
+    const industry = computeConcentration([...industryMap.values()]);
+
+    const etfValue = holdings.value
+      .filter((holding) => holding.isETF)
+      .reduce((sum, holding) => sum + holding.holdingValue, 0);
+    const stockValue = stockHoldingValue.value;
+
+    return {
+      market,
+      profit,
+      industry,
+      stockCount: stockOnly.length,
+      etfWeight: stockValue > 0 ? etfValue / stockValue : 0,
+      cashRatio:
+        stockValue + cashValue.value > 0
+          ? cashValue.value / (stockValue + cashValue.value)
+          : 0,
+    };
+  });
+
   return {
     companies,
     missingCompanies,
@@ -461,6 +532,7 @@ export function usePortfolioHistory(
     latestSnapshot,
     latestReports,
     reportPeriods,
+    concentration,
     cagr,
     holdings,
     stockHoldingValue,
@@ -761,4 +833,45 @@ function computeCagr(rows: PortfolioYearRow[]): number | null {
   const span = Number(last.year) - Number(first.year);
   if (span <= 0) return null;
   return Math.pow(last.profit / first.profit, 1 / span) - 1;
+}
+
+/**
+ * 计算集中度指标
+ *
+ * - CRn：前 n 名占比之和
+ * - HHI：Σ(权重²)，0~1，越大越集中
+ * - 有效数量：1 / HHI，相当于几个等权持仓
+ */
+function computeConcentration(values: number[]): ConcentrationMetrics {
+  const positive = values.filter((value) => value > 0);
+  const total = positive.reduce((sum, value) => sum + value, 0);
+  if (total <= 0) {
+    return {
+      cr1: 0,
+      cr3: 0,
+      cr5: 0,
+      cr10: 0,
+      hhi: 0,
+      effectiveN: 0,
+      count: positive.length,
+    };
+  }
+
+  const sorted = [...positive].sort((a, b) => b - a);
+  const share = (n: number) =>
+    sorted.slice(0, n).reduce((sum, value) => sum + value, 0) / total;
+  const hhi = sorted.reduce(
+    (sum, value) => sum + (value / total) ** 2,
+    0,
+  );
+
+  return {
+    cr1: share(1),
+    cr3: share(3),
+    cr5: share(5),
+    cr10: share(10),
+    hhi,
+    effectiveN: hhi > 0 ? 1 / hhi : 0,
+    count: positive.length,
+  };
 }
