@@ -508,12 +508,24 @@ const sleep = (timeout: number) => {
 };
 
 export async function main() {
+  // --codes=600036,601318 只更新指定股票（默认强制刷新）
+  const codesArg = process.argv.find((arg) => arg.startsWith("--codes="));
+  const onlyCodes = codesArg
+    ? codesArg
+        .replace("--codes=", "")
+        .split(",")
+        .map((code) => code.trim())
+        .filter(Boolean)
+    : [];
   // 检查是否有 -f 参数
-  const forceUpdate = process.argv.includes("-f");
+  const forceUpdate = process.argv.includes("-f") || onlyCodes.length > 0;
 
   for (let i = 0; i < stockData.length; i += 1) {
     const stock = stockData[i];
     if (!stock) {
+      continue;
+    }
+    if (onlyCodes.length && !onlyCodes.includes(stock.code)) {
       continue;
     }
 
@@ -541,10 +553,17 @@ export async function main() {
     if (i > 0) {
       await sleep(10000);
     }
-    await fetchAStockData(stock);
-    console.log(
-      `获取 ${stock.name}(${stock.code}) 数据成功（${i + 1}/${stockData.length}）`,
-    );
+    try {
+      await fetchAStockData(stock);
+      console.log(
+        `获取 ${stock.name}(${stock.code}) 数据成功（${i + 1}/${stockData.length}）`,
+      );
+    } catch (error) {
+      console.error(
+        `获取 ${stock.name}(${stock.code}) 失败，已跳过：`,
+        error,
+      );
+    }
   }
 
   console.log("数据更新完成！");

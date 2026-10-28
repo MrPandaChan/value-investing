@@ -6,9 +6,9 @@ import {
   canConvertToCNY,
 } from "../../../fetch-data/helper";
 import { InfoFilled } from "@element-plus/icons-vue";
-import { stocks, TagKey } from "../../my-data/stock-pool";
 import { usePortfolioBase } from "./use-portfolio-base";
 import { usePortfolioHistory } from "./use-portfolio-history";
+import { useTagExposure } from "./use-tag-exposure";
 import { getEffectiveEventDps, type ExItem } from "./fetch-dividend";
 import StockExtraInfo from "./stock-extra-info.vue";
 
@@ -24,6 +24,9 @@ const {
 
 /** 历史业绩摘要（最近 5 个年度） */
 const { cagr: historyCagr } = usePortfolioHistory(5);
+
+/** 共同依赖标签暴露（超过阈值的标签标红） */
+const { tagExposure, threshold: TAG_THRESHOLD } = useTagExposure(0.5);
 
 /** 是否在组合中显示现金行 */
 const showCash = ref(false);
@@ -238,31 +241,6 @@ const portfolioData = computed<PortfolioRow[]>(() => {
   return result;
 });
 
-/** 共同依赖标签暴露超过该仓位比例时标红 */
-const TAG_THRESHOLD = 0.5;
-
-/** 共同依赖标签暴露统计：按持有市值 × 权重累加，分母为持股总市值（不含现金） */
-const tagExposure = computed(() => {
-  const rows = portfolioData.value.filter((r) => r.code !== "__cash__");
-  const total = rows.reduce((s, r) => s + r.holdingValue, 0);
-  const map = new Map<TagKey, number>();
-  for (const row of rows) {
-    const stock = stocks.find((s) => s.code === row.code);
-    for (const t of stock?.tags ?? []) {
-      const w = t.weight ?? 1;
-      map.set(t.tag, (map.get(t.tag) ?? 0) + row.holdingValue * w);
-    }
-  }
-  return [...map.entries()]
-    .map(([tag, value]) => ({
-      tag,
-      value,
-      ratio: total > 0 ? value / total : 0,
-      over: total > 0 && value / total > TAG_THRESHOLD,
-    }))
-    .sort((a, b) => b.ratio - a.ratio);
-});
-
 /** 加权综合素质得分（不含现金，按持股比例归一化加权） */
 const compositeQualityScore = computed(() => {
   const rows = portfolioData.value.filter((r) => r.code !== "__cash__");
@@ -359,9 +337,15 @@ onMounted(() => {
         <tr v-for="item in portfolioData" :key="item.code">
           <td>{{ item.index }}</td>
           <td class="bold">
-            <StockExtraInfo v-if="item.code !== '__cash__'" :code="item.code" :name="item.name">
+            <StockExtraInfo
+              v-if="item.code !== '__cash__'"
+              :code="item.code"
+              :name="item.name"
+            >
               <span>{{ item.name }}</span>
-              <el-icon :size="13" class="extra-info-icon"><InfoFilled /></el-icon>
+              <el-icon :size="13" class="extra-info-icon"
+                ><InfoFilled
+              /></el-icon>
             </StockExtraInfo>
             <span v-else>{{ item.name }}</span>
           </td>
@@ -530,10 +514,6 @@ onMounted(() => {
         active-text="显示现金"
         inactive-text="隐藏现金"
       />
-
-      <a class="history-link" href="/value-investing/投资计划/持仓透视盈余"
-        >查看历史业绩表 →</a
-      >
     </footer>
 
     <section class="dependency-stats">

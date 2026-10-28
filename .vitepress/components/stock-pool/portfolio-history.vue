@@ -9,11 +9,14 @@ import {
 } from "vue";
 import * as echarts from "echarts";
 import { useData } from "vitepress";
+import { QuestionFilled } from "@element-plus/icons-vue";
 import { formatNum, formatPercent } from "../../../fetch-data/helper";
 import {
+  computeEpsCagr,
   usePortfolioHistory,
   type CompanyHistory,
 } from "./use-portfolio-history";
+import { useTagExposure } from "./use-tag-exposure";
 import StockPoolPortfolio from "./portfolio.vue";
 
 const range = ref(10);
@@ -31,6 +34,10 @@ const {
   cashAndEtf,
   rows,
   latestRow,
+  latestSnapshot,
+  latestReports,
+  reportPeriods,
+  concentration,
   cagr,
   holdings,
   totalHoldingValue,
@@ -57,12 +64,42 @@ const missingWeight = computed(() =>
   missingCompanies.value.reduce((sum, company) => sum + company.weight, 0),
 );
 
-/** 按当前市值的最新年度股息率 */
-const latestDividendYield = computed(() => {
-  const latest = latestRow.value;
-  if (!latest || totalHoldingValue.value <= 0) return null;
-  return latest.dividend / totalHoldingValue.value;
-});
+/** 最新报告期表按权重降序 */
+const sortedReports = computed(() =>
+  [...latestReports.value].sort((a, b) => b.weight - a.weight),
+);
+
+/** 折叠标题里的报告期分布摘要 */
+const reportPeriodsText = computed(() =>
+  reportPeriods.value
+    .map((item) => `${item.period} ${item.count} 家 / ${pct(item.weight)}`)
+    .join("；"),
+);
+
+/** 共同依赖标签暴露 */
+const { tagExposure, threshold: TAG_THRESHOLD } = useTagExposure(0.5);
+
+/** 集中度表的三个口径（含 tooltip 明细） */
+const concentrationRows = computed(() => [
+  {
+    label: "市值（当前）",
+    ...concentration.value.market,
+    detail: concentration.value.marketDetail,
+    unit: "只",
+  },
+  {
+    label: "TTM 盈余",
+    ...concentration.value.profit,
+    detail: concentration.value.profitDetail,
+    unit: "只",
+  },
+  {
+    label: "行业（市值）",
+    ...concentration.value.industry,
+    detail: concentration.value.industryDetail,
+    unit: "个",
+  },
+]);
 
 /** 金额按万元展示（组合规模为百万级，用亿元会丢失精度） */
 function wan(value: number): string {
@@ -79,6 +116,13 @@ function epsText(company: CompanyHistory, year: string): string {
   const eps = company.epsByYear[year];
   if (eps == null) return "-";
   return formatNum(eps, 2).toFixed(2);
+}
+
+/** 按当前展示区间计算 EPS 年化增速，末年亏损单独标注 */
+function epsCagrText(company: CompanyHistory): string {
+  const result = computeEpsCagr(company.epsByYear, years.value);
+  if (result.latestLoss) return "末年亏损";
+  return pct(result.value);
 }
 
 function priceText(price: number): string {
@@ -380,9 +424,25 @@ watch(
         inactive-text="不计现金"
       />
       <span class="ph-meta">
-        {{ includeCash ? "当前总资产" : "股票持仓市值" }}：￥{{
-          formatNum(totalHoldingValue, 2).toFixed(2)
-        }}
+        <span>
+          {{ includeCash ? "当前总资产" : "股票持仓市值" }}：￥{{
+            formatNum(totalHoldingValue, 2).toFixed(2)
+          }}
+        </span>
+        <span class="ph-meta-sep">|</span>
+        <span title="TTM 应占净利润 - 股息税，除以当前市值，与实时透视盈余表同口径">
+          透视盈余收益率：<b>{{ pct(latestSnapshot.yield) }}</b>
+        </span>
+        <span class="ph-meta-sep">|</span>
+        <span title="当前市值 / TTM 透视盈余，与实时透视盈余表同口径">
+          PE_TTM：<b>{{
+            latestSnapshot.pe == null ? "-" : latestSnapshot.pe.toFixed(2)
+          }}</b>
+        </span>
+        <span class="ph-meta-sep">|</span>
+        <span title="当前年化应占股息 / 当前市值">
+          股息率：<b>{{ pct(latestSnapshot.dividendYield) }}</b>
+        </span>
       </span>
     </div>
 
@@ -415,16 +475,77 @@ watch(
           {{ rows.length }} 个年度复合增速
           <b>{{ pct(cagr) }}</b>
         </span>
-        <span class="ph-summary-market">
-          按当前市值：收益率
-          <b>{{ pct(latestRow.surplusYield) }}</b
-          >（PE
-          {{
-            latestRow.impliedPE == null ? "-" : latestRow.impliedPE.toFixed(2)
-          }}）｜股息率
-          <b>{{ pct(latestDividendYield) }}</b>
-        </span>
       </div>
+
+      <table class="history-table concentration-table">
+        <caption>
+          持仓集中度（剔除现金与 ETF，行业按市值）
+        </caption>
+        <thead>
+          <tr>
+            <th>口径</th>
+            <th>Top1</th>
+            <th>CR3</th>
+            <th>CR5</th>
+            <th>CR10</th>
+            <th title="赫芬达尔指数 = Σ(权重²)，0~1，越大越集中">HHI</th>
+            <th title="有效持仓 = 1 / HHI，相当于几只等权持仓">有效持仓</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in concentrationRows" :key="item.label">
+            <td class="bold">
+              <el-tooltip
+                placement="right"
+                :show-after="120"
+                popper-class="concentration-tooltip"
+              >
+                <template #content>
+                  <div class="ct-head">
+                    {{ item.label }}：共 {{ item.detail.length }} {{ item.unit }}
+                  </div>
+                  <div
+                    v-for="(entry, index) in item.detail.slice(0, 10)"
+                    :key="entry.name"
+                    class="ct-row"
+                  >
+                    <span class="ct-index">{{ index + 1 }}</span>
+                    <span class="ct-name">{{ entry.name }}</span>
+                    <span class="ct-weight">{{ pct(entry.weight) }}</span>
+                  </div>
+                  <div v-if="item.detail.length > 10" class="ct-more">
+                    仅显示前 10 名
+                  </div>
+                </template>
+                <span class="ph-conc-label">
+                  {{ item.label }}
+                  <el-icon :size="12" class="ph-conc-icon"
+                    ><QuestionFilled
+                  /></el-icon>
+                </span>
+              </el-tooltip>
+            </td>
+            <td>{{ pct(item.cr1) }}</td>
+            <td>{{ pct(item.cr3) }}</td>
+            <td>{{ pct(item.cr5) }}</td>
+            <td>{{ pct(item.cr10) }}</td>
+            <td :class="item.hhi > 0.18 ? 'red bold' : ''">
+              {{ item.hhi.toFixed(3) }}
+            </td>
+            <td>{{ item.effectiveN.toFixed(1) }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="ph-note">
+        <b>HHI（赫芬达尔指数）</b> = 各持仓权重的平方和（Σw²），取值 0~1，越大越集中；<b>有效持仓 = 1 / HHI</b>，表示「相当于几只等权持仓」。经验区间：HHI
+        低于 0.10 为分散，0.10~0.18 中等，高于 0.18 为集中（有效持仓少于 5.5
+        只）。名义 {{ concentration.stockCount }} 只个股，有效持仓
+        {{ concentration.market.effectiveN.toFixed(1) }} 只，前 3 占
+        {{ pct(concentration.market.cr3) }}。ETF 权重
+        {{ pct(concentration.etfWeight) }}、现金占比
+        {{ pct(concentration.cashRatio) }} 均未计入集中度分母。
+      </p>
 
       <table class="history-table">
         <caption>
@@ -445,6 +566,18 @@ watch(
           </tr>
         </thead>
         <tbody>
+          <tr class="ttm-row">
+            <td class="bold">最新 TTM</td>
+            <td class="bold surplus">{{ wan(latestSnapshot.surplus) }}</td>
+            <td>-</td>
+            <td>{{ wan(latestSnapshot.equity) }}</td>
+            <td class="bold yield">{{ pct(latestSnapshot.roe) }}</td>
+            <td>{{ wan(latestSnapshot.dividend) }}</td>
+            <td>{{ wan(latestSnapshot.tax) }}</td>
+            <td>{{ wan(latestSnapshot.profit - latestSnapshot.dividend) }}</td>
+            <td>{{ pct(latestSnapshot.payoutRatio) }}</td>
+            <td>{{ pct(latestSnapshot.coveredWeight) }}</td>
+          </tr>
           <tr v-for="row in displayRows" :key="row.year">
             <td class="bold">{{ row.year }}</td>
             <td class="bold surplus">{{ wan(row.surplus) }}</td>
@@ -469,10 +602,158 @@ watch(
         >
         = 应占股息 /
         应占净利润，采用公司宣告的分红总额，未扣股息税（股息税属于投资者层面），税后到手
-        = 应占股息 − 股息税。<b>数据覆盖</b> = 该年度有财报数据的持仓市值 /
-        当前分母；ETF 与现金不产生盈余，因此分母包含它们时覆盖会低于
-        100%。「按当前市值」的收益率、PE、股息率是估值快照，用今天的市值衡量最新年度数据，不代表历史回报。
+        = 应占股息 − 股息税。<b>最新 TTM</b>
+        行：应占净利润取行情 PE_TTM 对应的每股收益，股息取当前年化分红，与实时透视盈余弹窗同口径，可直接对账；招商银行、中国平安无季度净资产或股本，按最近年报 ROE 反推应占净资产，保证与年度行可比。<b>数据覆盖</b> = 该年度有财报数据的持仓市值 /
+        当前分母；ETF 与现金不产生盈余，因此分母包含它们时覆盖会低于 100%。
       </p>
+
+      <el-collapse class="ph-collapse">
+        <el-collapse-item name="latest-report">
+          <template #title>
+            <span class="ph-collapse-title">
+              最新报告期明细
+              <span class="ph-collapse-hint">{{ reportPeriodsText }}</span>
+            </span>
+          </template>
+
+          <table class="history-table report-table">
+            <caption>
+              YTD 为年初至报告期累计，金额单位：万元
+            </caption>
+        <thead>
+          <tr>
+            <th class="bold">公司</th>
+            <th>最新报告期</th>
+            <th>YTD 应占净利润</th>
+            <th>YTD 同比</th>
+            <th>TTM 应占净利润</th>
+            <th>TTM EPS</th>
+            <th>权重</th>
+            <th>备注</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="item in sortedReports" :key="item.code">
+            <td class="bold">{{ item.name }}</td>
+            <td>{{ item.period ?? "-" }}</td>
+            <td>{{ item.ytdProfit == null ? "-" : wan(item.ytdProfit) }}</td>
+            <td
+              :class="
+                item.ytdYoy == null ? '' : item.ytdYoy >= 0 ? 'red' : 'green'
+              "
+            >
+              {{ pct(item.ytdYoy) }}
+            </td>
+            <td>{{ item.ttmProfit == null ? "-" : wan(item.ttmProfit) }}</td>
+            <td>
+              {{
+                item.epsTtm == null
+                  ? "-"
+                  : formatNum(item.epsTtm, 2).toFixed(2)
+              }}
+            </td>
+            <td>{{ pct(item.weight) }}</td>
+            <td>{{ item.missing ?? "" }}</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p class="ph-note">
+        报告期分布：<span
+          v-for="(item, index) in reportPeriods"
+          :key="item.period"
+          >{{ index > 0 ? "；" : "" }}{{ item.period }} {{ item.count }} 家 /
+          {{ pct(item.weight) }}</span
+        >。不同报告期不可直接相加，组合合计以 TTM 为准；TTM
+        取行情 PE_TTM 对应每股收益，与工具栏、实时透视盈余弹窗同源。招商银行、中国平安等季报净利润或股本字段缺失，YTD
+        与同比显示「-」，不参与合计。
+          </p>
+        </el-collapse-item>
+
+        <el-collapse-item name="history-concentration">
+          <template #title>
+            <span class="ph-collapse-title">
+              历史盈余集中度
+              <span class="ph-collapse-hint"
+                >按各年应占净利润，正利润公司归一化</span
+              >
+            </span>
+          </template>
+
+          <table class="history-table report-table">
+            <caption>
+              历史盈余集中度（CR3 / CR5 / CR10 / HHI）
+            </caption>
+            <thead>
+              <tr>
+                <th>年度</th>
+                <th>CR3</th>
+                <th>CR5</th>
+                <th>CR10</th>
+                <th>HHI</th>
+                <th>有效持仓</th>
+                <th>样本数</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="row in displayRows" :key="row.year">
+                <td class="bold">{{ row.year }}</td>
+                <td>{{ pct(row.concentration.cr3) }}</td>
+                <td>{{ pct(row.concentration.cr5) }}</td>
+                <td>{{ pct(row.concentration.cr10) }}</td>
+                <td>{{ row.concentration.hhi.toFixed(3) }}</td>
+                <td>{{ row.concentration.effectiveN.toFixed(1) }}</td>
+                <td>{{ row.concentration.count }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="ph-note">
+            HHI = 各公司应占净利润占比的平方和，越小越分散；有效持仓 = 1 /
+            HHI。样本数为当年有正利润数据的公司数，亏损公司不参与归一化。
+          </p>
+        </el-collapse-item>
+
+        <el-collapse-item name="tag-exposure">
+          <template #title>
+            <span class="ph-collapse-title">
+              共同依赖暴露
+              <span class="ph-collapse-hint"
+                >按持有市值 × 标签权重，识别隐藏耦合</span
+              >
+            </span>
+          </template>
+
+          <table class="history-table report-table">
+            <caption>
+              共同依赖标签暴露（分母为股票持仓市值）
+            </caption>
+            <thead>
+              <tr>
+                <th>依赖标签</th>
+                <th>覆盖仓位</th>
+                <th>暴露市值</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="item in tagExposure"
+                :key="item.tag"
+                :class="{ over: item.over }"
+              >
+                <td>{{ item.tag }}</td>
+                <td class="bold">{{ pct(item.ratio) }}</td>
+                <td>￥{{ formatNum(item.value, 2).toFixed(2) }}</td>
+              </tr>
+            </tbody>
+          </table>
+
+          <p class="ph-note">
+            覆盖仓位超过 {{ pct(TAG_THRESHOLD) }}
+            的标签标红，代表该共同依赖是组合的主要隐藏绳子。
+          </p>
+        </el-collapse-item>
+      </el-collapse>
 
       <table class="history-table company-table">
         <caption>
@@ -485,7 +766,7 @@ watch(
             <th>行业</th>
             <th class="bold">权重</th>
             <th v-for="year in years" :key="year">{{ year }}</th>
-            <th>EPS 增速</th>
+            <th title="首末年度 EPS 的年化复合增速">EPS CAGR</th>
             <th>盈余占比</th>
           </tr>
         </thead>
@@ -498,7 +779,7 @@ watch(
             <td v-for="year in years" :key="year">
               {{ epsText(company, year) }}
             </td>
-            <td>{{ pct(company.epsCagr) }}</td>
+            <td>{{ epsCagrText(company) }}</td>
             <td>{{ latestContribution(company) }}</td>
           </tr>
         </tbody>
@@ -506,7 +787,8 @@ watch(
 
       <p class="ph-note">
         权重 = 持有市值占比；盈余占比 = 该公司最新年度应占净利润 /
-        组合应占净利润。两者差异反映估值高低：盈余占比高于权重，说明其市盈率低于组合平均。
+        组合应占净利润。两者差异反映估值高低：盈余占比高于权重，说明其市盈率低于组合平均。        EPS
+        CAGR 为当前选中区间首末年度的年化复合增速；末年亏损时无法计算，显示「末年亏损」。
       </p>
 
       <table v-if="cashAndEtf.length" class="history-table snapshot-table">
@@ -574,6 +856,7 @@ watch(
   --ph-border: #000;
   --ph-surplus: #ffcac8;
   --ph-yield: #9adeff;
+  --ph-ttm: #fff7e6;
 }
 
 html.dark .portfolio-history {
@@ -582,12 +865,56 @@ html.dark .portfolio-history {
   --ph-border: var(--vp-c-divider);
   --ph-surplus: #4a3030;
   --ph-yield: #2a455a;
+  --ph-ttm: #3a3020;
 }
 
 .history-portfolio-dialog {
   .el-dialog__body {
     max-height: 88vh;
     overflow: auto;
+  }
+}
+
+/* 集中度 tooltip（teleport 到 body，需要全局样式） */
+.concentration-tooltip {
+  max-width: 340px;
+
+  .ct-head {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .ct-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .ct-index {
+    width: 16px;
+    text-align: right;
+    opacity: 0.5;
+  }
+
+  .ct-name {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ct-weight {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ct-more {
+    margin-top: 4px;
+    font-size: 11px;
+    opacity: 0.6;
   }
 }
 </style>
@@ -603,9 +930,32 @@ html.dark .portfolio-history {
   }
 
   .ph-meta {
+    display: inline-flex;
+    align-items: baseline;
+    flex-wrap: wrap;
+    gap: 8px;
     font-size: 13px;
     color: var(--ph-text);
     opacity: 0.75;
+
+    b {
+      font-weight: bold;
+    }
+  }
+
+  .ph-meta-sep {
+    opacity: 0.4;
+  }
+
+  .ph-conc-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    cursor: help;
+  }
+
+  .ph-conc-icon {
+    opacity: 0.45;
   }
 
   .ph-empty {
@@ -704,15 +1054,58 @@ html.dark .portfolio-history {
     .yield {
       background-color: var(--ph-yield);
     }
+
+    tr.over td {
+      color: #e03131;
+      font-weight: bold;
+    }
   }
 
   .company-table,
+  .concentration-table,
+  .report-table,
   .snapshot-table {
     margin-top: 16px;
   }
 
-  .ph-summary-market {
-    opacity: 0.75;
+  .ph-collapse {
+    margin-top: 16px;
+    border: none;
+
+    :deep(.el-collapse-item__header) {
+      height: auto;
+      padding: 8px 0;
+      font-size: 14px;
+      font-weight: bold;
+      color: var(--ph-text);
+      background: transparent;
+      border-bottom: 1px solid var(--ph-border);
+    }
+
+    :deep(.el-collapse-item__wrap) {
+      background: transparent;
+      border-bottom: none;
+    }
+
+    :deep(.el-collapse-item__content) {
+      padding-bottom: 0;
+    }
+
+    :deep(.el-collapse-item__arrow) {
+      color: var(--ph-text);
+    }
+  }
+
+  .ph-collapse-hint {
+    margin-left: 8px;
+    font-size: 12px;
+    font-weight: normal;
+    opacity: 0.6;
+  }
+
+  .ttm-row td {
+    background-color: var(--ph-ttm);
+    font-weight: bold;
   }
 
   .red {
@@ -739,6 +1132,10 @@ html.dark .portfolio-history {
 
   .green {
     color: #66ee66;
+  }
+
+  .history-table tr.over td {
+    color: #ff7875;
   }
 }
 
