@@ -29,8 +29,14 @@ export interface CompanyHistory {
   /** 按当前股本折算的每股净利润（人民币/元） */
   epsByYear: Record<string, number>;
   years: string[];
-  /** 每股净利润复合增速 */
-  epsCagr: number | null;
+}
+
+/** EPS 复合增速计算结果 */
+export interface EpsCagrResult {
+  /** 年化增速，无法计算时为 null */
+  value: number | null;
+  /** 末年是否亏损（EPS ≤ 0） */
+  latestLoss: boolean;
 }
 
 /** 组合层某一年度的透视盈余 */
@@ -324,7 +330,6 @@ function buildCompanyHistory(
     taxByYear: {},
     epsByYear: {},
     years: [],
-    epsCagr: null,
   });
 
   const collected = collectHistory(data[holding.code], holding, dividendAdjust);
@@ -337,7 +342,40 @@ function buildCompanyHistory(
     years: Object.keys(collected.epsByYear).sort(
       (a, b) => Number(a) - Number(b),
     ),
-    epsCagr: computeSeriesCagr(collected.epsByYear),
+  };
+}
+
+/**
+ * 按给定年度区间计算 EPS 复合增速（年化，只用首末两个年度点）
+ *
+ * - 区间取当前表格展示的年份，跟随「近 5 年 / 近 10 年」切换
+ * - 末年亏损时无法给出有意义的几何增速，返回 latestLoss 供 UI 标注
+ * - 首年亏损时顺延到区间内第一个盈利年
+ */
+export function computeEpsCagr(
+  epsByYear: Record<string, number>,
+  years: string[],
+): EpsCagrResult {
+  const series = years
+    .filter((year) => epsByYear[year] !== undefined)
+    .sort((a, b) => Number(a) - Number(b));
+
+  const lastYear = series[series.length - 1];
+  if (lastYear === undefined) return { value: null, latestLoss: false };
+
+  const lastValue = epsByYear[lastYear] ?? 0;
+  if (lastValue <= 0) return { value: null, latestLoss: true };
+
+  const firstYear = series.find((year) => (epsByYear[year] ?? 0) > 0);
+  if (firstYear === undefined) return { value: null, latestLoss: false };
+
+  const span = Number(lastYear) - Number(firstYear);
+  if (span <= 0) return { value: null, latestLoss: false };
+
+  return {
+    value:
+      Math.pow(lastValue / (epsByYear[firstYear] ?? lastValue), 1 / span) - 1,
+    latestLoss: false,
   };
 }
 
@@ -459,20 +497,6 @@ function findLatestShares(history: ValuationHistoryData[]): number | undefined {
     if (shares && shares > 0) return shares;
   }
   return undefined;
-}
-
-/** 按年度首末值计算复合增速 */
-function computeSeriesCagr(values: Record<string, number>): number | null {
-  const entries = Object.entries(values)
-    .filter(([, value]) => value > 0)
-    .sort(([a], [b]) => Number(a) - Number(b));
-  const first = entries[0];
-  const last = entries[entries.length - 1];
-  if (!first || !last) return null;
-
-  const span = Number(last[0]) - Number(first[0]);
-  if (span <= 0) return null;
-  return Math.pow(last[1] / first[1], 1 / span) - 1;
 }
 
 function computeCagr(rows: PortfolioYearRow[]): number | null {

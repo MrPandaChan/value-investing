@@ -11,6 +11,7 @@ import * as echarts from "echarts";
 import { useData } from "vitepress";
 import { formatNum, formatPercent } from "../../../fetch-data/helper";
 import {
+  computeEpsCagr,
   usePortfolioHistory,
   type CompanyHistory,
 } from "./use-portfolio-history";
@@ -79,6 +80,13 @@ function epsText(company: CompanyHistory, year: string): string {
   const eps = company.epsByYear[year];
   if (eps == null) return "-";
   return formatNum(eps, 2).toFixed(2);
+}
+
+/** 按当前展示区间计算 EPS 年化增速，末年亏损单独标注 */
+function epsCagrText(company: CompanyHistory): string {
+  const result = computeEpsCagr(company.epsByYear, years.value);
+  if (result.latestLoss) return "末年亏损";
+  return pct(result.value);
 }
 
 function priceText(price: number): string {
@@ -485,7 +493,7 @@ watch(
             <th>行业</th>
             <th class="bold">权重</th>
             <th v-for="year in years" :key="year">{{ year }}</th>
-            <th>EPS 增速</th>
+            <th>EPS 增速(年化)</th>
             <th>盈余占比</th>
           </tr>
         </thead>
@@ -498,7 +506,7 @@ watch(
             <td v-for="year in years" :key="year">
               {{ epsText(company, year) }}
             </td>
-            <td>{{ pct(company.epsCagr) }}</td>
+            <td>{{ epsCagrText(company) }}</td>
             <td>{{ latestContribution(company) }}</td>
           </tr>
         </tbody>
@@ -506,7 +514,8 @@ watch(
 
       <p class="ph-note">
         权重 = 持有市值占比；盈余占比 = 该公司最新年度应占净利润 /
-        组合应占净利润。两者差异反映估值高低：盈余占比高于权重，说明其市盈率低于组合平均。
+        组合应占净利润。两者差异反映估值高低：盈余占比高于权重，说明其市盈率低于组合平均。EPS
+        增速为当前选中区间首末年度的年化复合增速（CAGR）；末年亏损时无法计算，显示「末年亏损」。
       </p>
 
       <table v-if="cashAndEtf.length" class="history-table snapshot-table">
