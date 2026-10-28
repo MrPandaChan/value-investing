@@ -1737,7 +1737,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
-    sharesHeld: 200,
+    sharesHeld: 100,
     url: "/value-investing/industry/电力设备/电池/宁德时代/",
     dividendPerYear: 2,
     remark:
@@ -1944,6 +1944,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(71551);
+export const cash = ref(71709);
 
 export { stocks };
