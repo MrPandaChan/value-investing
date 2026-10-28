@@ -9,6 +9,7 @@ import {
 } from "vue";
 import * as echarts from "echarts";
 import { useData } from "vitepress";
+import { QuestionFilled } from "@element-plus/icons-vue";
 import { formatNum, formatPercent } from "../../../fetch-data/helper";
 import {
   computeEpsCagr,
@@ -78,11 +79,26 @@ const reportPeriodsText = computed(() =>
 /** 共同依赖标签暴露 */
 const { tagExposure, threshold: TAG_THRESHOLD } = useTagExposure(0.5);
 
-/** 集中度表的三个口径 */
+/** 集中度表的三个口径（含 tooltip 明细） */
 const concentrationRows = computed(() => [
-  { label: "市值（当前）", ...concentration.value.market },
-  { label: "TTM 盈余", ...concentration.value.profit },
-  { label: "行业（市值）", ...concentration.value.industry },
+  {
+    label: "市值（当前）",
+    ...concentration.value.market,
+    detail: concentration.value.marketDetail,
+    unit: "只",
+  },
+  {
+    label: "TTM 盈余",
+    ...concentration.value.profit,
+    detail: concentration.value.profitDetail,
+    unit: "只",
+  },
+  {
+    label: "行业（市值）",
+    ...concentration.value.industry,
+    detail: concentration.value.industryDetail,
+    unit: "个",
+  },
 ]);
 
 /** 金额按万元展示（组合规模为百万级，用亿元会丢失精度） */
@@ -478,7 +494,37 @@ watch(
         </thead>
         <tbody>
           <tr v-for="item in concentrationRows" :key="item.label">
-            <td class="bold">{{ item.label }}</td>
+            <td class="bold">
+              <el-tooltip
+                placement="right"
+                :show-after="120"
+                popper-class="concentration-tooltip"
+              >
+                <template #content>
+                  <div class="ct-head">
+                    {{ item.label }}：共 {{ item.detail.length }} {{ item.unit }}
+                  </div>
+                  <div
+                    v-for="(entry, index) in item.detail.slice(0, 10)"
+                    :key="entry.name"
+                    class="ct-row"
+                  >
+                    <span class="ct-index">{{ index + 1 }}</span>
+                    <span class="ct-name">{{ entry.name }}</span>
+                    <span class="ct-weight">{{ pct(entry.weight) }}</span>
+                  </div>
+                  <div v-if="item.detail.length > 10" class="ct-more">
+                    仅显示前 10 名
+                  </div>
+                </template>
+                <span class="ph-conc-label">
+                  {{ item.label }}
+                  <el-icon :size="12" class="ph-conc-icon"
+                    ><QuestionFilled
+                  /></el-icon>
+                </span>
+              </el-tooltip>
+            </td>
             <td>{{ pct(item.cr1) }}</td>
             <td>{{ pct(item.cr3) }}</td>
             <td>{{ pct(item.cr5) }}</td>
@@ -828,6 +874,49 @@ html.dark .portfolio-history {
     overflow: auto;
   }
 }
+
+/* 集中度 tooltip（teleport 到 body，需要全局样式） */
+.concentration-tooltip {
+  max-width: 340px;
+
+  .ct-head {
+    font-size: 12px;
+    font-weight: bold;
+    margin-bottom: 6px;
+  }
+
+  .ct-row {
+    display: flex;
+    align-items: baseline;
+    gap: 8px;
+    font-size: 12px;
+    line-height: 1.8;
+  }
+
+  .ct-index {
+    width: 16px;
+    text-align: right;
+    opacity: 0.5;
+  }
+
+  .ct-name {
+    flex: 1;
+    min-width: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .ct-weight {
+    font-variant-numeric: tabular-nums;
+  }
+
+  .ct-more {
+    margin-top: 4px;
+    font-size: 11px;
+    opacity: 0.6;
+  }
+}
 </style>
 
 <style lang="scss" scoped>
@@ -856,6 +945,17 @@ html.dark .portfolio-history {
 
   .ph-meta-sep {
     opacity: 0.4;
+  }
+
+  .ph-conc-label {
+    display: inline-flex;
+    align-items: center;
+    gap: 2px;
+    cursor: help;
+  }
+
+  .ph-conc-icon {
+    opacity: 0.45;
   }
 
   .ph-empty {

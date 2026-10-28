@@ -87,6 +87,13 @@ export interface EpsCagrResult {
   latestLoss: boolean;
 }
 
+/** 集中度构成明细（用于 tooltip 展示） */
+export interface ConcentrationDetailItem {
+  name: string;
+  value: number;
+  weight: number;
+}
+
 /** 集中度指标（CR1/3/5/10、HHI、有效数量） */
 export interface ConcentrationMetrics {
   cr1: number;
@@ -477,11 +484,18 @@ export function usePortfolioHistory(
    */
   const concentration = computed(() => {
     const stockOnly = holdings.value.filter((holding) => !holding.isETF);
-    const market = computeConcentration(
-      stockOnly.map((holding) => holding.holdingValue),
-    );
+    const stockValue = stockHoldingValue.value;
 
-    const profits: number[] = [];
+    // 市值构成
+    const marketItems = stockOnly.map((holding) => ({
+      name: holding.name,
+      value: holding.holdingValue,
+    }));
+    const market = computeConcentration(marketItems.map((item) => item.value));
+    const marketDetail = toDetail(marketItems, stockValue);
+
+    // TTM 盈余构成（与弹窗同源：price / PE_TTM）
+    const profitItems: Array<{ name: string; value: number }> = [];
     for (const holding of stockOnly) {
       const meta = groupMetaMap.value[holding.code];
       if (!meta || meta.pricePE <= 0) continue;
@@ -490,10 +504,13 @@ export function usePortfolioHistory(
         ? rawEps / exchangeRate.value
         : rawEps;
       const profit = eps * holding.sharesHeld;
-      if (profit > 0) profits.push(profit);
+      if (profit > 0) profitItems.push({ name: holding.name, value: profit });
     }
-    const profit = computeConcentration(profits);
+    const profit = computeConcentration(profitItems.map((item) => item.value));
+    const profitTotal = profitItems.reduce((sum, item) => sum + item.value, 0);
+    const profitDetail = toDetail(profitItems, profitTotal);
 
+    // 行业构成
     const industryMap = new Map<string, number>();
     for (const holding of stockOnly) {
       industryMap.set(
@@ -501,17 +518,26 @@ export function usePortfolioHistory(
         (industryMap.get(holding.industry) ?? 0) + holding.holdingValue,
       );
     }
-    const industry = computeConcentration([...industryMap.values()]);
+    const industryItems = [...industryMap.entries()].map(([name, value]) => ({
+      name,
+      value,
+    }));
+    const industry = computeConcentration(
+      industryItems.map((item) => item.value),
+    );
+    const industryDetail = toDetail(industryItems, stockValue);
 
     const etfValue = holdings.value
       .filter((holding) => holding.isETF)
       .reduce((sum, holding) => sum + holding.holdingValue, 0);
-    const stockValue = stockHoldingValue.value;
 
     return {
       market,
       profit,
       industry,
+      marketDetail,
+      profitDetail,
+      industryDetail,
       stockCount: stockOnly.length,
       etfWeight: stockValue > 0 ? etfValue / stockValue : 0,
       cashRatio:
@@ -833,6 +859,20 @@ function computeCagr(rows: PortfolioYearRow[]): number | null {
   const span = Number(last.year) - Number(first.year);
   if (span <= 0) return null;
   return Math.pow(last.profit / first.profit, 1 / span) - 1;
+}
+
+/** 按权重降序生成集中度明细 */
+function toDetail(
+  items: Array<{ name: string; value: number }>,
+  total: number,
+): ConcentrationDetailItem[] {
+  return items
+    .filter((item) => item.value > 0)
+    .sort((a, b) => b.value - a.value)
+    .map((item) => ({
+      ...item,
+      weight: total > 0 ? item.value / total : 0,
+    }));
 }
 
 /**
