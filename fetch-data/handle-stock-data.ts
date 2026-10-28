@@ -353,6 +353,64 @@ function getVal(dateValue: string, data: StockData) {
   };
 }
 
+/**
+ * 归母净利润（兼容金融股）
+ *
+ * 普通公司：PARENETP
+ * 银行：NETPARECOMPPROF
+ * 保险等：净利润 NETPROFIT - 少数股东损益（限定利润表，避免取到资产负债表的所有者权益）
+ */
+function resolveParNetProfit(
+  val: ReturnType<typeof getVal>,
+  isHK: boolean,
+): number {
+  const direct = val("PARENETP");
+  if (direct !== 0) return direct;
+
+  // 港股只映射了 HOLDER_PROFIT，取不到就保持 0，避免误用少数股东权益
+  if (isHK) return 0;
+
+  const bankProfit = val("NETPARECOMPPROF", { b: "lrb" });
+  if (bankProfit !== 0) return bankProfit;
+
+  const totalProfit = val("NETPROFIT", { b: "lrb" });
+  if (totalProfit !== 0) {
+    return totalProfit - val("MINYSHARRIGH", { b: "lrb" });
+  }
+
+  return 0;
+}
+
+/** 归母净资产：银行使用 PARECOMPSHARRIGHT，其余使用 PARESHARRIGH */
+function resolveParEquity(val: ReturnType<typeof getVal>): number {
+  const direct = val("PARESHARRIGH");
+  if (direct !== 0) return direct;
+  return val("PARECOMPSHARRIGHT");
+}
+
+/** 股本：实收资本缺失时，用「归母净利润 / 基本每股收益」反推 */
+function resolveShares(
+  val: ReturnType<typeof getVal>,
+  isHK: boolean,
+): number {
+  const paid = val("PAIDINCAPI");
+  if (paid > 0) return paid;
+
+  const eps = val("EPSBASIC");
+  const profit = resolveParNetProfit(val, isHK);
+  return eps > 0 && profit > 0 ? profit / eps : 0;
+}
+
+/** 所有者权益合计（含少数股东权益），银行用归母权益 + 少数股东权益兜底 */
+function resolveTotalEquity(val: ReturnType<typeof getVal>): number {
+  const direct = val("RIGHAGGR");
+  if (direct !== 0) return direct;
+
+  const parent = resolveParEquity(val);
+  const minority = val("MINYSHARRIGH", { b: "fzb" });
+  return parent + minority;
+}
+
 // 营收基本数据
 function generateBasicRevenueData(data: StockData, quarterly = false) {
   const arr: BasicRevenueData[] = [];
@@ -368,7 +426,7 @@ function generateBasicRevenueData(data: StockData, quarterly = false) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
-      const netProfit = val("PARENETP");
+      const netProfit = resolveParNetProfit(val, isHK);
       const netProfitExcludingNon = val("NPCUT");
       const cashFlowFromOperating = val("MANANETR");
       // 购建固定资产、无形资产和其他长期资产所支付的现金
@@ -437,6 +495,7 @@ function generateBasicRevenueData(data: StockData, quarterly = false) {
 
 function generateCostsExpensesData(data: StockData, quarterly = false) {
   const arr: CostsExpensesData[] = [];
+  const isHK = isHKStockData(data);
 
   const report_date = getReportDates(data);
   for (let i = 0; i < report_date.length; i += 1) {
@@ -448,7 +507,7 @@ function generateCostsExpensesData(data: StockData, quarterly = false) {
       const val = getVal(date.date_value, data);
 
       const revenue = val("BIZINCO");
-      const netProfit = val("PARENETP");
+      const netProfit = resolveParNetProfit(val, isHK);
       const grossProfitMargin = val("SGPMARGIN");
       const netProfitMargin = (netProfit / revenue) * 100;
       const devExpenses = val("DEVEEXPE", { b: "lrb" }) ?? 0;
@@ -499,7 +558,7 @@ function generateBalanceData(data: StockData, quarterly = false) {
       const inventory = val("INVE");
       const nonCurrentAssets = val("TOTALNONCASSETS");
       const totalAssets = val("TOTASSET");
-      const equity = val("PARESHARRIGH");
+      const equity = resolveParEquity(val);
       // 无息负债（应付+预收+合同）
       const interestFreeLiabilities =
         val("NOTESACCOPAYA") + val("ADVAPAYM") + val("CONTRACTLIAB");
@@ -762,7 +821,7 @@ function generateTurnoverRateData(data: StockData, quarterly = false) {
       const avgInventory =
         prevInventory > 0 ? (inventory + prevInventory) / 2 : inventory;
 
-      const equity = val("RIGHAGGR");
+      const equity = resolveTotalEquity(val);
       const avgEquity = prevEquity > 0 ? (equity + prevEquity) / 2 : equity;
 
       const totalAssetsDays = val("TATURNDAYS");
@@ -917,7 +976,7 @@ function generateVauationData(data: StockData): ValuationData {
           return pre;
         }, 0);
         // 港股没有 TOTAL_DIVIDEND 字段，用每股分红 * 总股本估算
-        const shares = val("PAIDINCAPI");
+        const shares = resolveShares(val, isHK);
         totalDividend = dps * shares;
       } else if (Array.isArray(data.dividendData)) {
         // A股分红数据处理（已排除港股，此处为 A股格式）
@@ -943,16 +1002,16 @@ function generateVauationData(data: StockData): ValuationData {
         }
       }
 
-      const PARENETP = val("PARENETP");
+      const profit = resolveParNetProfit(val, isHK);
 
       historyData.push({
         year: formatYear(date),
-        profit: val("PARENETP"),
+        profit,
         profit_tb: val("PARENETP", { key: "item_tongbi" }) ?? 0,
         basicEps: val("EPSBASIC"),
-        totalSharesOutstanding: val("PAIDINCAPI"),
+        totalSharesOutstanding: resolveShares(val, isHK),
         dps,
-        dividendRatio: PARENETP > 0 ? totalDividend / val("PARENETP") : 0,
+        dividendRatio: profit > 0 ? totalDividend / profit : 0,
         totalDividend,
         totalDividendA,
       });
@@ -1024,27 +1083,28 @@ function generateRecentYearData(item: {
   data: StockData;
 }): RecentYearData {
   let netProfit = 0;
-  const { code, data } = item;
-  const isBank = code === "600036";
-  const netProfitKey = isBank ? "NETPARECOMPPROF" : "PARENETP";
+  const { data } = item;
+  const isHK = isHKStockData(data);
 
   const report_date = getReportDates(data);
   const dates = report_date.slice(0, 5);
   for (let i = 0; i < 4; i += 1) {
-    const item = dates[i]!;
-    const prevItem = dates[i + 1]!;
-    if (!prevItem) break;
+    const current = dates[i]!;
+    const prev = dates[i + 1]!;
+    if (!prev) break;
 
-    const val = getVal(item.date_value, data);
-    const lastVal = getVal(prevItem.date_value, data);
+    const val = getVal(current.date_value, data);
+    const lastVal = getVal(prev.date_value, data);
+    const currentProfit = resolveParNetProfit(val, isHK);
+    const prevProfit = resolveParNetProfit(lastVal, isHK);
 
-    if (item.date_type === prevItem.date_type + 1) {
+    if (current.date_type === prev.date_type + 1) {
       // 计算单个季度数据并累加
-      netProfit += val(netProfitKey) - lastVal(netProfitKey);
+      netProfit += currentProfit - prevProfit;
     }
     // 如果不是连续的报告期，则直接相加
     else {
-      netProfit += val(netProfitKey);
+      netProfit += currentProfit;
     }
   }
 
@@ -1053,68 +1113,94 @@ function generateRecentYearData(item: {
   };
 }
 
+/** 处理单只股票的原始数据，返回 ServiceData 的一条记录 */
+function buildServiceEntry(stockData: {
+  code: string;
+  data: StockData;
+}): ServiceData[string] {
+  const basicRevenueData = generateBasicRevenueData(stockData.data);
+  const basicRevenueDataQuarterly = generateBasicRevenueData(
+    stockData.data,
+    true,
+  );
+  const costsExpensesData = generateCostsExpensesData(stockData.data);
+  const costsExpensesDataQuarterly = generateCostsExpensesData(
+    stockData.data,
+    true,
+  );
+  const balanceData = generateBalanceData(stockData.data);
+  const balanceDataQuarterly = generateBalanceData(stockData.data, true);
+  const workingCapitalData = generateWorkingCapitalData(stockData.data);
+  const workingCapitalDataQuarterly = generateWorkingCapitalData(
+    stockData.data,
+    true,
+  );
+  const fixedAssetInvestmentAnalysisData =
+    generateFixedAssetInvestmentAnalysisData(stockData.data);
+  const fixedAssetInvestmentAnalysisDataQuarterly =
+    generateFixedAssetInvestmentAnalysisData(stockData.data, true);
+  const returnData = generateReturnData(stockData.data);
+  const returnDataQuarterly = generateReturnData(stockData.data, true);
+  const turnoverRateData = generateTurnoverRateData(stockData.data);
+  const turnoverRateDataQuarterly = generateTurnoverRateData(
+    stockData.data,
+    true,
+  );
+  const primaryBusinessData = generatePrimaryBusinessData(stockData.data);
+  const valuationData = generateVauationData(stockData.data);
+  const dynamicData = stockData.data.dynamicData;
+  const recentYearData = generateRecentYearData(stockData);
+
+  return {
+    basicRevenueData: basicRevenueData.slice(0, 11),
+    basicRevenueDataQuarterly: basicRevenueDataQuarterly.slice(0, 48),
+    costsExpensesData: costsExpensesData.slice(0, 11),
+    costsExpensesDataQuarterly: costsExpensesDataQuarterly.slice(0, 48),
+    balanceData: balanceData.slice(0, 11),
+    balanceDataQuarterly: balanceDataQuarterly.slice(0, 48),
+    workingCapitalData: workingCapitalData.slice(0, 11),
+    workingCapitalDataQuarterly: workingCapitalDataQuarterly.slice(0, 48),
+    fixedAssetInvestmentAnalysisData: fixedAssetInvestmentAnalysisData.slice(
+      0,
+      11,
+    ),
+    fixedAssetInvestmentAnalysisDataQuarterly:
+      fixedAssetInvestmentAnalysisDataQuarterly.slice(0, 48),
+    returnData: returnData.slice(0, 11),
+    returnDataQuarterly: returnDataQuarterly.slice(0, 48),
+    turnoverRateData: turnoverRateData.slice(0, 11),
+    turnoverRateDataQuarterly: turnoverRateDataQuarterly.slice(0, 48),
+    primaryBusinessData: primaryBusinessData,
+    valuationData,
+    dynamicData,
+    recentYearData,
+  };
+}
+
 (async () => {
   const allStockData = await loadAllStockData();
   const data: ServiceData = {};
+  const failed: Array<{ code: string; message: string }> = [];
 
   for (const stockData of allStockData) {
-    const basicRevenueData = generateBasicRevenueData(stockData.data);
-    const basicRevenueDataQuarterly = generateBasicRevenueData(
-      stockData.data,
-      true,
-    );
-    const costsExpensesData = generateCostsExpensesData(stockData.data);
-    const costsExpensesDataQuarterly = generateCostsExpensesData(
-      stockData.data,
-      true,
-    );
-    const balanceData = generateBalanceData(stockData.data);
-    const balanceDataQuarterly = generateBalanceData(stockData.data, true);
-    const workingCapitalData = generateWorkingCapitalData(stockData.data);
-    const workingCapitalDataQuarterly = generateWorkingCapitalData(
-      stockData.data,
-      true,
-    );
-    const fixedAssetInvestmentAnalysisData =
-      generateFixedAssetInvestmentAnalysisData(stockData.data);
-    const fixedAssetInvestmentAnalysisDataQuarterly =
-      generateFixedAssetInvestmentAnalysisData(stockData.data, true);
-    const returnData = generateReturnData(stockData.data);
-    const returnDataQuarterly = generateReturnData(stockData.data, true);
-    const turnoverRateData = generateTurnoverRateData(stockData.data);
-    const turnoverRateDataQuarterly = generateTurnoverRateData(
-      stockData.data,
-      true,
-    );
-    const primaryBusinessData = generatePrimaryBusinessData(stockData.data);
-    const valuationData = generateVauationData(stockData.data);
-    const dynamicData = stockData.data.dynamicData;
-    const recentYearData = generateRecentYearData(stockData);
+    try {
+      data[stockData.code] = buildServiceEntry(stockData);
+    } catch (error) {
+      failed.push({
+        code: stockData.code,
+        message: error instanceof Error ? error.message : String(error),
+      });
+      console.error(`处理 ${stockData.code} 失败，已跳过：`, error);
+    }
+  }
 
-    data[stockData.code] = {
-      basicRevenueData: basicRevenueData.slice(0, 11),
-      basicRevenueDataQuarterly: basicRevenueDataQuarterly.slice(0, 48),
-      costsExpensesData: costsExpensesData.slice(0, 11),
-      costsExpensesDataQuarterly: costsExpensesDataQuarterly.slice(0, 48),
-      balanceData: balanceData.slice(0, 11),
-      balanceDataQuarterly: balanceDataQuarterly.slice(0, 48),
-      workingCapitalData: workingCapitalData.slice(0, 11),
-      workingCapitalDataQuarterly: workingCapitalDataQuarterly.slice(0, 48),
-      fixedAssetInvestmentAnalysisData: fixedAssetInvestmentAnalysisData.slice(
-        0,
-        11,
-      ),
-      fixedAssetInvestmentAnalysisDataQuarterly:
-        fixedAssetInvestmentAnalysisDataQuarterly.slice(0, 48),
-      returnData: returnData.slice(0, 11),
-      returnDataQuarterly: returnDataQuarterly.slice(0, 48),
-      turnoverRateData: turnoverRateData.slice(0, 11),
-      turnoverRateDataQuarterly: turnoverRateDataQuarterly.slice(0, 48),
-      primaryBusinessData: primaryBusinessData,
-      valuationData,
-      dynamicData,
-      recentYearData,
-    };
+  if (failed.length) {
+    console.warn(`共 ${allStockData.length} 只，失败 ${failed.length} 只：`);
+    for (const item of failed) {
+      console.warn(`  ${item.code}: ${item.message}`);
+    }
+  } else {
+    console.log(`全部 ${allStockData.length} 只股票处理成功`);
   }
 
   saveDataToTsFileAsync(data, "./.vitepress/service/data.ts");
