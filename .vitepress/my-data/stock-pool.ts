@@ -1916,6 +1916,7 @@ const stocks: StockItem[] = [
     industry: Industry.BEER,
     qualityScore: 3.5,
     dividendPerYear: 1,
+    url: "/value-investing/industry/食品饮料/啤酒/青岛啤酒/",
     remark:
       "**稳定增长型→缓慢增长型**，景气度↘，高端化放缓、销量承压，中性情况下预计5.5%dy+0%~3%eps=5.5%~8.5%cagr，股息率5.5%以上合理",
     maxPositionRatio: 0.05,
@@ -1944,20 +1945,21 @@ const stocks: StockItem[] = [
     qualityScore: 3.5,
     dividendPerYear: 1,
     dividendAdjust: 0.8,
+    url: "/value-investing/industry/食品饮料/啤酒/青岛啤酒/",
     remark:
       "**稳定增长型→缓慢增长型**，景气度↘，高端化放缓、销量承压，中性情况下预计5.5%dy+0%~3%eps=5.5%~8.5%cagr，股息率5.5%以上合理",
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.055, quantity: 200 }],
+      dividend: [{ value: 0.06, quantity: 500 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.035, quantity: 200 }],
+      dividend: [{ value: 0.035, quantity: 500 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.055,
+      value: 0.06,
     },
   },
   /**

@@ -17,6 +17,7 @@ import { otherStockData } from "./stocks/other";
 import { internetStockData } from "./stocks/internet";
 import { advertisementStockData } from "./stocks/advertisement";
 import { beverageStockData } from "./stocks/beverage";
+import { beerStockData } from "./stocks/beer";
 import { propertyStockData } from "./stocks/property";
 import { houseHoldGoodsStockData } from "./stocks/household-goods";
 import { medicalStockData } from "./stocks/medical";
@@ -40,6 +41,7 @@ export const stockData: StockItem[] = [
   ...portStockData,
   ...advertisementStockData,
   ...beverageStockData,
+  ...beerStockData,
   ...propertyStockData,
   ...houseHoldGoodsStockData,
   ...medicalStockData,
