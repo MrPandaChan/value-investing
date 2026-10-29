@@ -1322,7 +1322,6 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.DAIRY_PRODUCTS,
     qualityScore: 3.5,
-    sharesHeld: 100,
     url: "/value-investing/industry/食品饮料/乳制品/伊利股份/",
     dividendPerYear: 2,
     remark:
@@ -1330,7 +1329,11 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.06, quantity: 200 }],
+      dividend: [
+        { value: 0.05, quantity: 100 },
+        { value: 0.055, quantity: 200 },
+        { value: 0.06, quantity: 300 },
+      ],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1944,6 +1947,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(71709);
+export const cash = ref(74606);
 
 export { stocks };
