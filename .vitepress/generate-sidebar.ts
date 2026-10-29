@@ -83,6 +83,128 @@ function getDisplayName(name: string): string {
   return name.charAt(0).toUpperCase() + name.slice(1).replace(/-/g, " ");
 }
 
+/** 目录首页文件（README / index），有正文时不单独列入条目 */
+const NOTE_INDEX_NAMES = new Set(["readme", "index"]);
+
+/** 笔记目录内正文入口的优先级 */
+const NOTE_ENTRY_PRIORITY = ["article", "content", "正文"];
+
+/** 列出目录下的 md 模块名（不含扩展名） */
+function listMdNames(dir: string): string[] {
+  return readdirSync(dir, { withFileTypes: true })
+    .filter((e) => e.isFile() && e.name.endsWith(".md"))
+    .map((e) => getModuleName(e.name));
+}
+
+/** 选取目录的正文入口：article 优先，其次 README/index，最后首个 md */
+function pickNoteEntry(names: string[]): string | undefined {
+  for (const p of NOTE_ENTRY_PRIORITY) {
+    const hit = names.find((n) => n.toLowerCase() === p);
+    if (hit) return hit;
+  }
+  return (
+    names.find((n) => NOTE_INDEX_NAMES.has(n.toLowerCase())) ?? names[0]
+  );
+}
+
+/** README/index 的路由是目录本身（/xxx/），其余是 /xxx/模块名 */
+function noteLink(prefix: string, name: string): string {
+  return NOTE_INDEX_NAMES.has(name.toLowerCase())
+    ? `${prefix}/`
+    : `${prefix}/${name}`;
+}
+
+/**
+ * 构建单个笔记目录的条目
+ *
+ * - 目录的正文入口（article.md）直接作为该目录的链接
+ * - README/index 只在没有正文时充当入口，否则忽略
+ * - 更深层子目录递归为可折叠分组
+ */
+function buildNoteGroup(
+  dirName: string,
+  dirPath: string,
+  prefix: string,
+): SidebarItem | null {
+  const names = listMdNames(dirPath);
+  const entry = pickNoteEntry(names);
+  const children: SidebarItem[] = [];
+
+  for (const n of names) {
+    if (n === entry) continue;
+    if (NOTE_INDEX_NAMES.has(n.toLowerCase())) continue;
+    children.push({ text: getDisplayName(n), link: `${prefix}/${n}` });
+  }
+
+  for (const e of readdirSync(dirPath, { withFileTypes: true })) {
+    if (!e.isDirectory() || e.name.startsWith(".")) continue;
+    const child = buildNoteGroup(e.name, join(dirPath, e.name), `${prefix}/${e.name}`);
+    if (child) children.push(child);
+  }
+
+  if (!entry) {
+    if (children.length === 0) return null;
+    return { text: dirName, collapsed: true, items: children };
+  }
+
+  if (children.length === 0) {
+    return { text: dirName, link: noteLink(prefix, entry) };
+  }
+
+  return {
+    text: dirName,
+    link: noteLink(prefix, entry),
+    collapsed: true,
+    items: children,
+  };
+}
+
+/**
+ * 构建「笔记」分组条目（支持子目录，如 notes/投资实战派/文章目录/article.md）
+ */
+function buildNotesItems(notesDir: string, prefix: string): SidebarItem[] {
+  const items: SidebarItem[] = [];
+  const entries = readdirSync(notesDir, { withFileTypes: true });
+
+  // 顶层平铺的笔记
+  for (const entry of entries) {
+    if (!entry.isFile() || !entry.name.endsWith(".md")) continue;
+    const name = getModuleName(entry.name);
+    if (NOTE_INDEX_NAMES.has(name.toLowerCase())) continue;
+    items.push({ text: getDisplayName(name), link: `${prefix}/${name}` });
+  }
+
+  // 顶层子目录（来源分类 / 文章目录）
+  for (const entry of entries) {
+    if (!entry.isDirectory() || entry.name.startsWith(".")) continue;
+    const group = buildNoteGroup(
+      entry.name,
+      join(notesDir, entry.name),
+      `${prefix}/${entry.name}`,
+    );
+    if (group) items.push(group);
+  }
+
+  return items;
+}
+
+/** 将笔记树拍平为一维列表（用于 company-menu） */
+function flattenNoteItems(items: SidebarItem[]): CompanyFileEntry[] {
+  const out: CompanyFileEntry[] = [];
+  for (const item of items) {
+    if (item.items) {
+      out.push(...flattenNoteItems(item.items));
+    } else if (item.link) {
+      out.push({
+        name: item.link.replace(/^.*\/notes\//, ""),
+        label: item.text,
+        link: item.link,
+      });
+    }
+  }
+  return out;
+}
+
 /** 判断目录是否为「赛道」：赛道下含投研资料目录 */
 function isSegment(dir: string): boolean {
   return existsSync(join(dir, "投研资料"));
@@ -125,15 +247,12 @@ function buildCompanyGroup(
           });
         }
       } else if (entry.name === "notes") {
-        const subFiles = readdirSync(fullPath).filter((f) => f.endsWith(".md"));
-        if (subFiles.length > 0) {
+        const noteItems = buildNotesItems(fullPath, `${prefix}/notes`);
+        if (noteItems.length > 0) {
           items.push({
             text: "笔记",
             collapsed: true,
-            items: subFiles.map((f) => ({
-              text: getDisplayName(getModuleName(f)),
-              link: `${prefix}/notes/${getModuleName(f)}`,
-            })),
+            items: noteItems,
           });
         }
       }
@@ -304,15 +423,9 @@ function buildCompanyFiles(
           };
         });
       } else if (entry.name === "notes") {
-        const subFiles = readdirSync(subDir).filter((f) => f.endsWith(".md"));
-        data.notes = subFiles.map((f) => {
-          const name = getModuleName(f);
-          return {
-            name,
-            label: getDisplayName(name),
-            link: `${prefix}/notes/${name}`,
-          };
-        });
+        data.notes = flattenNoteItems(
+          buildNotesItems(subDir, `${prefix}/notes`),
+        );
       }
     } else if (entry.name.endsWith(".md") && entry.name !== "index.md") {
       const modName = getModuleName(entry.name);

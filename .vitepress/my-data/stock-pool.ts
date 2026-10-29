@@ -25,6 +25,7 @@ export enum Industry {
   MACHINERY = "机械",
   FINANCIAL = "金融",
   BEVERAGE = "茶饮",
+  BEER = "啤酒",
   MATERIALS = "材料",
   SECURITY = "安防",
   ETF = "ETF",
@@ -1935,6 +1936,63 @@ const stocks: StockItem[] = [
     strikePrice: {
       type: PlanType.PRICE,
       value: 0.5,
+    },
+  },
+  {
+    // 青岛啤酒
+    code: "600600",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.4 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.6 },
+    ],
+    industry: Industry.BEER,
+    qualityScore: 3.5,
+    dividendPerYear: 1,
+    url: "/value-investing/industry/食品饮料/啤酒/青岛啤酒/",
+    remark:
+      "**稳定增长型→缓慢增长型**，景气度↘，高端化放缓、销量承压，中性情况下预计5.5%dy+0%~3%eps=5.5%~8.5%cagr，股息率5.5%以上合理",
+    maxPositionRatio: 0.05,
+    plan: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.055, quantity: 200 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.035, quantity: 200 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.055,
+    },
+  },
+  {
+    // 青岛啤酒H
+    code: "00168",
+    tags: [
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.COMMODITY, weight: 0.4 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.6 },
+    ],
+    industry: Industry.BEER,
+    qualityScore: 3.5,
+    dividendPerYear: 1,
+    dividendAdjust: 0.8,
+    url: "/value-investing/industry/食品饮料/啤酒/青岛啤酒/",
+    remark:
+      "**稳定增长型→缓慢增长型**，景气度↘，高端化放缓、销量承压，中性情况下预计5.5%dy+0%~3%eps=5.5%~8.5%cagr，股息率5.5%以上合理",
+    maxPositionRatio: 0.05,
+    plan: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.06, quantity: 500 }],
+    },
+    exit: {
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.035, quantity: 500 }],
+    },
+    strikePrice: {
+      type: PlanType.DIVIDEND,
+      value: 0.06,
     },
   },
   /**
