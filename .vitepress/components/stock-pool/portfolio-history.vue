@@ -430,7 +430,9 @@ watch(
           }}
         </span>
         <span class="ph-meta-sep">|</span>
-        <span title="TTM 应占净利润 - 股息税，除以当前市值，与实时透视盈余表同口径">
+        <span
+          title="TTM 应占净利润 - 股息税，除以当前市值，与实时透视盈余表同口径"
+        >
           透视盈余收益率：<b>{{ pct(latestSnapshot.yield) }}</b>
         </span>
         <span class="ph-meta-sep">|</span>
@@ -502,7 +504,8 @@ watch(
               >
                 <template #content>
                   <div class="ct-head">
-                    {{ item.label }}：共 {{ item.detail.length }} {{ item.unit }}
+                    {{ item.label }}：共 {{ item.detail.length }}
+                    {{ item.unit }}
                   </div>
                   <div
                     v-for="(entry, index) in item.detail.slice(0, 10)"
@@ -538,9 +541,11 @@ watch(
       </table>
 
       <p class="ph-note">
-        <b>HHI（赫芬达尔指数）</b> = 各持仓权重的平方和（Σw²），取值 0~1，越大越集中；<b>有效持仓 = 1 / HHI</b>，表示「相当于几只等权持仓」。经验区间：HHI
-        低于 0.10 为分散，0.10~0.18 中等，高于 0.18 为集中（有效持仓少于 5.5
-        只）。名义 {{ concentration.stockCount }} 只个股，有效持仓
+        <b>HHI（赫芬达尔指数）</b> = 各持仓权重的平方和（Σw²），取值
+        0~1，越大越集中；<b>有效持仓 = 1 / HHI</b
+        >，表示「相当于几只等权持仓」。经验区间：HHI 低于 0.10 为分散，0.10~0.18
+        中等，高于 0.18 为集中（有效持仓少于 5.5 只）。名义
+        {{ concentration.stockCount }} 只个股，有效持仓
         {{ concentration.market.effectiveN.toFixed(1) }} 只，前 3 占
         {{ pct(concentration.market.cr3) }}。ETF 权重
         {{ pct(concentration.etfWeight) }}、现金占比
@@ -602,9 +607,11 @@ watch(
         >
         = 应占股息 /
         应占净利润，采用公司宣告的分红总额，未扣股息税（股息税属于投资者层面），税后到手
-        = 应占股息 − 股息税。<b>最新 TTM</b>
-        行：应占净利润取行情 PE_TTM 对应的每股收益，股息取当前年化分红，与实时透视盈余弹窗同口径，可直接对账；招商银行、中国平安无季度净资产或股本，按最近年报 ROE 反推应占净资产，保证与年度行可比。<b>数据覆盖</b> = 该年度有财报数据的持仓市值 /
-        当前分母；ETF 与现金不产生盈余，因此分母包含它们时覆盖会低于 100%。
+        = 应占股息 − 股息税。<b>最新 TTM</b> 行：应占净利润取行情 PE_TTM
+        对应的每股收益，股息取当前年化分红，与实时透视盈余弹窗同口径，可直接对账；招商银行、中国平安无季度净资产或股本，按最近年报
+        ROE 反推应占净资产，保证与年度行可比。<b>数据覆盖</b> =
+        该年度有财报数据的持仓市值 / 当前分母；ETF
+        与现金不产生盈余，因此分母包含它们时覆盖会低于 100%。
       </p>
 
       <el-collapse class="ph-collapse">
@@ -620,53 +627,61 @@ watch(
             <caption>
               YTD 为年初至报告期累计，金额单位：万元
             </caption>
-        <thead>
-          <tr>
-            <th class="bold">公司</th>
-            <th>最新报告期</th>
-            <th>YTD 应占净利润</th>
-            <th>YTD 同比</th>
-            <th>TTM 应占净利润</th>
-            <th>TTM EPS</th>
-            <th>权重</th>
-            <th>备注</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr v-for="item in sortedReports" :key="item.code">
-            <td class="bold">{{ item.name }}</td>
-            <td>{{ item.period ?? "-" }}</td>
-            <td>{{ item.ytdProfit == null ? "-" : wan(item.ytdProfit) }}</td>
-            <td
-              :class="
-                item.ytdYoy == null ? '' : item.ytdYoy >= 0 ? 'red' : 'green'
-              "
-            >
-              {{ pct(item.ytdYoy) }}
-            </td>
-            <td>{{ item.ttmProfit == null ? "-" : wan(item.ttmProfit) }}</td>
-            <td>
-              {{
-                item.epsTtm == null
-                  ? "-"
-                  : formatNum(item.epsTtm, 2).toFixed(2)
-              }}
-            </td>
-            <td>{{ pct(item.weight) }}</td>
-            <td>{{ item.missing ?? "" }}</td>
-          </tr>
-        </tbody>
-      </table>
+            <thead>
+              <tr>
+                <th class="bold">公司</th>
+                <th>最新报告期</th>
+                <th>YTD 应占净利润</th>
+                <th>YTD 同比</th>
+                <th>TTM 应占净利润</th>
+                <th>TTM EPS</th>
+                <th>权重</th>
+                <th>备注</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr v-for="item in sortedReports" :key="item.code">
+                <td class="bold">{{ item.name }}</td>
+                <td>{{ item.period ?? "-" }}</td>
+                <td>
+                  {{ item.ytdProfit == null ? "-" : wan(item.ytdProfit) }}
+                </td>
+                <td
+                  :class="
+                    item.ytdYoy == null
+                      ? ''
+                      : item.ytdYoy >= 0
+                        ? 'red'
+                        : 'green'
+                  "
+                >
+                  {{ pct(item.ytdYoy) }}
+                </td>
+                <td>
+                  {{ item.ttmProfit == null ? "-" : wan(item.ttmProfit) }}
+                </td>
+                <td>
+                  {{
+                    item.epsTtm == null
+                      ? "-"
+                      : formatNum(item.epsTtm, 2).toFixed(2)
+                  }}
+                </td>
+                <td>{{ pct(item.weight) }}</td>
+                <td>{{ item.missing ?? "" }}</td>
+              </tr>
+            </tbody>
+          </table>
 
-      <p class="ph-note">
-        报告期分布：<span
-          v-for="(item, index) in reportPeriods"
-          :key="item.period"
-          >{{ index > 0 ? "；" : "" }}{{ item.period }} {{ item.count }} 家 /
-          {{ pct(item.weight) }}</span
-        >。不同报告期不可直接相加，组合合计以 TTM 为准；TTM
-        取行情 PE_TTM 对应每股收益，与工具栏、实时透视盈余弹窗同源。招商银行、中国平安等季报净利润或股本字段缺失，YTD
-        与同比显示「-」，不参与合计。
+          <p class="ph-note">
+            报告期分布：<span
+              v-for="(item, index) in reportPeriods"
+              :key="item.period"
+              >{{ index > 0 ? "；" : "" }}{{ item.period }} {{ item.count }} 家
+              / {{ pct(item.weight) }}</span
+            >。不同报告期不可直接相加，组合合计以 TTM 为准；TTM 取行情 PE_TTM
+            对应每股收益，与工具栏、实时透视盈余弹窗同源。招商银行、中国平安等季报净利润或股本字段缺失，YTD
+            与同比显示「-」，不参与合计。
           </p>
         </el-collapse-item>
 
@@ -787,8 +802,9 @@ watch(
 
       <p class="ph-note">
         权重 = 持有市值占比；盈余占比 = 该公司最新年度应占净利润 /
-        组合应占净利润。两者差异反映估值高低：盈余占比高于权重，说明其市盈率低于组合平均。        EPS
-        CAGR 为当前选中区间首末年度的年化复合增速；末年亏损时无法计算，显示「末年亏损」。
+        组合应占净利润。两者差异反映估值高低：盈余占比高于权重，说明其市盈率低于组合平均。
+        EPS CAGR
+        为当前选中区间首末年度的年化复合增速；末年亏损时无法计算，显示「末年亏损」。
       </p>
 
       <table v-if="cashAndEtf.length" class="history-table snapshot-table">
