@@ -1080,8 +1080,11 @@ const stocks: StockItem[] = [
       "**快速增长型**，景气度↗，关注天胶价格和海外产能爬坡，中性情况下预计2%dy+10%~15%eps=12%~17%cagr，PE 12倍左右合理",
     maxPositionRatio: 0.05,
     plan: {
-      type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.03, quantity: 400 }],
+      type: PlanType.PRICE,
+      price: [
+        { value: 11, quantity: 400 },
+        { value: 10.5, quantity: 800 },
+      ],
     },
     exit: {
       type: PlanType.PE,
