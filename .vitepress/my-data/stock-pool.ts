@@ -1019,7 +1019,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 23.5, quantity: 100 }],
+      price: [{ value: 24, quantity: 200 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
