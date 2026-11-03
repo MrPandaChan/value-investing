@@ -1738,8 +1738,14 @@ html.dark {
 
 .portfolio-dialog {
   .dialog-content {
-    display: flex;
-    justify-content: center;
+    /*
+     * 不能对超宽内容用 flex + justify-content: center：
+     * 子项 min-width: auto 会撑到内容宽度，居中后左侧溢出的部分无法横向滚动到（被裁掉）。
+     * 保持块级左对齐，让 .el-dialog__body 的 overflow: auto 接管横向滚动。
+     */
+    display: block;
+    width: 100%;
+    min-width: 0;
   }
 
   .el-dialog__body {
