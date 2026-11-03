@@ -699,7 +699,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3.5,
-    sharesHeld: 1700,
+    sharesHeld: 1600,
     url: "/value-investing/industry/家用电器/白电/海尔智家/",
     dividendPerYear: 2,
     remark:
@@ -707,14 +707,11 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.08,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.063, quantity: 100 }],
+      dividend: [{ value: 0.06, quantity: 100 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [
-        { value: 0.055, quantity: 100 },
-        { value: 0.04, quantity: 100 },
-      ],
+      dividend: [{ value: 0.04, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -743,10 +740,7 @@ const stocks: StockItem[] = [
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [
-        { value: 0.075, quantity: 100 },
-        { value: 0.06, quantity: 100 },
-      ],
+      dividend: [{ value: 0.06, quantity: 100 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
@@ -2005,6 +1999,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(74606);
+export const cash = ref(76733);
 
 export { stocks };
