@@ -4,6 +4,7 @@ import {
   formatNum,
   formatPercent,
   canConvertToCNY,
+  getCurrencyPrefix,
 } from "../../../fetch-data/helper";
 import { InfoFilled } from "@element-plus/icons-vue";
 import { usePortfolioBase } from "./use-portfolio-base";
@@ -37,6 +38,11 @@ interface PortfolioRow {
   code: string;
   sharesHeld: number;
   holdingValue: number; // 持有金额（人民币）
+  cost: number; // 每股成本（原币）
+  costValue: number; // 持有成本（人民币）
+  profit: number; // 盈亏（人民币）
+  profitRatio: number; // 盈亏比 = 盈亏 / 持有成本
+  pricePrecision: number; // 成本价显示小数位数
   shareholdingRatio: number; // 持股比例
   industry: string;
   industryRatio: number; // 行业比例
@@ -75,6 +81,59 @@ function getPaidDps(exList: ExItem[]): number {
     .reduce((sum, ex) => sum + getEffectiveEventDps(ex), 0);
 }
 
+/** 盈亏比排序模式：默认按持有市值，点击表头后按盈亏比降序/升序 */
+type SortMode = "value" | "profitDesc" | "profitAsc";
+
+const sortMode = ref<SortMode>("value");
+
+/** 点击“盈亏比”表头循环切换：默认 → 降序 → 升序 → 默认 */
+function toggleProfitSort() {
+  sortMode.value =
+    sortMode.value === "value"
+      ? "profitDesc"
+      : sortMode.value === "profitDesc"
+        ? "profitAsc"
+        : "value";
+}
+
+/** 当前盈亏比排序方向的箭头提示（默认显示可排序图标） */
+const profitSortArrow = computed(() => {
+  if (sortMode.value === "profitDesc") return "▼";
+  if (sortMode.value === "profitAsc") return "▲";
+  return "⇅";
+});
+
+/** 按原币展示每股价格，未配置成本时显示 - */
+function formatPrice(value: number, precision: number, code: string): string {
+  if (!value) return "-";
+  return `${getCurrencyPrefix(code)}${formatNum(value, precision).toFixed(
+    precision,
+  )}`;
+}
+
+/** 盈亏金额：盈利加 +，亏损保留 - */
+function formatProfit(value: number): string {
+  if (!Number.isFinite(value)) return "-";
+  if (Math.abs(value) < 0.005) return "0.00";
+  const abs = formatNum(Math.abs(value), 2).toFixed(2);
+  return value > 0 ? `+${abs}` : `-${abs}`;
+}
+
+/** 盈亏比：盈利加 +，亏损保留 - */
+function formatProfitRatio(value: number): string {
+  if (!Number.isFinite(value)) return "-";
+  if (Math.abs(value) < 0.00005) return formatPercent(0);
+  const text = formatPercent(Math.abs(value) * 100);
+  return value > 0 ? `+${text}` : `-${text}`;
+}
+
+/** 盈亏配色 */
+function profitClass(value: number): string {
+  if (value > 0) return "profit-up";
+  if (value < 0) return "profit-down";
+  return "";
+}
+
 const portfolioData = computed<PortfolioRow[]>(() => {
   // 仅包含有持有股数且有可用元数据的股票（口径见 use-portfolio-base）
   const heldHoldings = holdings.value;
@@ -92,6 +151,11 @@ const portfolioData = computed<PortfolioRow[]>(() => {
         code: "__cash__",
         sharesHeld: 0,
         holdingValue: cashVal,
+        cost: 0,
+        costValue: 0,
+        profit: 0,
+        profitRatio: 0,
+        pricePrecision: 2,
         shareholdingRatio: 1,
         industry: "现金",
         industryRatio: 1,
@@ -118,6 +182,12 @@ const portfolioData = computed<PortfolioRow[]>(() => {
     const nameRow = tableData.value.find((r) => r.code === holding.code);
     const { code, name, sharesHeld, price, qualityScore, industry } = holding;
     const holdingValue = holding.holdingValue;
+
+    // 盈亏 = 持有市值 - 持有成本（均为人民币，与市值同一汇率口径）
+    const cost = holding.cost;
+    const costValue = holding.costValue;
+    const profit = costValue > 0 ? holdingValue - costValue : 0;
+    const profitRatio = costValue > 0 ? profit / costValue : 0;
 
     // 预计分红 = 原始分红 dps * sharesHeld（转为人民币）
     const rawExpectedDividend = meta.dps * sharesHeld;
@@ -160,6 +230,11 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       code,
       sharesHeld,
       holdingValue,
+      cost,
+      costValue,
+      profit,
+      profitRatio,
+      pricePrecision: holding.pricePrecision,
       shareholdingRatio: 0,
       expectedDividend,
       paidDividend,
@@ -185,22 +260,52 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       totalHoldingValue > 0 ? i.holdingValue / totalHoldingValue : 0;
   });
 
-  // 按持有金额降序排列
-  items.sort((a, b) => b.holdingValue - a.holdingValue);
-
-  // 按行业分组（保留排序顺序，行业按最大持仓排序）
-  const industryMap = new Map<string, typeof items>();
+  // 行业比例与排序方式无关，先按行业汇总市值
+  const industryValueMap = new Map<string, number>();
   for (const item of items) {
-    const arr = industryMap.get(item.industry) || [];
-    arr.push(item);
-    industryMap.set(item.industry, arr);
+    industryValueMap.set(
+      item.industry,
+      (industryValueMap.get(item.industry) ?? 0) + item.holdingValue,
+    );
+  }
+  const getIndustryRatio = (industry: string) =>
+    totalHoldingValue > 0
+      ? (industryValueMap.get(industry) ?? 0) / totalHoldingValue
+      : 0;
+
+  // 默认按持有金额降序并按行业聚合；按盈亏比排序时行业不一定相邻，按连续段展示行业名
+  const groups: (typeof items)[] = [];
+  if (sortMode.value === "value") {
+    items.sort((a, b) => b.holdingValue - a.holdingValue);
+    const industryMap = new Map<string, typeof items>();
+    for (const item of items) {
+      const arr = industryMap.get(item.industry) || [];
+      arr.push(item);
+      industryMap.set(item.industry, arr);
+    }
+    groups.push(...industryMap.values());
+  } else {
+    const dir = sortMode.value === "profitDesc" ? -1 : 1;
+    items.sort((a, b) => {
+      // 未配置成本的标的始终排在最后
+      const aHasCost = a.costValue > 0;
+      const bHasCost = b.costValue > 0;
+      if (aHasCost !== bHasCost) return aHasCost ? -1 : 1;
+      return (
+        dir * (a.profitRatio - b.profitRatio) ||
+        b.holdingValue - a.holdingValue
+      );
+    });
+    for (const item of items) {
+      const last = groups[groups.length - 1];
+      if (last && last[0]?.industry === item.industry) last.push(item);
+      else groups.push([item]);
+    }
   }
 
   // 构建结果，计算行业比例和 rowspan
-  for (const [, arr] of industryMap) {
-    const industryTotal = arr.reduce((sum, i) => sum + i.holdingValue, 0);
-    const industryRatio =
-      totalHoldingValue > 0 ? industryTotal / totalHoldingValue : 0;
+  for (const arr of groups) {
+    const industryRatio = getIndustryRatio(arr[0]?.industry ?? "");
     arr.forEach((item, i) => {
       result.push({
         ...item,
@@ -219,6 +324,11 @@ const portfolioData = computed<PortfolioRow[]>(() => {
       code: "__cash__",
       sharesHeld: 0,
       holdingValue: cashVal,
+      cost: 0,
+      costValue: 0,
+      profit: 0,
+      profitRatio: 0,
+      pricePrecision: 2,
       shareholdingRatio:
         totalHoldingValue > 0 ? cashVal / totalHoldingValue : 0,
       industry: "现金",
@@ -258,6 +368,9 @@ const compositeQualityScore = computed(() => {
 const totals = computed(() => {
   const rows = portfolioData.value;
   const sumHoldingValue = rows.reduce((s, r) => s + r.holdingValue, 0);
+  const sumCostValue = rows.reduce((s, r) => s + r.costValue, 0);
+  const sumProfit = rows.reduce((s, r) => s + r.profit, 0);
+  const sumProfitRatio = sumCostValue > 0 ? sumProfit / sumCostValue : 0;
   const sumExpectedDividend = rows.reduce((s, r) => s + r.expectedDividend, 0);
   const sumPaidDividend = rows.reduce((s, r) => s + r.paidDividend, 0);
   const sumUnpaidDividend = rows.reduce((s, r) => s + r.unpaidDividend, 0);
@@ -284,6 +397,9 @@ const totals = computed(() => {
 
   return {
     sumHoldingValue,
+    sumCostValue,
+    sumProfit,
+    sumProfitRatio,
     sumExpectedDividend,
     sumPaidDividend,
     sumUnpaidDividend,
@@ -317,6 +433,15 @@ onMounted(() => {
           <th class="bold">持仓公司</th>
           <th>持有股数</th>
           <th>持有市值</th>
+          <th>成本价</th>
+          <th>盈亏</th>
+          <th
+            class="bold sortable"
+            title="点击切换排序：默认 → 盈亏比降序 → 盈亏比升序"
+            @click="toggleProfitSort"
+          >
+            盈亏比<span class="sort-arrow">{{ profitSortArrow }}</span>
+          </th>
           <th class="bold">持股比例</th>
           <th class="bold">行业</th>
           <th class="bold">行业比例</th>
@@ -351,6 +476,15 @@ onMounted(() => {
           </td>
           <td>{{ item.sharesHeld }}</td>
           <td>￥{{ formatNum(item.holdingValue, 2).toFixed(2) }}</td>
+          <td>{{ formatPrice(item.cost, item.pricePrecision, item.code) }}</td>
+          <td :class="item.costValue > 0 ? profitClass(item.profit) : ''">
+            {{ item.costValue > 0 ? formatProfit(item.profit) : "-" }}
+          </td>
+          <td :class="item.costValue > 0 ? profitClass(item.profitRatio) : ''">
+            {{
+              item.costValue > 0 ? formatProfitRatio(item.profitRatio) : "-"
+            }}
+          </td>
           <td class="bold">
             {{ formatPercent(item.shareholdingRatio * 100) }}
           </td>
@@ -393,6 +527,13 @@ onMounted(() => {
           <td></td>
           <td class="bold">
             ￥{{ formatNum(totals.sumHoldingValue, 2).toFixed(2) }}
+          </td>
+          <td></td>
+          <td class="bold" :class="profitClass(totals.sumProfit)">
+            {{ formatProfit(totals.sumProfit) }}
+          </td>
+          <td class="bold" :class="profitClass(totals.sumProfitRatio)">
+            {{ formatProfitRatio(totals.sumProfitRatio) }}
           </td>
           <td class="bold">100.00%</td>
           <td></td>
@@ -440,6 +581,9 @@ onMounted(() => {
           <td></td>
           <td></td>
           <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
           <td>{{ formatPercent(totals.sumDividendTaxRate * 100) }}</td>
           <td class="sum-dividend-rate">
             {{ formatPercent(totals.sumDividendRate * 100) }}
@@ -454,6 +598,9 @@ onMounted(() => {
         </tr>
         <!-- 标签行 -->
         <tr class="bold-tr">
+          <td></td>
+          <td></td>
+          <td></td>
           <td></td>
           <td></td>
           <td></td>
@@ -555,6 +702,8 @@ onMounted(() => {
   --pf-bg-dps: #ffcac8;
   --pf-bg-eps: #9adeff;
   --pf-bg-surplus: #f88920;
+  --pf-profit-up: #e03131;
+  --pf-profit-down: #2f9e44;
 }
 
 html.dark .portfolio-container {
@@ -564,6 +713,8 @@ html.dark .portfolio-container {
   --pf-bg-dps: #4a3030;
   --pf-bg-eps: #2a455a;
   --pf-bg-surplus: #a05510;
+  --pf-profit-up: #ff8787;
+  --pf-profit-down: #51cf66;
 }
 </style>
 
@@ -611,6 +762,24 @@ html.dark .portfolio-container {
 
     .bold {
       font-weight: bold;
+    }
+
+    .sortable {
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .sort-arrow {
+      margin-left: 2px;
+      font-size: 10px;
+    }
+
+    .profit-up {
+      color: var(--pf-profit-up);
+    }
+
+    .profit-down {
+      color: var(--pf-profit-down);
     }
 
     .dps {

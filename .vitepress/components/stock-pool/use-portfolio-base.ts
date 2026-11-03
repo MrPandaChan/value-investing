@@ -22,6 +22,12 @@ export interface HoldingBase {
   price: number;
   /** 持有市值（人民币） */
   holdingValue: number;
+  /** 成本价（原币，未配置时为 0） */
+  cost: number;
+  /** 持有成本（人民币，未配置成本时为 0） */
+  costValue: number;
+  /** 价格显示小数位数（默认 2 位） */
+  pricePrecision: number;
   industry: string;
   /** ETF / 基金：无归母净利润概念，不参与盈余合计 */
   isETF: boolean;
@@ -53,6 +59,10 @@ export function usePortfolioBase() {
       const rawValue = sharesHeld * meta.realPrice;
       const rawName = nameMap.get(item.code) ?? item.code;
 
+      // 成本与市值采用同一汇率口径，保证盈亏比与币种无关
+      const cost = item.cost ?? 0;
+      const rawCostValue = sharesHeld * cost;
+
       result.push({
         code: item.code,
         name: isHKCode(item.code) ? `${rawName}H` : rawName,
@@ -61,6 +71,11 @@ export function usePortfolioBase() {
         holdingValue: canConvertToCNY(item.code)
           ? rawValue / exchangeRate.value
           : rawValue,
+        cost,
+        costValue: canConvertToCNY(item.code)
+          ? rawCostValue / exchangeRate.value
+          : rawCostValue,
+        pricePrecision: item.pricePrecision ?? 2,
         industry: item.industry,
         isETF: isETFCode(item.code) || item.industry === Industry.ETF,
         qualityScore: item.qualityScore,

@@ -101,6 +101,8 @@ export type PlanItem = PricePlan | DividendPlan | PEPlan;
 export interface StockItem {
   code: string;
   sharesHeld?: number; // 持有股数
+  /** 持仓成本价（每股，原币，与实时价格同币种），用于计算盈亏与盈亏比 */
+  cost?: number;
   url?: string;
   industry: Industry;
   remark?: string;
@@ -182,6 +184,7 @@ const stocks: StockItem[] = [
     qualityScore: 4,
     dividendPerYear: 2,
     sharesHeld: 500,
+    cost: 51.494,
     url: "/value-investing/industry/汽车/汽车玻璃/福耀玻璃/",
     remark:
       "**稳定增长型**，景气度↘，全球汽车下行但市占率+ASP提升对冲，中性情况下预计4%dy+5%~8%eps=9%~12%cagr，PE15左右合理",
@@ -215,6 +218,7 @@ const stocks: StockItem[] = [
     qualityScore: 3.5,
     dividendPerYear: 2,
     sharesHeld: 300,
+    cost: 48.119,
     url: "/value-investing/industry/医药生物/中药/云南白药/",
     remark:
       "**稳定增长型→缓慢增长型**，景气度→，各板块市占率见顶，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，股息率5%以上合理",
@@ -242,6 +246,7 @@ const stocks: StockItem[] = [
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3.5,
     sharesHeld: 300,
+    cost: 46.675,
     dividendPerYear: 2,
     remark:
       "**稳定增长型**，景气度↘，警惕压货和无序提价，驴皮紧张，消费萎靡，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，股息率5%以上合理",
@@ -274,6 +279,7 @@ const stocks: StockItem[] = [
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3,
     sharesHeld: 200,
+    cost: 19.095,
     dividendPerYear: 1,
     remark:
       "**稳定增长型→缓慢增长型**，景气度→，贴膏板块见顶，竞争压力大，第二曲线待观察，销售费用率高，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，PE13左右合理（护城河狭窄）",
@@ -303,6 +309,7 @@ const stocks: StockItem[] = [
     qualityScore: 3.5,
     dividendPerYear: 3,
     sharesHeld: 1800,
+    cost: 4.799,
     url: "/value-investing/industry/传媒/广告营销/分众传媒/",
     remark:
       "**周期型**，景气度↘，经济萎靡，新潮收购需跟踪，中性情况下预计7%dy+1%~2%eps=8%~9%cagr，适合CAPE估值，股息率7%以上合理",
@@ -361,6 +368,7 @@ const stocks: StockItem[] = [
     industry: Industry.SEAPORTS_AND_SERVICES,
     qualityScore: 3.5,
     sharesHeld: 1100,
+    cost: 7.816,
     url: "/value-investing/industry/交通运输/港口/青岛港/",
     remark:
       "**缓慢增长型**，景气度→，集装箱亮点液散承压，中性情况下预计4%dy+2%~4%eps=6%~8%cagr，股息率4%以上合理",
@@ -395,6 +403,7 @@ const stocks: StockItem[] = [
     qualityScore: 3,
     dividendPerYear: 2,
     sharesHeld: 400,
+    cost: 9.752,
     url: "/value-investing/industry/轻工制造/包装印刷/永新股份/",
     remark:
       "**稳定增长型**，景气度↘，油价高位压制毛利率，薄膜第二曲线放量中，中性情况下预计5%dy+4%~6%eps=9%~11%cagr，短期承压（毛利率20.86%十年低位），股息率5%以上合理",
@@ -428,6 +437,7 @@ const stocks: StockItem[] = [
     industry: Industry.BANKING,
     qualityScore: 4,
     sharesHeld: 700,
+    cost: 35.676,
     url: "/value-investing/industry/银行/招商银行/",
     dividendPerYear: 2,
     remark:
@@ -666,6 +676,7 @@ const stocks: StockItem[] = [
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 4,
     sharesHeld: 100,
+    cost: 75.26,
     url: "/value-investing/industry/家用电器/白电/美的集团/",
     dividendPerYear: 2,
     remark:
@@ -700,6 +711,7 @@ const stocks: StockItem[] = [
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3.5,
     sharesHeld: 1600,
+    cost: 20.468,
     url: "/value-investing/industry/家用电器/白电/海尔智家/",
     dividendPerYear: 2,
     remark:
@@ -729,6 +741,7 @@ const stocks: StockItem[] = [
     industry: Industry.HOME_APPLIANCES,
     qualityScore: 3,
     sharesHeld: 500,
+    cost: 35.934,
     url: "/value-investing/industry/家用电器/白电/格力电器/",
     dividendPerYear: 2,
     remark:
@@ -759,6 +772,7 @@ const stocks: StockItem[] = [
     industry: Industry.TELECOMMUNICATION_SERVICES,
     qualityScore: 4,
     sharesHeld: 400,
+    cost: 93.905,
     url: "/value-investing/industry/通信/运营商/中国移动/",
     dividendPerYear: 2,
     remark:
@@ -877,6 +891,7 @@ const stocks: StockItem[] = [
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 4.5,
     sharesHeld: 200,
+    cost: 21.591,
     url: "/value-investing/industry/公用事业/电力/长江电力/",
     dividendPerYear: 2,
     remark:
@@ -912,6 +927,7 @@ const stocks: StockItem[] = [
     industry: Industry.ELECTRIC_POWER,
     qualityScore: 3,
     sharesHeld: 300,
+    cost: 6.422,
     url: "/value-investing/industry/公用事业/电力/国投电力/",
     dividendPerYear: 1,
     remark:
@@ -1009,6 +1025,7 @@ const stocks: StockItem[] = [
     industry: Industry.NON_FERROUS_METALS,
     qualityScore: 4,
     sharesHeld: 800,
+    cost: 26.472,
     url: "/value-investing/industry/有色金属/铜金/紫金矿业/",
     dividendPerYear: 2,
     remark:
@@ -1073,6 +1090,7 @@ const stocks: StockItem[] = [
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3.5,
     sharesHeld: 700,
+    cost: 12.406,
     url: "/value-investing/industry/汽车/轮胎/赛轮轮胎/",
     dividendPerYear: 2,
     remark:
@@ -1256,6 +1274,7 @@ const stocks: StockItem[] = [
     industry: Industry.BAIJIU,
     qualityScore: 3.5,
     sharesHeld: 300,
+    cost: 57.773,
     url: "/value-investing/industry/食品饮料/白酒/古井贡/",
     dividendPerYear: 2,
     remark:
@@ -1286,6 +1305,7 @@ const stocks: StockItem[] = [
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3,
     sharesHeld: 500,
+    cost: 25.845,
     url: "/value-investing/industry/汽车/商用车/宇通客车/",
     dividendPerYear: 1,
     remark:
@@ -1444,6 +1464,7 @@ const stocks: StockItem[] = [
     industry: Industry.INSURANCE,
     qualityScore: 3.5,
     sharesHeld: 200,
+    cost: 47.831,
     url: "/value-investing/industry/非银金融/保险/中国平安/",
     dividendPerYear: 2,
     remark:
@@ -1507,6 +1528,7 @@ const stocks: StockItem[] = [
     industry: Industry.ENTERPRISE_SERVICES,
     qualityScore: 3,
     sharesHeld: 1000,
+    cost: 10.126,
     url: "/value-investing/industry/商贸零售/商贸市场/小商品城/",
     dividendPerYear: 2,
     remark:
@@ -1650,6 +1672,7 @@ const stocks: StockItem[] = [
     industry: Industry.ETF,
     qualityScore: 3,
     sharesHeld: 16000,
+    cost: 1.064,
     maxPositionRatio: 0.08,
     pricePrecision: 3,
     plan: {
@@ -1736,6 +1759,7 @@ const stocks: StockItem[] = [
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
     sharesHeld: 100,
+    cost: 230.06,
     url: "/value-investing/industry/电力设备/电池/宁德时代/",
     dividendPerYear: 2,
     remark:
@@ -1915,6 +1939,7 @@ const stocks: StockItem[] = [
     industry: Industry.ETF,
     qualityScore: 2.5,
     sharesHeld: 5800,
+    cost: 0.567,
     pricePrecision: 3,
     remark:
       "**一篮子互联网科技**，景气度→，高波动高弹性，不追求股息，中性情况下预计10%eps=10%cagr，PE20倍左右合理",
