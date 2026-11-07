@@ -1141,7 +1141,9 @@ const mergedTableData = computed(() => {
               >
             </div>
             <template
-              v-if="row.targetMarketCap !== undefined && row.targetMarketCap > 0"
+              v-if="
+                row.targetMarketCap !== undefined && row.targetMarketCap > 0
+              "
             >
               <template v-if="canConvertToCNY(row.code)">
                 <div class="red">
