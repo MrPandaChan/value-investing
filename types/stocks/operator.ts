@@ -152,6 +152,18 @@ const operatorStockData: StockItem[] = [
       // backYearsNum: 10,
     },
   },
+  {
+    type: StockType.HK,
+    name: "中国通信服务",
+    code: "00552",
+    level: StockLevel.MARGIN,
+    allocation: 0.05,
+    sharesPerLot: 2000,
+    valuationConfig: {
+      type: ValuationType.DIVIDEND,
+      dividendYield: 0.08,
+    },
+  },
 ];
 
 export { operatorStockData };
