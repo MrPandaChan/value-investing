@@ -1566,19 +1566,19 @@ const stocks: StockItem[] = [
     dividendAdjust: 0.8,
     dividendPerYear: 1,
     remark:
-      "**缓慢增长型**，景气度→，运营商资本开支趋稳，中性情况下预计6%dy+3%~5%eps=9%~11%cagr，股息率6%以上合理",
+      "**缓慢增长型**，景气度→，运营商资本开支趋稳，中性情况下预计6.5%dy+2.5%eps=9%cagr，股息率6.5%以上合理",
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.06, quantity: 2000 }],
+      dividend: [{ value: 0.065, quantity: 2000 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.04, quantity: 100 }],
+      dividend: [{ value: 0.045, quantity: 2000 }],
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.06,
+      value: 0.065,
     },
   },
   {
