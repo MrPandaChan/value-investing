@@ -202,8 +202,8 @@ const stocks: StockItem[] = [
       dividend: [{ value: 0.03, quantity: 100 }],
     },
     strikePrice: {
-      type: PlanType.PE,
-      value: 12,
+      type: PlanType.DIVIDEND,
+      value: 0.05,
     },
   },
   {
@@ -319,8 +319,8 @@ const stocks: StockItem[] = [
       "**周期型**，景气度↘，经济萎靡，新潮收购需跟踪，中性情况下预计7%dy+1%~2%eps=8%~9%cagr，适合CAPE估值，股息率7%以上合理",
     maxPositionRatio: 0.05,
     plan: {
-      type: PlanType.PRICE,
-      price: [{ value: 4.53, quantity: 1000 }],
+      type: PlanType.DIVIDEND,
+      dividend: [{ value: 0.065, quantity: 1000 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -383,7 +383,6 @@ const stocks: StockItem[] = [
       dividend: [
         { value: 0.0373, quantity: 400 },
         { value: 0.045, quantity: 500 },
-        { value: 0.05, quantity: 600 },
       ],
     },
     exit: {
@@ -392,7 +391,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.05,
+      value: 0.045,
     },
   },
   {
@@ -415,7 +414,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
-        { value: 0.05, quantity: 400 },
+        { value: 0.05, quantity: 300 },
         { value: 0.053, quantity: 400 },
         { value: 0.057, quantity: 500 },
       ],
@@ -1477,7 +1476,7 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
-        { value: 0.057, quantity: 100 },
+        { value: 0.055, quantity: 100 },
         { value: 0.06, quantity: 200 },
       ],
     },
@@ -1487,7 +1486,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.DIVIDEND,
-      value: 0.06,
+      value: 0.055,
     },
   },
   {
