@@ -288,7 +288,6 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
-        { value: 0.05, quantity: 100 },
         { value: 0.055, quantity: 100 },
         { value: 0.06, quantity: 200 },
       ],
@@ -1048,6 +1047,94 @@ const stocks: StockItem[] = [
     strikePrice: {
       type: PlanType.DIVIDEND,
       value: 0.03,
+    },
+  },
+  {
+    // 云铝股份
+    /**
+     * 正常化归母 92 亿（铝价 21,500 / 氧化铝 2,850），股本 34.68 亿
+     * 20.2 元 = 700 亿，正常化 7.6x，买入条件①（约 15% 安全边际）
+     * 16.5 元 = 572 亿，正常化 6.2x，成本韧性被验证后首批主仓
+     * 14.0 元 = 486 亿，正常化 5.3x，净现金占市值 35%，加满
+     * 31.7 元 = 1,100 亿，正常化 12x，减仓起点
+     * 38.9 元 = 1,350 亿，乐观区间上沿
+     */
+    code: "000807",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 1 },
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.POLICY, weight: 0.75 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.15 },
+    ],
+    industry: Industry.NON_FERROUS_METALS,
+    qualityScore: 3.5,
+    dividendPerYear: 2,
+    url: "/value-investing/industry/有色金属/铝/云铝股份/",
+    remark:
+      "**周期型（+类现金牛）**，景气度→，正常化归母 92 亿×8~11x=737~1,013 亿（21.3~29.2 元），现价 23.7 处于合理区间中部、无安全边际；市值<700 亿（20.2 元，正常化 7.6x）且库存/产量/毛利率未恶化才买入，16.5 元须证实成本韧性（毛利率>20%、OCF 为正、季度产量≥75 万吨）才算主仓，14 元（净现金占市值 35%）加满；绿电溢价尚未变成现金流，2027 海外供给拐点是最大变量",
+    maxPositionRatio: 0.05,
+    plan: {
+      type: PlanType.PRICE,
+      price: [
+        { value: 20.2, quantity: 100 },
+        { value: 16.5, quantity: 500 },
+        { value: 14, quantity: 700 },
+      ],
+    },
+    exit: {
+      type: PlanType.PRICE,
+      price: [
+        { value: 31.7, quantity: 100 },
+        { value: 38.9, quantity: 200 },
+      ],
+    },
+    strikePrice: {
+      type: PlanType.PRICE,
+      value: 20.2,
+    },
+  },
+  {
+    // 神火股份
+    /**
+     * 正常化归母 60~70 亿（中枢 65 亿），股本 22.49 亿
+     * 19.0 元 = 427 亿，正常化 6.6x、PB 1.4，分批建仓起点
+     * 16.0 元 = 360 亿，接近悲观情景上沿（13~17 元），加大配置
+     * 14.0 元 = 315 亿，正常化 4.8x，磨底加满
+     * 30.0 元 = 675 亿，峰值利润 7x、PB 2.3，逐步减仓
+     * 36.0 元 = 810 亿，乐观区间上沿
+     */
+    code: "000933",
+    tags: [
+      { tag: TagKey.COMMODITY, weight: 1 },
+      { tag: TagKey.DOMESTIC, weight: 1 },
+      { tag: TagKey.POLICY, weight: 1 },
+      { tag: TagKey.CONSUMER_SENSITIVITY, weight: 0.1 },
+    ],
+    industry: Industry.NON_FERROUS_METALS,
+    qualityScore: 3,
+    dividendPerYear: 1,
+    url: "/value-investing/industry/有色金属/铝/神火股份/",
+    remark:
+      "**周期型（上行末段/顶部）**，景气度↘，正常化归母 60~70 亿×7~9x=18.7~28.0 元（基准 22~27），现价 24.2 属合理偏上、安全边际不足；<19 元（正常化 6.5x、PB 1.4、dy>5%）才分批建仓，<16 元接近悲观上沿加配，>30 元（峰值利润 7x、PB 2.3）逐步减仓；激励门槛隐含 2027~28 年均仅需 32.5 亿即可解锁，煤矿减值与自备电碳成本是长期折价项",
+    maxPositionRatio: 0.03,
+    plan: {
+      type: PlanType.PRICE,
+      price: [
+        { value: 19, quantity: 200 },
+        { value: 16, quantity: 300 },
+        { value: 14, quantity: 300 },
+      ],
+    },
+    exit: {
+      type: PlanType.PRICE,
+      price: [
+        { value: 30, quantity: 100 },
+        { value: 36, quantity: 200 },
+      ],
+    },
+    strikePrice: {
+      type: PlanType.PRICE,
+      value: 19,
     },
   },
   {
