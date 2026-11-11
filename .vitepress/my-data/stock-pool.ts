@@ -278,8 +278,8 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.TRADITIONAL_CHINESE_MEDICINE,
     qualityScore: 3,
-    sharesHeld: 100,
-    cost: 14.383,
+    sharesHeld: 200,
+    cost: 18.467,
     dividendPerYear: 1,
     remark:
       "**稳定增长型→缓慢增长型**，景气度→，贴膏板块见顶，竞争压力大，第二曲线待观察，销售费用率高，中性情况下预计5%dy+3%~5%eps=8%~10%cagr，PE13左右合理（护城河狭窄）",
@@ -2027,6 +2027,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(79119);
+export const cash = ref(79072);
 
 export { stocks };
