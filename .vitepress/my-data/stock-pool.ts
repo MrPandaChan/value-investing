@@ -1974,7 +1974,11 @@ const stocks: StockItem[] = [
    */
 ];
 
+/**
+ * TODO 四维评级：成长空间、竞争格局、护城河、经营绩效、综合评分（0~5星）
+ */
+
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(381000);
+export const cash = ref(382000);
 
 export { stocks };
