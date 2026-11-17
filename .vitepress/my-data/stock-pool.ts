@@ -1037,7 +1037,7 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       price: [
         { value: 25.5, quantity: 100 },
-        { value: 24.5, quantity: 100 },
+        { value: 24, quantity: 100 },
       ],
     },
     exit: {
@@ -1761,13 +1761,13 @@ const stocks: StockItem[] = [
     code: "513050",
     industry: Industry.ETF,
     qualityScore: 3,
-    sharesHeld: 16000,
-    cost: 1.064,
+    sharesHeld: 20000,
+    cost: 1.035,
     maxPositionRatio: 0.08,
     pricePrecision: 3,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 0.92, quantity: 4000 }],
+      price: [{ value: 0.846, quantity: 4000 }],
     },
     exit: {
       type: PlanType.PRICE,
@@ -2114,6 +2114,6 @@ const stocks: StockItem[] = [
 ];
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(79072);
+export const cash = ref(115427);
 
 export { stocks };
