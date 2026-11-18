@@ -150,7 +150,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.INTERNET,
     qualityScore: 4.5,
-    sharesHeld: 700,
+    sharesHeld: 800,
     dividendAdjust: 0.8,
     url: "/value-investing/industry/传媒/互联网平台/腾讯控股/",
     remark:
@@ -158,7 +158,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.2,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 366, quantity: 100 }],
+      price: [{ value: 350, quantity: 100 }],
     },
     exit: {
       type: PlanType.PE,
@@ -1979,6 +1979,6 @@ const stocks: StockItem[] = [
  */
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(382000);
+export const cash = ref(350000);
 
 export { stocks };
