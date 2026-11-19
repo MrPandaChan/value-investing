@@ -159,7 +159,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.2,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 366, quantity: 100 }],
+      price: [{ value: 350, quantity: 100 }],
     },
     exit: {
       type: PlanType.PE,
@@ -1036,8 +1036,8 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 25.5, quantity: 100 },
-        { value: 24, quantity: 100 },
+        { value: 22.5, quantity: 100 },
+        { value: 20, quantity: 100 },
       ],
     },
     exit: {
@@ -2112,6 +2112,10 @@ const stocks: StockItem[] = [
    * 卫龙美味
    */
 ];
+
+/**
+ * TODO 四维评级：成长空间、竞争格局、护城河、经营绩效、综合评分（0~5星）
+ */
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
 export const cash = ref(115427);
