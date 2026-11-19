@@ -158,7 +158,10 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.2,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 350, quantity: 100 }],
+      price: [
+        { value: 340, quantity: 100 },
+        { value: 310, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.PE,
@@ -1019,7 +1022,10 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 24, quantity: 200 }],
+      price: [
+        { value: 23, quantity: 100 },
+        { value: 21, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1027,7 +1033,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.PRICE,
-      value: 24.5,
+      value: 22,
     },
   },
   {
@@ -1042,7 +1048,7 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.PROPERTY_MANAGEMENT,
     qualityScore: 3,
-    sharesHeld: 600,
+    sharesHeld: 800,
     url: "/value-investing/industry/房地产/物业服务/保利物业/",
     dividendAdjust: 0.8,
     dividendPerYear: 1,
@@ -1051,7 +1057,7 @@ const stocks: StockItem[] = [
       "**稳定增长型→缓慢增长型**，景气度↘，行业成熟期，应收款恶化，中性情况下预计5%dy+5%eps=10%cagr，股息率5%以上合理",
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.052, quantity: 200 }],
+      dividend: [{ value: 0.054, quantity: 400 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1979,6 +1985,6 @@ const stocks: StockItem[] = [
  */
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(350000);
+export const cash = ref(346000);
 
 export { stocks };
