@@ -159,7 +159,10 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.2,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 350, quantity: 100 }],
+      price: [
+        { value: 340, quantity: 100 },
+        { value: 310, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.PE,
@@ -1026,8 +1029,8 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.NON_FERROUS_METALS,
     qualityScore: 4,
-    sharesHeld: 800,
-    cost: 26.472,
+    sharesHeld: 900,
+    cost: 26.32,
     url: "/value-investing/industry/有色金属/铜金/紫金矿业/",
     dividendPerYear: 2,
     remark:
@@ -1035,10 +1038,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      price: [
-        { value: 22.5, quantity: 100 },
-        { value: 20, quantity: 100 },
-      ],
+      price: [{ value: 20, quantity: 100 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1157,7 +1157,7 @@ const stocks: StockItem[] = [
       "**稳定增长型→缓慢增长型**，景气度↘，行业成熟期，应收款恶化，中性情况下预计5%dy+5%eps=10%cagr，股息率5%以上合理",
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.052, quantity: 200 }],
+      dividend: [{ value: 0.054, quantity: 400 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1767,7 +1767,7 @@ const stocks: StockItem[] = [
     pricePrecision: 3,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 0.846, quantity: 4000 }],
+      price: [{ value: 0.8, quantity: 4000 }],
     },
     exit: {
       type: PlanType.PRICE,
@@ -2036,7 +2036,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.01,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 0.437, quantity: 3400 }],
+      price: [{ value: 0.4, quantity: 4000 }],
     },
     exit: {
       type: PlanType.PRICE,
@@ -2118,6 +2118,6 @@ const stocks: StockItem[] = [
  */
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(115427);
+export const cash = ref(92941);
 
 export { stocks };
