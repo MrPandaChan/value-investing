@@ -956,8 +956,8 @@ const stocks: StockItem[] = [
       "**周期型**，景气度↗，油价高位，产量年增3%~5%，中性情况下预计4%dy+5%~8%eps=9%~12%cagr，短期向好（油价高位），股息率4%以上合理",
     maxPositionRatio: 0.2,
     plan: {
-      type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.05, quantity: 1400 }],
+      type: PlanType.PRICE,
+      price: [{ value: 28, quantity: 1400 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -987,8 +987,8 @@ const stocks: StockItem[] = [
       "**周期型**，景气度↗，油价高位，产量年增3%~5%，中性情况下预计5.5%dy+5%~8%eps=10.5%~13.5%cagr，短期向好（油价高位），股息率5%以上合理",
     maxPositionRatio: 0.2,
     plan: {
-      type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.05, quantity: 1000 }],
+      type: PlanType.PRICE,
+      price: [{ value: 20, quantity: 1000 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
