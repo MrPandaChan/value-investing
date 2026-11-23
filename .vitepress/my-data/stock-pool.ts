@@ -1038,7 +1038,12 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 20, quantity: 100 }],
+      price: [
+        { value: 22.5, quantity: 100 },
+        { value: 20, quantity: 100 },
+        { value: 17.5, quantity: 100 },
+        { value: 15, quantity: 100 },
+      ],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1076,9 +1081,10 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 20.2, quantity: 100 },
-        { value: 16.5, quantity: 500 },
-        { value: 14, quantity: 700 },
+        { value: 20, quantity: 100 },
+        { value: 18, quantity: 100 },
+        { value: 16, quantity: 100 },
+        { value: 14, quantity: 100 },
       ],
     },
     exit: {
@@ -1090,7 +1096,7 @@ const stocks: StockItem[] = [
     },
     strikePrice: {
       type: PlanType.PRICE,
-      value: 20.2,
+      value: 20,
     },
   },
   {
@@ -1120,9 +1126,9 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 19, quantity: 200 },
-        { value: 16, quantity: 300 },
-        { value: 14, quantity: 300 },
+        { value: 19, quantity: 100 },
+        { value: 17, quantity: 100 },
+        { value: 15, quantity: 100 },
       ],
     },
     exit: {
@@ -1371,8 +1377,8 @@ const stocks: StockItem[] = [
       "**周期型**，景气度↓，区域次高端承压，合同负债下降，中性情况下预计6%dy+0%~3%eps=6%~9%cagr，当前承压（净利-31%），股息率6%以上合理",
     maxPositionRatio: 0.05,
     plan: {
-      type: PlanType.DIVIDEND,
-      dividend: [{ value: 0.1, quantity: 100 }],
+      type: PlanType.PRICE,
+      price: [{ value: 46, quantity: 100 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1761,13 +1767,13 @@ const stocks: StockItem[] = [
     code: "513050",
     industry: Industry.ETF,
     qualityScore: 3,
-    sharesHeld: 20000,
-    cost: 1.035,
+    sharesHeld: 24000,
+    cost: 1.003,
     maxPositionRatio: 0.08,
     pricePrecision: 3,
     plan: {
       type: PlanType.PRICE,
-      price: [{ value: 0.8, quantity: 4000 }],
+      price: [{ value: 0.75, quantity: 4000 }],
     },
     exit: {
       type: PlanType.PRICE,
@@ -2118,6 +2124,6 @@ const stocks: StockItem[] = [
  */
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(92941);
+export const cash = ref(89580);
 
 export { stocks };
