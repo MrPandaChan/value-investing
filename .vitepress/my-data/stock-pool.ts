@@ -1037,9 +1037,9 @@ const stocks: StockItem[] = [
       type: PlanType.PRICE,
       price: [
         { value: 22.5, quantity: 100 },
-        { value: 20, quantity: 100 },
-        { value: 17.5, quantity: 100 },
-        { value: 15, quantity: 100 },
+        { value: 20, quantity: 200 },
+        { value: 18, quantity: 200 },
+        { value: 16, quantity: 200 },
       ],
     },
     exit: {
@@ -1397,8 +1397,8 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 3,
-    sharesHeld: 500,
-    cost: 25.845,
+    sharesHeld: 400,
+    cost: 24.323,
     url: "/value-investing/industry/汽车/商用车/宇通客车/",
     dividendPerYear: 1,
     remark:
@@ -1407,8 +1407,8 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.DIVIDEND,
       dividend: [
-        { value: 0.085, quantity: 100 },
-        { value: 0.09, quantity: 100 },
+        { value: 0.07, quantity: 100 },
+        { value: 0.08, quantity: 100 },
       ],
     },
     exit: {
@@ -1437,11 +1437,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.05,
     plan: {
       type: PlanType.DIVIDEND,
-      dividend: [
-        { value: 0.05, quantity: 100 },
-        { value: 0.055, quantity: 200 },
-        { value: 0.06, quantity: 300 },
-      ],
+      dividend: [{ value: 0.05, quantity: 100 }],
     },
     exit: {
       type: PlanType.DIVIDEND,
@@ -1861,8 +1857,8 @@ const stocks: StockItem[] = [
     plan: {
       type: PlanType.PRICE,
       price: [
-        { value: 207, quantity: 100 },
-        { value: 186, quantity: 100 },
+        { value: 205, quantity: 100 },
+        { value: 185, quantity: 100 },
       ],
     },
     exit: {
@@ -2121,6 +2117,6 @@ const stocks: StockItem[] = [
  */
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(89580);
+export const cash = ref(92783);
 
 export { stocks };
