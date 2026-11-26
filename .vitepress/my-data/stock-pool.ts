@@ -1847,8 +1847,8 @@ const stocks: StockItem[] = [
     ],
     industry: Industry.AUTOMOTIVE_AND_PARTS,
     qualityScore: 4,
-    sharesHeld: 100,
-    cost: 230.06,
+    sharesHeld: 200,
+    cost: 217.56,
     url: "/value-investing/industry/电力设备/电池/宁德时代/",
     dividendPerYear: 2,
     remark:
@@ -1856,10 +1856,7 @@ const stocks: StockItem[] = [
     maxPositionRatio: 0.1,
     plan: {
       type: PlanType.PRICE,
-      price: [
-        { value: 205, quantity: 100 },
-        { value: 185, quantity: 100 },
-      ],
+      price: [{ value: 180, quantity: 100 }],
     },
     exit: {
       type: PlanType.PE,
@@ -2117,6 +2114,6 @@ const stocks: StockItem[] = [
  */
 
 /** 剩余现金（人民币），在持仓组合中作为"现金"显示，参与总市值和比例计算 */
-export const cash = ref(92783);
+export const cash = ref(72283);
 
 export { stocks };
